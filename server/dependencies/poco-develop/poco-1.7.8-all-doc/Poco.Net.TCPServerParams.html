@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::Net::TCPServerParams</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.Net.html" class="namespace">Poco::Net</a></h1>
+<h1 class="symbol">class TCPServerParams</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Net" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Net<br />
+<b>Package:</b> TCPServer<br />
+<b>Header:</b> Poco/Net/TCPServerParams.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>This class is used to specify parameters to both the <a href="Poco.Net.TCPServer.html" title="class Poco::Net::TCPServer">TCPServer</a>, as well as to <a href="Poco.Net.TCPServerDispatcher.html" title="class Poco::Net::TCPServerDispatcher">TCPServerDispatcher</a> objects. </p>
+<p>Subclasses may add new parameters to the class. </p>
+</div>
+<h2>Inheritance</h2>
+<p><b>Direct Base Classes: </b><a href="Poco.RefCountedObject.html" title="class Poco::RefCountedObject">Poco::RefCountedObject</a></p>
+<p><b>All Base Classes: </b><a href="Poco.RefCountedObject.html" title="class Poco::RefCountedObject">Poco::RefCountedObject</a></p>
+<p><b>Known Derived Classes: </b><a href="Poco.Net.HTTPServerParams.html" title="class Poco::Net::HTTPServerParams">HTTPServerParams</a></p>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.Net.TCPServerParams.html#25205" title="Poco::Net::TCPServerParams::getMaxQueued()">getMaxQueued</a>, <a href="Poco.Net.TCPServerParams.html#25208" title="Poco::Net::TCPServerParams::getMaxThreads()">getMaxThreads</a>, <a href="Poco.Net.TCPServerParams.html#25202" title="Poco::Net::TCPServerParams::getThreadIdleTime()">getThreadIdleTime</a>, <a href="Poco.Net.TCPServerParams.html#25211" title="Poco::Net::TCPServerParams::getThreadPriority()">getThreadPriority</a>, <a href="Poco.Net.TCPServerParams.html#25203" title="Poco::Net::TCPServerParams::setMaxQueued()">setMaxQueued</a>, <a href="Poco.Net.TCPServerParams.html#25206" title="Poco::Net::TCPServerParams::setMaxThreads()">setMaxThreads</a>, <a href="Poco.Net.TCPServerParams.html#25200" title="Poco::Net::TCPServerParams::setThreadIdleTime()">setThreadIdleTime</a>, <a href="Poco.Net.TCPServerParams.html#25209" title="Poco::Net::TCPServerParams::setThreadPriority()">setThreadPriority</a></p>
+<p><b>Inherited Functions: </b><a href="Poco.RefCountedObject.html#16511" title="Poco::RefCountedObject::duplicate()">duplicate</a>, <a href="Poco.RefCountedObject.html#16513" title="Poco::RefCountedObject::referenceCount()">referenceCount</a>, <a href="Poco.RefCountedObject.html#16512" title="Poco::RefCountedObject::release()">release</a></p>
+<h2>Types</h2>
+<h3><a id="25198">Ptr</a></h3>
+<p class="decl">typedef <a href="Poco.AutoPtr.html" title="class Poco::AutoPtr">Poco::AutoPtr</a> &lt; <a href="Poco.Net.TCPServerParams.html" title="class Poco::Net::TCPServerParams">TCPServerParams</a> &gt; <a href="Poco.Net.TCPServerParams.html#25198" title="Poco::Net::TCPServerParams::Ptr">Ptr</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Constructors</h2>
+<h3><a id="25199">TCPServerParams</a></h3>
+<p class="decl"><a href="Poco.Net.TCPServerParams.html" title="class Poco::Net::TCPServerParams">TCPServerParams</a>();</p>
+<div class="description">
+<p>Creates the <a href="Poco.Net.TCPServerParams.html" title="class Poco::Net::TCPServerParams">TCPServerParams</a>. </p>
+<p>Sets the following default values: </p>
+<ul>
+<li>threadIdleTime:       10 seconds </li>
+<li>maxThreads:           0 </li>
+<li>maxQueued:            64 </li>
+</ul>
+</div>
+<h2>Destructor</h2>
+<h3><a id="25212">~TCPServerParams</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual ~<a href="Poco.Net.TCPServerParams.html" title="class Poco::Net::TCPServerParams">TCPServerParams</a>();</p>
+<div class="description">
+<p>Destroys the <a href="Poco.Net.TCPServerParams.html" title="class Poco::Net::TCPServerParams">TCPServerParams</a>. </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="25205">getMaxQueued</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">int getMaxQueued() const;</p>
+<div class="description">
+<p>Returns the maximum number of queued connections. </p>
+</div>
+<h3><a id="25208">getMaxThreads</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">int getMaxThreads() const;</p>
+<div class="description">
+<p>Returns the maximum number of simultaneous threads available for this <a href="Poco.Net.TCPServerDispatcher.html" title="class Poco::Net::TCPServerDispatcher">TCPServerDispatcher</a>.	 </p>
+</div>
+<h3><a id="25202">getThreadIdleTime</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">const <a href="Poco.Timespan.html" title="class Poco::Timespan">Poco::Timespan</a> &amp; getThreadIdleTime() const;</p>
+<div class="description">
+<p>Returns the maximum thread idle time. </p>
+</div>
+<h3><a id="25211">getThreadPriority</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Thread.html#17808" title="enum  Poco::Thread::Priority">Poco::Thread::Priority</a> getThreadPriority() const;</p>
+<div class="description">
+<p>Returns the priority of TCP server threads created by <a href="Poco.Net.TCPServer.html" title="class Poco::Net::TCPServer">TCPServer</a>.  </p>
+</div>
+<h3><a id="25203">setMaxQueued</a></h3>
+<p class="decl">void setMaxQueued(<br />&nbsp;&nbsp;&nbsp;&nbsp;int count<br />);</p>
+<div class="description">
+<p>Sets the maximum number of queued connections. Must be greater than 0. </p>
+<p>If there are already the maximum number of connections in the queue, new connections will be silently discarded. </p>
+<p>The default number is 64. </p>
+</div>
+<h3><a id="25206">setMaxThreads</a></h3>
+<p class="decl">void setMaxThreads(<br />&nbsp;&nbsp;&nbsp;&nbsp;int count<br />);</p>
+<div class="description">
+<p>Sets the maximum number of simultaneous threads available for this <a href="Poco.Net.TCPServerDispatcher.html" title="class Poco::Net::TCPServerDispatcher">TCPServerDispatcher</a>. </p>
+<p>Must be greater than or equal to 0. If 0 is specified, the <a href="Poco.Net.TCPServerDispatcher.html" title="class Poco::Net::TCPServerDispatcher">TCPServerDispatcher</a> will set this parameter to the number of available threads in its thread pool. </p>
+<p>The thread pool used by the <a href="Poco.Net.TCPServerDispatcher.html" title="class Poco::Net::TCPServerDispatcher">TCPServerDispatcher</a> must at least have the capacity for the given number of threads. </p>
+</div>
+<h3><a id="25200">setThreadIdleTime</a></h3>
+<p class="decl">void setThreadIdleTime(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Timespan.html" title="class Poco::Timespan">Poco::Timespan</a> &amp; idleTime<br />);</p>
+<div class="description">
+<p>Sets the maximum idle time for a thread before it is terminated. </p>
+<p>The default idle time is 10 seconds; </p>
+</div>
+<h3><a id="25209">setThreadPriority</a></h3>
+<p class="decl">void setThreadPriority(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Thread.html#17808" title="enum  Poco::Thread::Priority">Poco::Thread::Priority</a> prio<br />);</p>
+<div class="description">
+<p>Sets the priority of TCP server threads  created by <a href="Poco.Net.TCPServer.html" title="class Poco::Net::TCPServer">TCPServer</a>. </p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

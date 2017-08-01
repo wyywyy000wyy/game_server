@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::Net::MailStreamBuf</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.Net.html" class="namespace">Poco::Net</a></h1>
+<h1 class="symbol">class MailStreamBuf</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Net" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Net<br />
+<b>Package:</b> Mail<br />
+<b>Header:</b> Poco/Net/MailStream.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>The sole purpose of this stream buffer is to replace  a &quot;\r\n.\r\n&quot; character sequence with a &quot;\r\n..\r\n&quot; sequence for output streams and vice-versa for input streams. </p>
+<p>This is used when sending mail messages to SMTP servers, or receiving mail messages from POP servers. </p>
+<p>See <a href="https://www.ietf.org/rfc/rfc2181.txt" target="_blank">RFC 2181</a> (Simple Mail Transfer Protocol) and <a href="https://www.ietf.org/rfc/rfc1939.txt" target="_blank">RFC 1939</a> (Post Office Protocol - Version 3) for more information. </p>
+</div>
+<h2>Inheritance</h2>
+<p><b>Direct Base Classes: </b>Poco::UnbufferedStreamBuf</p>
+<p><b>All Base Classes: </b><a href="Poco.html#18987" title="Poco::UnbufferedStreamBuf">Poco::UnbufferedStreamBuf</a></p>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.Net.MailStreamBuf.html#22723" title="Poco::Net::MailStreamBuf::close()">close</a>, <a href="Poco.Net.MailStreamBuf.html#22724" title="Poco::Net::MailStreamBuf::readFromDevice()">readFromDevice</a>, <a href="Poco.Net.MailStreamBuf.html#22727" title="Poco::Net::MailStreamBuf::readOne()">readOne</a>, <a href="Poco.Net.MailStreamBuf.html#22725" title="Poco::Net::MailStreamBuf::writeToDevice()">writeToDevice</a></p>
+<h2>Constructors</h2>
+<h3><a id="22718">MailStreamBuf</a></h3>
+<p class="decl"><a href="Poco.Net.MailStreamBuf.html" title="class Poco::Net::MailStreamBuf">MailStreamBuf</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::istream &amp; istr<br />);</p>
+<div class="description">
+<p>Creates the <a href="Poco.Net.MailStreamBuf.html" title="class Poco::Net::MailStreamBuf">MailStreamBuf</a> and connects it to the given input stream. </p>
+</div>
+<h3><a id="22720">MailStreamBuf</a></h3>
+<p class="decl"><a href="Poco.Net.MailStreamBuf.html" title="class Poco::Net::MailStreamBuf">MailStreamBuf</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::ostream &amp; ostr<br />);</p>
+<div class="description">
+<p>Creates the <a href="Poco.Net.MailStreamBuf.html" title="class Poco::Net::MailStreamBuf">MailStreamBuf</a> and connects it to the given output stream. </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="22722">~MailStreamBuf</a></h3>
+<p class="decl">~<a href="Poco.Net.MailStreamBuf.html" title="class Poco::Net::MailStreamBuf">MailStreamBuf</a>();</p>
+<div class="description">
+<p>Destroys the <a href="Poco.Net.MailStreamBuf.html" title="class Poco::Net::MailStreamBuf">MailStreamBuf</a>. </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="22723">close</a></h3>
+<p class="decl">void close();</p>
+<div class="description">
+<p>Writes the terminating period, followed by CR-LF. </p>
+</div>
+<h3><a id="22724">readFromDevice</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">int readFromDevice();</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="22727">readOne</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">int readOne();</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="22725">writeToDevice</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">int writeToDevice(<br />&nbsp;&nbsp;&nbsp;&nbsp;char c<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

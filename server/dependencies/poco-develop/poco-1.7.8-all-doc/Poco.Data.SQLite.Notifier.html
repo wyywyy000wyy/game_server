@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::Data::SQLite::Notifier</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.Data.SQLite.html" class="namespace">Poco::Data::SQLite</a></h1>
+<h1 class="symbol">class Notifier</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Data/SQLite" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Data/SQLite<br />
+<b>Package:</b> SQLite<br />
+<b>Header:</b> Poco/Data/SQLite/Notifier.h</p>
+<h2>Description</h2>
+<div class="description">
+<p><a href="Poco.Data.SQLite.Notifier.html" title="class Poco::Data::SQLite::Notifier">Notifier</a> is a wrapper for <a href="Poco.Data.SQLite.html" title="namespace Poco::Data::SQLite">SQLite</a> callback calls. It supports event callbacks for insert, update, delete, commit and rollback events. While (un)registering  callbacks is thread-safe, execution of the callbacks themselves are not;  it is the user's responsibility to ensure the thread-safey of the functions  they provide as callback target. Additionally, commit callbacks may prevent database transactions from succeeding (see sqliteCommitCallbackFn documentation for details).  </p>
+<p>There can be only one set of callbacks per session (i.e. registering a new callback automatically unregisters the previous one). All callbacks are  registered and enabled at <a href="Poco.Data.SQLite.Notifier.html" title="class Poco::Data::SQLite::Notifier">Notifier</a> contruction time and can be disabled at a later point time. </p>
+</div>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.Data.SQLite.Notifier.html#3680" title="Poco::Data::SQLite::Notifier::commitEnabled()">commitEnabled</a>, <a href="Poco.Data.SQLite.Notifier.html#3685" title="Poco::Data::SQLite::Notifier::disableAll()">disableAll</a>, <a href="Poco.Data.SQLite.Notifier.html#3679" title="Poco::Data::SQLite::Notifier::disableCommit()">disableCommit</a>, <a href="Poco.Data.SQLite.Notifier.html#3682" title="Poco::Data::SQLite::Notifier::disableRollback()">disableRollback</a>, <a href="Poco.Data.SQLite.Notifier.html#3676" title="Poco::Data::SQLite::Notifier::disableUpdate()">disableUpdate</a>, <a href="Poco.Data.SQLite.Notifier.html#3684" title="Poco::Data::SQLite::Notifier::enableAll()">enableAll</a>, <a href="Poco.Data.SQLite.Notifier.html#3678" title="Poco::Data::SQLite::Notifier::enableCommit()">enableCommit</a>, <a href="Poco.Data.SQLite.Notifier.html#3681" title="Poco::Data::SQLite::Notifier::enableRollback()">enableRollback</a>, <a href="Poco.Data.SQLite.Notifier.html#3675" title="Poco::Data::SQLite::Notifier::enableUpdate()">enableUpdate</a>, <a href="Poco.Data.SQLite.Notifier.html#3698" title="Poco::Data::SQLite::Notifier::getRow()">getRow</a>, <a href="Poco.Data.SQLite.Notifier.html#3701" title="Poco::Data::SQLite::Notifier::getValue()">getValue</a>, <a href="Poco.Data.SQLite.Notifier.html#3696" title="Poco::Data::SQLite::Notifier::operator ==()">operator&nbsp;==</a>, <a href="Poco.Data.SQLite.Notifier.html#3683" title="Poco::Data::SQLite::Notifier::rollbackEnabled()">rollbackEnabled</a>, <a href="Poco.Data.SQLite.Notifier.html#3699" title="Poco::Data::SQLite::Notifier::setRow()">setRow</a>, <a href="Poco.Data.SQLite.Notifier.html#3702" title="Poco::Data::SQLite::Notifier::setValue()">setValue</a>, <a href="Poco.Data.SQLite.Notifier.html#3692" title="Poco::Data::SQLite::Notifier::sqliteCommitCallbackFn()">sqliteCommitCallbackFn</a>, <a href="Poco.Data.SQLite.Notifier.html#3694" title="Poco::Data::SQLite::Notifier::sqliteRollbackCallbackFn()">sqliteRollbackCallbackFn</a>, <a href="Poco.Data.SQLite.Notifier.html#3686" title="Poco::Data::SQLite::Notifier::sqliteUpdateCallbackFn()">sqliteUpdateCallbackFn</a>, <a href="Poco.Data.SQLite.Notifier.html#3677" title="Poco::Data::SQLite::Notifier::updateEnabled()">updateEnabled</a></p>
+<h2>Types</h2>
+<h3><a id="3657">EnabledEventType</a></h3>
+<p class="decl">typedef unsigned char <a href="Poco.Data.SQLite.Notifier.html#3657" title="Poco::Data::SQLite::Notifier::EnabledEventType">EnabledEventType</a>;</p>
+<div class="description">
+<p>A type definition for events-enabled bitmap. </p>
+</div>
+<h3><a id="3658">Event</a></h3>
+<p class="decl">typedef <a href="Poco.BasicEvent.html" title="class Poco::BasicEvent">Poco::BasicEvent</a> &lt; void &gt; <a href="Poco.Data.SQLite.Notifier.html#3658" title="Poco::Data::SQLite::Notifier::Event">Event</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Constructors</h2>
+<h3><a id="3667">Notifier</a></h3>
+<p class="decl"><a href="Poco.Data.SQLite.Notifier.html" title="class Poco::Data::SQLite::Notifier">Notifier</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Data.Session.html" title="class Poco::Data::Session">Session</a> &amp; session,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Data.SQLite.Notifier.html#3657" title="Poco::Data::SQLite::Notifier::EnabledEventType">EnabledEventType</a> enabled = SQLITE_NOTIFY_UPDATE | SQLITE_NOTIFY_COMMIT | SQLITE_NOTIFY_ROLLBACK<br />);</p>
+<div class="description">
+<p>Creates a <a href="Poco.Data.SQLite.Notifier.html" title="class Poco::Data::SQLite::Notifier">Notifier</a> and enables all callbacks. </p>
+</div>
+<h3><a id="3670">Notifier</a></h3>
+<p class="decl"><a href="Poco.Data.SQLite.Notifier.html" title="class Poco::Data::SQLite::Notifier">Notifier</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Data.Session.html" title="class Poco::Data::Session">Session</a> &amp; session,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Any.html" title="class Poco::Any">Any</a> &amp; value,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Data.SQLite.Notifier.html#3657" title="Poco::Data::SQLite::Notifier::EnabledEventType">EnabledEventType</a> enabled = SQLITE_NOTIFY_UPDATE | SQLITE_NOTIFY_COMMIT | SQLITE_NOTIFY_ROLLBACK<br />);</p>
+<div class="description">
+<p>Creates a <a href="Poco.Data.SQLite.Notifier.html" title="class Poco::Data::SQLite::Notifier">Notifier</a>, assigns the value to the internal storage and and enables all callbacks. </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="3674">~Notifier</a></h3>
+<p class="decl">~<a href="Poco.Data.SQLite.Notifier.html" title="class Poco::Data::SQLite::Notifier">Notifier</a>();</p>
+<div class="description">
+<p>Disables all callbacks and destroys the <a href="Poco.Data.SQLite.Notifier.html" title="class Poco::Data::SQLite::Notifier">Notifier</a>. </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="3680">commitEnabled</a></h3>
+<p class="decl">bool commitEnabled() const;</p>
+<div class="description">
+<p>Returns true if update callbacks are enabled, false otherwise. </p>
+</div>
+<h3><a id="3685">disableAll</a></h3>
+<p class="decl">bool disableAll();</p>
+<div class="description">
+<p>Disables all callbacks. </p>
+</div>
+<h3><a id="3679">disableCommit</a></h3>
+<p class="decl">bool disableCommit();</p>
+<div class="description">
+<p>Disables commit callbacks. </p>
+</div>
+<h3><a id="3682">disableRollback</a></h3>
+<p class="decl">bool disableRollback();</p>
+<div class="description">
+<p>Disables rollback callbacks. </p>
+</div>
+<h3><a id="3676">disableUpdate</a></h3>
+<p class="decl">bool disableUpdate();</p>
+<div class="description">
+<p>Disables update callbacks. </p>
+</div>
+<h3><a id="3684">enableAll</a></h3>
+<p class="decl">bool enableAll();</p>
+<div class="description">
+<p>Enables all callbacks. </p>
+</div>
+<h3><a id="3678">enableCommit</a></h3>
+<p class="decl">bool enableCommit();</p>
+<div class="description">
+<p>Enables commit callbacks. </p>
+</div>
+<h3><a id="3681">enableRollback</a></h3>
+<p class="decl">bool enableRollback();</p>
+<div class="description">
+<p>Enables rollback callbacks. </p>
+</div>
+<h3><a id="3675">enableUpdate</a></h3>
+<p class="decl">bool enableUpdate();</p>
+<div class="description">
+<p>Enables update callbacks. </p>
+</div>
+<h3><a id="3698">getRow</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.html#18384" title="Poco::Int64">Poco::Int64</a> getRow() const;</p>
+<div class="description">
+<p>Returns the row number. </p>
+</div>
+<h3><a id="3701">getValue</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">const <a href="Poco.Dynamic.Var.html" title="class Poco::Dynamic::Var">Poco::Dynamic::Var</a> &amp; getValue() const;</p>
+<div class="description">
+<p>Returns the value. </p>
+</div>
+<h3><a id="3696">operator ==</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool operator == (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Data.SQLite.Notifier.html" title="class Poco::Data::SQLite::Notifier">Notifier</a> &amp; other<br />) const;</p>
+<div class="description">
+<p>Equality operator. Compares value, row and database handles and returns true if and only if all are equal. </p>
+</div>
+<h3><a id="3683">rollbackEnabled</a></h3>
+<p class="decl">bool rollbackEnabled() const;</p>
+<div class="description">
+<p>Returns true if rollback callbacks are enabled, false otherwise. </p>
+</div>
+<h3><a id="3699">setRow</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void setRow(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.html#18384" title="Poco::Int64">Poco::Int64</a> row<br />);</p>
+<div class="description">
+<p>Sets the row number. </p>
+</div>
+<h3><a id="3702">setValue</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">template &lt; typename T &gt; inline void setValue(<br />&nbsp;&nbsp;&nbsp;&nbsp;const T &amp; val<br />);</p>
+<div class="description">
+<p>Sets the value. </p>
+</div>
+<h3><a id="3692">sqliteCommitCallbackFn</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static int sqliteCommitCallbackFn(<br />&nbsp;&nbsp;&nbsp;&nbsp;void * pVal<br />);</p>
+<div class="description">
+<p>Commit callback event dispatcher. If an exception occurs, it is catched inside this function, non-zero value is returned, which causes <a href="Poco.Data.SQLite.html" title="namespace Poco::Data::SQLite">SQLite</a> engine to turn commit into a rollback. Therefore, callers should check for return value - if it is zero, callback completed succesfuly and transaction was committed. </p>
+</div>
+<h3><a id="3694">sqliteRollbackCallbackFn</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static void sqliteRollbackCallbackFn(<br />&nbsp;&nbsp;&nbsp;&nbsp;void * pVal<br />);</p>
+<div class="description">
+<p>Rollback callback event dispatcher. </p>
+</div>
+<h3><a id="3686">sqliteUpdateCallbackFn</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static void sqliteUpdateCallbackFn(<br />&nbsp;&nbsp;&nbsp;&nbsp;void * pVal,<br />&nbsp;&nbsp;&nbsp;&nbsp;int opCode,<br />&nbsp;&nbsp;&nbsp;&nbsp;const char * pDB,<br />&nbsp;&nbsp;&nbsp;&nbsp;const char * pTable,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.html#18384" title="Poco::Int64">Poco::Int64</a> row<br />);</p>
+<div class="description">
+<p>Update callback event dispatcher. Determines the type of the event, updates the row number  and triggers the event. </p>
+</div>
+<h3><a id="3677">updateEnabled</a></h3>
+<p class="decl">bool updateEnabled() const;</p>
+<div class="description">
+<p>Returns true if update callbacks are enabled, false otherwise. </p>
+</div>
+<h2>Variables</h2>
+<h3><a id="3665">SQLITE_NOTIFY_COMMIT</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static const <a href="Poco.Data.SQLite.Notifier.html#3657" title="Poco::Data::SQLite::Notifier::EnabledEventType">EnabledEventType</a> <a href="Poco.Data.SQLite.Notifier.html#3665" title="Poco::Data::SQLite::Notifier::SQLITE_NOTIFY_COMMIT">SQLITE_NOTIFY_COMMIT</a> = 2;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="3666">SQLITE_NOTIFY_ROLLBACK</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static const <a href="Poco.Data.SQLite.Notifier.html#3657" title="Poco::Data::SQLite::Notifier::EnabledEventType">EnabledEventType</a> <a href="Poco.Data.SQLite.Notifier.html#3666" title="Poco::Data::SQLite::Notifier::SQLITE_NOTIFY_ROLLBACK">SQLITE_NOTIFY_ROLLBACK</a> = 4;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="3664">SQLITE_NOTIFY_UPDATE</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static const <a href="Poco.Data.SQLite.Notifier.html#3657" title="Poco::Data::SQLite::Notifier::EnabledEventType">EnabledEventType</a> <a href="Poco.Data.SQLite.Notifier.html#3664" title="Poco::Data::SQLite::Notifier::SQLITE_NOTIFY_UPDATE">SQLITE_NOTIFY_UPDATE</a> = 1;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="3662">commit</a></h3>
+<p class="decl"><a href="Poco.Data.SQLite.Notifier.html#3658" title="Poco::Data::SQLite::Notifier::Event">Event</a> commit;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="3661">erase</a></h3>
+<p class="decl"><a href="Poco.Data.SQLite.Notifier.html#3658" title="Poco::Data::SQLite::Notifier::Event">Event</a> erase;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="3660">insert</a></h3>
+<p class="decl"><a href="Poco.Data.SQLite.Notifier.html#3658" title="Poco::Data::SQLite::Notifier::Event">Event</a> insert;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="3663">rollback</a></h3>
+<p class="decl"><a href="Poco.Data.SQLite.Notifier.html#3658" title="Poco::Data::SQLite::Notifier::Event">Event</a> rollback;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="3659">update</a></h3>
+<p class="decl"><a href="Poco.Data.SQLite.Notifier.html#3658" title="Poco::Data::SQLite::Notifier::Event">Event</a> update;</p>
+<div class="description">
+<p></p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

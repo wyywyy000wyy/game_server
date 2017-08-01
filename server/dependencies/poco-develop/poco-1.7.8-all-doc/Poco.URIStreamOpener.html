@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::URIStreamOpener</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.html" class="namespace">Poco</a></h1>
+<h1 class="symbol">class URIStreamOpener</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Foundation" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Foundation<br />
+<b>Package:</b> URI<br />
+<b>Header:</b> Poco/URIStreamOpener.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>The <a href="Poco.URIStreamOpener.html" title="class Poco::URIStreamOpener">URIStreamOpener</a> class is used to create and open input streams for resourced identified by Uniform Resource Identifiers. </p>
+<p>For every <a href="Poco.URI.html" title="class Poco::URI">URI</a> scheme used, a <a href="Poco.URIStreamFactory.html" title="class Poco::URIStreamFactory">URIStreamFactory</a> must be registered. A <a href="Poco.FileStreamFactory.html" title="class Poco::FileStreamFactory">FileStreamFactory</a> is automatically registered for file URIs. </p>
+</div>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.URIStreamOpener.html#18581" title="Poco::URIStreamOpener::defaultOpener()">defaultOpener</a>, <a href="Poco.URIStreamOpener.html#18567" title="Poco::URIStreamOpener::open()">open</a>, <a href="Poco.URIStreamOpener.html#18582" title="Poco::URIStreamOpener::openFile()">openFile</a>, <a href="Poco.URIStreamOpener.html#18584" title="Poco::URIStreamOpener::openURI()">openURI</a>, <a href="Poco.URIStreamOpener.html#18574" title="Poco::URIStreamOpener::registerStreamFactory()">registerStreamFactory</a>, <a href="Poco.URIStreamOpener.html#18579" title="Poco::URIStreamOpener::supportsScheme()">supportsScheme</a>, <a href="Poco.URIStreamOpener.html#18577" title="Poco::URIStreamOpener::unregisterStreamFactory()">unregisterStreamFactory</a></p>
+<h2>Enumerations</h2>
+<h3><i>Anonymous</i></h3>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="18564">MAX_REDIRECTS</a> = 10</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Constructors</h2>
+<h3><a id="18565">URIStreamOpener</a></h3>
+<p class="decl"><a href="Poco.URIStreamOpener.html" title="class Poco::URIStreamOpener">URIStreamOpener</a>();</p>
+<div class="description">
+<p>Creates the <a href="Poco.URIStreamOpener.html" title="class Poco::URIStreamOpener">URIStreamOpener</a> and registers a <a href="Poco.FileStreamFactory.html" title="class Poco::FileStreamFactory">FileStreamFactory</a> for file URIs. </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="18566">~URIStreamOpener</a></h3>
+<p class="decl">~<a href="Poco.URIStreamOpener.html" title="class Poco::URIStreamOpener">URIStreamOpener</a>();</p>
+<div class="description">
+<p>Destroys the <a href="Poco.URIStreamOpener.html" title="class Poco::URIStreamOpener">URIStreamOpener</a> and deletes all registered <a href="Poco.URI.html" title="class Poco::URI">URI</a> stream factories. </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="18581">defaultOpener</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static <a href="Poco.URIStreamOpener.html" title="class Poco::URIStreamOpener">URIStreamOpener</a> &amp; defaultOpener();</p>
+<div class="description">
+<p>Returns a reference to the default <a href="Poco.URIStreamOpener.html" title="class Poco::URIStreamOpener">URIStreamOpener</a>. </p>
+</div>
+<h3><a id="18567">open</a></h3>
+<p class="decl">std::istream * open(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.URI.html" title="class Poco::URI">URI</a> &amp; uri<br />) const;</p>
+<div class="description">
+<p>Tries to create and open an input stream for the resource specified by the given uniform resource identifier. </p>
+<p>If no <a href="Poco.URIStreamFactory.html" title="class Poco::URIStreamFactory">URIStreamFactory</a> has been registered for the <a href="Poco.URI.html" title="class Poco::URI">URI</a>'s scheme, a UnknownURIScheme exception is thrown. If the stream cannot be opened for any reason, an <a href="Poco.IOException.html" title="class Poco::IOException">IOException</a> is thrown. </p>
+<p>The given <a href="Poco.URI.html" title="class Poco::URI">URI</a> must be a valid one. This excludes file system paths. </p>
+<p>Whoever calls the method is responsible for deleting the returned stream. </p>
+</div>
+<h3><a id="18569">open</a></h3>
+<p class="decl">std::istream * open(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; pathOrURI<br />) const;</p>
+<div class="description">
+<p>Tries to create and open an input stream for the resource specified by the given path or uniform resource identifier. </p>
+<p>If the stream cannot be opened for any reason, an <a href="Poco.Exception.html" title="class Poco::Exception">Exception</a> is thrown. </p>
+<p>The method first tries to interpret the given pathOrURI as an <a href="Poco.URI.html" title="class Poco::URI">URI</a>. If this fails, the pathOrURI is treated as local filesystem path. If this also fails, an exception is thrown. </p>
+<p>Whoever calls the method is responsible for deleting the returned stream. </p>
+</div>
+<h3><a id="18571">open</a></h3>
+<p class="decl">std::istream * open(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; basePathOrURI,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; pathOrURI<br />) const;</p>
+<div class="description">
+<p>Tries to create and open an input stream for the resource specified by the given path or uniform resource identifier. </p>
+<p>pathOrURI is resolved against basePathOrURI (see <a href="Poco.URI.html#18466" title="Poco::URI::resolve()">URI::resolve</a>() and <a href="Poco.Path.html#15910" title="Poco::Path::resolve()">Path::resolve</a>() for more information). </p>
+<p>If the stream cannot be opened for any reason, an <a href="Poco.Exception.html" title="class Poco::Exception">Exception</a> is thrown. </p>
+<p>Whoever calls the method is responsible for deleting the returned stream. </p>
+</div>
+<h3><a id="18574">registerStreamFactory</a></h3>
+<p class="decl">void registerStreamFactory(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; scheme,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.URIStreamFactory.html" title="class Poco::URIStreamFactory">URIStreamFactory</a> * pFactory<br />);</p>
+<div class="description">
+<p>Registers a <a href="Poco.URIStreamFactory.html" title="class Poco::URIStreamFactory">URIStreamFactory</a> for the given scheme. If another factory has already been registered for the scheme, an <a href="Poco.ExistsException.html" title="class Poco::ExistsException">ExistsException</a> is thrown. </p>
+<p>The <a href="Poco.URIStreamOpener.html" title="class Poco::URIStreamOpener">URIStreamOpener</a> takes ownership of the factory and deletes it when it is no longer needed (in other words, when the <a href="Poco.URIStreamOpener.html" title="class Poco::URIStreamOpener">URIStreamOpener</a> is deleted). </p>
+</div>
+<h3><a id="18579">supportsScheme</a></h3>
+<p class="decl">bool supportsScheme(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; scheme<br />);</p>
+<div class="description">
+<p>Returns true if and only if a <a href="Poco.URIStreamFactory.html" title="class Poco::URIStreamFactory">URIStreamFactory</a> for the given scheme has been registered. </p>
+</div>
+<h3><a id="18577">unregisterStreamFactory</a></h3>
+<p class="decl">void unregisterStreamFactory(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; scheme<br />);</p>
+<div class="description">
+<p>Unregisters and deletes the <a href="Poco.URIStreamFactory.html" title="class Poco::URIStreamFactory">URIStreamFactory</a> for the given scheme. </p>
+<p>Throws a <a href="Poco.NotFoundException.html" title="class Poco::NotFoundException">NotFoundException</a> if no <a href="Poco.URIStreamFactory.html" title="class Poco::URIStreamFactory">URIStreamFactory</a> has been registered for the given scheme. </p>
+</div>
+<h3><a id="18582">openFile</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">std::istream * openFile(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Path.html" title="class Poco::Path">Path</a> &amp; path<br />) const;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="18584">openURI</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">std::istream * openURI(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; scheme,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.URI.html" title="class Poco::URI">URI</a> &amp; uri<br />) const;</p>
+<div class="description">
+<p></p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

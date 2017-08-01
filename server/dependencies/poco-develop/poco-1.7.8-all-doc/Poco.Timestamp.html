@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::Timestamp</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.html" class="namespace">Poco</a></h1>
+<h1 class="symbol">class Timestamp</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Foundation" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Foundation<br />
+<b>Package:</b> DateTime<br />
+<b>Header:</b> Poco/Timestamp.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>A <a href="Poco.Timestamp.html" title="class Poco::Timestamp">Timestamp</a> stores a monotonic* time value with (theoretical) microseconds resolution. Timestamps can be compared with each other and simple arithmetics are supported. </p>
+<p>[*] Note that <a href="Poco.Timestamp.html" title="class Poco::Timestamp">Timestamp</a> values are only monotonic as long as the systems's clock is monotonic as well (and not, e.g. set back due to time synchronization or other reasons). </p>
+<p>Timestamps are UTC (Coordinated Universal Time) based and thus independent of the timezone in effect on the system. </p>
+<p>The internal reference time is the Unix epoch,  midnight, January 1, 1970. </p>
+</div>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.Timestamp.html#18216" title="Poco::Timestamp::elapsed()">elapsed</a>, <a href="Poco.Timestamp.html#18215" title="Poco::Timestamp::epochMicroseconds()">epochMicroseconds</a>, <a href="Poco.Timestamp.html#18213" title="Poco::Timestamp::epochTime()">epochTime</a>, <a href="Poco.Timestamp.html#18220" title="Poco::Timestamp::fromEpochTime()">fromEpochTime</a>, <a href="Poco.Timestamp.html#18222" title="Poco::Timestamp::fromUtcTime()">fromUtcTime</a>, <a href="Poco.Timestamp.html#18217" title="Poco::Timestamp::isElapsed()">isElapsed</a>, <a href="Poco.Timestamp.html#18185" title="Poco::Timestamp::operator !=()">operator&nbsp;!=</a>, <a href="Poco.Timestamp.html#18195" title="Poco::Timestamp::operator +()">operator&nbsp;+</a>, <a href="Poco.Timestamp.html#18205" title="Poco::Timestamp::operator +=()">operator&nbsp;+=</a>, <a href="Poco.Timestamp.html#18199" title="Poco::Timestamp::operator -()">operator&nbsp;-</a>, <a href="Poco.Timestamp.html#18209" title="Poco::Timestamp::operator -=()">operator&nbsp;-=</a>, <a href="Poco.Timestamp.html#18191" title="Poco::Timestamp::operator <()">operator&nbsp;&lt;</a>, <a href="Poco.Timestamp.html#18193" title="Poco::Timestamp::operator <=()">operator&nbsp;&lt;=</a>, <a href="Poco.Timestamp.html#18176" title="Poco::Timestamp::operator =()">operator&nbsp;=</a>, <a href="Poco.Timestamp.html#18183" title="Poco::Timestamp::operator ==()">operator&nbsp;==</a>, <a href="Poco.Timestamp.html#18187" title="Poco::Timestamp::operator >()">operator&nbsp;&gt;</a>, <a href="Poco.Timestamp.html#18189" title="Poco::Timestamp::operator >=()">operator&nbsp;&gt;=</a>, <a href="Poco.Timestamp.html#18219" title="Poco::Timestamp::raw()">raw</a>, <a href="Poco.Timestamp.html#18224" title="Poco::Timestamp::resolution()">resolution</a>, <a href="Poco.Timestamp.html#18180" title="Poco::Timestamp::swap()">swap</a>, <a href="Poco.Timestamp.html#18182" title="Poco::Timestamp::update()">update</a>, <a href="Poco.Timestamp.html#18214" title="Poco::Timestamp::utcTime()">utcTime</a></p>
+<h2>Types</h2>
+<h3><a id="18167">TimeDiff</a></h3>
+<p class="decl">typedef <a href="Poco.html#18384" title="Poco::Int64">Int64</a> <a href="Poco.Timestamp.html#18167" title="Poco::Timestamp::TimeDiff">TimeDiff</a>;</p>
+<div class="description">
+<p>Difference between two <a href="Poco.Timestamp.html#18165" title="Poco::Timestamp::TimeVal">TimeVal</a> values in microseconds. </p>
+</div>
+<h3><a id="18165">TimeVal</a></h3>
+<p class="decl">typedef <a href="Poco.html#18384" title="Poco::Int64">Int64</a> <a href="Poco.Timestamp.html#18165" title="Poco::Timestamp::TimeVal">TimeVal</a>;</p>
+<div class="description">
+<p>Monotonic UTC time value in microsecond resolution, with base time midnight, January 1, 1970. </p>
+</div>
+<h3><a id="18166">UtcTimeVal</a></h3>
+<p class="decl">typedef <a href="Poco.html#18384" title="Poco::Int64">Int64</a> <a href="Poco.Timestamp.html#18166" title="Poco::Timestamp::UtcTimeVal">UtcTimeVal</a>;</p>
+<div class="description">
+<p>Monotonic UTC time value in 100 nanosecond resolution, with base time midnight, October 15, 1582. </p>
+</div>
+<h2>Constructors</h2>
+<h3><a id="18170">Timestamp</a></h3>
+<p class="decl"><a href="Poco.Timestamp.html" title="class Poco::Timestamp">Timestamp</a>();</p>
+<div class="description">
+<p>Creates a timestamp with the current time. </p>
+</div>
+<h3><a id="18171">Timestamp</a></h3>
+<p class="decl"><a href="Poco.Timestamp.html" title="class Poco::Timestamp">Timestamp</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Timestamp.html#18165" title="Poco::Timestamp::TimeVal">TimeVal</a> tv<br />);</p>
+<div class="description">
+<p>Creates a timestamp from the given time value (microseconds since midnight, January 1, 1970). </p>
+</div>
+<h3><a id="18173">Timestamp</a></h3>
+<p class="decl"><a href="Poco.Timestamp.html" title="class Poco::Timestamp">Timestamp</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Timestamp.html" title="class Poco::Timestamp">Timestamp</a> &amp; other<br />);</p>
+<div class="description">
+<p>Copy constructor. </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="18175">~Timestamp</a></h3>
+<p class="decl">~<a href="Poco.Timestamp.html" title="class Poco::Timestamp">Timestamp</a>();</p>
+<div class="description">
+<p>Destroys the timestamp </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="18216">elapsed</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Timestamp.html#18167" title="Poco::Timestamp::TimeDiff">TimeDiff</a> elapsed() const;</p>
+<div class="description">
+<p>Returns the time elapsed since the time denoted by the timestamp. Equivalent to <a href="Poco.Timestamp.html" title="class Poco::Timestamp">Timestamp</a>() - *this. </p>
+</div>
+<h3><a id="18215">epochMicroseconds</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Timestamp.html#18165" title="Poco::Timestamp::TimeVal">TimeVal</a> epochMicroseconds() const;</p>
+<div class="description">
+<p>Returns the timestamp expressed in microseconds since the Unix epoch, midnight, January 1, 1970. </p>
+</div>
+<h3><a id="18213">epochTime</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">std::time_t epochTime() const;</p>
+<div class="description">
+<p>Returns the timestamp expressed in time_t. time_t base time is midnight, January 1, 1970. Resolution is one second. </p>
+</div>
+<h3><a id="18220">fromEpochTime</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static <a href="Poco.Timestamp.html" title="class Poco::Timestamp">Timestamp</a> fromEpochTime(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::time_t t<br />);</p>
+<div class="description">
+<p>Creates a timestamp from a std::time_t. </p>
+</div>
+<h3><a id="18222">fromUtcTime</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static <a href="Poco.Timestamp.html" title="class Poco::Timestamp">Timestamp</a> fromUtcTime(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Timestamp.html#18166" title="Poco::Timestamp::UtcTimeVal">UtcTimeVal</a> val<br />);</p>
+<div class="description">
+<p>Creates a timestamp from a UTC time value (100 nanosecond intervals since midnight, October 15, 1582). </p>
+</div>
+<h3><a id="18217">isElapsed</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool isElapsed(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Timestamp.html#18167" title="Poco::Timestamp::TimeDiff">TimeDiff</a> interval<br />) const;</p>
+<div class="description">
+<p>Returns true if and only if the given interval has passed since the time denoted by the timestamp. </p>
+</div>
+<h3><a id="18185">operator !=</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool operator != (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Timestamp.html" title="class Poco::Timestamp">Timestamp</a> &amp; ts<br />) const;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="18195">operator +</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Timestamp.html" title="class Poco::Timestamp">Timestamp</a> operator + (<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Timestamp.html#18167" title="Poco::Timestamp::TimeDiff">TimeDiff</a> d<br />) const;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="18197">operator +</a></h3>
+<p class="decl"><a href="Poco.Timestamp.html" title="class Poco::Timestamp">Timestamp</a> operator + (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Timespan.html" title="class Poco::Timespan">Timespan</a> &amp; span<br />) const;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="18205">operator +=</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Timestamp.html" title="class Poco::Timestamp">Timestamp</a> &amp; operator += (<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Timestamp.html#18167" title="Poco::Timestamp::TimeDiff">TimeDiff</a> d<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="18207">operator +=</a></h3>
+<p class="decl"><a href="Poco.Timestamp.html" title="class Poco::Timestamp">Timestamp</a> &amp; operator += (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Timespan.html" title="class Poco::Timespan">Timespan</a> &amp; span<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="18199">operator -</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Timestamp.html" title="class Poco::Timestamp">Timestamp</a> operator - (<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Timestamp.html#18167" title="Poco::Timestamp::TimeDiff">TimeDiff</a> d<br />) const;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="18201">operator -</a></h3>
+<p class="decl"><a href="Poco.Timestamp.html" title="class Poco::Timestamp">Timestamp</a> operator - (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Timespan.html" title="class Poco::Timespan">Timespan</a> &amp; span<br />) const;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="18203">operator -</a></h3>
+<p class="decl"><a href="Poco.Timestamp.html#18167" title="Poco::Timestamp::TimeDiff">TimeDiff</a> operator - (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Timestamp.html" title="class Poco::Timestamp">Timestamp</a> &amp; ts<br />) const;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="18209">operator -=</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Timestamp.html" title="class Poco::Timestamp">Timestamp</a> &amp; operator -= (<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Timestamp.html#18167" title="Poco::Timestamp::TimeDiff">TimeDiff</a> d<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="18211">operator -=</a></h3>
+<p class="decl"><a href="Poco.Timestamp.html" title="class Poco::Timestamp">Timestamp</a> &amp; operator -= (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Timespan.html" title="class Poco::Timespan">Timespan</a> &amp; span<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="18191">operator &lt;</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool operator &lt; (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Timestamp.html" title="class Poco::Timestamp">Timestamp</a> &amp; ts<br />) const;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="18193">operator &lt;=</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool operator &lt;= (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Timestamp.html" title="class Poco::Timestamp">Timestamp</a> &amp; ts<br />) const;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="18176">operator =</a></h3>
+<p class="decl"><a href="Poco.Timestamp.html" title="class Poco::Timestamp">Timestamp</a> &amp; operator = (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Timestamp.html" title="class Poco::Timestamp">Timestamp</a> &amp; other<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="18178">operator =</a></h3>
+<p class="decl"><a href="Poco.Timestamp.html" title="class Poco::Timestamp">Timestamp</a> &amp; operator = (<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Timestamp.html#18165" title="Poco::Timestamp::TimeVal">TimeVal</a> tv<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="18183">operator ==</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool operator == (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Timestamp.html" title="class Poco::Timestamp">Timestamp</a> &amp; ts<br />) const;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="18187">operator &gt;</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool operator &gt; (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Timestamp.html" title="class Poco::Timestamp">Timestamp</a> &amp; ts<br />) const;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="18189">operator &gt;=</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool operator &gt;= (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Timestamp.html" title="class Poco::Timestamp">Timestamp</a> &amp; ts<br />) const;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="18219">raw</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Timestamp.html#18165" title="Poco::Timestamp::TimeVal">TimeVal</a> raw() const;</p>
+<div class="description">
+<p>Returns the raw time value. </p>
+<p>Same as <a href="Poco.Timestamp.html#18215" title="Poco::Timestamp::epochMicroseconds()">epochMicroseconds</a>(). </p>
+</div>
+<h3><a id="18224">resolution</a> <img src="images/static.png" alt="static" title="static" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">static <a href="Poco.Timestamp.html#18167" title="Poco::Timestamp::TimeDiff">TimeDiff</a> resolution();</p>
+<div class="description">
+<p>Returns the resolution in units per second. Since the timestamp has microsecond resolution, the returned value is always 1000000. </p>
+</div>
+<h3><a id="18180">swap</a></h3>
+<p class="decl">void swap(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Timestamp.html" title="class Poco::Timestamp">Timestamp</a> &amp; timestamp<br />);</p>
+<div class="description">
+<p>Swaps the <a href="Poco.Timestamp.html" title="class Poco::Timestamp">Timestamp</a> with another one. </p>
+</div>
+<h3><a id="18182">update</a></h3>
+<p class="decl">void update();</p>
+<div class="description">
+<p>Updates the <a href="Poco.Timestamp.html" title="class Poco::Timestamp">Timestamp</a> with the current time. </p>
+</div>
+<h3><a id="18214">utcTime</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Timestamp.html#18166" title="Poco::Timestamp::UtcTimeVal">UtcTimeVal</a> utcTime() const;</p>
+<div class="description">
+<p>Returns the timestamp expressed in UTC-based time. UTC base time is midnight, October 15, 1582. Resolution is 100 nanoseconds. </p>
+</div>
+<h2>Variables</h2>
+<h3><a id="18169">TIMEVAL_MAX</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static const <a href="Poco.Timestamp.html#18165" title="Poco::Timestamp::TimeVal">TimeVal</a> <a href="Poco.Timestamp.html#18169" title="Poco::Timestamp::TIMEVAL_MAX">TIMEVAL_MAX</a>;</p>
+<div class="description">
+<p>Maximum timestamp value. </p>
+</div>
+<h3><a id="18168">TIMEVAL_MIN</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static const <a href="Poco.Timestamp.html#18165" title="Poco::Timestamp::TimeVal">TimeVal</a> <a href="Poco.Timestamp.html#18168" title="Poco::Timestamp::TIMEVAL_MIN">TIMEVAL_MIN</a>;</p>
+<div class="description">
+<p>Minimum timestamp value. </p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

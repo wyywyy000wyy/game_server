@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::Crypto::CryptoIOS</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.Crypto.html" class="namespace">Poco::Crypto</a></h1>
+<h1 class="symbol">class CryptoIOS</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Crypto" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Crypto<br />
+<b>Package:</b> Cipher<br />
+<b>Header:</b> Poco/Crypto/CryptoStream.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>The base class for <a href="Poco.Crypto.CryptoInputStream.html" title="class Poco::Crypto::CryptoInputStream">CryptoInputStream</a> and <a href="Poco.Crypto.CryptoOutputStream.html" title="class Poco::Crypto::CryptoOutputStream">CryptoOutputStream</a>. </p>
+<p>This class is needed to ensure correct initialization order of the stream buffer and base classes. </p>
+</div>
+<h2>Inheritance</h2>
+<p><b>Direct Base Classes: </b>std::ios</p>
+<p><b>All Base Classes: </b>std::ios</p>
+<p><b>Known Derived Classes: </b><a href="Poco.Crypto.CryptoInputStream.html" title="class Poco::Crypto::CryptoInputStream">CryptoInputStream</a>, <a href="Poco.Crypto.CryptoOutputStream.html" title="class Poco::Crypto::CryptoOutputStream">CryptoOutputStream</a>, <a href="Poco.Crypto.DecryptingInputStream.html" title="class Poco::Crypto::DecryptingInputStream">DecryptingInputStream</a>, <a href="Poco.Crypto.DecryptingOutputStream.html" title="class Poco::Crypto::DecryptingOutputStream">DecryptingOutputStream</a>, <a href="Poco.Crypto.EncryptingInputStream.html" title="class Poco::Crypto::EncryptingInputStream">EncryptingInputStream</a>, <a href="Poco.Crypto.EncryptingOutputStream.html" title="class Poco::Crypto::EncryptingOutputStream">EncryptingOutputStream</a></p>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.Crypto.CryptoIOS.html#177" title="Poco::Crypto::CryptoIOS::rdbuf()">rdbuf</a></p>
+<h2>Constructors</h2>
+<h3><a id="168">CryptoIOS</a></h3>
+<p class="decl"><a href="Poco.Crypto.CryptoIOS.html" title="class Poco::Crypto::CryptoIOS">CryptoIOS</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::istream &amp; istr,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Crypto.CryptoTransform.html" title="class Poco::Crypto::CryptoTransform">CryptoTransform</a> * pTransform,<br />&nbsp;&nbsp;&nbsp;&nbsp;std::streamsize bufferSize = 8192<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="172">CryptoIOS</a></h3>
+<p class="decl"><a href="Poco.Crypto.CryptoIOS.html" title="class Poco::Crypto::CryptoIOS">CryptoIOS</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::ostream &amp; ostr,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Crypto.CryptoTransform.html" title="class Poco::Crypto::CryptoTransform">CryptoTransform</a> * pTransform,<br />&nbsp;&nbsp;&nbsp;&nbsp;std::streamsize bufferSize = 8192<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="176">~CryptoIOS</a></h3>
+<p class="decl">~<a href="Poco.Crypto.CryptoIOS.html" title="class Poco::Crypto::CryptoIOS">CryptoIOS</a>();</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="177">rdbuf</a></h3>
+<p class="decl"><a href="Poco.Crypto.CryptoStreamBuf.html" title="class Poco::Crypto::CryptoStreamBuf">CryptoStreamBuf</a> * rdbuf();</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Variables</h2>
+<h3><a id="178">_buf</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Crypto.CryptoStreamBuf.html" title="class Poco::Crypto::CryptoStreamBuf">CryptoStreamBuf</a> _buf;</p>
+<div class="description">
+<p></p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>POCO Data User Guide</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="category">POCO Data Library</h1>
+<h1 class="title">POCO Data User Guide</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=category-POCO Data Library" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<div class="toc">
+<ul class="collapsibleList"><li>Contents
+<ul>
+<li class="level1"><a href="#0">First Steps</a>
+</li>
+<li class="level1"><a href="#1">Creating Sessions</a>
+</li>
+<li class="level1"><a href="#2">Inserting and Retrieving Data</a>
+<ul>
+<li class="level2"><a href="#3">Single Data Sets</a>
+</li>
+<li class="level2"><a href="#4">Handling NULL entries</a>
+</li>
+<li class="level2"><a href="#5">Multiple Data Sets</a>
+<ul>
+<li class="level3"><a href="#6">Note</a>
+</li>
+</ul></li>
+<li class="level2"><a href="#7">Now</a>
+</li>
+<li class="level2"><a href="#8">Stored Procedures And Functions Support</a>
+</li>
+<li class="level2"><a href="#9">A Word of Warning</a>
+</li>
+</ul></li>
+<li class="level1"><a href="#10">Statements</a>
+<ul>
+<li class="level2"><a href="#11">Prepared Statements</a>
+</li>
+<li class="level2"><a href="#12">Asynchronous Execution</a>
+<ul>
+<li class="level3"><a href="#13">Note</a>
+</li>
+<li class="level3"><a href="#14">A Word of Warning</a>
+</li>
+</ul></li>
+<li class="level2"><a href="#15">Things NOT To Do</a>
+</li>
+<li class="level2"><a href="#16">Things TO Do</a>
+</li>
+</ul></li>
+<li class="level1"><a href="#17">STL Containers</a>
+<ul>
+<li class="level2"><a href="#18">Things NOT To Do</a>
+</li>
+</ul></li>
+<li class="level1"><a href="#19">Tuples</a>
+</li>
+<li class="level1"><a href="#20">Limits and Ranges</a>
+<ul>
+<li class="level2"><a href="#21">Limit</a>
+</li>
+<li class="level2"><a href="#22">Range</a>
+</li>
+</ul></li>
+<li class="level1"><a href="#23">Bulk</a>
+<ul>
+<li class="level2"><a href="#24">Usage Notes</a>
+</li>
+<li class="level2"><a href="#25">Important Considerations</a>
+</li>
+</ul></li>
+<li class="level1"><a href="#26">RecordSets, Iterators and Rows</a>
+</li>
+<li class="level1"><a href="#27">Complex Data Types</a>
+</li>
+<li class="level1"><a href="#28">Session Pooling</a>
+</li>
+<li class="level1"><a href="#29">Conclusion</a>
+</li></ul>
+</li></ul>
+</div>
+<div class="description">
+<p></p><h2><a id="0">First Steps</a></h2><p>
+</p>
+<p>POCO Data is POCO's database abstraction layer which allows users to easily send/retrieve data to/from various databases. Currently supported database connectors are SQLite, MySQL and ODBC. Framework is opened for extension, so additional native connectors (Oracle, PostgreSQL, ...) can be added. The intent behind the <a href="Poco.Data.html" title="namespace Poco::Data">Poco::Data</a> framework is to produce the integration between C++ and relational databses in a simple and natural way. </p>
+<p>The following complete example shows how to use POCO Data: </p>
+<p></p>
+<pre>#include &quot;Poco/Data/Session.h&quot;
+#include &quot;Poco/Data/SQLite/Connector.h&quot;
+#include &lt;vector&gt;
+#include &lt;iostream&gt;
+
+using namespace Poco::Data::Keywords;
+using Poco::Data::Session;
+using Poco::Data::Statement;
+
+struct Person
+{
+    std::string name;
+    std::string address;
+    int         age;
+};
+
+int main(int argc, char** argv)
+{
+    // register SQLite connector
+    Poco::Data::SQLite::Connector::registerConnector();
+
+    // create a session
+    Session session(&quot;SQLite&quot;, &quot;sample.db&quot;);
+
+    // drop sample table, if it exists
+    session &lt;&lt; &quot;DROP TABLE IF EXISTS Person&quot;, now;
+
+    // (re)create table
+    session &lt;&lt; &quot;CREATE TABLE Person (Name VARCHAR(30), Address VARCHAR, Age INTEGER(3))&quot;, now;
+
+    // insert some rows
+    Person person = 
+    {
+        &quot;Bart Simpson&quot;,
+        &quot;Springfield&quot;,
+        12
+    };
+
+    Statement insert(session);
+    insert &lt;&lt; &quot;INSERT INTO Person VALUES(?, ?, ?)&quot;,
+        use(person.name),
+        use(person.address),
+        use(person.age);
+
+    insert.execute();
+
+    person.name    = &quot;Lisa Simpson&quot;;
+    person.address = &quot;Springfield&quot;;
+    person.age     = 10;
+
+    insert.execute();
+
+    // a simple query
+    Statement select(session);
+    select &lt;&lt; &quot;SELECT Name, Address, Age FROM Person&quot;,
+        into(person.name),
+        into(person.address),
+        into(person.age),
+        range(0, 1); //  iterate over result set one row at a time
+
+    while (!select.done())
+    {
+        select.execute();
+        std::cout &lt;&lt; person.name &lt;&lt; &quot; &quot; &lt;&lt; person.address &lt;&lt; &quot; &quot; &lt;&lt; person.age &lt;&lt; std::endl;
+    }
+
+    return 0;
+}
+</pre>
+<p> </p>
+<p>The above example is pretty much self explanatory.  </p>
+<p>The <tt>using namespace <a href="Poco.Data.html" title="namespace Poco::Data">Poco::Data</a> </tt> is for convenience only but highly recommended for good readable code. While <tt>ses &lt;&lt; &quot;SELECT COUNT(*) FROM PERSON&quot;, <a href="Poco.Data.Keywords.html#5730" title="Poco::Data::Keywords::into()">Poco::Data::Keywords::into</a>(count), <a href="Poco.Data.Keywords.html#7442" title="Poco::Data::Keywords::now()">Poco::Data::Keywords::now</a>;</tt>  is valid, the aesthetic aspect of the code is improved by eliminating the need for full namespace qualification; this document uses convention introduced in  the example above. </p>
+<p>The remainder of this tutorial is split up into the following parts: </p>
+<p></p>
+<ul>
+<li>Sessions </li>
+<li>Inserting and Retrieving Data </li>
+<li>Statements </li>
+<li>STL Containers </li>
+<li>Tuples </li>
+<li>Limits, Ranges and Steps </li>
+<li><tt>RecordSets</tt>, Iterators and Rows </li>
+<li>Complex data types: how to map C++ objects to a database table </li>
+<li>Conclusion </li>
+</ul>
+<p></p>
+<p></p><h2><a id="1">Creating Sessions</a></h2><p>
+</p>
+<p>Sessions are created via the Session constructor: </p>
+<p></p>
+<pre>Session session(&quot;SQLite&quot;, &quot;sample.db&quot;);
+</pre>
+<p> </p>
+<p>The first parameter contains the type of the Session one wants to create. Currently, supported backends are &quot;SQLite&quot;, &quot;ODBC&quot; and &quot;MySQL&quot;. The second parameter contains the connection string. </p>
+<p>In the case of SQLite, the path of the database file is sufficient as connection string. </p>
+<p>For ODBC, the connection string may be a simple &quot;DSN=MyDSNName&quot; when a DSN is configured or  a complete ODBC driver-specific connection string defining all the necessary connection parameters  (for details, consult your ODBC driver documentation).  </p>
+<p>For MySQL, the connection string is a semicolon-delimited list of name-value pairs  specifying various parameters like host, port, user, password, database, compression and  automatic reconnect. Example: <tt>&quot;host=localhost;port=3306;db=mydb;user=alice;password=s3cr3t;compress=true;auto-reconnect=true&quot;</tt> </p>
+<p></p>
+<p></p><h2><a id="2">Inserting and Retrieving Data</a></h2><p>
+</p>
+<p></p><h3><a id="3">Single Data Sets</a></h3><p>
+</p>
+<p>Inserting data works by <tt>using</tt> the content of other variables.  Assume we have a table that stores only forenames: </p>
+<p></p>
+<pre>ForeName (Name VARCHAR(30))
+</pre>
+<p> </p>
+<p>If we want to insert one single forename we could simply write: </p>
+<p></p>
+<pre>std::string aName(&quot;Peter&quot;);
+session &lt;&lt; &quot;INSERT INTO FORENAME VALUES(&quot; &lt;&lt; aName &lt;&lt; &quot;)&quot;, now;
+</pre>
+<p> </p>
+<p>However, a better solution is to use <i>placeholders</i> and connect each placeholder via a <tt>use</tt> expression with a variable that will provide the value during execution. Placeholders, depending on your database are recognized by having either a colon(<tt>:</tt>) in front of the name or simply by a question mark (<tt>?</tt>) as a placeholder. While having the placeholders marked with a colon followed by a human-readable name is very convenient due to readability, not all SQL dialects support this and universally accepted standard placeholder is  (<tt>?</tt>). Consult your database SQL documentation to determine the valid placeholder syntax. </p>
+<p>Rewriting the above code now simply gives: </p>
+<p></p>
+<pre>std::string aName(&quot;Peter&quot;);
+ses &lt;&lt; &quot;INSERT INTO FORENAME VALUES(?)&quot;, use(aName), now;
+</pre>
+<p> </p>
+<p>In this example the <tt>use</tt> expression matches the placeholder with the <tt>Peter</tt> value. Note that apart from the nicer syntax, the real benefits of  placeholders &mdash; which are performance and protection against SQL injection  attacks &mdash; don't show here. Check the <tt>Statements</tt> section to find out more. </p>
+<p>Retrieving data from the Database works similar. The <tt>into</tt> expression matches the returned database values to C++ objects, it also allows to provide a default value in case null data is returned from the database: </p>
+<p></p>
+<pre>std::string aName;
+ses &lt;&lt; &quot;SELECT NAME FROM FORENAME&quot;, into(aName), now;
+ses &lt;&lt; &quot;SELECT NAME FROM FORENAME&quot;, into(aName, 0, &quot;default&quot;), now;
+</pre>
+<p>You'll note the integer zero argument in the second into() call. The reason for  that is that <a href="Poco.Data.html" title="namespace Poco::Data">Poco::Data</a> supports multiple result sets for those databases/drivers  that have such capbility and we have to indicate the resultset we are referring to.  Attempting to create sufficient overloads of <tt>into()</tt> creates more trouble than  what it's worth and null values can effectively be dealt with through use of either  <a href="Poco.Nullable.html" title="class Poco::Nullable">Poco::Nullable</a> wrapper (see Handling Null Entries later in this document) or  <a href="Poco.Dynamic.Var.html" title="class Poco::Dynamic::Var">Poco::Dynamic::Var</a>, which will be set as empty for null values when used as query  output target.   </p>
+<p>It is also possible to combine into and use expressions: </p>
+<p></p>
+<pre>std::string aName;
+std::string match(&quot;Peter&quot;)
+ses &lt;&lt; &quot;SELECT NAME FROM FORENAME WHERE NAME=?&quot;, into(aName), use(match), now;
+poco_assert (aName == match);
+</pre>
+<p> </p>
+<p>Typically, tables will not be so trivial, i.e. they will have more than one column which allows for more than one into/use. </p>
+<p>Lets assume we have a Person table that contains an age, a first and a last name: </p>
+<p></p>
+<pre>std::string firstName(&quot;Peter&quot;;
+std::string lastName(&quot;Junior&quot;);
+int age = 0;
+ses &lt;&lt; INSERT INTO PERSON VALUES (?, ?, ?)&quot;, use(firstName), use(lastName), use(age), now;
+ses &lt;&lt; &quot;SELECT (firstname, lastname, age) FROM Person&quot;, into(firstName), into(lastName), into(age), now;
+</pre>
+<p> </p>
+<p>Most important here is the <b>order</b> of the into and use expressions. The first placeholder is matched by the first <tt>use</tt>, the 2nd by the 2nd <tt>use</tt> etc. </p>
+<p>The same is true for the <tt>into</tt> statement. We select <tt>firstname</tt> as the first column of the result set, thus <tt>into(firstName)</tt> must be the first into clause. </p>
+<p></p>
+<p></p><h3><a id="4">Handling NULL entries</a></h3><p>
+A common case with databases are optional data fields that can contain NULL. To accomodate for NULL, use the <a href="Poco.Nullable.html" title="class Poco::Nullable">Poco::Nullable</a> template: </p>
+<p></p>
+<pre>std::string firstName(&quot;Peter&quot;;
+Poco::Nullable&lt;std::string&gt; lastName(&quot;Junior&quot;);
+Poco::Nullable&lt;int&gt; age = 0;
+ses &lt;&lt; INSERT INTO PERSON VALUES (?, ?, ?)&quot;, use(firstName), use(lastName), use(age), now;
+ses &lt;&lt; &quot;SELECT (firstname, lastname, age) FROM Person&quot;, into(firstName), into(lastName), into(age), now;
+// now you can check if age was null:
+if (!lastName.isNull()) { ... }
+</pre>
+<p> </p>
+<p>The above used <a href="Poco.Nullable.html" title="class Poco::Nullable">Poco::Nullable</a> is a lightweight template class, wrapping any type  for the purpose of allowing it to have null value. </p>
+<p>If the returned value was null, age.isNull() will return true. Whether empty string is null or not is more of a philosophical question (a topic for discussion in some other time and place); for the purpose of this document, suffice it to say  that different databases handle it differently and <a href="Poco.Data.html" title="namespace Poco::Data">Poco::Data</a> provides a way to  tweak it to user's needs through folowing <tt>Session</tt> features: </p>
+<p></p>
+<ul>
+<li>emptyStringIsNull </li>
+<li>forceEmptyString </li>
+</ul>
+<p>So, if your database does not treat empty strings as null but you want <a href="Poco.Data.html" title="namespace Poco::Data">Poco::Data</a> to emulate such behavior, modify the session like this: </p>
+<p></p>
+<pre>ses.setFeature(&quot;emptyStringIsNull&quot;, true);
+</pre>
+<p>On the other side, if your database treats empty strings as nulls but you do not want it to, you'll alter the session feature: </p>
+<p></p>
+<pre>ses.setFeature(&quot;forceEmptyString&quot;, true);
+</pre>
+<p>Obviously, the above features are mutually exclusive; an attempt to se them both to true will result in an exception being thrown by the Data framework. </p>
+<p></p><h3><a id="5">Multiple Data Sets</a></h3><p>
+</p>
+<p>Batches of statements are supported. They return multiple sets of data, so into() call needs and additional parameter to determine which data set it belongs to: </p>
+<p></p>
+<pre>typedef Tuple&lt;std::string, std::string, std::string, int&gt; Person;
+std::vector&lt;Person&gt; people;
+Person pHomer, pLisa;
+int aHomer(42), aLisa(10), aBart(0);
+
+session &lt;&lt; &quot;SELECT * FROM Person WHERE Age = ?; &quot;
+    &quot;SELECT Age FROM Person WHERE FirstName = 'Bart'; &quot;
+    &quot;SELECT * FROM Person WHERE Age = ?&quot;,
+    into(pHomer, 0), use(aHomer),
+    into(aBart, 1),
+    into(pLisa, 2), use(aLisa),
+    now;
+</pre>
+<p> </p>
+<p></p><h4><a id="6">Note</a></h4><p>
+</p>
+<p>Batches of statements can be used, provided, of course, that the target driver and database engine properly support them. Additionally, the exact SQL syntax may vary for different databases. Stored procedures (see below) returning multiple data sets are handled in the same way. </p>
+<p></p>
+<p></p><h3><a id="7">Now</a></h3><p>
+</p>
+<p>And now, finally, a word about the <tt>now</tt> keyword. The simple description is: it is a manipulator. As it's name implies, it forces the immediate execution of the statement. If <tt>now</tt> is not present, the statement must be executed separately in order for anything interesting to happen. </p>
+<p>More on statements and manipulators in the chapters that follow. </p>
+<p></p>
+<p></p>
+<p></p><h3><a id="8">Stored Procedures And Functions Support</a></h3><p>
+</p>
+<p>Most of the modern database systems support stored procedures and/or functions. Does <a href="Poco.Data.html" title="namespace Poco::Data">Poco::Data</a> provide any support there? You bet. While the specifics on what exactly is possible (e.g. the data types passed in and out, automatic or manual data binding, binding direction,  etc.) is ultimately database dependent, POCO Data does it's best to provide reasonable access to such functionality through <tt>in</tt>, <tt>out</tt> and <tt>io</tt> binding functions. As their names imply, these functions are performing parameters binding tho pass in or receive from the stored procedures, or both. The code is worth thousand words, so here's an Oracle ODBC example: </p>
+<p></p>
+<pre>session &lt;&lt; &quot;CREATE OR REPLACE &quot;
+    &quot;FUNCTION storedFunction(param1 IN OUT NUMBER, param2 IN OUT NUMBER) RETURN NUMBER IS &quot;
+    &quot; temp NUMBER := param1; &quot;
+    &quot; BEGIN param1 := param2; param2 := temp; RETURN(param1+param2); &quot;
+    &quot; END storedFunction;&quot; , now;
+
+int i = 1, j = 2, result = 0;
+session &lt;&lt; &quot;{? = call storedFunction(?, ?)}&quot;, out(result), io(i), io(j), now; // i = 2, j = 1, result = 3
+</pre>
+<p> </p>
+<p></p>
+<p>Stored procedures are allowed to return data sets (a.k.a. cursors): </p>
+<p></p>
+<pre>typedef Tuple&lt;std::string, std::string, std::string, int&gt; Person;
+std::vector&lt;Person&gt; people;
+int age = 13;
+session &lt;&lt; &quot;CREATE OR REPLACE &quot;
+    &quot;FUNCTION storedCursorFunction(ageLimit IN NUMBER) RETURN SYS_REFCURSOR IS &quot;
+    &quot; ret SYS_REFCURSOR; &quot;
+    &quot;BEGIN &quot;
+    &quot; OPEN ret FOR &quot;
+    &quot; SELECT *  FROM Person  WHERE Age &lt; ageLimit; &quot; 
+    &quot; RETURN ret; &quot;
+    &quot;END storedCursorFunction;&quot; , now;
+
+session &lt;&lt; &quot;{call storedCursorFunction(?)}&quot;, in(age), into(people), now;
+</pre>
+<p> </p>
+<p>The code shown above works with Oracle databases. </p>
+<p></p>
+<p></p><h3><a id="9">A Word of Warning</a></h3><p>
+</p>
+<p>As you may have noticed, in the above example, C++ code works very closely with SQL statements. And, as you know, your C++ compiler has no clue what SQL is (other than a string of characters). So it is <i>your responsibility</i> to make sure your SQL statements have the proper structure that corresponds to the number and type of the supplied functions. </p>
+<p></p>
+<p></p><h2><a id="10">Statements</a></h2><p>
+</p>
+<p>We often mentioned the term <i>Statement</i> in the previous section, but with the exception of the initial example, we have only worked with database session objects so far. Or at least, that's what we made you believe. </p>
+<p>In reality, you have already worked with Statements. Lets take a look at the method signature of the &lt;&lt; operator at Session: </p>
+<p></p>
+<pre>template &lt;typename T&gt;
+Statement Session::operator &lt;&lt; (const T&amp;amp; t);
+</pre>
+<p> </p>
+<p>Simply ignore the template stuff in front, you won't need it. The only thing that counts here is that the operator  &lt;&lt;  creates a <tt>Statement</tt> internally and returns it. </p>
+<p>What happened in the previous examples is that the returned Statement was never assigned to a variable but simply passed on to the <tt>now</tt> part which executed the statement. Afterwards the statement was destroyed. </p>
+<p>Let's take one of the previous examples and change it so that we assign the statement: </p>
+<p></p>
+<pre>std::string aName(&quot;Peter&quot;);
+Statement stmt = ( ses &lt;&lt; &quot;INSERT INTO FORENAME VALUES(?)&quot;, use(aName) );
+</pre>
+<p> </p>
+<p>Note that the brackets around the right part of the assignment are mandatory, otherwise the compiler will complain. </p>
+<p>What did we achieve by assigning the statement to a variable? Two things: Control when to <tt>execute</tt> and the possibility to create a RecordSet (described in its own chapter below). </p>
+<p>Here's how we control when to actually execute the statement: </p>
+<p></p>
+<pre>std::string aName(&quot;Peter&quot;);
+Statement stmt = ( ses &lt;&lt; &quot;INSERT INTO FORENAME VALUES(?)&quot;, use(aName) );
+stmt.execute();
+poco_assert (stmt.done());
+</pre>
+<p> </p>
+<p>By calling <tt>execute</tt> we asserted that our query was executed and that the value was inserted. The check to <tt>stmt.done()</tt> simply guarantees that the  statement was fully completed.  </p>
+<p></p>
+<p></p>
+<p></p><h3><a id="11">Prepared Statements</a></h3><p>
+</p>
+<p>A prepared statement is created by omitting the &quot;now&quot; clause. </p>
+<p></p>
+<pre>Statement stmt = ( ses &lt;&lt; &quot;INSERT INTO FORENAME VALUES(?)&quot;, use(aName) );
+</pre>
+<p> </p>
+<p>The advantage of a prepared statement is performance. Assume the following loop: </p>
+<p></p>
+<pre>std::string aName;
+Statement stmt = ( ses &lt;&lt; &quot;INSERT INTO FORENAME VALUES(?)&quot;, use(aName) );
+for (int i = 0; i &lt; 100; ++i)
+{
+    aName.append(&quot;x&quot;);
+    stmt.execute();
+}
+</pre>
+<p> </p>
+<p>Instead of creating and parsing the Statement 100 times, we only do this once and then use the placeholder in combination with the <tt>use</tt> clause to insert 100 different values into the database. </p>
+<p>Still, this isn't the best way to insert a collection of values into a database. <a href="Poco.Data.html" title="namespace Poco::Data">Poco::Data</a> is STL-aware and will cooperate with STL containers to extract multiple rows from the database. More on that in the chapter titled &quot;STL Containers&quot;. </p>
+<p></p><h3><a id="12">Asynchronous Execution</a></h3><p>
+</p>
+<p>So far, the statements were executing synchronously. In other words, regardless of whether the <tt>execute()</tt> method was invoked indirectly through <tt>now</tt> manipulator or through direct method call, it did not return control to the caller until the requested execution was completed. This behavior can be changed, so that <tt>execute()</tt> returns immediately, while, in fact, it keeps on running in a separate thread. This paragraph explains how this behavior can be achieved as well as warns about the dangers associated with asynchronous execution. </p>
+<p>Asynchronous execution can be invoked on any statement, through the direct call to executeAsync() method. This method returns a <tt>const</tt> reference to <tt>Statement::Result</tt>. This reference can be used at a later time to ensure completion of the background execution and, for those statements that return rows, find out how many rows were retrieved. </p>
+<p>Here's the code: </p>
+<p></p>
+<pre>Statement stmt = (ses &lt;&lt; &quot;SELECT (firstname, lastname, age) FROM Person&quot;, into(firstName), into(lastName), into(age));
+Statement::Result result = stmt.executeAsync();
+// ... do something else
+Statement::ResultType rows = result.wait();
+</pre>
+<p> </p>
+<p>The above code did not do anything &quot;under the hood&quot; to change the statement's nature. If we call <tt>execute()</tt> afterwards, it will execute synchronously as usual. There is, however, a way (or two) to turn the statement into asynchronous mode permanently. </p>
+<p>First, there is an explicit <tt>setAync()</tt> call: </p>
+<p></p>
+<pre>Statement stmt = (ses &lt;&lt; &quot;SELECT (age) FROM Person&quot;, into(age));
+stmt.setAsync(true); // make stmt asynchronous
+stmt.execute(); // executes asynchronously
+// ... do something else
+Statement::ResultType rows = stmt.wait(); // synchronize and retrieve the number of rows
+</pre>
+<p> </p>
+<p>And, then, there is also the <tt>async</tt> manipulator that  has the same effect as the <tt>setAync(true)</tt> code above: </p>
+<p></p>
+<pre>Statement stmt = (ses &lt;&lt; &quot;SELECT (age) FROM Person&quot;, into(age), async); // asynchronous statement
+stmt.execute(); // executes asynchronously
+// ... do something else
+Statement::ResultType rows = stmt.wait();
+</pre>
+<p> </p>
+<p></p>
+<p></p><h4><a id="13">Note</a></h4><p>
+</p>
+<p>In the first example, we have received <tt>Result</tt> from the statement, while in the second two, we did not assign the return value from <tt>execute()</tt>. The <tt>Result</tt> returned from <tt>executeAsync()</tt> is also known as <tt>future</tt> &mdash; a variable holding a result that will be known at some point in future. The reason for not keeping the <tt>execute()</tt> return value is because, for asynchronous statements, <tt>execute()</tt> always returns zero. This makes sense, because it does not know the number of returned rows (remember, asynchronous <tt>execute()</tt> call returns <tt>immediately</tt> and does not wait for the completion of the execution).  </p>
+<p></p><h4><a id="14">A Word of Warning</a></h4><p>
+</p>
+<p>With power comes responsibility. When executing asynchronously, make sure to <tt>synchronize</tt> accordingly. When you fail to synchronize explicitly, you may encounter all kinds of funny things happening. Statement does internally try to protect you from harm, so the following code will <i>usually</i> throw <tt>InvalidAccessException</tt>: </p>
+<p></p>
+<pre>Statement stmt = (ses &lt;&lt; &quot;SELECT (age) FROM Person&quot;, into(age), async); // asynchronous statement
+Statement::Result result = stmt.execute(); // executes asynchronously
+stmt.execute(); // throws InvalidAccessException
+</pre>
+<p> </p>
+<p>We say &quot;usually&quot;, because it may not happen every time, depending whether the first <tt>execute()</tt> call completed in the background prior to calling the second one. Therefore, to avoid unpleasant surprises, it is highly recommended to <i>always</i> call <tt>wait()</tt> on either the statement itself or the result (value returned from <tt>executeAsync()</tt>) prior to engaging into a next attempt to execute. </p>
+<p></p>
+<p></p><h3><a id="15">Things NOT To Do</a></h3><p>
+</p>
+<p>The <tt>use</tt> keyword expects as input a <tt>reference</tt> parameter, which is bound later during execution. Thus, one should never pass temporaries to <tt>use()</tt>: </p>
+<p></p>
+<pre>Statement stmt = (ses &lt;&lt; &quot;INSERT INTO PERSON VALUES (?, ?, ?)&quot;, use(getForename()), use(getSurname()), use(getAge())); //!!!
+// do something else
+stmt.execute(); // oops!
+</pre>
+<p> </p>
+<p>It is possible to use <tt>bind()</tt> instead of <tt>use()</tt>. The <tt>bind()</tt> call will always create a copy of the supplied argument. Also, it is possible to execute a statement returning  data without supplying the storage and have the statement itself store the returned data for later retrieval through <tt>RecordSet</tt>. For details, see <tt>RecordSet</tt> chapter. </p>
+<p></p>
+<p></p><h3><a id="16">Things TO Do</a></h3><p>
+</p>
+<p>Constants, as well as naked variables (of POD and std::string types) are permitted in the comma-separated list passed to statement. The following example is valid: </p>
+<p></p>
+<pre>std::string fname = &quot;Bart&quot;;
+std::string lname = &quot;Simpson&quot;;
+int age = 42;
+Statement stmt = (ses &lt;&lt; &quot;INSERT INTO %s VALUES (?, ?, %d)&quot;, &quot;PERSON&quot;, use(fname), use(lname), 12);
+stmt.execute();
+</pre>
+<p> </p>
+<p>Placeholders for values are very similar (but not identical) to standard printf family of functions. For details refer to <tt><a href="Poco.html#12579" title="Poco::format()">Poco::format</a>()</tt> documentation. Note: If you are alarmed by mention of <tt>printf()</tt>, a well-known source of many security problems in C and C++ code, do not worry. <a href="Poco.html#12579" title="Poco::format()">Poco::format</a>() family of functions is <tt>safe</tt> (and, admittedly, slower than printf). </p>
+<p>For cases where this type of formatting is used with queries containing  the percent sign, use double percent (&quot;%%&quot;): </p>
+<p></p>
+<pre>Statement stmt = (ses &lt;&lt; &quot;SELECT * FROM %s WHERE Name LIKE 'Simp%%'&quot;, &quot;Person&quot;);
+stmt.execute();
+</pre>
+<p> </p>
+<p>yields the following SQL statement string: </p>
+<p></p>
+<pre>SELECT * FROM Person WHERE Name LIKE 'Simp%'
+</pre>
+<p> </p>
+<p></p><h2><a id="17">STL Containers</a></h2><p>
+</p>
+<p>To handle many values at once, which is a very common scenario in database access, STL containers are used. </p>
+<p>The framework supports the following container types out-of-the-box: </p>
+<p></p>
+<ul>
+<li>deque: no requirements </li>
+<li>vector: no requirements </li>
+<li>list: no requirements </li>
+<li>set: the &lt; operator must be supported by the contained datatype. Note that duplicate key/value pairs are ignored. </li>
+<li>multiset: the &lt; operator must be supported by the contained datatype </li>
+<li>map: the () operator must be supported by the contained datatype and return the key of the object. Note that duplicate key/value pairs are ignored. </li>
+<li>multimap: the () operator must be supported by the contained datatype and return the key of the object </li>
+</ul>
+<p>A &quot;one-at-atime&quot; bulk insert example via vector would be: </p>
+<p></p>
+<pre>std::string aName;
+std::vector&lt;std::string&gt; data;
+for (int i = 0; i &lt; 100; ++i)
+{
+    aName.append(&quot;x&quot;);
+    data.push_back(aName);
+}
+ses &lt;&lt; &quot;INSERT INTO FORENAME VALUES(?)&quot;, use(data), now;
+</pre>
+<p> </p>
+<p>The same example would work with list, deque, set or multiset but not with map and multimap (std::string has no () operator). </p>
+<p>Note that <tt>use</tt> requires a <i>non-empty</i> container! </p>
+<p>Now reconsider the following example: </p>
+<p></p>
+<pre>std::string aName;
+ses &lt;&lt; &quot;SELECT NAME FROM FORENAME&quot;, into(aName), now;
+</pre>
+<p> </p>
+<p>Previously, it worked because the table contained only one single entry but now the database table contains at least 100 strings, yet we only offer storage space for one single result. </p>
+<p>Thus, the above code will fail and throw an exception. </p>
+<p>One possible way to handle this is: </p>
+<p></p>
+<pre>std::vector&lt;std::string&gt; names;
+ses &lt;&lt; &quot;SELECT NAME FROM FORENAME&quot;, into(names), now;
+</pre>
+<p> </p>
+<p>And again, instead of vector, one could use deque, list, set or multiset. </p>
+<p></p><h3><a id="18">Things NOT To Do</a></h3><p>
+</p>
+<p>C++ containers in conjunction with stored procedures input parameters (i.e <tt>in</tt> and <tt>io</tt> functions) are not supported. Furthermore, there is one particular container which, due to its peculiar nature, <b>can not</b> be used in conjunction with <tt>out</tt> and <tt>io</tt> under any circumstances: <tt>std::vector&lt;bool&gt;</tt> . The details are beyond the scope of this manual. For those interested to learn more about it, there is an excellent explanation in S. Meyers book &quot;Efective STL&quot;, Item 18 or Gotw #50, <a href="http://www.gotw.ca/gotw/050.htm" target="_blank">When Is a Container Not a</a> Container]] paragraph. </p>
+<p></p>
+<p></p><h2><a id="19">Tuples</a></h2><p>
+</p>
+<p>Complex user-defined data types are supported through type handlers as described in one of the chapters below. However, in addition to STL containers, which are supported through binding/extraction there is another complex data type supported by POCO Data &quot;out-of-the-box&quot;. The type is <a href="Poco.Tuple.html" title="struct Poco::Tuple">Poco::Tuple</a>. The detailed description is beyond the scope of this manual, but suffice it to say here that this data structure allows for convenient and type-safe mix of different data types resulting in a perfect C++ match for the table row. Here's the code to clarify the point: </p>
+<p></p>
+<pre>typedef Poco::Tuple&lt;std::string, std::string, int&gt; Person;
+Person person(&quot;Bart Simpson&quot;, &quot;Springfield&quot;, 12)
+session &lt;&lt; &quot;INSERT INTO Person VALUES(?, ?, ?)&quot;, use(person), now;
+</pre>
+<p> </p>
+<p>Automagically, POCO Data internally takes care of the data binding intricacies for you. Of course, as before, it is programmer's responsibility to make sure the Tuple data types correspond to the table column data types. </p>
+<p>I can already see the reader wondering if it's possible to put tuples in a container and kill more than one bird with one stone. As usual, POCO Data will not disappoint you: </p>
+<p></p>
+<pre>typedef Poco::Tuple&lt;std::string, std::string, int&gt; Person;
+typedef std::vector&lt;Person&gt; People;
+People people;
+people.push_back(Person(&quot;Bart Simpson&quot;, &quot;Springfield&quot;, 12));
+people.push_back(Person(&quot;Lisa Simpson&quot;, &quot;Springfield&quot;, 10));
+session &lt;&lt; &quot;INSERT INTO Person VALUES(?, ?, ?)&quot;, use(people), now;
+</pre>
+<p> </p>
+<p></p>
+<p>And thats it! There are multiple columns and multiple rows contained in a single variable and inserted in one shot. Needless to say, the reverse works as well: </p>
+<p></p>
+<pre>session &lt;&lt; &quot;SELECT Name, Address, Age FROM Person&quot;, into(people), now;
+</pre>
+<p> </p>
+<p></p>
+<p></p><h2><a id="20">Limits and Ranges</a></h2><p>
+</p>
+<p></p><h3><a id="21">Limit</a></h3><p>
+</p>
+<p>Working with collections might be convenient to bulk process data but there is also the risk that large operations will block your application for a very long time. In addition, you might want to have better fine-grained control over your query, e.g. you only want to extract a subset of data until a condition is met. </p>
+<p>To alleviate that problem, one can use the <tt>limit</tt> keyword. </p>
+<p>Let's assume we are retrieving thousands of rows from a database to render the data to a GUI. To allow the user to stop fetching data any time (and to avoid having the user frantically click inside the GUI because it doesn't show anything for seconds), we have to partition this process: </p>
+<p></p>
+<pre>std::vector&lt;std::string&gt; names;
+ses &lt;&lt; &quot;SELECT NAME FROM FORENAME&quot;, into(names), limit(50), now;
+</pre>
+<p> </p>
+<p>The above example will retrieve up to 50 rows from the database (note that returning nothing is valid!) and <i>append</i> it to the names collection, i.e. the collection is not cleared! </p>
+<p>If one wants to make sure that <i>exactly</i> 50 rows are returned one must set the second limit parameter (which per default is set to <tt>false</tt>) to <tt>true</tt>: </p>
+<p></p>
+<pre>std::vector&lt;std::string&gt; names;
+ses &lt;&lt; &quot;SELECT NAME FROM FORENAME&quot;, into(names), limit(50, true), now;
+</pre>
+<p> </p>
+<p>Iterating over a complete result collection is done via the Statement object until <tt>statement.done()</tt> returns true. </p>
+<p>For the next example, we assume that our system knows about 101 forenames: </p>
+<p></p>
+<pre>std::vector&lt;std::string&gt; names;
+Statement stmt = (ses &lt;&lt; &quot;SELECT NAME FROM FORENAME&quot;, into(names), limit(50)); 
+stmt.execute(); //names.size() == 50
+poco_assert (!stmt.done());
+stmt.execute(); //names.size() == 100
+poco_assert (!stmt.done());
+stmt.execute(); //names.size() == 101
+poco_assert (stmt.done()); 
+</pre>
+<p> </p>
+<p>We previously stated that if no data is returned this is valid too. Thus, executing the following statement on an empty database table will work: </p>
+<p></p>
+<pre>std::string aName;
+ses &lt;&lt; &quot;SELECT NAME FROM FORENAME&quot;, into(aName), now;
+</pre>
+<p> </p>
+<p>To guarantee that at least one valid result row is returned use the <tt>lowerLimit</tt> clause: </p>
+<p></p>
+<p></p>
+<pre>std::string aName;
+ses &lt;&lt; &quot;SELECT NAME FROM FORENAME&quot;, into(aName), lowerLimit(1), now;
+</pre>
+<p> </p>
+<p>If the table is now empty, an exception will be thrown. If the query succeeds, aName is guaranteed to be initialized. Note that <tt>limit</tt> is only the short name for <tt>upperLimit</tt>. To iterate over a result set step-by-step, e.g. one wants to avoid using a collection class, one would write </p>
+<p></p>
+<pre>std::string aName;
+Statement stmt = (ses &lt;&lt; &quot;SELECT NAME FROM FORENAME&quot;, into(aName), lowerLimit(1), upperLimit(1));
+while (!stmt.done()) stmt.execute();
+</pre>
+<p> </p>
+<p></p>
+<p></p><h3><a id="22">Range</a></h3><p>
+</p>
+<p>For the lazy folks, there is the <tt>range</tt> command: </p>
+<p></p>
+<pre>std::string aName;
+Statement stmt = (ses &lt;&lt; &quot;SELECT NAME FROM FORENAME&quot;, into(aName), range(1,1));
+while (!stmt.done()) stmt.execute();
+</pre>
+<p> </p>
+<p>The third parameter to range is an optional boolean value which specifies if the upper limit is a hard limit, ie. if the amount of rows returned by the query must match exactly. Per default exact matching is off. </p>
+<p></p>
+<p></p><h2><a id="23">Bulk</a></h2><p>
+</p>
+<p>The <tt>bulk</tt> keyword allows to boost performance for the connectors that support column-wise operation and arrays of values and/or parameters (e.g. ODBC).  Here's how to signal bulk insertion to the statement: </p>
+<p></p>
+<pre>std::vector&lt;int&gt; ints(100, 1);
+session &lt;&lt; &quot;INSERT INTO Test VALUES (?)&quot;, use(ints, bulk), now;
+</pre>
+<p> </p>
+<p>The above code will execute a &quot;one-shot&quot; insertion into the target table.  </p>
+<p></p>
+<p>Selection in bulk mode looks like this: </p>
+<p></p>
+<pre>std::vector&lt;int&gt; ints;
+session &lt;&lt; &quot;SELECT * FROM Test&quot;, into(ints, bulk(100)), now;
+</pre>
+<p> </p>
+<p>Note that, when fetching data in bulk quantities, we must provide the size of data set we want to fetch, either explicitly as in the code above or implicitly, through size of the supplied container as in following example: </p>
+<p>std::vector&lt;int&gt; ints(100, 1); session &lt;&lt; &quot;SELECT * FROM Test&quot;, into(ints, bulk), now;  </p>
+<p>For statements that generate their ow internal extraction storage (see RecordSet chapter below), bulk execution can be specified as follows: </p>
+<p></p>
+<pre>session &lt;&lt; &quot;SELECT * FROM Test&quot;, bulk(100), now;
+</pre>
+<p> </p>
+<p></p>
+<p></p><h3><a id="24">Usage Notes</a></h3><p>
+</p>
+<p>When using bulk mode, execution limit is set internally. Mixing of <tt>bulk</tt> and <tt>limit</tt> keywords, although redundant, is allowed as long as they do not conflict in the value they specify. </p>
+<p>Bulk operations are only supported for following STL containers: </p>
+<p></p>
+<ul>
+<li>std::deque </li>
+<li>std::list </li>
+<li>std::vector, including std::vector&lt;bool&gt;, which is properly handled internally </li>
+</ul>
+<p>For best results with <tt>use()</tt>, when passing POD types, it is recommended to use std::vector as it is passed directly as supplied by the user. For all the other scenarios (other containers as well as non-POD types), framework will create temporary storage. </p>
+<p>Data types supported are: </p>
+<p></p>
+<ul>
+<li>All POD types </li>
+<li>std::string </li>
+<li><a href="Poco.Data.LOB.html" title="class Poco::Data::LOB">Poco::Data::LOB</a> (with BLOB and CLOB specializations) </li>
+<li><a href="Poco.DateTime.html" title="class Poco::DateTime">Poco::DateTime</a> </li>
+<li><a href="Poco.Data.Date.html" title="class Poco::Data::Date">Poco::Data::Date</a> </li>
+<li><a href="Poco.Data.Time.html" title="class Poco::Data::Time">Poco::Data::Time</a> </li>
+<li><a href="Poco.Dynamic.Var.html" title="class Poco::Dynamic::Var">Poco::Dynamic::Var</a> </li>
+</ul>
+<p></p><h3><a id="25">Important Considerations</a></h3><p>
+</p>
+<p>Not all the connectors support <tt>bulk</tt> and some support it only to an extent, depending on the target system. Also, not all value types perform equally when used for bulk operations. To determine the optimal use in a given scenario, knowledge of the target system as well as some degree of experimentation is needed because different connectors and target systems shall differ in performance gains. In some scenarios, the gain is significant. For example, Oracle ODBC driver performs roughly 400-500 times faster when bulk-inserting a std::vector of 10,000 integers. However, when variable-sized entities, such as strings and BLOBs are brought into the picture, performance decreases drastically. So, all said, it is left to the end-user to make the best of this feature. </p>
+<p></p><h2><a id="26">RecordSets, Iterators and Rows</a></h2><p>
+</p>
+<p>In all the examples so far the programmer had to supply the storage for data to be inserted or retrieved from a database.  </p>
+<p>It is usually desirable to avoid that and let the framework take care of it, something like this: </p>
+<p></p>
+<pre>session &lt;&lt; &quot;SELECT * FROM Person&quot;, now; // note the absence of target storage
+</pre>
+<p> </p>
+<p>No worries &mdash; that's what the RecordSet class does: </p>
+<p></p>
+<pre>Statement select(session); // we need a Statement for later RecordSet creation
+select &lt;&lt; &quot;SELECT * FROM Person&quot;, now;
+
+// create a RecordSet 
+RecordSet rs(select);
+std::size_t cols = rs.columnCount();
+
+// print all column names
+for (std::size_t col = 0; col &lt; cols; ++col)
+    std::cout &lt;&lt; rs.columnName(col) &lt;&lt; std::endl;
+
+// iterate over all rows and columns
+for (RecordSet::Iterator it = rs.begin(); it != rs.end(); ++it) 
+    std::cout &lt;&lt; *it &lt;&lt; &quot; &quot;;
+</pre>
+<p> </p>
+<p>As you may see above, <tt>RecordSet</tt> class comes with a full-blown C++ compatible iterator that allows the above loop to be turned into a one-liner: </p>
+<p></p>
+<pre>std::copy(rs.begin(), rs.end(), std::ostream_iterator&lt;Row&gt;(std::cout));
+</pre>
+<p> </p>
+<p>RecordSet has the stream operator defined, so this shortcut to the above functionality will work, too: </p>
+<p></p>
+<pre>std::cout &lt;&lt; rs;
+</pre>
+<p> </p>
+<p>The default formatter supplied with RecordSet is quite rudimentary, but user can implement custom formatters, by inheriting from RowFormatter and providing definitions of formatNames() and formatValues() virtual functions. See the RowFormatter sample for details on how to accomplish this. </p>
+<p>You'll notice the Row class in the above snippet. The <tt>RecordSet::Iterator</tt> is actually a <a href="Poco.Data.RowIterator.html" title="class Poco::Data::RowIterator">Poco::Data::RowIterator</a>. It means that dereferencing it returns a <a href="Poco.Data.Row.html" title="class Poco::Data::Row">Poco::Data::Row</a> object. Here's a brief example to get an idea of what the <a href="Poco.Data.Row.html" title="class Poco::Data::Row">Poco::Data::Row</a> class does: </p>
+<p></p>
+<pre>Row row;
+row.append(&quot;Field0&quot;, 0);
+row.append(&quot;Field1&quot;, 1);
+row.append(&quot;Field2&quot;, 2);
+</pre>
+<p> </p>
+<p>The above code creates a row with three fields, &quot;Field0&quot;, &quot;Field1&quot; and &quot;Field2&quot;, having values 0, 1 and 2, respectively. Rows are sortable, which makes them suitable to be contained by standard sorted containers, such as std::map or std::set. By default, the first field of the row is used for sorting purposes. However, the sort criteria can be modified at runtime. For example, an additional field may be added to sort fields (think &quot;... ORDER BY Name ASC, Age DESC&quot;): </p>
+<p></p>
+<pre>row.addSortField(&quot;Field1&quot;); // now Field0 and Field1 are used for sorting 
+row.replaceSortField(&quot;Field0&quot;, &quot;Field2&quot;);// now Field1 and Field2 are used for sorting
+</pre>
+<p> </p>
+<p>Finally, if you have a need for different RecordSet internal storage type than default (std::deque) provided by framework, there is a manipulator for that purpose: </p>
+<p></p>
+<pre>select &lt;&lt; &quot;SELECT * FROM Person&quot;, list, now; // use std::list as internal storage container
+</pre>
+<p> </p>
+<p>This can be very useful if you plan to manipulate the data after retrieving it from database. For example, std::list performs much better than std::vector for insert/delete operations and specifying it up-front as internal storage saves you the copying effort later. For large datasets, performance savings are significant. </p>
+<p>Valid storage type manipulators are: </p>
+<p></p>
+<ul>
+<li>deque (default) </li>
+<li>vector </li>
+<li>list </li>
+</ul>
+<p>So, if neither data storage, nor storage type are explicitly specified, the data will internally be kept in standard deques. This can be changed through use of storage type manipulators.  </p>
+<p></p>
+<p></p><h2><a id="27">Complex Data Types</a></h2><p>
+</p>
+<p>All the previous examples were contented to work with only the most basic data types: integer, string, ... a situation, unlikely to occur in real-world scenarios. </p>
+<p>Assume you have a class Person: </p>
+<p></p>
+<pre>class Person
+{
+public:
+    // default constructor+destr.
+    // getter and setter methods for all members
+    // ...
+
+    bool operator &lt;(const Person&amp;amp; p) const
+        /// we need this for set and multiset support
+    {
+        return _socialSecNr &lt; p._socialSecNr;
+    }
+
+    Poco::UInt64 operator()() const
+        /// we need this operator to return the key for the map and multimap
+    {
+        return _socialSecNr;
+    }
+
+private:
+    std::string _firstName;
+    std::string _lastName;
+    Poco::UInt64 _socialSecNr;
+};
+</pre>
+<p> </p>
+<p>Ideally, one would like to use a Person as simple as one used a string. All that is needed is a template specialization of the <tt>TypeHandler</tt> template. Note that template specializations must be declared in the <i>same namespace</i> as the original template, i.e. <tt><a href="Poco.Data.html" title="namespace Poco::Data">Poco::Data</a></tt>.  The template specialization must implement the following methods: </p>
+<p></p>
+<pre>namespace Poco {
+namespace Data {
+
+template &lt;&gt;
+class TypeHandler&lt;class Person&gt;
+{
+public:
+    static void bind(std::size_t pos, const Person&amp;amp; obj, AbstractBinder::Ptr pBinder, AbstractBinder::Direction dir)
+    {
+        poco_assert_dbg (!pBinder.isNull());
+        // the table is defined as Person (FirstName VARCHAR(30), lastName VARCHAR, SocialSecNr INTEGER(3))
+        // Note that we advance pos by the number of columns the datatype uses! For string/int this is one.
+        TypeHandler&lt;std::string&gt;::bind(pos++, obj.getFirstName(), pBinder, dir);
+        TypeHandler&lt;std::string&gt;::bind(pos++, obj.getLastName(), pBinder, dir);
+        TypeHandler&lt;Poco::UInt64&gt;::bind(pos++, obj.getSocialSecNr(), pBinder, dir);
+    }
+
+    static std::size_t size()
+    {
+        return 3; // we handle three columns of the Table!
+    }
+
+    static void prepare(std::size_t pos, const Person&amp;amp; obj, AbstractPreparator::Ptr pPrepare)
+    {
+        poco_assert_dbg (!pPrepare.isNull());
+        // the table is defined as Person (FirstName VARCHAR(30), lastName VARCHAR, SocialSecNr INTEGER(3))
+        // Note that we advance pos by the number of columns the datatype uses! For string/int this is one.
+        TypeHandler&lt;std::string&gt;::prepare(pos++, obj.getFirstName(), pPrepare);
+        TypeHandler&lt;std::string&gt;::prepare(pos++, obj.getLastName(), pPrepare);
+        TypeHandler&lt;Poco::UInt64&gt;::prepare(pos++, obj.getSocialSecNr(), pPrepare);
+    }
+
+    static void extract(std::size_t pos, Person&amp;amp; obj, const Person&amp;amp; defVal, AbstractExtractor::Ptr pExt)
+        /// obj will contain the result, defVal contains values we should use when one column is NULL
+    {
+        poco_assert_dbg (!pExt.isNull());
+        std::string firstName;
+        std::string lastName;
+        Poco::UInt64 socialSecNr = 0;
+        TypeHandler&lt;std::string&gt;::extract(pos++, firstName, defVal.getFirstName(), pExt);
+        TypeHandler&lt;std::string&gt;::extract(pos++, lastName, defVal.getLastName(), pExt);
+        TypeHandler&lt;Poco::UInt64&gt;::extract(pos++, socialSecNr, defVal.getSocialSecNr(), pExt);
+        obj.setFirstName(firstName);
+        obj.setLastName(lastName);
+        obj.setSocialSecNr(socialSecNr);
+    }
+
+private:
+    TypeHandler();
+    ~TypeHandler();
+    TypeHandler(const TypeHandler&amp;amp;);
+    TypeHandler&amp;amp; operator=(const TypeHandler&amp;amp;);
+};
+
+} } // namespace Poco::Data
+</pre>
+<p> </p>
+<p>And that's all you have to do. Working with Person is now as simple as working with a string: </p>
+<p></p>
+<pre>std::map&lt;Poco::UInt64, Person&gt; people;
+ses &lt;&lt; &quot;SELECT * FROM Person&quot;, into(people), now;
+</pre>
+<p> </p>
+<p></p>
+<p></p><h2><a id="28">Session Pooling</a></h2><p>
+Creating a connection to a database is often a time consuming operation. Therefore it makes sense to save a session object for  later reuse once it is no longer needed. </p>
+<p>A <a href="Poco.Data.SessionPool.html" title="class Poco::Data::SessionPool">Poco::Data::SessionPool</a> manages a collection of sessions. When a session is requested, the SessionPool first looks in its set of already initialized sessions for an available object. If one is found, it is returned to the client and marked as &quot;in-use&quot;. If no session is available, the SessionPool attempts to create a new one for the client. To avoid excessive creation of sessions, a limit can be set on the maximum number of objects. </p>
+<p>The following code fragment shows how to use the SessionPool: </p>
+<p></p>
+<pre>SessionPool pool(&quot;ODBC&quot;, &quot;...&quot;);
+// ...
+Session sess(pool.get());
+</pre>
+<p> </p>
+<p>Pooled sessions are automatically returned to the pool when the Session variable holding them is destroyed. </p>
+<p>One session pool, of course, holds sessions for one database connection. For sessions to multiple databases, there is  SessionPoolContainer: </p>
+<p></p>
+<pre>SessionPoolContainer spc;
+AutoPtr&lt;SessionPool&gt; pPool1 = new SessionPool(&quot;ODBC&quot;, &quot;DSN1&quot;);
+AutoPtr&lt;SessionPool&gt; pPool2 = new SessionPool(&quot;ODBC&quot;, &quot;DSN2&quot;);
+spc.add(pPool1);
+spc.add(pPool2);
+</pre>
+<p> </p>
+<p></p><h2><a id="29">Conclusion</a></h2><p>
+</p>
+<p>This document provides an overview of the most important features offered by the POCO Data framework. The framework also supports LOB (specialized to BLOB and CLOB) type as well as <a href="Poco.DateTime.html" title="class Poco::DateTime">Poco::DateTime</a> binding.  The usage of these data types is no different than any C++ type, so we  did not go into details here. </p>
+<p>The great deal of <tt>RecordSet</tt> and <tt>Row</tt> runtime &quot;magic&quot; is achieved through employment of <a href="Poco.Dynamic.Var.html" title="class Poco::Dynamic::Var">Poco::Dynamic::Var</a>, which is the POCO equivalent of dynamic language data type. Obviously, due to its nature, there is a run time performance penalty associated with <a href="Poco.Dynamic.Var.html" title="class Poco::Dynamic::Var">Poco::Dynamic::Var</a>, but the internal details are beyond the scope of this document.  </p>
+<p>POCO Data tries to provide a broad spectrum of functionality, with configurable efficiency/convenience ratio, providing a solid foundation for quick development of database applications. We hope that, by reading this manual and experimenting with code along the way, you were able to get a solid understanding of the framework. We look forward to hearing from you about POCO Data as well as this manual. We also hope that you find both to be helpful aid in design of elegant and efficient standard C++ database access software. </p>
+<p></p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+<script>CollapsibleLists.apply(true)</script>
+</body>
+</html>

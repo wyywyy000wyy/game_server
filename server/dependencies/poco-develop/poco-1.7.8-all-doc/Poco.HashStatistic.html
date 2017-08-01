@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::HashStatistic</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.html" class="namespace">Poco</a></h1>
+<h1 class="symbol">class HashStatistic</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Foundation" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Foundation<br />
+<b>Package:</b> Hashing<br />
+<b>Header:</b> Poco/HashStatistic.h</p>
+<div class="description">
+<p><b>Deprecated.</b> <i>This class is deprecated and should no longer be used.</i></p>
+</div>
+<h2>Description</h2>
+<div class="description">
+<p><a href="Poco.HashStatistic.html" title="class Poco::HashStatistic">HashStatistic</a> class bundles statistical information on the current state of a <a href="Poco.HashTable.html" title="class Poco::HashTable">HashTable</a> </p>
+</div>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.HashStatistic.html#13059" title="Poco::HashStatistic::avgEntriesPerHash()">avgEntriesPerHash</a>, <a href="Poco.HashStatistic.html#13060" title="Poco::HashStatistic::avgEntriesPerHashExclZeroEntries()">avgEntriesPerHashExclZeroEntries</a>, <a href="Poco.HashStatistic.html#13062" title="Poco::HashStatistic::detailedEntriesPerHash()">detailedEntriesPerHash</a>, <a href="Poco.HashStatistic.html#13061" title="Poco::HashStatistic::maxEntriesPerHash()">maxEntriesPerHash</a>, <a href="Poco.HashStatistic.html#13056" title="Poco::HashStatistic::maxPositionsOfTable()">maxPositionsOfTable</a>, <a href="Poco.HashStatistic.html#13057" title="Poco::HashStatistic::numberOfEntries()">numberOfEntries</a>, <a href="Poco.HashStatistic.html#13058" title="Poco::HashStatistic::numberOfZeroPositions()">numberOfZeroPositions</a>, <a href="Poco.HashStatistic.html#13063" title="Poco::HashStatistic::toString()">toString</a></p>
+<h2>Constructors</h2>
+<h3><a id="13049">HashStatistic</a></h3>
+<p class="decl"><a href="Poco.HashStatistic.html" title="class Poco::HashStatistic">HashStatistic</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.html#18381" title="Poco::UInt32">UInt32</a> tableSize,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.html#18381" title="Poco::UInt32">UInt32</a> numEntries,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.html#18381" title="Poco::UInt32">UInt32</a> numZeroEntries,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.html#18381" title="Poco::UInt32">UInt32</a> maxEntry,<br />&nbsp;&nbsp;&nbsp;&nbsp;std::vector &lt; <a href="Poco.html#18381" title="Poco::UInt32">UInt32</a> &gt; details = std::vector < UInt32 > ()<br />);</p>
+<div class="description">
+<p>Creates the <a href="Poco.HashStatistic.html" title="class Poco::HashStatistic">HashStatistic</a>. </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="13055">~HashStatistic</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual ~<a href="Poco.HashStatistic.html" title="class Poco::HashStatistic">HashStatistic</a>();</p>
+<div class="description">
+<p>Destroys the <a href="Poco.HashStatistic.html" title="class Poco::HashStatistic">HashStatistic</a>. </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="13059">avgEntriesPerHash</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">double avgEntriesPerHash() const;</p>
+<div class="description">
+<p>Returns the average number of entries per position in the Hashtable, the higher this value the less efficient performs hashing. If a large value is returned and getNumberOfZeroPositions also returns a large value, this indicates an inefficient hashing function. If the number of zero entries is low, resizing the <a href="Poco.HashTable.html" title="class Poco::HashTable">HashTable</a>, should be enough to improve performance </p>
+</div>
+<h3><a id="13060">avgEntriesPerHashExclZeroEntries</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">double avgEntriesPerHashExclZeroEntries() const;</p>
+<div class="description">
+<p>Same as getAvgEntriesPerHash but hash values that contain no entry are ignored, getAvgEntriesPerHashExclZeroEntries &gt;= getAvgEntriesPerHash will always be true. </p>
+</div>
+<h3><a id="13062">detailedEntriesPerHash</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">const std::vector &lt; <a href="Poco.html#18381" title="Poco::UInt32">UInt32</a> &gt; detailedEntriesPerHash() const;</p>
+<div class="description">
+<p>Will either be an empty vector or will contain for each possible hash value, the number of entries currently stored </p>
+</div>
+<h3><a id="13061">maxEntriesPerHash</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.html#18381" title="Poco::UInt32">UInt32</a> maxEntriesPerHash() const;</p>
+<div class="description">
+<p>Returns the maximum number of entries per hash value found in the current table. </p>
+</div>
+<h3><a id="13056">maxPositionsOfTable</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.html#18381" title="Poco::UInt32">UInt32</a> maxPositionsOfTable() const;</p>
+<div class="description">
+<p>Returns the maximum number of different hash values possible for the table </p>
+</div>
+<h3><a id="13057">numberOfEntries</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.html#18381" title="Poco::UInt32">UInt32</a> numberOfEntries() const;</p>
+<div class="description">
+<p>Returns the total number of entries currently stored in the <a href="Poco.HashTable.html" title="class Poco::HashTable">HashTable</a> </p>
+</div>
+<h3><a id="13058">numberOfZeroPositions</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.html#18381" title="Poco::UInt32">UInt32</a> numberOfZeroPositions() const;</p>
+<div class="description">
+<p>Returns the number of hash positions that contain no entry. </p>
+</div>
+<h3><a id="13063">toString</a></h3>
+<p class="decl">std::string toString() const;</p>
+<div class="description">
+<p>Converts the whole data structure into a string. </p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

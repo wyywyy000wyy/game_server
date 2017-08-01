@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::Data::Transaction</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.Data.html" class="namespace">Poco::Data</a></h1>
+<h1 class="symbol">class Transaction</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Data" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Data<br />
+<b>Package:</b> DataCore<br />
+<b>Header:</b> Poco/Data/Transaction.h</p>
+<h2>Description</h2>
+<div class="description">
+<p><a href="Poco.Data.Transaction.html" title="class Poco::Data::Transaction">Transaction</a> helps with transactions in domain logic. When an <a href="Poco.Data.Transaction.html" title="class Poco::Data::Transaction">Transaction</a> object is created, it first checks whether a transaction is in progress. If not, a new transaction is created. When the <a href="Poco.Data.Transaction.html" title="class Poco::Data::Transaction">Transaction</a> is destroyed, and <a href="Poco.Data.Transaction.html#7667" title="Poco::Data::Transaction::commit()">commit</a>() has been called, nothing is done. Otherwise, the current transaction is rolled back. See <a href="Poco.Data.Transaction.html" title="class Poco::Data::Transaction">Transaction</a> for more details and purpose of this template. </p>
+</div>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.Data.Transaction.html#7667" title="Poco::Data::Transaction::commit()">commit</a>, <a href="Poco.Data.Transaction.html#7660" title="Poco::Data::Transaction::execute()">execute</a>, <a href="Poco.Data.Transaction.html#7655" title="Poco::Data::Transaction::getIsolation()">getIsolation</a>, <a href="Poco.Data.Transaction.html#7656" title="Poco::Data::Transaction::hasIsolation()">hasIsolation</a>, <a href="Poco.Data.Transaction.html#7669" title="Poco::Data::Transaction::isActive()">isActive</a>, <a href="Poco.Data.Transaction.html#7658" title="Poco::Data::Transaction::isIsolation()">isIsolation</a>, <a href="Poco.Data.Transaction.html#7668" title="Poco::Data::Transaction::rollback()">rollback</a>, <a href="Poco.Data.Transaction.html#7653" title="Poco::Data::Transaction::setIsolation()">setIsolation</a>, <a href="Poco.Data.Transaction.html#7670" title="Poco::Data::Transaction::setLogger()">setLogger</a>, <a href="Poco.Data.Transaction.html#7665" title="Poco::Data::Transaction::transact()">transact</a></p>
+<h2>Constructors</h2>
+<h3><a id="7642">Transaction</a></h3>
+<p class="decl"><a href="Poco.Data.Transaction.html" title="class Poco::Data::Transaction">Transaction</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Data.Session.html" title="class Poco::Data::Session">Poco::Data::Session</a> &amp; session,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Logger.html" title="class Poco::Logger">Poco::Logger</a> * pLogger = 0<br />);</p>
+<div class="description">
+<p>Creates the <a href="Poco.Data.Transaction.html" title="class Poco::Data::Transaction">Transaction</a> and starts it, using the given database session and logger. </p>
+</div>
+<h3><a id="7645">Transaction</a></h3>
+<p class="decl"><a href="Poco.Data.Transaction.html" title="class Poco::Data::Transaction">Transaction</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Data.Session.html" title="class Poco::Data::Session">Poco::Data::Session</a> &amp; session,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool start<br />);</p>
+<div class="description">
+<p>Creates the <a href="Poco.Data.Transaction.html" title="class Poco::Data::Transaction">Transaction</a>, using the given database session. If start is true, transaction is started, otherwise <a href="Poco.Data.Transaction.html#7677" title="Poco::Data::Transaction::begin()">begin</a>() must be called to start the transaction. </p>
+</div>
+<h3><a id="7648">Transaction</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">template &lt; typename T &gt; <a href="Poco.Data.Transaction.html" title="class Poco::Data::Transaction">Transaction</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Data.Session.html" title="class Poco::Data::Session">Poco::Data::Session</a> &amp; rSession,<br />&nbsp;&nbsp;&nbsp;&nbsp;T &amp; t,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Logger.html" title="class Poco::Logger">Poco::Logger</a> * pLogger = 0<br />);</p>
+<div class="description">
+<p>Creates the <a href="Poco.Data.Transaction.html" title="class Poco::Data::Transaction">Transaction</a>, using the given database session, transactor and logger. The transactor type must provide operator () overload taking non-const <a href="Poco.Data.Session.html" title="class Poco::Data::Session">Session</a>  reference as an argument. </p>
+<p>When transaction is created using this constructor, it is executed and commited automatically. If no error occurs, rollback is disabled and does not occur at destruction time. If an error occurs resulting in exception being thrown, the transaction is rolled back and exception propagated to calling code. </p>
+<p>Example usage: </p>
+<p>struct Transactor { void operator () (<a href="Poco.Data.Session.html" title="class Poco::Data::Session">Session</a>&amp; session) const { </p>
+<pre>// do something ...
+</pre>
+<p>} }; </p>
+<p>Transactor tr; <a href="Poco.Data.Transaction.html" title="class Poco::Data::Transaction">Transaction</a> tn(session, tr);  </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="7652">~Transaction</a></h3>
+<p class="decl">~<a href="Poco.Data.Transaction.html" title="class Poco::Data::Transaction">Transaction</a>();</p>
+<div class="description">
+<p>Destroys the <a href="Poco.Data.Transaction.html" title="class Poco::Data::Transaction">Transaction</a>. Rolls back the current database transaction if it has not been commited (by calling <a href="Poco.Data.Transaction.html#7667" title="Poco::Data::Transaction::commit()">commit</a>()), or rolled back (by calling <a href="Poco.Data.Transaction.html#7668" title="Poco::Data::Transaction::rollback()">rollback</a>()). </p>
+<p>If an exception is thrown during rollback, the exception is logged and no further action is taken.  </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="7667">commit</a></h3>
+<p class="decl">void commit();</p>
+<div class="description">
+<p>Commits the current transaction. </p>
+</div>
+<h3><a id="7660">execute</a></h3>
+<p class="decl">void execute(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; sql,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool doCommit = true<br />);</p>
+<div class="description">
+<p>Executes and, if doCommit is true, commits the transaction. Passing true value for commit disables rollback during destruction of this <a href="Poco.Data.Transaction.html" title="class Poco::Data::Transaction">Transaction</a> object. </p>
+</div>
+<h3><a id="7663">execute</a></h3>
+<p class="decl">void execute(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::vector &lt; std::string &gt; &amp; sql<br />);</p>
+<div class="description">
+<p>Executes all the SQL statements supplied in the vector and, after the last one is sucesfully executed, commits the transaction. If an error occurs during execution, transaction is rolled back. Passing true value for commit disables rollback during destruction of this <a href="Poco.Data.Transaction.html" title="class Poco::Data::Transaction">Transaction</a> object. </p>
+</div>
+<h3><a id="7655">getIsolation</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.html#18381" title="Poco::UInt32">Poco::UInt32</a> getIsolation();</p>
+<div class="description">
+<p>Returns the transaction isolation level. </p>
+</div>
+<h3><a id="7656">hasIsolation</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool hasIsolation(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.html#18381" title="Poco::UInt32">Poco::UInt32</a> ti<br />);</p>
+<div class="description">
+<p>Returns true if and only if the transaction isolation level corresponding to the supplied bitmask is supported. </p>
+</div>
+<h3><a id="7669">isActive</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool isActive();</p>
+<div class="description">
+<p>Returns false after the transaction has been committed or rolled back, true if the transaction is ongoing. </p>
+</div>
+<h3><a id="7658">isIsolation</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool isIsolation(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.html#18381" title="Poco::UInt32">Poco::UInt32</a> ti<br />);</p>
+<div class="description">
+<p>Returns true if and only if the transaction isolation level corresponds to the supplied bitmask. </p>
+</div>
+<h3><a id="7668">rollback</a></h3>
+<p class="decl">void rollback();</p>
+<div class="description">
+<p>Rolls back the current transaction. </p>
+</div>
+<h3><a id="7653">setIsolation</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void setIsolation(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.html#18381" title="Poco::UInt32">Poco::UInt32</a> ti<br />);</p>
+<div class="description">
+<p>Sets the transaction isolation level. </p>
+</div>
+<h3><a id="7670">setLogger</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void setLogger(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Logger.html" title="class Poco::Logger">Poco::Logger</a> * pLogger<br />);</p>
+<div class="description">
+<p>Sets the logger for this transaction. <a href="Poco.Data.Transaction.html" title="class Poco::Data::Transaction">Transaction</a> does not take the ownership of the pointer. </p>
+</div>
+<h3><a id="7665">transact</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">template &lt; typename T &gt; void transact(<br />&nbsp;&nbsp;&nbsp;&nbsp;T &amp; t<br />);</p>
+<div class="description">
+<p>Executes the transactor and, unless transactor throws an exception,  commits the transaction. </p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

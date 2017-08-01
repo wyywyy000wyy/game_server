@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::Data::Date</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.Data.html" class="namespace">Poco::Data</a></h1>
+<h1 class="symbol">class Date</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Data" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Data<br />
+<b>Package:</b> DataCore<br />
+<b>Header:</b> Poco/Data/Date.h</p>
+<h2>Description</h2>
+<div class="description">
+<p><a href="Poco.Data.Date.html" title="class Poco::Data::Date">Date</a> class wraps a <a href="Poco.DateTime.html" title="class Poco::DateTime">DateTime</a> and exposes date related interface. The purpose of this class is binding/extraction support for date fields. </p>
+</div>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.Data.Date.html#6179" title="Poco::Data::Date::assign()">assign</a>, <a href="Poco.Data.Date.html#6178" title="Poco::Data::Date::day()">day</a>, <a href="Poco.Data.Date.html#6177" title="Poco::Data::Date::month()">month</a>, <a href="Poco.Data.Date.html#6191" title="Poco::Data::Date::operator !=()">operator&nbsp;!=</a>, <a href="Poco.Data.Date.html#6193" title="Poco::Data::Date::operator <()">operator&nbsp;&lt;</a>, <a href="Poco.Data.Date.html#6183" title="Poco::Data::Date::operator =()">operator&nbsp;=</a>, <a href="Poco.Data.Date.html#6189" title="Poco::Data::Date::operator ==()">operator&nbsp;==</a>, <a href="Poco.Data.Date.html#6195" title="Poco::Data::Date::operator >()">operator&nbsp;&gt;</a>, <a href="Poco.Data.Date.html#6176" title="Poco::Data::Date::year()">year</a></p>
+<h2>Constructors</h2>
+<h3><a id="6168">Date</a></h3>
+<p class="decl"><a href="Poco.Data.Date.html" title="class Poco::Data::Date">Date</a>();</p>
+<div class="description">
+<p>Creates the <a href="Poco.Data.Date.html" title="class Poco::Data::Date">Date</a> </p>
+</div>
+<h3><a id="6173">Date</a></h3>
+<p class="decl"><a href="Poco.Data.Date.html" title="class Poco::Data::Date">Date</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.DateTime.html" title="class Poco::DateTime">DateTime</a> &amp; dt<br />);</p>
+<div class="description">
+<p>Creates the <a href="Poco.Data.Date.html" title="class Poco::Data::Date">Date</a> from <a href="Poco.DateTime.html" title="class Poco::DateTime">DateTime</a> </p>
+</div>
+<h3><a id="6169">Date</a></h3>
+<p class="decl"><a href="Poco.Data.Date.html" title="class Poco::Data::Date">Date</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;int year,<br />&nbsp;&nbsp;&nbsp;&nbsp;int month,<br />&nbsp;&nbsp;&nbsp;&nbsp;int day<br />);</p>
+<div class="description">
+<p>Creates the <a href="Poco.Data.Date.html" title="class Poco::Data::Date">Date</a> </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="6175">~Date</a></h3>
+<p class="decl">~<a href="Poco.Data.Date.html" title="class Poco::Data::Date">Date</a>();</p>
+<div class="description">
+<p>Destroys the <a href="Poco.Data.Date.html" title="class Poco::Data::Date">Date</a>. </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="6179">assign</a></h3>
+<p class="decl">void assign(<br />&nbsp;&nbsp;&nbsp;&nbsp;int year,<br />&nbsp;&nbsp;&nbsp;&nbsp;int month,<br />&nbsp;&nbsp;&nbsp;&nbsp;int day<br />);</p>
+<div class="description">
+<p>Assigns date. </p>
+</div>
+<h3><a id="6178">day</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">int day() const;</p>
+<div class="description">
+<p>Returns the day. </p>
+</div>
+<h3><a id="6177">month</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">int month() const;</p>
+<div class="description">
+<p>Returns the month. </p>
+</div>
+<h3><a id="6191">operator !=</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool operator != (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Data.Date.html" title="class Poco::Data::Date">Date</a> &amp; date<br />) const;</p>
+<div class="description">
+<p>Inequality operator. </p>
+</div>
+<h3><a id="6193">operator &lt;</a></h3>
+<p class="decl">bool operator &lt; (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Data.Date.html" title="class Poco::Data::Date">Date</a> &amp; date<br />) const;</p>
+<div class="description">
+<p>Less then operator. </p>
+</div>
+<h3><a id="6183">operator =</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Data.Date.html" title="class Poco::Data::Date">Date</a> &amp; operator = (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Data.Date.html" title="class Poco::Data::Date">Date</a> &amp; d<br />);</p>
+<div class="description">
+<p>Assignment operator for <a href="Poco.Data.Date.html" title="class Poco::Data::Date">Date</a>. </p>
+</div>
+<h3><a id="6185">operator =</a></h3>
+<p class="decl"><a href="Poco.Data.Date.html" title="class Poco::Data::Date">Date</a> &amp; operator = (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.DateTime.html" title="class Poco::DateTime">DateTime</a> &amp; dt<br />);</p>
+<div class="description">
+<p>Assignment operator for <a href="Poco.DateTime.html" title="class Poco::DateTime">DateTime</a>. </p>
+</div>
+<h3><a id="6187">operator =</a></h3>
+<p class="decl"><a href="Poco.Data.Date.html" title="class Poco::Data::Date">Date</a> &amp; operator = (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Dynamic.Var.html" title="class Poco::Dynamic::Var">Poco::Dynamic::Var</a> &amp; var<br />);</p>
+<div class="description">
+<p>Assignment operator for Var. </p>
+</div>
+<h3><a id="6189">operator ==</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool operator == (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Data.Date.html" title="class Poco::Data::Date">Date</a> &amp; date<br />) const;</p>
+<div class="description">
+<p>Equality operator. </p>
+</div>
+<h3><a id="6195">operator &gt;</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool operator &gt; (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Data.Date.html" title="class Poco::Data::Date">Date</a> &amp; date<br />) const;</p>
+<div class="description">
+<p>Greater then operator. </p>
+</div>
+<h3><a id="6176">year</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">int year() const;</p>
+<div class="description">
+<p>Returns the year. </p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

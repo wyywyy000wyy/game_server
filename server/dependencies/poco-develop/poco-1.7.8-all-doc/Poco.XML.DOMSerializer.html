@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::XML::DOMSerializer</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.XML.html" class="namespace">Poco::XML</a></h1>
+<h1 class="symbol">class DOMSerializer</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-XML" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> XML<br />
+<b>Package:</b> DOM<br />
+<b>Header:</b> Poco/DOM/DOMSerializer.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>The <a href="Poco.XML.DOMSerializer.html" title="class Poco::XML::DOMSerializer">DOMSerializer</a> serializes a DOM document into a sequence of SAX events which are reported to the registered SAX event handlers. </p>
+<p>The <a href="Poco.XML.DOMWriter.html" title="class Poco::XML::DOMWriter">DOMWriter</a> uses a <a href="Poco.XML.DOMSerializer.html" title="class Poco::XML::DOMSerializer">DOMSerializer</a> with an <a href="Poco.XML.XMLWriter.html" title="class Poco::XML::XMLWriter">XMLWriter</a> to serialize a DOM document into textual <a href="Poco.XML.html" title="namespace Poco::XML">XML</a>. </p>
+</div>
+<h2>Inheritance</h2>
+<p><b>Direct Base Classes: </b><a href="Poco.XML.XMLReader.html" title="class Poco::XML::XMLReader">XMLReader</a></p>
+<p><b>All Base Classes: </b><a href="Poco.XML.XMLReader.html" title="class Poco::XML::XMLReader">XMLReader</a></p>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.XML.DOMSerializer.html#28624" title="Poco::XML::DOMSerializer::getContentHandler()">getContentHandler</a>, <a href="Poco.XML.DOMSerializer.html#28621" title="Poco::XML::DOMSerializer::getDTDHandler()">getDTDHandler</a>, <a href="Poco.XML.DOMSerializer.html#28618" title="Poco::XML::DOMSerializer::getEntityResolver()">getEntityResolver</a>, <a href="Poco.XML.DOMSerializer.html#28627" title="Poco::XML::DOMSerializer::getErrorHandler()">getErrorHandler</a>, <a href="Poco.XML.DOMSerializer.html#28631" title="Poco::XML::DOMSerializer::getFeature()">getFeature</a>, <a href="Poco.XML.DOMSerializer.html#28639" title="Poco::XML::DOMSerializer::getProperty()">getProperty</a>, <a href="Poco.XML.DOMSerializer.html#28660" title="Poco::XML::DOMSerializer::handleCDATASection()">handleCDATASection</a>, <a href="Poco.XML.DOMSerializer.html#28654" title="Poco::XML::DOMSerializer::handleCharacterData()">handleCharacterData</a>, <a href="Poco.XML.DOMSerializer.html#28656" title="Poco::XML::DOMSerializer::handleComment()">handleComment</a>, <a href="Poco.XML.DOMSerializer.html#28662" title="Poco::XML::DOMSerializer::handleDocument()">handleDocument</a>, <a href="Poco.XML.DOMSerializer.html#28664" title="Poco::XML::DOMSerializer::handleDocumentType()">handleDocumentType</a>, <a href="Poco.XML.DOMSerializer.html#28652" title="Poco::XML::DOMSerializer::handleElement()">handleElement</a>, <a href="Poco.XML.DOMSerializer.html#28670" title="Poco::XML::DOMSerializer::handleEntity()">handleEntity</a>, <a href="Poco.XML.DOMSerializer.html#28666" title="Poco::XML::DOMSerializer::handleFragment()">handleFragment</a>, <a href="Poco.XML.DOMSerializer.html#28650" title="Poco::XML::DOMSerializer::handleNode()">handleNode</a>, <a href="Poco.XML.DOMSerializer.html#28668" title="Poco::XML::DOMSerializer::handleNotation()">handleNotation</a>, <a href="Poco.XML.DOMSerializer.html#28658" title="Poco::XML::DOMSerializer::handlePI()">handlePI</a>, <a href="Poco.XML.DOMSerializer.html#28648" title="Poco::XML::DOMSerializer::iterate()">iterate</a>, <a href="Poco.XML.DOMSerializer.html#28641" title="Poco::XML::DOMSerializer::parse()">parse</a>, <a href="Poco.XML.DOMSerializer.html#28645" title="Poco::XML::DOMSerializer::parseMemoryNP()">parseMemoryNP</a>, <a href="Poco.XML.DOMSerializer.html#28614" title="Poco::XML::DOMSerializer::serialize()">serialize</a>, <a href="Poco.XML.DOMSerializer.html#28622" title="Poco::XML::DOMSerializer::setContentHandler()">setContentHandler</a>, <a href="Poco.XML.DOMSerializer.html#28619" title="Poco::XML::DOMSerializer::setDTDHandler()">setDTDHandler</a>, <a href="Poco.XML.DOMSerializer.html#28616" title="Poco::XML::DOMSerializer::setEntityResolver()">setEntityResolver</a>, <a href="Poco.XML.DOMSerializer.html#28625" title="Poco::XML::DOMSerializer::setErrorHandler()">setErrorHandler</a>, <a href="Poco.XML.DOMSerializer.html#28628" title="Poco::XML::DOMSerializer::setFeature()">setFeature</a>, <a href="Poco.XML.DOMSerializer.html#28633" title="Poco::XML::DOMSerializer::setProperty()">setProperty</a></p>
+<p><b>Inherited Functions: </b><a href="Poco.XML.XMLReader.html#30148" title="Poco::XML::XMLReader::getContentHandler()">getContentHandler</a>, <a href="Poco.XML.XMLReader.html#30145" title="Poco::XML::XMLReader::getDTDHandler()">getDTDHandler</a>, <a href="Poco.XML.XMLReader.html#30142" title="Poco::XML::XMLReader::getEntityResolver()">getEntityResolver</a>, <a href="Poco.XML.XMLReader.html#30151" title="Poco::XML::XMLReader::getErrorHandler()">getErrorHandler</a>, <a href="Poco.XML.XMLReader.html#30155" title="Poco::XML::XMLReader::getFeature()">getFeature</a>, <a href="Poco.XML.XMLReader.html#30163" title="Poco::XML::XMLReader::getProperty()">getProperty</a>, <a href="Poco.XML.XMLReader.html#30165" title="Poco::XML::XMLReader::parse()">parse</a>, <a href="Poco.XML.XMLReader.html#30169" title="Poco::XML::XMLReader::parseMemoryNP()">parseMemoryNP</a>, <a href="Poco.XML.XMLReader.html#30146" title="Poco::XML::XMLReader::setContentHandler()">setContentHandler</a>, <a href="Poco.XML.XMLReader.html#30143" title="Poco::XML::XMLReader::setDTDHandler()">setDTDHandler</a>, <a href="Poco.XML.XMLReader.html#30140" title="Poco::XML::XMLReader::setEntityResolver()">setEntityResolver</a>, <a href="Poco.XML.XMLReader.html#30149" title="Poco::XML::XMLReader::setErrorHandler()">setErrorHandler</a>, <a href="Poco.XML.XMLReader.html#30152" title="Poco::XML::XMLReader::setFeature()">setFeature</a>, <a href="Poco.XML.XMLReader.html#30157" title="Poco::XML::XMLReader::setProperty()">setProperty</a></p>
+<h2>Constructors</h2>
+<h3><a id="28612">DOMSerializer</a></h3>
+<p class="decl"><a href="Poco.XML.DOMSerializer.html" title="class Poco::XML::DOMSerializer">DOMSerializer</a>();</p>
+<div class="description">
+<p>Creates the <a href="Poco.XML.DOMSerializer.html" title="class Poco::XML::DOMSerializer">DOMSerializer</a>. </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="28613">~DOMSerializer</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">~<a href="Poco.XML.DOMSerializer.html" title="class Poco::XML::DOMSerializer">DOMSerializer</a>();</p>
+<div class="description">
+<p>Destroys the <a href="Poco.XML.DOMSerializer.html" title="class Poco::XML::DOMSerializer">DOMSerializer</a>. </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="28624">getContentHandler</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl"><a href="Poco.XML.ContentHandler.html" title="class Poco::XML::ContentHandler">ContentHandler</a> * getContentHandler() const;</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.XML.XMLReader.html#30148" title="Poco::XML::XMLReader::getContentHandler()">Poco::XML::XMLReader::getContentHandler()</a></p></div>
+<h3><a id="28621">getDTDHandler</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl"><a href="Poco.XML.DTDHandler.html" title="class Poco::XML::DTDHandler">DTDHandler</a> * getDTDHandler() const;</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.XML.XMLReader.html#30145" title="Poco::XML::XMLReader::getDTDHandler()">Poco::XML::XMLReader::getDTDHandler()</a></p></div>
+<h3><a id="28618">getEntityResolver</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl"><a href="Poco.XML.EntityResolver.html" title="class Poco::XML::EntityResolver">EntityResolver</a> * getEntityResolver() const;</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.XML.XMLReader.html#30142" title="Poco::XML::XMLReader::getEntityResolver()">Poco::XML::XMLReader::getEntityResolver()</a></p></div>
+<h3><a id="28627">getErrorHandler</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl"><a href="Poco.XML.ErrorHandler.html" title="class Poco::XML::ErrorHandler">ErrorHandler</a> * getErrorHandler() const;</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.XML.XMLReader.html#30151" title="Poco::XML::XMLReader::getErrorHandler()">Poco::XML::XMLReader::getErrorHandler()</a></p></div>
+<h3><a id="28631">getFeature</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">bool getFeature(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; featureId<br />) const;</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.XML.XMLReader.html#30155" title="Poco::XML::XMLReader::getFeature()">Poco::XML::XMLReader::getFeature()</a></p></div>
+<h3><a id="28639">getProperty</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">void * getProperty(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; propertyId<br />) const;</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.XML.XMLReader.html#30163" title="Poco::XML::XMLReader::getProperty()">Poco::XML::XMLReader::getProperty()</a></p></div>
+<h3><a id="28614">serialize</a></h3>
+<p class="decl">void serialize(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.Node.html" title="class Poco::XML::Node">Node</a> * pNode<br />);</p>
+<div class="description">
+<p>Serializes a DOM node and its children into a sequence of SAX events, which are reported to the registered SAX event handlers. </p>
+</div>
+<h3><a id="28622">setContentHandler</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">void setContentHandler(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.XML.ContentHandler.html" title="class Poco::XML::ContentHandler">ContentHandler</a> * pContentHandler<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.XML.XMLReader.html#30146" title="Poco::XML::XMLReader::setContentHandler()">Poco::XML::XMLReader::setContentHandler()</a></p></div>
+<h3><a id="28619">setDTDHandler</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">void setDTDHandler(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.XML.DTDHandler.html" title="class Poco::XML::DTDHandler">DTDHandler</a> * pDTDHandler<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.XML.XMLReader.html#30143" title="Poco::XML::XMLReader::setDTDHandler()">Poco::XML::XMLReader::setDTDHandler()</a></p></div>
+<h3><a id="28616">setEntityResolver</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">void setEntityResolver(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.XML.EntityResolver.html" title="class Poco::XML::EntityResolver">EntityResolver</a> * pResolver<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.XML.XMLReader.html#30140" title="Poco::XML::XMLReader::setEntityResolver()">Poco::XML::XMLReader::setEntityResolver()</a></p></div>
+<h3><a id="28625">setErrorHandler</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">void setErrorHandler(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.XML.ErrorHandler.html" title="class Poco::XML::ErrorHandler">ErrorHandler</a> * pErrorHandler<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.XML.XMLReader.html#30149" title="Poco::XML::XMLReader::setErrorHandler()">Poco::XML::XMLReader::setErrorHandler()</a></p></div>
+<h3><a id="28628">setFeature</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">void setFeature(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; featureId,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool state<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.XML.XMLReader.html#30152" title="Poco::XML::XMLReader::setFeature()">Poco::XML::XMLReader::setFeature()</a></p></div>
+<h3><a id="28633">setProperty</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">void setProperty(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; propertyId,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; value<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.XML.XMLReader.html#30157" title="Poco::XML::XMLReader::setProperty()">Poco::XML::XMLReader::setProperty()</a></p></div>
+<h3><a id="28636">setProperty</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">void setProperty(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; propertyId,<br />&nbsp;&nbsp;&nbsp;&nbsp;void * value<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.XML.XMLReader.html#30160" title="Poco::XML::XMLReader::setProperty()">Poco::XML::XMLReader::setProperty()</a></p></div>
+<h3><a id="28660">handleCDATASection</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">void handleCDATASection(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.CDATASection.html" title="class Poco::XML::CDATASection">CDATASection</a> * pCDATA<br />) const;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="28654">handleCharacterData</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">void handleCharacterData(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.Text.html" title="class Poco::XML::Text">Text</a> * pText<br />) const;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="28656">handleComment</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">void handleComment(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.Comment.html" title="class Poco::XML::Comment">Comment</a> * pComment<br />) const;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="28662">handleDocument</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">void handleDocument(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.Document.html" title="class Poco::XML::Document">Document</a> * pDocument<br />) const;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="28664">handleDocumentType</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">void handleDocumentType(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.DocumentType.html" title="class Poco::XML::DocumentType">DocumentType</a> * pDocumentType<br />) const;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="28652">handleElement</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">void handleElement(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.Element.html" title="class Poco::XML::Element">Element</a> * pElement<br />) const;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="28670">handleEntity</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">void handleEntity(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.Entity.html" title="class Poco::XML::Entity">Entity</a> * pEntity<br />) const;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="28666">handleFragment</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">void handleFragment(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.DocumentFragment.html" title="class Poco::XML::DocumentFragment">DocumentFragment</a> * pFragment<br />) const;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="28650">handleNode</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">void handleNode(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.Node.html" title="class Poco::XML::Node">Node</a> * pNode<br />) const;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="28668">handleNotation</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">void handleNotation(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.Notation.html" title="class Poco::XML::Notation">Notation</a> * pNotation<br />) const;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="28658">handlePI</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">void handlePI(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.ProcessingInstruction.html" title="class Poco::XML::ProcessingInstruction">ProcessingInstruction</a> * pPI<br />) const;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="28648">iterate</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">void iterate(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.Node.html" title="class Poco::XML::Node">Node</a> * pNode<br />) const;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="28641">parse</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">void parse(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.XML.InputSource.html" title="class Poco::XML::InputSource">InputSource</a> * pSource<br />);</p>
+<div class="description">
+<p>The <a href="Poco.XML.DOMSerializer.html" title="class Poco::XML::DOMSerializer">DOMSerializer</a> cannot parse an <a href="Poco.XML.InputSource.html" title="class Poco::XML::InputSource">InputSource</a>, so this method simply throws an <a href="Poco.XML.XMLException.html" title="class Poco::XML::XMLException">XMLException</a> when invoked. </p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.XML.XMLReader.html#30165" title="Poco::XML::XMLReader::parse()">Poco::XML::XMLReader::parse()</a></p></div>
+<h3><a id="28643">parse</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">void parse(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; systemId<br />);</p>
+<div class="description">
+<p>The <a href="Poco.XML.DOMSerializer.html" title="class Poco::XML::DOMSerializer">DOMSerializer</a> cannot parse from a system identifier, so this method simply throws an <a href="Poco.XML.XMLException.html" title="class Poco::XML::XMLException">XMLException</a> when invoked. </p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.XML.XMLReader.html#30167" title="Poco::XML::XMLReader::parse()">Poco::XML::XMLReader::parse()</a></p></div>
+<h3><a id="28645">parseMemoryNP</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">void parseMemoryNP(<br />&nbsp;&nbsp;&nbsp;&nbsp;const char * xml,<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t size<br />);</p>
+<div class="description">
+<p>The <a href="Poco.XML.DOMSerializer.html" title="class Poco::XML::DOMSerializer">DOMSerializer</a> cannot parse from a system identifier, so this method simply throws an <a href="Poco.XML.XMLException.html" title="class Poco::XML::XMLException">XMLException</a> when invoked. </p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.XML.XMLReader.html#30169" title="Poco::XML::XMLReader::parseMemoryNP()">Poco::XML::XMLReader::parseMemoryNP()</a></p></div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

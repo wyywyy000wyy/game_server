@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::SHA1Engine</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.html" class="namespace">Poco</a></h1>
+<h1 class="symbol">class SHA1Engine</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Foundation" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Foundation<br />
+<b>Package:</b> Crypt<br />
+<b>Header:</b> Poco/SHA1Engine.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>This class implementes the SHA-1 message digest algorithm. (FIPS 180-1, see <a href="http://www.itl.nist.gov/fipspubs/fip180-1.htm" target="_blank">http://www.itl.nist.gov/fipspubs/fip180-1.htm</a>) </p>
+</div>
+<h2>Inheritance</h2>
+<p><b>Direct Base Classes: </b><a href="Poco.DigestEngine.html" title="class Poco::DigestEngine">DigestEngine</a></p>
+<p><b>All Base Classes: </b><a href="Poco.DigestEngine.html" title="class Poco::DigestEngine">DigestEngine</a></p>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.SHA1Engine.html#16685" title="Poco::SHA1Engine::digest()">digest</a>, <a href="Poco.SHA1Engine.html#16683" title="Poco::SHA1Engine::digestLength()">digestLength</a>, <a href="Poco.SHA1Engine.html#16684" title="Poco::SHA1Engine::reset()">reset</a>, <a href="Poco.SHA1Engine.html#16686" title="Poco::SHA1Engine::updateImpl()">updateImpl</a></p>
+<p><b>Inherited Functions: </b><a href="Poco.DigestEngine.html#9769" title="Poco::DigestEngine::digest()">digest</a>, <a href="Poco.DigestEngine.html#9772" title="Poco::DigestEngine::digestFromHex()">digestFromHex</a>, <a href="Poco.DigestEngine.html#9767" title="Poco::DigestEngine::digestLength()">digestLength</a>, <a href="Poco.DigestEngine.html#9770" title="Poco::DigestEngine::digestToHex()">digestToHex</a>, <a href="Poco.DigestEngine.html#9768" title="Poco::DigestEngine::reset()">reset</a>, <a href="Poco.DigestEngine.html#9760" title="Poco::DigestEngine::update()">update</a>, <a href="Poco.DigestEngine.html#9774" title="Poco::DigestEngine::updateImpl()">updateImpl</a></p>
+<h2>Enumerations</h2>
+<h3><i>Anonymous</i></h3>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="16679">BLOCK_SIZE</a> = 64</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="16680">DIGEST_SIZE</a> = 20</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Constructors</h2>
+<h3><a id="16681">SHA1Engine</a></h3>
+<p class="decl"><a href="Poco.SHA1Engine.html" title="class Poco::SHA1Engine">SHA1Engine</a>();</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="16682">~SHA1Engine</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">~<a href="Poco.SHA1Engine.html" title="class Poco::SHA1Engine">SHA1Engine</a>();</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="16685">digest</a></h3>
+<p class="decl">const <a href="Poco.DigestEngine.html#9757" title="Poco::DigestEngine::Digest">DigestEngine::Digest</a> &amp; digest();</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="16683">digestLength</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">std::size_t digestLength() const;</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.DigestEngine.html#9767" title="Poco::DigestEngine::digestLength()">Poco::DigestEngine::digestLength()</a></p></div>
+<h3><a id="16684">reset</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">void reset();</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.DigestEngine.html#9768" title="Poco::DigestEngine::reset()">Poco::DigestEngine::reset()</a></p></div>
+<h3><a id="16686">updateImpl</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">void updateImpl(<br />&nbsp;&nbsp;&nbsp;&nbsp;const void * data,<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t length<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.DigestEngine.html#9774" title="Poco::DigestEngine::updateImpl()">Poco::DigestEngine::updateImpl()</a></p></div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

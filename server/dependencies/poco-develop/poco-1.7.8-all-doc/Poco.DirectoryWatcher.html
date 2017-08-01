@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::DirectoryWatcher</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.html" class="namespace">Poco</a></h1>
+<h1 class="symbol">class DirectoryWatcher</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Foundation" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Foundation<br />
+<b>Package:</b> Filesystem<br />
+<b>Header:</b> Poco/DirectoryWatcher.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>This class is used to get notifications about changes to the filesystem, more specifically, to a specific directory. Changes to a directory are reported via events. </p>
+<p>A thread will be created that watches the specified directory for changes. Events are reported in the context of this thread.  </p>
+<p>Note that changes to files in subdirectories of the watched directory are not reported. Separate <a href="Poco.DirectoryWatcher.html" title="class Poco::DirectoryWatcher">DirectoryWatcher</a> objects must be created for these directories if they should be watched. </p>
+<p>Changes to file attributes are not reported. </p>
+<p>On Windows, this class is implemented using FindFirstChangeNotification()/FindNextChangeNotification(). On Linux, this class is implemented using inotify. On FreeBSD and Darwin (Mac OS X, iOS), this class uses kevent/kqueue. On all other platforms, the watched directory is periodically scanned for changes. This can negatively affect performance if done too often. Therefore, the interval in which scans are done can be specified in the constructor. Note that periodic scanning will also be done on FreeBSD and Darwin if events for changes to files (<a href="Poco.DirectoryWatcher.html#9910" title="Poco::DirectoryWatcher::DW_ITEM_MODIFIED">DW_ITEM_MODIFIED</a>) are enabled. </p>
+<p><a href="Poco.DirectoryWatcher.html#9911" title="Poco::DirectoryWatcher::DW_ITEM_MOVED_FROM">DW_ITEM_MOVED_FROM</a> and <a href="Poco.DirectoryWatcher.html#9912" title="Poco::DirectoryWatcher::DW_ITEM_MOVED_TO">DW_ITEM_MOVED_TO</a> events will only be reported on Linux. On other platforms, a file rename or move operation will be reported via a <a href="Poco.DirectoryWatcher.html#9909" title="Poco::DirectoryWatcher::DW_ITEM_REMOVED">DW_ITEM_REMOVED</a> and a <a href="Poco.DirectoryWatcher.html#9908" title="Poco::DirectoryWatcher::DW_ITEM_ADDED">DW_ITEM_ADDED</a> event. The order of these two events is not defined. </p>
+<p>An event mask can be specified to enable only certain events. </p>
+</div>
+<h2>Inheritance</h2>
+<p><b>Direct Base Classes: </b><a href="Poco.Runnable.html" title="class Poco::Runnable">Runnable</a></p>
+<p><b>All Base Classes: </b><a href="Poco.Runnable.html" title="class Poco::Runnable">Runnable</a></p>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.DirectoryWatcher.html#9944" title="Poco::DirectoryWatcher::directory()">directory</a>, <a href="Poco.DirectoryWatcher.html#9942" title="Poco::DirectoryWatcher::eventMask()">eventMask</a>, <a href="Poco.DirectoryWatcher.html#9941" title="Poco::DirectoryWatcher::eventsSuspended()">eventsSuspended</a>, <a href="Poco.DirectoryWatcher.html#9946" title="Poco::DirectoryWatcher::init()">init</a>, <a href="Poco.DirectoryWatcher.html#9940" title="Poco::DirectoryWatcher::resumeEvents()">resumeEvents</a>, <a href="Poco.DirectoryWatcher.html#9948" title="Poco::DirectoryWatcher::run()">run</a>, <a href="Poco.DirectoryWatcher.html#9943" title="Poco::DirectoryWatcher::scanInterval()">scanInterval</a>, <a href="Poco.DirectoryWatcher.html#9947" title="Poco::DirectoryWatcher::stop()">stop</a>, <a href="Poco.DirectoryWatcher.html#9945" title="Poco::DirectoryWatcher::supportsMoveEvents()">supportsMoveEvents</a>, <a href="Poco.DirectoryWatcher.html#9939" title="Poco::DirectoryWatcher::suspendEvents()">suspendEvents</a></p>
+<p><b>Inherited Functions: </b><a href="Poco.Runnable.html#16662" title="Poco::Runnable::run()">run</a></p>
+<h2>Nested Classes</h2>
+<h3><a href="Poco.DirectoryWatcher.DirectoryEvent.html" class="class">struct DirectoryEvent</a></h3>
+<p>&nbsp;<a href="Poco.DirectoryWatcher.DirectoryEvent.html"><img src="images/arrow.png" alt="more..." /> </a></p>
+<h2>Enumerations</h2>
+<h3><i>Anonymous</i></h3>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="9917">DW_DEFAULT_SCAN_INTERVAL</a> = 5</p>
+<div class="description">
+<p>Default scan interval for platforms that don't provide a native notification mechanism. </p>
+</div>
+<h3><a id="9913">DirectoryEventMask</a></h3>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="9914">DW_FILTER_ENABLE_ALL</a> = 31</p>
+<div class="description">
+<p>Enables all event types. </p>
+</div>
+<p class="decl"><a id="9915">DW_FILTER_DISABLE_ALL</a> = 0</p>
+<div class="description">
+<p>Disables all event types. </p>
+</div>
+<h3><a id="9907">DirectoryEventType</a></h3>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="9908">DW_ITEM_ADDED</a> = 1</p>
+<div class="description">
+<p>A new item has been created and added to the directory. </p>
+</div>
+<p class="decl"><a id="9909">DW_ITEM_REMOVED</a> = 2</p>
+<div class="description">
+<p>An item has been removed from the directory. </p>
+</div>
+<p class="decl"><a id="9910">DW_ITEM_MODIFIED</a> = 4</p>
+<div class="description">
+<p>An item has been modified. </p>
+</div>
+<p class="decl"><a id="9911">DW_ITEM_MOVED_FROM</a> = 8</p>
+<div class="description">
+<p>An item has been renamed or moved. This event delivers the old name. </p>
+</div>
+<p class="decl"><a id="9912">DW_ITEM_MOVED_TO</a> = 16</p>
+<div class="description">
+<p>An item has been renamed or moved. This event delivers the new name. </p>
+</div>
+<h2>Constructors</h2>
+<h3><a id="9930">DirectoryWatcher</a></h3>
+<p class="decl"><a href="Poco.DirectoryWatcher.html" title="class Poco::DirectoryWatcher">DirectoryWatcher</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; path,<br />&nbsp;&nbsp;&nbsp;&nbsp;int eventMask = DW_FILTER_ENABLE_ALL,<br />&nbsp;&nbsp;&nbsp;&nbsp;int scanInterval = DW_DEFAULT_SCAN_INTERVAL<br />);</p>
+<div class="description">
+<p>Creates a <a href="Poco.DirectoryWatcher.html" title="class Poco::DirectoryWatcher">DirectoryWatcher</a> for the directory given in path. To enable only specific events, an eventMask can be specified by OR-ing the desired event IDs (e.g., <a href="Poco.DirectoryWatcher.html#9908" title="Poco::DirectoryWatcher::DW_ITEM_ADDED">DW_ITEM_ADDED</a> | <a href="Poco.DirectoryWatcher.html#9910" title="Poco::DirectoryWatcher::DW_ITEM_MODIFIED">DW_ITEM_MODIFIED</a>). On platforms where no native filesystem notifications are available, scanInterval specifies the interval in seconds between scans of the directory. </p>
+</div>
+<h3><a id="9934">DirectoryWatcher</a></h3>
+<p class="decl"><a href="Poco.DirectoryWatcher.html" title="class Poco::DirectoryWatcher">DirectoryWatcher</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.File.html" title="class Poco::File">File</a> &amp; directory,<br />&nbsp;&nbsp;&nbsp;&nbsp;int eventMask = DW_FILTER_ENABLE_ALL,<br />&nbsp;&nbsp;&nbsp;&nbsp;int scanInterval = DW_DEFAULT_SCAN_INTERVAL<br />);</p>
+<div class="description">
+<p>Creates a <a href="Poco.DirectoryWatcher.html" title="class Poco::DirectoryWatcher">DirectoryWatcher</a> for the specified directory To enable only specific events, an eventMask can be specified by OR-ing the desired event IDs (e.g., <a href="Poco.DirectoryWatcher.html#9908" title="Poco::DirectoryWatcher::DW_ITEM_ADDED">DW_ITEM_ADDED</a> | <a href="Poco.DirectoryWatcher.html#9910" title="Poco::DirectoryWatcher::DW_ITEM_MODIFIED">DW_ITEM_MODIFIED</a>). On platforms where no native filesystem notifications are available, scanInterval specifies the interval in seconds between scans of the directory. </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="9938">~DirectoryWatcher</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">~<a href="Poco.DirectoryWatcher.html" title="class Poco::DirectoryWatcher">DirectoryWatcher</a>();</p>
+<div class="description">
+<p>Destroys the <a href="Poco.DirectoryWatcher.html" title="class Poco::DirectoryWatcher">DirectoryWatcher</a>. </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="9944">directory</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">const <a href="Poco.File.html" title="class Poco::File">File</a> &amp; directory() const;</p>
+<div class="description">
+<p>Returns the directory being watched. </p>
+</div>
+<h3><a id="9942">eventMask</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">int eventMask() const;</p>
+<div class="description">
+<p>Returns the value of the eventMask passed to the constructor. </p>
+</div>
+<h3><a id="9941">eventsSuspended</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool eventsSuspended() const;</p>
+<div class="description">
+<p>Returns true if and only if events are suspended. </p>
+</div>
+<h3><a id="9940">resumeEvents</a></h3>
+<p class="decl">void resumeEvents();</p>
+<div class="description">
+<p>Resumes events, after they have been suspended with a call to <a href="Poco.DirectoryWatcher.html#9939" title="Poco::DirectoryWatcher::suspendEvents()">suspendEvents</a>(). </p>
+</div>
+<h3><a id="9943">scanInterval</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">int scanInterval() const;</p>
+<div class="description">
+<p>Returns the scan interval in seconds. </p>
+</div>
+<h3><a id="9945">supportsMoveEvents</a></h3>
+<p class="decl">bool supportsMoveEvents() const;</p>
+<div class="description">
+<p>Returns true if and only if the platform supports <a href="Poco.DirectoryWatcher.html#9911" title="Poco::DirectoryWatcher::DW_ITEM_MOVED_FROM">DW_ITEM_MOVED_FROM</a>/itemMovedFrom and <a href="Poco.DirectoryWatcher.html#9912" title="Poco::DirectoryWatcher::DW_ITEM_MOVED_TO">DW_ITEM_MOVED_TO</a>/itemMovedTo events. </p>
+</div>
+<h3><a id="9939">suspendEvents</a></h3>
+<p class="decl">void suspendEvents();</p>
+<div class="description">
+<p>Suspends sending of events. Can be called multiple times, but every call to suspendEvent() must be matched by a call to <a href="Poco.DirectoryWatcher.html#9940" title="Poco::DirectoryWatcher::resumeEvents()">resumeEvents</a>(). </p>
+</div>
+<h3><a id="9946">init</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">void init();</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="9948">run</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">void run();</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Runnable.html#16662" title="Poco::Runnable::run()">Poco::Runnable::run()</a></p></div>
+<h3><a id="9947">stop</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">void stop();</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Variables</h2>
+<h3><a id="9924">itemAdded</a></h3>
+<p class="decl"><a href="Poco.BasicEvent.html" title="class Poco::BasicEvent">BasicEvent</a> &lt; const <a href="Poco.DirectoryWatcher.DirectoryEvent.html" title="struct Poco::DirectoryWatcher::DirectoryEvent">DirectoryEvent</a> &gt; itemAdded;</p>
+<div class="description">
+<p>Fired when a file or directory has been created or added to the directory. </p>
+</div>
+<h3><a id="9926">itemModified</a></h3>
+<p class="decl"><a href="Poco.BasicEvent.html" title="class Poco::BasicEvent">BasicEvent</a> &lt; const <a href="Poco.DirectoryWatcher.DirectoryEvent.html" title="struct Poco::DirectoryWatcher::DirectoryEvent">DirectoryEvent</a> &gt; itemModified;</p>
+<div class="description">
+<p>Fired when a file or directory has been modified. </p>
+</div>
+<h3><a id="9927">itemMovedFrom</a></h3>
+<p class="decl"><a href="Poco.BasicEvent.html" title="class Poco::BasicEvent">BasicEvent</a> &lt; const <a href="Poco.DirectoryWatcher.DirectoryEvent.html" title="struct Poco::DirectoryWatcher::DirectoryEvent">DirectoryEvent</a> &gt; itemMovedFrom;</p>
+<div class="description">
+<p>Fired when a file or directory has been renamed. This event delivers the old name. </p>
+</div>
+<h3><a id="9928">itemMovedTo</a></h3>
+<p class="decl"><a href="Poco.BasicEvent.html" title="class Poco::BasicEvent">BasicEvent</a> &lt; const <a href="Poco.DirectoryWatcher.DirectoryEvent.html" title="struct Poco::DirectoryWatcher::DirectoryEvent">DirectoryEvent</a> &gt; itemMovedTo;</p>
+<div class="description">
+<p>Fired when a file or directory has been moved. This event delivers the new name. </p>
+</div>
+<h3><a id="9925">itemRemoved</a></h3>
+<p class="decl"><a href="Poco.BasicEvent.html" title="class Poco::BasicEvent">BasicEvent</a> &lt; const <a href="Poco.DirectoryWatcher.DirectoryEvent.html" title="struct Poco::DirectoryWatcher::DirectoryEvent">DirectoryEvent</a> &gt; itemRemoved;</p>
+<div class="description">
+<p>Fired when a file or directory has been removed from the directory. </p>
+</div>
+<h3><a id="9929">scanError</a></h3>
+<p class="decl"><a href="Poco.BasicEvent.html" title="class Poco::BasicEvent">BasicEvent</a> &lt; const <a href="Poco.Exception.html" title="class Poco::Exception">Exception</a> &gt; scanError;</p>
+<div class="description">
+<p>Fired when an error occurs while scanning for changes. </p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

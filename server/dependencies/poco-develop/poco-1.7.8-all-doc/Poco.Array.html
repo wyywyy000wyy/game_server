@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::Array</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.html" class="namespace">Poco</a></h1>
+<h1 class="template">template &lt; class T, std::size_t N &gt;</h1>
+<h1 class="symbol">class Array</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Foundation" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Foundation<br />
+<b>Package:</b> Core<br />
+<b>Header:</b> Poco/Array.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>STL container like C-style array replacement class.  </p>
+<p>This implementation is based on the idea of Nicolai Josuttis. His original implementation can be found at <a href="http://www.josuttis.com/cppcode/array.html" target="_blank">http://www.josuttis.com/cppcode/array.html</a> .  </p>
+</div>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.Array.html#8248" title="Poco::Array::assign()">assign</a>, <a href="Poco.Array.html#8228" title="Poco::Array::at()">at</a>, <a href="Poco.Array.html#8234" title="Poco::Array::back()">back</a>, <a href="Poco.Array.html#8214" title="Poco::Array::begin()">begin</a>, <a href="Poco.Array.html#8245" title="Poco::Array::c_array()">c_array</a>, <a href="Poco.Array.html#8243" title="Poco::Array::data()">data</a>, <a href="Poco.Array.html#8237" title="Poco::Array::empty()">empty</a>, <a href="Poco.Array.html#8216" title="Poco::Array::end()">end</a>, <a href="Poco.Array.html#8232" title="Poco::Array::front()">front</a>, <a href="Poco.Array.html#8238" title="Poco::Array::max_size()">max_size</a>, <a href="Poco.Array.html#8246" title="Poco::Array::operator =()">operator&nbsp;=</a>, <a href="Poco.Array.html#8224" title="Poco::Array::operator []()">operator&nbsp;[]</a>, <a href="Poco.Array.html#8220" title="Poco::Array::rbegin()">rbegin</a>, <a href="Poco.Array.html#8222" title="Poco::Array::rend()">rend</a>, <a href="Poco.Array.html#8236" title="Poco::Array::size()">size</a>, <a href="Poco.Array.html#8241" title="Poco::Array::swap()">swap</a></p>
+<h2>Types</h2>
+<h3><a id="8209">const_iterator</a></h3>
+<p class="decl">typedef const T * const_iterator;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="8211">const_reference</a></h3>
+<p class="decl">typedef const T &amp; const_reference;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="8219">const_reverse_iterator</a></h3>
+<p class="decl">typedef std::reverse_iterator &lt; const_iterator &gt; const_reverse_iterator;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="8213">difference_type</a></h3>
+<p class="decl">typedef std::ptrdiff_t difference_type;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="8208">iterator</a></h3>
+<p class="decl">typedef T * iterator;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="8210">reference</a></h3>
+<p class="decl">typedef T &amp; reference;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="8218">reverse_iterator</a></h3>
+<p class="decl">typedef std::reverse_iterator &lt; iterator &gt; reverse_iterator;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="8212">size_type</a></h3>
+<p class="decl">typedef std::size_t size_type;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="8207">value_type</a></h3>
+<p class="decl">typedef T value_type;</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Enumerations</h2>
+<h3><i>Anonymous</i></h3>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="8240">static_size</a> = N</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="8248">assign</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void assign(<br />&nbsp;&nbsp;&nbsp;&nbsp;const T &amp; value<br />);</p>
+<div class="description">
+<p>Assign one value to all elements </p>
+</div>
+<h3><a id="8228">at</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">reference at(<br />&nbsp;&nbsp;&nbsp;&nbsp;size_type i<br />);</p>
+<div class="description">
+<p>Element access with range check. Throws <a href="Poco.InvalidArgumentException.html" title="class Poco::InvalidArgumentException">Poco::InvalidArgumentException</a> if the index is over range. </p>
+</div>
+<h3><a id="8230">at</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">const_reference at(<br />&nbsp;&nbsp;&nbsp;&nbsp;size_type i<br />) const;</p>
+<div class="description">
+<p>Element access with range check. Throws <a href="Poco.InvalidArgumentException.html" title="class Poco::InvalidArgumentException">Poco::InvalidArgumentException</a> if the index is over range. </p>
+</div>
+<h3><a id="8234">back</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">reference back();</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="8235">back</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">const_reference back() const;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="8214">begin</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">iterator begin();</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="8215">begin</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">const_iterator begin() const;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="8245">c_array</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">T * c_array();</p>
+<div class="description">
+<p>Use array as C array (direct read/write access to data) </p>
+</div>
+<h3><a id="8243">data</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">const T * data() const;</p>
+<div class="description">
+<p>Direct access to data (read-only) </p>
+</div>
+<h3><a id="8244">data</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">T * data();</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="8237">empty</a> <img src="images/static.png" alt="static" title="static" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">static bool empty();</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="8216">end</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">iterator end();</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="8217">end</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">const_iterator end() const;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="8232">front</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">reference front();</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="8233">front</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">const_reference front() const;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="8238">max_size</a> <img src="images/static.png" alt="static" title="static" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">static size_type max_size();</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="8246">operator =</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">template &lt; typename Other &gt; <a href="Poco.Array.html" title="class Poco::Array">Array</a> &lt; T, N &gt; &amp; operator = (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Array.html" title="class Poco::Array">Array</a> &lt; Other, N &gt; &amp; rhs<br />);</p>
+<div class="description">
+<p>Assignment with type conversion  </p>
+</div>
+<h3><a id="8224">operator []</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">reference operator[] (<br />&nbsp;&nbsp;&nbsp;&nbsp;size_type i<br />);</p>
+<div class="description">
+<p>Element access without range check. If the index is not small than the given size, the behavior is undefined. </p>
+</div>
+<h3><a id="8226">operator []</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">const_reference operator[] (<br />&nbsp;&nbsp;&nbsp;&nbsp;size_type i<br />) const;</p>
+<div class="description">
+<p>Element access without range check. If the index is not small than the given size, the behavior is undefined. </p>
+</div>
+<h3><a id="8220">rbegin</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">reverse_iterator rbegin();</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="8221">rbegin</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">const_reverse_iterator rbegin() const;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="8222">rend</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">reverse_iterator rend();</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="8223">rend</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">const_reverse_iterator rend() const;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="8236">size</a> <img src="images/static.png" alt="static" title="static" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">static size_type size();</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="8241">swap</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void swap(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Array.html" title="class Poco::Array">Array</a> &lt; T, N &gt; &amp; y<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Variables</h2>
+<h3><a id="8250">elems</a></h3>
+<p class="decl">T elems[N];</p>
+<div class="description">
+<p>Fixed-size array of elements of type T, public specifier used to make this class a aggregate. </p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

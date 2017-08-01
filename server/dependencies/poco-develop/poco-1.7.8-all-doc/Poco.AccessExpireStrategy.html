@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::AccessExpireStrategy</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.html" class="namespace">Poco</a></h1>
+<h1 class="template">template &lt; class TKey, class TValue &gt;</h1>
+<h1 class="symbol">class AccessExpireStrategy</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Foundation" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Foundation<br />
+<b>Package:</b> Cache<br />
+<b>Header:</b> Poco/AccessExpireStrategy.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>An <a href="Poco.AccessExpireStrategy.html" title="class Poco::AccessExpireStrategy">AccessExpireStrategy</a> implements time and access based expiration of cache entries </p>
+</div>
+<h2>Inheritance</h2>
+<p><b>Direct Base Classes: </b>ExpireStrategy&nbsp;&lt;&nbsp;TKey,&nbsp;TValue&nbsp;&gt;</p>
+<p><b>All Base Classes: </b>ExpireStrategy&nbsp;&lt;&nbsp;TKey,&nbsp;TValue&nbsp;&gt;</p>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.AccessExpireStrategy.html#7954" title="Poco::AccessExpireStrategy::onGet()">onGet</a></p>
+<h2>Constructors</h2>
+<h3><a id="7951">AccessExpireStrategy</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.AccessExpireStrategy.html" title="class Poco::AccessExpireStrategy">AccessExpireStrategy</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Timestamp.html#18167" title="Poco::Timestamp::TimeDiff">Timestamp::TimeDiff</a> expireTimeInMilliSec<br />);</p>
+<div class="description">
+<p>Create an expire strategy. Note that the smallest allowed caching time is 25ms. Anything lower than that is not useful with current operating systems. </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="7953">~AccessExpireStrategy</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">~<a href="Poco.AccessExpireStrategy.html" title="class Poco::AccessExpireStrategy">AccessExpireStrategy</a>();</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="7954">onGet</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void onGet(<br />&nbsp;&nbsp;&nbsp;&nbsp;const void * param87,<br />&nbsp;&nbsp;&nbsp;&nbsp;const TKey &amp; key<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

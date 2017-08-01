@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::Crypto::DigestEngine</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.Crypto.html" class="namespace">Poco::Crypto</a></h1>
+<h1 class="symbol">class DigestEngine</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Crypto" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Crypto<br />
+<b>Package:</b> Digest<br />
+<b>Header:</b> Poco/Crypto/DigestEngine.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>This class implements a <a href="Poco.DigestEngine.html" title="class Poco::DigestEngine">Poco::DigestEngine</a> for all digest algorithms supported by OpenSSL. </p>
+</div>
+<h2>Inheritance</h2>
+<p><b>Direct Base Classes: </b><a href="Poco.DigestEngine.html" title="class Poco::DigestEngine">Poco::DigestEngine</a></p>
+<p><b>All Base Classes: </b><a href="Poco.DigestEngine.html" title="class Poco::DigestEngine">Poco::DigestEngine</a></p>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.Crypto.DigestEngine.html#244" title="Poco::Crypto::DigestEngine::algorithm()">algorithm</a>, <a href="Poco.Crypto.DigestEngine.html#248" title="Poco::Crypto::DigestEngine::digest()">digest</a>, <a href="Poco.Crypto.DigestEngine.html#246" title="Poco::Crypto::DigestEngine::digestLength()">digestLength</a>, <a href="Poco.Crypto.DigestEngine.html#245" title="Poco::Crypto::DigestEngine::nid()">nid</a>, <a href="Poco.Crypto.DigestEngine.html#247" title="Poco::Crypto::DigestEngine::reset()">reset</a>, <a href="Poco.Crypto.DigestEngine.html#249" title="Poco::Crypto::DigestEngine::updateImpl()">updateImpl</a></p>
+<p><b>Inherited Functions: </b><a href="Poco.DigestEngine.html#9769" title="Poco::DigestEngine::digest()">digest</a>, <a href="Poco.DigestEngine.html#9772" title="Poco::DigestEngine::digestFromHex()">digestFromHex</a>, <a href="Poco.DigestEngine.html#9767" title="Poco::DigestEngine::digestLength()">digestLength</a>, <a href="Poco.DigestEngine.html#9770" title="Poco::DigestEngine::digestToHex()">digestToHex</a>, <a href="Poco.DigestEngine.html#9768" title="Poco::DigestEngine::reset()">reset</a>, <a href="Poco.DigestEngine.html#9760" title="Poco::DigestEngine::update()">update</a>, <a href="Poco.DigestEngine.html#9774" title="Poco::DigestEngine::updateImpl()">updateImpl</a></p>
+<h2>Constructors</h2>
+<h3><a id="241">DigestEngine</a></h3>
+<p class="decl"><a href="Poco.Crypto.DigestEngine.html" title="class Poco::Crypto::DigestEngine">DigestEngine</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; name<br />);</p>
+<div class="description">
+<p>Creates a <a href="Poco.Crypto.DigestEngine.html" title="class Poco::Crypto::DigestEngine">DigestEngine</a> using the digest with the given name (e.g., &quot;MD5&quot;, &quot;SHA1&quot;, &quot;SHA256&quot;, &quot;SHA512&quot;, etc.). See the OpenSSL documentation for a list of supported digest algorithms. </p>
+<p>Throws a <a href="Poco.NotFoundException.html" title="class Poco::NotFoundException">Poco::NotFoundException</a> if no algorithm with the given name exists. </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="243">~DigestEngine</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">~<a href="Poco.Crypto.DigestEngine.html" title="class Poco::Crypto::DigestEngine">DigestEngine</a>();</p>
+<div class="description">
+<p>Destroys the <a href="Poco.Crypto.DigestEngine.html" title="class Poco::Crypto::DigestEngine">DigestEngine</a>. </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="244">algorithm</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">const std::string &amp; algorithm() const;</p>
+<div class="description">
+<p>Returns the name of the digest algorithm. </p>
+</div>
+<h3><a id="248">digest</a></h3>
+<p class="decl">const <a href="Poco.DigestEngine.html#9757" title="Poco::DigestEngine::Digest">Poco::DigestEngine::Digest</a> &amp; digest();</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="246">digestLength</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">std::size_t digestLength() const;</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.DigestEngine.html#9767" title="Poco::DigestEngine::digestLength()">Poco::DigestEngine::digestLength()</a></p></div>
+<h3><a id="245">nid</a></h3>
+<p class="decl">int nid() const;</p>
+<div class="description">
+<p>Returns the NID (OpenSSL object identifier) of the digest algorithm. </p>
+</div>
+<h3><a id="247">reset</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">void reset();</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.DigestEngine.html#9768" title="Poco::DigestEngine::reset()">Poco::DigestEngine::reset()</a></p></div>
+<h3><a id="249">updateImpl</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">void updateImpl(<br />&nbsp;&nbsp;&nbsp;&nbsp;const void * data,<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t length<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.DigestEngine.html#9774" title="Poco::DigestEngine::updateImpl()">Poco::DigestEngine::updateImpl()</a></p></div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

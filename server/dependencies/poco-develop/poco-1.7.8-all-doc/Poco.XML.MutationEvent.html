@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::XML::MutationEvent</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.XML.html" class="namespace">Poco::XML</a></h1>
+<h1 class="symbol">class MutationEvent</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-XML" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> XML<br />
+<b>Package:</b> DOM<br />
+<b>Header:</b> Poco/DOM/MutationEvent.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>The <a href="Poco.XML.MutationEvent.html" title="class Poco::XML::MutationEvent">MutationEvent</a> interface provides specific contextual  information associated with Mutation events. </p>
+</div>
+<h2>Inheritance</h2>
+<p><b>Direct Base Classes: </b><a href="Poco.XML.Event.html" title="class Poco::XML::Event">Event</a></p>
+<p><b>All Base Classes: </b><a href="Poco.XML.DOMObject.html" title="class Poco::XML::DOMObject">DOMObject</a>, <a href="Poco.XML.Event.html" title="class Poco::XML::Event">Event</a></p>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.XML.MutationEvent.html#29121" title="Poco::XML::MutationEvent::attrChange()">attrChange</a>, <a href="Poco.XML.MutationEvent.html#29120" title="Poco::XML::MutationEvent::attrName()">attrName</a>, <a href="Poco.XML.MutationEvent.html#29122" title="Poco::XML::MutationEvent::initMutationEvent()">initMutationEvent</a>, <a href="Poco.XML.MutationEvent.html#29119" title="Poco::XML::MutationEvent::newValue()">newValue</a>, <a href="Poco.XML.MutationEvent.html#29118" title="Poco::XML::MutationEvent::prevValue()">prevValue</a>, <a href="Poco.XML.MutationEvent.html#29117" title="Poco::XML::MutationEvent::relatedNode()">relatedNode</a></p>
+<p><b>Inherited Functions: </b><a href="Poco.XML.Event.html#29029" title="Poco::XML::Event::autoRelease()">autoRelease</a>, <a href="Poco.XML.Event.html#29020" title="Poco::XML::Event::bubbles()">bubbles</a>, <a href="Poco.XML.Event.html#29021" title="Poco::XML::Event::cancelable()">cancelable</a>, <a href="Poco.XML.Event.html#29018" title="Poco::XML::Event::currentTarget()">currentTarget</a>, <a href="Poco.XML.DOMObject.html#28569" title="Poco::XML::DOMObject::duplicate()">duplicate</a>, <a href="Poco.XML.Event.html#29019" title="Poco::XML::Event::eventPhase()">eventPhase</a>, <a href="Poco.XML.Event.html#29025" title="Poco::XML::Event::initEvent()">initEvent</a>, <a href="Poco.XML.Event.html#29040" title="Poco::XML::Event::isCanceled()">isCanceled</a>, <a href="Poco.XML.Event.html#29041" title="Poco::XML::Event::isStopped()">isStopped</a>, <a href="Poco.XML.Event.html#29024" title="Poco::XML::Event::preventDefault()">preventDefault</a>, <a href="Poco.XML.DOMObject.html#28570" title="Poco::XML::DOMObject::release()">release</a>, <a href="Poco.XML.Event.html#29044" title="Poco::XML::Event::setCurrentPhase()">setCurrentPhase</a>, <a href="Poco.XML.Event.html#29046" title="Poco::XML::Event::setCurrentTarget()">setCurrentTarget</a>, <a href="Poco.XML.Event.html#29042" title="Poco::XML::Event::setTarget()">setTarget</a>, <a href="Poco.XML.Event.html#29023" title="Poco::XML::Event::stopPropagation()">stopPropagation</a>, <a href="Poco.XML.Event.html#29017" title="Poco::XML::Event::target()">target</a>, <a href="Poco.XML.Event.html#29022" title="Poco::XML::Event::timeStamp()">timeStamp</a>, <a href="Poco.XML.Event.html#29016" title="Poco::XML::Event::type()">type</a></p>
+<h2>Enumerations</h2>
+<h3><a id="29113">AttrChangeType</a></h3>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="29114">MODIFICATION</a> = 1</p>
+<div class="description">
+<p>The <a href="Poco.XML.Attr.html" title="class Poco::XML::Attr">Attr</a> was modified in place. </p>
+</div>
+<p class="decl"><a id="29115">ADDITION</a> = 2</p>
+<div class="description">
+<p>The <a href="Poco.XML.Attr.html" title="class Poco::XML::Attr">Attr</a> was just added.  </p>
+</div>
+<p class="decl"><a id="29116">REMOVAL</a> = 3</p>
+<div class="description">
+<p>The <a href="Poco.XML.Attr.html" title="class Poco::XML::Attr">Attr</a> was just removed.  </p>
+</div>
+<h2>Constructors</h2>
+<h3><a id="29138">MutationEvent</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl"><a href="Poco.XML.MutationEvent.html" title="class Poco::XML::MutationEvent">MutationEvent</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.XML.Document.html" title="class Poco::XML::Document">Document</a> * pOwnerDocument,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; type<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="29141">MutationEvent</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl"><a href="Poco.XML.MutationEvent.html" title="class Poco::XML::MutationEvent">MutationEvent</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.XML.Document.html" title="class Poco::XML::Document">Document</a> * pOwnerDocument,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; type,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.XML.EventTarget.html" title="class Poco::XML::EventTarget">EventTarget</a> * pTarget,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool canBubble,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool cancelable,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.XML.Node.html" title="class Poco::XML::Node">Node</a> * relatedNode<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="29148">MutationEvent</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl"><a href="Poco.XML.MutationEvent.html" title="class Poco::XML::MutationEvent">MutationEvent</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.XML.Document.html" title="class Poco::XML::Document">Document</a> * pOwnerDocument,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; type,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.XML.EventTarget.html" title="class Poco::XML::EventTarget">EventTarget</a> * pTarget,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool canBubble,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool cancelable,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.XML.Node.html" title="class Poco::XML::Node">Node</a> * relatedNode,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; prevValue,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; newValue,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; attrName,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.XML.MutationEvent.html#29113" title="enum  Poco::XML::MutationEvent::AttrChangeType">AttrChangeType</a> change<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="29159">~MutationEvent</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">~<a href="Poco.XML.MutationEvent.html" title="class Poco::XML::MutationEvent">MutationEvent</a>();</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="29121">attrChange</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.XML.MutationEvent.html#29113" title="enum  Poco::XML::MutationEvent::AttrChangeType">AttrChangeType</a> attrChange() const;</p>
+<div class="description">
+<p>attrChange indicates the type of change which triggered the  <a href="Poco.XML.MutationEvent.html#29136" title="Poco::XML::MutationEvent::DOMAttrModified">DOMAttrModified</a> event. The values can be <a href="Poco.XML.MutationEvent.html#29114" title="Poco::XML::MutationEvent::MODIFICATION">MODIFICATION</a>, <a href="Poco.XML.MutationEvent.html#29115" title="Poco::XML::MutationEvent::ADDITION">ADDITION</a>, or <a href="Poco.XML.MutationEvent.html#29116" title="Poco::XML::MutationEvent::REMOVAL">REMOVAL</a>. </p>
+</div>
+<h3><a id="29120">attrName</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; attrName() const;</p>
+<div class="description">
+<p>attrName indicates the name of the changed <a href="Poco.XML.Attr.html" title="class Poco::XML::Attr">Attr</a> node in a <a href="Poco.XML.MutationEvent.html#29136" title="Poco::XML::MutationEvent::DOMAttrModified">DOMAttrModified</a> event. </p>
+</div>
+<h3><a id="29122">initMutationEvent</a></h3>
+<p class="decl">void initMutationEvent(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; type,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool canBubble,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool cancelable,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.XML.Node.html" title="class Poco::XML::Node">Node</a> * relatedNode,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; prevValue,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; newValue,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; attrName,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.XML.MutationEvent.html#29113" title="enum  Poco::XML::MutationEvent::AttrChangeType">AttrChangeType</a> change<br />);</p>
+<div class="description">
+<p>The initMutationEvent method is used to initialize the value of a  <a href="Poco.XML.MutationEvent.html" title="class Poco::XML::MutationEvent">MutationEvent</a> created through the <a href="Poco.XML.DocumentEvent.html" title="class Poco::XML::DocumentEvent">DocumentEvent</a> interface. This method may only be called before the <a href="Poco.XML.MutationEvent.html" title="class Poco::XML::MutationEvent">MutationEvent</a>  has been dispatched via the dispatchEvent method, though it may be called multiple times during that phase if  necessary. If called multiple times, the final invocation takes precedence. </p>
+</div>
+<h3><a id="29119">newValue</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; newValue() const;</p>
+<div class="description">
+<p>newValue indicates the new value of the <a href="Poco.XML.Attr.html" title="class Poco::XML::Attr">Attr</a> node in <a href="Poco.XML.MutationEvent.html#29136" title="Poco::XML::MutationEvent::DOMAttrModified">DOMAttrModified</a>  events, and of the <a href="Poco.XML.CharacterData.html" title="class Poco::XML::CharacterData">CharacterData</a> node in DOMCharDataModified events. </p>
+</div>
+<h3><a id="29118">prevValue</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; prevValue() const;</p>
+<div class="description">
+<p>prevValue indicates the previous value of the <a href="Poco.XML.Attr.html" title="class Poco::XML::Attr">Attr</a> node in <a href="Poco.XML.MutationEvent.html#29136" title="Poco::XML::MutationEvent::DOMAttrModified">DOMAttrModified</a>  events, and of the <a href="Poco.XML.CharacterData.html" title="class Poco::XML::CharacterData">CharacterData</a> node in DOMCharDataModified events. </p>
+</div>
+<h3><a id="29117">relatedNode</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.XML.Node.html" title="class Poco::XML::Node">Node</a> * relatedNode() const;</p>
+<div class="description">
+<p>relatedNode is used to identify a secondary node related to a mutation  event. For example, if a mutation event is dispatched to a node indicating that its parent has changed, the relatedNode is the  changed parent. If an event is instead dispatched to a subtree indicating a node was changed within it, the relatedNode is  the changed node. In the case of the <a href="Poco.XML.MutationEvent.html#29136" title="Poco::XML::MutationEvent::DOMAttrModified">DOMAttrModified</a> event it indicates the <a href="Poco.XML.Attr.html" title="class Poco::XML::Attr">Attr</a> node which was modified, added, or removed. </p>
+</div>
+<h2>Variables</h2>
+<h3><a id="29136">DOMAttrModified</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> <a href="Poco.XML.MutationEvent.html#29136" title="Poco::XML::MutationEvent::DOMAttrModified">DOMAttrModified</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="29137">DOMCharacterDataModified</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> <a href="Poco.XML.MutationEvent.html#29137" title="Poco::XML::MutationEvent::DOMCharacterDataModified">DOMCharacterDataModified</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="29132">DOMNodeInserted</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> <a href="Poco.XML.MutationEvent.html#29132" title="Poco::XML::MutationEvent::DOMNodeInserted">DOMNodeInserted</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="29135">DOMNodeInsertedIntoDocument</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> <a href="Poco.XML.MutationEvent.html#29135" title="Poco::XML::MutationEvent::DOMNodeInsertedIntoDocument">DOMNodeInsertedIntoDocument</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="29133">DOMNodeRemoved</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> <a href="Poco.XML.MutationEvent.html#29133" title="Poco::XML::MutationEvent::DOMNodeRemoved">DOMNodeRemoved</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="29134">DOMNodeRemovedFromDocument</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> <a href="Poco.XML.MutationEvent.html#29134" title="Poco::XML::MutationEvent::DOMNodeRemovedFromDocument">DOMNodeRemovedFromDocument</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="29131">DOMSubtreeModified</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> <a href="Poco.XML.MutationEvent.html#29131" title="Poco::XML::MutationEvent::DOMSubtreeModified">DOMSubtreeModified</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

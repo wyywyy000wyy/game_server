@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::Nullable</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.html" class="namespace">Poco</a></h1>
+<h1 class="template">template &lt; typename C &gt;</h1>
+<h1 class="symbol">class Nullable</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Foundation" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Foundation<br />
+<b>Package:</b> Core<br />
+<b>Header:</b> Poco/Nullable.h</p>
+<h2>Description</h2>
+<div class="description">
+<p><a href="Poco.Nullable.html" title="class Poco::Nullable">Nullable</a> is a simple wrapper class for value types that allows objects or native type variables  to have &quot;null&quot; value. </p>
+<p>The class is useful for passing parameters to functions when parameters are optional and no default values  should be used or when a non-assigned state is needed, such as in e.g. fetching null values from database. </p>
+<p>A <a href="Poco.Nullable.html" title="class Poco::Nullable">Nullable</a> can be default constructed. In this case,  the <a href="Poco.Nullable.html" title="class Poco::Nullable">Nullable</a> will have a Null value and <a href="Poco.Nullable.html#15296" title="Poco::Nullable::isNull()">isNull</a>() will return true. Calling <a href="Poco.Nullable.html#15289" title="Poco::Nullable::value()">value</a>() (without default value) on a Null object will throw a <a href="Poco.NullValueException.html" title="class Poco::NullValueException">NullValueException</a>. </p>
+<p>A <a href="Poco.Nullable.html" title="class Poco::Nullable">Nullable</a> can also be constructed from a value. It is possible to assign a value to a <a href="Poco.Nullable.html" title="class Poco::Nullable">Nullable</a>, and to reset a <a href="Poco.Nullable.html" title="class Poco::Nullable">Nullable</a> to contain a Null value by calling <a href="Poco.Nullable.html#15297" title="Poco::Nullable::clear()">clear</a>(). </p>
+<p>For use with <a href="Poco.Nullable.html" title="class Poco::Nullable">Nullable</a>, the value type should support default construction. </p>
+</div>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.Nullable.html#15259" title="Poco::Nullable::assign()">assign</a>, <a href="Poco.Nullable.html#15297" title="Poco::Nullable::clear()">clear</a>, <a href="Poco.Nullable.html#15296" title="Poco::Nullable::isNull()">isNull</a>, <a href="Poco.Nullable.html#15279" title="Poco::Nullable::operator !=()">operator&nbsp;!=</a>, <a href="Poco.Nullable.html#15285" title="Poco::Nullable::operator <()">operator&nbsp;&lt;</a>, <a href="Poco.Nullable.html#15265" title="Poco::Nullable::operator =()">operator&nbsp;=</a>, <a href="Poco.Nullable.html#15273" title="Poco::Nullable::operator ==()">operator&nbsp;==</a>, <a href="Poco.Nullable.html#15287" title="Poco::Nullable::operator >()">operator&nbsp;&gt;</a>, <a href="Poco.Nullable.html#15293" title="Poco::Nullable::operator C &()">operator&nbsp;C&nbsp;&amp;</a>, <a href="Poco.Nullable.html#15295" title="Poco::Nullable::operator NullType &()">operator&nbsp;NullType&nbsp;&amp;</a>, <a href="Poco.Nullable.html#15294" title="Poco::Nullable::operator const C &()">operator&nbsp;const&nbsp;C&nbsp;&amp;</a>, <a href="Poco.Nullable.html#15271" title="Poco::Nullable::swap()">swap</a>, <a href="Poco.Nullable.html#15289" title="Poco::Nullable::value()">value</a></p>
+<h2>Constructors</h2>
+<h3><a id="15251">Nullable</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Nullable.html" title="class Poco::Nullable">Nullable</a>();</p>
+<div class="description">
+<p>Creates an empty <a href="Poco.Nullable.html" title="class Poco::Nullable">Nullable</a>. </p>
+</div>
+<h3><a id="15252">Nullable</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Nullable.html" title="class Poco::Nullable">Nullable</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.html#15248" title="enum  Poco::NullType">NullType</a> &amp; param205<br />);</p>
+<div class="description">
+<p>Creates an empty <a href="Poco.Nullable.html" title="class Poco::Nullable">Nullable</a>. </p>
+</div>
+<h3><a id="15254">Nullable</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Nullable.html" title="class Poco::Nullable">Nullable</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const C &amp; value<br />);</p>
+<div class="description">
+<p>Creates a <a href="Poco.Nullable.html" title="class Poco::Nullable">Nullable</a> with the given value. </p>
+</div>
+<h3><a id="15256">Nullable</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Nullable.html" title="class Poco::Nullable">Nullable</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Nullable.html" title="class Poco::Nullable">Nullable</a> &amp; other<br />);</p>
+<div class="description">
+<p>Creates a <a href="Poco.Nullable.html" title="class Poco::Nullable">Nullable</a> by copying another one. </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="15258">~Nullable</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">~<a href="Poco.Nullable.html" title="class Poco::Nullable">Nullable</a>();</p>
+<div class="description">
+<p>Destroys the <a href="Poco.Nullable.html" title="class Poco::Nullable">Nullable</a>. </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="15259">assign</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Nullable.html" title="class Poco::Nullable">Nullable</a> &amp; assign(<br />&nbsp;&nbsp;&nbsp;&nbsp;const C &amp; value<br />);</p>
+<div class="description">
+<p>Assigns a value to the <a href="Poco.Nullable.html" title="class Poco::Nullable">Nullable</a>. </p>
+</div>
+<h3><a id="15261">assign</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Nullable.html" title="class Poco::Nullable">Nullable</a> &amp; assign(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Nullable.html" title="class Poco::Nullable">Nullable</a> &amp; other<br />);</p>
+<div class="description">
+<p>Assigns another <a href="Poco.Nullable.html" title="class Poco::Nullable">Nullable</a>. </p>
+</div>
+<h3><a id="15263">assign</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Nullable.html" title="class Poco::Nullable">Nullable</a> &amp; assign(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.html#15248" title="enum  Poco::NullType">NullType</a><br />);</p>
+<div class="description">
+<p>Sets value to null. </p>
+</div>
+<h3><a id="15297">clear</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void clear();</p>
+<div class="description">
+<p>Clears the <a href="Poco.Nullable.html" title="class Poco::Nullable">Nullable</a>. </p>
+</div>
+<h3><a id="15296">isNull</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool isNull() const;</p>
+<div class="description">
+<p>Returns true if the <a href="Poco.Nullable.html" title="class Poco::Nullable">Nullable</a> is empty. </p>
+</div>
+<h3><a id="15279">operator !=</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool operator != (<br />&nbsp;&nbsp;&nbsp;&nbsp;const C &amp; value<br />) const;</p>
+<div class="description">
+<p>Compares <a href="Poco.Nullable.html" title="class Poco::Nullable">Nullable</a> with value for non equality </p>
+</div>
+<h3><a id="15281">operator !=</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool operator != (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Nullable.html" title="class Poco::Nullable">Nullable</a> &lt; C &gt; &amp; other<br />) const;</p>
+<div class="description">
+<p>Compares two Nullables for non equality </p>
+</div>
+<h3><a id="15283">operator !=</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool operator != (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.html#15248" title="enum  Poco::NullType">NullType</a> &amp; param207<br />) const;</p>
+<div class="description">
+<p>Compares with NullData for non equality </p>
+</div>
+<h3><a id="15285">operator &lt;</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool operator &lt; (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Nullable.html" title="class Poco::Nullable">Nullable</a> &lt; C &gt; &amp; other<br />) const;</p>
+<div class="description">
+<p>Compares two <a href="Poco.Nullable.html" title="class Poco::Nullable">Nullable</a> objects. Return true if this object's value is smaler than the other object's value. Null value is smaller than a non-null value. </p>
+</div>
+<h3><a id="15265">operator =</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Nullable.html" title="class Poco::Nullable">Nullable</a> &amp; operator = (<br />&nbsp;&nbsp;&nbsp;&nbsp;const C &amp; value<br />);</p>
+<div class="description">
+<p>Assigns a value to the <a href="Poco.Nullable.html" title="class Poco::Nullable">Nullable</a>. </p>
+</div>
+<h3><a id="15267">operator =</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Nullable.html" title="class Poco::Nullable">Nullable</a> &amp; operator = (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Nullable.html" title="class Poco::Nullable">Nullable</a> &amp; other<br />);</p>
+<div class="description">
+<p>Assigns another <a href="Poco.Nullable.html" title="class Poco::Nullable">Nullable</a>. </p>
+</div>
+<h3><a id="15269">operator =</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Nullable.html" title="class Poco::Nullable">Nullable</a> &amp; operator = (<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.html#15248" title="enum  Poco::NullType">NullType</a><br />);</p>
+<div class="description">
+<p>Assigns another <a href="Poco.Nullable.html" title="class Poco::Nullable">Nullable</a>. </p>
+</div>
+<h3><a id="15273">operator ==</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool operator == (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Nullable.html" title="class Poco::Nullable">Nullable</a> &lt; C &gt; &amp; other<br />) const;</p>
+<div class="description">
+<p>Compares two Nullables for equality </p>
+</div>
+<h3><a id="15275">operator ==</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool operator == (<br />&nbsp;&nbsp;&nbsp;&nbsp;const C &amp; value<br />) const;</p>
+<div class="description">
+<p>Compares <a href="Poco.Nullable.html" title="class Poco::Nullable">Nullable</a> with value for equality </p>
+</div>
+<h3><a id="15277">operator ==</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool operator == (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.html#15248" title="enum  Poco::NullType">NullType</a> &amp; param206<br />) const;</p>
+<div class="description">
+<p>Compares <a href="Poco.Nullable.html" title="class Poco::Nullable">Nullable</a> with NullData for equality </p>
+</div>
+<h3><a id="15287">operator &gt;</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool operator &gt; (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Nullable.html" title="class Poco::Nullable">Nullable</a> &lt; C &gt; &amp; other<br />) const;</p>
+<div class="description">
+<p>Compares two <a href="Poco.Nullable.html" title="class Poco::Nullable">Nullable</a> objects. Return true if this object's value is greater than the other object's value. A non-null value is greater than a null value. </p>
+</div>
+<h3><a id="15293">operator C &amp;</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">operator C &amp; ();</p>
+<div class="description">
+<p>Get reference to the value </p>
+</div>
+<h3><a id="15295">operator NullType &amp;</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">operator <a href="Poco.html#15248" title="enum  Poco::NullType">NullType</a> &amp; ();</p>
+<div class="description">
+<p>Get reference to the value </p>
+</div>
+<h3><a id="15294">operator const C &amp;</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">operator const C &amp; () const;</p>
+<div class="description">
+<p>Get const reference to the value </p>
+</div>
+<h3><a id="15271">swap</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void swap(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Nullable.html" title="class Poco::Nullable">Nullable</a> &amp; other<br />);</p>
+<div class="description">
+<p>Swaps this <a href="Poco.Nullable.html" title="class Poco::Nullable">Nullable</a> with other. </p>
+</div>
+<h3><a id="15289">value</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">C &amp; value();</p>
+<div class="description">
+<p>Returns the <a href="Poco.Nullable.html" title="class Poco::Nullable">Nullable</a>'s value. </p>
+<p>Throws a <a href="Poco.NullValueException.html" title="class Poco::NullValueException">NullValueException</a> if the <a href="Poco.Nullable.html" title="class Poco::Nullable">Nullable</a> is empty. </p>
+</div>
+<h3><a id="15290">value</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">const C &amp; value() const;</p>
+<div class="description">
+<p>Returns the <a href="Poco.Nullable.html" title="class Poco::Nullable">Nullable</a>'s value. </p>
+<p>Throws a <a href="Poco.NullValueException.html" title="class Poco::NullValueException">NullValueException</a> if the <a href="Poco.Nullable.html" title="class Poco::Nullable">Nullable</a> is empty. </p>
+</div>
+<h3><a id="15291">value</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">const C &amp; value(<br />&nbsp;&nbsp;&nbsp;&nbsp;const C &amp; deflt<br />) const;</p>
+<div class="description">
+<p>Returns the <a href="Poco.Nullable.html" title="class Poco::Nullable">Nullable</a>'s value, or the given default value if the <a href="Poco.Nullable.html" title="class Poco::Nullable">Nullable</a> is empty. </p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

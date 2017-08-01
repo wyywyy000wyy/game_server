@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::Net::HTMLForm</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.Net.html" class="namespace">Poco::Net</a></h1>
+<h1 class="symbol">class HTMLForm</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Net" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Net<br />
+<b>Package:</b> HTML<br />
+<b>Header:</b> Poco/Net/HTMLForm.h</p>
+<h2>Description</h2>
+<div class="description">
+<p><a href="Poco.Net.HTMLForm.html" title="class Poco::Net::HTMLForm">HTMLForm</a> is a helper class for working with HTML forms, both on the client and on the server side. </p>
+<p>The maximum number of form fields can be restricted by calling <a href="Poco.Net.HTMLForm.html#20884" title="Poco::Net::HTMLForm::setFieldLimit()">setFieldLimit</a>(). This is useful to defend against certain kinds of denial-of-service attacks. The limit is only enforced when parsing form data from a stream or string, not when adding form fields programmatically. The default limit is 100. </p>
+</div>
+<h2>Inheritance</h2>
+<p><b>Direct Base Classes: </b><a href="Poco.Net.NameValueCollection.html" title="class Poco::Net::NameValueCollection">NameValueCollection</a></p>
+<p><b>All Base Classes: </b><a href="Poco.Net.NameValueCollection.html" title="class Poco::Net::NameValueCollection">NameValueCollection</a></p>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.Net.HTMLForm.html#20855" title="Poco::Net::HTMLForm::addPart()">addPart</a>, <a href="Poco.Net.HTMLForm.html#20882" title="Poco::Net::HTMLForm::boundary()">boundary</a>, <a href="Poco.Net.HTMLForm.html#20876" title="Poco::Net::HTMLForm::calculateContentLength()">calculateContentLength</a>, <a href="Poco.Net.HTMLForm.html#20854" title="Poco::Net::HTMLForm::getEncoding()">getEncoding</a>, <a href="Poco.Net.HTMLForm.html#20883" title="Poco::Net::HTMLForm::getFieldLimit()">getFieldLimit</a>, <a href="Poco.Net.HTMLForm.html#20888" title="Poco::Net::HTMLForm::getValueLengthLimit()">getValueLengthLimit</a>, <a href="Poco.Net.HTMLForm.html#20858" title="Poco::Net::HTMLForm::load()">load</a>, <a href="Poco.Net.HTMLForm.html#20874" title="Poco::Net::HTMLForm::prepareSubmit()">prepareSubmit</a>, <a href="Poco.Net.HTMLForm.html#20867" title="Poco::Net::HTMLForm::read()">read</a>, <a href="Poco.Net.HTMLForm.html#20894" title="Poco::Net::HTMLForm::readMultipart()">readMultipart</a>, <a href="Poco.Net.HTMLForm.html#20892" title="Poco::Net::HTMLForm::readUrl()">readUrl</a>, <a href="Poco.Net.HTMLForm.html#20852" title="Poco::Net::HTMLForm::setEncoding()">setEncoding</a>, <a href="Poco.Net.HTMLForm.html#20884" title="Poco::Net::HTMLForm::setFieldLimit()">setFieldLimit</a>, <a href="Poco.Net.HTMLForm.html#20886" title="Poco::Net::HTMLForm::setValueLengthLimit()">setValueLengthLimit</a>, <a href="Poco.Net.HTMLForm.html#20877" title="Poco::Net::HTMLForm::write()">write</a>, <a href="Poco.Net.HTMLForm.html#20899" title="Poco::Net::HTMLForm::writeMultipart()">writeMultipart</a>, <a href="Poco.Net.HTMLForm.html#20897" title="Poco::Net::HTMLForm::writeUrl()">writeUrl</a></p>
+<p><b>Inherited Functions: </b><a href="Poco.Net.NameValueCollection.html#23040" title="Poco::Net::NameValueCollection::add()">add</a>, <a href="Poco.Net.NameValueCollection.html#23052" title="Poco::Net::NameValueCollection::begin()">begin</a>, <a href="Poco.Net.NameValueCollection.html#23058" title="Poco::Net::NameValueCollection::clear()">clear</a>, <a href="Poco.Net.NameValueCollection.html#23054" title="Poco::Net::NameValueCollection::empty()">empty</a>, <a href="Poco.Net.NameValueCollection.html#23053" title="Poco::Net::NameValueCollection::end()">end</a>, <a href="Poco.Net.NameValueCollection.html#23056" title="Poco::Net::NameValueCollection::erase()">erase</a>, <a href="Poco.Net.NameValueCollection.html#23050" title="Poco::Net::NameValueCollection::find()">find</a>, <a href="Poco.Net.NameValueCollection.html#23043" title="Poco::Net::NameValueCollection::get()">get</a>, <a href="Poco.Net.NameValueCollection.html#23048" title="Poco::Net::NameValueCollection::has()">has</a>, <a href="Poco.Net.NameValueCollection.html#23031" title="Poco::Net::NameValueCollection::operator =()">operator&nbsp;=</a>, <a href="Poco.Net.NameValueCollection.html#23035" title="Poco::Net::NameValueCollection::operator []()">operator&nbsp;[]</a>, <a href="Poco.Net.NameValueCollection.html#23037" title="Poco::Net::NameValueCollection::set()">set</a>, <a href="Poco.Net.NameValueCollection.html#23055" title="Poco::Net::NameValueCollection::size()">size</a>, <a href="Poco.Net.NameValueCollection.html#23033" title="Poco::Net::NameValueCollection::swap()">swap</a></p>
+<h2>Constructors</h2>
+<h3><a id="20839">HTMLForm</a></h3>
+<p class="decl"><a href="Poco.Net.HTMLForm.html" title="class Poco::Net::HTMLForm">HTMLForm</a>();</p>
+<div class="description">
+<p>Creates an empty <a href="Poco.Net.HTMLForm.html" title="class Poco::Net::HTMLForm">HTMLForm</a> and sets the encoding to &quot;application/x-www-form-urlencoded&quot;. </p>
+</div>
+<h3><a id="20840">HTMLForm</a></h3>
+<p class="decl">explicit <a href="Poco.Net.HTMLForm.html" title="class Poco::Net::HTMLForm">HTMLForm</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; encoding<br />);</p>
+<div class="description">
+<p>Creates an empty <a href="Poco.Net.HTMLForm.html" title="class Poco::Net::HTMLForm">HTMLForm</a> that uses the given encoding. </p>
+<p>Encoding must be either &quot;application/x-www-form-urlencoded&quot; (which is the default) or &quot;multipart/form-data&quot;. </p>
+</div>
+<h3><a id="20849">HTMLForm</a></h3>
+<p class="decl">explicit <a href="Poco.Net.HTMLForm.html" title="class Poco::Net::HTMLForm">HTMLForm</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Net.HTTPRequest.html" title="class Poco::Net::HTTPRequest">HTTPRequest</a> &amp; request<br />);</p>
+<div class="description">
+<p>Creates a <a href="Poco.Net.HTMLForm.html" title="class Poco::Net::HTMLForm">HTMLForm</a> from the given HTTP request. </p>
+<p>The request must be a GET request and the form data must be in the query string (URL encoded). </p>
+<p>For POST requests, you must use one of the constructors taking an additional input stream for the request body. </p>
+</div>
+<h3><a id="20846">HTMLForm</a></h3>
+<p class="decl"><a href="Poco.Net.HTMLForm.html" title="class Poco::Net::HTMLForm">HTMLForm</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Net.HTTPRequest.html" title="class Poco::Net::HTTPRequest">HTTPRequest</a> &amp; request,<br />&nbsp;&nbsp;&nbsp;&nbsp;std::istream &amp; requestBody<br />);</p>
+<div class="description">
+<p>Creates a <a href="Poco.Net.HTMLForm.html" title="class Poco::Net::HTMLForm">HTMLForm</a> from the given HTTP request. </p>
+<p>Uploaded files are silently discarded. </p>
+</div>
+<h3><a id="20842">HTMLForm</a></h3>
+<p class="decl"><a href="Poco.Net.HTMLForm.html" title="class Poco::Net::HTMLForm">HTMLForm</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Net.HTTPRequest.html" title="class Poco::Net::HTTPRequest">HTTPRequest</a> &amp; request,<br />&nbsp;&nbsp;&nbsp;&nbsp;std::istream &amp; requestBody,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Net.PartHandler.html" title="class Poco::Net::PartHandler">PartHandler</a> &amp; handler<br />);</p>
+<div class="description">
+<p>Creates a <a href="Poco.Net.HTMLForm.html" title="class Poco::Net::HTMLForm">HTMLForm</a> from the given HTTP request. </p>
+<p>Uploaded files are passed to the given <a href="Poco.Net.PartHandler.html" title="class Poco::Net::PartHandler">PartHandler</a>. </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="20851">~HTMLForm</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">~<a href="Poco.Net.HTMLForm.html" title="class Poco::Net::HTMLForm">HTMLForm</a>();</p>
+<div class="description">
+<p>Destroys the <a href="Poco.Net.HTMLForm.html" title="class Poco::Net::HTMLForm">HTMLForm</a>. </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="20855">addPart</a></h3>
+<p class="decl">void addPart(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; name,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Net.PartSource.html" title="class Poco::Net::PartSource">PartSource</a> * pSource<br />);</p>
+<div class="description">
+<p>Adds an part/attachment (file upload) to the form. </p>
+<p>The form takes ownership of the <a href="Poco.Net.PartSource.html" title="class Poco::Net::PartSource">PartSource</a> and deletes it when it is no longer needed. </p>
+<p>The part will only be sent if the encoding set for the form is &quot;multipart/form-data&quot; </p>
+</div>
+<h3><a id="20882">boundary</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">const std::string &amp; boundary() const;</p>
+<div class="description">
+<p>Returns the MIME boundary used for writing multipart form data. </p>
+</div>
+<h3><a id="20876">calculateContentLength</a></h3>
+<p class="decl">std::streamsize calculateContentLength();</p>
+<div class="description">
+<p>Calculate the content length for the form. May be <a href="Poco.Net.HTMLForm.html#20891" title="Poco::Net::HTMLForm::UNKNOWN_CONTENT_LENGTH">UNKNOWN_CONTENT_LENGTH</a> if not possible to calculate </p>
+</div>
+<h3><a id="20854">getEncoding</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">const std::string &amp; getEncoding() const;</p>
+<div class="description">
+<p>Returns the encoding used for posting the form. </p>
+</div>
+<h3><a id="20883">getFieldLimit</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">int getFieldLimit() const;</p>
+<div class="description">
+<p>Returns the maximum number of header fields allowed. </p>
+<p>See <a href="Poco.Net.HTMLForm.html#20884" title="Poco::Net::HTMLForm::setFieldLimit()">setFieldLimit</a>() for more information. </p>
+</div>
+<h3><a id="20888">getValueLengthLimit</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">int getValueLengthLimit() const;</p>
+<div class="description">
+<p>Returns the maximum size for form field values stored as strings. </p>
+</div>
+<h3><a id="20858">load</a></h3>
+<p class="decl">void load(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Net.HTTPRequest.html" title="class Poco::Net::HTTPRequest">HTTPRequest</a> &amp; request,<br />&nbsp;&nbsp;&nbsp;&nbsp;std::istream &amp; requestBody,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Net.PartHandler.html" title="class Poco::Net::PartHandler">PartHandler</a> &amp; handler<br />);</p>
+<div class="description">
+<p>Reads the form data from the given HTTP request. </p>
+<p>Uploaded files are passed to the given <a href="Poco.Net.PartHandler.html" title="class Poco::Net::PartHandler">PartHandler</a>. </p>
+</div>
+<h3><a id="20862">load</a></h3>
+<p class="decl">void load(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Net.HTTPRequest.html" title="class Poco::Net::HTTPRequest">HTTPRequest</a> &amp; request,<br />&nbsp;&nbsp;&nbsp;&nbsp;std::istream &amp; requestBody<br />);</p>
+<div class="description">
+<p>Reads the form data from the given HTTP request. </p>
+<p>Uploaded files are silently discarded. </p>
+</div>
+<h3><a id="20865">load</a></h3>
+<p class="decl">void load(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Net.HTTPRequest.html" title="class Poco::Net::HTTPRequest">HTTPRequest</a> &amp; request<br />);</p>
+<div class="description">
+<p>Reads the form data from the given HTTP request. </p>
+<p>The request must be a GET request and the form data must be in the query string (URL encoded). </p>
+<p>For POST requests, you must use one of the overloads taking an additional input stream for the request body. </p>
+</div>
+<h3><a id="20874">prepareSubmit</a></h3>
+<p class="decl">void prepareSubmit(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Net.HTTPRequest.html" title="class Poco::Net::HTTPRequest">HTTPRequest</a> &amp; request<br />);</p>
+<div class="description">
+<p>Fills out the request object for submitting the form. </p>
+<p>If the request method is GET, the encoded form is appended to the request <a href="Poco.URI.html" title="class Poco::URI">URI</a> as query string. Otherwise (the method is POST), the form's content type is set to the form's encoding. The form's parameters must be written to the request body separately, with a call to write. If the request's HTTP version is HTTP/1.0: </p>
+<ul>
+<li>persistent connections are disabled </li>
+<li>the content transfer encoding is set to identity encoding </li>
+</ul>
+<p>Otherwise, if the request's HTTP version is HTTP/1.1: </p>
+<ul>
+<li>the request's persistent connection state is left unchanged </li>
+<li>the content transfer encoding is set to chunked </li>
+</ul>
+</div>
+<h3><a id="20867">read</a></h3>
+<p class="decl">void read(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::istream &amp; istr,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Net.PartHandler.html" title="class Poco::Net::PartHandler">PartHandler</a> &amp; handler<br />);</p>
+<div class="description">
+<p>Reads the form data from the given input stream. </p>
+<p>The form data read from the stream must be in the encoding specified for the form. </p>
+<p>Note that <a href="Poco.Net.HTMLForm.html#20867" title="Poco::Net::HTMLForm::read()">read</a>() does not clear the form before reading the new values. </p>
+</div>
+<h3><a id="20870">read</a></h3>
+<p class="decl">void read(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::istream &amp; istr<br />);</p>
+<div class="description">
+<p>Reads the URL-encoded form data from the given input stream. </p>
+<p>Note that <a href="Poco.Net.HTMLForm.html#20867" title="Poco::Net::HTMLForm::read()">read</a>() does not clear the form before reading the new values. </p>
+</div>
+<h3><a id="20872">read</a></h3>
+<p class="decl">void read(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; queryString<br />);</p>
+<div class="description">
+<p>Reads the form data from the given HTTP query string. </p>
+<p>Note that <a href="Poco.Net.HTMLForm.html#20867" title="Poco::Net::HTMLForm::read()">read</a>() does not clear the form before reading the new values. </p>
+</div>
+<h3><a id="20852">setEncoding</a></h3>
+<p class="decl">void setEncoding(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; encoding<br />);</p>
+<div class="description">
+<p>Sets the encoding used for posting the form. </p>
+<p>Encoding must be either &quot;application/x-www-form-urlencoded&quot; (which is the default) or &quot;multipart/form-data&quot;. </p>
+</div>
+<h3><a id="20884">setFieldLimit</a></h3>
+<p class="decl">void setFieldLimit(<br />&nbsp;&nbsp;&nbsp;&nbsp;int limit<br />);</p>
+<div class="description">
+<p>Sets the maximum number of header fields allowed. This limit is used to defend certain kinds of denial-of-service attacks. Specify 0 for unlimited (not recommended). </p>
+<p>The default limit is 100. </p>
+</div>
+<h3><a id="20886">setValueLengthLimit</a></h3>
+<p class="decl">void setValueLengthLimit(<br />&nbsp;&nbsp;&nbsp;&nbsp;int limit<br />);</p>
+<div class="description">
+<p>Sets the maximum size for form field values stored as strings. </p>
+</div>
+<h3><a id="20877">write</a></h3>
+<p class="decl">void write(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::ostream &amp; ostr,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; boundary<br />);</p>
+<div class="description">
+<p>Writes the form data to the given output stream, using the specified encoding. </p>
+</div>
+<h3><a id="20880">write</a></h3>
+<p class="decl">void write(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::ostream &amp; ostr<br />);</p>
+<div class="description">
+<p>Writes the form data to the given output stream, using the specified encoding. </p>
+</div>
+<h3><a id="20894">readMultipart</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">void readMultipart(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::istream &amp; istr,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Net.PartHandler.html" title="class Poco::Net::PartHandler">PartHandler</a> &amp; handler<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="20892">readUrl</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">void readUrl(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::istream &amp; istr<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="20899">writeMultipart</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">void writeMultipart(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::ostream &amp; ostr<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="20897">writeUrl</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">void writeUrl(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::ostream &amp; ostr<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Variables</h2>
+<h3><a id="20890">ENCODING_MULTIPART</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static const std::string <a href="Poco.Net.HTMLForm.html#20890" title="Poco::Net::HTMLForm::ENCODING_MULTIPART">ENCODING_MULTIPART</a>;</p>
+<div class="description">
+<p>&quot;multipart/form-data&quot; </p>
+</div>
+<h3><a id="20889">ENCODING_URL</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static const std::string <a href="Poco.Net.HTMLForm.html#20889" title="Poco::Net::HTMLForm::ENCODING_URL">ENCODING_URL</a>;</p>
+<div class="description">
+<p>&quot;application/x-www-form-urlencoded&quot; </p>
+</div>
+<h3><a id="20891">UNKNOWN_CONTENT_LENGTH</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static const int <a href="Poco.Net.HTMLForm.html#20891" title="Poco::Net::HTMLForm::UNKNOWN_CONTENT_LENGTH">UNKNOWN_CONTENT_LENGTH</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

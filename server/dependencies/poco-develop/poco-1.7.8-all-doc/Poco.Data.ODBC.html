@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Namespace Poco::Data::ODBC</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.Data.html" class="namespace">Poco::Data</a></h1>
+<h1 class="symbol">namespace ODBC</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<h2>Overview</h2>
+<p><b>Classes:</b> 
+<a href="Poco.Data.ODBC.Binder.html" title="class Poco::Data::ODBC::Binder">Binder</a>, <a href="Poco.Data.ODBC.ConnectionHandle.html" title="class Poco::Data::ODBC::ConnectionHandle">ConnectionHandle</a>, <a href="Poco.Data.ODBC.Connector.html" title="class Poco::Data::ODBC::Connector">Connector</a>, <a href="Poco.Data.ODBC.DataTruncatedException.html" title="class Poco::Data::ODBC::DataTruncatedException">DataTruncatedException</a>, <a href="Poco.Data.ODBC.Diagnostics.html" title="class Poco::Data::ODBC::Diagnostics">Diagnostics</a>, <a href="Poco.Data.ODBC.EnvironmentHandle.html" title="class Poco::Data::ODBC::EnvironmentHandle">EnvironmentHandle</a>, <a href="Poco.Data.ODBC.Error.html" title="class Poco::Data::ODBC::Error">Error</a>, <a href="Poco.Data.ODBC.Extractor.html" title="class Poco::Data::ODBC::Extractor">Extractor</a>, <a href="Poco.Data.ODBC.Handle.html" title="class Poco::Data::ODBC::Handle">Handle</a>, <a href="Poco.Data.ODBC.HandleException.html" title="class Poco::Data::ODBC::HandleException">HandleException</a>, <a href="Poco.Data.ODBC.InsufficientStorageException.html" title="class Poco::Data::ODBC::InsufficientStorageException">InsufficientStorageException</a>, <a href="Poco.Data.ODBC.ODBCException.html" title="class Poco::Data::ODBC::ODBCException">ODBCException</a>, <a href="Poco.Data.ODBC.ODBCMetaColumn.html" title="class Poco::Data::ODBC::ODBCMetaColumn">ODBCMetaColumn</a>, <a href="Poco.Data.ODBC.ODBCStatementImpl.html" title="class Poco::Data::ODBC::ODBCStatementImpl">ODBCStatementImpl</a>, <a href="Poco.Data.ODBC.Parameter.html" title="class Poco::Data::ODBC::Parameter">Parameter</a>, <a href="Poco.Data.ODBC.Preparator.html" title="class Poco::Data::ODBC::Preparator">Preparator</a>, <a href="Poco.Data.ODBC.SessionImpl.html" title="class Poco::Data::ODBC::SessionImpl">SessionImpl</a>, <a href="Poco.Data.ODBC.TypeInfo.html" title="class Poco::Data::ODBC::TypeInfo">TypeInfo</a>, <a href="Poco.Data.ODBC.UnknownDataLengthException.html" title="class Poco::Data::ODBC::UnknownDataLengthException">UnknownDataLengthException</a>, <a href="Poco.Data.ODBC.Utility.html" title="class Poco::Data::ODBC::Utility">Utility</a></p>
+<p><b>Types:</b> 
+<a href="Poco.Data.ODBC.html#1782" title="Poco::Data::ODBC::ConnectionDiagnostics">ConnectionDiagnostics</a>, <a href="Poco.Data.ODBC.html#1811" title="Poco::Data::ODBC::ConnectionError">ConnectionError</a>, <a href="Poco.Data.ODBC.html#2297" title="Poco::Data::ODBC::ConnectionException">ConnectionException</a>, <a href="Poco.Data.ODBC.html#1784" title="Poco::Data::ODBC::DescriptorDiagnostics">DescriptorDiagnostics</a>, <a href="Poco.Data.ODBC.html#1813" title="Poco::Data::ODBC::DescriptorError">DescriptorError</a>, <a href="Poco.Data.ODBC.html#2299" title="Poco::Data::ODBC::DescriptorException">DescriptorException</a>, <a href="Poco.Data.ODBC.html#2175" title="Poco::Data::ODBC::DescriptorHandle">DescriptorHandle</a>, <a href="Poco.Data.ODBC.html#1781" title="Poco::Data::ODBC::EnvironmentDiagnostics">EnvironmentDiagnostics</a>, <a href="Poco.Data.ODBC.html#1810" title="Poco::Data::ODBC::EnvironmentError">EnvironmentError</a>, <a href="Poco.Data.ODBC.html#2296" title="Poco::Data::ODBC::EnvironmentException">EnvironmentException</a>, <a href="Poco.Data.ODBC.html#2850" title="Poco::Data::ODBC::NumAttrPtrType">NumAttrPtrType</a>, <a href="Poco.Data.ODBC.html#1783" title="Poco::Data::ODBC::StatementDiagnostics">StatementDiagnostics</a>, <a href="Poco.Data.ODBC.html#1812" title="Poco::Data::ODBC::StatementError">StatementError</a>, <a href="Poco.Data.ODBC.html#2298" title="Poco::Data::ODBC::StatementException">StatementException</a>, <a href="Poco.Data.ODBC.html#2174" title="Poco::Data::ODBC::StatementHandle">StatementHandle</a></p>
+<p><b>Functions:</b> 
+<a href="Poco.Data.ODBC.html#3051" title="Poco::Data::ODBC::SQLBrowseConnect()">SQLBrowseConnect</a>, <a href="Poco.Data.ODBC.html#2851" title="Poco::Data::ODBC::SQLColAttribute()">SQLColAttribute</a>, <a href="Poco.Data.ODBC.html#2859" title="Poco::Data::ODBC::SQLColAttributes()">SQLColAttributes</a>, <a href="Poco.Data.ODBC.html#3058" title="Poco::Data::ODBC::SQLColumnPrivileges()">SQLColumnPrivileges</a>, <a href="Poco.Data.ODBC.html#2975" title="Poco::Data::ODBC::SQLColumns()">SQLColumns</a>, <a href="Poco.Data.ODBC.html#2867" title="Poco::Data::ODBC::SQLConnect()">SQLConnect</a>, <a href="Poco.Data.ODBC.html#3033" title="Poco::Data::ODBC::SQLDataSources()">SQLDataSources</a>, <a href="Poco.Data.ODBC.html#2875" title="Poco::Data::ODBC::SQLDescribeCol()">SQLDescribeCol</a>, <a href="Poco.Data.ODBC.html#3042" title="Poco::Data::ODBC::SQLDriverConnect()">SQLDriverConnect</a>, <a href="Poco.Data.ODBC.html#3123" title="Poco::Data::ODBC::SQLDrivers()">SQLDrivers</a>, <a href="Poco.Data.ODBC.html#2885" title="Poco::Data::ODBC::SQLError()">SQLError</a>, <a href="Poco.Data.ODBC.html#2894" title="Poco::Data::ODBC::SQLExecDirect()">SQLExecDirect</a>, <a href="Poco.Data.ODBC.html#3068" title="Poco::Data::ODBC::SQLForeignKeys()">SQLForeignKeys</a>, <a href="Poco.Data.ODBC.html#2898" title="Poco::Data::ODBC::SQLGetConnectAttr()">SQLGetConnectAttr</a>, <a href="Poco.Data.ODBC.html#2985" title="Poco::Data::ODBC::SQLGetConnectOption()">SQLGetConnectOption</a>, <a href="Poco.Data.ODBC.html#2904" title="Poco::Data::ODBC::SQLGetCursorName()">SQLGetCursorName</a>, <a href="Poco.Data.ODBC.html#2915" title="Poco::Data::ODBC::SQLGetDescField()">SQLGetDescField</a>, <a href="Poco.Data.ODBC.html#2922" title="Poco::Data::ODBC::SQLGetDescRec()">SQLGetDescRec</a>, <a href="Poco.Data.ODBC.html#2934" title="Poco::Data::ODBC::SQLGetDiagField()">SQLGetDiagField</a>, <a href="Poco.Data.ODBC.html#2942" title="Poco::Data::ODBC::SQLGetDiagRec()">SQLGetDiagRec</a>, <a href="Poco.Data.ODBC.html#2989" title="Poco::Data::ODBC::SQLGetInfo()">SQLGetInfo</a>, <a href="Poco.Data.ODBC.html#2969" title="Poco::Data::ODBC::SQLGetStmtAttr()">SQLGetStmtAttr</a>, <a href="Poco.Data.ODBC.html#2995" title="Poco::Data::ODBC::SQLGetTypeInfo()">SQLGetTypeInfo</a>, <a href="Poco.Data.ODBC.html#3082" title="Poco::Data::ODBC::SQLNativeSql()">SQLNativeSql</a>, <a href="Poco.Data.ODBC.html#2951" title="Poco::Data::ODBC::SQLPrepare()">SQLPrepare</a>, <a href="Poco.Data.ODBC.html#3089" title="Poco::Data::ODBC::SQLPrimaryKeys()">SQLPrimaryKeys</a>, <a href="Poco.Data.ODBC.html#3097" title="Poco::Data::ODBC::SQLProcedureColumns()">SQLProcedureColumns</a>, <a href="Poco.Data.ODBC.html#3107" title="Poco::Data::ODBC::SQLProcedures()">SQLProcedures</a>, <a href="Poco.Data.ODBC.html#2955" title="Poco::Data::ODBC::SQLSetConnectAttr()">SQLSetConnectAttr</a>, <a href="Poco.Data.ODBC.html#2998" title="Poco::Data::ODBC::SQLSetConnectOption()">SQLSetConnectOption</a>, <a href="Poco.Data.ODBC.html#2960" title="Poco::Data::ODBC::SQLSetCursorName()">SQLSetCursorName</a>, <a href="Poco.Data.ODBC.html#2909" title="Poco::Data::ODBC::SQLSetDescField()">SQLSetDescField</a>, <a href="Poco.Data.ODBC.html#2964" title="Poco::Data::ODBC::SQLSetStmtAttr()">SQLSetStmtAttr</a>, <a href="Poco.Data.ODBC.html#3002" title="Poco::Data::ODBC::SQLSpecialColumns()">SQLSpecialColumns</a>, <a href="Poco.Data.ODBC.html#3013" title="Poco::Data::ODBC::SQLStatistics()">SQLStatistics</a>, <a href="Poco.Data.ODBC.html#3115" title="Poco::Data::ODBC::SQLTablePrivileges()">SQLTablePrivileges</a>, <a href="Poco.Data.ODBC.html#3023" title="Poco::Data::ODBC::SQLTables()">SQLTables</a>, <a href="Poco.Data.ODBC.html#3132" title="Poco::Data::ODBC::isString()">isString</a>, <a href="Poco.Data.ODBC.html#2729" title="Poco::Data::ODBC::operator []()">operator&nbsp;[]</a>, <a href="Poco.Data.ODBC.html#3135" title="Poco::Data::ODBC::stringLength()">stringLength</a></p>
+<h2>Classes</h2>
+<h3><a href="Poco.Data.ODBC.Binder.html" class="class">class Binder</a></h3>
+<p> Binds placeholders in the sql query to the provided values.&nbsp;<a href="Poco.Data.ODBC.Binder.html"><img src="images/arrow.png" alt="more..." /> </a></p>
+<h3><a href="Poco.Data.ODBC.ConnectionHandle.html" class="class">class ConnectionHandle</a></h3>
+<p> <a href="Poco.Data.ODBC.html" title="namespace Poco::Data::ODBC">ODBC</a> connection handle class&nbsp;<a href="Poco.Data.ODBC.ConnectionHandle.html"><img src="images/arrow.png" alt="more..." /> </a></p>
+<h3><a href="Poco.Data.ODBC.Connector.html" class="class">class Connector</a></h3>
+<p> <a href="Poco.Data.ODBC.Connector.html" title="class Poco::Data::ODBC::Connector">Connector</a> instantiates SqLite <a href="Poco.Data.ODBC.SessionImpl.html" title="class Poco::Data::ODBC::SessionImpl">SessionImpl</a> objects.&nbsp;<a href="Poco.Data.ODBC.Connector.html"><img src="images/arrow.png" alt="more..." /> </a></p>
+<h3><a href="Poco.Data.ODBC.DataTruncatedException.html" class="class">class DataTruncatedException</a></h3>
+<p>&nbsp;<a href="Poco.Data.ODBC.DataTruncatedException.html"><img src="images/arrow.png" alt="more..." /> </a></p>
+<h3><a href="Poco.Data.ODBC.Diagnostics.html" class="class">class Diagnostics</a></h3>
+<p> <a href="Poco.Data.ODBC.Utility.html" title="class Poco::Data::ODBC::Utility">Utility</a> class providing functionality for retrieving <a href="Poco.Data.ODBC.html" title="namespace Poco::Data::ODBC">ODBC</a> diagnostic
+ records.&nbsp;<a href="Poco.Data.ODBC.Diagnostics.html"><img src="images/arrow.png" alt="more..." /> </a></p>
+<h3><a href="Poco.Data.ODBC.EnvironmentHandle.html" class="class">class EnvironmentHandle</a></h3>
+<p> <a href="Poco.Data.ODBC.html" title="namespace Poco::Data::ODBC">ODBC</a> environment handle class&nbsp;<a href="Poco.Data.ODBC.EnvironmentHandle.html"><img src="images/arrow.png" alt="more..." /> </a></p>
+<h3><a href="Poco.Data.ODBC.Error.html" class="class">class Error</a></h3>
+<p> Class encapsulating <a href="Poco.Data.ODBC.html" title="namespace Poco::Data::ODBC">ODBC</a> diagnostic record collection.&nbsp;<a href="Poco.Data.ODBC.Error.html"><img src="images/arrow.png" alt="more..." /> </a></p>
+<h3><a href="Poco.Data.ODBC.Extractor.html" class="class">class Extractor</a></h3>
+<p> Extracts and converts data values from the result row returned by <a href="Poco.Data.ODBC.html" title="namespace Poco::Data::ODBC">ODBC</a>.&nbsp;<a href="Poco.Data.ODBC.Extractor.html"><img src="images/arrow.png" alt="more..." /> </a></p>
+<h3><a href="Poco.Data.ODBC.Handle.html" class="class">class Handle</a></h3>
+<p> <a href="Poco.Data.ODBC.html" title="namespace Poco::Data::ODBC">ODBC</a> handle class template&nbsp;<a href="Poco.Data.ODBC.Handle.html"><img src="images/arrow.png" alt="more..." /> </a></p>
+<h3><a href="Poco.Data.ODBC.HandleException.html" class="class">class HandleException</a></h3>
+<p>&nbsp;<a href="Poco.Data.ODBC.HandleException.html"><img src="images/arrow.png" alt="more..." /> </a></p>
+<h3><a href="Poco.Data.ODBC.InsufficientStorageException.html" class="class">class InsufficientStorageException</a></h3>
+<p>&nbsp;<a href="Poco.Data.ODBC.InsufficientStorageException.html"><img src="images/arrow.png" alt="more..." /> </a></p>
+<h3><a href="Poco.Data.ODBC.ODBCException.html" class="class">class ODBCException</a></h3>
+<p>&nbsp;<a href="Poco.Data.ODBC.ODBCException.html"><img src="images/arrow.png" alt="more..." /> </a></p>
+<h3><a href="Poco.Data.ODBC.ODBCMetaColumn.html" class="class">class ODBCMetaColumn</a></h3>
+<p>&nbsp;<a href="Poco.Data.ODBC.ODBCMetaColumn.html"><img src="images/arrow.png" alt="more..." /> </a></p>
+<h3><a href="Poco.Data.ODBC.ODBCStatementImpl.html" class="class">class ODBCStatementImpl</a></h3>
+<p> Implements statement functionality needed for <a href="Poco.Data.ODBC.html" title="namespace Poco::Data::ODBC">ODBC</a>&nbsp;<a href="Poco.Data.ODBC.ODBCStatementImpl.html"><img src="images/arrow.png" alt="more..." /> </a></p>
+<h3><a href="Poco.Data.ODBC.Parameter.html" class="class">class Parameter</a></h3>
+<p>&nbsp;<a href="Poco.Data.ODBC.Parameter.html"><img src="images/arrow.png" alt="more..." /> </a></p>
+<h3><a href="Poco.Data.ODBC.Preparator.html" class="class">class Preparator</a></h3>
+<p> Class used for database preparation where we first have to register all data types 
+ with respective memory output locations before extracting data.&nbsp;<a href="Poco.Data.ODBC.Preparator.html"><img src="images/arrow.png" alt="more..." /> </a></p>
+<h3><a href="Poco.Data.ODBC.SessionImpl.html" class="class">class SessionImpl</a></h3>
+<p> Implements <a href="Poco.Data.ODBC.SessionImpl.html" title="class Poco::Data::ODBC::SessionImpl">SessionImpl</a> interface&nbsp;<a href="Poco.Data.ODBC.SessionImpl.html"><img src="images/arrow.png" alt="more..." /> </a></p>
+<h3><a href="Poco.Data.ODBC.TypeInfo.html" class="class">class TypeInfo</a></h3>
+<p> Datatypes mapping utility class.&nbsp;<a href="Poco.Data.ODBC.TypeInfo.html"><img src="images/arrow.png" alt="more..." /> </a></p>
+<h3><a href="Poco.Data.ODBC.UnknownDataLengthException.html" class="class">class UnknownDataLengthException</a></h3>
+<p>&nbsp;<a href="Poco.Data.ODBC.UnknownDataLengthException.html"><img src="images/arrow.png" alt="more..." /> </a></p>
+<h3><a href="Poco.Data.ODBC.Utility.html" class="class">class Utility</a></h3>
+<p> Various utility functions&nbsp;<a href="Poco.Data.ODBC.Utility.html"><img src="images/arrow.png" alt="more..." /> </a></p>
+<h2>Types</h2>
+<h3><a id="1782">ConnectionDiagnostics</a></h3>
+<p class="decl">typedef <a href="Poco.Data.ODBC.Diagnostics.html" title="class Poco::Data::ODBC::Diagnostics">Diagnostics</a> &lt; SQLHDBC, 2 &gt; <a href="Poco.Data.ODBC.html#1782" title="Poco::Data::ODBC::ConnectionDiagnostics">ConnectionDiagnostics</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="1811">ConnectionError</a></h3>
+<p class="decl">typedef <a href="Poco.Data.ODBC.Error.html" title="class Poco::Data::ODBC::Error">Error</a> &lt; SQLHDBC, 2 &gt; <a href="Poco.Data.ODBC.html#1811" title="Poco::Data::ODBC::ConnectionError">ConnectionError</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="2297">ConnectionException</a></h3>
+<p class="decl">typedef <a href="Poco.Data.ODBC.HandleException.html" title="class Poco::Data::ODBC::HandleException">HandleException</a> &lt; SQLHDBC, 2 &gt; <a href="Poco.Data.ODBC.html#2297" title="Poco::Data::ODBC::ConnectionException">ConnectionException</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="1784">DescriptorDiagnostics</a></h3>
+<p class="decl">typedef <a href="Poco.Data.ODBC.Diagnostics.html" title="class Poco::Data::ODBC::Diagnostics">Diagnostics</a> &lt; SQLHDESC, 4 &gt; <a href="Poco.Data.ODBC.html#1784" title="Poco::Data::ODBC::DescriptorDiagnostics">DescriptorDiagnostics</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="1813">DescriptorError</a></h3>
+<p class="decl">typedef <a href="Poco.Data.ODBC.Error.html" title="class Poco::Data::ODBC::Error">Error</a> &lt; SQLHSTMT, 4 &gt; <a href="Poco.Data.ODBC.html#1813" title="Poco::Data::ODBC::DescriptorError">DescriptorError</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="2299">DescriptorException</a></h3>
+<p class="decl">typedef <a href="Poco.Data.ODBC.HandleException.html" title="class Poco::Data::ODBC::HandleException">HandleException</a> &lt; SQLHDESC, 4 &gt; <a href="Poco.Data.ODBC.html#2299" title="Poco::Data::ODBC::DescriptorException">DescriptorException</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="2175">DescriptorHandle</a></h3>
+<p class="decl">typedef <a href="Poco.Data.ODBC.Handle.html" title="class Poco::Data::ODBC::Handle">Handle</a> &lt; SQLHDESC, 4 &gt; <a href="Poco.Data.ODBC.html#2175" title="Poco::Data::ODBC::DescriptorHandle">DescriptorHandle</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="1781">EnvironmentDiagnostics</a></h3>
+<p class="decl">typedef <a href="Poco.Data.ODBC.Diagnostics.html" title="class Poco::Data::ODBC::Diagnostics">Diagnostics</a> &lt; SQLHENV, 1 &gt; <a href="Poco.Data.ODBC.html#1781" title="Poco::Data::ODBC::EnvironmentDiagnostics">EnvironmentDiagnostics</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="1810">EnvironmentError</a></h3>
+<p class="decl">typedef <a href="Poco.Data.ODBC.Error.html" title="class Poco::Data::ODBC::Error">Error</a> &lt; SQLHENV, 1 &gt; <a href="Poco.Data.ODBC.html#1810" title="Poco::Data::ODBC::EnvironmentError">EnvironmentError</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="2296">EnvironmentException</a></h3>
+<p class="decl">typedef <a href="Poco.Data.ODBC.HandleException.html" title="class Poco::Data::ODBC::HandleException">HandleException</a> &lt; SQLHENV, 1 &gt; <a href="Poco.Data.ODBC.html#2296" title="Poco::Data::ODBC::EnvironmentException">EnvironmentException</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="2850">NumAttrPtrType</a></h3>
+<p class="decl">typedef SQLLEN * <a href="Poco.Data.ODBC.html#2850" title="Poco::Data::ODBC::NumAttrPtrType">NumAttrPtrType</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="1783">StatementDiagnostics</a></h3>
+<p class="decl">typedef <a href="Poco.Data.ODBC.Diagnostics.html" title="class Poco::Data::ODBC::Diagnostics">Diagnostics</a> &lt; SQLHSTMT, 3 &gt; <a href="Poco.Data.ODBC.html#1783" title="Poco::Data::ODBC::StatementDiagnostics">StatementDiagnostics</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="1812">StatementError</a></h3>
+<p class="decl">typedef <a href="Poco.Data.ODBC.Error.html" title="class Poco::Data::ODBC::Error">Error</a> &lt; SQLHSTMT, 3 &gt; <a href="Poco.Data.ODBC.html#1812" title="Poco::Data::ODBC::StatementError">StatementError</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="2298">StatementException</a></h3>
+<p class="decl">typedef <a href="Poco.Data.ODBC.HandleException.html" title="class Poco::Data::ODBC::HandleException">HandleException</a> &lt; SQLHSTMT, 3 &gt; <a href="Poco.Data.ODBC.html#2298" title="Poco::Data::ODBC::StatementException">StatementException</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="2174">StatementHandle</a></h3>
+<p class="decl">typedef <a href="Poco.Data.ODBC.Handle.html" title="class Poco::Data::ODBC::Handle">Handle</a> &lt; SQLHSTMT, 3 &gt; <a href="Poco.Data.ODBC.html#2174" title="Poco::Data::ODBC::StatementHandle">StatementHandle</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Functions</h2>
+<h3><a id="3051">SQLBrowseConnect</a></h3>
+<p class="decl">SQLRETURN ODBC_API <a href="Poco.Data.ODBC.html#3051" title="Poco::Data::ODBC::SQLBrowseConnect()">SQLBrowseConnect</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLHDBC hdbc,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szConnStrIn,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT cbConnStrIn,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szConnStrOut,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT cbConnStrOutMax,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT * pcbConnStrOut<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="3338">SQLBrowseConnect</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">inline SQLRETURN <a href="Poco.Data.ODBC.html#3051" title="Poco::Data::ODBC::SQLBrowseConnect()">SQLBrowseConnect</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLHDBC hdbc,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szConnStrIn,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT cbConnStrIn,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szConnStrOut,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT cbConnStrOutMax,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT * pcbConnStrOut<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="2851">SQLColAttribute</a></h3>
+<p class="decl">SQLRETURN ODBC_API <a href="Poco.Data.ODBC.html#2851" title="Poco::Data::ODBC::SQLColAttribute()">SQLColAttribute</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLHSTMT hstmt,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLUSMALLINT iCol,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLUSMALLINT iField,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLPOINTER pCharAttr,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT cbCharAttrMax,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT * pcbCharAttr,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Data.ODBC.html#2850" title="Poco::Data::ODBC::NumAttrPtrType">NumAttrPtrType</a> pNumAttr<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="3138">SQLColAttribute</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">inline SQLRETURN <a href="Poco.Data.ODBC.html#2851" title="Poco::Data::ODBC::SQLColAttribute()">SQLColAttribute</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLHSTMT hstmt,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLUSMALLINT iCol,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLUSMALLINT iField,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLPOINTER pCharAttr,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT cbCharAttrMax,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT * pcbCharAttr,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Data.ODBC.html#2850" title="Poco::Data::ODBC::NumAttrPtrType">NumAttrPtrType</a> pNumAttr<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="2859">SQLColAttributes</a></h3>
+<p class="decl">SQLRETURN ODBC_API <a href="Poco.Data.ODBC.html#2859" title="Poco::Data::ODBC::SQLColAttributes()">SQLColAttributes</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLHSTMT hstmt,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLUSMALLINT icol,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLUSMALLINT fDescType,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLPOINTER rgbDesc,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT cbDescMax,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT * pcbDesc,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLLEN * pfDesc<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="3146">SQLColAttributes</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">inline SQLRETURN <a href="Poco.Data.ODBC.html#2859" title="Poco::Data::ODBC::SQLColAttributes()">SQLColAttributes</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLHSTMT hstmt,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLUSMALLINT icol,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLUSMALLINT fDescType,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLPOINTER rgbDesc,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT cbDescMax,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT * pcbDesc,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLLEN * pfDesc<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="3058">SQLColumnPrivileges</a></h3>
+<p class="decl">SQLRETURN ODBC_API <a href="Poco.Data.ODBC.html#3058" title="Poco::Data::ODBC::SQLColumnPrivileges()">SQLColumnPrivileges</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLHSTMT hstmt,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szCatalogName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT cbCatalogName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szSchemaName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT cbSchemaName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szTableName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT cbTableName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szColumnName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT cbColumnName<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="3345">SQLColumnPrivileges</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">inline SQLRETURN <a href="Poco.Data.ODBC.html#3058" title="Poco::Data::ODBC::SQLColumnPrivileges()">SQLColumnPrivileges</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLHSTMT hstmt,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szCatalogName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT cbCatalogName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szSchemaName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT cbSchemaName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szTableName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT cbTableName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szColumnName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT cbColumnName<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="2975">SQLColumns</a></h3>
+<p class="decl">SQLRETURN ODBC_API <a href="Poco.Data.ODBC.html#2975" title="Poco::Data::ODBC::SQLColumns()">SQLColumns</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLHSTMT hstmt,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szCatalogName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT cbCatalogName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szSchemaName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT cbSchemaName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szTableName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT cbTableName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szColumnName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT cbColumnName<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="3262">SQLColumns</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">inline SQLRETURN <a href="Poco.Data.ODBC.html#2975" title="Poco::Data::ODBC::SQLColumns()">SQLColumns</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLHSTMT hstmt,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szCatalogName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT cbCatalogName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szSchemaName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT cbSchemaName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szTableName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT cbTableName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szColumnName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT cbColumnName<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="2867">SQLConnect</a></h3>
+<p class="decl">SQLRETURN ODBC_API <a href="Poco.Data.ODBC.html#2867" title="Poco::Data::ODBC::SQLConnect()">SQLConnect</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLHDBC hdbc,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szDSN,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT cbDSN,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szUID,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT cbUID,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szAuthStr,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT cbAuthStr<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="3154">SQLConnect</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">inline SQLRETURN <a href="Poco.Data.ODBC.html#2867" title="Poco::Data::ODBC::SQLConnect()">SQLConnect</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLHDBC hdbc,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szDSN,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT cbDSN,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szUID,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT cbUID,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szAuthStr,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT cbAuthStr<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="3033">SQLDataSources</a></h3>
+<p class="decl">SQLRETURN ODBC_API <a href="Poco.Data.ODBC.html#3033" title="Poco::Data::ODBC::SQLDataSources()">SQLDataSources</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLHENV henv,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLUSMALLINT fDirection,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szDSN,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT cbDSNMax,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT * pcbDSN,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szDescription,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT cbDescriptionMax,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT * pcbDescription<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="3320">SQLDataSources</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">inline SQLRETURN <a href="Poco.Data.ODBC.html#3033" title="Poco::Data::ODBC::SQLDataSources()">SQLDataSources</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLHENV henv,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLUSMALLINT fDirection,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szDSN,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT cbDSNMax,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT * pcbDSN,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szDescription,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT cbDescriptionMax,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT * pcbDescription<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="2875">SQLDescribeCol</a></h3>
+<p class="decl">SQLRETURN ODBC_API <a href="Poco.Data.ODBC.html#2875" title="Poco::Data::ODBC::SQLDescribeCol()">SQLDescribeCol</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLHSTMT hstmt,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLUSMALLINT icol,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szColName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT cbColNameMax,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT * pcbColName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT * pfSqlType,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLULEN * pcbColDef,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT * pibScale,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT * pfNullable<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="3162">SQLDescribeCol</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">inline SQLRETURN <a href="Poco.Data.ODBC.html#2875" title="Poco::Data::ODBC::SQLDescribeCol()">SQLDescribeCol</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLHSTMT hstmt,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLUSMALLINT icol,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szColName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT cbColNameMax,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT * pcbColName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT * pfSqlType,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLULEN * pcbColDef,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT * pibScale,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT * pfNullable<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="3042">SQLDriverConnect</a></h3>
+<p class="decl">SQLRETURN ODBC_API <a href="Poco.Data.ODBC.html#3042" title="Poco::Data::ODBC::SQLDriverConnect()">SQLDriverConnect</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLHDBC hdbc,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLHWND hwnd,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szConnStrIn,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT cbConnStrIn,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szConnStrOut,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT cbConnStrOutMax,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT * pcbConnStrOut,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLUSMALLINT fDriverCompletion<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="3329">SQLDriverConnect</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">inline SQLRETURN <a href="Poco.Data.ODBC.html#3042" title="Poco::Data::ODBC::SQLDriverConnect()">SQLDriverConnect</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLHDBC hdbc,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLHWND hwnd,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szConnStrIn,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT cbConnStrIn,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szConnStrOut,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT cbConnStrOutMax,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT * pcbConnStrOut,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLUSMALLINT fDriverCompletion<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="3123">SQLDrivers</a></h3>
+<p class="decl">SQLRETURN ODBC_API <a href="Poco.Data.ODBC.html#3123" title="Poco::Data::ODBC::SQLDrivers()">SQLDrivers</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLHENV henv,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLUSMALLINT fDirection,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szDriverDesc,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT cbDriverDescMax,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT * pcbDriverDesc,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szDriverAttributes,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT cbDrvrAttrMax,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT * pcbDrvrAttr<br />);</p>
+<div class="description">
+<p>inlines </p>
+</div>
+<h3><a id="3410">SQLDrivers</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">inline SQLRETURN <a href="Poco.Data.ODBC.html#3123" title="Poco::Data::ODBC::SQLDrivers()">SQLDrivers</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLHENV henv,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLUSMALLINT fDirection,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szDriverDesc,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT cbDriverDescMax,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT * pcbDriverDesc,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szDriverAttributes,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT cbDrvrAttrMax,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT * pcbDrvrAttr<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="2885">SQLError</a></h3>
+<p class="decl">SQLRETURN ODBC_API <a href="Poco.Data.ODBC.html#2885" title="Poco::Data::ODBC::SQLError()">SQLError</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLHENV henv,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLHDBC hdbc,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLHSTMT hstmt,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szSqlState,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLINTEGER * pfNativeError,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szErrorMsg,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT cbErrorMsgMax,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT * pcbErrorMsg<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="3172">SQLError</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">inline SQLRETURN <a href="Poco.Data.ODBC.html#2885" title="Poco::Data::ODBC::SQLError()">SQLError</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLHENV henv,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLHDBC hdbc,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLHSTMT hstmt,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szSqlState,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLINTEGER * pfNativeError,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szErrorMsg,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT cbErrorMsgMax,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT * pcbErrorMsg<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="2894">SQLExecDirect</a></h3>
+<p class="decl">SQLRETURN ODBC_API <a href="Poco.Data.ODBC.html#2894" title="Poco::Data::ODBC::SQLExecDirect()">SQLExecDirect</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLHSTMT hstmt,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szSqlStr,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLINTEGER cbSqlStr<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="3181">SQLExecDirect</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">inline SQLRETURN <a href="Poco.Data.ODBC.html#2894" title="Poco::Data::ODBC::SQLExecDirect()">SQLExecDirect</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLHSTMT hstmt,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szSqlStr,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLINTEGER cbSqlStr<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="3068">SQLForeignKeys</a></h3>
+<p class="decl">SQLRETURN ODBC_API <a href="Poco.Data.ODBC.html#3068" title="Poco::Data::ODBC::SQLForeignKeys()">SQLForeignKeys</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLHSTMT hstmt,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szPkCatalogName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT cbPkCatalogName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szPkSchemaName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT cbPkSchemaName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szPkTableName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT cbPkTableName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szFkCatalogName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT cbFkCatalogName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szFkSchemaName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT cbFkSchemaName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szFkTableName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT cbFkTableName<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="3355">SQLForeignKeys</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">inline SQLRETURN <a href="Poco.Data.ODBC.html#3068" title="Poco::Data::ODBC::SQLForeignKeys()">SQLForeignKeys</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLHSTMT hstmt,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szPkCatalogName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT cbPkCatalogName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szPkSchemaName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT cbPkSchemaName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szPkTableName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT cbPkTableName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szFkCatalogName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT cbFkCatalogName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szFkSchemaName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT cbFkSchemaName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szFkTableName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT cbFkTableName<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="2898">SQLGetConnectAttr</a></h3>
+<p class="decl">SQLRETURN ODBC_API <a href="Poco.Data.ODBC.html#2898" title="Poco::Data::ODBC::SQLGetConnectAttr()">SQLGetConnectAttr</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLHDBC hdbc,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLINTEGER fAttribute,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLPOINTER rgbValue,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLINTEGER cbValueMax,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLINTEGER * pcbValue<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="3185">SQLGetConnectAttr</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">inline SQLRETURN <a href="Poco.Data.ODBC.html#2898" title="Poco::Data::ODBC::SQLGetConnectAttr()">SQLGetConnectAttr</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLHDBC hdbc,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLINTEGER fAttribute,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLPOINTER rgbValue,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLINTEGER cbValueMax,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLINTEGER * pcbValue<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="2985">SQLGetConnectOption</a></h3>
+<p class="decl">SQLRETURN ODBC_API <a href="Poco.Data.ODBC.html#2985" title="Poco::Data::ODBC::SQLGetConnectOption()">SQLGetConnectOption</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLHDBC hdbc,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLUSMALLINT fOption,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLPOINTER pvParam<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="3272">SQLGetConnectOption</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">inline SQLRETURN <a href="Poco.Data.ODBC.html#2985" title="Poco::Data::ODBC::SQLGetConnectOption()">SQLGetConnectOption</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLHDBC hdbc,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLUSMALLINT fOption,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLPOINTER pvParam<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="2904">SQLGetCursorName</a></h3>
+<p class="decl">SQLRETURN ODBC_API <a href="Poco.Data.ODBC.html#2904" title="Poco::Data::ODBC::SQLGetCursorName()">SQLGetCursorName</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLHSTMT hstmt,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szCursor,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT cbCursorMax,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT * pcbCursor<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="3191">SQLGetCursorName</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">inline SQLRETURN <a href="Poco.Data.ODBC.html#2904" title="Poco::Data::ODBC::SQLGetCursorName()">SQLGetCursorName</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLHSTMT hstmt,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szCursor,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT cbCursorMax,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT * pcbCursor<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="2915">SQLGetDescField</a></h3>
+<p class="decl">SQLRETURN ODBC_API <a href="Poco.Data.ODBC.html#2915" title="Poco::Data::ODBC::SQLGetDescField()">SQLGetDescField</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLHDESC hdesc,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT iRecord,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT iField,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLPOINTER rgbValue,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLINTEGER cbValueMax,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLINTEGER * pcbValue<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="3202">SQLGetDescField</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">inline SQLRETURN <a href="Poco.Data.ODBC.html#2915" title="Poco::Data::ODBC::SQLGetDescField()">SQLGetDescField</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLHDESC hdesc,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT iRecord,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT iField,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLPOINTER rgbValue,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLINTEGER cbValueMax,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLINTEGER * pcbValue<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="2922">SQLGetDescRec</a></h3>
+<p class="decl">SQLRETURN ODBC_API <a href="Poco.Data.ODBC.html#2922" title="Poco::Data::ODBC::SQLGetDescRec()">SQLGetDescRec</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLHDESC hdesc,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT iRecord,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT cbNameMax,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT * pcbName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT * pfType,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT * pfSubType,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLLEN * pLength,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT * pPrecision,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT * pScale,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT * pNullable<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="3209">SQLGetDescRec</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">inline SQLRETURN <a href="Poco.Data.ODBC.html#2922" title="Poco::Data::ODBC::SQLGetDescRec()">SQLGetDescRec</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLHDESC hdesc,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT iRecord,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT cbNameMax,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT * pcbName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT * pfType,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT * pfSubType,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLLEN * pLength,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT * pPrecision,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT * pScale,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT * pNullable<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="2934">SQLGetDiagField</a></h3>
+<p class="decl">SQLRETURN ODBC_API <a href="Poco.Data.ODBC.html#2934" title="Poco::Data::ODBC::SQLGetDiagField()">SQLGetDiagField</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT fHandleType,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLHANDLE handle,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT iRecord,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT fDiagField,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLPOINTER rgbDiagInfo,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT cbDiagInfoMax,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT * pcbDiagInfo<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="3221">SQLGetDiagField</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">inline SQLRETURN <a href="Poco.Data.ODBC.html#2934" title="Poco::Data::ODBC::SQLGetDiagField()">SQLGetDiagField</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT fHandleType,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLHANDLE handle,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT iRecord,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT fDiagField,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLPOINTER rgbDiagInfo,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT cbDiagInfoMax,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT * pcbDiagInfo<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="2942">SQLGetDiagRec</a></h3>
+<p class="decl">SQLRETURN ODBC_API <a href="Poco.Data.ODBC.html#2942" title="Poco::Data::ODBC::SQLGetDiagRec()">SQLGetDiagRec</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT fHandleType,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLHANDLE handle,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT iRecord,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szSqlState,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLINTEGER * pfNativeError,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szErrorMsg,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT cbErrorMsgMax,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT * pcbErrorMsg<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="3229">SQLGetDiagRec</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">inline SQLRETURN <a href="Poco.Data.ODBC.html#2942" title="Poco::Data::ODBC::SQLGetDiagRec()">SQLGetDiagRec</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT fHandleType,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLHANDLE handle,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT iRecord,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szSqlState,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLINTEGER * pfNativeError,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szErrorMsg,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT cbErrorMsgMax,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT * pcbErrorMsg<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="2989">SQLGetInfo</a></h3>
+<p class="decl">SQLRETURN ODBC_API <a href="Poco.Data.ODBC.html#2989" title="Poco::Data::ODBC::SQLGetInfo()">SQLGetInfo</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLHDBC hdbc,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLUSMALLINT fInfoType,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLPOINTER rgbInfoValue,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT cbInfoValueMax,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT * pcbInfoValue<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="3276">SQLGetInfo</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">inline SQLRETURN <a href="Poco.Data.ODBC.html#2989" title="Poco::Data::ODBC::SQLGetInfo()">SQLGetInfo</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLHDBC hdbc,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLUSMALLINT fInfoType,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLPOINTER rgbInfoValue,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT cbInfoValueMax,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT * pcbInfoValue<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="2969">SQLGetStmtAttr</a></h3>
+<p class="decl">SQLRETURN ODBC_API <a href="Poco.Data.ODBC.html#2969" title="Poco::Data::ODBC::SQLGetStmtAttr()">SQLGetStmtAttr</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLHSTMT hstmt,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLINTEGER fAttribute,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLPOINTER rgbValue,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLINTEGER cbValueMax,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLINTEGER * pcbValue<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="3256">SQLGetStmtAttr</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">inline SQLRETURN <a href="Poco.Data.ODBC.html#2969" title="Poco::Data::ODBC::SQLGetStmtAttr()">SQLGetStmtAttr</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLHSTMT hstmt,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLINTEGER fAttribute,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLPOINTER rgbValue,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLINTEGER cbValueMax,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLINTEGER * pcbValue<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="2995">SQLGetTypeInfo</a></h3>
+<p class="decl">SQLRETURN ODBC_API <a href="Poco.Data.ODBC.html#2995" title="Poco::Data::ODBC::SQLGetTypeInfo()">SQLGetTypeInfo</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLHSTMT <a href="Poco.Data.ODBC.html#2174" title="Poco::Data::ODBC::StatementHandle">StatementHandle</a>,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT DataType<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="3282">SQLGetTypeInfo</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">inline SQLRETURN <a href="Poco.Data.ODBC.html#2995" title="Poco::Data::ODBC::SQLGetTypeInfo()">SQLGetTypeInfo</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLHSTMT <a href="Poco.Data.ODBC.html#2174" title="Poco::Data::ODBC::StatementHandle">StatementHandle</a>,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT DataType<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="3082">SQLNativeSql</a></h3>
+<p class="decl">SQLRETURN ODBC_API <a href="Poco.Data.ODBC.html#3082" title="Poco::Data::ODBC::SQLNativeSql()">SQLNativeSql</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLHDBC hdbc,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szSqlStrIn,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLINTEGER cbSqlStrIn,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szSqlStr,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLINTEGER cbSqlStrMax,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLINTEGER * pcbSqlStr<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="3369">SQLNativeSql</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">inline SQLRETURN <a href="Poco.Data.ODBC.html#3082" title="Poco::Data::ODBC::SQLNativeSql()">SQLNativeSql</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLHDBC hdbc,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szSqlStrIn,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLINTEGER cbSqlStrIn,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szSqlStr,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLINTEGER cbSqlStrMax,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLINTEGER * pcbSqlStr<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="2951">SQLPrepare</a></h3>
+<p class="decl">SQLRETURN ODBC_API <a href="Poco.Data.ODBC.html#2951" title="Poco::Data::ODBC::SQLPrepare()">SQLPrepare</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLHSTMT hstmt,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szSqlStr,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLINTEGER cbSqlStr<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="3238">SQLPrepare</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">inline SQLRETURN <a href="Poco.Data.ODBC.html#2951" title="Poco::Data::ODBC::SQLPrepare()">SQLPrepare</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLHSTMT hstmt,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szSqlStr,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLINTEGER cbSqlStr<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="3089">SQLPrimaryKeys</a></h3>
+<p class="decl">SQLRETURN ODBC_API <a href="Poco.Data.ODBC.html#3089" title="Poco::Data::ODBC::SQLPrimaryKeys()">SQLPrimaryKeys</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLHSTMT hstmt,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szCatalogName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT cbCatalogName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szSchemaName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT cbSchemaName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szTableName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT cbTableName<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="3376">SQLPrimaryKeys</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">inline SQLRETURN <a href="Poco.Data.ODBC.html#3089" title="Poco::Data::ODBC::SQLPrimaryKeys()">SQLPrimaryKeys</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLHSTMT hstmt,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szCatalogName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT cbCatalogName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szSchemaName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT cbSchemaName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szTableName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT cbTableName<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="3097">SQLProcedureColumns</a></h3>
+<p class="decl">SQLRETURN ODBC_API <a href="Poco.Data.ODBC.html#3097" title="Poco::Data::ODBC::SQLProcedureColumns()">SQLProcedureColumns</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLHSTMT hstmt,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szCatalogName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT cbCatalogName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szSchemaName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT cbSchemaName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szProcName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT cbProcName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szColumnName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT cbColumnName<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="3384">SQLProcedureColumns</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">inline SQLRETURN <a href="Poco.Data.ODBC.html#3097" title="Poco::Data::ODBC::SQLProcedureColumns()">SQLProcedureColumns</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLHSTMT hstmt,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szCatalogName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT cbCatalogName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szSchemaName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT cbSchemaName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szProcName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT cbProcName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szColumnName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT cbColumnName<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="3107">SQLProcedures</a></h3>
+<p class="decl">SQLRETURN ODBC_API <a href="Poco.Data.ODBC.html#3107" title="Poco::Data::ODBC::SQLProcedures()">SQLProcedures</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLHSTMT hstmt,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szCatalogName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT cbCatalogName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szSchemaName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT cbSchemaName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szProcName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT cbProcName<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="3394">SQLProcedures</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">inline SQLRETURN <a href="Poco.Data.ODBC.html#3107" title="Poco::Data::ODBC::SQLProcedures()">SQLProcedures</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLHSTMT hstmt,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szCatalogName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT cbCatalogName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szSchemaName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT cbSchemaName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szProcName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT cbProcName<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="2955">SQLSetConnectAttr</a></h3>
+<p class="decl">SQLRETURN ODBC_API <a href="Poco.Data.ODBC.html#2955" title="Poco::Data::ODBC::SQLSetConnectAttr()">SQLSetConnectAttr</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLHDBC hdbc,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLINTEGER fAttribute,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLPOINTER rgbValue,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLINTEGER cbValue<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="3242">SQLSetConnectAttr</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">inline SQLRETURN <a href="Poco.Data.ODBC.html#2955" title="Poco::Data::ODBC::SQLSetConnectAttr()">SQLSetConnectAttr</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLHDBC hdbc,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLINTEGER fAttribute,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLPOINTER rgbValue,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLINTEGER cbValue<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="2998">SQLSetConnectOption</a></h3>
+<p class="decl">SQLRETURN ODBC_API <a href="Poco.Data.ODBC.html#2998" title="Poco::Data::ODBC::SQLSetConnectOption()">SQLSetConnectOption</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLHDBC hdbc,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLUSMALLINT fOption,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLULEN vParam<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="3285">SQLSetConnectOption</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">inline SQLRETURN <a href="Poco.Data.ODBC.html#2998" title="Poco::Data::ODBC::SQLSetConnectOption()">SQLSetConnectOption</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLHDBC hdbc,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLUSMALLINT fOption,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLULEN vParam<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="2960">SQLSetCursorName</a></h3>
+<p class="decl">SQLRETURN ODBC_API <a href="Poco.Data.ODBC.html#2960" title="Poco::Data::ODBC::SQLSetCursorName()">SQLSetCursorName</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLHSTMT hstmt,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szCursor,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT cbCursor<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="3247">SQLSetCursorName</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">inline SQLRETURN <a href="Poco.Data.ODBC.html#2960" title="Poco::Data::ODBC::SQLSetCursorName()">SQLSetCursorName</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLHSTMT hstmt,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szCursor,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT cbCursor<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="2909">SQLSetDescField</a></h3>
+<p class="decl">SQLRETURN ODBC_API <a href="Poco.Data.ODBC.html#2909" title="Poco::Data::ODBC::SQLSetDescField()">SQLSetDescField</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLHDESC <a href="Poco.Data.ODBC.html#2175" title="Poco::Data::ODBC::DescriptorHandle">DescriptorHandle</a>,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT RecNumber,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT FieldIdentifier,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLPOINTER Value,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLINTEGER BufferLength<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="3196">SQLSetDescField</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">inline SQLRETURN <a href="Poco.Data.ODBC.html#2909" title="Poco::Data::ODBC::SQLSetDescField()">SQLSetDescField</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLHDESC <a href="Poco.Data.ODBC.html#2175" title="Poco::Data::ODBC::DescriptorHandle">DescriptorHandle</a>,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT RecNumber,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT FieldIdentifier,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLPOINTER Value,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLINTEGER BufferLength<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="2964">SQLSetStmtAttr</a></h3>
+<p class="decl">SQLRETURN ODBC_API <a href="Poco.Data.ODBC.html#2964" title="Poco::Data::ODBC::SQLSetStmtAttr()">SQLSetStmtAttr</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLHSTMT hstmt,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLINTEGER fAttribute,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLPOINTER rgbValue,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLINTEGER cbValueMax<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="3251">SQLSetStmtAttr</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">inline SQLRETURN <a href="Poco.Data.ODBC.html#2964" title="Poco::Data::ODBC::SQLSetStmtAttr()">SQLSetStmtAttr</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLHSTMT hstmt,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLINTEGER fAttribute,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLPOINTER rgbValue,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLINTEGER cbValueMax<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="3002">SQLSpecialColumns</a></h3>
+<p class="decl">SQLRETURN ODBC_API <a href="Poco.Data.ODBC.html#3002" title="Poco::Data::ODBC::SQLSpecialColumns()">SQLSpecialColumns</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLHSTMT hstmt,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLUSMALLINT fColType,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szCatalogName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT cbCatalogName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szSchemaName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT cbSchemaName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szTableName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT cbTableName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLUSMALLINT fScope,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLUSMALLINT fNullable<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="3289">SQLSpecialColumns</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">inline SQLRETURN <a href="Poco.Data.ODBC.html#3002" title="Poco::Data::ODBC::SQLSpecialColumns()">SQLSpecialColumns</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLHSTMT hstmt,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLUSMALLINT fColType,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szCatalogName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT cbCatalogName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szSchemaName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT cbSchemaName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szTableName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT cbTableName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLUSMALLINT fScope,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLUSMALLINT fNullable<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="3013">SQLStatistics</a></h3>
+<p class="decl">SQLRETURN ODBC_API <a href="Poco.Data.ODBC.html#3013" title="Poco::Data::ODBC::SQLStatistics()">SQLStatistics</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLHSTMT hstmt,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szCatalogName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT cbCatalogName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szSchemaName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT cbSchemaName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szTableName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT cbTableName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLUSMALLINT fUnique,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLUSMALLINT fAccuracy<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="3300">SQLStatistics</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">inline SQLRETURN <a href="Poco.Data.ODBC.html#3013" title="Poco::Data::ODBC::SQLStatistics()">SQLStatistics</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLHSTMT hstmt,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szCatalogName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT cbCatalogName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szSchemaName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT cbSchemaName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szTableName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT cbTableName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLUSMALLINT fUnique,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLUSMALLINT fAccuracy<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="3115">SQLTablePrivileges</a></h3>
+<p class="decl">SQLRETURN ODBC_API <a href="Poco.Data.ODBC.html#3115" title="Poco::Data::ODBC::SQLTablePrivileges()">SQLTablePrivileges</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLHSTMT hstmt,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szCatalogName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT cbCatalogName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szSchemaName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT cbSchemaName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szTableName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT cbTableName<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="3402">SQLTablePrivileges</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">inline SQLRETURN <a href="Poco.Data.ODBC.html#3115" title="Poco::Data::ODBC::SQLTablePrivileges()">SQLTablePrivileges</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLHSTMT hstmt,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szCatalogName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT cbCatalogName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szSchemaName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT cbSchemaName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szTableName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT cbTableName<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="3023">SQLTables</a></h3>
+<p class="decl">SQLRETURN ODBC_API <a href="Poco.Data.ODBC.html#3023" title="Poco::Data::ODBC::SQLTables()">SQLTables</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLHSTMT hstmt,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szCatalogName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT cbCatalogName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szSchemaName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT cbSchemaName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szTableName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT cbTableName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szTableType,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT cbTableType<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="3310">SQLTables</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">inline SQLRETURN <a href="Poco.Data.ODBC.html#3023" title="Poco::Data::ODBC::SQLTables()">SQLTables</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLHSTMT hstmt,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szCatalogName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT cbCatalogName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szSchemaName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT cbSchemaName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szTableName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT cbTableName,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLCHAR * szTableType,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLSMALLINT cbTableType<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="3132">isString</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">inline bool isString(<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLPOINTER pValue,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLINTEGER length<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="2729">operator []</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">inline <a href="Poco.Any.html" title="class Poco::Any">Poco::Any</a> &amp; Preparator::operator[] (<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="3135">stringLength</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">inline SQLINTEGER stringLength(<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLPOINTER pValue,<br />&nbsp;&nbsp;&nbsp;&nbsp;SQLINTEGER length<br />);</p>
+<div class="description">
+<p>inlines </p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

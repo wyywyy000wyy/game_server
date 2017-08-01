@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::XML::Element</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.XML.html" class="namespace">Poco::XML</a></h1>
+<h1 class="symbol">class Element</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-XML" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> XML<br />
+<b>Package:</b> DOM<br />
+<b>Header:</b> Poco/DOM/Element.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>The <a href="Poco.XML.Element.html" title="class Poco::XML::Element">Element</a> interface represents an element in an <a href="Poco.XML.html" title="namespace Poco::XML">XML</a> document. Elements may have attributes associated with them; since the <a href="Poco.XML.Element.html" title="class Poco::XML::Element">Element</a> interface inherits from <a href="Poco.XML.Node.html" title="class Poco::XML::Node">Node</a>, the generic <a href="Poco.XML.Node.html" title="class Poco::XML::Node">Node</a> interface attribute attributes may be used to retrieve the set of all attributes for an element. There are methods on the <a href="Poco.XML.Element.html" title="class Poco::XML::Element">Element</a> interface to retrieve either an <a href="Poco.XML.Attr.html" title="class Poco::XML::Attr">Attr</a> object by name or an attribute value by name. In <a href="Poco.XML.html" title="namespace Poco::XML">XML</a>, where an attribute value may contain entity references, an <a href="Poco.XML.Attr.html" title="class Poco::XML::Attr">Attr</a> object should be retrieved to examine the possibly fairly complex sub-tree representing the attribute value.  </p>
+</div>
+<h2>Inheritance</h2>
+<p><b>Direct Base Classes: </b><a href="Poco.XML.AbstractContainerNode.html" title="class Poco::XML::AbstractContainerNode">AbstractContainerNode</a></p>
+<p><b>All Base Classes: </b><a href="Poco.XML.AbstractContainerNode.html" title="class Poco::XML::AbstractContainerNode">AbstractContainerNode</a>, <a href="Poco.XML.AbstractNode.html" title="class Poco::XML::AbstractNode">AbstractNode</a>, <a href="Poco.XML.DOMObject.html" title="class Poco::XML::DOMObject">DOMObject</a>, <a href="Poco.XML.EventTarget.html" title="class Poco::XML::EventTarget">EventTarget</a>, <a href="Poco.XML.Node.html" title="class Poco::XML::Node">Node</a></p>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.XML.Element.html#28874" title="Poco::XML::Element::addAttributeNodeNP()">addAttributeNodeNP</a>, <a href="Poco.XML.Element.html#28923" title="Poco::XML::Element::attributes()">attributes</a>, <a href="Poco.XML.Element.html#28934" title="Poco::XML::Element::copyNode()">copyNode</a>, <a href="Poco.XML.Element.html#28938" title="Poco::XML::Element::dispatchNodeInsertedIntoDocument()">dispatchNodeInsertedIntoDocument</a>, <a href="Poco.XML.Element.html#28937" title="Poco::XML::Element::dispatchNodeRemovedFromDocument()">dispatchNodeRemovedFromDocument</a>, <a href="Poco.XML.Element.html#28863" title="Poco::XML::Element::getAttribute()">getAttribute</a>, <a href="Poco.XML.Element.html#28882" title="Poco::XML::Element::getAttributeNS()">getAttributeNS</a>, <a href="Poco.XML.Element.html#28870" title="Poco::XML::Element::getAttributeNode()">getAttributeNode</a>, <a href="Poco.XML.Element.html#28892" title="Poco::XML::Element::getAttributeNodeNS()">getAttributeNodeNS</a>, <a href="Poco.XML.Element.html#28910" title="Poco::XML::Element::getChildElement()">getChildElement</a>, <a href="Poco.XML.Element.html#28912" title="Poco::XML::Element::getChildElementNS()">getChildElementNS</a>, <a href="Poco.XML.Element.html#28915" title="Poco::XML::Element::getElementById()">getElementById</a>, <a href="Poco.XML.Element.html#28918" title="Poco::XML::Element::getElementByIdNS()">getElementByIdNS</a>, <a href="Poco.XML.Element.html#28879" title="Poco::XML::Element::getElementsByTagName()">getElementsByTagName</a>, <a href="Poco.XML.Element.html#28902" title="Poco::XML::Element::getElementsByTagNameNS()">getElementsByTagNameNS</a>, <a href="Poco.XML.Element.html#28897" title="Poco::XML::Element::hasAttribute()">hasAttribute</a>, <a href="Poco.XML.Element.html#28899" title="Poco::XML::Element::hasAttributeNS()">hasAttributeNS</a>, <a href="Poco.XML.Element.html#28908" title="Poco::XML::Element::hasAttributes()">hasAttributes</a>, <a href="Poco.XML.Element.html#28909" title="Poco::XML::Element::innerText()">innerText</a>, <a href="Poco.XML.Element.html#28907" title="Poco::XML::Element::localName()">localName</a>, <a href="Poco.XML.Element.html#28905" title="Poco::XML::Element::namespaceURI()">namespaceURI</a>, <a href="Poco.XML.Element.html#28922" title="Poco::XML::Element::nodeName()">nodeName</a>, <a href="Poco.XML.Element.html#28924" title="Poco::XML::Element::nodeType()">nodeType</a>, <a href="Poco.XML.Element.html#28881" title="Poco::XML::Element::normalize()">normalize</a>, <a href="Poco.XML.Element.html#28906" title="Poco::XML::Element::prefix()">prefix</a>, <a href="Poco.XML.Element.html#28868" title="Poco::XML::Element::removeAttribute()">removeAttribute</a>, <a href="Poco.XML.Element.html#28889" title="Poco::XML::Element::removeAttributeNS()">removeAttributeNS</a>, <a href="Poco.XML.Element.html#28877" title="Poco::XML::Element::removeAttributeNode()">removeAttributeNode</a>, <a href="Poco.XML.Element.html#28865" title="Poco::XML::Element::setAttribute()">setAttribute</a>, <a href="Poco.XML.Element.html#28885" title="Poco::XML::Element::setAttributeNS()">setAttributeNS</a>, <a href="Poco.XML.Element.html#28872" title="Poco::XML::Element::setAttributeNode()">setAttributeNode</a>, <a href="Poco.XML.Element.html#28895" title="Poco::XML::Element::setAttributeNodeNS()">setAttributeNodeNS</a>, <a href="Poco.XML.Element.html#28862" title="Poco::XML::Element::tagName()">tagName</a></p>
+<p><b>Inherited Functions: </b><a href="Poco.XML.AbstractNode.html#28244" title="Poco::XML::AbstractNode::addEventListener()">addEventListener</a>, <a href="Poco.XML.AbstractNode.html#28231" title="Poco::XML::AbstractNode::appendChild()">appendChild</a>, <a href="Poco.XML.AbstractNode.html#28221" title="Poco::XML::AbstractNode::attributes()">attributes</a>, <a href="Poco.XML.AbstractNode.html#28260" title="Poco::XML::AbstractNode::autoRelease()">autoRelease</a>, <a href="Poco.XML.AbstractNode.html#28274" title="Poco::XML::AbstractNode::bubbleEvent()">bubbleEvent</a>, <a href="Poco.XML.AbstractNode.html#28272" title="Poco::XML::AbstractNode::captureEvent()">captureEvent</a>, <a href="Poco.XML.AbstractNode.html#28216" title="Poco::XML::AbstractNode::childNodes()">childNodes</a>, <a href="Poco.XML.AbstractNode.html#28234" title="Poco::XML::AbstractNode::cloneNode()">cloneNode</a>, <a href="Poco.XML.AbstractNode.html#28267" title="Poco::XML::AbstractNode::copyNode()">copyNode</a>, <a href="Poco.XML.AbstractNode.html#28281" title="Poco::XML::AbstractNode::dispatchAttrModified()">dispatchAttrModified</a>, <a href="Poco.XML.AbstractNode.html#28286" title="Poco::XML::AbstractNode::dispatchCharacterDataModified()">dispatchCharacterDataModified</a>, <a href="Poco.XML.AbstractNode.html#28252" title="Poco::XML::AbstractNode::dispatchEvent()">dispatchEvent</a>, <a href="Poco.XML.AbstractNode.html#28277" title="Poco::XML::AbstractNode::dispatchNodeInserted()">dispatchNodeInserted</a>, <a href="Poco.XML.AbstractNode.html#28280" title="Poco::XML::AbstractNode::dispatchNodeInsertedIntoDocument()">dispatchNodeInsertedIntoDocument</a>, <a href="Poco.XML.AbstractNode.html#28278" title="Poco::XML::AbstractNode::dispatchNodeRemoved()">dispatchNodeRemoved</a>, <a href="Poco.XML.AbstractNode.html#28279" title="Poco::XML::AbstractNode::dispatchNodeRemovedFromDocument()">dispatchNodeRemovedFromDocument</a>, <a href="Poco.XML.AbstractNode.html#28276" title="Poco::XML::AbstractNode::dispatchSubtreeModified()">dispatchSubtreeModified</a>, <a href="Poco.XML.DOMObject.html#28569" title="Poco::XML::DOMObject::duplicate()">duplicate</a>, <a href="Poco.XML.AbstractNode.html#28270" title="Poco::XML::AbstractNode::events()">events</a>, <a href="Poco.XML.AbstractNode.html#28271" title="Poco::XML::AbstractNode::eventsSuspended()">eventsSuspended</a>, <a href="Poco.XML.AbstractContainerNode.html#28193" title="Poco::XML::AbstractContainerNode::findAttribute()">findAttribute</a>, <a href="Poco.XML.AbstractContainerNode.html#28180" title="Poco::XML::AbstractContainerNode::findElement()">findElement</a>, <a href="Poco.XML.AbstractContainerNode.html#28175" title="Poco::XML::AbstractContainerNode::findNode()">findNode</a>, <a href="Poco.XML.AbstractNode.html#28217" title="Poco::XML::AbstractNode::firstChild()">firstChild</a>, <a href="Poco.XML.AbstractNode.html#28255" title="Poco::XML::AbstractNode::getNodeByPath()">getNodeByPath</a>, <a href="Poco.XML.AbstractNode.html#28257" title="Poco::XML::AbstractNode::getNodeByPathNS()">getNodeByPathNS</a>, <a href="Poco.XML.AbstractNode.html#28212" title="Poco::XML::AbstractNode::getNodeValue()">getNodeValue</a>, <a href="Poco.XML.AbstractContainerNode.html#28197" title="Poco::XML::AbstractContainerNode::hasAttributeValue()">hasAttributeValue</a>, <a href="Poco.XML.AbstractNode.html#28243" title="Poco::XML::AbstractNode::hasAttributes()">hasAttributes</a>, <a href="Poco.XML.AbstractNode.html#28233" title="Poco::XML::AbstractNode::hasChildNodes()">hasChildNodes</a>, <a href="Poco.XML.AbstractNode.html#28254" title="Poco::XML::AbstractNode::innerText()">innerText</a>, <a href="Poco.XML.AbstractNode.html#28223" title="Poco::XML::AbstractNode::insertBefore()">insertBefore</a>, <a href="Poco.XML.AbstractNode.html#28237" title="Poco::XML::AbstractNode::isSupported()">isSupported</a>, <a href="Poco.XML.AbstractNode.html#28218" title="Poco::XML::AbstractNode::lastChild()">lastChild</a>, <a href="Poco.XML.AbstractNode.html#28242" title="Poco::XML::AbstractNode::localName()">localName</a>, <a href="Poco.XML.AbstractContainerNode.html#28201" title="Poco::XML::AbstractContainerNode::namesAreEqual()">namesAreEqual</a>, <a href="Poco.XML.AbstractNode.html#28240" title="Poco::XML::AbstractNode::namespaceURI()">namespaceURI</a>, <a href="Poco.XML.AbstractNode.html#28220" title="Poco::XML::AbstractNode::nextSibling()">nextSibling</a>, <a href="Poco.XML.AbstractNode.html#28211" title="Poco::XML::AbstractNode::nodeName()">nodeName</a>, <a href="Poco.XML.Node.html#29203" title="Poco::XML::Node::nodeType()">nodeType</a>, <a href="Poco.XML.Node.html#29199" title="Poco::XML::Node::nodeValue()">nodeValue</a>, <a href="Poco.XML.AbstractNode.html#28236" title="Poco::XML::AbstractNode::normalize()">normalize</a>, <a href="Poco.XML.AbstractNode.html#28222" title="Poco::XML::AbstractNode::ownerDocument()">ownerDocument</a>, <a href="Poco.XML.AbstractNode.html#28215" title="Poco::XML::AbstractNode::parentNode()">parentNode</a>, <a href="Poco.XML.AbstractNode.html#28241" title="Poco::XML::AbstractNode::prefix()">prefix</a>, <a href="Poco.XML.AbstractNode.html#28219" title="Poco::XML::AbstractNode::previousSibling()">previousSibling</a>, <a href="Poco.XML.DOMObject.html#28570" title="Poco::XML::DOMObject::release()">release</a>, <a href="Poco.XML.AbstractNode.html#28229" title="Poco::XML::AbstractNode::removeChild()">removeChild</a>, <a href="Poco.XML.AbstractNode.html#28248" title="Poco::XML::AbstractNode::removeEventListener()">removeEventListener</a>, <a href="Poco.XML.AbstractNode.html#28226" title="Poco::XML::AbstractNode::replaceChild()">replaceChild</a>, <a href="Poco.XML.AbstractNode.html#28213" title="Poco::XML::AbstractNode::setNodeValue()">setNodeValue</a>, <a href="Poco.XML.AbstractNode.html#28289" title="Poco::XML::AbstractNode::setOwnerDocument()">setOwnerDocument</a></p>
+<h2>Constructors</h2>
+<h3><a id="28930">Element</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl"><a href="Poco.XML.Element.html" title="class Poco::XML::Element">Element</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.XML.Document.html" title="class Poco::XML::Document">Document</a> * pOwnerDocument,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.Element.html" title="class Poco::XML::Element">Element</a> &amp; elem<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="28925">Element</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl"><a href="Poco.XML.Element.html" title="class Poco::XML::Element">Element</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.XML.Document.html" title="class Poco::XML::Document">Document</a> * pOwnerDocument,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; namespaceURI,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; localName,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; qname<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="28933">~Element</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">~<a href="Poco.XML.Element.html" title="class Poco::XML::Element">Element</a>();</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="28874">addAttributeNodeNP</a></h3>
+<p class="decl"><a href="Poco.XML.Attr.html" title="class Poco::XML::Attr">Attr</a> * addAttributeNodeNP(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.XML.Attr.html" title="class Poco::XML::Attr">Attr</a> * oldAttr,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.XML.Attr.html" title="class Poco::XML::Attr">Attr</a> * newAttr<br />);</p>
+<div class="description">
+<p>For internal use only. Adds a new attribute after oldAttr. If oldAttr is 0, newAttr is set as first attribute. Returns newAttr. Does not fire any events. </p>
+</div>
+<h3><a id="28923">attributes</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl"><a href="Poco.XML.NamedNodeMap.html" title="class Poco::XML::NamedNodeMap">NamedNodeMap</a> * attributes() const;</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.XML.AbstractNode.html#28221" title="Poco::XML::AbstractNode::attributes()">Poco::XML::AbstractNode::attributes()</a></p></div>
+<h3><a id="28863">getAttribute</a></h3>
+<p class="decl">const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; getAttribute(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; name<br />) const;</p>
+<div class="description">
+<p>Retrieves an attribute value by name. </p>
+<p>Returns the attribute's value, if the attribute exists, or an empty string otherwise. </p>
+</div>
+<h3><a id="28882">getAttributeNS</a></h3>
+<p class="decl">const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; getAttributeNS(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; namespaceURI,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; localName<br />) const;</p>
+<div class="description">
+<p>Retrieves an attribute value by name. </p>
+<p>Returns the attribute's value, if the attribute exists, or an empty string otherwise. </p>
+</div>
+<h3><a id="28870">getAttributeNode</a></h3>
+<p class="decl"><a href="Poco.XML.Attr.html" title="class Poco::XML::Attr">Attr</a> * getAttributeNode(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; name<br />) const;</p>
+<div class="description">
+<p>Retrieves an <a href="Poco.XML.Attr.html" title="class Poco::XML::Attr">Attr</a> node by name. </p>
+</div>
+<h3><a id="28892">getAttributeNodeNS</a></h3>
+<p class="decl"><a href="Poco.XML.Attr.html" title="class Poco::XML::Attr">Attr</a> * getAttributeNodeNS(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; namespaceURI,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; localName<br />) const;</p>
+<div class="description">
+<p>Retrieves an <a href="Poco.XML.Attr.html" title="class Poco::XML::Attr">Attr</a> node by name. </p>
+</div>
+<h3><a id="28910">getChildElement</a></h3>
+<p class="decl"><a href="Poco.XML.Element.html" title="class Poco::XML::Element">Element</a> * getChildElement(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; name<br />) const;</p>
+<div class="description">
+<p>Returns the first child element with the given name, or null if such an element does not exist. </p>
+<p>This method is an extension to the W3C <a href="Poco.XML.Document.html" title="class Poco::XML::Document">Document</a> Object Model. </p>
+</div>
+<h3><a id="28912">getChildElementNS</a></h3>
+<p class="decl"><a href="Poco.XML.Element.html" title="class Poco::XML::Element">Element</a> * getChildElementNS(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; namespaceURI,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; localName<br />) const;</p>
+<div class="description">
+<p>Returns the first child element with the given namespaceURI and localName, or null if such an element does not exist. </p>
+<p>This method is an extension to the W3C <a href="Poco.XML.Document.html" title="class Poco::XML::Document">Document</a> Object Model. </p>
+</div>
+<h3><a id="28915">getElementById</a></h3>
+<p class="decl"><a href="Poco.XML.Element.html" title="class Poco::XML::Element">Element</a> * getElementById(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; elementId,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; idAttribute<br />) const;</p>
+<div class="description">
+<p>Returns the first <a href="Poco.XML.Element.html" title="class Poco::XML::Element">Element</a> whose ID attribute (given in idAttribute) has the given elementId. If no such element exists, returns null.  </p>
+<p>This method is an extension to the W3C <a href="Poco.XML.Document.html" title="class Poco::XML::Document">Document</a> Object Model. </p>
+</div>
+<h3><a id="28918">getElementByIdNS</a></h3>
+<p class="decl"><a href="Poco.XML.Element.html" title="class Poco::XML::Element">Element</a> * getElementByIdNS(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; elementId,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; idAttributeURI,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; idAttributeLocalName<br />) const;</p>
+<div class="description">
+<p>Returns the first <a href="Poco.XML.Element.html" title="class Poco::XML::Element">Element</a> whose ID attribute (given in idAttributeURI and idAttributeLocalName) has the given elementId. If no such element exists, returns null.  </p>
+<p>This method is an extension to the W3C <a href="Poco.XML.Document.html" title="class Poco::XML::Document">Document</a> Object Model. </p>
+</div>
+<h3><a id="28879">getElementsByTagName</a></h3>
+<p class="decl"><a href="Poco.XML.NodeList.html" title="class Poco::XML::NodeList">NodeList</a> * getElementsByTagName(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; name<br />) const;</p>
+<div class="description">
+<p>Returns a <a href="Poco.XML.NodeList.html" title="class Poco::XML::NodeList">NodeList</a> of all descendant elements with a given tag name, in the order in which they would be encountered in a preorder traversal of the <a href="Poco.XML.Element.html" title="class Poco::XML::Element">Element</a> tree. </p>
+<p>The special name &quot;*&quot; matches all tags. </p>
+<p>The returned <a href="Poco.XML.NodeList.html" title="class Poco::XML::NodeList">NodeList</a> must be released with a call to release() when no longer needed. </p>
+</div>
+<h3><a id="28902">getElementsByTagNameNS</a></h3>
+<p class="decl"><a href="Poco.XML.NodeList.html" title="class Poco::XML::NodeList">NodeList</a> * getElementsByTagNameNS(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; namespaceURI,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; localName<br />) const;</p>
+<div class="description">
+<p>Returns a <a href="Poco.XML.NodeList.html" title="class Poco::XML::NodeList">NodeList</a> of all the descendant Elements with a given local name and namespace <a href="Poco.URI.html" title="class Poco::URI">URI</a>  in the order in which they are encountered in a preorder traversal of this <a href="Poco.XML.Element.html" title="class Poco::XML::Element">Element</a> tree. </p>
+<p>The special value &quot;*&quot; matches all namespaces, or local names respectively. </p>
+<p>The returned <a href="Poco.XML.NodeList.html" title="class Poco::XML::NodeList">NodeList</a> must be released with a call to release() when no longer needed. </p>
+</div>
+<h3><a id="28897">hasAttribute</a></h3>
+<p class="decl">bool hasAttribute(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; name<br />) const;</p>
+<div class="description">
+<p>Returns true if and only if the element has the specified attribute. </p>
+</div>
+<h3><a id="28899">hasAttributeNS</a></h3>
+<p class="decl">bool hasAttributeNS(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; namespaceURI,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; localName<br />) const;</p>
+<div class="description">
+<p>Returns true if and only if the element has the specified attribute. </p>
+</div>
+<h3><a id="28908">hasAttributes</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">bool hasAttributes() const;</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.XML.AbstractContainerNode.html#28161" title="Poco::XML::AbstractContainerNode::hasAttributes()">Poco::XML::AbstractContainerNode::hasAttributes()</a></p></div>
+<h3><a id="28909">innerText</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl"><a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> innerText() const;</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.XML.AbstractNode.html#28254" title="Poco::XML::AbstractNode::innerText()">Poco::XML::AbstractNode::innerText()</a></p></div>
+<h3><a id="28907">localName</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; localName() const;</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.XML.AbstractNode.html#28242" title="Poco::XML::AbstractNode::localName()">Poco::XML::AbstractNode::localName()</a></p></div>
+<h3><a id="28905">namespaceURI</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; namespaceURI() const;</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.XML.AbstractNode.html#28240" title="Poco::XML::AbstractNode::namespaceURI()">Poco::XML::AbstractNode::namespaceURI()</a></p></div>
+<h3><a id="28922">nodeName</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; nodeName() const;</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.XML.AbstractNode.html#28211" title="Poco::XML::AbstractNode::nodeName()">Poco::XML::AbstractNode::nodeName()</a></p></div>
+<h3><a id="28924">nodeType</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">unsigned short nodeType() const;</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.XML.Node.html#29203" title="Poco::XML::Node::nodeType()">Poco::XML::Node::nodeType()</a></p></div>
+<h3><a id="28881">normalize</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">void normalize();</p>
+<div class="description">
+<p>Puts all <a href="Poco.XML.Text.html" title="class Poco::XML::Text">Text</a> nodes in the full depth of the sub-tree underneath this <a href="Poco.XML.Element.html" title="class Poco::XML::Element">Element</a>, including attribute nodes, into a &quot;normal&quot; form where only markup (e.g., tags, comments, processing instructions, CDATA sections, and entity references) separates <a href="Poco.XML.Text.html" title="class Poco::XML::Text">Text</a> nodes, i.e., there are no adjacent <a href="Poco.XML.Text.html" title="class Poco::XML::Text">Text</a> nodes. This can be used to ensure that the DOM view of a document is the same as if it were saved and re-loaded, and is useful when operations (such as XPointer lookups) that depend on a particular document tree structure are to be used. </p>
+<p>Note: In cases where the document contains CDATASections, the normalize operation alone may not be sufficient, since XPointers do not differentiate between <a href="Poco.XML.Text.html" title="class Poco::XML::Text">Text</a> nodes and <a href="Poco.XML.CDATASection.html" title="class Poco::XML::CDATASection">CDATASection</a> nodes. </p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.XML.AbstractNode.html#28236" title="Poco::XML::AbstractNode::normalize()">Poco::XML::AbstractNode::normalize()</a></p></div>
+<h3><a id="28906">prefix</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl"><a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> prefix() const;</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.XML.AbstractNode.html#28241" title="Poco::XML::AbstractNode::prefix()">Poco::XML::AbstractNode::prefix()</a></p></div>
+<h3><a id="28868">removeAttribute</a></h3>
+<p class="decl">void removeAttribute(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; name<br />);</p>
+<div class="description">
+<p>Removes an attribute by name. </p>
+</div>
+<h3><a id="28889">removeAttributeNS</a></h3>
+<p class="decl">void removeAttributeNS(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; namespaceURI,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; localName<br />);</p>
+<div class="description">
+<p>Removes an attribute by name. </p>
+</div>
+<h3><a id="28877">removeAttributeNode</a></h3>
+<p class="decl"><a href="Poco.XML.Attr.html" title="class Poco::XML::Attr">Attr</a> * removeAttributeNode(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.XML.Attr.html" title="class Poco::XML::Attr">Attr</a> * oldAttr<br />);</p>
+<div class="description">
+<p>Removes the specified attribute. </p>
+</div>
+<h3><a id="28865">setAttribute</a></h3>
+<p class="decl">void setAttribute(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; name,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; value<br />);</p>
+<div class="description">
+<p>Adds a new attribute. If an attribute with that name is already present in the element, its value is changed to be that of the value parameter. This value is a simple string; it is not parsed as it is being set. So any markup (such as syntax to be recognized as an entity reference) is treated as literal text, and needs to be appropriately escaped by the implementation when it is written out. </p>
+</div>
+<h3><a id="28885">setAttributeNS</a></h3>
+<p class="decl">void setAttributeNS(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; namespaceURI,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; qualifiedName,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; value<br />);</p>
+<div class="description">
+<p>Adds a new attribute. If an attribute with that name is already present in the element, its value is changed to be that of the value parameter. </p>
+</div>
+<h3><a id="28872">setAttributeNode</a></h3>
+<p class="decl"><a href="Poco.XML.Attr.html" title="class Poco::XML::Attr">Attr</a> * setAttributeNode(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.XML.Attr.html" title="class Poco::XML::Attr">Attr</a> * newAttr<br />);</p>
+<div class="description">
+<p>Adds a new attribute. If an attribute with that name is already present in the element, it is replaced by the new one. </p>
+</div>
+<h3><a id="28895">setAttributeNodeNS</a></h3>
+<p class="decl"><a href="Poco.XML.Attr.html" title="class Poco::XML::Attr">Attr</a> * setAttributeNodeNS(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.XML.Attr.html" title="class Poco::XML::Attr">Attr</a> * newAttr<br />);</p>
+<div class="description">
+<p>Adds a new attribute. If an attribute with that name is already present in the element, it is replaced by the new one. </p>
+</div>
+<h3><a id="28862">tagName</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; tagName() const;</p>
+<div class="description">
+<p>Returns the name of the element. </p>
+<p>For example, in </p>
+<p></p>
+<pre>&lt;elementExample id=&quot;demo&quot;&gt; 
+    ... 
+&lt;/elementExample&gt;
+</pre>
+<p>tagName has the value &quot;elementExample&quot;. Note that this is case-preserving in <a href="Poco.XML.html" title="namespace Poco::XML">XML</a>,  as are all of the operations of the DOM. </p>
+</div>
+<h3><a id="28934">copyNode</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl"><a href="Poco.XML.Node.html" title="class Poco::XML::Node">Node</a> * copyNode(<br />&nbsp;&nbsp;&nbsp;&nbsp;bool deep,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.XML.Document.html" title="class Poco::XML::Document">Document</a> * pOwnerDocument<br />) const;</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.XML.AbstractNode.html#28267" title="Poco::XML::AbstractNode::copyNode()">Poco::XML::AbstractNode::copyNode()</a></p></div>
+<h3><a id="28938">dispatchNodeInsertedIntoDocument</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">void dispatchNodeInsertedIntoDocument();</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.XML.AbstractContainerNode.html#28174" title="Poco::XML::AbstractContainerNode::dispatchNodeInsertedIntoDocument()">Poco::XML::AbstractContainerNode::dispatchNodeInsertedIntoDocument()</a></p></div>
+<h3><a id="28937">dispatchNodeRemovedFromDocument</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">void dispatchNodeRemovedFromDocument();</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.XML.AbstractContainerNode.html#28173" title="Poco::XML::AbstractContainerNode::dispatchNodeRemovedFromDocument()">Poco::XML::AbstractContainerNode::dispatchNodeRemovedFromDocument()</a></p></div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

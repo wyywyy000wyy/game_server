@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::Net::HTTPServerConnection</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.Net.html" class="namespace">Poco::Net</a></h1>
+<h1 class="symbol">class HTTPServerConnection</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Net" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Net<br />
+<b>Package:</b> HTTPServer<br />
+<b>Header:</b> Poco/Net/HTTPServerConnection.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>This subclass of <a href="Poco.Net.TCPServerConnection.html" title="class Poco::Net::TCPServerConnection">TCPServerConnection</a> handles HTTP connections. </p>
+</div>
+<h2>Inheritance</h2>
+<p><b>Direct Base Classes: </b><a href="Poco.Net.TCPServerConnection.html" title="class Poco::Net::TCPServerConnection">TCPServerConnection</a></p>
+<p><b>All Base Classes: </b><a href="Poco.Net.TCPServerConnection.html" title="class Poco::Net::TCPServerConnection">TCPServerConnection</a>, <a href="Poco.Runnable.html" title="class Poco::Runnable">Poco::Runnable</a></p>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.Net.HTTPServerConnection.html#21706" title="Poco::Net::HTTPServerConnection::onServerStopped()">onServerStopped</a>, <a href="Poco.Net.HTTPServerConnection.html#21702" title="Poco::Net::HTTPServerConnection::run()">run</a>, <a href="Poco.Net.HTTPServerConnection.html#21703" title="Poco::Net::HTTPServerConnection::sendErrorResponse()">sendErrorResponse</a></p>
+<p><b>Inherited Functions: </b><a href="Poco.Runnable.html#16662" title="Poco::Runnable::run()">run</a>, <a href="Poco.Net.TCPServerConnection.html#25135" title="Poco::Net::TCPServerConnection::socket()">socket</a>, <a href="Poco.Net.TCPServerConnection.html#25136" title="Poco::Net::TCPServerConnection::start()">start</a></p>
+<h2>Constructors</h2>
+<h3><a id="21697">HTTPServerConnection</a></h3>
+<p class="decl"><a href="Poco.Net.HTTPServerConnection.html" title="class Poco::Net::HTTPServerConnection">HTTPServerConnection</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Net.StreamSocket.html" title="class Poco::Net::StreamSocket">StreamSocket</a> &amp; socket,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Net.HTTPServerParams.html#21722" title="Poco::Net::HTTPServerParams::Ptr">HTTPServerParams::Ptr</a> pParams,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Net.HTTPRequestHandlerFactory.html#21533" title="Poco::Net::HTTPRequestHandlerFactory::Ptr">HTTPRequestHandlerFactory::Ptr</a> pFactory<br />);</p>
+<div class="description">
+<p>Creates the <a href="Poco.Net.HTTPServerConnection.html" title="class Poco::Net::HTTPServerConnection">HTTPServerConnection</a>. </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="21701">~HTTPServerConnection</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual ~<a href="Poco.Net.HTTPServerConnection.html" title="class Poco::Net::HTTPServerConnection">HTTPServerConnection</a>();</p>
+<div class="description">
+<p>Destroys the <a href="Poco.Net.HTTPServerConnection.html" title="class Poco::Net::HTTPServerConnection">HTTPServerConnection</a>. </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="21702">run</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">void run();</p>
+<div class="description">
+<p>Handles all HTTP requests coming in. </p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Runnable.html#16662" title="Poco::Runnable::run()">Poco::Runnable::run()</a></p></div>
+<h3><a id="21706">onServerStopped</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">void onServerStopped(<br />&nbsp;&nbsp;&nbsp;&nbsp;const bool &amp; abortCurrent<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="21703">sendErrorResponse</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">void sendErrorResponse(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Net.HTTPServerSession.html" title="class Poco::Net::HTTPServerSession">HTTPServerSession</a> &amp; session,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Net.HTTPResponse.html#21544" title="enum  Poco::Net::HTTPResponse::HTTPStatus">HTTPResponse::HTTPStatus</a> status<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

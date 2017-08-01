@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::StringTokenizer</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.html" class="namespace">Poco</a></h1>
+<h1 class="symbol">class StringTokenizer</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Foundation" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Foundation<br />
+<b>Package:</b> Core<br />
+<b>Header:</b> Poco/StringTokenizer.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>A simple tokenizer that splits a string into tokens, which are separated by separator characters. An iterator is used to iterate over all tokens. </p>
+</div>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.StringTokenizer.html#17406" title="Poco::StringTokenizer::begin()">begin</a>, <a href="Poco.StringTokenizer.html#17421" title="Poco::StringTokenizer::count()">count</a>, <a href="Poco.StringTokenizer.html#17407" title="Poco::StringTokenizer::end()">end</a>, <a href="Poco.StringTokenizer.html#17414" title="Poco::StringTokenizer::find()">find</a>, <a href="Poco.StringTokenizer.html#17412" title="Poco::StringTokenizer::has()">has</a>, <a href="Poco.StringTokenizer.html#17408" title="Poco::StringTokenizer::operator []()">operator&nbsp;[]</a>, <a href="Poco.StringTokenizer.html#17417" title="Poco::StringTokenizer::replace()">replace</a></p>
+<h2>Types</h2>
+<h3><a id="17400">Iterator</a></h3>
+<p class="decl">typedef TokenVec::const_iterator <a href="Poco.StringTokenizer.html#17400" title="Poco::StringTokenizer::Iterator">Iterator</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="17399">TokenVec</a></h3>
+<p class="decl">typedef std::vector &lt; std::string &gt; <a href="Poco.StringTokenizer.html#17399" title="Poco::StringTokenizer::TokenVec">TokenVec</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Enumerations</h2>
+<h3><a id="17396">Options</a></h3>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="17397">TOK_IGNORE_EMPTY</a> = 1</p>
+<div class="description">
+<p>ignore empty tokens </p>
+</div>
+<p class="decl"><a id="17398">TOK_TRIM</a> = 2</p>
+<div class="description">
+<p>remove leading and trailing whitespace from tokens </p>
+</div>
+<h2>Constructors</h2>
+<h3><a id="17401">StringTokenizer</a></h3>
+<p class="decl"><a href="Poco.StringTokenizer.html" title="class Poco::StringTokenizer">StringTokenizer</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; str,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; separators,<br />&nbsp;&nbsp;&nbsp;&nbsp;int options = 0<br />);</p>
+<div class="description">
+<p>Splits the given string into tokens. The tokens are expected to be separated by one of the separator characters given in separators. Additionally, options can be specified: </p>
+<ul>
+<li><a href="Poco.StringTokenizer.html#17397" title="Poco::StringTokenizer::TOK_IGNORE_EMPTY">TOK_IGNORE_EMPTY</a>: empty tokens are ignored </li>
+<li><a href="Poco.StringTokenizer.html#17398" title="Poco::StringTokenizer::TOK_TRIM">TOK_TRIM</a>: trailing and leading whitespace is removed from tokens. </li>
+</ul>
+</div>
+<h2>Destructor</h2>
+<h3><a id="17405">~StringTokenizer</a></h3>
+<p class="decl">~<a href="Poco.StringTokenizer.html" title="class Poco::StringTokenizer">StringTokenizer</a>();</p>
+<div class="description">
+<p>Destroys the tokenizer. </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="17406">begin</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.StringTokenizer.html#17400" title="Poco::StringTokenizer::Iterator">Iterator</a> begin() const;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="17421">count</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">std::size_t count() const;</p>
+<div class="description">
+<p>Returns the total number of tokens. </p>
+</div>
+<h3><a id="17422">count</a></h3>
+<p class="decl">std::size_t count(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; token<br />) const;</p>
+<div class="description">
+<p>Returns the number of tokens equal to the specified token. </p>
+</div>
+<h3><a id="17407">end</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.StringTokenizer.html#17400" title="Poco::StringTokenizer::Iterator">Iterator</a> end() const;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="17414">find</a></h3>
+<p class="decl">std::string::size_type find(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; token,<br />&nbsp;&nbsp;&nbsp;&nbsp;std::string::size_type pos = 0<br />) const;</p>
+<div class="description">
+<p>Returns the index of the first occurence of the token starting at position pos. Throws a <a href="Poco.NotFoundException.html" title="class Poco::NotFoundException">NotFoundException</a> if the token is not found. </p>
+</div>
+<h3><a id="17412">has</a></h3>
+<p class="decl">bool has(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; token<br />) const;</p>
+<div class="description">
+<p>Returns true if token exists, false otherwise. </p>
+</div>
+<h3><a id="17408">operator []</a></h3>
+<p class="decl">const std::string &amp; operator[] (<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t index<br />) const;</p>
+<div class="description">
+<p>Returns const reference the index'th token. Throws a <a href="Poco.RangeException.html" title="class Poco::RangeException">RangeException</a> if the index is out of range. </p>
+</div>
+<h3><a id="17410">operator []</a></h3>
+<p class="decl">std::string &amp; operator[] (<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t index<br />);</p>
+<div class="description">
+<p>Returns reference to the index'th token. Throws a <a href="Poco.RangeException.html" title="class Poco::RangeException">RangeException</a> if the index is out of range. </p>
+</div>
+<h3><a id="17417">replace</a></h3>
+<p class="decl">std::size_t replace(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; oldToken,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; newToken,<br />&nbsp;&nbsp;&nbsp;&nbsp;std::string::size_type pos = 0<br />);</p>
+<div class="description">
+<p>Starting at position pos, replaces all subsequent tokens having value  equal to oldToken with newToken. Returns the number of modified tokens. </p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

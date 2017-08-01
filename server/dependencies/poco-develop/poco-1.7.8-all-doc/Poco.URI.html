@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::URI</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.html" class="namespace">Poco</a></h1>
+<h1 class="symbol">class URI</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Foundation" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Foundation<br />
+<b>Package:</b> URI<br />
+<b>Header:</b> Poco/URI.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>A Uniform Resource Identifier, as specified in <a href="https://www.ietf.org/rfc/rfc3986.txt" target="_blank">RFC 3986</a>. </p>
+<p>The <a href="Poco.URI.html" title="class Poco::URI">URI</a> class provides methods for building URIs from their parts, as well as for splitting URIs into their parts. Furthermore, the class provides methods for resolving relative URIs against base URIs. </p>
+<p>The class automatically performs a few normalizations on all URIs and <a href="Poco.URI.html" title="class Poco::URI">URI</a> parts passed to it: </p>
+<ul>
+<li>scheme identifiers are converted to lower case </li>
+<li>percent-encoded characters are decoded (except for the query string) </li>
+<li>optionally, dot segments are removed from paths (see <a href="Poco.URI.html#18480" title="Poco::URI::normalize()">normalize</a>()) </li>
+</ul>
+<p>Note that dealing with query strings requires some precautions, as, internally, query strings are stored in percent-encoded form, while all other parts of the <a href="Poco.URI.html" title="class Poco::URI">URI</a> are stored in decoded form. While parsing query strings from properly encoded URLs generally works, explicitly setting query strings with <a href="Poco.URI.html#18448" title="Poco::URI::setQuery()">setQuery</a>() or extracting query strings with <a href="Poco.URI.html#18447" title="Poco::URI::getQuery()">getQuery</a>() may lead to ambiguities. See the descriptions of <a href="Poco.URI.html#18448" title="Poco::URI::setQuery()">setQuery</a>(), <a href="Poco.URI.html#18454" title="Poco::URI::setRawQuery()">setRawQuery</a>(), <a href="Poco.URI.html#18447" title="Poco::URI::getQuery()">getQuery</a>() and <a href="Poco.URI.html#18453" title="Poco::URI::getRawQuery()">getRawQuery</a>() for more information. </p>
+</div>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.URI.html#18450" title="Poco::URI::addQueryParameter()">addQueryParameter</a>, <a href="Poco.URI.html#18522" title="Poco::URI::buildPath()">buildPath</a>, <a href="Poco.URI.html#18427" title="Poco::URI::clear()">clear</a>, <a href="Poco.URI.html#18487" title="Poco::URI::decode()">decode</a>, <a href="Poco.URI.html#18471" title="Poco::URI::empty()">empty</a>, <a href="Poco.URI.html#18483" title="Poco::URI::encode()">encode</a>, <a href="Poco.URI.html#18491" title="Poco::URI::equals()">equals</a>, <a href="Poco.URI.html#18441" title="Poco::URI::getAuthority()">getAuthority</a>, <a href="Poco.URI.html#18459" title="Poco::URI::getFragment()">getFragment</a>, <a href="Poco.URI.html#18435" title="Poco::URI::getHost()">getHost</a>, <a href="Poco.URI.html#18444" title="Poco::URI::getPath()">getPath</a>, <a href="Poco.URI.html#18465" title="Poco::URI::getPathAndQuery()">getPathAndQuery</a>, <a href="Poco.URI.html#18464" title="Poco::URI::getPathEtc()">getPathEtc</a>, <a href="Poco.URI.html#18481" title="Poco::URI::getPathSegments()">getPathSegments</a>, <a href="Poco.URI.html#18438" title="Poco::URI::getPort()">getPort</a>, <a href="Poco.URI.html#18447" title="Poco::URI::getQuery()">getQuery</a>, <a href="Poco.URI.html#18456" title="Poco::URI::getQueryParameters()">getQueryParameters</a>, <a href="Poco.URI.html#18453" title="Poco::URI::getRawQuery()">getRawQuery</a>, <a href="Poco.URI.html#18429" title="Poco::URI::getScheme()">getScheme</a>, <a href="Poco.URI.html#18432" title="Poco::URI::getUserInfo()">getUserInfo</a>, <a href="Poco.URI.html#18494" title="Poco::URI::getWellKnownPort()">getWellKnownPort</a>, <a href="Poco.URI.html#18470" title="Poco::URI::isRelative()">isRelative</a>, <a href="Poco.URI.html#18493" title="Poco::URI::isWellKnownPort()">isWellKnownPort</a>, <a href="Poco.URI.html#18515" title="Poco::URI::mergePath()">mergePath</a>, <a href="Poco.URI.html#18480" title="Poco::URI::normalize()">normalize</a>, <a href="Poco.URI.html#18476" title="Poco::URI::operator !=()">operator&nbsp;!=</a>, <a href="Poco.URI.html#18419" title="Poco::URI::operator =()">operator&nbsp;=</a>, <a href="Poco.URI.html#18472" title="Poco::URI::operator ==()">operator&nbsp;==</a>, <a href="Poco.URI.html#18495" title="Poco::URI::parse()">parse</a>, <a href="Poco.URI.html#18497" title="Poco::URI::parseAuthority()">parseAuthority</a>, <a href="Poco.URI.html#18512" title="Poco::URI::parseFragment()">parseFragment</a>, <a href="Poco.URI.html#18500" title="Poco::URI::parseHostAndPort()">parseHostAndPort</a>, <a href="Poco.URI.html#18503" title="Poco::URI::parsePath()">parsePath</a>, <a href="Poco.URI.html#18506" title="Poco::URI::parsePathEtc()">parsePathEtc</a>, <a href="Poco.URI.html#18509" title="Poco::URI::parseQuery()">parseQuery</a>, <a href="Poco.URI.html#18517" title="Poco::URI::removeDotSegments()">removeDotSegments</a>, <a href="Poco.URI.html#18466" title="Poco::URI::resolve()">resolve</a>, <a href="Poco.URI.html#18442" title="Poco::URI::setAuthority()">setAuthority</a>, <a href="Poco.URI.html#18460" title="Poco::URI::setFragment()">setFragment</a>, <a href="Poco.URI.html#18436" title="Poco::URI::setHost()">setHost</a>, <a href="Poco.URI.html#18445" title="Poco::URI::setPath()">setPath</a>, <a href="Poco.URI.html#18462" title="Poco::URI::setPathEtc()">setPathEtc</a>, <a href="Poco.URI.html#18439" title="Poco::URI::setPort()">setPort</a>, <a href="Poco.URI.html#18448" title="Poco::URI::setQuery()">setQuery</a>, <a href="Poco.URI.html#18457" title="Poco::URI::setQueryParameters()">setQueryParameters</a>, <a href="Poco.URI.html#18454" title="Poco::URI::setRawQuery()">setRawQuery</a>, <a href="Poco.URI.html#18430" title="Poco::URI::setScheme()">setScheme</a>, <a href="Poco.URI.html#18433" title="Poco::URI::setUserInfo()">setUserInfo</a>, <a href="Poco.URI.html#18425" title="Poco::URI::swap()">swap</a>, <a href="Poco.URI.html#18428" title="Poco::URI::toString()">toString</a></p>
+<h2>Types</h2>
+<h3><a id="18387">QueryParameters</a></h3>
+<p class="decl">typedef std::vector &lt; std::pair &lt; std::string, std::string &gt; &gt; <a href="Poco.URI.html#18387" title="Poco::URI::QueryParameters">QueryParameters</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Constructors</h2>
+<h3><a id="18388">URI</a></h3>
+<p class="decl"><a href="Poco.URI.html" title="class Poco::URI">URI</a>();</p>
+<div class="description">
+<p>Creates an empty <a href="Poco.URI.html" title="class Poco::URI">URI</a>. </p>
+</div>
+<h3><a id="18389">URI</a></h3>
+<p class="decl">explicit <a href="Poco.URI.html" title="class Poco::URI">URI</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; uri<br />);</p>
+<div class="description">
+<p>Parses an <a href="Poco.URI.html" title="class Poco::URI">URI</a> from the given string. Throws a <a href="Poco.SyntaxException.html" title="class Poco::SyntaxException">SyntaxException</a> if the uri is not valid. </p>
+</div>
+<h3><a id="18391">URI</a></h3>
+<p class="decl">explicit <a href="Poco.URI.html" title="class Poco::URI">URI</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const char * uri<br />);</p>
+<div class="description">
+<p>Parses an <a href="Poco.URI.html" title="class Poco::URI">URI</a> from the given string. Throws a <a href="Poco.SyntaxException.html" title="class Poco::SyntaxException">SyntaxException</a> if the uri is not valid. </p>
+</div>
+<h3><a id="18411">URI</a></h3>
+<p class="decl"><a href="Poco.URI.html" title="class Poco::URI">URI</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.URI.html" title="class Poco::URI">URI</a> &amp; uri<br />);</p>
+<div class="description">
+<p>Copy constructor. Creates an <a href="Poco.URI.html" title="class Poco::URI">URI</a> from another one. </p>
+</div>
+<h3><a id="18416">URI</a></h3>
+<p class="decl">explicit <a href="Poco.URI.html" title="class Poco::URI">URI</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Path.html" title="class Poco::Path">Path</a> &amp; path<br />);</p>
+<div class="description">
+<p>Creates a <a href="Poco.URI.html" title="class Poco::URI">URI</a> from a path. </p>
+<p>The path will be made absolute, and a file:// <a href="Poco.URI.html" title="class Poco::URI">URI</a> will be built from it. </p>
+</div>
+<h3><a id="18393">URI</a></h3>
+<p class="decl"><a href="Poco.URI.html" title="class Poco::URI">URI</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; scheme,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; pathEtc<br />);</p>
+<div class="description">
+<p>Creates an <a href="Poco.URI.html" title="class Poco::URI">URI</a> from its parts. </p>
+</div>
+<h3><a id="18413">URI</a></h3>
+<p class="decl"><a href="Poco.URI.html" title="class Poco::URI">URI</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.URI.html" title="class Poco::URI">URI</a> &amp; baseURI,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; relativeURI<br />);</p>
+<div class="description">
+<p>Creates an <a href="Poco.URI.html" title="class Poco::URI">URI</a> from a base <a href="Poco.URI.html" title="class Poco::URI">URI</a> and a relative <a href="Poco.URI.html" title="class Poco::URI">URI</a>, according to the algorithm in section 5.2 of <a href="https://www.ietf.org/rfc/rfc3986.txt" target="_blank">RFC 3986</a>. </p>
+</div>
+<h3><a id="18396">URI</a></h3>
+<p class="decl"><a href="Poco.URI.html" title="class Poco::URI">URI</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; scheme,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; authority,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; pathEtc<br />);</p>
+<div class="description">
+<p>Creates an <a href="Poco.URI.html" title="class Poco::URI">URI</a> from its parts. </p>
+</div>
+<h3><a id="18400">URI</a></h3>
+<p class="decl"><a href="Poco.URI.html" title="class Poco::URI">URI</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; scheme,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; authority,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; path,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; query<br />);</p>
+<div class="description">
+<p>Creates an <a href="Poco.URI.html" title="class Poco::URI">URI</a> from its parts. </p>
+</div>
+<h3><a id="18405">URI</a></h3>
+<p class="decl"><a href="Poco.URI.html" title="class Poco::URI">URI</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; scheme,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; authority,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; path,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; query,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; fragment<br />);</p>
+<div class="description">
+<p>Creates an <a href="Poco.URI.html" title="class Poco::URI">URI</a> from its parts. </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="18418">~URI</a></h3>
+<p class="decl">~<a href="Poco.URI.html" title="class Poco::URI">URI</a>();</p>
+<div class="description">
+<p>Destroys the <a href="Poco.URI.html" title="class Poco::URI">URI</a>. </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="18450">addQueryParameter</a></h3>
+<p class="decl">void addQueryParameter(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; param,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; val = ""<br />);</p>
+<div class="description">
+<p>Adds &quot;param=val&quot; to the query; &quot;param&quot; may not be empty. If val is empty, only '=' is appended to the parameter. </p>
+<p>In addition to regular encoding, function also encodes '&amp;' and '=', if found in param or val. </p>
+</div>
+<h3><a id="18427">clear</a></h3>
+<p class="decl">void clear();</p>
+<div class="description">
+<p>Clears all parts of the <a href="Poco.URI.html" title="class Poco::URI">URI</a>. </p>
+</div>
+<h3><a id="18487">decode</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static void decode(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; str,<br />&nbsp;&nbsp;&nbsp;&nbsp;std::string &amp; decodedStr,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool plusAsSpace = false<br />);</p>
+<div class="description">
+<p><a href="Poco.URI.html" title="class Poco::URI">URI</a>-decodes the given string by replacing percent-encoded characters with the actual character. The decoded string is appended to decodedStr. </p>
+<p>When plusAsSpace is true, non-encoded plus signs in the query are decoded as spaces. (<a href="http://www.w3.org/TR/html401/interact/forms.html#h-17.13.4.1" target="_blank">http://www.w3.org/TR/html401/interact/forms.html#h-17.13.4.1</a>) </p>
+</div>
+<h3><a id="18471">empty</a></h3>
+<p class="decl">bool empty() const;</p>
+<div class="description">
+<p>Returns true if the <a href="Poco.URI.html" title="class Poco::URI">URI</a> is empty, false otherwise. </p>
+</div>
+<h3><a id="18483">encode</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static void encode(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; str,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; reserved,<br />&nbsp;&nbsp;&nbsp;&nbsp;std::string &amp; encodedStr<br />);</p>
+<div class="description">
+<p><a href="Poco.URI.html" title="class Poco::URI">URI</a>-encodes the given string by escaping reserved and non-ASCII characters. The encoded string is appended to encodedStr. </p>
+</div>
+<h3><a id="18441">getAuthority</a></h3>
+<p class="decl">std::string getAuthority() const;</p>
+<div class="description">
+<p>Returns the authority part (userInfo, host and port) of the <a href="Poco.URI.html" title="class Poco::URI">URI</a>.  </p>
+<p>If the port number is a well-known port number for the given scheme (e.g., 80 for http), it is not included in the authority. </p>
+</div>
+<h3><a id="18459">getFragment</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">const std::string &amp; getFragment() const;</p>
+<div class="description">
+<p>Returns the fragment part of the <a href="Poco.URI.html" title="class Poco::URI">URI</a>. </p>
+</div>
+<h3><a id="18435">getHost</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">const std::string &amp; getHost() const;</p>
+<div class="description">
+<p>Returns the host part of the <a href="Poco.URI.html" title="class Poco::URI">URI</a>. </p>
+</div>
+<h3><a id="18444">getPath</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">const std::string &amp; getPath() const;</p>
+<div class="description">
+<p>Returns the decoded path part of the <a href="Poco.URI.html" title="class Poco::URI">URI</a>. </p>
+</div>
+<h3><a id="18465">getPathAndQuery</a></h3>
+<p class="decl">std::string getPathAndQuery() const;</p>
+<div class="description">
+<p>Returns the encoded path and query parts of the <a href="Poco.URI.html" title="class Poco::URI">URI</a>.	 </p>
+</div>
+<h3><a id="18464">getPathEtc</a></h3>
+<p class="decl">std::string getPathEtc() const;</p>
+<div class="description">
+<p>Returns the encoded path, query and fragment parts of the <a href="Poco.URI.html" title="class Poco::URI">URI</a>. </p>
+</div>
+<h3><a id="18481">getPathSegments</a></h3>
+<p class="decl">void getPathSegments(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::vector &lt; std::string &gt; &amp; segments<br />);</p>
+<div class="description">
+<p>Places the single path segments (delimited by slashes) into the given vector. </p>
+</div>
+<h3><a id="18438">getPort</a></h3>
+<p class="decl">unsigned short getPort() const;</p>
+<div class="description">
+<p>Returns the port number part of the <a href="Poco.URI.html" title="class Poco::URI">URI</a>. </p>
+<p>If no port number (0) has been specified, the well-known port number (e.g., 80 for http) for the given scheme is returned if it is known. Otherwise, 0 is returned. </p>
+</div>
+<h3><a id="18447">getQuery</a></h3>
+<p class="decl">std::string getQuery() const;</p>
+<div class="description">
+<p>Returns the decoded query part of the <a href="Poco.URI.html" title="class Poco::URI">URI</a>. </p>
+<p>Note that encoded ampersand characters ('&amp;', &quot;%26&quot;)  will be decoded, which could cause ambiguities if the query  string contains multiple parameters and a parameter name or value contains an ampersand as well. In such a case it's better to use <a href="Poco.URI.html#18453" title="Poco::URI::getRawQuery()">getRawQuery</a>() or <a href="Poco.URI.html#18456" title="Poco::URI::getQueryParameters()">getQueryParameters</a>(). </p>
+</div>
+<h3><a id="18456">getQueryParameters</a></h3>
+<p class="decl"><a href="Poco.URI.html#18387" title="Poco::URI::QueryParameters">QueryParameters</a> getQueryParameters() const;</p>
+<div class="description">
+<p>Returns the decoded query string parameters as a vector of name-value pairs. </p>
+</div>
+<h3><a id="18453">getRawQuery</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">const std::string &amp; getRawQuery() const;</p>
+<div class="description">
+<p>Returns the query string in raw form, which usually means percent encoded. </p>
+</div>
+<h3><a id="18429">getScheme</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">const std::string &amp; getScheme() const;</p>
+<div class="description">
+<p>Returns the scheme part of the <a href="Poco.URI.html" title="class Poco::URI">URI</a>. </p>
+</div>
+<h3><a id="18432">getUserInfo</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">const std::string &amp; getUserInfo() const;</p>
+<div class="description">
+<p>Returns the user-info part of the <a href="Poco.URI.html" title="class Poco::URI">URI</a>. </p>
+</div>
+<h3><a id="18470">isRelative</a></h3>
+<p class="decl">bool isRelative() const;</p>
+<div class="description">
+<p>Returns true if the <a href="Poco.URI.html" title="class Poco::URI">URI</a> is a relative reference, false otherwise. </p>
+<p>A relative reference does not contain a scheme identifier. Relative references are usually resolved against an absolute base reference. </p>
+</div>
+<h3><a id="18480">normalize</a></h3>
+<p class="decl">void normalize();</p>
+<div class="description">
+<p>Normalizes the <a href="Poco.URI.html" title="class Poco::URI">URI</a> by removing all but leading . and .. segments from the path. </p>
+<p>If the first path segment in a relative path contains a colon (:),  such as in a Windows path containing a drive letter, a dot segment (./)  is prepended in accordance with section 3.3 of <a href="https://www.ietf.org/rfc/rfc3986.txt" target="_blank">RFC 3986</a>. </p>
+</div>
+<h3><a id="18476">operator !=</a></h3>
+<p class="decl">bool operator != (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.URI.html" title="class Poco::URI">URI</a> &amp; uri<br />) const;</p>
+<div class="description">
+<p>Returns true if both URIs are identical, false otherwise. </p>
+</div>
+<h3><a id="18478">operator !=</a></h3>
+<p class="decl">bool operator != (<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; uri<br />) const;</p>
+<div class="description">
+<p>Parses the given <a href="Poco.URI.html" title="class Poco::URI">URI</a> and returns true if both URIs are identical, false otherwise. </p>
+</div>
+<h3><a id="18419">operator =</a></h3>
+<p class="decl"><a href="Poco.URI.html" title="class Poco::URI">URI</a> &amp; operator = (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.URI.html" title="class Poco::URI">URI</a> &amp; uri<br />);</p>
+<div class="description">
+<p>Assignment operator. </p>
+</div>
+<h3><a id="18421">operator =</a></h3>
+<p class="decl"><a href="Poco.URI.html" title="class Poco::URI">URI</a> &amp; operator = (<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; uri<br />);</p>
+<div class="description">
+<p>Parses and assigns an <a href="Poco.URI.html" title="class Poco::URI">URI</a> from the given string. Throws a <a href="Poco.SyntaxException.html" title="class Poco::SyntaxException">SyntaxException</a> if the uri is not valid. </p>
+</div>
+<h3><a id="18423">operator =</a></h3>
+<p class="decl"><a href="Poco.URI.html" title="class Poco::URI">URI</a> &amp; operator = (<br />&nbsp;&nbsp;&nbsp;&nbsp;const char * uri<br />);</p>
+<div class="description">
+<p>Parses and assigns an <a href="Poco.URI.html" title="class Poco::URI">URI</a> from the given string. Throws a <a href="Poco.SyntaxException.html" title="class Poco::SyntaxException">SyntaxException</a> if the uri is not valid. </p>
+</div>
+<h3><a id="18472">operator ==</a></h3>
+<p class="decl">bool operator == (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.URI.html" title="class Poco::URI">URI</a> &amp; uri<br />) const;</p>
+<div class="description">
+<p>Returns true if both URIs are identical, false otherwise. </p>
+<p>Two URIs are identical if their scheme, authority, path, query and fragment part are identical. </p>
+</div>
+<h3><a id="18474">operator ==</a></h3>
+<p class="decl">bool operator == (<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; uri<br />) const;</p>
+<div class="description">
+<p>Parses the given <a href="Poco.URI.html" title="class Poco::URI">URI</a> and returns true if both URIs are identical, false otherwise. </p>
+</div>
+<h3><a id="18466">resolve</a></h3>
+<p class="decl">void resolve(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; relativeURI<br />);</p>
+<div class="description">
+<p>Resolves the given relative <a href="Poco.URI.html" title="class Poco::URI">URI</a> against the base <a href="Poco.URI.html" title="class Poco::URI">URI</a>. See section 5.2 of <a href="https://www.ietf.org/rfc/rfc3986.txt" target="_blank">RFC 3986</a> for the algorithm used. </p>
+</div>
+<h3><a id="18468">resolve</a></h3>
+<p class="decl">void resolve(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.URI.html" title="class Poco::URI">URI</a> &amp; relativeURI<br />);</p>
+<div class="description">
+<p>Resolves the given relative <a href="Poco.URI.html" title="class Poco::URI">URI</a> against the base <a href="Poco.URI.html" title="class Poco::URI">URI</a>. See section 5.2 of <a href="https://www.ietf.org/rfc/rfc3986.txt" target="_blank">RFC 3986</a> for the algorithm used. </p>
+</div>
+<h3><a id="18442">setAuthority</a></h3>
+<p class="decl">void setAuthority(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; authority<br />);</p>
+<div class="description">
+<p>Parses the given authority part for the <a href="Poco.URI.html" title="class Poco::URI">URI</a> and sets the user-info, host, port components accordingly. </p>
+</div>
+<h3><a id="18460">setFragment</a></h3>
+<p class="decl">void setFragment(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; fragment<br />);</p>
+<div class="description">
+<p>Sets the fragment part of the <a href="Poco.URI.html" title="class Poco::URI">URI</a>. </p>
+</div>
+<h3><a id="18436">setHost</a></h3>
+<p class="decl">void setHost(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; host<br />);</p>
+<div class="description">
+<p>Sets the host part of the <a href="Poco.URI.html" title="class Poco::URI">URI</a>. </p>
+</div>
+<h3><a id="18445">setPath</a></h3>
+<p class="decl">void setPath(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; path<br />);</p>
+<div class="description">
+<p>Sets the path part of the <a href="Poco.URI.html" title="class Poco::URI">URI</a>. </p>
+</div>
+<h3><a id="18462">setPathEtc</a></h3>
+<p class="decl">void setPathEtc(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; pathEtc<br />);</p>
+<div class="description">
+<p>Sets the path, query and fragment parts of the <a href="Poco.URI.html" title="class Poco::URI">URI</a>. </p>
+</div>
+<h3><a id="18439">setPort</a></h3>
+<p class="decl">void setPort(<br />&nbsp;&nbsp;&nbsp;&nbsp;unsigned short port<br />);</p>
+<div class="description">
+<p>Sets the port number part of the <a href="Poco.URI.html" title="class Poco::URI">URI</a>. </p>
+</div>
+<h3><a id="18448">setQuery</a></h3>
+<p class="decl">void setQuery(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; query<br />);</p>
+<div class="description">
+<p>Sets the query part of the <a href="Poco.URI.html" title="class Poco::URI">URI</a>. </p>
+<p>The query string will be percent-encoded. If the query already contains percent-encoded characters, these will be double-encoded, which is probably not what's intended by the caller. Furthermore, ampersand ('&amp;') characters in the query will not be encoded. This could lead to ambiguity issues if the query string contains multiple name-value parameters separated by ampersand, and if any name or value also contains an ampersand. In such a  case, it's better to use <a href="Poco.URI.html#18454" title="Poco::URI::setRawQuery()">setRawQuery</a>() with a properly percent-encoded query string, or use <a href="Poco.URI.html#18450" title="Poco::URI::addQueryParameter()">addQueryParameter</a>() or <a href="Poco.URI.html#18457" title="Poco::URI::setQueryParameters()">setQueryParameters</a>(), which take care of appropriate  percent encoding of parameter names and values. </p>
+</div>
+<h3><a id="18457">setQueryParameters</a></h3>
+<p class="decl">void setQueryParameters(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.URI.html#18387" title="Poco::URI::QueryParameters">QueryParameters</a> &amp; params<br />);</p>
+<div class="description">
+<p>Sets the query part of the <a href="Poco.URI.html" title="class Poco::URI">URI</a> from a vector of query parameters. </p>
+<p>Calls <a href="Poco.URI.html#18450" title="Poco::URI::addQueryParameter()">addQueryParameter</a>() for each parameter name and value. </p>
+</div>
+<h3><a id="18454">setRawQuery</a></h3>
+<p class="decl">void setRawQuery(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; query<br />);</p>
+<div class="description">
+<p>Sets the query part of the <a href="Poco.URI.html" title="class Poco::URI">URI</a>. </p>
+<p>The given query string must be properly percent-encoded. </p>
+</div>
+<h3><a id="18430">setScheme</a></h3>
+<p class="decl">void setScheme(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; scheme<br />);</p>
+<div class="description">
+<p>Sets the scheme part of the <a href="Poco.URI.html" title="class Poco::URI">URI</a>. The given scheme is converted to lower-case. </p>
+<p>A list of registered <a href="Poco.URI.html" title="class Poco::URI">URI</a> schemes can be found at &lt;<a href="http://www.iana.org/assignments/uri-schemes" target="_blank">http://www.iana.org/assignments/uri-schemes</a>&gt;. </p>
+</div>
+<h3><a id="18433">setUserInfo</a></h3>
+<p class="decl">void setUserInfo(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; userInfo<br />);</p>
+<div class="description">
+<p>Sets the user-info part of the <a href="Poco.URI.html" title="class Poco::URI">URI</a>. </p>
+</div>
+<h3><a id="18425">swap</a></h3>
+<p class="decl">void swap(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.URI.html" title="class Poco::URI">URI</a> &amp; uri<br />);</p>
+<div class="description">
+<p>Swaps the <a href="Poco.URI.html" title="class Poco::URI">URI</a> with another one.	 </p>
+</div>
+<h3><a id="18428">toString</a></h3>
+<p class="decl">std::string toString() const;</p>
+<div class="description">
+<p>Returns a string representation of the <a href="Poco.URI.html" title="class Poco::URI">URI</a>. </p>
+<p>Characters in the path, query and fragment parts will be  percent-encoded as necessary. </p>
+</div>
+<h3><a id="18522">buildPath</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">void buildPath(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::vector &lt; std::string &gt; &amp; segments,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool leadingSlash,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool trailingSlash<br />);</p>
+<div class="description">
+<p>Builds the path from the given segments. </p>
+</div>
+<h3><a id="18491">equals</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">bool equals(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.URI.html" title="class Poco::URI">URI</a> &amp; uri<br />) const;</p>
+<div class="description">
+<p>Returns true if both uri's are equivalent. </p>
+</div>
+<h3><a id="18519">getPathSegments</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static void getPathSegments(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; path,<br />&nbsp;&nbsp;&nbsp;&nbsp;std::vector &lt; std::string &gt; &amp; segments<br />);</p>
+<div class="description">
+<p>Places the single path segments (delimited by slashes) into the given vector. </p>
+</div>
+<h3><a id="18494">getWellKnownPort</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">unsigned short getWellKnownPort() const;</p>
+<div class="description">
+<p>Returns the well-known port number for the <a href="Poco.URI.html" title="class Poco::URI">URI</a>'s scheme, or 0 if the port number is not known. </p>
+</div>
+<h3><a id="18493">isWellKnownPort</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">bool isWellKnownPort() const;</p>
+<div class="description">
+<p>Returns true if the <a href="Poco.URI.html" title="class Poco::URI">URI</a>'s port number is a well-known one (for example, 80, if the scheme is http). </p>
+</div>
+<h3><a id="18515">mergePath</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">void mergePath(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; path<br />);</p>
+<div class="description">
+<p>Appends a path to the <a href="Poco.URI.html" title="class Poco::URI">URI</a>'s path. </p>
+</div>
+<h3><a id="18495">parse</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">void parse(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; uri<br />);</p>
+<div class="description">
+<p>Parses and assigns an <a href="Poco.URI.html" title="class Poco::URI">URI</a> from the given string. Throws a <a href="Poco.SyntaxException.html" title="class Poco::SyntaxException">SyntaxException</a> if the uri is not valid. </p>
+</div>
+<h3><a id="18497">parseAuthority</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">void parseAuthority(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::string::const_iterator &amp; it,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string::const_iterator &amp; end<br />);</p>
+<div class="description">
+<p>Parses and sets the user-info, host and port from the given data. </p>
+</div>
+<h3><a id="18512">parseFragment</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">void parseFragment(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::string::const_iterator &amp; it,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string::const_iterator &amp; end<br />);</p>
+<div class="description">
+<p>Parses and sets the fragment from the given data. </p>
+</div>
+<h3><a id="18500">parseHostAndPort</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">void parseHostAndPort(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::string::const_iterator &amp; it,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string::const_iterator &amp; end<br />);</p>
+<div class="description">
+<p>Parses and sets the host and port from the given data. </p>
+</div>
+<h3><a id="18503">parsePath</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">void parsePath(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::string::const_iterator &amp; it,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string::const_iterator &amp; end<br />);</p>
+<div class="description">
+<p>Parses and sets the path from the given data. </p>
+</div>
+<h3><a id="18506">parsePathEtc</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">void parsePathEtc(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::string::const_iterator &amp; it,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string::const_iterator &amp; end<br />);</p>
+<div class="description">
+<p>Parses and sets the path, query and fragment from the given data. </p>
+</div>
+<h3><a id="18509">parseQuery</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">void parseQuery(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::string::const_iterator &amp; it,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string::const_iterator &amp; end<br />);</p>
+<div class="description">
+<p>Parses and sets the query from the given data. </p>
+</div>
+<h3><a id="18517">removeDotSegments</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">void removeDotSegments(<br />&nbsp;&nbsp;&nbsp;&nbsp;bool removeLeading = true<br />);</p>
+<div class="description">
+<p>Removes all dot segments from the path. </p>
+</div>
+<h2>Variables</h2>
+<h3><a id="18530">ILLEGAL</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static const std::string <a href="Poco.URI.html#18530" title="Poco::URI::ILLEGAL">ILLEGAL</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="18529">RESERVED_FRAGMENT</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static const std::string <a href="Poco.URI.html#18529" title="Poco::URI::RESERVED_FRAGMENT">RESERVED_FRAGMENT</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="18526">RESERVED_PATH</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static const std::string <a href="Poco.URI.html#18526" title="Poco::URI::RESERVED_PATH">RESERVED_PATH</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="18527">RESERVED_QUERY</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static const std::string <a href="Poco.URI.html#18527" title="Poco::URI::RESERVED_QUERY">RESERVED_QUERY</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="18528">RESERVED_QUERY_PARAM</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static const std::string <a href="Poco.URI.html#18528" title="Poco::URI::RESERVED_QUERY_PARAM">RESERVED_QUERY_PARAM</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

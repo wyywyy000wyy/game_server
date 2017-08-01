@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::ClassLoader</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.html" class="namespace">Poco</a></h1>
+<h1 class="template">template &lt; class Base &gt;</h1>
+<h1 class="symbol">class ClassLoader</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Foundation" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Foundation<br />
+<b>Package:</b> SharedLibrary<br />
+<b>Header:</b> Poco/ClassLoader.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>The <a href="Poco.ClassLoader.html" title="class Poco::ClassLoader">ClassLoader</a> loads C++ classes from shared libraries at runtime. It must be instantiated with a root class of the loadable classes. For a class to be loadable from a library, the library must provide a <a href="Poco.Manifest.html" title="class Poco::Manifest">Manifest</a> of all the classes it contains. The <a href="Poco.Manifest.html" title="class Poco::Manifest">Manifest</a> for a shared library can be easily built with the help of the macros in the header file &quot;Foundation/ClassLibrary.h&quot;. </p>
+<p>Starting with POCO release 1.3, a class library can export multiple manifests. In addition to the default (unnamed) manifest, multiple named manifests can be exported, each having a different base class. </p>
+<p>There is one important restriction: one instance of <a href="Poco.ClassLoader.html" title="class Poco::ClassLoader">ClassLoader</a> can only load one manifest from a class library. </p>
+</div>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.ClassLoader.html#9114" title="Poco::ClassLoader::begin()">begin</a>, <a href="Poco.ClassLoader.html#9100" title="Poco::ClassLoader::canCreate()">canCreate</a>, <a href="Poco.ClassLoader.html#9094" title="Poco::ClassLoader::classFor()">classFor</a>, <a href="Poco.ClassLoader.html#9096" title="Poco::ClassLoader::create()">create</a>, <a href="Poco.ClassLoader.html#9102" title="Poco::ClassLoader::destroy()">destroy</a>, <a href="Poco.ClassLoader.html#9115" title="Poco::ClassLoader::end()">end</a>, <a href="Poco.ClassLoader.html#9092" title="Poco::ClassLoader::findClass()">findClass</a>, <a href="Poco.ClassLoader.html#9108" title="Poco::ClassLoader::findManifest()">findManifest</a>, <a href="Poco.ClassLoader.html#9098" title="Poco::ClassLoader::instance()">instance</a>, <a href="Poco.ClassLoader.html#9105" title="Poco::ClassLoader::isAutoDelete()">isAutoDelete</a>, <a href="Poco.ClassLoader.html#9112" title="Poco::ClassLoader::isLibraryLoaded()">isLibraryLoaded</a>, <a href="Poco.ClassLoader.html#9085" title="Poco::ClassLoader::loadLibrary()">loadLibrary</a>, <a href="Poco.ClassLoader.html#9110" title="Poco::ClassLoader::manifestFor()">manifestFor</a>, <a href="Poco.ClassLoader.html#9090" title="Poco::ClassLoader::unloadLibrary()">unloadLibrary</a></p>
+<h2>Nested Classes</h2>
+<h3><a href="Poco.ClassLoader.Iterator.html" class="class">class Iterator</a></h3>
+<p> The <a href="Poco.ClassLoader.html" title="class Poco::ClassLoader">ClassLoader</a>'s very own iterator class.&nbsp;<a href="Poco.ClassLoader.Iterator.html"><img src="images/arrow.png" alt="more..." /> </a></p>
+<h3><a href="Poco.ClassLoader.LibraryInfo.html" class="class">struct LibraryInfo</a></h3>
+<p>&nbsp;<a href="Poco.ClassLoader.LibraryInfo.html"><img src="images/arrow.png" alt="more..." /> </a></p>
+<h2>Types</h2>
+<h3><a id="9057">BuildManifestFunc</a></h3>
+<p class="decl">typedef bool (* <a href="Poco.ClassLoader.html#9057" title="Poco::ClassLoader::BuildManifestFunc">BuildManifestFunc</a>)(<a href="Poco.ManifestBase.html" title="class Poco::ManifestBase">ManifestBase</a> *);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="9055">InitializeLibraryFunc</a></h3>
+<p class="decl">typedef void (* <a href="Poco.ClassLoader.html#9055" title="Poco::ClassLoader::InitializeLibraryFunc">InitializeLibraryFunc</a>)();</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="9062">LibraryMap</a></h3>
+<p class="decl">typedef std::map &lt; std::string, <a href="Poco.ClassLoader.LibraryInfo.html" title="struct Poco::ClassLoader::LibraryInfo">LibraryInfo</a> &gt; <a href="Poco.ClassLoader.html#9062" title="Poco::ClassLoader::LibraryMap">LibraryMap</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="9054">Manif</a></h3>
+<p class="decl">typedef <a href="Poco.Manifest.html" title="class Poco::Manifest">Manifest</a> &lt; Base &gt; <a href="Poco.ClassLoader.html#9054" title="Poco::ClassLoader::Manif">Manif</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="9053">Meta</a></h3>
+<p class="decl">typedef <a href="Poco.AbstractMetaObject.html" title="class Poco::AbstractMetaObject">AbstractMetaObject</a> &lt; Base &gt; <a href="Poco.ClassLoader.html#9053" title="Poco::ClassLoader::Meta">Meta</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="9056">UninitializeLibraryFunc</a></h3>
+<p class="decl">typedef void (* <a href="Poco.ClassLoader.html#9056" title="Poco::ClassLoader::UninitializeLibraryFunc">UninitializeLibraryFunc</a>)();</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Constructors</h2>
+<h3><a id="9083">ClassLoader</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.ClassLoader.html" title="class Poco::ClassLoader">ClassLoader</a>();</p>
+<div class="description">
+<p>Creates the <a href="Poco.ClassLoader.html" title="class Poco::ClassLoader">ClassLoader</a>. </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="9084">~ClassLoader</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">virtual ~<a href="Poco.ClassLoader.html" title="class Poco::ClassLoader">ClassLoader</a>();</p>
+<div class="description">
+<p>Destroys the <a href="Poco.ClassLoader.html" title="class Poco::ClassLoader">ClassLoader</a>. </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="9114">begin</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.ClassLoader.Iterator.html" title="class Poco::ClassLoader::Iterator">Iterator</a> begin() const;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="9100">canCreate</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool canCreate(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; className<br />) const;</p>
+<div class="description">
+<p>Returns true if <a href="Poco.ClassLoader.html#9096" title="Poco::ClassLoader::create()">create</a>() can create new instances of the class. </p>
+</div>
+<h3><a id="9094">classFor</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">const <a href="Poco.ClassLoader.html#9053" title="Poco::ClassLoader::Meta">Meta</a> &amp; classFor(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; className<br />) const;</p>
+<div class="description">
+<p>Returns a reference to the <a href="Poco.MetaObject.html" title="class Poco::MetaObject">MetaObject</a> for the given class. Throws a <a href="Poco.NotFoundException.html" title="class Poco::NotFoundException">NotFoundException</a> if the class is not known. </p>
+</div>
+<h3><a id="9096">create</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">Base * create(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; className<br />) const;</p>
+<div class="description">
+<p>Creates an instance of the given class. Throws a <a href="Poco.NotFoundException.html" title="class Poco::NotFoundException">NotFoundException</a> if the class is not known. </p>
+</div>
+<h3><a id="9102">destroy</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void destroy(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; className,<br />&nbsp;&nbsp;&nbsp;&nbsp;Base * pObject<br />) const;</p>
+<div class="description">
+<p>Destroys the object pObject points to. Does nothing if object is not found. </p>
+</div>
+<h3><a id="9115">end</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.ClassLoader.Iterator.html" title="class Poco::ClassLoader::Iterator">Iterator</a> end() const;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="9092">findClass</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">const <a href="Poco.ClassLoader.html#9053" title="Poco::ClassLoader::Meta">Meta</a> * findClass(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; className<br />) const;</p>
+<div class="description">
+<p>Returns a pointer to the <a href="Poco.MetaObject.html" title="class Poco::MetaObject">MetaObject</a> for the given class, or a null pointer if the class is not known. </p>
+</div>
+<h3><a id="9108">findManifest</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">const <a href="Poco.ClassLoader.html#9054" title="Poco::ClassLoader::Manif">Manif</a> * findManifest(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; path<br />) const;</p>
+<div class="description">
+<p>Returns a pointer to the <a href="Poco.Manifest.html" title="class Poco::Manifest">Manifest</a> for the given library, or a null pointer if the library has not been loaded. </p>
+</div>
+<h3><a id="9098">instance</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">Base &amp; instance(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; className<br />) const;</p>
+<div class="description">
+<p>Returns a reference to the sole instance of the given class. The class must be a singleton, otherwise an <a href="Poco.InvalidAccessException.html" title="class Poco::InvalidAccessException">InvalidAccessException</a> will be thrown. Throws a <a href="Poco.NotFoundException.html" title="class Poco::NotFoundException">NotFoundException</a> if the class is not known. </p>
+</div>
+<h3><a id="9105">isAutoDelete</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool isAutoDelete(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; className,<br />&nbsp;&nbsp;&nbsp;&nbsp;Base * pObject<br />) const;</p>
+<div class="description">
+<p>Returns true if the object is automatically deleted by its meta object. </p>
+</div>
+<h3><a id="9112">isLibraryLoaded</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool isLibraryLoaded(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; path<br />) const;</p>
+<div class="description">
+<p>Returns true if the library with the given name has already been loaded. </p>
+</div>
+<h3><a id="9085">loadLibrary</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void loadLibrary(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; path,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; manifest<br />);</p>
+<div class="description">
+<p>Loads a library from the given path, using the given manifest.  Does nothing if the library is already loaded. Throws a <a href="Poco.LibraryLoadException.html" title="class Poco::LibraryLoadException">LibraryLoadException</a> if the library cannot be loaded or does not have a <a href="Poco.Manifest.html" title="class Poco::Manifest">Manifest</a>. If the library exports a function named &quot;pocoInitializeLibrary&quot;, this function is executed. If called multiple times for the same library, the number of calls to <a href="Poco.ClassLoader.html#9090" title="Poco::ClassLoader::unloadLibrary()">unloadLibrary</a>() must be the same for the library to become unloaded. </p>
+</div>
+<h3><a id="9088">loadLibrary</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void loadLibrary(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; path<br />);</p>
+<div class="description">
+<p>Loads a library from the given path. Does nothing if the library is already loaded. Throws a <a href="Poco.LibraryLoadException.html" title="class Poco::LibraryLoadException">LibraryLoadException</a> if the library cannot be loaded or does not have a <a href="Poco.Manifest.html" title="class Poco::Manifest">Manifest</a>. If the library exports a function named &quot;pocoInitializeLibrary&quot;, this function is executed. If called multiple times for the same library, the number of calls to <a href="Poco.ClassLoader.html#9090" title="Poco::ClassLoader::unloadLibrary()">unloadLibrary</a>() must be the same for the library to become unloaded. </p>
+<p>Equivalent to <a href="Poco.ClassLoader.html#9085" title="Poco::ClassLoader::loadLibrary()">loadLibrary</a>(path, &quot;&quot;). </p>
+</div>
+<h3><a id="9110">manifestFor</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">const <a href="Poco.ClassLoader.html#9054" title="Poco::ClassLoader::Manif">Manif</a> &amp; manifestFor(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; path<br />) const;</p>
+<div class="description">
+<p>Returns a reference to the <a href="Poco.Manifest.html" title="class Poco::Manifest">Manifest</a> for the given library Throws a <a href="Poco.NotFoundException.html" title="class Poco::NotFoundException">NotFoundException</a> if the library has not been loaded. </p>
+</div>
+<h3><a id="9090">unloadLibrary</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void unloadLibrary(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; path<br />);</p>
+<div class="description">
+<p>Unloads the given library.  Be extremely cautious when unloading shared libraries. If objects from the library are still referenced somewhere, a total crash is very likely. If the library exports a function named &quot;pocoUninitializeLibrary&quot;, this function is executed before it is unloaded. If <a href="Poco.ClassLoader.html#9085" title="Poco::ClassLoader::loadLibrary()">loadLibrary</a>() has been called multiple times for the same library, the number of calls to <a href="Poco.ClassLoader.html#9090" title="Poco::ClassLoader::unloadLibrary()">unloadLibrary</a>() must be the same for the library to become unloaded. </p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Struct Poco::TypeList</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.html" class="namespace">Poco</a></h1>
+<h1 class="template">template &lt; class Head, class Tail &gt;</h1>
+<h1 class="symbol">struct TypeList</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Foundation" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Foundation<br />
+<b>Package:</b> Core<br />
+<b>Header:</b> Poco/TypeList.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>Compile Time List of Types </p>
+</div>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.TypeList.html#18360" title="Poco::TypeList::operator !=()">operator&nbsp;!=</a>, <a href="Poco.TypeList.html#18362" title="Poco::TypeList::operator <()">operator&nbsp;&lt;</a>, <a href="Poco.TypeList.html#18356" title="Poco::TypeList::operator =()">operator&nbsp;=</a>, <a href="Poco.TypeList.html#18358" title="Poco::TypeList::operator ==()">operator&nbsp;==</a>, <a href="Poco.TypeList.html#18364" title="Poco::TypeList::swap()">swap</a></p>
+<h2>Types</h2>
+<h3><a id="18346">ConstHeadType</a></h3>
+<p class="decl">typedef typename <a href="Poco.TypeWrapper.html" title="struct Poco::TypeWrapper">TypeWrapper</a> &lt; <a href="Poco.TypeList.html#18344" title="Poco::TypeList::HeadType">HeadType</a> &gt;::CONSTTYPE <a href="Poco.TypeList.html#18346" title="Poco::TypeList::ConstHeadType">ConstHeadType</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="18347">ConstTailType</a></h3>
+<p class="decl">typedef typename <a href="Poco.TypeWrapper.html" title="struct Poco::TypeWrapper">TypeWrapper</a> &lt; <a href="Poco.TypeList.html#18345" title="Poco::TypeList::TailType">TailType</a> &gt;::CONSTTYPE <a href="Poco.TypeList.html#18347" title="Poco::TypeList::ConstTailType">ConstTailType</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="18344">HeadType</a></h3>
+<p class="decl">typedef Head <a href="Poco.TypeList.html#18344" title="Poco::TypeList::HeadType">HeadType</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="18345">TailType</a></h3>
+<p class="decl">typedef Tail <a href="Poco.TypeList.html#18345" title="Poco::TypeList::TailType">TailType</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Enumerations</h2>
+<h3><i>Anonymous</i></h3>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="18349">length</a> = TailType::length + 1</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Constructors</h2>
+<h3><a id="18350">TypeList</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.TypeList.html" title="class Poco::TypeList">TypeList</a>();</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="18354">TypeList</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.TypeList.html" title="class Poco::TypeList">TypeList</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.TypeList.html" title="class Poco::TypeList">TypeList</a> &amp; tl<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="18351">TypeList</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.TypeList.html" title="class Poco::TypeList">TypeList</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.TypeList.html#18346" title="Poco::TypeList::ConstHeadType">ConstHeadType</a> &amp; h,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.TypeList.html#18347" title="Poco::TypeList::ConstTailType">ConstTailType</a> &amp; t<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="18360">operator !=</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool operator != (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.TypeList.html" title="class Poco::TypeList">TypeList</a> &amp; tl<br />) const;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="18362">operator &lt;</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool operator &lt; (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.TypeList.html" title="class Poco::TypeList">TypeList</a> &amp; tl<br />) const;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="18356">operator =</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.TypeList.html" title="class Poco::TypeList">TypeList</a> &amp; operator = (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.TypeList.html" title="class Poco::TypeList">TypeList</a> &amp; tl<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="18358">operator ==</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool operator == (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.TypeList.html" title="class Poco::TypeList">TypeList</a> &amp; tl<br />) const;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="18364">swap</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void swap(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.TypeList.html" title="class Poco::TypeList">TypeList</a> &amp; tl<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Variables</h2>
+<h3><a id="18366">head</a></h3>
+<p class="decl"><a href="Poco.TypeList.html#18344" title="Poco::TypeList::HeadType">HeadType</a> head;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="18367">tail</a></h3>
+<p class="decl"><a href="Poco.TypeList.html#18345" title="Poco::TypeList::TailType">TailType</a> tail;</p>
+<div class="description">
+<p></p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

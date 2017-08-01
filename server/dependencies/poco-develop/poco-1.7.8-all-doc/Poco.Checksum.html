@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::Checksum</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.html" class="namespace">Poco</a></h1>
+<h1 class="symbol">class Checksum</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Foundation" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Foundation<br />
+<b>Package:</b> Core<br />
+<b>Header:</b> Poco/Checksum.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>This class calculates CRC-32 or Adler-32 checksums for arbitrary data. </p>
+<p>A cyclic redundancy check (CRC) is a type of hash function, which is used to produce a  small, fixed-size checksum of a larger block of data, such as a packet of network  traffic or a computer file. CRC-32 is one of the most commonly used CRC algorithms. </p>
+<p>Adler-32 is a checksum algorithm which was invented by Mark Adler.  It is almost as reliable as a 32-bit cyclic redundancy check for protecting against  accidental modification of data, such as distortions occurring during a transmission,  but is significantly faster to calculate in software. </p>
+</div>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.Checksum.html#9048" title="Poco::Checksum::checksum()">checksum</a>, <a href="Poco.Checksum.html#9049" title="Poco::Checksum::type()">type</a>, <a href="Poco.Checksum.html#9041" title="Poco::Checksum::update()">update</a></p>
+<h2>Enumerations</h2>
+<h3><a id="9034">Type</a></h3>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="9035">TYPE_ADLER32</a> = 0</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="9036">TYPE_CRC32</a></p>
+<div class="description">
+<p></p>
+</div>
+<h2>Constructors</h2>
+<h3><a id="9037">Checksum</a></h3>
+<p class="decl"><a href="Poco.Checksum.html" title="class Poco::Checksum">Checksum</a>();</p>
+<div class="description">
+<p>Creates a CRC-32 checksum initialized to 0. </p>
+</div>
+<h3><a id="9038">Checksum</a></h3>
+<p class="decl"><a href="Poco.Checksum.html" title="class Poco::Checksum">Checksum</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Checksum.html#9034" title="enum  Poco::Checksum::Type">Type</a> t<br />);</p>
+<div class="description">
+<p>Creates the <a href="Poco.Checksum.html" title="class Poco::Checksum">Checksum</a>, using the given type. </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="9040">~Checksum</a></h3>
+<p class="decl">~<a href="Poco.Checksum.html" title="class Poco::Checksum">Checksum</a>();</p>
+<div class="description">
+<p>Destroys the <a href="Poco.Checksum.html" title="class Poco::Checksum">Checksum</a>. </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="9048">checksum</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.html#18381" title="Poco::UInt32">Poco::UInt32</a> checksum() const;</p>
+<div class="description">
+<p>Returns the calculated checksum. </p>
+</div>
+<h3><a id="9049">type</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Checksum.html#9034" title="enum  Poco::Checksum::Type">Type</a> type() const;</p>
+<div class="description">
+<p>Which type of checksum are we calulcating </p>
+</div>
+<h3><a id="9041">update</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void update(<br />&nbsp;&nbsp;&nbsp;&nbsp;const char * data,<br />&nbsp;&nbsp;&nbsp;&nbsp;unsigned length<br />);</p>
+<div class="description">
+<p>Updates the checksum with the given data. </p>
+</div>
+<h3><a id="9044">update</a></h3>
+<p class="decl">void update(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; data<br />);</p>
+<div class="description">
+<p>Updates the checksum with the given data. </p>
+</div>
+<h3><a id="9046">update</a></h3>
+<p class="decl">void update(<br />&nbsp;&nbsp;&nbsp;&nbsp;char data<br />);</p>
+<div class="description">
+<p>Updates the checksum with the given data. </p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

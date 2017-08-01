@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::MongoDB::GetMoreRequest</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.MongoDB.html" class="namespace">Poco::MongoDB</a></h1>
+<h1 class="symbol">class GetMoreRequest</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-MongoDB" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> MongoDB<br />
+<b>Package:</b> MongoDB<br />
+<b>Header:</b> Poco/MongoDB/GetMoreRequest.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>A <a href="Poco.MongoDB.GetMoreRequest.html" title="class Poco::MongoDB::GetMoreRequest">GetMoreRequest</a> is used to query the database for more documents in a collection  after a query request is send (OP_GETMORE). </p>
+</div>
+<h2>Inheritance</h2>
+<p><b>Direct Base Classes: </b><a href="Poco.MongoDB.RequestMessage.html" title="class Poco::MongoDB::RequestMessage">RequestMessage</a></p>
+<p><b>All Base Classes: </b><a href="Poco.MongoDB.Message.html" title="class Poco::MongoDB::Message">Message</a>, <a href="Poco.MongoDB.RequestMessage.html" title="class Poco::MongoDB::RequestMessage">RequestMessage</a></p>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.MongoDB.GetMoreRequest.html#20289" title="Poco::MongoDB::GetMoreRequest::buildRequest()">buildRequest</a>, <a href="Poco.MongoDB.GetMoreRequest.html#20288" title="Poco::MongoDB::GetMoreRequest::cursorID()">cursorID</a>, <a href="Poco.MongoDB.GetMoreRequest.html#20285" title="Poco::MongoDB::GetMoreRequest::getNumberToReturn()">getNumberToReturn</a>, <a href="Poco.MongoDB.GetMoreRequest.html#20286" title="Poco::MongoDB::GetMoreRequest::setNumberToReturn()">setNumberToReturn</a></p>
+<p><b>Inherited Functions: </b><a href="Poco.MongoDB.RequestMessage.html#20447" title="Poco::MongoDB::RequestMessage::buildRequest()">buildRequest</a>, <a href="Poco.MongoDB.Message.html#20328" title="Poco::MongoDB::Message::header()">header</a>, <a href="Poco.MongoDB.Message.html#20330" title="Poco::MongoDB::Message::messageLength()">messageLength</a>, <a href="Poco.MongoDB.RequestMessage.html#20445" title="Poco::MongoDB::RequestMessage::send()">send</a></p>
+<h2>Constructors</h2>
+<h3><a id="20281">GetMoreRequest</a></h3>
+<p class="decl"><a href="Poco.MongoDB.GetMoreRequest.html" title="class Poco::MongoDB::GetMoreRequest">GetMoreRequest</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; collectionName,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.html#18384" title="Poco::Int64">Int64</a> cursorID<br />);</p>
+<div class="description">
+<p>Creates a <a href="Poco.MongoDB.GetMoreRequest.html" title="class Poco::MongoDB::GetMoreRequest">GetMoreRequest</a> for the give collection and cursor.  </p>
+<p>The full collection name is the concatenation of the database  name with the collection name, using a &quot;.&quot; for the concatenation. For example,  for the database &quot;foo&quot; and the collection &quot;bar&quot;, the full collection name is  &quot;foo.bar&quot;. The cursorID has been returned by the response on the query request. By default the numberToReturn is set to 100. </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="20284">~GetMoreRequest</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual ~<a href="Poco.MongoDB.GetMoreRequest.html" title="class Poco::MongoDB::GetMoreRequest">GetMoreRequest</a>();</p>
+<div class="description">
+<p>Destroys the <a href="Poco.MongoDB.GetMoreRequest.html" title="class Poco::MongoDB::GetMoreRequest">GetMoreRequest</a>. </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="20288">cursorID</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.html#18384" title="Poco::Int64">Int64</a> cursorID() const;</p>
+<div class="description">
+<p>Returns the cursor ID. </p>
+</div>
+<h3><a id="20285">getNumberToReturn</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.html#18380" title="Poco::Int32">Int32</a> getNumberToReturn() const;</p>
+<div class="description">
+<p>Returns the limit of returned documents. </p>
+</div>
+<h3><a id="20286">setNumberToReturn</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void setNumberToReturn(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.html#18380" title="Poco::Int32">Int32</a> n<br />);</p>
+<div class="description">
+<p>Sets the limit of returned documents. </p>
+</div>
+<h3><a id="20289">buildRequest</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">void buildRequest(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.BinaryWriter.html" title="class Poco::BinaryWriter">BinaryWriter</a> &amp; writer<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.MongoDB.RequestMessage.html#20447" title="Poco::MongoDB::RequestMessage::buildRequest()">Poco::MongoDB::RequestMessage::buildRequest()</a></p></div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

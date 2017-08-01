@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::Net::HTTPSSessionInstantiator</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.Net.html" class="namespace">Poco::Net</a></h1>
+<h1 class="symbol">class HTTPSSessionInstantiator</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-NetSSL_OpenSSL" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> NetSSL_OpenSSL<br />
+<b>Package:</b> HTTPSClient<br />
+<b>Header:</b> Poco/Net/HTTPSSessionInstantiator.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>The <a href="Poco.Net.HTTPSessionInstantiator.html" title="class Poco::Net::HTTPSessionInstantiator">HTTPSessionInstantiator</a> for <a href="Poco.Net.HTTPSClientSession.html" title="class Poco::Net::HTTPSClientSession">HTTPSClientSession</a>. </p>
+</div>
+<h2>Inheritance</h2>
+<p><b>Direct Base Classes: </b><a href="Poco.Net.HTTPSessionInstantiator.html" title="class Poco::Net::HTTPSessionInstantiator">HTTPSessionInstantiator</a></p>
+<p><b>All Base Classes: </b><a href="Poco.Net.HTTPSessionInstantiator.html" title="class Poco::Net::HTTPSessionInstantiator">HTTPSessionInstantiator</a></p>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.Net.HTTPSSessionInstantiator.html#25571" title="Poco::Net::HTTPSSessionInstantiator::createClientSession()">createClientSession</a>, <a href="Poco.Net.HTTPSSessionInstantiator.html#25573" title="Poco::Net::HTTPSSessionInstantiator::registerInstantiator()">registerInstantiator</a>, <a href="Poco.Net.HTTPSSessionInstantiator.html#25576" title="Poco::Net::HTTPSSessionInstantiator::unregisterInstantiator()">unregisterInstantiator</a></p>
+<p><b>Inherited Functions: </b><a href="Poco.Net.HTTPSessionInstantiator.html#21938" title="Poco::Net::HTTPSessionInstantiator::createClientSession()">createClientSession</a>, <a href="Poco.Net.HTTPSessionInstantiator.html#21945" title="Poco::Net::HTTPSessionInstantiator::proxyHost()">proxyHost</a>, <a href="Poco.Net.HTTPSessionInstantiator.html#21951" title="Poco::Net::HTTPSessionInstantiator::proxyPassword()">proxyPassword</a>, <a href="Poco.Net.HTTPSessionInstantiator.html#21946" title="Poco::Net::HTTPSessionInstantiator::proxyPort()">proxyPort</a>, <a href="Poco.Net.HTTPSessionInstantiator.html#21950" title="Poco::Net::HTTPSessionInstantiator::proxyUsername()">proxyUsername</a>, <a href="Poco.Net.HTTPSessionInstantiator.html#21940" title="Poco::Net::HTTPSessionInstantiator::registerInstantiator()">registerInstantiator</a>, <a href="Poco.Net.HTTPSessionInstantiator.html#21942" title="Poco::Net::HTTPSessionInstantiator::setProxy()">setProxy</a>, <a href="Poco.Net.HTTPSessionInstantiator.html#21947" title="Poco::Net::HTTPSessionInstantiator::setProxyCredentials()">setProxyCredentials</a>, <a href="Poco.Net.HTTPSessionInstantiator.html#21941" title="Poco::Net::HTTPSessionInstantiator::unregisterInstantiator()">unregisterInstantiator</a></p>
+<h2>Constructors</h2>
+<h3><a id="25567">HTTPSSessionInstantiator</a></h3>
+<p class="decl"><a href="Poco.Net.HTTPSSessionInstantiator.html" title="class Poco::Net::HTTPSSessionInstantiator">HTTPSSessionInstantiator</a>();</p>
+<div class="description">
+<p>Creates the <a href="Poco.Net.HTTPSSessionInstantiator.html" title="class Poco::Net::HTTPSSessionInstantiator">HTTPSSessionInstantiator</a>. </p>
+</div>
+<h3><a id="25568">HTTPSSessionInstantiator</a></h3>
+<p class="decl"><a href="Poco.Net.HTTPSSessionInstantiator.html" title="class Poco::Net::HTTPSSessionInstantiator">HTTPSSessionInstantiator</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Net.Context.html#25428" title="Poco::Net::Context::Ptr">Context::Ptr</a> pContext<br />);</p>
+<div class="description">
+<p>Creates the <a href="Poco.Net.HTTPSSessionInstantiator.html" title="class Poco::Net::HTTPSSessionInstantiator">HTTPSSessionInstantiator</a> using the given SSL context. </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="25570">~HTTPSSessionInstantiator</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">~<a href="Poco.Net.HTTPSSessionInstantiator.html" title="class Poco::Net::HTTPSSessionInstantiator">HTTPSSessionInstantiator</a>();</p>
+<div class="description">
+<p>Destroys the <a href="Poco.Net.HTTPSSessionInstantiator.html" title="class Poco::Net::HTTPSSessionInstantiator">HTTPSSessionInstantiator</a>. </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="25571">createClientSession</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Net.HTTPClientSession.html" title="class Poco::Net::HTTPClientSession">HTTPClientSession</a> * createClientSession(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.URI.html" title="class Poco::URI">Poco::URI</a> &amp; uri<br />);</p>
+<div class="description">
+<p>Creates a <a href="Poco.Net.HTTPSClientSession.html" title="class Poco::Net::HTTPSClientSession">HTTPSClientSession</a> for the given <a href="Poco.URI.html" title="class Poco::URI">URI</a>. </p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Net.HTTPSessionInstantiator.html#21938" title="Poco::Net::HTTPSessionInstantiator::createClientSession()">Poco::Net::HTTPSessionInstantiator::createClientSession()</a></p></div>
+<h3><a id="25573">registerInstantiator</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static void registerInstantiator();</p>
+<div class="description">
+<p>Registers the instantiator with the global <a href="Poco.Net.HTTPSessionFactory.html" title="class Poco::Net::HTTPSessionFactory">HTTPSessionFactory</a>. </p>
+</div>
+<h3><a id="25574">registerInstantiator</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static void registerInstantiator(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Net.Context.html#25428" title="Poco::Net::Context::Ptr">Context::Ptr</a> pContext<br />);</p>
+<div class="description">
+<p>Registers the instantiator with the global <a href="Poco.Net.HTTPSessionFactory.html" title="class Poco::Net::HTTPSessionFactory">HTTPSessionFactory</a> using the given SSL context. </p>
+</div>
+<h3><a id="25576">unregisterInstantiator</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static void unregisterInstantiator();</p>
+<div class="description">
+<p>Unregisters the factory with the global <a href="Poco.Net.HTTPSessionFactory.html" title="class Poco::Net::HTTPSessionFactory">HTTPSessionFactory</a>. </p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

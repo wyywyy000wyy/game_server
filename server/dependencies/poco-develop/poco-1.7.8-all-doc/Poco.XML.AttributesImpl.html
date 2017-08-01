@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::XML::AttributesImpl</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.XML.html" class="namespace">Poco::XML</a></h1>
+<h1 class="symbol">class AttributesImpl</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-XML" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> XML<br />
+<b>Package:</b> SAX<br />
+<b>Header:</b> Poco/SAX/AttributesImpl.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>This class provides a default implementation of the SAX2 <a href="Poco.XML.Attributes.html" title="class Poco::XML::Attributes">Attributes</a> interface,  with the addition of manipulators so that the list can be modified or reused. </p>
+<p>There are two typical uses of this class: </p>
+<ol>
+<li>to take a persistent snapshot of an <a href="Poco.XML.Attributes.html" title="class Poco::XML::Attributes">Attributes</a> object in a startElement event; or </li>
+<li>to construct or modify an <a href="Poco.XML.Attributes.html" title="class Poco::XML::Attributes">Attributes</a> object in a SAX2 driver or filter. </li>
+</ol>
+</div>
+<h2>Inheritance</h2>
+<p><b>Direct Base Classes: </b><a href="Poco.XML.Attributes.html" title="class Poco::XML::Attributes">Attributes</a></p>
+<p><b>All Base Classes: </b><a href="Poco.XML.Attributes.html" title="class Poco::XML::Attributes">Attributes</a></p>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.XML.AttributesImpl.html#29504" title="Poco::XML::AttributesImpl::addAttribute()">addAttribute</a>, <a href="Poco.XML.AttributesImpl.html#29547" title="Poco::XML::AttributesImpl::begin()">begin</a>, <a href="Poco.XML.AttributesImpl.html#29532" title="Poco::XML::AttributesImpl::clear()">clear</a>, <a href="Poco.XML.AttributesImpl.html#29548" title="Poco::XML::AttributesImpl::end()">end</a>, <a href="Poco.XML.AttributesImpl.html#29549" title="Poco::XML::AttributesImpl::find()">find</a>, <a href="Poco.XML.AttributesImpl.html#29452" title="Poco::XML::AttributesImpl::getIndex()">getIndex</a>, <a href="Poco.XML.AttributesImpl.html#29457" title="Poco::XML::AttributesImpl::getLength()">getLength</a>, <a href="Poco.XML.AttributesImpl.html#29458" title="Poco::XML::AttributesImpl::getLocalName()">getLocalName</a>, <a href="Poco.XML.AttributesImpl.html#29460" title="Poco::XML::AttributesImpl::getQName()">getQName</a>, <a href="Poco.XML.AttributesImpl.html#29462" title="Poco::XML::AttributesImpl::getType()">getType</a>, <a href="Poco.XML.AttributesImpl.html#29476" title="Poco::XML::AttributesImpl::getURI()">getURI</a>, <a href="Poco.XML.AttributesImpl.html#29469" title="Poco::XML::AttributesImpl::getValue()">getValue</a>, <a href="Poco.XML.AttributesImpl.html#29478" title="Poco::XML::AttributesImpl::isSpecified()">isSpecified</a>, <a href="Poco.XML.AttributesImpl.html#29450" title="Poco::XML::AttributesImpl::operator =()">operator&nbsp;=</a>, <a href="Poco.XML.AttributesImpl.html#29525" title="Poco::XML::AttributesImpl::removeAttribute()">removeAttribute</a>, <a href="Poco.XML.AttributesImpl.html#29533" title="Poco::XML::AttributesImpl::reserve()">reserve</a>, <a href="Poco.XML.AttributesImpl.html#29497" title="Poco::XML::AttributesImpl::setAttribute()">setAttribute</a>, <a href="Poco.XML.AttributesImpl.html#29495" title="Poco::XML::AttributesImpl::setAttributes()">setAttributes</a>, <a href="Poco.XML.AttributesImpl.html#29535" title="Poco::XML::AttributesImpl::setLocalName()">setLocalName</a>, <a href="Poco.XML.AttributesImpl.html#29538" title="Poco::XML::AttributesImpl::setQName()">setQName</a>, <a href="Poco.XML.AttributesImpl.html#29541" title="Poco::XML::AttributesImpl::setType()">setType</a>, <a href="Poco.XML.AttributesImpl.html#29544" title="Poco::XML::AttributesImpl::setURI()">setURI</a>, <a href="Poco.XML.AttributesImpl.html#29485" title="Poco::XML::AttributesImpl::setValue()">setValue</a></p>
+<p><b>Inherited Functions: </b><a href="Poco.XML.Attributes.html#29407" title="Poco::XML::Attributes::getIndex()">getIndex</a>, <a href="Poco.XML.Attributes.html#29412" title="Poco::XML::Attributes::getLength()">getLength</a>, <a href="Poco.XML.Attributes.html#29413" title="Poco::XML::Attributes::getLocalName()">getLocalName</a>, <a href="Poco.XML.Attributes.html#29415" title="Poco::XML::Attributes::getQName()">getQName</a>, <a href="Poco.XML.Attributes.html#29417" title="Poco::XML::Attributes::getType()">getType</a>, <a href="Poco.XML.Attributes.html#29431" title="Poco::XML::Attributes::getURI()">getURI</a>, <a href="Poco.XML.Attributes.html#29424" title="Poco::XML::Attributes::getValue()">getValue</a></p>
+<h2>Nested Classes</h2>
+<h3><a href="Poco.XML.AttributesImpl.Attribute.html" class="class">struct Attribute</a></h3>
+<p>&nbsp;<a href="Poco.XML.AttributesImpl.Attribute.html"><img src="images/arrow.png" alt="more..." /> </a></p>
+<h2>Types</h2>
+<h3><a id="29442">AttributeVec</a></h3>
+<p class="decl">typedef std::vector &lt; <a href="Poco.XML.AttributesImpl.Attribute.html" title="struct Poco::XML::AttributesImpl::Attribute">Attribute</a> &gt; <a href="Poco.XML.AttributesImpl.html#29442" title="Poco::XML::AttributesImpl::AttributeVec">AttributeVec</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="29443">iterator</a></h3>
+<p class="decl">typedef AttributeVec::const_iterator iterator;</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Constructors</h2>
+<h3><a id="29444">AttributesImpl</a></h3>
+<p class="decl"><a href="Poco.XML.AttributesImpl.html" title="class Poco::XML::AttributesImpl">AttributesImpl</a>();</p>
+<div class="description">
+<p>Creates the <a href="Poco.XML.AttributesImpl.html" title="class Poco::XML::AttributesImpl">AttributesImpl</a>. </p>
+</div>
+<h3><a id="29445">AttributesImpl</a></h3>
+<p class="decl"><a href="Poco.XML.AttributesImpl.html" title="class Poco::XML::AttributesImpl">AttributesImpl</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.Attributes.html" title="class Poco::XML::Attributes">Attributes</a> &amp; attributes<br />);</p>
+<div class="description">
+<p>Creates the <a href="Poco.XML.AttributesImpl.html" title="class Poco::XML::AttributesImpl">AttributesImpl</a> by copying another one. </p>
+</div>
+<h3><a id="29447">AttributesImpl</a></h3>
+<p class="decl"><a href="Poco.XML.AttributesImpl.html" title="class Poco::XML::AttributesImpl">AttributesImpl</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.AttributesImpl.html" title="class Poco::XML::AttributesImpl">AttributesImpl</a> &amp; attributes<br />);</p>
+<div class="description">
+<p>Creates the <a href="Poco.XML.AttributesImpl.html" title="class Poco::XML::AttributesImpl">AttributesImpl</a> by copying another one. </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="29449">~AttributesImpl</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">~<a href="Poco.XML.AttributesImpl.html" title="class Poco::XML::AttributesImpl">AttributesImpl</a>();</p>
+<div class="description">
+<p>Destroys the <a href="Poco.XML.AttributesImpl.html" title="class Poco::XML::AttributesImpl">AttributesImpl</a>. </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="29504">addAttribute</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void addAttribute(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; namespaceURI,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; localName,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; qname,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; type,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; value<br />);</p>
+<div class="description">
+<p>Adds an attribute to the end of the list. </p>
+</div>
+<h3><a id="29510">addAttribute</a></h3>
+<p class="decl">void addAttribute(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; namespaceURI,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; localName,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; qname,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; type,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; value,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool specified<br />);</p>
+<div class="description">
+<p>Adds an attribute to the end of the list. </p>
+</div>
+<h3><a id="29517">addAttribute</a></h3>
+<p class="decl">void addAttribute(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30545" title="Poco::XML::XMLChar">XMLChar</a> * namespaceURI,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30545" title="Poco::XML::XMLChar">XMLChar</a> * localName,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30545" title="Poco::XML::XMLChar">XMLChar</a> * qname,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30545" title="Poco::XML::XMLChar">XMLChar</a> * type,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30545" title="Poco::XML::XMLChar">XMLChar</a> * value,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool specified<br />);</p>
+<div class="description">
+<p>Adds an attribute to the end of the list. </p>
+</div>
+<h3><a id="29524">addAttribute</a></h3>
+<p class="decl"><a href="Poco.XML.AttributesImpl.Attribute.html" title="struct Poco::XML::AttributesImpl::Attribute">Attribute</a> &amp; addAttribute();</p>
+<div class="description">
+<p>Add an (empty) attribute to the end of the list. For internal use only. The returned <a href="Poco.XML.AttributesImpl.Attribute.html" title="struct Poco::XML::AttributesImpl::Attribute">Attribute</a> element must be filled by the caller. </p>
+</div>
+<h3><a id="29547">begin</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">iterator begin() const;</p>
+<div class="description">
+<p>Iterator support. </p>
+</div>
+<h3><a id="29532">clear</a></h3>
+<p class="decl">void clear();</p>
+<div class="description">
+<p>Removes all attributes. </p>
+</div>
+<h3><a id="29548">end</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">iterator end() const;</p>
+<div class="description">
+<p>Iterator support. </p>
+</div>
+<h3><a id="29452">getIndex</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">int getIndex(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; name<br />) const;</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.XML.Attributes.html#29407" title="Poco::XML::Attributes::getIndex()">Poco::XML::Attributes::getIndex()</a></p></div>
+<h3><a id="29454">getIndex</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">int getIndex(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; namespaceURI,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; localName<br />) const;</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.XML.Attributes.html#29409" title="Poco::XML::Attributes::getIndex()">Poco::XML::Attributes::getIndex()</a></p></div>
+<h3><a id="29457">getLength</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">int getLength() const;</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.XML.Attributes.html#29412" title="Poco::XML::Attributes::getLength()">Poco::XML::Attributes::getLength()</a></p></div>
+<h3><a id="29458">getLocalName</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; getLocalName(<br />&nbsp;&nbsp;&nbsp;&nbsp;int i<br />) const;</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.XML.Attributes.html#29413" title="Poco::XML::Attributes::getLocalName()">Poco::XML::Attributes::getLocalName()</a></p></div>
+<h3><a id="29460">getQName</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; getQName(<br />&nbsp;&nbsp;&nbsp;&nbsp;int i<br />) const;</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.XML.Attributes.html#29415" title="Poco::XML::Attributes::getQName()">Poco::XML::Attributes::getQName()</a></p></div>
+<h3><a id="29462">getType</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; getType(<br />&nbsp;&nbsp;&nbsp;&nbsp;int i<br />) const;</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.XML.Attributes.html#29417" title="Poco::XML::Attributes::getType()">Poco::XML::Attributes::getType()</a></p></div>
+<h3><a id="29464">getType</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; getType(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; qname<br />) const;</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.XML.Attributes.html#29419" title="Poco::XML::Attributes::getType()">Poco::XML::Attributes::getType()</a></p></div>
+<h3><a id="29466">getType</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; getType(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; namespaceURI,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; localName<br />) const;</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.XML.Attributes.html#29421" title="Poco::XML::Attributes::getType()">Poco::XML::Attributes::getType()</a></p></div>
+<h3><a id="29476">getURI</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; getURI(<br />&nbsp;&nbsp;&nbsp;&nbsp;int i<br />) const;</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.XML.Attributes.html#29431" title="Poco::XML::Attributes::getURI()">Poco::XML::Attributes::getURI()</a></p></div>
+<h3><a id="29469">getValue</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; getValue(<br />&nbsp;&nbsp;&nbsp;&nbsp;int i<br />) const;</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.XML.Attributes.html#29424" title="Poco::XML::Attributes::getValue()">Poco::XML::Attributes::getValue()</a></p></div>
+<h3><a id="29471">getValue</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; getValue(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; qname<br />) const;</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.XML.Attributes.html#29426" title="Poco::XML::Attributes::getValue()">Poco::XML::Attributes::getValue()</a></p></div>
+<h3><a id="29473">getValue</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; getValue(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; namespaceURI,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; localName<br />) const;</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.XML.Attributes.html#29428" title="Poco::XML::Attributes::getValue()">Poco::XML::Attributes::getValue()</a></p></div>
+<h3><a id="29478">isSpecified</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool isSpecified(<br />&nbsp;&nbsp;&nbsp;&nbsp;int i<br />) const;</p>
+<div class="description">
+<p>Returns true unless the attribute value was provided by DTD defaulting. Extension from Attributes2 interface. </p>
+</div>
+<h3><a id="29480">isSpecified</a></h3>
+<p class="decl">bool isSpecified(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; qname<br />) const;</p>
+<div class="description">
+<p>Returns true unless the attribute value was provided by DTD defaulting. Extension from Attributes2 interface. </p>
+</div>
+<h3><a id="29482">isSpecified</a></h3>
+<p class="decl">bool isSpecified(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; namespaceURI,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; localName<br />) const;</p>
+<div class="description">
+<p>Returns true unless the attribute value was provided by DTD defaulting. Extension from Attributes2 interface. </p>
+</div>
+<h3><a id="29450">operator =</a></h3>
+<p class="decl"><a href="Poco.XML.AttributesImpl.html" title="class Poco::XML::AttributesImpl">AttributesImpl</a> &amp; operator = (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.AttributesImpl.html" title="class Poco::XML::AttributesImpl">AttributesImpl</a> &amp; attributes<br />);</p>
+<div class="description">
+<p>Assignment operator. </p>
+</div>
+<h3><a id="29525">removeAttribute</a></h3>
+<p class="decl">void removeAttribute(<br />&nbsp;&nbsp;&nbsp;&nbsp;int i<br />);</p>
+<div class="description">
+<p>Removes an attribute. </p>
+</div>
+<h3><a id="29527">removeAttribute</a></h3>
+<p class="decl">void removeAttribute(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; qname<br />);</p>
+<div class="description">
+<p>Removes an attribute. </p>
+</div>
+<h3><a id="29529">removeAttribute</a></h3>
+<p class="decl">void removeAttribute(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; namespaceURI,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; localName<br />);</p>
+<div class="description">
+<p>Removes an attribute. </p>
+</div>
+<h3><a id="29533">reserve</a></h3>
+<p class="decl">void reserve(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t capacity<br />);</p>
+<div class="description">
+<p>Reserves capacity in the internal vector. </p>
+</div>
+<h3><a id="29497">setAttribute</a></h3>
+<p class="decl">void setAttribute(<br />&nbsp;&nbsp;&nbsp;&nbsp;int i,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; namespaceURI,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; localName,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; qname,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; type,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; value<br />);</p>
+<div class="description">
+<p>Sets an attribute. </p>
+</div>
+<h3><a id="29495">setAttributes</a></h3>
+<p class="decl">void setAttributes(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.Attributes.html" title="class Poco::XML::Attributes">Attributes</a> &amp; attributes<br />);</p>
+<div class="description">
+<p>Copies the attributes from another <a href="Poco.XML.Attributes.html" title="class Poco::XML::Attributes">Attributes</a> object. </p>
+</div>
+<h3><a id="29535">setLocalName</a></h3>
+<p class="decl">void setLocalName(<br />&nbsp;&nbsp;&nbsp;&nbsp;int i,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; localName<br />);</p>
+<div class="description">
+<p>Sets the local name of an attribute. </p>
+</div>
+<h3><a id="29538">setQName</a></h3>
+<p class="decl">void setQName(<br />&nbsp;&nbsp;&nbsp;&nbsp;int i,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; qname<br />);</p>
+<div class="description">
+<p>Sets the qualified name of an attribute. </p>
+</div>
+<h3><a id="29541">setType</a></h3>
+<p class="decl">void setType(<br />&nbsp;&nbsp;&nbsp;&nbsp;int i,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; type<br />);</p>
+<div class="description">
+<p>Sets the type of an attribute. </p>
+</div>
+<h3><a id="29544">setURI</a></h3>
+<p class="decl">void setURI(<br />&nbsp;&nbsp;&nbsp;&nbsp;int i,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; namespaceURI<br />);</p>
+<div class="description">
+<p>Sets the namespace <a href="Poco.URI.html" title="class Poco::URI">URI</a> of an attribute. </p>
+</div>
+<h3><a id="29485">setValue</a></h3>
+<p class="decl">void setValue(<br />&nbsp;&nbsp;&nbsp;&nbsp;int i,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; value<br />);</p>
+<div class="description">
+<p>Sets the value of an attribute. </p>
+</div>
+<h3><a id="29488">setValue</a></h3>
+<p class="decl">void setValue(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; qname,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; value<br />);</p>
+<div class="description">
+<p>Sets the value of an attribute. </p>
+</div>
+<h3><a id="29491">setValue</a></h3>
+<p class="decl">void setValue(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; namespaceURI,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; localName,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; value<br />);</p>
+<div class="description">
+<p>Sets the value of an attribute. </p>
+</div>
+<h3><a id="29549">find</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl"><a href="Poco.XML.AttributesImpl.Attribute.html" title="struct Poco::XML::AttributesImpl::Attribute">Attribute</a> * find(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; qname<br />) const;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="29551">find</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl"><a href="Poco.XML.AttributesImpl.Attribute.html" title="struct Poco::XML::AttributesImpl::Attribute">Attribute</a> * find(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; namespaceURI,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; localName<br />) const;</p>
+<div class="description">
+<p></p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

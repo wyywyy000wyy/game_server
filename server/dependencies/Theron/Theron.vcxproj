@@ -1,0 +1,278 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGUID>{24444C68-9E09-3194-9824-EC25F83E1C85}</ProjectGUID>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>x64</Platform>
+    <ProjectName>Theron</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+    <PropertyGroup>
+      <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+      <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\_Out\Debug\</OutDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Theron.dir\Debug\</IntDir>
+      <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Theron_d</TargetName>
+      <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.lib</TargetExt>
+      <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\_Out\Release\</OutDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Theron.dir\Release\</IntDir>
+      <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Theron</TargetName>
+      <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.lib</TargetExt>
+      <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\_Out\MinSizeRel\</OutDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Theron.dir\MinSizeRel\</IntDir>
+      <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Theron</TargetName>
+      <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.lib</TargetExt>
+      <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\_Out\RelWithDebInfo\</OutDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Theron.dir\RelWithDebInfo\</IntDir>
+      <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Theron</TargetName>
+      <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.lib</TargetExt>
+    </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\Theron\Include;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\Theron\Include\External;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\protobuf;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\protobuf\src;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\libevent;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\libevent\include;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\libevent\compat;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\lua;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\libevent\WIN32-Code;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>Debug/</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PreprocessorDefinitions>_X64;_WINDOWS;_DEBUG;THERON_USE_STD_THREADS;_X64;CMAKE_INTDIR="Debug";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_X64;_WINDOWS;_DEBUG;THERON_USE_STD_THREADS;_X64;CMAKE_INTDIR=\"Debug\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\Theron\Include;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\Theron\Include\External;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\protobuf;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\protobuf\src;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\libevent;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\libevent\include;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\libevent\compat;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\lua;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\libevent\WIN32-Code;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\Theron\Include;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\Theron\Include\External;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\protobuf;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\protobuf\src;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\libevent;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\libevent\include;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\libevent\compat;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\lua;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\libevent\WIN32-Code;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions> /machine:X86 %(AdditionalOptions)</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\Theron\Include;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\Theron\Include\External;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\protobuf;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\protobuf\src;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\libevent;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\libevent\include;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\libevent\compat;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\lua;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\libevent\WIN32-Code;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>Release/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PreprocessorDefinitions>_X64;_WINDOWS;NDEBUG;THERON_USE_STD_THREADS;_X64;CMAKE_INTDIR="Release";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat></DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_X64;_WINDOWS;NDEBUG;THERON_USE_STD_THREADS;_X64;CMAKE_INTDIR=\"Release\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\Theron\Include;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\Theron\Include\External;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\protobuf;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\protobuf\src;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\libevent;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\libevent\include;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\libevent\compat;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\lua;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\libevent\WIN32-Code;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\Theron\Include;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\Theron\Include\External;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\protobuf;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\protobuf\src;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\libevent;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\libevent\include;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\libevent\compat;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\lua;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\libevent\WIN32-Code;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions> /machine:X86 %(AdditionalOptions)</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\Theron\Include;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\Theron\Include\External;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\protobuf;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\protobuf\src;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\libevent;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\libevent\include;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\libevent\compat;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\lua;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\libevent\WIN32-Code;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>MinSizeRel/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PreprocessorDefinitions>_X64;_WINDOWS;NDEBUG;THERON_USE_STD_THREADS;_X64;CMAKE_INTDIR="MinSizeRel";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat></DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_X64;_WINDOWS;NDEBUG;THERON_USE_STD_THREADS;_X64;CMAKE_INTDIR=\"MinSizeRel\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\Theron\Include;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\Theron\Include\External;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\protobuf;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\protobuf\src;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\libevent;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\libevent\include;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\libevent\compat;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\lua;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\libevent\WIN32-Code;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\Theron\Include;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\Theron\Include\External;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\protobuf;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\protobuf\src;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\libevent;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\libevent\include;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\libevent\compat;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\lua;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\libevent\WIN32-Code;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions> /machine:X86 %(AdditionalOptions)</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\Theron\Include;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\Theron\Include\External;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\protobuf;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\protobuf\src;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\libevent;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\libevent\include;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\libevent\compat;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\lua;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\libevent\WIN32-Code;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>RelWithDebInfo/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PreprocessorDefinitions>_X64;_WINDOWS;NDEBUG;THERON_USE_STD_THREADS;_X64;CMAKE_INTDIR="RelWithDebInfo";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_X64;_WINDOWS;NDEBUG;THERON_USE_STD_THREADS;_X64;CMAKE_INTDIR=\"RelWithDebInfo\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\Theron\Include;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\Theron\Include\External;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\protobuf;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\protobuf\src;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\libevent;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\libevent\include;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\libevent\compat;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\lua;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\libevent\WIN32-Code;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\Theron\Include;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\Theron\Include\External;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\protobuf;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\protobuf\src;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\libevent;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\libevent\include;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\libevent\compat;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\lua;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\libevent\WIN32-Code;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions> /machine:X86 %(AdditionalOptions)</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\Theron\CMakeLists.txt">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule D:/1MyProgram/NoahGameFrame-master/NoahGameFrame-master/Dependencies/Theron/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HD:/1MyProgram/NoahGameFrame-master/NoahGameFrame-master -BD:/1MyProgram/NoahGameFrame-master/NoahGameFrame-master --check-stamp-file D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\Theron\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:/1MyProgram/NoahGameFrame-master/NoahGameFrame-master/Dependencies/Theron/CMakeLists.txt;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\Theron\CMakeLists.txt;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\Theron\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\Theron\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule D:/1MyProgram/NoahGameFrame-master/NoahGameFrame-master/Dependencies/Theron/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HD:/1MyProgram/NoahGameFrame-master/NoahGameFrame-master -BD:/1MyProgram/NoahGameFrame-master/NoahGameFrame-master --check-stamp-file D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\Theron\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:/1MyProgram/NoahGameFrame-master/NoahGameFrame-master/Dependencies/Theron/CMakeLists.txt;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\Theron\CMakeLists.txt;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\Theron\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\Theron\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule D:/1MyProgram/NoahGameFrame-master/NoahGameFrame-master/Dependencies/Theron/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HD:/1MyProgram/NoahGameFrame-master/NoahGameFrame-master -BD:/1MyProgram/NoahGameFrame-master/NoahGameFrame-master --check-stamp-file D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\Theron\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:/1MyProgram/NoahGameFrame-master/NoahGameFrame-master/Dependencies/Theron/CMakeLists.txt;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\Theron\CMakeLists.txt;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\Theron\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\Theron\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule D:/1MyProgram/NoahGameFrame-master/NoahGameFrame-master/Dependencies/Theron/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HD:/1MyProgram/NoahGameFrame-master/NoahGameFrame-master -BD:/1MyProgram/NoahGameFrame-master/NoahGameFrame-master --check-stamp-file D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\Theron\CMakeFiles\generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:/1MyProgram/NoahGameFrame-master/NoahGameFrame-master/Dependencies/Theron/CMakeLists.txt;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\Theron\CMakeLists.txt;D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\Theron\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\Theron\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\Theron\Theron\Actor.cpp"  />
+    <ClCompile Include="D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\Theron\Theron\Address.cpp"  />
+    <ClCompile Include="D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\Theron\Theron\AllocatorManager.cpp"  />
+    <ClCompile Include="D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\Theron\Theron\BuildDescriptor.cpp"  />
+    <ClCompile Include="D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\Theron\Theron\Clock.cpp"  />
+    <ClCompile Include="D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\Theron\Theron\DefaultHandlerCollection.cpp"  />
+    <ClCompile Include="D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\Theron\Theron\EndPoint.cpp"  />
+    <ClCompile Include="D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\Theron\Theron\FallbackHandlerCollection.cpp"  />
+    <ClCompile Include="D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\Theron\Theron\Framework.cpp"  />
+    <ClCompile Include="D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\Theron\Theron\HandlerCollection.cpp"  />
+    <ClCompile Include="D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\Theron\Theron\Receiver.cpp"  />
+    <ClCompile Include="D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\Theron\Theron\StringPool.cpp"  />
+    <ClCompile Include="D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\Theron\Theron\YieldPolicy.cpp"  />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="D:/1MyProgram/NoahGameFrame-master/NoahGameFrame-master/ZERO_CHECK.vcxproj">
+      <Project>2FC49649-B096-33C0-9A35-35F7953FBF3C</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

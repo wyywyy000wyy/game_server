@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::Zip::ZipDataInfo</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.Zip.html" class="namespace">Poco::Zip</a></h1>
+<h1 class="symbol">class ZipDataInfo</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Zip" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Zip<br />
+<b>Package:</b> Zip<br />
+<b>Header:</b> Poco/Zip/ZipDataInfo.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>A <a href="Poco.Zip.ZipDataInfo.html" title="class Poco::Zip::ZipDataInfo">ZipDataInfo</a> stores a <a href="Poco.Zip.html" title="namespace Poco::Zip">Zip</a> data descriptor </p>
+</div>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.Zip.ZipDataInfo.html#31163" title="Poco::Zip::ZipDataInfo::getCRC32()">getCRC32</a>, <a href="Poco.Zip.ZipDataInfo.html#31166" title="Poco::Zip::ZipDataInfo::getCompressedSize()">getCompressedSize</a>, <a href="Poco.Zip.ZipDataInfo.html#31172" title="Poco::Zip::ZipDataInfo::getFullHeaderSize()">getFullHeaderSize</a>, <a href="Poco.Zip.ZipDataInfo.html#31173" title="Poco::Zip::ZipDataInfo::getRawHeader()">getRawHeader</a>, <a href="Poco.Zip.ZipDataInfo.html#31169" title="Poco::Zip::ZipDataInfo::getUncompressedSize()">getUncompressedSize</a>, <a href="Poco.Zip.ZipDataInfo.html#31162" title="Poco::Zip::ZipDataInfo::isValid()">isValid</a>, <a href="Poco.Zip.ZipDataInfo.html#31164" title="Poco::Zip::ZipDataInfo::setCRC32()">setCRC32</a>, <a href="Poco.Zip.ZipDataInfo.html#31167" title="Poco::Zip::ZipDataInfo::setCompressedSize()">setCompressedSize</a>, <a href="Poco.Zip.ZipDataInfo.html#31170" title="Poco::Zip::ZipDataInfo::setUncompressedSize()">setUncompressedSize</a></p>
+<h2>Constructors</h2>
+<h3><a id="31157">ZipDataInfo</a></h3>
+<p class="decl"><a href="Poco.Zip.ZipDataInfo.html" title="class Poco::Zip::ZipDataInfo">ZipDataInfo</a>();</p>
+<div class="description">
+<p>Creates a header with all fields (except the header field) set to 0 </p>
+</div>
+<h3><a id="31158">ZipDataInfo</a></h3>
+<p class="decl"><a href="Poco.Zip.ZipDataInfo.html" title="class Poco::Zip::ZipDataInfo">ZipDataInfo</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::istream &amp; in,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool assumeHeaderRead<br />);</p>
+<div class="description">
+<p>Creates the <a href="Poco.Zip.ZipDataInfo.html" title="class Poco::Zip::ZipDataInfo">ZipDataInfo</a>. </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="31161">~ZipDataInfo</a></h3>
+<p class="decl">~<a href="Poco.Zip.ZipDataInfo.html" title="class Poco::Zip::ZipDataInfo">ZipDataInfo</a>();</p>
+<div class="description">
+<p>Destroys the <a href="Poco.Zip.ZipDataInfo.html" title="class Poco::Zip::ZipDataInfo">ZipDataInfo</a>. </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="31163">getCRC32</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.html#18381" title="Poco::UInt32">Poco::UInt32</a> getCRC32() const;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="31166">getCompressedSize</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.html#18381" title="Poco::UInt32">Poco::UInt32</a> getCompressedSize() const;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="31172">getFullHeaderSize</a> <img src="images/static.png" alt="static" title="static" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">static <a href="Poco.html#18381" title="Poco::UInt32">Poco::UInt32</a> getFullHeaderSize();</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="31173">getRawHeader</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">const char * getRawHeader() const;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="31169">getUncompressedSize</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.html#18381" title="Poco::UInt32">Poco::UInt32</a> getUncompressedSize() const;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="31162">isValid</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool isValid() const;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="31164">setCRC32</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void setCRC32(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.html#18381" title="Poco::UInt32">Poco::UInt32</a> crc<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="31167">setCompressedSize</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void setCompressedSize(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.html#18381" title="Poco::UInt32">Poco::UInt32</a> size<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="31170">setUncompressedSize</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void setUncompressedSize(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.html#18381" title="Poco::UInt32">Poco::UInt32</a> size<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Variables</h2>
+<h3><a id="31156">HEADER</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static const char <a href="Poco.Zip.ZipDataInfo.html#31156" title="Poco::Zip::ZipDataInfo::HEADER">HEADER</a>[<a href="Poco.Zip.ZipCommon.html#31110" title="Poco::Zip::ZipCommon::HEADER_SIZE">ZipCommon::HEADER_SIZE</a>];</p>
+<div class="description">
+<p></p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

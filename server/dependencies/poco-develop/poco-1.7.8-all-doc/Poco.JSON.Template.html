@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::JSON::Template</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.JSON.html" class="namespace">Poco::JSON</a></h1>
+<h1 class="symbol">class Template</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-JSON" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> JSON<br />
+<b>Package:</b> JSON<br />
+<b>Header:</b> Poco/JSON/Template.h</p>
+<h2>Description</h2>
+<div class="description">
+<p><a href="Poco.JSON.Template.html" title="class Poco::JSON::Template">Template</a> is a template engine which uses <a href="Poco.JSON.html" title="namespace Poco::JSON">JSON</a> as input for generating output. There are commands for looping over <a href="Poco.JSON.html" title="namespace Poco::JSON">JSON</a> arrays, include other templates, conditional output, etc. </p>
+<p>All text is send to the outputstream. A command is placed between  </p>
+<pre>&lt;?
+</pre>
+<p>and  </p>
+<pre>?&gt;
+</pre>
+<p> </p>
+<p>These are the available commands: </p>
+<p></p>
+<pre>&lt;? echo query ?&gt;
+</pre>
+<p> The result of the query is send to the output stream This command can also be written as NOT FOUND: = query </p>
+<p></p>
+<pre>&lt;? if query ?&gt; &lt;? else ?&gt; &lt;? endif ?&gt;
+</pre>
+<p> When the result of query is true, all the text between if and else (or endif when there is no else) is send to the output stream. When the result of query is false, all the text between else and endif is send to the output stream. An empty object, an empty array or a null value is considered as a false value. For numbers a zero is false. An empty String is also false. </p>
+<p></p>
+<pre>&lt;? ifexist query ?&gt; &lt;? else ?&gt; &lt;? endif ?&gt;
+</pre>
+<p> This can be used to check the existence of the value. Use this for example when a zero value is ok (which returns false for NOT FOUND: if. </p>
+<p></p>
+<pre>&lt;? for variable query ?&gt; &lt;? endfor ?&gt;
+</pre>
+<p> The result of the query must be an array. For each element in the array the text between for and endfor is send to the output stream. The active element is stored in the variable. </p>
+<p></p>
+<pre>&lt;? include &quot;filename&quot; ?&gt;
+</pre>
+<p> Includes a template. When the filename is relative it will try to resolve the filename against the active template. When this file doesn't exist, it can still be found when the JSONTemplateCache is used. </p>
+<p>A query is passed to <a href="Poco.JSON.Query.html" title="class Poco::JSON::Query">Poco::JSON::Query</a> to get the value. </p>
+</div>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.JSON.Template.html#19983" title="Poco::JSON::Template::parse()">parse</a>, <a href="Poco.JSON.Template.html#19988" title="Poco::JSON::Template::parseTime()">parseTime</a>, <a href="Poco.JSON.Template.html#19989" title="Poco::JSON::Template::render()">render</a></p>
+<h2>Types</h2>
+<h3><a id="19978">Ptr</a></h3>
+<p class="decl">typedef <a href="Poco.SharedPtr.html" title="class Poco::SharedPtr">SharedPtr</a> &lt; <a href="Poco.JSON.Template.html" title="class Poco::JSON::Template">Template</a> &gt; <a href="Poco.JSON.Template.html#19978" title="Poco::JSON::Template::Ptr">Ptr</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Constructors</h2>
+<h3><a id="19979">Template</a></h3>
+<p class="decl"><a href="Poco.JSON.Template.html" title="class Poco::JSON::Template">Template</a>();</p>
+<div class="description">
+<p>Creates a <a href="Poco.JSON.Template.html" title="class Poco::JSON::Template">Template</a>. </p>
+</div>
+<h3><a id="19980">Template</a></h3>
+<p class="decl"><a href="Poco.JSON.Template.html" title="class Poco::JSON::Template">Template</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Path.html" title="class Poco::Path">Path</a> &amp; templatePath<br />);</p>
+<div class="description">
+<p>Creates a <a href="Poco.JSON.Template.html" title="class Poco::JSON::Template">Template</a> from the file with the given templatePath. </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="19982">~Template</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual ~<a href="Poco.JSON.Template.html" title="class Poco::JSON::Template">Template</a>();</p>
+<div class="description">
+<p>Destroys the <a href="Poco.JSON.Template.html" title="class Poco::JSON::Template">Template</a>. </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="19983">parse</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void parse();</p>
+<div class="description">
+<p>Parse a template from a file. </p>
+</div>
+<h3><a id="19984">parse</a></h3>
+<p class="decl">void parse(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; source<br />);</p>
+<div class="description">
+<p>Parse a template from a string. </p>
+</div>
+<h3><a id="19986">parse</a></h3>
+<p class="decl">void parse(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::istream &amp; in<br />);</p>
+<div class="description">
+<p>Parse a template from an input stream. </p>
+</div>
+<h3><a id="19988">parseTime</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Timestamp.html" title="class Poco::Timestamp">Timestamp</a> parseTime() const;</p>
+<div class="description">
+<p>Returns the time when the template was parsed. </p>
+</div>
+<h3><a id="19989">render</a></h3>
+<p class="decl">void render(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Dynamic.Var.html" title="class Poco::Dynamic::Var">Dynamic::Var</a> &amp; data,<br />&nbsp;&nbsp;&nbsp;&nbsp;std::ostream &amp; out<br />) const;</p>
+<div class="description">
+<p>Renders the template and send the output to the stream. </p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

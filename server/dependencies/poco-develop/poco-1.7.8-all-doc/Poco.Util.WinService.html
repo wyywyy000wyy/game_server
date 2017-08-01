@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::Util::WinService</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.Util.html" class="namespace">Poco::Util</a></h1>
+<h1 class="symbol">class WinService</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Util" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Util<br />
+<b>Package:</b> Windows<br />
+<b>Header:</b> Poco/Util/WinService.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>This class provides an object-oriented interface to the Windows Service Control Manager for registering, unregistering, configuring, starting and stopping services. </p>
+<p>This class is only available on Windows platforms. </p>
+</div>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.Util.WinService.html#28019" title="Poco::Util::WinService::displayName()">displayName</a>, <a href="Poco.Util.WinService.html#28036" title="Poco::Util::WinService::getDescription()">getDescription</a>, <a href="Poco.Util.WinService.html#28033" title="Poco::Util::WinService::getStartup()">getStartup</a>, <a href="Poco.Util.WinService.html#28027" title="Poco::Util::WinService::isRegistered()">isRegistered</a>, <a href="Poco.Util.WinService.html#28028" title="Poco::Util::WinService::isRunning()">isRunning</a>, <a href="Poco.Util.WinService.html#28018" title="Poco::Util::WinService::name()">name</a>, <a href="Poco.Util.WinService.html#28020" title="Poco::Util::WinService::path()">path</a>, <a href="Poco.Util.WinService.html#28021" title="Poco::Util::WinService::registerService()">registerService</a>, <a href="Poco.Util.WinService.html#28034" title="Poco::Util::WinService::setDescription()">setDescription</a>, <a href="Poco.Util.WinService.html#28031" title="Poco::Util::WinService::setStartup()">setStartup</a>, <a href="Poco.Util.WinService.html#28029" title="Poco::Util::WinService::start()">start</a>, <a href="Poco.Util.WinService.html#28030" title="Poco::Util::WinService::stop()">stop</a>, <a href="Poco.Util.WinService.html#28026" title="Poco::Util::WinService::unregisterService()">unregisterService</a></p>
+<h2>Enumerations</h2>
+<h3><a id="28011">Startup</a></h3>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="28012">SVC_AUTO_START</a></p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="28013">SVC_MANUAL_START</a></p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="28014">SVC_DISABLED</a></p>
+<div class="description">
+<p></p>
+</div>
+<h2>Constructors</h2>
+<h3><a id="28015">WinService</a></h3>
+<p class="decl"><a href="Poco.Util.WinService.html" title="class Poco::Util::WinService">WinService</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; name<br />);</p>
+<div class="description">
+<p>Creates the <a href="Poco.Util.WinService.html" title="class Poco::Util::WinService">WinService</a>, using the given service name. </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="28017">~WinService</a></h3>
+<p class="decl">~<a href="Poco.Util.WinService.html" title="class Poco::Util::WinService">WinService</a>();</p>
+<div class="description">
+<p>Destroys the <a href="Poco.Util.WinService.html" title="class Poco::Util::WinService">WinService</a>. </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="28019">displayName</a></h3>
+<p class="decl">std::string displayName() const;</p>
+<div class="description">
+<p>Returns the service's display name. </p>
+</div>
+<h3><a id="28036">getDescription</a></h3>
+<p class="decl">std::string getDescription() const;</p>
+<div class="description">
+<p>Returns the service description from the registry. </p>
+</div>
+<h3><a id="28033">getStartup</a></h3>
+<p class="decl"><a href="Poco.Util.WinService.html#28011" title="enum  Poco::Util::WinService::Startup">Startup</a> getStartup() const;</p>
+<div class="description">
+<p>Returns the startup mode for the service. </p>
+</div>
+<h3><a id="28027">isRegistered</a></h3>
+<p class="decl">bool isRegistered() const;</p>
+<div class="description">
+<p>Returns true if the service has been registered with the Service Control Manager. </p>
+</div>
+<h3><a id="28028">isRunning</a></h3>
+<p class="decl">bool isRunning() const;</p>
+<div class="description">
+<p>Returns true if the service is currently running. </p>
+</div>
+<h3><a id="28018">name</a></h3>
+<p class="decl">const std::string &amp; name() const;</p>
+<div class="description">
+<p>Returns the service name. </p>
+</div>
+<h3><a id="28020">path</a></h3>
+<p class="decl">std::string path() const;</p>
+<div class="description">
+<p>Returns the path to the service executable.  </p>
+<p>Throws a <a href="Poco.NotFoundException.html" title="class Poco::NotFoundException">NotFoundException</a> if the service has not been registered. </p>
+</div>
+<h3><a id="28021">registerService</a></h3>
+<p class="decl">void registerService(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; path,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; displayName<br />);</p>
+<div class="description">
+<p>Creates a Windows service with the executable specified by path and the given displayName. </p>
+<p>Throws a <a href="Poco.ExistsException.html" title="class Poco::ExistsException">ExistsException</a> if the service has already been registered. </p>
+</div>
+<h3><a id="28024">registerService</a></h3>
+<p class="decl">void registerService(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; path<br />);</p>
+<div class="description">
+<p>Creates a Windows service with the executable specified by path and the given displayName. The service name is used as display name. </p>
+<p>Throws a <a href="Poco.ExistsException.html" title="class Poco::ExistsException">ExistsException</a> if the service has already been registered. </p>
+</div>
+<h3><a id="28034">setDescription</a></h3>
+<p class="decl">void setDescription(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; description<br />);</p>
+<div class="description">
+<p>Sets the service description in the registry. </p>
+</div>
+<h3><a id="28031">setStartup</a></h3>
+<p class="decl">void setStartup(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Util.WinService.html#28011" title="enum  Poco::Util::WinService::Startup">Startup</a> startup<br />);</p>
+<div class="description">
+<p>Sets the startup mode for the service. </p>
+</div>
+<h3><a id="28029">start</a></h3>
+<p class="decl">void start();</p>
+<div class="description">
+<p>Starts the service. Does nothing if the service is already running. </p>
+<p>Throws a <a href="Poco.NotFoundException.html" title="class Poco::NotFoundException">NotFoundException</a> if the service has not been registered. </p>
+</div>
+<h3><a id="28030">stop</a></h3>
+<p class="decl">void stop();</p>
+<div class="description">
+<p>Stops the service. Does nothing if the service is not running. </p>
+<p>Throws a <a href="Poco.NotFoundException.html" title="class Poco::NotFoundException">NotFoundException</a> if the service has not been registered. </p>
+</div>
+<h3><a id="28026">unregisterService</a></h3>
+<p class="decl">void unregisterService();</p>
+<div class="description">
+<p>Deletes the Windows service.  </p>
+<p>Throws a <a href="Poco.NotFoundException.html" title="class Poco::NotFoundException">NotFoundException</a> if the service has not been registered. </p>
+</div>
+<h2>Variables</h2>
+<h3><a id="28037">STARTUP_TIMEOUT</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static const int <a href="Poco.Util.WinService.html#28037" title="Poco::Util::WinService::STARTUP_TIMEOUT">STARTUP_TIMEOUT</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="28039">REGISTRY_DESCRIPTION</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static const std::string <a href="Poco.Util.WinService.html#28039" title="Poco::Util::WinService::REGISTRY_DESCRIPTION">REGISTRY_DESCRIPTION</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="28038">REGISTRY_KEY</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static const std::string <a href="Poco.Util.WinService.html#28038" title="Poco::Util::WinService::REGISTRY_KEY">REGISTRY_KEY</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::Net::DNS</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.Net.html" class="namespace">Poco::Net</a></h1>
+<h1 class="symbol">class DNS</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Net" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Net<br />
+<b>Package:</b> NetCore<br />
+<b>Header:</b> Poco/Net/DNS.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>This class provides an interface to the domain name service. </p>
+<p>An internal <a href="Poco.Net.DNS.html" title="class Poco::Net::DNS">DNS</a> cache is used to speed up name lookups. </p>
+</div>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.Net.DNS.html#20531" title="Poco::Net::DNS::aierror()">aierror</a>, <a href="Poco.Net.DNS.html#20528" title="Poco::Net::DNS::error()">error</a>, <a href="Poco.Net.DNS.html#20525" title="Poco::Net::DNS::flushCache()">flushCache</a>, <a href="Poco.Net.DNS.html#20516" title="Poco::Net::DNS::hostByAddress()">hostByAddress</a>, <a href="Poco.Net.DNS.html#20513" title="Poco::Net::DNS::hostByName()">hostByName</a>, <a href="Poco.Net.DNS.html#20526" title="Poco::Net::DNS::hostName()">hostName</a>, <a href="Poco.Net.DNS.html#20527" title="Poco::Net::DNS::lastError()">lastError</a>, <a href="Poco.Net.DNS.html#20524" title="Poco::Net::DNS::reload()">reload</a>, <a href="Poco.Net.DNS.html#20519" title="Poco::Net::DNS::resolve()">resolve</a>, <a href="Poco.Net.DNS.html#20521" title="Poco::Net::DNS::resolveOne()">resolveOne</a>, <a href="Poco.Net.DNS.html#20523" title="Poco::Net::DNS::thisHost()">thisHost</a></p>
+<h2>Enumerations</h2>
+<h3><a id="20504">HintFlag</a></h3>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="20505">DNS_HINT_NONE</a> = 0</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="20506">DNS_HINT_AI_PASSIVE</a> = 0x00000001</p>
+<div class="description">
+<p><a href="Poco.Net.Socket.html" title="class Poco::Net::Socket">Socket</a> address will be used in bind() call </p>
+</div>
+<p class="decl"><a id="20507">DNS_HINT_AI_CANONNAME</a> = 0x00000002</p>
+<div class="description">
+<p>Return canonical name in first ai_canonname </p>
+</div>
+<p class="decl"><a id="20508">DNS_HINT_AI_NUMERICHOST</a> = 0x00000004</p>
+<div class="description">
+<p>Nodename must be a numeric address string </p>
+</div>
+<p class="decl"><a id="20509">DNS_HINT_AI_NUMERICSERV</a> = 0x00001000</p>
+<div class="description">
+<p>Servicename must be a numeric port number </p>
+</div>
+<p class="decl"><a id="20510">DNS_HINT_AI_ALL</a> = 0x00000100</p>
+<div class="description">
+<p>Query both IP6 and IP4 with AI_V4MAPPED </p>
+</div>
+<p class="decl"><a id="20511">DNS_HINT_AI_ADDRCONFIG</a> = 0x00000400</p>
+<div class="description">
+<p>Resolution only if global address configured </p>
+</div>
+<p class="decl"><a id="20512">DNS_HINT_AI_V4MAPPED</a> = 0x00000800</p>
+<div class="description">
+<p>On v6 failure, query v4 and convert to V4MAPPED format	 </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="20525">flushCache</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static void flushCache();</p>
+<div class="description">
+<p><b>Deprecated.</b> <i>This function is deprecated and should no longer be used.</i></p>
+</div>
+<div class="description">
+<p>Flushes the internal <a href="Poco.Net.DNS.html" title="class Poco::Net::DNS">DNS</a> cache. </p>
+<p>As of 1.4.2, the <a href="Poco.Net.DNS.html" title="class Poco::Net::DNS">DNS</a> cache is no longer used and this method does not do anything. </p>
+</div>
+<h3><a id="20516">hostByAddress</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static <a href="Poco.Net.HostEntry.html" title="class Poco::Net::HostEntry">HostEntry</a> hostByAddress(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Net.IPAddress.html" title="class Poco::Net::IPAddress">IPAddress</a> &amp; address,<br />&nbsp;&nbsp;&nbsp;&nbsp;unsigned hintFlags = DNS_HINT_AI_CANONNAME | DNS_HINT_AI_ADDRCONFIG<br />);</p>
+<div class="description">
+<p>Returns a <a href="Poco.Net.HostEntry.html" title="class Poco::Net::HostEntry">HostEntry</a> object containing the <a href="Poco.Net.DNS.html" title="class Poco::Net::DNS">DNS</a> information for the host with the given IP address. <a href="Poco.Net.DNS.html#20504" title="enum  Poco::Net::DNS::HintFlag">HintFlag</a> argument is only used on platforms that have getaddrinfo(). </p>
+<p>Throws a <a href="Poco.Net.HostNotFoundException.html" title="class Poco::Net::HostNotFoundException">HostNotFoundException</a> if a host with the given name cannot be found. </p>
+<p>Throws a <a href="Poco.Net.DNSException.html" title="class Poco::Net::DNSException">DNSException</a> in case of a general <a href="Poco.Net.DNS.html" title="class Poco::Net::DNS">DNS</a> error. </p>
+<p>Throws an <a href="Poco.IOException.html" title="class Poco::IOException">IOException</a> in case of any other error. </p>
+</div>
+<h3><a id="20513">hostByName</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static <a href="Poco.Net.HostEntry.html" title="class Poco::Net::HostEntry">HostEntry</a> hostByName(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; hostname,<br />&nbsp;&nbsp;&nbsp;&nbsp;unsigned hintFlags = DNS_HINT_AI_CANONNAME | DNS_HINT_AI_ADDRCONFIG<br />);</p>
+<div class="description">
+<p>Returns a <a href="Poco.Net.HostEntry.html" title="class Poco::Net::HostEntry">HostEntry</a> object containing the <a href="Poco.Net.DNS.html" title="class Poco::Net::DNS">DNS</a> information for the host with the given name. <a href="Poco.Net.DNS.html#20504" title="enum  Poco::Net::DNS::HintFlag">HintFlag</a> argument is only used on platforms that have getaddrinfo(). </p>
+<p>Throws a <a href="Poco.Net.HostNotFoundException.html" title="class Poco::Net::HostNotFoundException">HostNotFoundException</a> if a host with the given name cannot be found. </p>
+<p>Throws a <a href="Poco.Net.NoAddressFoundException.html" title="class Poco::Net::NoAddressFoundException">NoAddressFoundException</a> if no address can be found for the hostname. </p>
+<p>Throws a <a href="Poco.Net.DNSException.html" title="class Poco::Net::DNSException">DNSException</a> in case of a general <a href="Poco.Net.DNS.html" title="class Poco::Net::DNS">DNS</a> error. </p>
+<p>Throws an <a href="Poco.IOException.html" title="class Poco::IOException">IOException</a> in case of any other error. </p>
+</div>
+<h3><a id="20526">hostName</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static std::string hostName();</p>
+<div class="description">
+<p>Returns the host name of this host. </p>
+</div>
+<h3><a id="20524">reload</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static void reload();</p>
+<div class="description">
+<p>Reloads the resolver configuration. </p>
+<p>This method will call res_init() if the <a href="Poco.Net.html" title="namespace Poco::Net">Net</a> library has been compiled with -DPOCO_HAVE_LIBRESOLV. Otherwise it will do nothing. </p>
+</div>
+<h3><a id="20519">resolve</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static <a href="Poco.Net.HostEntry.html" title="class Poco::Net::HostEntry">HostEntry</a> resolve(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; address<br />);</p>
+<div class="description">
+<p>Returns a <a href="Poco.Net.HostEntry.html" title="class Poco::Net::HostEntry">HostEntry</a> object containing the <a href="Poco.Net.DNS.html" title="class Poco::Net::DNS">DNS</a> information for the host with the given IP address or host name. </p>
+<p>Throws a <a href="Poco.Net.HostNotFoundException.html" title="class Poco::Net::HostNotFoundException">HostNotFoundException</a> if a host with the given name cannot be found. </p>
+<p>Throws a <a href="Poco.Net.NoAddressFoundException.html" title="class Poco::Net::NoAddressFoundException">NoAddressFoundException</a> if no address can be found for the hostname. </p>
+<p>Throws a <a href="Poco.Net.DNSException.html" title="class Poco::Net::DNSException">DNSException</a> in case of a general <a href="Poco.Net.DNS.html" title="class Poco::Net::DNS">DNS</a> error. </p>
+<p>Throws an <a href="Poco.IOException.html" title="class Poco::IOException">IOException</a> in case of any other error. </p>
+</div>
+<h3><a id="20521">resolveOne</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static <a href="Poco.Net.IPAddress.html" title="class Poco::Net::IPAddress">IPAddress</a> resolveOne(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; address<br />);</p>
+<div class="description">
+<p>Convenience method that calls <a href="Poco.Net.DNS.html#20519" title="Poco::Net::DNS::resolve()">resolve</a>(address) and returns  the first address from the HostInfo. </p>
+</div>
+<h3><a id="20523">thisHost</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static <a href="Poco.Net.HostEntry.html" title="class Poco::Net::HostEntry">HostEntry</a> thisHost();</p>
+<div class="description">
+<p>Returns a <a href="Poco.Net.HostEntry.html" title="class Poco::Net::HostEntry">HostEntry</a> object containing the <a href="Poco.Net.DNS.html" title="class Poco::Net::DNS">DNS</a> information for this host. </p>
+<p>Throws a <a href="Poco.Net.HostNotFoundException.html" title="class Poco::Net::HostNotFoundException">HostNotFoundException</a> if <a href="Poco.Net.DNS.html" title="class Poco::Net::DNS">DNS</a> information  for this host cannot be found. </p>
+<p>Throws a <a href="Poco.Net.NoAddressFoundException.html" title="class Poco::Net::NoAddressFoundException">NoAddressFoundException</a> if no address can be found for this host. </p>
+<p>Throws a <a href="Poco.Net.DNSException.html" title="class Poco::Net::DNSException">DNSException</a> in case of a general <a href="Poco.Net.DNS.html" title="class Poco::Net::DNS">DNS</a> error. </p>
+<p>Throws an <a href="Poco.IOException.html" title="class Poco::IOException">IOException</a> in case of any other error. </p>
+</div>
+<h3><a id="20531">aierror</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static void aierror(<br />&nbsp;&nbsp;&nbsp;&nbsp;int code,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; arg<br />);</p>
+<div class="description">
+<p>Throws an exception according to the getaddrinfo() error code. </p>
+</div>
+<h3><a id="20528">error</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static void error(<br />&nbsp;&nbsp;&nbsp;&nbsp;int code,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; arg<br />);</p>
+<div class="description">
+<p>Throws an exception according to the error code. </p>
+</div>
+<h3><a id="20527">lastError</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static int lastError();</p>
+<div class="description">
+<p>Returns the code of the last error. </p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

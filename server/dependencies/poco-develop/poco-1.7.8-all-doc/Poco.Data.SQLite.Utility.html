@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::Data::SQLite::Utility</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.Data.SQLite.html" class="namespace">Poco::Data::SQLite</a></h1>
+<h1 class="symbol">class Utility</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Data/SQLite" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Data/SQLite<br />
+<b>Package:</b> SQLite<br />
+<b>Header:</b> Poco/Data/SQLite/Utility.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>Various utility functions for <a href="Poco.Data.SQLite.html" title="namespace Poco::Data::SQLite">SQLite</a>. </p>
+</div>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.Data.SQLite.Utility.html#4384" title="Poco::Data::SQLite::Utility::dbHandle()">dbHandle</a>, <a href="Poco.Data.SQLite.Utility.html#4396" title="Poco::Data::SQLite::Utility::fileToMemory()">fileToMemory</a>, <a href="Poco.Data.SQLite.Utility.html#4393" title="Poco::Data::SQLite::Utility::getColumnType()">getColumnType</a>, <a href="Poco.Data.SQLite.Utility.html#4411" title="Poco::Data::SQLite::Utility::getThreadMode()">getThreadMode</a>, <a href="Poco.Data.SQLite.Utility.html#4408" title="Poco::Data::SQLite::Utility::isThreadSafe()">isThreadSafe</a>, <a href="Poco.Data.SQLite.Utility.html#4386" title="Poco::Data::SQLite::Utility::lastError()">lastError</a>, <a href="Poco.Data.SQLite.Utility.html#4402" title="Poco::Data::SQLite::Utility::memoryToFile()">memoryToFile</a>, <a href="Poco.Data.SQLite.Utility.html#4415" title="Poco::Data::SQLite::Utility::registerUpdateHandler()">registerUpdateHandler</a>, <a href="Poco.Data.SQLite.Utility.html#4409" title="Poco::Data::SQLite::Utility::setThreadMode()">setThreadMode</a>, <a href="Poco.Data.SQLite.Utility.html#4390" title="Poco::Data::SQLite::Utility::throwException()">throwException</a></p>
+<h2>Types</h2>
+<h3><a id="4413">CommitCallbackType</a></h3>
+<p class="decl">typedef int (* <a href="Poco.Data.SQLite.Utility.html#4413" title="Poco::Data::SQLite::Utility::CommitCallbackType">CommitCallbackType</a>)(void *);</p>
+<div class="description">
+<p>Commit callback function type. </p>
+</div>
+<h3><a id="4414">RollbackCallbackType</a></h3>
+<p class="decl">typedef void (* <a href="Poco.Data.SQLite.Utility.html#4414" title="Poco::Data::SQLite::Utility::RollbackCallbackType">RollbackCallbackType</a>)(void *);</p>
+<div class="description">
+<p>Rollback callback function type. </p>
+</div>
+<h3><a id="4377">TypeMap</a></h3>
+<p class="decl">typedef std::map &lt; std::string, <a href="Poco.Data.MetaColumn.html#6370" title="enum  Poco::Data::MetaColumn::ColumnDataType">MetaColumn::ColumnDataType</a> &gt; <a href="Poco.Data.SQLite.Utility.html#4377" title="Poco::Data::SQLite::Utility::TypeMap">TypeMap</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="4412">UpdateCallbackType</a></h3>
+<p class="decl">typedef void (* <a href="Poco.Data.SQLite.Utility.html#4412" title="Poco::Data::SQLite::Utility::UpdateCallbackType">UpdateCallbackType</a>)(void *, int, const char *, const char *, <a href="Poco.html#18384" title="Poco::Int64">Poco::Int64</a>);</p>
+<div class="description">
+<p>Update callback function type. </p>
+</div>
+<h2>Constructors</h2>
+<h2>Member Functions</h2>
+<h3><a id="4384">dbHandle</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static sqlite3 * dbHandle(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Data.Session.html" title="class Poco::Data::Session">Session</a> &amp; session<br />);</p>
+<div class="description">
+<p>Returns native DB handle. </p>
+</div>
+<h3><a id="4396">fileToMemory</a> <img src="images/static.png" alt="static" title="static" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">static bool fileToMemory(<br />&nbsp;&nbsp;&nbsp;&nbsp;sqlite3 * pInMemory,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; fileName<br />);</p>
+<div class="description">
+<p>Loads the contents of a database file on disk into an opened database in memory. </p>
+<p>Returns true if succesful. </p>
+</div>
+<h3><a id="4399">fileToMemory</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static bool fileToMemory(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Data.Session.html" title="class Poco::Data::Session">Session</a> &amp; session,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; fileName<br />);</p>
+<div class="description">
+<p>Loads the contents of a database file on disk into an opened database in memory. </p>
+<p>Returns true if succesful. </p>
+</div>
+<h3><a id="4393">getColumnType</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static <a href="Poco.Data.MetaColumn.html#6370" title="enum  Poco::Data::MetaColumn::ColumnDataType">MetaColumn::ColumnDataType</a> getColumnType(<br />&nbsp;&nbsp;&nbsp;&nbsp;sqlite3_stmt * pStmt,<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos<br />);</p>
+<div class="description">
+<p>Returns column data type. </p>
+</div>
+<h3><a id="4411">getThreadMode</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static int getThreadMode();</p>
+<div class="description">
+<p>Returns the thread mode. </p>
+</div>
+<h3><a id="4408">isThreadSafe</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static bool isThreadSafe();</p>
+<div class="description">
+<p>Returns true if <a href="Poco.Data.SQLite.html" title="namespace Poco::Data::SQLite">SQLite</a> was compiled in multi-thread or serialized mode. See <a href="http://www.sqlite.org/c3ref/threadsafe.html" target="_blank">http://www.sqlite.org/c3ref/threadsafe.html</a> for details. </p>
+<p>Returns true if succesful </p>
+</div>
+<h3><a id="4386">lastError</a> <img src="images/static.png" alt="static" title="static" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">static std::string lastError(<br />&nbsp;&nbsp;&nbsp;&nbsp;sqlite3 * pDb<br />);</p>
+<div class="description">
+<p>Retreives the last error code from sqlite and converts it to a string. </p>
+</div>
+<h3><a id="4388">lastError</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static std::string lastError(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Data.Session.html" title="class Poco::Data::Session">Session</a> &amp; session<br />);</p>
+<div class="description">
+<p>Retreives the last error code from sqlite and converts it to a string. </p>
+</div>
+<h3><a id="4402">memoryToFile</a> <img src="images/static.png" alt="static" title="static" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">static bool memoryToFile(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; fileName,<br />&nbsp;&nbsp;&nbsp;&nbsp;sqlite3 * pInMemory<br />);</p>
+<div class="description">
+<p>Saves the contents of an opened database in memory to the database on disk. </p>
+<p>Returns true if succesful. </p>
+</div>
+<h3><a id="4405">memoryToFile</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static bool memoryToFile(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; fileName,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Data.Session.html" title="class Poco::Data::Session">Session</a> &amp; session<br />);</p>
+<div class="description">
+<p>Saves the contents of an opened database in memory to the database on disk. </p>
+<p>Returns true if succesful. </p>
+</div>
+<h3><a id="4415">registerUpdateHandler</a> <img src="images/static.png" alt="static" title="static" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">template &lt; typename T, typename CBT &gt; static bool registerUpdateHandler(<br />&nbsp;&nbsp;&nbsp;&nbsp;sqlite3 * pDB,<br />&nbsp;&nbsp;&nbsp;&nbsp;CBT callbackFn,<br />&nbsp;&nbsp;&nbsp;&nbsp;T * pParam<br />);</p>
+<div class="description">
+<p>Registers the callback for (1)(insert, delete, update), (2)(commit) or  or (3)(rollback) events. Only one function per group can be registered at a time. Registration is not thread-safe. Storage pointed to by pParam must remain valid as long as registration is active. Registering with callbackFn set to zero disables notifications. </p>
+<p>See <a href="http://www.sqlite.org/c3ref/update_hook.html" target="_blank">http://www.sqlite.org/c3ref/update_hook.html</a> and  <a href="http://www.sqlite.org/c3ref/commit_hook.html" target="_blank">http://www.sqlite.org/c3ref/commit_hook.html</a> for details. </p>
+</div>
+<h3><a id="4419">registerUpdateHandler</a> <img src="images/static.png" alt="static" title="static" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">template &lt; typename T, typename CBT &gt; static bool registerUpdateHandler(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Data.Session.html" title="class Poco::Data::Session">Session</a> &amp; session,<br />&nbsp;&nbsp;&nbsp;&nbsp;CBT callbackFn,<br />&nbsp;&nbsp;&nbsp;&nbsp;T * pParam<br />);</p>
+<div class="description">
+<p>Registers the callback by calling <a href="Poco.Data.SQLite.Utility.html#4415" title="Poco::Data::SQLite::Utility::registerUpdateHandler()">registerUpdateHandler</a>(sqlite3*, CBT, T*). </p>
+</div>
+<h3><a id="4409">setThreadMode</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static bool setThreadMode(<br />&nbsp;&nbsp;&nbsp;&nbsp;int mode<br />);</p>
+<div class="description">
+<p>Sets the threading mode to single, multi or serialized. See <a href="http://www.sqlite.org/threadsafe.html" target="_blank">http://www.sqlite.org/threadsafe.html</a> for details. </p>
+<p>Returns true if succesful </p>
+</div>
+<h3><a id="4390">throwException</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static void throwException(<br />&nbsp;&nbsp;&nbsp;&nbsp;int rc,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; addErrMsg = std::string ()<br />);</p>
+<div class="description">
+<p>Throws for an error code the appropriate exception </p>
+</div>
+<h2>Variables</h2>
+<h3><a id="4382">OPERATION_DELETE</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static const int <a href="Poco.Data.SQLite.Utility.html#4382" title="Poco::Data::SQLite::Utility::OPERATION_DELETE">OPERATION_DELETE</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="4381">OPERATION_INSERT</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static const int <a href="Poco.Data.SQLite.Utility.html#4381" title="Poco::Data::SQLite::Utility::OPERATION_INSERT">OPERATION_INSERT</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="4383">OPERATION_UPDATE</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static const int <a href="Poco.Data.SQLite.Utility.html#4383" title="Poco::Data::SQLite::Utility::OPERATION_UPDATE">OPERATION_UPDATE</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="4375">SQLITE_DATE_FORMAT</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static const std::string <a href="Poco.Data.SQLite.Utility.html#4375" title="Poco::Data::SQLite::Utility::SQLITE_DATE_FORMAT">SQLITE_DATE_FORMAT</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="4376">SQLITE_TIME_FORMAT</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static const std::string <a href="Poco.Data.SQLite.Utility.html#4376" title="Poco::Data::SQLite::Utility::SQLITE_TIME_FORMAT">SQLITE_TIME_FORMAT</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="4379">THREAD_MODE_MULTI</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static const int <a href="Poco.Data.SQLite.Utility.html#4379" title="Poco::Data::SQLite::Utility::THREAD_MODE_MULTI">THREAD_MODE_MULTI</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="4380">THREAD_MODE_SERIAL</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static const int <a href="Poco.Data.SQLite.Utility.html#4380" title="Poco::Data::SQLite::Utility::THREAD_MODE_SERIAL">THREAD_MODE_SERIAL</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="4378">THREAD_MODE_SINGLE</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static const int <a href="Poco.Data.SQLite.Utility.html#4378" title="Poco::Data::SQLite::Utility::THREAD_MODE_SINGLE">THREAD_MODE_SINGLE</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

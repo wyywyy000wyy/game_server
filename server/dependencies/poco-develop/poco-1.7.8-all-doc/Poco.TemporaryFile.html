@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::TemporaryFile</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.html" class="namespace">Poco</a></h1>
+<h1 class="symbol">class TemporaryFile</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Foundation" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Foundation<br />
+<b>Package:</b> Filesystem<br />
+<b>Header:</b> Poco/TemporaryFile.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>The <a href="Poco.TemporaryFile.html" title="class Poco::TemporaryFile">TemporaryFile</a> class helps with the handling of temporary files. A unique name for the temporary file is automatically chosen and the file is placed in the directory reserved for temporary files (see <a href="Poco.Path.html#15955" title="Poco::Path::temp()">Path::temp</a>()). Obtain the path by calling the path() method (inherited from <a href="Poco.File.html" title="class Poco::File">File</a>). </p>
+<p>The <a href="Poco.TemporaryFile.html" title="class Poco::TemporaryFile">TemporaryFile</a> class does not actually create the file - this is up to the application. The class does, however, delete the temporary file - either in the destructor, or immediately before the application terminates. </p>
+</div>
+<h2>Inheritance</h2>
+<p><b>Direct Base Classes: </b><a href="Poco.File.html" title="class Poco::File">File</a></p>
+<p><b>All Base Classes: </b>FileImpl, <a href="Poco.File.html" title="class Poco::File">File</a></p>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.TemporaryFile.html#17657" title="Poco::TemporaryFile::keep()">keep</a>, <a href="Poco.TemporaryFile.html#17658" title="Poco::TemporaryFile::keepUntilExit()">keepUntilExit</a>, <a href="Poco.TemporaryFile.html#17659" title="Poco::TemporaryFile::registerForDeletion()">registerForDeletion</a>, <a href="Poco.TemporaryFile.html#17661" title="Poco::TemporaryFile::tempName()">tempName</a></p>
+<p><b>Inherited Functions: </b><a href="Poco.File.html#12425" title="Poco::File::canExecute()">canExecute</a>, <a href="Poco.File.html#12423" title="Poco::File::canRead()">canRead</a>, <a href="Poco.File.html#12424" title="Poco::File::canWrite()">canWrite</a>, <a href="Poco.File.html#12473" title="Poco::File::copyDirectory()">copyDirectory</a>, <a href="Poco.File.html#12444" title="Poco::File::copyTo()">copyTo</a>, <a href="Poco.File.html#12454" title="Poco::File::createDirectories()">createDirectories</a>, <a href="Poco.File.html#12453" title="Poco::File::createDirectory()">createDirectory</a>, <a href="Poco.File.html#12452" title="Poco::File::createFile()">createFile</a>, <a href="Poco.File.html#12431" title="Poco::File::created()">created</a>, <a href="Poco.File.html#12422" title="Poco::File::exists()">exists</a>, <a href="Poco.File.html#12432" title="Poco::File::getLastModified()">getLastModified</a>, <a href="Poco.File.html#12435" title="Poco::File::getSize()">getSize</a>, <a href="Poco.File.html#12471" title="Poco::File::handleLastError()">handleLastError</a>, <a href="Poco.File.html#12429" title="Poco::File::isDevice()">isDevice</a>, <a href="Poco.File.html#12428" title="Poco::File::isDirectory()">isDirectory</a>, <a href="Poco.File.html#12426" title="Poco::File::isFile()">isFile</a>, <a href="Poco.File.html#12430" title="Poco::File::isHidden()">isHidden</a>, <a href="Poco.File.html#12427" title="Poco::File::isLink()">isLink</a>, <a href="Poco.File.html#12455" title="Poco::File::list()">list</a>, <a href="Poco.File.html#12446" title="Poco::File::moveTo()">moveTo</a>, <a href="Poco.File.html#12461" title="Poco::File::operator !=()">operator&nbsp;!=</a>, <a href="Poco.File.html#12463" title="Poco::File::operator <()">operator&nbsp;&lt;</a>, <a href="Poco.File.html#12465" title="Poco::File::operator <=()">operator&nbsp;&lt;=</a>, <a href="Poco.File.html#12411" title="Poco::File::operator =()">operator&nbsp;=</a>, <a href="Poco.File.html#12459" title="Poco::File::operator ==()">operator&nbsp;==</a>, <a href="Poco.File.html#12467" title="Poco::File::operator >()">operator&nbsp;&gt;</a>, <a href="Poco.File.html#12469" title="Poco::File::operator >=()">operator&nbsp;&gt;=</a>, <a href="Poco.File.html#12421" title="Poco::File::path()">path</a>, <a href="Poco.File.html#12450" title="Poco::File::remove()">remove</a>, <a href="Poco.File.html#12448" title="Poco::File::renameTo()">renameTo</a>, <a href="Poco.File.html#12442" title="Poco::File::setExecutable()">setExecutable</a>, <a href="Poco.File.html#12433" title="Poco::File::setLastModified()">setLastModified</a>, <a href="Poco.File.html#12440" title="Poco::File::setReadOnly()">setReadOnly</a>, <a href="Poco.File.html#12436" title="Poco::File::setSize()">setSize</a>, <a href="Poco.File.html#12438" title="Poco::File::setWriteable()">setWriteable</a>, <a href="Poco.File.html#12419" title="Poco::File::swap()">swap</a></p>
+<h2>Constructors</h2>
+<h3><a id="17653">TemporaryFile</a></h3>
+<p class="decl"><a href="Poco.TemporaryFile.html" title="class Poco::TemporaryFile">TemporaryFile</a>();</p>
+<div class="description">
+<p>Creates the <a href="Poco.TemporaryFile.html" title="class Poco::TemporaryFile">TemporaryFile</a>. </p>
+</div>
+<h3><a id="17654">TemporaryFile</a></h3>
+<p class="decl"><a href="Poco.TemporaryFile.html" title="class Poco::TemporaryFile">TemporaryFile</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; tempDir<br />);</p>
+<div class="description">
+<p>Creates the <a href="Poco.TemporaryFile.html" title="class Poco::TemporaryFile">TemporaryFile</a> using the given directory. </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="17656">~TemporaryFile</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">~<a href="Poco.TemporaryFile.html" title="class Poco::TemporaryFile">TemporaryFile</a>();</p>
+<div class="description">
+<p>Destroys the <a href="Poco.TemporaryFile.html" title="class Poco::TemporaryFile">TemporaryFile</a> and deletes the corresponding file on disk unless <a href="Poco.TemporaryFile.html#17657" title="Poco::TemporaryFile::keep()">keep</a>() or <a href="Poco.TemporaryFile.html#17658" title="Poco::TemporaryFile::keepUntilExit()">keepUntilExit</a>() has been called. </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="17657">keep</a></h3>
+<p class="decl">void keep();</p>
+<div class="description">
+<p>Disables automatic deletion of the file in the destructor. </p>
+</div>
+<h3><a id="17658">keepUntilExit</a></h3>
+<p class="decl">void keepUntilExit();</p>
+<div class="description">
+<p>Disables automatic deletion of the file in the destructor, but registers the file for deletion at process termination. </p>
+</div>
+<h3><a id="17659">registerForDeletion</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static void registerForDeletion(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; path<br />);</p>
+<div class="description">
+<p>Registers the given file for deletion at process termination. </p>
+</div>
+<h3><a id="17661">tempName</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static std::string tempName(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; tempDir = ""<br />);</p>
+<div class="description">
+<p>Returns a unique path name for a temporary file in the system's scratch directory (see <a href="Poco.Path.html#15955" title="Poco::Path::temp()">Path::temp</a>()) if tempDir is empty or in the directory specified in tempDir otherwise. </p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

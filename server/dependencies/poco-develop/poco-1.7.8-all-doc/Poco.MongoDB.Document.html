@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::MongoDB::Document</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.MongoDB.html" class="namespace">Poco::MongoDB</a></h1>
+<h1 class="symbol">class Document</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-MongoDB" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> MongoDB<br />
+<b>Package:</b> MongoDB<br />
+<b>Header:</b> Poco/MongoDB/Document.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>Represents a <a href="Poco.MongoDB.html" title="namespace Poco::MongoDB">MongoDB</a> (BSON) document. </p>
+</div>
+<h2>Inheritance</h2>
+<p><b>Known Derived Classes: </b><a href="Poco.MongoDB.Cursor.html" title="class Poco::MongoDB::Cursor">Cursor</a>, <a href="Poco.MongoDB.Array.html" title="class Poco::MongoDB::Array">Array</a></p>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.MongoDB.Document.html#20213" title="Poco::MongoDB::Document::add()">add</a>, <a href="Poco.MongoDB.Document.html#20211" title="Poco::MongoDB::Document::addElement()">addElement</a>, <a href="Poco.MongoDB.Document.html#20219" title="Poco::MongoDB::Document::addNewDocument()">addNewDocument</a>, <a href="Poco.MongoDB.Document.html#20221" title="Poco::MongoDB::Document::clear()">clear</a>, <a href="Poco.MongoDB.Document.html#20222" title="Poco::MongoDB::Document::elementNames()">elementNames</a>, <a href="Poco.MongoDB.Document.html#20224" title="Poco::MongoDB::Document::empty()">empty</a>, <a href="Poco.MongoDB.Document.html#20225" title="Poco::MongoDB::Document::exists()">exists</a>, <a href="Poco.MongoDB.Document.html#20227" title="Poco::MongoDB::Document::get()">get</a>, <a href="Poco.MongoDB.Document.html#20234" title="Poco::MongoDB::Document::getInteger()">getInteger</a>, <a href="Poco.MongoDB.Document.html#20236" title="Poco::MongoDB::Document::isType()">isType</a>, <a href="Poco.MongoDB.Document.html#20238" title="Poco::MongoDB::Document::read()">read</a>, <a href="Poco.MongoDB.Document.html#20240" title="Poco::MongoDB::Document::size()">size</a>, <a href="Poco.MongoDB.Document.html#20241" title="Poco::MongoDB::Document::toString()">toString</a>, <a href="Poco.MongoDB.Document.html#20243" title="Poco::MongoDB::Document::write()">write</a></p>
+<h2>Types</h2>
+<h3><a id="20207">Ptr</a></h3>
+<p class="decl">typedef <a href="Poco.SharedPtr.html" title="class Poco::SharedPtr">SharedPtr</a> &lt; <a href="Poco.MongoDB.Document.html" title="class Poco::MongoDB::Document">Document</a> &gt; <a href="Poco.MongoDB.Document.html#20207" title="Poco::MongoDB::Document::Ptr">Ptr</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="20208">Vector</a></h3>
+<p class="decl">typedef std::vector &lt; <a href="Poco.MongoDB.Document.html#20207" title="Poco::MongoDB::Document::Ptr">Document::Ptr</a> &gt; <a href="Poco.MongoDB.Document.html#20208" title="Poco::MongoDB::Document::Vector">Vector</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Constructors</h2>
+<h3><a id="20209">Document</a></h3>
+<p class="decl"><a href="Poco.MongoDB.Document.html" title="class Poco::MongoDB::Document">Document</a>();</p>
+<div class="description">
+<p>Creates an empty <a href="Poco.MongoDB.Document.html" title="class Poco::MongoDB::Document">Document</a>. </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="20210">~Document</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual ~<a href="Poco.MongoDB.Document.html" title="class Poco::MongoDB::Document">Document</a>();</p>
+<div class="description">
+<p>Destroys the <a href="Poco.MongoDB.Document.html" title="class Poco::MongoDB::Document">Document</a>. </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="20213">add</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">template &lt; typename T &gt; <a href="Poco.MongoDB.Document.html" title="class Poco::MongoDB::Document">Document</a> &amp; add(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; name,<br />&nbsp;&nbsp;&nbsp;&nbsp;T value<br />);</p>
+<div class="description">
+<p>Creates an element with the given name and value and adds it to the document. </p>
+<p>The active document is returned to allow chaining of the add methods. </p>
+</div>
+<h3><a id="20216">add</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.MongoDB.Document.html" title="class Poco::MongoDB::Document">Document</a> &amp; add(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; name,<br />&nbsp;&nbsp;&nbsp;&nbsp;const char * value<br />);</p>
+<div class="description">
+<p>Creates an element with the given name and value and adds it to the document. </p>
+<p>The active document is returned to allow chaining of the add methods. </p>
+</div>
+<h3><a id="20211">addElement</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.MongoDB.Document.html" title="class Poco::MongoDB::Document">Document</a> &amp; addElement(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.MongoDB.Element.html#20247" title="Poco::MongoDB::Element::Ptr">Element::Ptr</a> element<br />);</p>
+<div class="description">
+<p>Add an element to the document. </p>
+<p>The active document is returned to allow chaining of the add methods. </p>
+</div>
+<h3><a id="20219">addNewDocument</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.MongoDB.Document.html" title="class Poco::MongoDB::Document">Document</a> &amp; addNewDocument(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; name<br />);</p>
+<div class="description">
+<p>Create a new document and add it to this document. Unlike the other add methods, this method returns a reference to the new document. </p>
+</div>
+<h3><a id="20221">clear</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void clear();</p>
+<div class="description">
+<p>Removes all elements from the document. </p>
+</div>
+<h3><a id="20222">elementNames</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void elementNames(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::vector &lt; std::string &gt; &amp; keys<br />) const;</p>
+<div class="description">
+<p>Puts all element names into std::vector. </p>
+</div>
+<h3><a id="20224">empty</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool empty() const;</p>
+<div class="description">
+<p>Returns true if the document doesn't contain any documents. </p>
+</div>
+<h3><a id="20225">exists</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool exists(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; name<br />);</p>
+<div class="description">
+<p>Returns true if the document has an element with the given name. </p>
+</div>
+<h3><a id="20227">get</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">template &lt; typename T &gt; T get(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; name<br />) const;</p>
+<div class="description">
+<p>Returns the element with the given name and tries to convert it to the template type. When the element is not found, a <a href="Poco.NotFoundException.html" title="class Poco::NotFoundException">NotFoundException</a> will be thrown. When the element can't be converted a <a href="Poco.BadCastException.html" title="class Poco::BadCastException">BadCastException</a> will be thrown. </p>
+</div>
+<h3><a id="20229">get</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">template &lt; typename T &gt; T get(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; name,<br />&nbsp;&nbsp;&nbsp;&nbsp;const T &amp; def<br />) const;</p>
+<div class="description">
+<p>Returns the element with the given name and tries to convert it to the template type. When the element is not found, or has the wrong type, the def argument will be returned. </p>
+</div>
+<h3><a id="20232">get</a></h3>
+<p class="decl"><a href="Poco.MongoDB.Element.html#20247" title="Poco::MongoDB::Element::Ptr">Element::Ptr</a> get(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; name<br />) const;</p>
+<div class="description">
+<p>Returns the element with the given name. An empty element will be returned when the element is not found. </p>
+</div>
+<h3><a id="20234">getInteger</a></h3>
+<p class="decl"><a href="Poco.html#18384" title="Poco::Int64">Int64</a> getInteger(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; name<br />) const;</p>
+<div class="description">
+<p>Returns an integer. Useful when <a href="Poco.MongoDB.html" title="namespace Poco::MongoDB">MongoDB</a> returns <a href="Poco.html#18380" title="Poco::Int32">Int32</a>, <a href="Poco.html#18384" title="Poco::Int64">Int64</a> or double for a number (count for example). This method will always return an <a href="Poco.html#18384" title="Poco::Int64">Int64</a>. When the element is not found, a <a href="Poco.NotFoundException.html" title="class Poco::NotFoundException">Poco::NotFoundException</a> will be thrown. </p>
+</div>
+<h3><a id="20236">isType</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">template &lt; typename T &gt; bool isType(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; name<br />) const;</p>
+<div class="description">
+<p>Returns true when the type of the element equals the TypeId of ElementTrait. </p>
+</div>
+<h3><a id="20238">read</a></h3>
+<p class="decl">void read(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.BinaryReader.html" title="class Poco::BinaryReader">BinaryReader</a> &amp; reader<br />);</p>
+<div class="description">
+<p>Reads a document from the reader </p>
+</div>
+<h3><a id="20240">size</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">std::size_t size() const;</p>
+<div class="description">
+<p>Returns the number of elements in the document. </p>
+</div>
+<h3><a id="20241">toString</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual std::string toString(<br />&nbsp;&nbsp;&nbsp;&nbsp;int indent = 0<br />) const;</p>
+<div class="description">
+<p>Returns a String representation of the document. </p>
+</div>
+<h3><a id="20243">write</a></h3>
+<p class="decl">void write(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.BinaryWriter.html" title="class Poco::BinaryWriter">BinaryWriter</a> &amp; writer<br />);</p>
+<div class="description">
+<p>Writes a document to the reader </p>
+</div>
+<h2>Variables</h2>
+<h3><a id="20245">_elements</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl"><a href="Poco.MongoDB.html#20260" title="Poco::MongoDB::ElementSet">ElementSet</a> _elements;</p>
+<div class="description">
+<p></p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

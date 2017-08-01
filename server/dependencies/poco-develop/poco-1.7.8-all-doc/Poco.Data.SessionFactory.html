@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::Data::SessionFactory</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.Data.html" class="namespace">Poco::Data</a></h1>
+<h1 class="symbol">class SessionFactory</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Data" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Data<br />
+<b>Package:</b> DataCore<br />
+<b>Header:</b> Poco/Data/SessionFactory.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>A <a href="Poco.Data.SessionFactory.html" title="class Poco::Data::SessionFactory">SessionFactory</a> is a singleton class that stores <a href="Poco.Data.SessionFactory.html#7095" title="Poco::Data::SessionFactory::Connectors">Connectors</a> and allows to  create Sessions of the required type: </p>
+<p></p>
+<pre>Session ses(SessionFactory::instance().create(connector, connectionString));
+</pre>
+<p>where the first param presents the type of session one wants to create (e.g. for <a href="Poco.Data.SQLite.html" title="namespace Poco::Data::SQLite">SQLite</a> one would choose &quot;<a href="Poco.Data.SQLite.html" title="namespace Poco::Data::SQLite">SQLite</a>&quot;) and the second param is the connection string that the connector requires to connect to the database. </p>
+<p>A concrete example to open an <a href="Poco.Data.SQLite.html" title="namespace Poco::Data::SQLite">SQLite</a> database stored in the file &quot;dummy.db&quot; would be </p>
+<p></p>
+<pre>Session ses(SessionFactory::instance().create(SQLite::Connector::KEY, &quot;dummy.db&quot;));
+</pre>
+<p>An even simpler way to create a session is to use the two argument constructor of <a href="Poco.Data.Session.html" title="class Poco::Data::Session">Session</a>, which automatically invokes the <a href="Poco.Data.SessionFactory.html" title="class Poco::Data::SessionFactory">SessionFactory</a>: </p>
+<p></p>
+<pre>Session ses(&quot;SQLite&quot;, &quot;dummy.db&quot;);
+</pre>
+</div>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.Data.SessionFactory.html#7073" title="Poco::Data::SessionFactory::add()">add</a>, <a href="Poco.Data.SessionFactory.html#7077" title="Poco::Data::SessionFactory::create()">create</a>, <a href="Poco.Data.SessionFactory.html#7072" title="Poco::Data::SessionFactory::instance()">instance</a>, <a href="Poco.Data.SessionFactory.html#7075" title="Poco::Data::SessionFactory::remove()">remove</a></p>
+<h2>Constructors</h2>
+<h2>Destructor</h2>
+<h3><a id="7085">~SessionFactory</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">~<a href="Poco.Data.SessionFactory.html" title="class Poco::Data::SessionFactory">SessionFactory</a>();</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="7073">add</a></h3>
+<p class="decl">void add(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Data.Connector.html" title="class Poco::Data::Connector">Connector</a> * pIn<br />);</p>
+<div class="description">
+<p>Registers a <a href="Poco.Data.Connector.html" title="class Poco::Data::Connector">Connector</a> under its key at the factory. If a registration for that key is already active, the first registration will be kept, only its reference count will be increased. Always takes ownership of parameter pIn. </p>
+</div>
+<h3><a id="7077">create</a></h3>
+<p class="decl"><a href="Poco.Data.Session.html" title="class Poco::Data::Session">Session</a> create(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; key,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; connectionString,<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t timeout = Session::LOGIN_TIMEOUT_DEFAULT<br />);</p>
+<div class="description">
+<p>Creates a <a href="Poco.Data.Session.html" title="class Poco::Data::Session">Session</a> for the given key with the connectionString. Throws an <a href="Poco.html" title="namespace Poco">Poco</a>:<a href="Poco.Data.UnknownDataBaseException.html" title="class Poco::Data::UnknownDataBaseException">Data::UnknownDataBaseException</a> if no <a href="Poco.Data.Connector.html" title="class Poco::Data::Connector">Connector</a> is registered for that key. </p>
+</div>
+<h3><a id="7081">create</a></h3>
+<p class="decl"><a href="Poco.Data.Session.html" title="class Poco::Data::Session">Session</a> create(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; uri,<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t timeout = Session::LOGIN_TIMEOUT_DEFAULT<br />);</p>
+<div class="description">
+<p>Creates a <a href="Poco.Data.Session.html" title="class Poco::Data::Session">Session</a> for the given <a href="Poco.URI.html" title="class Poco::URI">URI</a> (must be in key:///connectionString format).  Throws a <a href="Poco.html" title="namespace Poco">Poco</a>:<a href="Poco.Data.UnknownDataBaseException.html" title="class Poco::Data::UnknownDataBaseException">Data::UnknownDataBaseException</a> if no <a href="Poco.Data.Connector.html" title="class Poco::Data::Connector">Connector</a> is registered for the key. </p>
+</div>
+<h3><a id="7072">instance</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static <a href="Poco.Data.SessionFactory.html" title="class Poco::Data::SessionFactory">SessionFactory</a> &amp; instance();</p>
+<div class="description">
+<p>returns the static instance of the singleton. </p>
+</div>
+<h3><a id="7075">remove</a></h3>
+<p class="decl">void remove(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; key<br />);</p>
+<div class="description">
+<p>Lowers the reference count for the <a href="Poco.Data.Connector.html" title="class Poco::Data::Connector">Connector</a> registered under that key. If the count reaches zero, the object is removed. </p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

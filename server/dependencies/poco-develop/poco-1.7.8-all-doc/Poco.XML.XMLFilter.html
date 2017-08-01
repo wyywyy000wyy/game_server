@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::XML::XMLFilter</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.XML.html" class="namespace">Poco::XML</a></h1>
+<h1 class="symbol">class XMLFilter</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-XML" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> XML<br />
+<b>Package:</b> SAX<br />
+<b>Header:</b> Poco/SAX/XMLFilter.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>Interface for an <a href="Poco.XML.html" title="namespace Poco::XML">XML</a> filter. </p>
+<p>An <a href="Poco.XML.html" title="namespace Poco::XML">XML</a> filter is like an <a href="Poco.XML.html" title="namespace Poco::XML">XML</a> reader, except that it obtains its events from another <a href="Poco.XML.html" title="namespace Poco::XML">XML</a> reader  rather than a primary source like an <a href="Poco.XML.html" title="namespace Poco::XML">XML</a> document or database. Filters can modify a stream of  events as they pass on to the final application. </p>
+<p>The <a href="Poco.XML.XMLFilterImpl.html" title="class Poco::XML::XMLFilterImpl">XMLFilterImpl</a> helper class provides a convenient base for creating SAX2 filters, by passing on  all <a href="Poco.XML.EntityResolver.html" title="class Poco::XML::EntityResolver">EntityResolver</a>, <a href="Poco.XML.DTDHandler.html" title="class Poco::XML::DTDHandler">DTDHandler</a>, <a href="Poco.XML.ContentHandler.html" title="class Poco::XML::ContentHandler">ContentHandler</a> and <a href="Poco.XML.ErrorHandler.html" title="class Poco::XML::ErrorHandler">ErrorHandler</a> events automatically. </p>
+</div>
+<h2>Inheritance</h2>
+<p><b>Direct Base Classes: </b><a href="Poco.XML.XMLReader.html" title="class Poco::XML::XMLReader">XMLReader</a></p>
+<p><b>All Base Classes: </b><a href="Poco.XML.XMLReader.html" title="class Poco::XML::XMLReader">XMLReader</a></p>
+<p><b>Known Derived Classes: </b><a href="Poco.XML.XMLFilterImpl.html" title="class Poco::XML::XMLFilterImpl">XMLFilterImpl</a>, <a href="Poco.XML.WhitespaceFilter.html" title="class Poco::XML::WhitespaceFilter">WhitespaceFilter</a></p>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.XML.XMLFilter.html#30037" title="Poco::XML::XMLFilter::getParent()">getParent</a>, <a href="Poco.XML.XMLFilter.html#30038" title="Poco::XML::XMLFilter::setParent()">setParent</a></p>
+<p><b>Inherited Functions: </b><a href="Poco.XML.XMLReader.html#30148" title="Poco::XML::XMLReader::getContentHandler()">getContentHandler</a>, <a href="Poco.XML.XMLReader.html#30145" title="Poco::XML::XMLReader::getDTDHandler()">getDTDHandler</a>, <a href="Poco.XML.XMLReader.html#30142" title="Poco::XML::XMLReader::getEntityResolver()">getEntityResolver</a>, <a href="Poco.XML.XMLReader.html#30151" title="Poco::XML::XMLReader::getErrorHandler()">getErrorHandler</a>, <a href="Poco.XML.XMLReader.html#30155" title="Poco::XML::XMLReader::getFeature()">getFeature</a>, <a href="Poco.XML.XMLReader.html#30163" title="Poco::XML::XMLReader::getProperty()">getProperty</a>, <a href="Poco.XML.XMLReader.html#30165" title="Poco::XML::XMLReader::parse()">parse</a>, <a href="Poco.XML.XMLReader.html#30169" title="Poco::XML::XMLReader::parseMemoryNP()">parseMemoryNP</a>, <a href="Poco.XML.XMLReader.html#30146" title="Poco::XML::XMLReader::setContentHandler()">setContentHandler</a>, <a href="Poco.XML.XMLReader.html#30143" title="Poco::XML::XMLReader::setDTDHandler()">setDTDHandler</a>, <a href="Poco.XML.XMLReader.html#30140" title="Poco::XML::XMLReader::setEntityResolver()">setEntityResolver</a>, <a href="Poco.XML.XMLReader.html#30149" title="Poco::XML::XMLReader::setErrorHandler()">setErrorHandler</a>, <a href="Poco.XML.XMLReader.html#30152" title="Poco::XML::XMLReader::setFeature()">setFeature</a>, <a href="Poco.XML.XMLReader.html#30157" title="Poco::XML::XMLReader::setProperty()">setProperty</a></p>
+<h2>Destructor</h2>
+<h3><a id="30040">~XMLFilter</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual ~<a href="Poco.XML.XMLFilter.html" title="class Poco::XML::XMLFilter">XMLFilter</a>();</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="30037">getParent</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual <a href="Poco.XML.XMLReader.html" title="class Poco::XML::XMLReader">XMLReader</a> * getParent() const = 0;</p>
+<div class="description">
+<p>Set the parent reader. </p>
+<p>This method allows the application to link the filter to a parent reader (which may be another  filter). The argument may not be null. </p>
+</div>
+<h3><a id="30038">setParent</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void setParent(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.XML.XMLReader.html" title="class Poco::XML::XMLReader">XMLReader</a> * pParent<br />) = 0;</p>
+<div class="description">
+<p>Get the parent reader. </p>
+<p>This method allows the application to query the parent reader (which may be another filter).  It is generally a bad idea to perform any operations on the parent reader directly: they should  all pass through this filter. </p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::MongoDB::Binary</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.MongoDB.html" class="namespace">Poco::MongoDB</a></h1>
+<h1 class="symbol">class Binary</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-MongoDB" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> MongoDB<br />
+<b>Package:</b> MongoDB<br />
+<b>Header:</b> Poco/MongoDB/Binary.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>Implements BSON <a href="Poco.MongoDB.Binary.html" title="class Poco::MongoDB::Binary">Binary</a>. </p>
+<p>A <a href="Poco.MongoDB.Binary.html" title="class Poco::MongoDB::Binary">Binary</a> stores its data in a <a href="Poco.Buffer.html" title="class Poco::Buffer">Poco::Buffer</a>&lt;unsigned char&gt;. </p>
+</div>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.MongoDB.Binary.html#20075" title="Poco::MongoDB::Binary::buffer()">buffer</a>, <a href="Poco.MongoDB.Binary.html#20076" title="Poco::MongoDB::Binary::subtype()">subtype</a>, <a href="Poco.MongoDB.Binary.html#20081" title="Poco::MongoDB::Binary::toRawString()">toRawString</a>, <a href="Poco.MongoDB.Binary.html#20079" title="Poco::MongoDB::Binary::toString()">toString</a>, <a href="Poco.MongoDB.Binary.html#20082" title="Poco::MongoDB::Binary::uuid()">uuid</a></p>
+<h2>Types</h2>
+<h3><a id="20060">Ptr</a></h3>
+<p class="decl">typedef <a href="Poco.SharedPtr.html" title="class Poco::SharedPtr">SharedPtr</a> &lt; <a href="Poco.MongoDB.Binary.html" title="class Poco::MongoDB::Binary">Binary</a> &gt; <a href="Poco.MongoDB.Binary.html#20060" title="Poco::MongoDB::Binary::Ptr">Ptr</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Constructors</h2>
+<h3><a id="20061">Binary</a></h3>
+<p class="decl"><a href="Poco.MongoDB.Binary.html" title="class Poco::MongoDB::Binary">Binary</a>();</p>
+<div class="description">
+<p>Creates an empty <a href="Poco.MongoDB.Binary.html" title="class Poco::MongoDB::Binary">Binary</a> with subtype 0. </p>
+</div>
+<h3><a id="20065">Binary</a></h3>
+<p class="decl"><a href="Poco.MongoDB.Binary.html" title="class Poco::MongoDB::Binary">Binary</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.UUID.html" title="class Poco::UUID">UUID</a> &amp; uuid<br />);</p>
+<div class="description">
+<p>Creates a <a href="Poco.MongoDB.Binary.html" title="class Poco::MongoDB::Binary">Binary</a> containing an <a href="Poco.UUID.html" title="class Poco::UUID">UUID</a>. </p>
+</div>
+<h3><a id="20062">Binary</a></h3>
+<p class="decl"><a href="Poco.MongoDB.Binary.html" title="class Poco::MongoDB::Binary">Binary</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.html#18380" title="Poco::Int32">Poco::Int32</a> size,<br />&nbsp;&nbsp;&nbsp;&nbsp;unsigned char subtype<br />);</p>
+<div class="description">
+<p>Creates a <a href="Poco.MongoDB.Binary.html" title="class Poco::MongoDB::Binary">Binary</a> with a buffer of the given size and the given subtype. </p>
+</div>
+<h3><a id="20067">Binary</a></h3>
+<p class="decl"><a href="Poco.MongoDB.Binary.html" title="class Poco::MongoDB::Binary">Binary</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; data,<br />&nbsp;&nbsp;&nbsp;&nbsp;unsigned char subtype = 0<br />);</p>
+<div class="description">
+<p>Creates a <a href="Poco.MongoDB.Binary.html" title="class Poco::MongoDB::Binary">Binary</a> with the contents of the given string and the given subtype. </p>
+</div>
+<h3><a id="20070">Binary</a></h3>
+<p class="decl"><a href="Poco.MongoDB.Binary.html" title="class Poco::MongoDB::Binary">Binary</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const void * data,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.html#18380" title="Poco::Int32">Poco::Int32</a> size,<br />&nbsp;&nbsp;&nbsp;&nbsp;unsigned char subtype = 0<br />);</p>
+<div class="description">
+<p>Creates a <a href="Poco.MongoDB.Binary.html" title="class Poco::MongoDB::Binary">Binary</a> with the contents of the given buffer and the given subtype.		 </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="20074">~Binary</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual ~<a href="Poco.MongoDB.Binary.html" title="class Poco::MongoDB::Binary">Binary</a>();</p>
+<div class="description">
+<p>Destroys the <a href="Poco.MongoDB.Binary.html" title="class Poco::MongoDB::Binary">Binary</a>. </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="20075">buffer</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Buffer.html" title="class Poco::Buffer">Buffer</a> &lt; unsigned char &gt; &amp; buffer();</p>
+<div class="description">
+<p>Returns a reference to the internal buffer </p>
+</div>
+<h3><a id="20076">subtype</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">unsigned char subtype() const;</p>
+<div class="description">
+<p>Returns the subtype. </p>
+</div>
+<h3><a id="20077">subtype</a></h3>
+<p class="decl">void subtype(<br />&nbsp;&nbsp;&nbsp;&nbsp;unsigned char type<br />);</p>
+<div class="description">
+<p>Sets the subtype. </p>
+</div>
+<h3><a id="20081">toRawString</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">std::string toRawString() const;</p>
+<div class="description">
+<p>Returns the raw content of the <a href="Poco.MongoDB.Binary.html" title="class Poco::MongoDB::Binary">Binary</a> as a string. </p>
+</div>
+<h3><a id="20079">toString</a></h3>
+<p class="decl">std::string toString(<br />&nbsp;&nbsp;&nbsp;&nbsp;int indent = 0<br />) const;</p>
+<div class="description">
+<p>Returns the contents of the <a href="Poco.MongoDB.Binary.html" title="class Poco::MongoDB::Binary">Binary</a> as Base64-encoded string. </p>
+</div>
+<h3><a id="20082">uuid</a></h3>
+<p class="decl"><a href="Poco.UUID.html" title="class Poco::UUID">UUID</a> uuid() const;</p>
+<div class="description">
+<p>Returns the <a href="Poco.UUID.html" title="class Poco::UUID">UUID</a> when the binary subtype is 0x04. Otherwise, throws a <a href="Poco.BadCastException.html" title="class Poco::BadCastException">Poco::BadCastException</a>. </p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

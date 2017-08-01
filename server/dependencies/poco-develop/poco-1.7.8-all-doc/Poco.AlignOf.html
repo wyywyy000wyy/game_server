@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Struct Poco::AlignOf</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.html" class="namespace">Poco</a></h1>
+<h1 class="template">template &lt; typename T &gt;</h1>
+<h1 class="symbol">struct AlignOf</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Foundation" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Foundation<br />
+<b>Package:</b> Dynamic<br />
+<b>Header:</b> Poco/Alignment.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>A templated class that contains an enum value representing the alignment of the template argument.  For example, <a href="Poco.AlignOf.html" title="struct Poco::AlignOf">AlignOf</a>&lt;int&gt;::<a href="Poco.AlignOf.html#8094" title="Poco::AlignOf::Alignment">Alignment</a> represents the alignment of type &quot;int&quot;.  The alignment calculated is the minimum alignment, and not necessarily the &quot;desired&quot; alignment returned by GCC's __alignof__ (for example).  Note that because the alignment is an enum value, it can be used as a compile-time constant (e.g., for template instantiation). </p>
+</div>
+<h2>Enumerations</h2>
+<h3><i>Anonymous</i></h3>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="8094">Alignment</a> = static_cast &lt; unsigned int &gt; (sizeof (AlignmentCalcImpl &lt; T &gt;)- sizeof (T))</p>
+<div class="description">
+<p></p>
+</div>
+<h3><i>Anonymous</i></h3>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="8096">Alignment_GreaterEqual_2Bytes</a> = Alignment &gt;= 2 ? 1 :0</p>
+<div class="description">
+<p></p>
+</div>
+<h3><i>Anonymous</i></h3>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="8098">Alignment_GreaterEqual_4Bytes</a> = Alignment &gt;= 4 ? 1 :0</p>
+<div class="description">
+<p></p>
+</div>
+<h3><i>Anonymous</i></h3>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="8100">Alignment_GreaterEqual_8Bytes</a> = Alignment &gt;= 8 ? 1 :0</p>
+<div class="description">
+<p></p>
+</div>
+<h3><i>Anonymous</i></h3>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="8102">Alignment_GreaterEqual_16Bytes</a> = Alignment &gt;= 16 ? 1 :0</p>
+<div class="description">
+<p></p>
+</div>
+<h3><i>Anonymous</i></h3>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="8104">Alignment_LessEqual_2Bytes</a> = Alignment &lt;= 2 ? 1 :0</p>
+<div class="description">
+<p></p>
+</div>
+<h3><i>Anonymous</i></h3>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="8106">Alignment_LessEqual_4Bytes</a> = Alignment &lt;= 4 ? 1 :0</p>
+<div class="description">
+<p></p>
+</div>
+<h3><i>Anonymous</i></h3>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="8108">Alignment_LessEqual_8Bytes</a> = Alignment &lt;= 8 ? 1 :0</p>
+<div class="description">
+<p></p>
+</div>
+<h3><i>Anonymous</i></h3>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="8110">Alignment_LessEqual_16Bytes</a> = Alignment &lt;= 16 ? 1 :0</p>
+<div class="description">
+<p></p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

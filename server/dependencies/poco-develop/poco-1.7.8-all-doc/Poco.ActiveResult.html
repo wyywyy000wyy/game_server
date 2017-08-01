@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::ActiveResult</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.html" class="namespace">Poco</a></h1>
+<h1 class="template">template &lt; class RT &gt;</h1>
+<h1 class="symbol">class ActiveResult</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Foundation" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Foundation<br />
+<b>Package:</b> Threading<br />
+<b>Header:</b> Poco/ActiveResult.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>Creates an <a href="Poco.ActiveResultHolder.html" title="class Poco::ActiveResultHolder">ActiveResultHolder</a>. Pauses the caller until the result becomes available. Waits up to the specified interval for the result to become available. Returns true if the result became available, false otherwise. Waits up to the specified interval for the result to become available. Throws a <a href="Poco.TimeoutException.html" title="class Poco::TimeoutException">TimeoutException</a> if the result did not became available. Notifies the invoking thread that the result became available. Returns true if the active method failed (and threw an exception). Information about the exception can be obtained by calling <a href="Poco.ActiveResult.html#8031" title="Poco::ActiveResult::error()">error</a>(). If the active method threw an exception, a textual representation of the exception is returned. An empty string is returned if the active method completed successfully. If the active method threw an exception, a clone of the exception object is returned, otherwise null. Sets the exception. Sets the exception. This class holds the result of an asynchronous method invocation (see class <a href="Poco.ActiveMethod.html" title="class Poco::ActiveMethod">ActiveMethod</a>). It is used to pass the  result from the execution thread back to the invocation thread.  </p>
+</div>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.ActiveResult.html#8029" title="Poco::ActiveResult::available()">available</a>, <a href="Poco.ActiveResult.html#8021" title="Poco::ActiveResult::data()">data</a>, <a href="Poco.ActiveResult.html#8031" title="Poco::ActiveResult::error()">error</a>, <a href="Poco.ActiveResult.html#8032" title="Poco::ActiveResult::exception()">exception</a>, <a href="Poco.ActiveResult.html#8030" title="Poco::ActiveResult::failed()">failed</a>, <a href="Poco.ActiveResult.html#8033" title="Poco::ActiveResult::notify()">notify</a>, <a href="Poco.ActiveResult.html#8017" title="Poco::ActiveResult::operator =()">operator&nbsp;=</a>, <a href="Poco.ActiveResult.html#8019" title="Poco::ActiveResult::swap()">swap</a>, <a href="Poco.ActiveResult.html#8025" title="Poco::ActiveResult::tryWait()">tryWait</a>, <a href="Poco.ActiveResult.html#8024" title="Poco::ActiveResult::wait()">wait</a></p>
+<h2>Types</h2>
+<h3><a id="8011">ActiveResultHolderType</a></h3>
+<p class="decl">typedef <a href="Poco.ActiveResultHolder.html" title="class Poco::ActiveResultHolder">ActiveResultHolder</a> &lt; <a href="Poco.ActiveResult.html#8010" title="Poco::ActiveResult::ResultType">ResultType</a> &gt; <a href="Poco.ActiveResult.html#8011" title="Poco::ActiveResult::ActiveResultHolderType">ActiveResultHolderType</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="8010">ResultType</a></h3>
+<p class="decl">typedef RT <a href="Poco.ActiveResult.html#8010" title="Poco::ActiveResult::ResultType">ResultType</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Constructors</h2>
+<h3><a id="8012">ActiveResult</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.ActiveResult.html" title="class Poco::ActiveResult">ActiveResult</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.ActiveResult.html#8011" title="Poco::ActiveResult::ActiveResultHolderType">ActiveResultHolderType</a> * pHolder<br />);</p>
+<div class="description">
+<p>Creates the active result. For internal use only. </p>
+</div>
+<h3><a id="8014">ActiveResult</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.ActiveResult.html" title="class Poco::ActiveResult">ActiveResult</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.ActiveResult.html" title="class Poco::ActiveResult">ActiveResult</a> &amp; result<br />);</p>
+<div class="description">
+<p>Copy constructor. </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="8016">~ActiveResult</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">~<a href="Poco.ActiveResult.html" title="class Poco::ActiveResult">ActiveResult</a>();</p>
+<div class="description">
+<p>Destroys the result. </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="8029">available</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool available() const;</p>
+<div class="description">
+<p>Returns true if a result is available. </p>
+</div>
+<h3><a id="8021">data</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.ActiveResult.html#8010" title="Poco::ActiveResult::ResultType">ResultType</a> &amp; data() const;</p>
+<div class="description">
+<p>Returns a reference to the result data. </p>
+</div>
+<h3><a id="8022">data</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void data(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.ActiveResult.html#8010" title="Poco::ActiveResult::ResultType">ResultType</a> * pValue<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="8034">data</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.ActiveResult.html#8010" title="Poco::ActiveResult::ResultType">ResultType</a> &amp; data();</p>
+<div class="description">
+<p>Returns a non-const reference to the result data. For internal use only. </p>
+</div>
+<h3><a id="8031">error</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">std::string error() const;</p>
+<div class="description">
+<p>If the active method threw an exception, a textual representation of the exception is returned. An empty string is returned if the active method completed successfully. </p>
+</div>
+<h3><a id="8035">error</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void error(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; msg<br />);</p>
+<div class="description">
+<p>Sets the failed flag and the exception message. </p>
+</div>
+<h3><a id="8037">error</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void error(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Exception.html" title="class Poco::Exception">Exception</a> &amp; exc<br />);</p>
+<div class="description">
+<p>Sets the failed flag and the exception message. </p>
+</div>
+<h3><a id="8032">exception</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Exception.html" title="class Poco::Exception">Exception</a> * exception() const;</p>
+<div class="description">
+<p>If the active method threw an exception, a clone of the exception object is returned, otherwise null. </p>
+</div>
+<h3><a id="8030">failed</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool failed() const;</p>
+<div class="description">
+<p>Returns true if the active method failed (and threw an exception). Information about the exception can be obtained by calling <a href="Poco.ActiveResult.html#8031" title="Poco::ActiveResult::error()">error</a>(). </p>
+</div>
+<h3><a id="8033">notify</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void notify();</p>
+<div class="description">
+<p>Notifies the invoking thread that the result became available. For internal use only. </p>
+</div>
+<h3><a id="8017">operator =</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.ActiveResult.html" title="class Poco::ActiveResult">ActiveResult</a> &amp; operator = (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.ActiveResult.html" title="class Poco::ActiveResult">ActiveResult</a> &amp; result<br />);</p>
+<div class="description">
+<p>Assignment operator. </p>
+</div>
+<h3><a id="8019">swap</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void swap(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.ActiveResult.html" title="class Poco::ActiveResult">ActiveResult</a> &amp; result<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="8025">tryWait</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool tryWait(<br />&nbsp;&nbsp;&nbsp;&nbsp;long milliseconds<br />);</p>
+<div class="description">
+<p>Waits up to the specified interval for the result to become available. Returns true if the result became available, false otherwise. </p>
+</div>
+<h3><a id="8024">wait</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void wait();</p>
+<div class="description">
+<p>Pauses the caller until the result becomes available. </p>
+</div>
+<h3><a id="8027">wait</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void wait(<br />&nbsp;&nbsp;&nbsp;&nbsp;long milliseconds<br />);</p>
+<div class="description">
+<p>Waits up to the specified interval for the result to become available. Throws a <a href="Poco.TimeoutException.html" title="class Poco::TimeoutException">TimeoutException</a> if the result did not became available. </p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

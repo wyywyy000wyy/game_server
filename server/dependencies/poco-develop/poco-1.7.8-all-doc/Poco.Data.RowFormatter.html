@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::Data::RowFormatter</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.Data.html" class="namespace">Poco::Data</a></h1>
+<h1 class="symbol">class RowFormatter</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Data" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Data<br />
+<b>Package:</b> DataCore<br />
+<b>Header:</b> Poco/Data/RowFormatter.h</p>
+<h2>Description</h2>
+<div class="description">
+<p><a href="Poco.Data.Row.html" title="class Poco::Data::Row">Row</a> formatter is an abstract class providing definition for row formatting functionality. For custom formatting strategies, inherit from this class and override <a href="Poco.Data.RowFormatter.html#6868" title="Poco::Data::RowFormatter::formatNames()">formatNames</a>() and <a href="Poco.Data.RowFormatter.html#6873" title="Poco::Data::RowFormatter::formatValues()">formatValues</a>() member functions. </p>
+<p><a href="Poco.Data.Row.html" title="class Poco::Data::Row">Row</a> formatter can be either passed to the <a href="Poco.Data.RecordSet.html" title="class Poco::Data::RecordSet">RecordSet</a> at construction time, like in the following example: </p>
+<p><a href="Poco.Data.RecordSet.html" title="class Poco::Data::RecordSet">RecordSet</a> rs(session. &quot;SELECT * FROM Table&quot;, new MyRowFormater); </p>
+<p>or it can be supplied to the statement as in the following example: </p>
+<p>MyRowFormatter rf session &lt;&lt; &quot;SELECT * FROM Table&quot;, <a href="Poco.html#12579" title="Poco::format()">format</a>(rf); </p>
+<p>If no formatter is externally supplied to the statement, the <a href="Poco.Data.SimpleRowFormatter.html" title="class Poco::Data::SimpleRowFormatter">SimpleRowFormatter</a> is used. <a href="Poco.Data.Statement.html" title="class Poco::Data::Statement">Statement</a> always has the ownership of the row formatter and shares it with rows through <a href="Poco.Data.RecordSet.html" title="class Poco::Data::RecordSet">RecordSet</a>. </p>
+<p>To accomodate for various formatting needs, a formatter can operate in two modes: </p>
+<p></p>
+<ul>
+<li>progressive: formatted individual row strings are gemerated and returned from each  call to formatValues; std::string&amp; <a href="Poco.Data.RowFormatter.html#6868" title="Poco::Data::RowFormatter::formatNames()">formatNames</a>(const <a href="Poco.Data.RowFormatter.html#6857" title="Poco::Data::RowFormatter::NameVecPtr">NameVecPtr</a>, std::string&amp;) and std::string&amp; <a href="Poco.Data.RowFormatter.html#6873" title="Poco::Data::RowFormatter::formatValues()">formatValues</a>(const <a href="Poco.Data.RowFormatter.html#6858" title="Poco::Data::RowFormatter::ValueVec">ValueVec</a>&amp;, std::string&amp;) member calls should be used in this case; this is the default mode </li>
+</ul>
+<p></p>
+<ul>
+<li>bulk: formatted resulting string is accumulated internally and obtained at the end of iteration via <a href="Poco.Data.RowFormatter.html#6878" title="Poco::Data::RowFormatter::toString()">toString</a>() member function; void <a href="Poco.Data.RowFormatter.html#6868" title="Poco::Data::RowFormatter::formatNames()">formatNames</a>(const <a href="Poco.Data.RowFormatter.html#6857" title="Poco::Data::RowFormatter::NameVecPtr">NameVecPtr</a>) and void <a href="Poco.Data.RowFormatter.html#6873" title="Poco::Data::RowFormatter::formatValues()">formatValues</a>(const <a href="Poco.Data.RowFormatter.html#6858" title="Poco::Data::RowFormatter::ValueVec">ValueVec</a>&amp;) member calls should be used in this case </li>
+</ul>
+<p>When formatter is used in conjunction with <a href="Poco.Data.Row.html" title="class Poco::Data::Row">Row</a>/<a href="Poco.Data.RecordSet.html" title="class Poco::Data::RecordSet">RecordSet</a>, the formatting members corresponding to the formater mode are expected to be implemented. If a call is propagated to this parent class, the functions do nothing or silently return empty string respectively. </p>
+</div>
+<h2>Inheritance</h2>
+<p><b>Known Derived Classes: </b><a href="Poco.Data.SimpleRowFormatter.html" title="class Poco::Data::SimpleRowFormatter">SimpleRowFormatter</a></p>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.Data.RowFormatter.html#6868" title="Poco::Data::RowFormatter::formatNames()">formatNames</a>, <a href="Poco.Data.RowFormatter.html#6873" title="Poco::Data::RowFormatter::formatValues()">formatValues</a>, <a href="Poco.Data.RowFormatter.html#6886" title="Poco::Data::RowFormatter::getMode()">getMode</a>, <a href="Poco.Data.RowFormatter.html#6880" title="Poco::Data::RowFormatter::getTotalRowCount()">getTotalRowCount</a>, <a href="Poco.Data.RowFormatter.html#6884" title="Poco::Data::RowFormatter::postfix()">postfix</a>, <a href="Poco.Data.RowFormatter.html#6883" title="Poco::Data::RowFormatter::prefix()">prefix</a>, <a href="Poco.Data.RowFormatter.html#6885" title="Poco::Data::RowFormatter::reset()">reset</a>, <a href="Poco.Data.RowFormatter.html#6879" title="Poco::Data::RowFormatter::rowCount()">rowCount</a>, <a href="Poco.Data.RowFormatter.html#6887" title="Poco::Data::RowFormatter::setMode()">setMode</a>, <a href="Poco.Data.RowFormatter.html#6891" title="Poco::Data::RowFormatter::setPostfix()">setPostfix</a>, <a href="Poco.Data.RowFormatter.html#6889" title="Poco::Data::RowFormatter::setPrefix()">setPrefix</a>, <a href="Poco.Data.RowFormatter.html#6881" title="Poco::Data::RowFormatter::setTotalRowCount()">setTotalRowCount</a>, <a href="Poco.Data.RowFormatter.html#6878" title="Poco::Data::RowFormatter::toString()">toString</a></p>
+<h2>Types</h2>
+<h3><a id="6856">NameVec</a></h3>
+<p class="decl">typedef std::vector &lt; std::string &gt; <a href="Poco.Data.RowFormatter.html#6856" title="Poco::Data::RowFormatter::NameVec">NameVec</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="6857">NameVecPtr</a></h3>
+<p class="decl">typedef <a href="Poco.SharedPtr.html" title="class Poco::SharedPtr">SharedPtr</a> &lt; std::vector &lt; std::string &gt; &gt; <a href="Poco.Data.RowFormatter.html#6857" title="Poco::Data::RowFormatter::NameVecPtr">NameVecPtr</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="6855">Ptr</a></h3>
+<p class="decl">typedef <a href="Poco.SharedPtr.html" title="class Poco::SharedPtr">SharedPtr</a> &lt; <a href="Poco.Data.RowFormatter.html" title="class Poco::Data::RowFormatter">RowFormatter</a> &gt; <a href="Poco.Data.RowFormatter.html#6855" title="Poco::Data::RowFormatter::Ptr">Ptr</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="6858">ValueVec</a></h3>
+<p class="decl">typedef std::vector &lt; <a href="Poco.Dynamic.Var.html" title="class Poco::Dynamic::Var">Poco::Dynamic::Var</a> &gt; <a href="Poco.Data.RowFormatter.html#6858" title="Poco::Data::RowFormatter::ValueVec">ValueVec</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Enumerations</h2>
+<h3><a id="6860">Mode</a></h3>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="6861">FORMAT_PROGRESSIVE</a></p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="6862">FORMAT_BULK</a></p>
+<div class="description">
+<p></p>
+</div>
+<h2>Constructors</h2>
+<h3><a id="6863">RowFormatter</a></h3>
+<p class="decl"><a href="Poco.Data.RowFormatter.html" title="class Poco::Data::RowFormatter">RowFormatter</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; prefix = "",<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; postfix = "",<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Data.RowFormatter.html#6860" title="enum  Poco::Data::RowFormatter::Mode">Mode</a> mode = FORMAT_PROGRESSIVE<br />);</p>
+<div class="description">
+<p>Creates the <a href="Poco.Data.RowFormatter.html" title="class Poco::Data::RowFormatter">RowFormatter</a> and sets the prefix and postfix to specified values. </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="6867">~RowFormatter</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual ~<a href="Poco.Data.RowFormatter.html" title="class Poco::Data::RowFormatter">RowFormatter</a>();</p>
+<div class="description">
+<p>Destroys the <a href="Poco.Data.RowFormatter.html" title="class Poco::Data::RowFormatter">RowFormatter</a>. </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="6868">formatNames</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual std::string &amp; formatNames(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Data.RowFormatter.html#6857" title="Poco::Data::RowFormatter::NameVecPtr">NameVecPtr</a> pNames,<br />&nbsp;&nbsp;&nbsp;&nbsp;std::string &amp; formattedNames<br />);</p>
+<div class="description">
+<p>Should be implemented to format the row fields names and return the formatted string. The default implementation clears the names string and returns it. </p>
+</div>
+<h3><a id="6871">formatNames</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void formatNames(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Data.RowFormatter.html#6857" title="Poco::Data::RowFormatter::NameVecPtr">NameVecPtr</a> pNames<br />);</p>
+<div class="description">
+<p>Should be implemented to format the row fields names. The default implementation does nothing. </p>
+</div>
+<h3><a id="6873">formatValues</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual std::string &amp; formatValues(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Data.RowFormatter.html#6858" title="Poco::Data::RowFormatter::ValueVec">ValueVec</a> &amp; vals,<br />&nbsp;&nbsp;&nbsp;&nbsp;std::string &amp; formattedValues<br />);</p>
+<div class="description">
+<p>Should be implemented to format the row fields values and return the formatted string. The default implementation clears the values string and returns it. </p>
+</div>
+<h3><a id="6876">formatValues</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void formatValues(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Data.RowFormatter.html#6858" title="Poco::Data::RowFormatter::ValueVec">ValueVec</a> &amp; vals<br />);</p>
+<div class="description">
+<p>Should be implemented to format the row fields values. The default implementation does nothing. </p>
+</div>
+<h3><a id="6886">getMode</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Data.RowFormatter.html#6860" title="enum  Poco::Data::RowFormatter::Mode">Mode</a> getMode() const;</p>
+<div class="description">
+<p>Returns the formater mode. </p>
+</div>
+<h3><a id="6880">getTotalRowCount</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">int getTotalRowCount() const;</p>
+<div class="description">
+<p>Returns zero. Must be implemented by inheriting classes. Typically, total row count shall be set up front through <a href="Poco.Data.RowFormatter.html#6881" title="Poco::Data::RowFormatter::setTotalRowCount()">setTotalRowCount</a>() call. </p>
+</div>
+<h3><a id="6884">postfix</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">virtual const std::string &amp; postfix() const;</p>
+<div class="description">
+<p>Returns postfix string; </p>
+</div>
+<h3><a id="6883">prefix</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">virtual const std::string &amp; prefix() const;</p>
+<div class="description">
+<p>Returns prefix string; </p>
+</div>
+<h3><a id="6885">reset</a></h3>
+<p class="decl">void reset();</p>
+<div class="description">
+<p>Resets the formatter by setting prefix and postfix to empty strings and row count to <a href="Poco.Data.RowFormatter.html#6859" title="Poco::Data::RowFormatter::INVALID_ROW_COUNT">INVALID_ROW_COUNT</a>. </p>
+</div>
+<h3><a id="6879">rowCount</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">virtual int rowCount() const;</p>
+<div class="description">
+<p>Returns <a href="Poco.Data.RowFormatter.html#6859" title="Poco::Data::RowFormatter::INVALID_ROW_COUNT">INVALID_ROW_COUNT</a>. Must be implemented by inheriting classes which maintain count of processed rows. </p>
+</div>
+<h3><a id="6887">setMode</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void setMode(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Data.RowFormatter.html#6860" title="enum  Poco::Data::RowFormatter::Mode">Mode</a> mode<br />);</p>
+<div class="description">
+<p>Sets the fromatter mode. </p>
+</div>
+<h3><a id="6881">setTotalRowCount</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void setTotalRowCount(<br />&nbsp;&nbsp;&nbsp;&nbsp;int count<br />);</p>
+<div class="description">
+<p>Sets total row count. </p>
+</div>
+<h3><a id="6878">toString</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual const std::string &amp; toString();</p>
+<div class="description">
+<p>Throws <a href="Poco.NotImplementedException.html" title="class Poco::NotImplementedException">NotImplementedException</a>. Formatters operating in bulk mode should  implement this member function to return valid pointer to the formatted result. </p>
+</div>
+<h3><a id="6891">setPostfix</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void setPostfix(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; postfix<br />);</p>
+<div class="description">
+<p>Sets the postfix for the formatter </p>
+</div>
+<h3><a id="6889">setPrefix</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void setPrefix(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; prefix<br />);</p>
+<div class="description">
+<p>Sets the prefix for the formatter. </p>
+</div>
+<h2>Variables</h2>
+<h3><a id="6859">INVALID_ROW_COUNT</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static const int <a href="Poco.Data.RowFormatter.html#6859" title="Poco::Data::RowFormatter::INVALID_ROW_COUNT">INVALID_ROW_COUNT</a> = - 1;</p>
+<div class="description">
+<p></p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

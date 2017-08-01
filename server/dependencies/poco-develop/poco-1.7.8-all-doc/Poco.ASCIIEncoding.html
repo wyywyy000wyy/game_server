@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::ASCIIEncoding</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.html" class="namespace">Poco</a></h1>
+<h1 class="symbol">class ASCIIEncoding</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Foundation" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Foundation<br />
+<b>Package:</b> Text<br />
+<b>Header:</b> Poco/ASCIIEncoding.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>7-bit ASCII text encoding. </p>
+</div>
+<h2>Inheritance</h2>
+<p><b>Direct Base Classes: </b><a href="Poco.TextEncoding.html" title="class Poco::TextEncoding">TextEncoding</a></p>
+<p><b>All Base Classes: </b><a href="Poco.TextEncoding.html" title="class Poco::TextEncoding">TextEncoding</a></p>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.ASCIIEncoding.html#7724" title="Poco::ASCIIEncoding::canonicalName()">canonicalName</a>, <a href="Poco.ASCIIEncoding.html#7727" title="Poco::ASCIIEncoding::characterMap()">characterMap</a>, <a href="Poco.ASCIIEncoding.html#7728" title="Poco::ASCIIEncoding::convert()">convert</a>, <a href="Poco.ASCIIEncoding.html#7725" title="Poco::ASCIIEncoding::isA()">isA</a>, <a href="Poco.ASCIIEncoding.html#7734" title="Poco::ASCIIEncoding::queryConvert()">queryConvert</a>, <a href="Poco.ASCIIEncoding.html#7737" title="Poco::ASCIIEncoding::sequenceLength()">sequenceLength</a></p>
+<p><b>Inherited Functions: </b><a href="Poco.TextEncoding.html#17758" title="Poco::TextEncoding::add()">add</a>, <a href="Poco.TextEncoding.html#17754" title="Poco::TextEncoding::byName()">byName</a>, <a href="Poco.TextEncoding.html#17738" title="Poco::TextEncoding::canonicalName()">canonicalName</a>, <a href="Poco.TextEncoding.html#17741" title="Poco::TextEncoding::characterMap()">characterMap</a>, <a href="Poco.TextEncoding.html#17742" title="Poco::TextEncoding::convert()">convert</a>, <a href="Poco.TextEncoding.html#17756" title="Poco::TextEncoding::find()">find</a>, <a href="Poco.TextEncoding.html#17765" title="Poco::TextEncoding::global()">global</a>, <a href="Poco.TextEncoding.html#17739" title="Poco::TextEncoding::isA()">isA</a>, <a href="Poco.TextEncoding.html#17769" title="Poco::TextEncoding::manager()">manager</a>, <a href="Poco.TextEncoding.html#17744" title="Poco::TextEncoding::queryConvert()">queryConvert</a>, <a href="Poco.TextEncoding.html#17763" title="Poco::TextEncoding::remove()">remove</a>, <a href="Poco.TextEncoding.html#17747" title="Poco::TextEncoding::sequenceLength()">sequenceLength</a></p>
+<h2>Constructors</h2>
+<h3><a id="7722">ASCIIEncoding</a></h3>
+<p class="decl"><a href="Poco.ASCIIEncoding.html" title="class Poco::ASCIIEncoding">ASCIIEncoding</a>();</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="7723">~ASCIIEncoding</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">~<a href="Poco.ASCIIEncoding.html" title="class Poco::ASCIIEncoding">ASCIIEncoding</a>();</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="7724">canonicalName</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">const char * canonicalName() const;</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.TextEncoding.html#17738" title="Poco::TextEncoding::canonicalName()">Poco::TextEncoding::canonicalName()</a></p></div>
+<h3><a id="7727">characterMap</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">const CharacterMap &amp; characterMap() const;</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.TextEncoding.html#17741" title="Poco::TextEncoding::characterMap()">Poco::TextEncoding::characterMap()</a></p></div>
+<h3><a id="7728">convert</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">int convert(<br />&nbsp;&nbsp;&nbsp;&nbsp;const unsigned char * bytes<br />) const;</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.TextEncoding.html#17742" title="Poco::TextEncoding::convert()">Poco::TextEncoding::convert()</a></p></div>
+<h3><a id="7730">convert</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">int convert(<br />&nbsp;&nbsp;&nbsp;&nbsp;int ch,<br />&nbsp;&nbsp;&nbsp;&nbsp;unsigned char * bytes,<br />&nbsp;&nbsp;&nbsp;&nbsp;int length<br />) const;</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.TextEncoding.html#17750" title="Poco::TextEncoding::convert()">Poco::TextEncoding::convert()</a></p></div>
+<h3><a id="7725">isA</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">bool isA(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; encodingName<br />) const;</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.TextEncoding.html#17739" title="Poco::TextEncoding::isA()">Poco::TextEncoding::isA()</a></p></div>
+<h3><a id="7734">queryConvert</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">int queryConvert(<br />&nbsp;&nbsp;&nbsp;&nbsp;const unsigned char * bytes,<br />&nbsp;&nbsp;&nbsp;&nbsp;int length<br />) const;</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.TextEncoding.html#17744" title="Poco::TextEncoding::queryConvert()">Poco::TextEncoding::queryConvert()</a></p></div>
+<h3><a id="7737">sequenceLength</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">int sequenceLength(<br />&nbsp;&nbsp;&nbsp;&nbsp;const unsigned char * bytes,<br />&nbsp;&nbsp;&nbsp;&nbsp;int length<br />) const;</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.TextEncoding.html#17747" title="Poco::TextEncoding::sequenceLength()">Poco::TextEncoding::sequenceLength()</a></p></div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

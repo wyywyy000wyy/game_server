@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::Data::BulkExtraction</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.Data.html" class="namespace">Poco::Data</a></h1>
+<h1 class="template">template &lt; class C &gt;</h1>
+<h1 class="symbol">class BulkExtraction</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Data" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Data<br />
+<b>Package:</b> DataCore<br />
+<b>Header:</b> Poco/Data/BulkExtraction.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>Specialization for bulk extraction of values from a query result set. <a href="Poco.Data.Bulk.html" title="class Poco::Data::Bulk">Bulk</a> extraction support is provided only for following STL containers: - std::vector - std::deque - std::list </p>
+</div>
+<h2>Inheritance</h2>
+<p><b>Direct Base Classes: </b><a href="Poco.Data.AbstractExtraction.html" title="class Poco::Data::AbstractExtraction">AbstractExtraction</a></p>
+<p><b>All Base Classes: </b><a href="Poco.Data.AbstractExtraction.html" title="class Poco::Data::AbstractExtraction">AbstractExtraction</a></p>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.Data.BulkExtraction.html#5699" title="Poco::Data::BulkExtraction::createPreparation()">createPreparation</a>, <a href="Poco.Data.BulkExtraction.html#5696" title="Poco::Data::BulkExtraction::extract()">extract</a>, <a href="Poco.Data.BulkExtraction.html#5694" title="Poco::Data::BulkExtraction::isNull()">isNull</a>, <a href="Poco.Data.BulkExtraction.html#5691" title="Poco::Data::BulkExtraction::numOfColumnsHandled()">numOfColumnsHandled</a>, <a href="Poco.Data.BulkExtraction.html#5693" title="Poco::Data::BulkExtraction::numOfRowsAllowed()">numOfRowsAllowed</a>, <a href="Poco.Data.BulkExtraction.html#5692" title="Poco::Data::BulkExtraction::numOfRowsHandled()">numOfRowsHandled</a>, <a href="Poco.Data.BulkExtraction.html#5698" title="Poco::Data::BulkExtraction::reset()">reset</a>, <a href="Poco.Data.BulkExtraction.html#5702" title="Poco::Data::BulkExtraction::result()">result</a></p>
+<p><b>Inherited Functions: </b><a href="Poco.Data.AbstractExtraction.html#4842" title="Poco::Data::AbstractExtraction::canExtract()">canExtract</a>, <a href="Poco.Data.AbstractExtraction.html#4843" title="Poco::Data::AbstractExtraction::createPreparation()">createPreparation</a>, <a href="Poco.Data.AbstractExtraction.html#4839" title="Poco::Data::AbstractExtraction::extract()">extract</a>, <a href="Poco.Data.AbstractExtraction.html#4854" title="Poco::Data::AbstractExtraction::getEmptyStringIsNull()">getEmptyStringIsNull</a>, <a href="Poco.Data.AbstractExtraction.html#4834" title="Poco::Data::AbstractExtraction::getExtractor()">getExtractor</a>, <a href="Poco.Data.AbstractExtraction.html#4857" title="Poco::Data::AbstractExtraction::getForceEmptyString()">getForceEmptyString</a>, <a href="Poco.Data.AbstractExtraction.html#4848" title="Poco::Data::AbstractExtraction::getLimit()">getLimit</a>, <a href="Poco.Data.AbstractExtraction.html#4851" title="Poco::Data::AbstractExtraction::isBulk()">isBulk</a>, <a href="Poco.Data.AbstractExtraction.html#4849" title="Poco::Data::AbstractExtraction::isNull()">isNull</a>, <a href="Poco.Data.AbstractExtraction.html#4858" title="Poco::Data::AbstractExtraction::isValueNull()">isValueNull</a>, <a href="Poco.Data.AbstractExtraction.html#4836" title="Poco::Data::AbstractExtraction::numOfColumnsHandled()">numOfColumnsHandled</a>, <a href="Poco.Data.AbstractExtraction.html#4838" title="Poco::Data::AbstractExtraction::numOfRowsAllowed()">numOfRowsAllowed</a>, <a href="Poco.Data.AbstractExtraction.html#4837" title="Poco::Data::AbstractExtraction::numOfRowsHandled()">numOfRowsHandled</a>, <a href="Poco.Data.AbstractExtraction.html#4835" title="Poco::Data::AbstractExtraction::position()">position</a>, <a href="Poco.Data.AbstractExtraction.html#4841" title="Poco::Data::AbstractExtraction::reset()">reset</a>, <a href="Poco.Data.AbstractExtraction.html#4852" title="Poco::Data::AbstractExtraction::setEmptyStringIsNull()">setEmptyStringIsNull</a>, <a href="Poco.Data.AbstractExtraction.html#4832" title="Poco::Data::AbstractExtraction::setExtractor()">setExtractor</a>, <a href="Poco.Data.AbstractExtraction.html#4855" title="Poco::Data::AbstractExtraction::setForceEmptyString()">setForceEmptyString</a>, <a href="Poco.Data.AbstractExtraction.html#4846" title="Poco::Data::AbstractExtraction::setLimit()">setLimit</a></p>
+<h2>Types</h2>
+<h3><a id="5677">CValType</a></h3>
+<p class="decl">typedef typename C::value_type <a href="Poco.Data.BulkExtraction.html#5677" title="Poco::Data::BulkExtraction::CValType">CValType</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="5680">Ptr</a></h3>
+<p class="decl">typedef <a href="Poco.SharedPtr.html" title="class Poco::SharedPtr">SharedPtr</a> &lt; <a href="Poco.Data.BulkExtraction.html#5679" title="Poco::Data::BulkExtraction::Type">Type</a> &gt; <a href="Poco.Data.BulkExtraction.html#5680" title="Poco::Data::BulkExtraction::Ptr">Ptr</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="5679">Type</a></h3>
+<p class="decl">typedef <a href="Poco.Data.BulkExtraction.html" title="class Poco::Data::BulkExtraction">BulkExtraction</a> &lt; <a href="Poco.Data.BulkExtraction.html#5676" title="Poco::Data::BulkExtraction::ValType">ValType</a> &gt; <a href="Poco.Data.BulkExtraction.html#5679" title="Poco::Data::BulkExtraction::Type">Type</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="5678">ValPtr</a></h3>
+<p class="decl">typedef <a href="Poco.SharedPtr.html" title="class Poco::SharedPtr">SharedPtr</a> &lt; <a href="Poco.Data.BulkExtraction.html#5676" title="Poco::Data::BulkExtraction::ValType">ValType</a> &gt; <a href="Poco.Data.BulkExtraction.html#5678" title="Poco::Data::BulkExtraction::ValPtr">ValPtr</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="5676">ValType</a></h3>
+<p class="decl">typedef C <a href="Poco.Data.BulkExtraction.html#5676" title="Poco::Data::BulkExtraction::ValType">ValType</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Constructors</h2>
+<h3><a id="5681">BulkExtraction</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Data.BulkExtraction.html" title="class Poco::Data::BulkExtraction">BulkExtraction</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;C &amp; result,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.html#18381" title="Poco::UInt32">Poco::UInt32</a> limit,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Data.Position.html" title="class Poco::Data::Position">Position</a> &amp; pos = Position (0)<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="5685">BulkExtraction</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Data.BulkExtraction.html" title="class Poco::Data::BulkExtraction">BulkExtraction</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;C &amp; result,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Data.BulkExtraction.html#5677" title="Poco::Data::BulkExtraction::CValType">CValType</a> &amp; def,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.html#18381" title="Poco::UInt32">Poco::UInt32</a> limit,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Data.Position.html" title="class Poco::Data::Position">Position</a> &amp; pos = Position (0)<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="5690">~BulkExtraction</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">virtual ~<a href="Poco.Data.BulkExtraction.html" title="class Poco::Data::BulkExtraction">BulkExtraction</a>();</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="5699">createPreparation</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Data.AbstractPreparation.html#5143" title="Poco::Data::AbstractPreparation::Ptr">AbstractPreparation::Ptr</a> createPreparation(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Data.AbstractPreparator.html#5157" title="Poco::Data::AbstractPreparator::Ptr">AbstractPreparator::Ptr</a> &amp; pPrep,<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t col<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="5696">extract</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">std::size_t extract(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t col<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Data.AbstractExtraction.html#4839" title="Poco::Data::AbstractExtraction::extract()">Poco::Data::AbstractExtraction::extract()</a></p></div>
+<h3><a id="5694">isNull</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool isNull(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t row<br />) const;</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Data.AbstractExtraction.html#4849" title="Poco::Data::AbstractExtraction::isNull()">Poco::Data::AbstractExtraction::isNull()</a></p></div>
+<h3><a id="5691">numOfColumnsHandled</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">std::size_t numOfColumnsHandled() const;</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Data.AbstractExtraction.html#4836" title="Poco::Data::AbstractExtraction::numOfColumnsHandled()">Poco::Data::AbstractExtraction::numOfColumnsHandled()</a></p></div>
+<h3><a id="5693">numOfRowsAllowed</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">std::size_t numOfRowsAllowed() const;</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Data.AbstractExtraction.html#4838" title="Poco::Data::AbstractExtraction::numOfRowsAllowed()">Poco::Data::AbstractExtraction::numOfRowsAllowed()</a></p></div>
+<h3><a id="5692">numOfRowsHandled</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">std::size_t numOfRowsHandled() const;</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Data.AbstractExtraction.html#4837" title="Poco::Data::AbstractExtraction::numOfRowsHandled()">Poco::Data::AbstractExtraction::numOfRowsHandled()</a></p></div>
+<h3><a id="5698">reset</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">virtual void reset();</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Data.AbstractExtraction.html#4841" title="Poco::Data::AbstractExtraction::reset()">Poco::Data::AbstractExtraction::reset()</a></p></div>
+<h3><a id="5702">result</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">const C &amp; result() const;</p>
+<div class="description">
+<p></p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

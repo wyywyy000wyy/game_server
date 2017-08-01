@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::Util::WinRegistryKey</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.Util.html" class="namespace">Poco::Util</a></h1>
+<h1 class="symbol">class WinRegistryKey</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Util" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Util<br />
+<b>Package:</b> Windows<br />
+<b>Header:</b> Poco/Util/WinRegistryKey.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>This class implements a convenient interface to the Windows Registry. </p>
+<p>This class is only available on Windows platforms. </p>
+</div>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.Util.WinRegistryKey.html#27991" title="Poco::Util::WinRegistryKey::close()">close</a>, <a href="Poco.Util.WinRegistryKey.html#27979" title="Poco::Util::WinRegistryKey::deleteKey()">deleteKey</a>, <a href="Poco.Util.WinRegistryKey.html#27977" title="Poco::Util::WinRegistryKey::deleteValue()">deleteValue</a>, <a href="Poco.Util.WinRegistryKey.html#27980" title="Poco::Util::WinRegistryKey::exists()">exists</a>, <a href="Poco.Util.WinRegistryKey.html#27965" title="Poco::Util::WinRegistryKey::getBinary()">getBinary</a>, <a href="Poco.Util.WinRegistryKey.html#27970" title="Poco::Util::WinRegistryKey::getInt()">getInt</a>, <a href="Poco.Util.WinRegistryKey.html#27975" title="Poco::Util::WinRegistryKey::getInt64()">getInt64</a>, <a href="Poco.Util.WinRegistryKey.html#27955" title="Poco::Util::WinRegistryKey::getString()">getString</a>, <a href="Poco.Util.WinRegistryKey.html#27960" title="Poco::Util::WinRegistryKey::getStringExpand()">getStringExpand</a>, <a href="Poco.Util.WinRegistryKey.html#27995" title="Poco::Util::WinRegistryKey::handle()">handle</a>, <a href="Poco.Util.WinRegistryKey.html#27998" title="Poco::Util::WinRegistryKey::handleFor()">handleFor</a>, <a href="Poco.Util.WinRegistryKey.html#27996" title="Poco::Util::WinRegistryKey::handleSetError()">handleSetError</a>, <a href="Poco.Util.WinRegistryKey.html#27989" title="Poco::Util::WinRegistryKey::isReadOnly()">isReadOnly</a>, <a href="Poco.Util.WinRegistryKey.html#27992" title="Poco::Util::WinRegistryKey::key()">key</a>, <a href="Poco.Util.WinRegistryKey.html#27990" title="Poco::Util::WinRegistryKey::open()">open</a>, <a href="Poco.Util.WinRegistryKey.html#27962" title="Poco::Util::WinRegistryKey::setBinary()">setBinary</a>, <a href="Poco.Util.WinRegistryKey.html#27967" title="Poco::Util::WinRegistryKey::setInt()">setInt</a>, <a href="Poco.Util.WinRegistryKey.html#27972" title="Poco::Util::WinRegistryKey::setInt64()">setInt64</a>, <a href="Poco.Util.WinRegistryKey.html#27952" title="Poco::Util::WinRegistryKey::setString()">setString</a>, <a href="Poco.Util.WinRegistryKey.html#27957" title="Poco::Util::WinRegistryKey::setStringExpand()">setStringExpand</a>, <a href="Poco.Util.WinRegistryKey.html#27985" title="Poco::Util::WinRegistryKey::subKeys()">subKeys</a>, <a href="Poco.Util.WinRegistryKey.html#27981" title="Poco::Util::WinRegistryKey::type()">type</a>, <a href="Poco.Util.WinRegistryKey.html#27987" title="Poco::Util::WinRegistryKey::values()">values</a></p>
+<h2>Types</h2>
+<h3><a id="27927">Keys</a></h3>
+<p class="decl">typedef std::vector &lt; std::string &gt; <a href="Poco.Util.WinRegistryKey.html#27927" title="Poco::Util::WinRegistryKey::Keys">Keys</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="27928">Values</a></h3>
+<p class="decl">typedef std::vector &lt; std::string &gt; <a href="Poco.Util.WinRegistryKey.html#27928" title="Poco::Util::WinRegistryKey::Values">Values</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Enumerations</h2>
+<h3><a id="27929">Type</a></h3>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="27930">REGT_NONE</a> = 0</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="27931">REGT_STRING</a> = 1</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="27932">REGT_STRING_EXPAND</a> = 2</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="27933">REGT_BINARY</a> = 3</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="27934">REGT_DWORD</a> = 4</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="27935">REGT_DWORD_BIG_ENDIAN</a> = 5</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="27936">REGT_LINK</a> = 6</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="27937">REGT_MULTI_STRING</a> = 7</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="27938">REGT_RESOURCE_LIST</a> = 8</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="27939">REGT_FULL_RESOURCE_DESCRIPTOR</a> = 9</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="27940">REGT_RESOURCE_REQUIREMENTS_LIST</a> = 10</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="27941">REGT_QWORD</a> = 11</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Constructors</h2>
+<h3><a id="27942">WinRegistryKey</a></h3>
+<p class="decl"><a href="Poco.Util.WinRegistryKey.html" title="class Poco::Util::WinRegistryKey">WinRegistryKey</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; key,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool readOnly = false,<br />&nbsp;&nbsp;&nbsp;&nbsp;REGSAM extraSam = 0<br />);</p>
+<div class="description">
+<p>Creates the <a href="Poco.Util.WinRegistryKey.html" title="class Poco::Util::WinRegistryKey">WinRegistryKey</a>. </p>
+<p>The key must start with one of the root key names like HKEY_CLASSES_ROOT, e.g. HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services. </p>
+<p>If readOnly is true, then only read access to the registry is available and any attempt to write to the registry will result in an exception. </p>
+<p>extraSam is used to pass extra flags (in addition to KEY_READ and KEY_WRITE) to the samDesired argument of RegOpenKeyEx() or RegCreateKeyEx(). </p>
+</div>
+<h3><a id="27946">WinRegistryKey</a></h3>
+<p class="decl"><a href="Poco.Util.WinRegistryKey.html" title="class Poco::Util::WinRegistryKey">WinRegistryKey</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;HKEY hRootKey,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; subKey,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool readOnly = false,<br />&nbsp;&nbsp;&nbsp;&nbsp;REGSAM extraSam = 0<br />);</p>
+<div class="description">
+<p>Creates the <a href="Poco.Util.WinRegistryKey.html" title="class Poco::Util::WinRegistryKey">WinRegistryKey</a>. </p>
+<p>If readOnly is true, then only read access to the registry is available and any attempt to write to the registry will result in an exception. </p>
+<p>extraSam is used to pass extra flags (in addition to KEY_READ and KEY_WRITE) to the samDesired argument of RegOpenKeyEx() or RegCreateKeyEx(). </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="27951">~WinRegistryKey</a></h3>
+<p class="decl">~<a href="Poco.Util.WinRegistryKey.html" title="class Poco::Util::WinRegistryKey">WinRegistryKey</a>();</p>
+<div class="description">
+<p>Destroys the <a href="Poco.Util.WinRegistryKey.html" title="class Poco::Util::WinRegistryKey">WinRegistryKey</a>. </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="27979">deleteKey</a></h3>
+<p class="decl">void deleteKey();</p>
+<div class="description">
+<p>Recursively deletes the key and all subkeys. </p>
+</div>
+<h3><a id="27977">deleteValue</a></h3>
+<p class="decl">void deleteValue(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; name<br />);</p>
+<div class="description">
+<p>Deletes the value with the given name. </p>
+<p>Throws a <a href="Poco.NotFoundException.html" title="class Poco::NotFoundException">NotFoundException</a> if the value does not exist. </p>
+</div>
+<h3><a id="27980">exists</a></h3>
+<p class="decl">bool exists();</p>
+<div class="description">
+<p>Returns true if and only if the key exists. </p>
+</div>
+<h3><a id="27983">exists</a></h3>
+<p class="decl">bool exists(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; name<br />);</p>
+<div class="description">
+<p>Returns true if and only if the given value exists under that key. </p>
+</div>
+<h3><a id="27965">getBinary</a></h3>
+<p class="decl">std::vector &lt; char &gt; getBinary(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; name<br />);</p>
+<div class="description">
+<p>Returns the string value (REG_BINARY) with the given name. An empty name denotes the default value. </p>
+<p>Throws a <a href="Poco.NotFoundException.html" title="class Poco::NotFoundException">NotFoundException</a> if the value does not exist. </p>
+</div>
+<h3><a id="27970">getInt</a></h3>
+<p class="decl">int getInt(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; name<br />);</p>
+<div class="description">
+<p>Returns the numeric value (REG_DWORD) with the given name. An empty name denotes the default value. </p>
+<p>Throws a <a href="Poco.NotFoundException.html" title="class Poco::NotFoundException">NotFoundException</a> if the value does not exist. </p>
+</div>
+<h3><a id="27975">getInt64</a></h3>
+<p class="decl"><a href="Poco.html#18384" title="Poco::Int64">Poco::Int64</a> getInt64(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; name<br />);</p>
+<div class="description">
+<p>Returns the numeric value (REG_QWORD) with the given name. An empty name denotes the default value. </p>
+<p>Throws a <a href="Poco.NotFoundException.html" title="class Poco::NotFoundException">NotFoundException</a> if the value does not exist. </p>
+</div>
+<h3><a id="27955">getString</a></h3>
+<p class="decl">std::string getString(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; name<br />);</p>
+<div class="description">
+<p>Returns the string value (REG_SZ) with the given name. An empty name denotes the default value. </p>
+<p>Throws a <a href="Poco.NotFoundException.html" title="class Poco::NotFoundException">NotFoundException</a> if the value does not exist. </p>
+</div>
+<h3><a id="27960">getStringExpand</a></h3>
+<p class="decl">std::string getStringExpand(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; name<br />);</p>
+<div class="description">
+<p>Returns the string value (REG_EXPAND_SZ) with the given name. An empty name denotes the default value. All references to environment variables (%VAR%) in the string are expanded. </p>
+<p>Throws a <a href="Poco.NotFoundException.html" title="class Poco::NotFoundException">NotFoundException</a> if the value does not exist. </p>
+</div>
+<h3><a id="27989">isReadOnly</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool isReadOnly() const;</p>
+<div class="description">
+<p>Returns true if and only if the key has been opened for read-only access only. </p>
+</div>
+<h3><a id="27962">setBinary</a></h3>
+<p class="decl">void setBinary(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; name,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::vector &lt; char &gt; &amp; value<br />);</p>
+<div class="description">
+<p>Sets the string value (REG_BINARY) with the given name. An empty name denotes the default value. </p>
+</div>
+<h3><a id="27967">setInt</a></h3>
+<p class="decl">void setInt(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; name,<br />&nbsp;&nbsp;&nbsp;&nbsp;int value<br />);</p>
+<div class="description">
+<p>Sets the numeric (REG_DWORD) value with the given name. An empty name denotes the default value. </p>
+</div>
+<h3><a id="27972">setInt64</a></h3>
+<p class="decl">void setInt64(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; name,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.html#18384" title="Poco::Int64">Poco::Int64</a> value<br />);</p>
+<div class="description">
+<p>Sets the numeric (REG_QWORD) value with the given name. An empty name denotes the default value. </p>
+</div>
+<h3><a id="27952">setString</a></h3>
+<p class="decl">void setString(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; name,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; value<br />);</p>
+<div class="description">
+<p>Sets the string value (REG_SZ) with the given name. An empty name denotes the default value. </p>
+</div>
+<h3><a id="27957">setStringExpand</a></h3>
+<p class="decl">void setStringExpand(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; name,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; value<br />);</p>
+<div class="description">
+<p>Sets the expandable string value (REG_EXPAND_SZ) with the given name. An empty name denotes the default value. </p>
+</div>
+<h3><a id="27985">subKeys</a></h3>
+<p class="decl">void subKeys(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Util.WinRegistryKey.html#27927" title="Poco::Util::WinRegistryKey::Keys">Keys</a> &amp; keys<br />);</p>
+<div class="description">
+<p>Appends all subKey names to keys. </p>
+</div>
+<h3><a id="27981">type</a></h3>
+<p class="decl"><a href="Poco.Util.WinRegistryKey.html#27929" title="enum  Poco::Util::WinRegistryKey::Type">Type</a> type(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; name<br />);</p>
+<div class="description">
+<p>Returns the type of the key value. </p>
+</div>
+<h3><a id="27987">values</a></h3>
+<p class="decl">void values(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Util.WinRegistryKey.html#27928" title="Poco::Util::WinRegistryKey::Values">Values</a> &amp; vals<br />);</p>
+<div class="description">
+<p>Appends all value names to vals; </p>
+</div>
+<h3><a id="27991">close</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">void close();</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="27995">handle</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">HKEY handle();</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="27998">handleFor</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static HKEY handleFor(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; rootKey<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="27996">handleSetError</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">void handleSetError(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; name<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="27992">key</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">std::string key() const;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="27993">key</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">std::string key(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; valueName<br />) const;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="27990">open</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">void open();</p>
+<div class="description">
+<p></p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

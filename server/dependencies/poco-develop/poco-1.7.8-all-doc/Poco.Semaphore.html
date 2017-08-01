@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::Semaphore</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.html" class="namespace">Poco</a></h1>
+<h1 class="symbol">class Semaphore</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Foundation" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Foundation<br />
+<b>Package:</b> Threading<br />
+<b>Header:</b> Poco/Semaphore.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>A <a href="Poco.Semaphore.html" title="class Poco::Semaphore">Semaphore</a> is a synchronization object with the following  characteristics: A semaphore has a value that is constrained to be a non-negative integer and two atomic operations. The allowable operations are V  (here called <a href="Poco.Semaphore.html#16750" title="Poco::Semaphore::set()">set</a>()) and P (here called <a href="Poco.Semaphore.html#16751" title="Poco::Semaphore::wait()">wait</a>()). A V (<a href="Poco.Semaphore.html#16750" title="Poco::Semaphore::set()">set</a>()) operation  increases the value of the semaphore by one.  A P (<a href="Poco.Semaphore.html#16751" title="Poco::Semaphore::wait()">wait</a>()) operation decreases the value of the semaphore by one,  provided that can be done without violating the constraint that the  value be non-negative. A P (<a href="Poco.Semaphore.html#16751" title="Poco::Semaphore::wait()">wait</a>()) operation that is initiated when  the value of the semaphore is 0 suspends the calling thread.  The calling thread may continue when the value becomes positive again. </p>
+</div>
+<h2>Inheritance</h2>
+<p><b>Direct Base Classes: </b>SemaphoreImpl</p>
+<p><b>All Base Classes: </b>SemaphoreImpl</p>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.Semaphore.html#16750" title="Poco::Semaphore::set()">set</a>, <a href="Poco.Semaphore.html#16754" title="Poco::Semaphore::tryWait()">tryWait</a>, <a href="Poco.Semaphore.html#16751" title="Poco::Semaphore::wait()">wait</a></p>
+<h2>Constructors</h2>
+<h3><a id="16744">Semaphore</a></h3>
+<p class="decl"><a href="Poco.Semaphore.html" title="class Poco::Semaphore">Semaphore</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;int n<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="16746">Semaphore</a></h3>
+<p class="decl"><a href="Poco.Semaphore.html" title="class Poco::Semaphore">Semaphore</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;int n,<br />&nbsp;&nbsp;&nbsp;&nbsp;int max<br />);</p>
+<div class="description">
+<p>Creates the semaphore. The current value of the semaphore is given in n. The maximum value of the semaphore is given in max. If only n is given, it must be greater than zero. If both n and max are given, max must be greater than zero, n must be greater than or equal to zero and less than or equal to max. </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="16749">~Semaphore</a></h3>
+<p class="decl">~<a href="Poco.Semaphore.html" title="class Poco::Semaphore">Semaphore</a>();</p>
+<div class="description">
+<p>Destroys the semaphore. </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="16750">set</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void set();</p>
+<div class="description">
+<p>Increments the semaphore's value by one and thus signals the semaphore. Another thread waiting for the semaphore will be able to continue. </p>
+</div>
+<h3><a id="16754">tryWait</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool tryWait(<br />&nbsp;&nbsp;&nbsp;&nbsp;long milliseconds<br />);</p>
+<div class="description">
+<p>Waits for the semaphore to become signalled. To become signalled, a semaphore's value must be greater than zero. Returns true if the semaphore became signalled within the specified time interval, false otherwise. Decrements the semaphore's value by one if successful. </p>
+</div>
+<h3><a id="16751">wait</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void wait();</p>
+<div class="description">
+<p>Waits for the semaphore to become signalled. To become signalled, a semaphore's value must be greater than zero.  Decrements the semaphore's value by one. </p>
+</div>
+<h3><a id="16752">wait</a></h3>
+<p class="decl">void wait(<br />&nbsp;&nbsp;&nbsp;&nbsp;long milliseconds<br />);</p>
+<div class="description">
+<p>Waits for the semaphore to become signalled. To become signalled, a semaphore's value must be greater than zero. Throws a <a href="Poco.TimeoutException.html" title="class Poco::TimeoutException">TimeoutException</a> if the semaphore does not become signalled within the specified time interval. Decrements the semaphore's value by one if successful. </p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

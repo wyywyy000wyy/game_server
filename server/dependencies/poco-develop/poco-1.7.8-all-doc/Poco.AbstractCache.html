@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::AbstractCache</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.html" class="namespace">Poco</a></h1>
+<h1 class="template">template &lt; class TKey, class TValue, class TStrategy, class TMutex = FastMutex, class TEventMutex = FastMutex &gt;</h1>
+<h1 class="symbol">class AbstractCache</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Foundation" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Foundation<br />
+<b>Package:</b> Cache<br />
+<b>Header:</b> Poco/AbstractCache.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>An <a href="Poco.AbstractCache.html" title="class Poco::AbstractCache">AbstractCache</a> is the interface of all caches.  </p>
+</div>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.AbstractCache.html#7756" title="Poco::AbstractCache::add()">add</a>, <a href="Poco.AbstractCache.html#7774" title="Poco::AbstractCache::clear()">clear</a>, <a href="Poco.AbstractCache.html#7782" title="Poco::AbstractCache::doAdd()">doAdd</a>, <a href="Poco.AbstractCache.html#7800" title="Poco::AbstractCache::doClear()">doClear</a>, <a href="Poco.AbstractCache.html#7798" title="Poco::AbstractCache::doGet()">doGet</a>, <a href="Poco.AbstractCache.html#7796" title="Poco::AbstractCache::doHas()">doHas</a>, <a href="Poco.AbstractCache.html#7794" title="Poco::AbstractCache::doRemove()">doRemove</a>, <a href="Poco.AbstractCache.html#7801" title="Poco::AbstractCache::doReplace()">doReplace</a>, <a href="Poco.AbstractCache.html#7788" title="Poco::AbstractCache::doUpdate()">doUpdate</a>, <a href="Poco.AbstractCache.html#7776" title="Poco::AbstractCache::forceReplace()">forceReplace</a>, <a href="Poco.AbstractCache.html#7772" title="Poco::AbstractCache::get()">get</a>, <a href="Poco.AbstractCache.html#7777" title="Poco::AbstractCache::getAllKeys()">getAllKeys</a>, <a href="Poco.AbstractCache.html#7770" title="Poco::AbstractCache::has()">has</a>, <a href="Poco.AbstractCache.html#7780" title="Poco::AbstractCache::initialize()">initialize</a>, <a href="Poco.AbstractCache.html#7768" title="Poco::AbstractCache::remove()">remove</a>, <a href="Poco.AbstractCache.html#7775" title="Poco::AbstractCache::size()">size</a>, <a href="Poco.AbstractCache.html#7781" title="Poco::AbstractCache::uninitialize()">uninitialize</a>, <a href="Poco.AbstractCache.html#7759" title="Poco::AbstractCache::update()">update</a></p>
+<h2>Types</h2>
+<h3><a id="7750">ConstIterator</a></h3>
+<p class="decl">typedef typename DataHolder::const_iterator <a href="Poco.AbstractCache.html#7750" title="Poco::AbstractCache::ConstIterator">ConstIterator</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="7748">DataHolder</a></h3>
+<p class="decl">typedef std::map &lt; TKey, <a href="Poco.SharedPtr.html" title="class Poco::SharedPtr">SharedPtr</a> &lt; TValue &gt; &gt; <a href="Poco.AbstractCache.html#7748" title="Poco::AbstractCache::DataHolder">DataHolder</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="7749">Iterator</a></h3>
+<p class="decl">typedef typename DataHolder::iterator <a href="Poco.AbstractCache.html#7749" title="Poco::AbstractCache::Iterator">Iterator</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="7751">KeySet</a></h3>
+<p class="decl">typedef std::set &lt; TKey &gt; <a href="Poco.AbstractCache.html#7751" title="Poco::AbstractCache::KeySet">KeySet</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Constructors</h2>
+<h3><a id="7752">AbstractCache</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.AbstractCache.html" title="class Poco::AbstractCache">AbstractCache</a>();</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="7753">AbstractCache</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.AbstractCache.html" title="class Poco::AbstractCache">AbstractCache</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const TStrategy &amp; strat<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="7755">~AbstractCache</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">virtual ~<a href="Poco.AbstractCache.html" title="class Poco::AbstractCache">AbstractCache</a>();</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="7756">add</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void add(<br />&nbsp;&nbsp;&nbsp;&nbsp;const TKey &amp; key,<br />&nbsp;&nbsp;&nbsp;&nbsp;const TValue &amp; val<br />);</p>
+<div class="description">
+<p>Adds the key value pair to the cache. If for the key already an entry exists, it will be overwritten. </p>
+</div>
+<h3><a id="7762">add</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void add(<br />&nbsp;&nbsp;&nbsp;&nbsp;const TKey &amp; key,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.SharedPtr.html" title="class Poco::SharedPtr">SharedPtr</a> &lt; TValue &gt; val<br />);</p>
+<div class="description">
+<p>Adds the key value pair to the cache. Note that adding a NULL <a href="Poco.SharedPtr.html" title="class Poco::SharedPtr">SharedPtr</a> will fail! If for the key already an entry exists, it will be overwritten, ie. first a remove event is thrown, then a add event </p>
+</div>
+<h3><a id="7774">clear</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void clear();</p>
+<div class="description">
+<p>Removes all elements from the cache. </p>
+</div>
+<h3><a id="7776">forceReplace</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void forceReplace();</p>
+<div class="description">
+<p>Forces cache replacement. Note that <a href="Poco.html" title="namespace Poco">Poco</a>'s cache strategy use for efficiency reason no background thread which periodically triggers cache replacement. Cache Replacement is only started when the cache is modified from outside, i.e. add is called, or when a user tries to access an cache element via get. In some cases, i.e. expire based caching where for a long time no access to the cache happens, it might be desirable to be able to trigger cache replacement manually. </p>
+</div>
+<h3><a id="7772">get</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.SharedPtr.html" title="class Poco::SharedPtr">SharedPtr</a> &lt; TValue &gt; get(<br />&nbsp;&nbsp;&nbsp;&nbsp;const TKey &amp; key<br />);</p>
+<div class="description">
+<p>Returns a <a href="Poco.SharedPtr.html" title="class Poco::SharedPtr">SharedPtr</a> of the value. The SharedPointer will remain valid even when cache replacement removes the element. If for the key no value exists, an empty <a href="Poco.SharedPtr.html" title="class Poco::SharedPtr">SharedPtr</a> is returned. </p>
+</div>
+<h3><a id="7777">getAllKeys</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">std::set &lt; TKey &gt; getAllKeys();</p>
+<div class="description">
+<p>Returns a copy of all keys stored in the cache </p>
+</div>
+<h3><a id="7770">has</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool has(<br />&nbsp;&nbsp;&nbsp;&nbsp;const TKey &amp; key<br />) const;</p>
+<div class="description">
+<p>Returns true if the cache contains a value for the key. </p>
+</div>
+<h3><a id="7768">remove</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void remove(<br />&nbsp;&nbsp;&nbsp;&nbsp;const TKey &amp; key<br />);</p>
+<div class="description">
+<p>Removes an entry from the cache. If the entry is not found, the remove is ignored. </p>
+</div>
+<h3><a id="7775">size</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">std::size_t size();</p>
+<div class="description">
+<p>Returns the number of cached elements </p>
+</div>
+<h3><a id="7759">update</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void update(<br />&nbsp;&nbsp;&nbsp;&nbsp;const TKey &amp; key,<br />&nbsp;&nbsp;&nbsp;&nbsp;const TValue &amp; val<br />);</p>
+<div class="description">
+<p>Adds the key value pair to the cache. Note that adding a NULL <a href="Poco.SharedPtr.html" title="class Poco::SharedPtr">SharedPtr</a> will fail! If for the key already an entry exists, it will be overwritten. The difference to add is that no remove or add events are thrown in this case,  just a simply silent update is performed If the key doesnot exist the behavior is equal to add, ie. an add event is thrown </p>
+</div>
+<h3><a id="7765">update</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void update(<br />&nbsp;&nbsp;&nbsp;&nbsp;const TKey &amp; key,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.SharedPtr.html" title="class Poco::SharedPtr">SharedPtr</a> &lt; TValue &gt; val<br />);</p>
+<div class="description">
+<p>Adds the key value pair to the cache. Note that adding a NULL <a href="Poco.SharedPtr.html" title="class Poco::SharedPtr">SharedPtr</a> will fail! If for the key already an entry exists, it will be overwritten. The difference to add is that no remove or add events are thrown in this case,  just an <a href="Poco.AbstractCache.html#7744" title="Poco::AbstractCache::Update">Update</a> is thrown If the key doesnot exist the behavior is equal to add, ie. an add event is thrown </p>
+</div>
+<h3><a id="7782">doAdd</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void doAdd(<br />&nbsp;&nbsp;&nbsp;&nbsp;const TKey &amp; key,<br />&nbsp;&nbsp;&nbsp;&nbsp;const TValue &amp; val<br />);</p>
+<div class="description">
+<p>Adds the key value pair to the cache. If for the key already an entry exists, it will be overwritten. </p>
+</div>
+<h3><a id="7785">doAdd</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void doAdd(<br />&nbsp;&nbsp;&nbsp;&nbsp;const TKey &amp; key,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.SharedPtr.html" title="class Poco::SharedPtr">SharedPtr</a> &lt; TValue &gt; &amp; val<br />);</p>
+<div class="description">
+<p>Adds the key value pair to the cache. If for the key already an entry exists, it will be overwritten. </p>
+</div>
+<h3><a id="7800">doClear</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void doClear();</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="7798">doGet</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.SharedPtr.html" title="class Poco::SharedPtr">SharedPtr</a> &lt; TValue &gt; doGet(<br />&nbsp;&nbsp;&nbsp;&nbsp;const TKey &amp; key<br />);</p>
+<div class="description">
+<p>Returns a <a href="Poco.SharedPtr.html" title="class Poco::SharedPtr">SharedPtr</a> of the cache entry, returns 0 if for the key no value was found </p>
+</div>
+<h3><a id="7796">doHas</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool doHas(<br />&nbsp;&nbsp;&nbsp;&nbsp;const TKey &amp; key<br />) const;</p>
+<div class="description">
+<p>Returns true if the cache contains a value for the key </p>
+</div>
+<h3><a id="7794">doRemove</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void doRemove(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.AbstractCache.html#7749" title="Poco::AbstractCache::Iterator">Iterator</a> it<br />);</p>
+<div class="description">
+<p>Removes an entry from the cache. If the entry is not found the remove is ignored. </p>
+</div>
+<h3><a id="7801">doReplace</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void doReplace();</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="7788">doUpdate</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void doUpdate(<br />&nbsp;&nbsp;&nbsp;&nbsp;const TKey &amp; key,<br />&nbsp;&nbsp;&nbsp;&nbsp;const TValue &amp; val<br />);</p>
+<div class="description">
+<p>Adds the key value pair to the cache. If for the key already an entry exists, it will be overwritten. </p>
+</div>
+<h3><a id="7791">doUpdate</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void doUpdate(<br />&nbsp;&nbsp;&nbsp;&nbsp;const TKey &amp; key,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.SharedPtr.html" title="class Poco::SharedPtr">SharedPtr</a> &lt; TValue &gt; &amp; val<br />);</p>
+<div class="description">
+<p>Adds the key value pair to the cache. If for the key already an entry exists, it will be overwritten. </p>
+</div>
+<h3><a id="7780">initialize</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void initialize();</p>
+<div class="description">
+<p>Sets up event registration. </p>
+</div>
+<h3><a id="7781">uninitialize</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void uninitialize();</p>
+<div class="description">
+<p>Reverts event registration. </p>
+</div>
+<h2>Variables</h2>
+<h3><a id="7743">Add</a></h3>
+<p class="decl"><a href="Poco.FIFOEvent.html" title="class Poco::FIFOEvent">FIFOEvent</a> &lt; const <a href="Poco.KeyValueArgs.html" title="class Poco::KeyValueArgs">KeyValueArgs</a> &lt; TKey, TValue &gt;, TEventMutex &gt; <a href="Poco.AbstractCache.html#7743" title="Poco::AbstractCache::Add">Add</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="7747">Clear</a></h3>
+<p class="decl"><a href="Poco.FIFOEvent.html" title="class Poco::FIFOEvent">FIFOEvent</a> &lt; const <a href="Poco.EventArgs.html" title="class Poco::EventArgs">EventArgs</a>, TEventMutex &gt; <a href="Poco.AbstractCache.html#7747" title="Poco::AbstractCache::Clear">Clear</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="7746">Get</a></h3>
+<p class="decl"><a href="Poco.FIFOEvent.html" title="class Poco::FIFOEvent">FIFOEvent</a> &lt; const TKey, TEventMutex &gt; <a href="Poco.AbstractCache.html#7746" title="Poco::AbstractCache::Get">Get</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="7745">Remove</a></h3>
+<p class="decl"><a href="Poco.FIFOEvent.html" title="class Poco::FIFOEvent">FIFOEvent</a> &lt; const TKey, TEventMutex &gt; <a href="Poco.AbstractCache.html#7745" title="Poco::AbstractCache::Remove">Remove</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="7744">Update</a></h3>
+<p class="decl"><a href="Poco.FIFOEvent.html" title="class Poco::FIFOEvent">FIFOEvent</a> &lt; const <a href="Poco.KeyValueArgs.html" title="class Poco::KeyValueArgs">KeyValueArgs</a> &lt; TKey, TValue &gt;, TEventMutex &gt; <a href="Poco.AbstractCache.html#7744" title="Poco::AbstractCache::Update">Update</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="7778">IsValid</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">mutable <a href="Poco.FIFOEvent.html" title="class Poco::FIFOEvent">FIFOEvent</a> &lt; <a href="Poco.ValidArgs.html" title="class Poco::ValidArgs">ValidArgs</a> &lt; TKey &gt; &gt; <a href="Poco.AbstractCache.html#7778" title="Poco::AbstractCache::IsValid">IsValid</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="7779">Replace</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">mutable <a href="Poco.FIFOEvent.html" title="class Poco::FIFOEvent">FIFOEvent</a> &lt; <a href="Poco.AbstractCache.html#7751" title="Poco::AbstractCache::KeySet">KeySet</a> &gt; <a href="Poco.AbstractCache.html#7779" title="Poco::AbstractCache::Replace">Replace</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="7803">_data</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">mutable <a href="Poco.AbstractCache.html#7748" title="Poco::AbstractCache::DataHolder">DataHolder</a> _data;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="7804">_mutex</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">mutable TMutex _mutex;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="7802">_strategy</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">TStrategy _strategy;</p>
+<div class="description">
+<p></p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

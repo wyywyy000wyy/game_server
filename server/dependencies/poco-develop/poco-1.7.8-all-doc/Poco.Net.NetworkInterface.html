@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::Net::NetworkInterface</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.Net.html" class="namespace">Poco::Net</a></h1>
+<h1 class="symbol">class NetworkInterface</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Net" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Net<br />
+<b>Package:</b> Sockets<br />
+<b>Header:</b> Poco/Net/NetworkInterface.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>This class represents a network interface. </p>
+<p><a href="Poco.Net.NetworkInterface.html" title="class Poco::Net::NetworkInterface">NetworkInterface</a> is used with <a href="Poco.Net.MulticastSocket.html" title="class Poco::Net::MulticastSocket">MulticastSocket</a> to specify multicast interfaces for sending and receiving multicast messages. </p>
+<p>The class also provides static member functions for enumerating or searching network interfaces and their respective configuration values. </p>
+<p>On Windows, detection capabilities vary depending on the OS version/service pack. Although the best effort is made not to attempt access to non-existent features through a  combination of compile/runtime checks, when running binaries compiled on a newer version of the OS on an older one problems may occur; if possible, it is best to run binaries on the OS version where they were compiled. This particularly applies to OS versions older than Vista and XP. </p>
+</div>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.Net.NetworkInterface.html#23686" title="Poco::Net::NetworkInterface::adapterName()">adapterName</a>, <a href="Poco.Net.NetworkInterface.html#23694" title="Poco::Net::NetworkInterface::addAddress()">addAddress</a>, <a href="Poco.Net.NetworkInterface.html#23692" title="Poco::Net::NetworkInterface::address()">address</a>, <a href="Poco.Net.NetworkInterface.html#23700" title="Poco::Net::NetworkInterface::addressList()">addressList</a>, <a href="Poco.Net.NetworkInterface.html#23703" title="Poco::Net::NetworkInterface::broadcastAddress()">broadcastAddress</a>, <a href="Poco.Net.NetworkInterface.html#23705" title="Poco::Net::NetworkInterface::destAddress()">destAddress</a>, <a href="Poco.Net.NetworkInterface.html#23685" title="Poco::Net::NetworkInterface::displayName()">displayName</a>, <a href="Poco.Net.NetworkInterface.html#23687" title="Poco::Net::NetworkInterface::firstAddress()">firstAddress</a>, <a href="Poco.Net.NetworkInterface.html#23725" title="Poco::Net::NetworkInterface::forAddress()">forAddress</a>, <a href="Poco.Net.NetworkInterface.html#23727" title="Poco::Net::NetworkInterface::forIndex()">forIndex</a>, <a href="Poco.Net.NetworkInterface.html#23719" title="Poco::Net::NetworkInterface::forName()">forName</a>, <a href="Poco.Net.NetworkInterface.html#23773" title="Poco::Net::NetworkInterface::impl()">impl</a>, <a href="Poco.Net.NetworkInterface.html#23683" title="Poco::Net::NetworkInterface::index()">index</a>, <a href="Poco.Net.NetworkInterface.html#23769" title="Poco::Net::NetworkInterface::interfaceNameToAddress()">interfaceNameToAddress</a>, <a href="Poco.Net.NetworkInterface.html#23771" title="Poco::Net::NetworkInterface::interfaceNameToIndex()">interfaceNameToIndex</a>, <a href="Poco.Net.NetworkInterface.html#23715" title="Poco::Net::NetworkInterface::isLoopback()">isLoopback</a>, <a href="Poco.Net.NetworkInterface.html#23716" title="Poco::Net::NetworkInterface::isPointToPoint()">isPointToPoint</a>, <a href="Poco.Net.NetworkInterface.html#23717" title="Poco::Net::NetworkInterface::isRunning()">isRunning</a>, <a href="Poco.Net.NetworkInterface.html#23718" title="Poco::Net::NetworkInterface::isUp()">isUp</a>, <a href="Poco.Net.NetworkInterface.html#23729" title="Poco::Net::NetworkInterface::list()">list</a>, <a href="Poco.Net.NetworkInterface.html#23707" title="Poco::Net::NetworkInterface::macAddress()">macAddress</a>, <a href="Poco.Net.NetworkInterface.html#23732" title="Poco::Net::NetworkInterface::map()">map</a>, <a href="Poco.Net.NetworkInterface.html#23708" title="Poco::Net::NetworkInterface::mtu()">mtu</a>, <a href="Poco.Net.NetworkInterface.html#23684" title="Poco::Net::NetworkInterface::name()">name</a>, <a href="Poco.Net.NetworkInterface.html#23677" title="Poco::Net::NetworkInterface::operator <()">operator&nbsp;&lt;</a>, <a href="Poco.Net.NetworkInterface.html#23675" title="Poco::Net::NetworkInterface::operator =()">operator&nbsp;=</a>, <a href="Poco.Net.NetworkInterface.html#23679" title="Poco::Net::NetworkInterface::operator ==()">operator&nbsp;==</a>, <a href="Poco.Net.NetworkInterface.html#23701" title="Poco::Net::NetworkInterface::subnetMask()">subnetMask</a>, <a href="Poco.Net.NetworkInterface.html#23713" title="Poco::Net::NetworkInterface::supportsBroadcast()">supportsBroadcast</a>, <a href="Poco.Net.NetworkInterface.html#23710" title="Poco::Net::NetworkInterface::supportsIP()">supportsIP</a>, <a href="Poco.Net.NetworkInterface.html#23711" title="Poco::Net::NetworkInterface::supportsIPv4()">supportsIPv4</a>, <a href="Poco.Net.NetworkInterface.html#23712" title="Poco::Net::NetworkInterface::supportsIPv6()">supportsIPv6</a>, <a href="Poco.Net.NetworkInterface.html#23714" title="Poco::Net::NetworkInterface::supportsMulticast()">supportsMulticast</a>, <a href="Poco.Net.NetworkInterface.html#23681" title="Poco::Net::NetworkInterface::swap()">swap</a>, <a href="Poco.Net.NetworkInterface.html#23709" title="Poco::Net::NetworkInterface::type()">type</a></p>
+<h2>Types</h2>
+<h3><a id="23646">AddressIterator</a></h3>
+<p class="decl">typedef AddressList::iterator <a href="Poco.Net.NetworkInterface.html#23646" title="Poco::Net::NetworkInterface::AddressIterator">AddressIterator</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="23645">AddressList</a></h3>
+<p class="decl">typedef std::vector &lt; <a href="Poco.Net.NetworkInterface.html#23644" title="Poco::Net::NetworkInterface::AddressTuple">AddressTuple</a> &gt; <a href="Poco.Net.NetworkInterface.html#23645" title="Poco::Net::NetworkInterface::AddressList">AddressList</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="23644">AddressTuple</a></h3>
+<p class="decl">typedef <a href="Poco.Tuple.html" title="struct Poco::Tuple">Poco::Tuple</a> &lt; <a href="Poco.Net.IPAddress.html" title="class Poco::Net::IPAddress">IPAddress</a>, <a href="Poco.Net.IPAddress.html" title="class Poco::Net::IPAddress">IPAddress</a>, <a href="Poco.Net.IPAddress.html" title="class Poco::Net::IPAddress">IPAddress</a> &gt; <a href="Poco.Net.NetworkInterface.html#23644" title="Poco::Net::NetworkInterface::AddressTuple">AddressTuple</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="23647">ConstAddressIterator</a></h3>
+<p class="decl">typedef AddressList::const_iterator <a href="Poco.Net.NetworkInterface.html#23647" title="Poco::Net::NetworkInterface::ConstAddressIterator">ConstAddressIterator</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="23641">List</a></h3>
+<p class="decl">typedef std::vector &lt; <a href="Poco.Net.NetworkInterface.html" title="class Poco::Net::NetworkInterface">NetworkInterface</a> &gt; <a href="Poco.Net.NetworkInterface.html#23641" title="Poco::Net::NetworkInterface::List">List</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="23648">MACAddress</a></h3>
+<p class="decl">typedef std::vector &lt; unsigned char &gt; <a href="Poco.Net.NetworkInterface.html#23648" title="Poco::Net::NetworkInterface::MACAddress">MACAddress</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="23643">Map</a></h3>
+<p class="decl">typedef std::map &lt; unsigned, <a href="Poco.Net.NetworkInterface.html" title="class Poco::Net::NetworkInterface">NetworkInterface</a> &gt; <a href="Poco.Net.NetworkInterface.html#23643" title="Poco::Net::NetworkInterface::Map">Map</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="23642">NetworkInterfaceList</a></h3>
+<p class="decl">typedef <a href="Poco.Net.NetworkInterface.html#23641" title="Poco::Net::NetworkInterface::List">List</a> <a href="Poco.Net.NetworkInterface.html#23642" title="Poco::Net::NetworkInterface::NetworkInterfaceList">NetworkInterfaceList</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Enumerations</h2>
+<h3><a id="23649">AddressType</a></h3>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="23650">IP_ADDRESS</a></p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="23651">SUBNET_MASK</a></p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="23652">BROADCAST_ADDRESS</a></p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="23664">IPVersion</a></h3>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="23665">IPv4_ONLY</a></p>
+<div class="description">
+<p>Return interfaces with IPv4 address only </p>
+</div>
+<p class="decl"><a id="23666">IPv6_ONLY</a></p>
+<div class="description">
+<p>Return interfaces with IPv6 address only </p>
+</div>
+<p class="decl"><a id="23667">IPv4_OR_IPv6</a></p>
+<div class="description">
+<p>Return interfaces with IPv4 or IPv6 address </p>
+</div>
+<h3><a id="23653">Type</a></h3>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="23654">NI_TYPE_ETHERNET_CSMACD</a></p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="23655">NI_TYPE_ISO88025_TOKENRING</a></p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="23656">NI_TYPE_FRAMERELAY</a></p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="23657">NI_TYPE_PPP</a></p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="23658">NI_TYPE_SOFTWARE_LOOPBACK</a></p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="23659">NI_TYPE_ATM</a></p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="23660">NI_TYPE_IEEE80211</a></p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="23661">NI_TYPE_TUNNEL</a></p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="23662">NI_TYPE_IEEE1394</a></p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="23663">NI_TYPE_OTHER</a></p>
+<div class="description">
+<p></p>
+</div>
+<h2>Constructors</h2>
+<h3><a id="23670">NetworkInterface</a></h3>
+<p class="decl"><a href="Poco.Net.NetworkInterface.html" title="class Poco::Net::NetworkInterface">NetworkInterface</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;unsigned index = NO_INDEX<br />);</p>
+<div class="description">
+<p>Creates a <a href="Poco.Net.NetworkInterface.html" title="class Poco::Net::NetworkInterface">NetworkInterface</a> representing the default interface. </p>
+<p>The name is empty, the IP address is the wildcard address and the index is max value of unsigned integer. </p>
+</div>
+<h3><a id="23672">NetworkInterface</a></h3>
+<p class="decl"><a href="Poco.Net.NetworkInterface.html" title="class Poco::Net::NetworkInterface">NetworkInterface</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Net.NetworkInterface.html" title="class Poco::Net::NetworkInterface">NetworkInterface</a> &amp; interfc<br />);</p>
+<div class="description">
+<p>Creates the <a href="Poco.Net.NetworkInterface.html" title="class Poco::Net::NetworkInterface">NetworkInterface</a> by copying another one. </p>
+</div>
+<h3><a id="23748">NetworkInterface</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Net.NetworkInterface.html" title="class Poco::Net::NetworkInterface">NetworkInterface</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; name,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Net.IPAddress.html" title="class Poco::Net::IPAddress">IPAddress</a> &amp; address,<br />&nbsp;&nbsp;&nbsp;&nbsp;unsigned index,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Net.NetworkInterface.html#23648" title="Poco::Net::NetworkInterface::MACAddress">MACAddress</a> * pMACAddress = 0<br />);</p>
+<div class="description">
+<p>Creates the <a href="Poco.Net.NetworkInterface.html" title="class Poco::Net::NetworkInterface">NetworkInterface</a>. </p>
+</div>
+<h3><a id="23742">NetworkInterface</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Net.NetworkInterface.html" title="class Poco::Net::NetworkInterface">NetworkInterface</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; name,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; displayName,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; adapterName,<br />&nbsp;&nbsp;&nbsp;&nbsp;unsigned index,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Net.NetworkInterface.html#23648" title="Poco::Net::NetworkInterface::MACAddress">MACAddress</a> * pMACAddress = 0<br />);</p>
+<div class="description">
+<p>Creates the <a href="Poco.Net.NetworkInterface.html" title="class Poco::Net::NetworkInterface">NetworkInterface</a>. </p>
+</div>
+<h3><a id="23735">NetworkInterface</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Net.NetworkInterface.html" title="class Poco::Net::NetworkInterface">NetworkInterface</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; name,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; displayName,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; adapterName,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Net.IPAddress.html" title="class Poco::Net::IPAddress">IPAddress</a> &amp; address,<br />&nbsp;&nbsp;&nbsp;&nbsp;unsigned index,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Net.NetworkInterface.html#23648" title="Poco::Net::NetworkInterface::MACAddress">MACAddress</a> * pMACAddress = 0<br />);</p>
+<div class="description">
+<p>Creates the <a href="Poco.Net.NetworkInterface.html" title="class Poco::Net::NetworkInterface">NetworkInterface</a>. </p>
+</div>
+<h3><a id="23762">NetworkInterface</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Net.NetworkInterface.html" title="class Poco::Net::NetworkInterface">NetworkInterface</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; name,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Net.IPAddress.html" title="class Poco::Net::IPAddress">IPAddress</a> &amp; address,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Net.IPAddress.html" title="class Poco::Net::IPAddress">IPAddress</a> &amp; subnetMask,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Net.IPAddress.html" title="class Poco::Net::IPAddress">IPAddress</a> &amp; broadcastAddress,<br />&nbsp;&nbsp;&nbsp;&nbsp;unsigned index,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Net.NetworkInterface.html#23648" title="Poco::Net::NetworkInterface::MACAddress">MACAddress</a> * pMACAddress = 0<br />);</p>
+<div class="description">
+<p>Creates the <a href="Poco.Net.NetworkInterface.html" title="class Poco::Net::NetworkInterface">NetworkInterface</a>. </p>
+</div>
+<h3><a id="23753">NetworkInterface</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Net.NetworkInterface.html" title="class Poco::Net::NetworkInterface">NetworkInterface</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; name,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; displayName,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; adapterName,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Net.IPAddress.html" title="class Poco::Net::IPAddress">IPAddress</a> &amp; address,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Net.IPAddress.html" title="class Poco::Net::IPAddress">IPAddress</a> &amp; subnetMask,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Net.IPAddress.html" title="class Poco::Net::IPAddress">IPAddress</a> &amp; broadcastAddress,<br />&nbsp;&nbsp;&nbsp;&nbsp;unsigned index,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Net.NetworkInterface.html#23648" title="Poco::Net::NetworkInterface::MACAddress">MACAddress</a> * pMACAddress = 0<br />);</p>
+<div class="description">
+<p>Creates the <a href="Poco.Net.NetworkInterface.html" title="class Poco::Net::NetworkInterface">NetworkInterface</a>. </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="23674">~NetworkInterface</a></h3>
+<p class="decl">~<a href="Poco.Net.NetworkInterface.html" title="class Poco::Net::NetworkInterface">NetworkInterface</a>();</p>
+<div class="description">
+<p>Destroys the <a href="Poco.Net.NetworkInterface.html" title="class Poco::Net::NetworkInterface">NetworkInterface</a>. </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="23686">adapterName</a></h3>
+<p class="decl">const std::string &amp; adapterName() const;</p>
+<div class="description">
+<p>Returns the interface adapter name. </p>
+<p>On Windows platforms, this is the network adapter LUID. The adapter name is used by some Windows <a href="Poco.Net.html" title="namespace Poco::Net">Net</a> APIs like DHCP.  </p>
+<p>On other platforms this is the same as <a href="Poco.Net.NetworkInterface.html#23684" title="Poco::Net::NetworkInterface::name()">name</a>(). </p>
+</div>
+<h3><a id="23694">addAddress</a></h3>
+<p class="decl">void addAddress(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Net.IPAddress.html" title="class Poco::Net::IPAddress">IPAddress</a> &amp; address<br />);</p>
+<div class="description">
+<p>Adds address to the interface. </p>
+</div>
+<h3><a id="23696">addAddress</a></h3>
+<p class="decl">void addAddress(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Net.IPAddress.html" title="class Poco::Net::IPAddress">IPAddress</a> &amp; address,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Net.IPAddress.html" title="class Poco::Net::IPAddress">IPAddress</a> &amp; subnetMask,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Net.IPAddress.html" title="class Poco::Net::IPAddress">IPAddress</a> &amp; broadcastAddress<br />);</p>
+<div class="description">
+<p>Adds address to the interface. </p>
+</div>
+<h3><a id="23692">address</a></h3>
+<p class="decl">const <a href="Poco.Net.IPAddress.html" title="class Poco::Net::IPAddress">IPAddress</a> &amp; address(<br />&nbsp;&nbsp;&nbsp;&nbsp;unsigned index = 0<br />) const;</p>
+<div class="description">
+<p>Returns the IP address bound to the interface at index position. </p>
+</div>
+<h3><a id="23700">addressList</a></h3>
+<p class="decl">const <a href="Poco.Net.NetworkInterface.html#23645" title="Poco::Net::NetworkInterface::AddressList">AddressList</a> &amp; addressList() const;</p>
+<div class="description">
+<p>Returns the list of IP addresses bound to the interface. </p>
+</div>
+<h3><a id="23703">broadcastAddress</a></h3>
+<p class="decl">const <a href="Poco.Net.IPAddress.html" title="class Poco::Net::IPAddress">IPAddress</a> &amp; broadcastAddress(<br />&nbsp;&nbsp;&nbsp;&nbsp;unsigned index = 0<br />) const;</p>
+<div class="description">
+<p>Returns the broadcast address for this network interface. </p>
+</div>
+<h3><a id="23705">destAddress</a></h3>
+<p class="decl">const <a href="Poco.Net.IPAddress.html" title="class Poco::Net::IPAddress">IPAddress</a> &amp; destAddress(<br />&nbsp;&nbsp;&nbsp;&nbsp;unsigned index = 0<br />) const;</p>
+<div class="description">
+<p>Returns the IPv4 point-to-point destination address for this network interface. </p>
+</div>
+<h3><a id="23685">displayName</a></h3>
+<p class="decl">const std::string &amp; displayName() const;</p>
+<div class="description">
+<p>Returns the interface display name. </p>
+<p>On Windows platforms, this is currently the network adapter name. This may change to the &quot;friendly name&quot; of the network connection in a future version, however.  </p>
+<p>On other platforms this is the same as <a href="Poco.Net.NetworkInterface.html#23684" title="Poco::Net::NetworkInterface::name()">name</a>(). </p>
+</div>
+<h3><a id="23687">firstAddress</a></h3>
+<p class="decl">const <a href="Poco.Net.IPAddress.html" title="class Poco::Net::IPAddress">IPAddress</a> &amp; firstAddress(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Net.IPAddress.html#22302" title="enum  Poco::Net::IPAddress::Family">IPAddress::Family</a> family<br />) const;</p>
+<div class="description">
+<p>Returns the first IP address bound to the interface. Throws <a href="Poco.NotFoundException.html" title="class Poco::NotFoundException">NotFoundException</a> if the address family is not configured on the interface. </p>
+</div>
+<h3><a id="23689">firstAddress</a></h3>
+<p class="decl">void firstAddress(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Net.IPAddress.html" title="class Poco::Net::IPAddress">IPAddress</a> &amp; addr,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Net.IPAddress.html#22302" title="enum  Poco::Net::IPAddress::Family">IPAddress::Family</a> family = IPAddress::IPv4<br />) const;</p>
+<div class="description">
+<p>Returns the first IP address bound to the interface. If the address family is not configured on the interface, the address returned in addr will be unspecified (wildcard). </p>
+</div>
+<h3><a id="23725">forAddress</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static <a href="Poco.Net.NetworkInterface.html" title="class Poco::Net::NetworkInterface">NetworkInterface</a> forAddress(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Net.IPAddress.html" title="class Poco::Net::IPAddress">IPAddress</a> &amp; address<br />);</p>
+<div class="description">
+<p>Returns the <a href="Poco.Net.NetworkInterface.html" title="class Poco::Net::NetworkInterface">NetworkInterface</a> for the given IP address. </p>
+<p>Throws an <a href="Poco.Net.InterfaceNotFoundException.html" title="class Poco::Net::InterfaceNotFoundException">InterfaceNotFoundException</a> if an interface with the give address does not exist. </p>
+</div>
+<h3><a id="23727">forIndex</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static <a href="Poco.Net.NetworkInterface.html" title="class Poco::Net::NetworkInterface">NetworkInterface</a> forIndex(<br />&nbsp;&nbsp;&nbsp;&nbsp;unsigned index<br />);</p>
+<div class="description">
+<p>Returns the <a href="Poco.Net.NetworkInterface.html" title="class Poco::Net::NetworkInterface">NetworkInterface</a> for the given interface index. </p>
+<p>Throws an <a href="Poco.Net.InterfaceNotFoundException.html" title="class Poco::Net::InterfaceNotFoundException">InterfaceNotFoundException</a> if an interface with the given index does not exist (or IPv6 is not available). </p>
+</div>
+<h3><a id="23719">forName</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static <a href="Poco.Net.NetworkInterface.html" title="class Poco::Net::NetworkInterface">NetworkInterface</a> forName(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; name,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool requireIPv6 = false<br />);</p>
+<div class="description">
+<p>Returns the <a href="Poco.Net.NetworkInterface.html" title="class Poco::Net::NetworkInterface">NetworkInterface</a> for the given name. </p>
+<p>If requireIPv6 is false, an IPv4 interface is returned. Otherwise, an IPv6 interface is returned. </p>
+<p>Throws an <a href="Poco.Net.InterfaceNotFoundException.html" title="class Poco::Net::InterfaceNotFoundException">InterfaceNotFoundException</a> if an interface with the give name does not exist. </p>
+</div>
+<h3><a id="23722">forName</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static <a href="Poco.Net.NetworkInterface.html" title="class Poco::Net::NetworkInterface">NetworkInterface</a> forName(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; name,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Net.NetworkInterface.html#23664" title="enum  Poco::Net::NetworkInterface::IPVersion">IPVersion</a> ipVersion<br />);</p>
+<div class="description">
+<p>Returns the <a href="Poco.Net.NetworkInterface.html" title="class Poco::Net::NetworkInterface">NetworkInterface</a> for the given name. </p>
+<p>The ipVersion argument can be used to specify whether an IPv4 (<a href="Poco.Net.NetworkInterface.html#23665" title="Poco::Net::NetworkInterface::IPv4_ONLY">IPv4_ONLY</a>) or IPv6 (<a href="Poco.Net.NetworkInterface.html#23666" title="Poco::Net::NetworkInterface::IPv6_ONLY">IPv6_ONLY</a>) interface is required,  or whether the caller does not care (<a href="Poco.Net.NetworkInterface.html#23667" title="Poco::Net::NetworkInterface::IPv4_OR_IPv6">IPv4_OR_IPv6</a>). </p>
+<p>Throws an <a href="Poco.Net.InterfaceNotFoundException.html" title="class Poco::Net::InterfaceNotFoundException">InterfaceNotFoundException</a> if an interface with the give name does not exist. </p>
+</div>
+<h3><a id="23683">index</a></h3>
+<p class="decl">unsigned index() const;</p>
+<div class="description">
+<p>Returns the interface OS index. </p>
+</div>
+<h3><a id="23715">isLoopback</a></h3>
+<p class="decl">bool isLoopback() const;</p>
+<div class="description">
+<p>Returns true if the interface is loopback. </p>
+</div>
+<h3><a id="23716">isPointToPoint</a></h3>
+<p class="decl">bool isPointToPoint() const;</p>
+<div class="description">
+<p>Returns true if the interface is point-to-point. </p>
+</div>
+<h3><a id="23717">isRunning</a></h3>
+<p class="decl">bool isRunning() const;</p>
+<div class="description">
+<p>Returns true if the interface is running. </p>
+</div>
+<h3><a id="23718">isUp</a></h3>
+<p class="decl">bool isUp() const;</p>
+<div class="description">
+<p>Returns true if the interface is up. </p>
+</div>
+<h3><a id="23729">list</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static <a href="Poco.Net.NetworkInterface.html#23641" title="Poco::Net::NetworkInterface::List">List</a> list(<br />&nbsp;&nbsp;&nbsp;&nbsp;bool ipOnly = true,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool upOnly = true<br />);</p>
+<div class="description">
+<p>Returns a list with all network interfaces on the system. </p>
+<p>If ipOnly is true, only interfaces supporting IP are returned. Otherwise, all system network interfaces are returned. </p>
+<p>If upOnly is true, only interfaces being up are returned. Otherwise, both interfaces being up and down are returned. </p>
+<p>If there are multiple addresses bound to one interface, multiple <a href="Poco.Net.NetworkInterface.html" title="class Poco::Net::NetworkInterface">NetworkInterface</a> entries are listed for the same interface. </p>
+</div>
+<h3><a id="23707">macAddress</a></h3>
+<p class="decl">const <a href="Poco.Net.NetworkInterface.html#23648" title="Poco::Net::NetworkInterface::MACAddress">MACAddress</a> &amp; macAddress() const;</p>
+<div class="description">
+<p>Returns MAC (Media Access Control) address for the interface. </p>
+</div>
+<h3><a id="23732">map</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static <a href="Poco.Net.NetworkInterface.html#23643" title="Poco::Net::NetworkInterface::Map">Map</a> map(<br />&nbsp;&nbsp;&nbsp;&nbsp;bool ipOnly = true,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool upOnly = true<br />);</p>
+<div class="description">
+<p>Returns a map containing system network interfaces <a href="Poco.Net.NetworkInterface.html#23643" title="Poco::Net::NetworkInterface::Map">Map</a> is keyed by interface system indices. </p>
+<p>If ipOnly is true, only interfaces supporting IP are returned. Otherwise, all system network interfaces are returned. </p>
+<p>If upOnly is true, only interfaces being up are returned. Otherwise, both interfaces being up and down are returned. </p>
+<p>If there are multiple addresses bound to one interface, they are contained within the <a href="Poco.Net.NetworkInterface.html" title="class Poco::Net::NetworkInterface">NetworkInterface</a> (second)  member of the pair. </p>
+</div>
+<h3><a id="23708">mtu</a></h3>
+<p class="decl">unsigned mtu() const;</p>
+<div class="description">
+<p>Returns the MTU for this interface. </p>
+</div>
+<h3><a id="23684">name</a></h3>
+<p class="decl">const std::string &amp; name() const;</p>
+<div class="description">
+<p>Returns the interface name. </p>
+</div>
+<h3><a id="23677">operator &lt;</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool operator &lt; (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Net.NetworkInterface.html" title="class Poco::Net::NetworkInterface">NetworkInterface</a> &amp; other<br />) const;</p>
+<div class="description">
+<p>Operator less-than. </p>
+</div>
+<h3><a id="23675">operator =</a></h3>
+<p class="decl"><a href="Poco.Net.NetworkInterface.html" title="class Poco::Net::NetworkInterface">NetworkInterface</a> &amp; operator = (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Net.NetworkInterface.html" title="class Poco::Net::NetworkInterface">NetworkInterface</a> &amp; interfc<br />);</p>
+<div class="description">
+<p>Assigns another <a href="Poco.Net.NetworkInterface.html" title="class Poco::Net::NetworkInterface">NetworkInterface</a>. </p>
+</div>
+<h3><a id="23679">operator ==</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool operator == (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Net.NetworkInterface.html" title="class Poco::Net::NetworkInterface">NetworkInterface</a> &amp; other<br />) const;</p>
+<div class="description">
+<p>Operator equal. Compares interface indices. </p>
+</div>
+<h3><a id="23701">subnetMask</a></h3>
+<p class="decl">const <a href="Poco.Net.IPAddress.html" title="class Poco::Net::IPAddress">IPAddress</a> &amp; subnetMask(<br />&nbsp;&nbsp;&nbsp;&nbsp;unsigned index = 0<br />) const;</p>
+<div class="description">
+<p>Returns the subnet mask for this network interface. </p>
+</div>
+<h3><a id="23713">supportsBroadcast</a></h3>
+<p class="decl">bool supportsBroadcast() const;</p>
+<div class="description">
+<p>Returns true if the interface supports broadcast. </p>
+</div>
+<h3><a id="23710">supportsIP</a></h3>
+<p class="decl">bool supportsIP() const;</p>
+<div class="description">
+<p>Returns true if the interface supports IP. </p>
+</div>
+<h3><a id="23711">supportsIPv4</a></h3>
+<p class="decl">bool supportsIPv4() const;</p>
+<div class="description">
+<p>Returns true if the interface supports IPv4. </p>
+</div>
+<h3><a id="23712">supportsIPv6</a></h3>
+<p class="decl">bool supportsIPv6() const;</p>
+<div class="description">
+<p>Returns true if the interface supports IPv6.	 </p>
+</div>
+<h3><a id="23714">supportsMulticast</a></h3>
+<p class="decl">bool supportsMulticast() const;</p>
+<div class="description">
+<p>Returns true if the interface supports multicast. </p>
+</div>
+<h3><a id="23681">swap</a></h3>
+<p class="decl">void swap(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Net.NetworkInterface.html" title="class Poco::Net::NetworkInterface">NetworkInterface</a> &amp; other<br />);</p>
+<div class="description">
+<p>Swaps the <a href="Poco.Net.NetworkInterface.html" title="class Poco::Net::NetworkInterface">NetworkInterface</a> with another one.	 </p>
+</div>
+<h3><a id="23709">type</a></h3>
+<p class="decl"><a href="Poco.Net.NetworkInterface.html#23653" title="enum  Poco::Net::NetworkInterface::Type">NetworkInterface::Type</a> type() const;</p>
+<div class="description">
+<p>returns the MIB IfType of the interface. </p>
+</div>
+<h3><a id="23773">impl</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">NetworkInterfaceImpl &amp; impl();</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="23769">interfaceNameToAddress</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Net.IPAddress.html" title="class Poco::Net::IPAddress">IPAddress</a> interfaceNameToAddress(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; interfaceName<br />) const;</p>
+<div class="description">
+<p>Determines the <a href="Poco.Net.IPAddress.html" title="class Poco::Net::IPAddress">IPAddress</a> bound to the interface with the given name. </p>
+</div>
+<h3><a id="23771">interfaceNameToIndex</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">unsigned interfaceNameToIndex(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; interfaceName<br />) const;</p>
+<div class="description">
+<p>Determines the interface index of the interface with the given name. </p>
+</div>
+<h2>Variables</h2>
+<h3><a id="23669">MAC_SEPARATOR</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static const char <a href="Poco.Net.NetworkInterface.html#23669" title="Poco::Net::NetworkInterface::MAC_SEPARATOR">MAC_SEPARATOR</a> = ':';</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="23668">NO_INDEX</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static const unsigned <a href="Poco.Net.NetworkInterface.html#23668" title="Poco::Net::NetworkInterface::NO_INDEX">NO_INDEX</a> = ~0;</p>
+<div class="description">
+<p></p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

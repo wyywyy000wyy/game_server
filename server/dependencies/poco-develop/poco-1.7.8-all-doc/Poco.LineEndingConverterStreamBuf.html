@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::LineEndingConverterStreamBuf</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.html" class="namespace">Poco</a></h1>
+<h1 class="symbol">class LineEndingConverterStreamBuf</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Foundation" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Foundation<br />
+<b>Package:</b> Streams<br />
+<b>Header:</b> Poco/LineEndingConverter.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>This stream buffer performs line ending conversion on text streams. The converter can convert from and to  the Unix (LF), Mac (CR) and DOS/Windows/Network (CF-LF) endings. </p>
+<p><a href="Poco.Any.html" title="class Poco::Any">Any</a> newline sequence in the source will be replaced by the target newline sequence. </p>
+</div>
+<h2>Inheritance</h2>
+<p><b>Direct Base Classes: </b>UnbufferedStreamBuf</p>
+<p><b>All Base Classes: </b><a href="Poco.html#18987" title="Poco::UnbufferedStreamBuf">UnbufferedStreamBuf</a></p>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.LineEndingConverterStreamBuf.html#13393" title="Poco::LineEndingConverterStreamBuf::getNewLine()">getNewLine</a>, <a href="Poco.LineEndingConverterStreamBuf.html#13394" title="Poco::LineEndingConverterStreamBuf::readFromDevice()">readFromDevice</a>, <a href="Poco.LineEndingConverterStreamBuf.html#13391" title="Poco::LineEndingConverterStreamBuf::setNewLine()">setNewLine</a>, <a href="Poco.LineEndingConverterStreamBuf.html#13395" title="Poco::LineEndingConverterStreamBuf::writeToDevice()">writeToDevice</a></p>
+<h2>Constructors</h2>
+<h3><a id="13386">LineEndingConverterStreamBuf</a></h3>
+<p class="decl"><a href="Poco.LineEndingConverterStreamBuf.html" title="class Poco::LineEndingConverterStreamBuf">LineEndingConverterStreamBuf</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::istream &amp; istr<br />);</p>
+<div class="description">
+<p>Creates the <a href="Poco.LineEndingConverterStreamBuf.html" title="class Poco::LineEndingConverterStreamBuf">LineEndingConverterStreamBuf</a> and connects it to the given input stream. </p>
+</div>
+<h3><a id="13388">LineEndingConverterStreamBuf</a></h3>
+<p class="decl"><a href="Poco.LineEndingConverterStreamBuf.html" title="class Poco::LineEndingConverterStreamBuf">LineEndingConverterStreamBuf</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::ostream &amp; ostr<br />);</p>
+<div class="description">
+<p>Creates the <a href="Poco.LineEndingConverterStreamBuf.html" title="class Poco::LineEndingConverterStreamBuf">LineEndingConverterStreamBuf</a> and connects it to the given output stream. </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="13390">~LineEndingConverterStreamBuf</a></h3>
+<p class="decl">~<a href="Poco.LineEndingConverterStreamBuf.html" title="class Poco::LineEndingConverterStreamBuf">LineEndingConverterStreamBuf</a>();</p>
+<div class="description">
+<p>Destroys the LineEndingConverterStream. </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="13393">getNewLine</a></h3>
+<p class="decl">const std::string &amp; getNewLine() const;</p>
+<div class="description">
+<p>Returns the line ending currently in use. </p>
+</div>
+<h3><a id="13391">setNewLine</a></h3>
+<p class="decl">void setNewLine(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; newLineCharacters<br />);</p>
+<div class="description">
+<p>Sets the target line ending for the converter. </p>
+<p>Possible values are: </p>
+<ul>
+<li>NEWLINE_DEFAULT (whatever is appropriate for the current platform) </li>
+<li>NEWLINE_CRLF    (Windows), </li>
+<li>NEWLINE_LF      (Unix), </li>
+<li>NEWLINE_CR      (Macintosh) </li>
+</ul>
+<p>In theory, any character sequence can be used as newline sequence. In practice, however, only the above three make sense. </p>
+</div>
+<h3><a id="13394">readFromDevice</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">int readFromDevice();</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="13395">writeToDevice</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">int writeToDevice(<br />&nbsp;&nbsp;&nbsp;&nbsp;char c<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

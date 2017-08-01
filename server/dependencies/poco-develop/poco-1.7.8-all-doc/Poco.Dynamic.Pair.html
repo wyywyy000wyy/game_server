@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::Dynamic::Pair</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.Dynamic.html" class="namespace">Poco::Dynamic</a></h1>
+<h1 class="template">template &lt; typename K &gt;</h1>
+<h1 class="symbol">class Pair</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Foundation" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Foundation<br />
+<b>Package:</b> Dynamic<br />
+<b>Header:</b> Poco/Dynamic/Pair.h</p>
+<h2>Description</h2>
+<div class="description">
+<p><a href="Poco.Dynamic.Pair.html" title="class Poco::Dynamic::Pair">Pair</a> allows to define a pair of values. </p>
+</div>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.Dynamic.Pair.html#9977" title="Poco::Dynamic::Pair::first()">first</a>, <a href="Poco.Dynamic.Pair.html#9975" title="Poco::Dynamic::Pair::operator =()">operator&nbsp;=</a>, <a href="Poco.Dynamic.Pair.html#9978" title="Poco::Dynamic::Pair::second()">second</a>, <a href="Poco.Dynamic.Pair.html#9973" title="Poco::Dynamic::Pair::swap()">swap</a>, <a href="Poco.Dynamic.Pair.html#9979" title="Poco::Dynamic::Pair::toString()">toString</a></p>
+<h2>Types</h2>
+<h3><a id="9961">Data</a></h3>
+<p class="decl">typedef typename std::pair &lt; K, <a href="Poco.Dynamic.Var.html" title="class Poco::Dynamic::Var">Var</a> &gt; <a href="Poco.Dynamic.Pair.html#9961" title="Poco::Dynamic::Pair::Data">Data</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Constructors</h2>
+<h3><a id="9962">Pair</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Dynamic.Pair.html" title="class Poco::Dynamic::Pair">Pair</a>();</p>
+<div class="description">
+<p>Creates an empty <a href="Poco.Dynamic.Pair.html" title="class Poco::Dynamic::Pair">Pair</a> </p>
+</div>
+<h3><a id="9963">Pair</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Dynamic.Pair.html" title="class Poco::Dynamic::Pair">Pair</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Dynamic.Pair.html" title="class Poco::Dynamic::Pair">Pair</a> &amp; other<br />);</p>
+<div class="description">
+<p>Creates the <a href="Poco.Dynamic.Pair.html" title="class Poco::Dynamic::Pair">Pair</a> from another pair. </p>
+</div>
+<h3><a id="9965">Pair</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Dynamic.Pair.html" title="class Poco::Dynamic::Pair">Pair</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Dynamic.Pair.html#9961" title="Poco::Dynamic::Pair::Data">Data</a> &amp; val<br />);</p>
+<div class="description">
+<p>Creates the <a href="Poco.Dynamic.Pair.html" title="class Poco::Dynamic::Pair">Pair</a> from the given value. </p>
+</div>
+<h3><a id="9967">Pair</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">template &lt; typename T &gt; <a href="Poco.Dynamic.Pair.html" title="class Poco::Dynamic::Pair">Pair</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::pair &lt; K, T &gt; &amp; val<br />);</p>
+<div class="description">
+<p>Creates <a href="Poco.Dynamic.Pair.html" title="class Poco::Dynamic::Pair">Pair</a> form standard pair. </p>
+</div>
+<h3><a id="9969">Pair</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">template &lt; typename T &gt; <a href="Poco.Dynamic.Pair.html" title="class Poco::Dynamic::Pair">Pair</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const K &amp; first,<br />&nbsp;&nbsp;&nbsp;&nbsp;const T &amp; second<br />);</p>
+<div class="description">
+<p>Creates pair from two values. </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="9972">~Pair</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">virtual ~<a href="Poco.Dynamic.Pair.html" title="class Poco::Dynamic::Pair">Pair</a>();</p>
+<div class="description">
+<p>Destroys the <a href="Poco.Dynamic.Pair.html" title="class Poco::Dynamic::Pair">Pair</a>. </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="9977">first</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">inline const K &amp; first() const;</p>
+<div class="description">
+<p>Returns the first member of the pair. </p>
+</div>
+<h3><a id="9975">operator =</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Dynamic.Pair.html" title="class Poco::Dynamic::Pair">Pair</a> &amp; operator = (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Dynamic.Pair.html" title="class Poco::Dynamic::Pair">Pair</a> &amp; other<br />);</p>
+<div class="description">
+<p>Copy constructs <a href="Poco.Dynamic.Pair.html" title="class Poco::Dynamic::Pair">Pair</a> from another pair. </p>
+</div>
+<h3><a id="9978">second</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">inline const <a href="Poco.Dynamic.Var.html" title="class Poco::Dynamic::Var">Var</a> &amp; second() const;</p>
+<div class="description">
+<p>Returns the second member of the pair. </p>
+</div>
+<h3><a id="9973">swap</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Dynamic.Pair.html" title="class Poco::Dynamic::Pair">Pair</a> &amp; swap(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Dynamic.Pair.html" title="class Poco::Dynamic::Pair">Pair</a> &amp; other<br />);</p>
+<div class="description">
+<p>Swaps the content of the two Pairs. </p>
+</div>
+<h3><a id="9979">toString</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">std::string toString();</p>
+<div class="description">
+<p></p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::AbstractEvent</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.html" class="namespace">Poco</a></h1>
+<h1 class="template">template &lt; class TArgs, class TStrategy, class TDelegate, class TMutex = FastMutex &gt;</h1>
+<h1 class="symbol">class AbstractEvent</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Foundation" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Foundation<br />
+<b>Package:</b> Events<br />
+<b>Header:</b> Poco/AbstractEvent.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>An <a href="Poco.AbstractEvent.html" title="class Poco::AbstractEvent">AbstractEvent</a> is the base class of all events.  It works similar to the way C# handles notifications (aka events in C#). </p>
+<p>Events can be used to send information to a set of delegates which are registered with the event. The type of the data is specified with the template parameter TArgs. The TStrategy parameter must be a subclass  of <a href="Poco.NotificationStrategy.html" title="class Poco::NotificationStrategy">NotificationStrategy</a>. The parameter TDelegate can either be a subclass of <a href="Poco.AbstractDelegate.html" title="class Poco::AbstractDelegate">AbstractDelegate</a> or of <a href="Poco.AbstractPriorityDelegate.html" title="class Poco::AbstractPriorityDelegate">AbstractPriorityDelegate</a>.  </p>
+<p>Note that <a href="Poco.AbstractEvent.html" title="class Poco::AbstractEvent">AbstractEvent</a> should never be used directly. One ought to use one of its subclasses which set the TStrategy and TDelegate template parameters to fixed values. For most use-cases the <a href="Poco.BasicEvent.html" title="class Poco::BasicEvent">BasicEvent</a> template will be sufficient: </p>
+<p></p>
+<pre>#include &quot;Poco/BasicEvent.h&quot;
+#include &quot;Poco/Delegate.h&quot;
+</pre>
+<p>Note that as of release 1.4.2, the behavior of <a href="Poco.BasicEvent.html" title="class Poco::BasicEvent">BasicEvent</a> equals that of <a href="Poco.FIFOEvent.html" title="class Poco::FIFOEvent">FIFOEvent</a>, so the <a href="Poco.FIFOEvent.html" title="class Poco::FIFOEvent">FIFOEvent</a> class is no longer necessary and provided for backwards compatibility only. </p>
+<p><a href="Poco.BasicEvent.html" title="class Poco::BasicEvent">BasicEvent</a> works with a standard delegate. They allow one object to register one or more delegates with an event. In contrast, a <a href="Poco.PriorityDelegate.html" title="class Poco::PriorityDelegate">PriorityDelegate</a> comes with an attached priority value and allows one object to register for one priority value one or more delegates. Note that PriorityDelegates only work with PriorityEvents: </p>
+<p></p>
+<pre>#include &quot;Poco/PriorityEvent.h&quot;
+#include &quot;Poco/PriorityDelegate.h&quot;
+</pre>
+<p>Use events by adding them as public members to the object which is throwing notifications: </p>
+<p></p>
+<pre>class MyData
+{
+public:
+    Poco::BasicEvent&lt;int&gt; dataChanged;
+
+    MyData();
+    ...
+    void setData(int i);
+    ...
+private:
+    int _data;
+};
+</pre>
+<p>Firing the event is done either by calling the event's <a href="Poco.AbstractEvent.html#7842" title="Poco::AbstractEvent::notify()">notify</a>() or <a href="Poco.AbstractEvent.html#7846" title="Poco::AbstractEvent::notifyAsync()">notifyAsync</a>() method: </p>
+<p></p>
+<pre>void MyData::setData(int i)
+{
+    this-&gt;_data = i;
+    dataChanged.notify(this, this-&gt;_data);
+}
+</pre>
+<p>Alternatively, instead of <a href="Poco.AbstractEvent.html#7842" title="Poco::AbstractEvent::notify()">notify</a>(), operator () can be used. </p>
+<p></p>
+<pre>void MyData::setData(int i)
+{
+    this-&gt;_data = i;
+    dataChanged(this, this-&gt;_data);
+}
+</pre>
+<p>Note that operator (), <a href="Poco.AbstractEvent.html#7842" title="Poco::AbstractEvent::notify()">notify</a>() and <a href="Poco.AbstractEvent.html#7846" title="Poco::AbstractEvent::notifyAsync()">notifyAsync</a>() do not catch exceptions, i.e. in case a   delegate throws an exception, notifying is immediately aborted and the exception is propagated back to the caller. </p>
+<p>Delegates can register methods at the event. In the case of a <a href="Poco.BasicEvent.html" title="class Poco::BasicEvent">BasicEvent</a> the <a href="Poco.Delegate.html" title="class Poco::Delegate">Delegate</a> template is used, in case of an <a href="Poco.PriorityEvent.html" title="class Poco::PriorityEvent">PriorityEvent</a> a <a href="Poco.PriorityDelegate.html" title="class Poco::PriorityDelegate">PriorityDelegate</a> is used. Mixing of delegates, e.g. using a <a href="Poco.PriorityDelegate.html" title="class Poco::PriorityDelegate">PriorityDelegate</a> with a <a href="Poco.BasicEvent.html" title="class Poco::BasicEvent">BasicEvent</a> is not allowed and can lead to compile-time and/or run-time errors. The standalone <a href="Poco.html#9698" title="Poco::delegate()">delegate</a>() functions can be used to construct <a href="Poco.Delegate.html" title="class Poco::Delegate">Delegate</a> objects. </p>
+<p>Events require the observers to have one of the following method signatures: </p>
+<p></p>
+<pre>void onEvent(const void* pSender, TArgs&amp; args);
+void onEvent(TArgs&amp; args);
+static void onEvent(const void* pSender, TArgs&amp; args);
+static void onEvent(void* pSender, TArgs&amp; args);
+static void onEvent(TArgs&amp; args);
+</pre>
+<p>For performance reasons arguments are always sent by reference. This also allows observers to modify the event argument. To prevent that, use <tt>const TArg</tt> as template parameter. A non-conformant method signature leads to compile errors. </p>
+<p>Assuming that the observer meets the method signature requirement, it can register this method with the += operator: </p>
+<p></p>
+<pre>class MyController
+{
+protected:
+    MyData _data;
+
+    void onDataChanged(void* pSender, int&amp; data);
+    ...
+};
+
+MyController::MyController()
+{
+    _data.dataChanged += delegate(this, &amp;MyController::onDataChanged);
+}
+</pre>
+<p>In some cases it might be desirable to work with automatically expiring registrations. Simply add to delegate as 3rd parameter a expireValue (in milliseconds): </p>
+<p></p>
+<pre>_data.dataChanged += delegate(this, &amp;MyController::onDataChanged, 1000);
+</pre>
+<p>This will add a delegate to the event which will automatically be removed in 1000 millisecs. </p>
+<p>Unregistering happens via the -= operator. Forgetting to unregister a method will lead to segmentation faults later, when one tries to send a notify to a no longer existing object. </p>
+<p></p>
+<pre>MyController::~MyController()
+{
+    _data.dataChanged -= delegate(this, &amp;MyController::onDataChanged);
+}
+</pre>
+<p>Working with <a href="Poco.PriorityDelegate.html" title="class Poco::PriorityDelegate">PriorityDelegate</a>'s as similar to working with <a href="Poco.BasicEvent.html" title="class Poco::BasicEvent">BasicEvent</a>. Instead of <a href="Poco.html#9698" title="Poco::delegate()">delegate</a>(), the <a href="Poco.html#16096" title="Poco::priorityDelegate()">priorityDelegate</a>() function must be used to create the <a href="Poco.PriorityDelegate.html" title="class Poco::PriorityDelegate">PriorityDelegate</a>. </p>
+</div>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.AbstractEvent.html#7833" title="Poco::AbstractEvent::add()">add</a>, <a href="Poco.AbstractEvent.html#7852" title="Poco::AbstractEvent::clear()">clear</a>, <a href="Poco.AbstractEvent.html#7850" title="Poco::AbstractEvent::disable()">disable</a>, <a href="Poco.AbstractEvent.html#7853" title="Poco::AbstractEvent::empty()">empty</a>, <a href="Poco.AbstractEvent.html#7849" title="Poco::AbstractEvent::enable()">enable</a>, <a href="Poco.AbstractEvent.html#7863" title="Poco::AbstractEvent::executeAsyncImpl()">executeAsyncImpl</a>, <a href="Poco.AbstractEvent.html#7845" title="Poco::AbstractEvent::hasDelegates()">hasDelegates</a>, <a href="Poco.AbstractEvent.html#7851" title="Poco::AbstractEvent::isEnabled()">isEnabled</a>, <a href="Poco.AbstractEvent.html#7842" title="Poco::AbstractEvent::notify()">notify</a>, <a href="Poco.AbstractEvent.html#7846" title="Poco::AbstractEvent::notifyAsync()">notifyAsync</a>, <a href="Poco.AbstractEvent.html#7837" title="Poco::AbstractEvent::operator ()()">operator&nbsp;()</a>, <a href="Poco.AbstractEvent.html#7829" title="Poco::AbstractEvent::operator +=()">operator&nbsp;+=</a>, <a href="Poco.AbstractEvent.html#7831" title="Poco::AbstractEvent::operator -=()">operator&nbsp;-=</a>, <a href="Poco.AbstractEvent.html#7835" title="Poco::AbstractEvent::remove()">remove</a></p>
+<h2>Nested Classes</h2>
+<h3><a href="Poco.AbstractEvent.NotifyAsyncParams.html" class="class">struct NotifyAsyncParams</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p>&nbsp;<a href="Poco.AbstractEvent.NotifyAsyncParams.html"><img src="images/arrow.png" alt="more..." /> </a></p>
+<h2>Types</h2>
+<h3><a id="7824">Args</a></h3>
+<p class="decl">typedef TArgs <a href="Poco.AbstractEvent.html#7824" title="Poco::AbstractEvent::Args">Args</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="7823">DelegateHandle</a></h3>
+<p class="decl">typedef TDelegate * <a href="Poco.AbstractEvent.html#7823" title="Poco::AbstractEvent::DelegateHandle">DelegateHandle</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Constructors</h2>
+<h3><a id="7825">AbstractEvent</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.AbstractEvent.html" title="class Poco::AbstractEvent">AbstractEvent</a>();</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="7826">AbstractEvent</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.AbstractEvent.html" title="class Poco::AbstractEvent">AbstractEvent</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const TStrategy &amp; strat<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="7828">~AbstractEvent</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">virtual ~<a href="Poco.AbstractEvent.html" title="class Poco::AbstractEvent">AbstractEvent</a>();</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="7833">add</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.AbstractEvent.html#7823" title="Poco::AbstractEvent::DelegateHandle">DelegateHandle</a> add(<br />&nbsp;&nbsp;&nbsp;&nbsp;const TDelegate &amp; aDelegate<br />);</p>
+<div class="description">
+<p>Adds a delegate to the event.  </p>
+<p>Exact behavior is determined by the TStrategy. </p>
+<p>Returns a <a href="Poco.AbstractEvent.html#7823" title="Poco::AbstractEvent::DelegateHandle">DelegateHandle</a> which can be used in call to <a href="Poco.AbstractEvent.html#7835" title="Poco::AbstractEvent::remove()">remove</a>() to remove the delegate. </p>
+</div>
+<h3><a id="7852">clear</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void clear();</p>
+<div class="description">
+<p>Removes all delegates. </p>
+</div>
+<h3><a id="7850">disable</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void disable();</p>
+<div class="description">
+<p>Disables the event. notify and notifyAsnyc will be ignored, but adding/removing delegates is still allowed. </p>
+</div>
+<h3><a id="7853">empty</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool empty() const;</p>
+<div class="description">
+<p>Checks if any delegates are registered at the delegate. </p>
+</div>
+<h3><a id="7849">enable</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void enable();</p>
+<div class="description">
+<p>Enables the event. </p>
+</div>
+<h3><a id="7845">hasDelegates</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool hasDelegates() const;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="7851">isEnabled</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool isEnabled() const;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="7842">notify</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void notify(<br />&nbsp;&nbsp;&nbsp;&nbsp;const void * pSender,<br />&nbsp;&nbsp;&nbsp;&nbsp;TArgs &amp; args<br />);</p>
+<div class="description">
+<p>Sends a notification to all registered delegates. The order is  determined by the TStrategy. This method is blocking. While executing, the list of delegates may be modified. These changes don't influence the current active notifications but are activated with the next notify. If a delegate is removed during a <a href="Poco.AbstractEvent.html#7842" title="Poco::AbstractEvent::notify()">notify</a>(), the delegate will no longer be invoked (unless it has already been invoked prior to removal). If one of the delegates throws an exception,  the notify method is immediately aborted and the exception is propagated to the caller. </p>
+</div>
+<h3><a id="7846">notifyAsync</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.ActiveResult.html" title="class Poco::ActiveResult">ActiveResult</a> &lt; TArgs &gt; notifyAsync(<br />&nbsp;&nbsp;&nbsp;&nbsp;const void * pSender,<br />&nbsp;&nbsp;&nbsp;&nbsp;const TArgs &amp; args<br />);</p>
+<div class="description">
+<p>Sends a notification to all registered delegates. The order is  determined by the TStrategy. This method is not blocking and will immediately return. The delegates are invoked in a seperate thread. Call activeResult.wait() to wait until the notification has ended. While executing, other objects can change the delegate list. These changes don't influence the current active notifications but are activated with the next notify. If a delegate is removed during a <a href="Poco.AbstractEvent.html#7842" title="Poco::AbstractEvent::notify()">notify</a>(), the delegate will no longer be invoked (unless it has already been invoked prior to removal). If one of the delegates throws an exception,  the execution is aborted and the exception is propagated to the caller. </p>
+</div>
+<h3><a id="7837">operator ()</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void operator () (<br />&nbsp;&nbsp;&nbsp;&nbsp;const void * pSender,<br />&nbsp;&nbsp;&nbsp;&nbsp;TArgs &amp; args<br />);</p>
+<div class="description">
+<p>Shortcut for <a href="Poco.AbstractEvent.html#7842" title="Poco::AbstractEvent::notify()">notify</a>(pSender, args); </p>
+</div>
+<h3><a id="7840">operator ()</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void operator () (<br />&nbsp;&nbsp;&nbsp;&nbsp;TArgs &amp; args<br />);</p>
+<div class="description">
+<p>Shortcut for <a href="Poco.AbstractEvent.html#7842" title="Poco::AbstractEvent::notify()">notify</a>(args). </p>
+</div>
+<h3><a id="7829">operator +=</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void operator += (<br />&nbsp;&nbsp;&nbsp;&nbsp;const TDelegate &amp; aDelegate<br />);</p>
+<div class="description">
+<p>Adds a delegate to the event.  </p>
+<p>Exact behavior is determined by the TStrategy. </p>
+</div>
+<h3><a id="7831">operator -=</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void operator -= (<br />&nbsp;&nbsp;&nbsp;&nbsp;const TDelegate &amp; aDelegate<br />);</p>
+<div class="description">
+<p>Removes a delegate from the event. </p>
+<p>If the delegate is not found, this function does nothing. </p>
+</div>
+<h3><a id="7835">remove</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void remove(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.AbstractEvent.html#7823" title="Poco::AbstractEvent::DelegateHandle">DelegateHandle</a> delegateHandle<br />);</p>
+<div class="description">
+<p>Removes a delegate from the event using a <a href="Poco.AbstractEvent.html#7823" title="Poco::AbstractEvent::DelegateHandle">DelegateHandle</a> returned by <a href="Poco.AbstractEvent.html#7833" title="Poco::AbstractEvent::add()">add</a>(). </p>
+<p>If the delegate is not found, this function does nothing. </p>
+</div>
+<h3><a id="7863">executeAsyncImpl</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">TArgs executeAsyncImpl(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.AbstractEvent.NotifyAsyncParams.html" title="struct Poco::AbstractEvent::NotifyAsyncParams">NotifyAsyncParams</a> &amp; par<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Variables</h2>
+<h3><a id="7866">_enabled</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">bool _enabled;</p>
+<div class="description">
+<p>Stores if an event is enabled. Notfies on disabled events have no effect but it is possible to change the observers. </p>
+</div>
+<h3><a id="7862">_executeAsync</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl"><a href="Poco.ActiveMethod.html" title="class Poco::ActiveMethod">ActiveMethod</a> &lt; TArgs, <a href="Poco.AbstractEvent.NotifyAsyncParams.html" title="struct Poco::AbstractEvent::NotifyAsyncParams">NotifyAsyncParams</a>, <a href="Poco.AbstractEvent.html" title="class Poco::AbstractEvent">AbstractEvent</a> &gt; _executeAsync;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="7867">_mutex</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">mutable TMutex _mutex;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="7865">_strategy</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">TStrategy _strategy;</p>
+<div class="description">
+<p>The strategy used to notify observers. </p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

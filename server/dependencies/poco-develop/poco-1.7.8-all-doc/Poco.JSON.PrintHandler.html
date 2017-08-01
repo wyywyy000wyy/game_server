@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::JSON::PrintHandler</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.JSON.html" class="namespace">Poco::JSON</a></h1>
+<h1 class="symbol">class PrintHandler</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-JSON" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> JSON<br />
+<b>Package:</b> JSON<br />
+<b>Header:</b> Poco/JSON/PrintHandler.h</p>
+<h2>Description</h2>
+<div class="description">
+<p><a href="Poco.JSON.PrintHandler.html" title="class Poco::JSON::PrintHandler">PrintHandler</a> formats and prints the <a href="Poco.JSON.html" title="namespace Poco::JSON">JSON</a> object to either user-provided std::ostream or standard output. If indent is zero, the output is a condensed <a href="Poco.JSON.html" title="namespace Poco::JSON">JSON</a> string, otherwise, the proper indentation is applied to elements. </p>
+</div>
+<h2>Inheritance</h2>
+<p><b>Direct Base Classes: </b><a href="Poco.JSON.Handler.html" title="class Poco::JSON::Handler">Handler</a></p>
+<p><b>All Base Classes: </b><a href="Poco.JSON.Handler.html" title="class Poco::JSON::Handler">Handler</a></p>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.JSON.PrintHandler.html#19900" title="Poco::JSON::PrintHandler::comma()">comma</a>, <a href="Poco.JSON.PrintHandler.html#19882" title="Poco::JSON::PrintHandler::endArray()">endArray</a>, <a href="Poco.JSON.PrintHandler.html#19880" title="Poco::JSON::PrintHandler::endObject()">endObject</a>, <a href="Poco.JSON.PrintHandler.html#19883" title="Poco::JSON::PrintHandler::key()">key</a>, <a href="Poco.JSON.PrintHandler.html#19885" title="Poco::JSON::PrintHandler::null()">null</a>, <a href="Poco.JSON.PrintHandler.html#19878" title="Poco::JSON::PrintHandler::reset()">reset</a>, <a href="Poco.JSON.PrintHandler.html#19901" title="Poco::JSON::PrintHandler::setIndent()">setIndent</a>, <a href="Poco.JSON.PrintHandler.html#19881" title="Poco::JSON::PrintHandler::startArray()">startArray</a>, <a href="Poco.JSON.PrintHandler.html#19879" title="Poco::JSON::PrintHandler::startObject()">startObject</a>, <a href="Poco.JSON.PrintHandler.html#19886" title="Poco::JSON::PrintHandler::value()">value</a></p>
+<p><b>Inherited Functions: </b><a href="Poco.JSON.Handler.html#19546" title="Poco::JSON::Handler::asStruct()">asStruct</a>, <a href="Poco.JSON.Handler.html#19545" title="Poco::JSON::Handler::asVar()">asVar</a>, <a href="Poco.JSON.Handler.html#19527" title="Poco::JSON::Handler::endArray()">endArray</a>, <a href="Poco.JSON.Handler.html#19525" title="Poco::JSON::Handler::endObject()">endObject</a>, <a href="Poco.JSON.Handler.html#19528" title="Poco::JSON::Handler::key()">key</a>, <a href="Poco.JSON.Handler.html#19530" title="Poco::JSON::Handler::null()">null</a>, <a href="Poco.JSON.Handler.html#19523" title="Poco::JSON::Handler::reset()">reset</a>, <a href="Poco.JSON.Handler.html#19526" title="Poco::JSON::Handler::startArray()">startArray</a>, <a href="Poco.JSON.Handler.html#19524" title="Poco::JSON::Handler::startObject()">startObject</a>, <a href="Poco.JSON.Handler.html#19531" title="Poco::JSON::Handler::value()">value</a></p>
+<h2>Types</h2>
+<h3><a id="19870">Ptr</a></h3>
+<p class="decl">typedef <a href="Poco.SharedPtr.html" title="class Poco::SharedPtr">SharedPtr</a> &lt; <a href="Poco.JSON.PrintHandler.html" title="class Poco::JSON::PrintHandler">PrintHandler</a> &gt; <a href="Poco.JSON.PrintHandler.html#19870" title="Poco::JSON::PrintHandler::Ptr">Ptr</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Constructors</h2>
+<h3><a id="19872">PrintHandler</a></h3>
+<p class="decl"><a href="Poco.JSON.PrintHandler.html" title="class Poco::JSON::PrintHandler">PrintHandler</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;unsigned indent = 0<br />);</p>
+<div class="description">
+<p>Creates the <a href="Poco.JSON.PrintHandler.html" title="class Poco::JSON::PrintHandler">PrintHandler</a>. </p>
+</div>
+<h3><a id="19874">PrintHandler</a></h3>
+<p class="decl"><a href="Poco.JSON.PrintHandler.html" title="class Poco::JSON::PrintHandler">PrintHandler</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::ostream &amp; out,<br />&nbsp;&nbsp;&nbsp;&nbsp;unsigned indent = 0<br />);</p>
+<div class="description">
+<p>Creates the <a href="Poco.JSON.PrintHandler.html" title="class Poco::JSON::PrintHandler">PrintHandler</a>. </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="19877">~PrintHandler</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">~<a href="Poco.JSON.PrintHandler.html" title="class Poco::JSON::PrintHandler">PrintHandler</a>();</p>
+<div class="description">
+<p>Destroys the <a href="Poco.JSON.PrintHandler.html" title="class Poco::JSON::PrintHandler">PrintHandler</a>. </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="19900">comma</a></h3>
+<p class="decl">void comma();</p>
+<div class="description">
+<p>A comma is read; it will be written to the output as &quot;true&quot; or &quot;false&quot;. </p>
+</div>
+<h3><a id="19882">endArray</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">void endArray();</p>
+<div class="description">
+<p>The parser has read a ]; the array is closed. </p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.JSON.Handler.html#19527" title="Poco::JSON::Handler::endArray()">Poco::JSON::Handler::endArray()</a></p></div>
+<h3><a id="19880">endObject</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">void endObject();</p>
+<div class="description">
+<p>The parser has read a '}'; the object is closed. </p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.JSON.Handler.html#19525" title="Poco::JSON::Handler::endObject()">Poco::JSON::Handler::endObject()</a></p></div>
+<h3><a id="19883">key</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">void key(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; k<br />);</p>
+<div class="description">
+<p>A key of an object is read; it will be written to the output, followed by a ':'. If indent is greater than zero, the colon is padded by a space before and after. </p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.JSON.Handler.html#19528" title="Poco::JSON::Handler::key()">Poco::JSON::Handler::key()</a></p></div>
+<h3><a id="19885">null</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">void null();</p>
+<div class="description">
+<p>A null value is read; &quot;null&quot; will be written to the output. </p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.JSON.Handler.html#19530" title="Poco::JSON::Handler::null()">Poco::JSON::Handler::null()</a></p></div>
+<h3><a id="19878">reset</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">void reset();</p>
+<div class="description">
+<p>Resets the handler state. </p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.JSON.Handler.html#19523" title="Poco::JSON::Handler::reset()">Poco::JSON::Handler::reset()</a></p></div>
+<h3><a id="19901">setIndent</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void setIndent(<br />&nbsp;&nbsp;&nbsp;&nbsp;unsigned indent<br />);</p>
+<div class="description">
+<p>Sets indentation. </p>
+</div>
+<h3><a id="19881">startArray</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">void startArray();</p>
+<div class="description">
+<p>The parser has read a [; a new array will be started. If indent is greater than zero, a newline will be appended. </p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.JSON.Handler.html#19526" title="Poco::JSON::Handler::startArray()">Poco::JSON::Handler::startArray()</a></p></div>
+<h3><a id="19879">startObject</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">void startObject();</p>
+<div class="description">
+<p>The parser has read a '{'; a new object is started. If indent is greater than zero, a newline will be appended. </p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.JSON.Handler.html#19524" title="Poco::JSON::Handler::startObject()">Poco::JSON::Handler::startObject()</a></p></div>
+<h3><a id="19886">value</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">void value(<br />&nbsp;&nbsp;&nbsp;&nbsp;int v<br />);</p>
+<div class="description">
+<p>An integer value is read. </p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.JSON.Handler.html#19531" title="Poco::JSON::Handler::value()">Poco::JSON::Handler::value()</a></p></div>
+<h3><a id="19888">value</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">void value(<br />&nbsp;&nbsp;&nbsp;&nbsp;unsigned v<br />);</p>
+<div class="description">
+<p>An unsigned value is read. This will only be triggered if the value cannot fit into a signed int. </p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.JSON.Handler.html#19533" title="Poco::JSON::Handler::value()">Poco::JSON::Handler::value()</a></p></div>
+<h3><a id="19890">value</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">void value(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.html#18384" title="Poco::Int64">Int64</a> v<br />);</p>
+<div class="description">
+<p>A 64-bit integer value is read; it will be written to the output. </p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.JSON.Handler.html#19535" title="Poco::JSON::Handler::value()">Poco::JSON::Handler::value()</a></p></div>
+<h3><a id="19892">value</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">void value(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.html#18385" title="Poco::UInt64">UInt64</a> v<br />);</p>
+<div class="description">
+<p>An unsigned 64-bit integer value is read; it will be written to the output. </p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.JSON.Handler.html#19537" title="Poco::JSON::Handler::value()">Poco::JSON::Handler::value()</a></p></div>
+<h3><a id="19894">value</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">void value(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; value<br />);</p>
+<div class="description">
+<p>A string value is read; it will be formatted and written to the output. </p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.JSON.Handler.html#19539" title="Poco::JSON::Handler::value()">Poco::JSON::Handler::value()</a></p></div>
+<h3><a id="19896">value</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">void value(<br />&nbsp;&nbsp;&nbsp;&nbsp;double d<br />);</p>
+<div class="description">
+<p>A double value is read; it will be written to the output. </p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.JSON.Handler.html#19541" title="Poco::JSON::Handler::value()">Poco::JSON::Handler::value()</a></p></div>
+<h3><a id="19898">value</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">void value(<br />&nbsp;&nbsp;&nbsp;&nbsp;bool b<br />);</p>
+<div class="description">
+<p>A boolean value is read; it will be written to the output. </p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.JSON.Handler.html#19543" title="Poco::JSON::Handler::value()">Poco::JSON::Handler::value()</a></p></div>
+<h2>Variables</h2>
+<h3><a id="19871">JSON_PRINT_FLAT</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static const unsigned <a href="Poco.JSON.PrintHandler.html#19871" title="Poco::JSON::PrintHandler::JSON_PRINT_FLAT">JSON_PRINT_FLAT</a> = 0;</p>
+<div class="description">
+<p></p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

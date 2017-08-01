@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::BasicMemoryStreamBuf</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.html" class="namespace">Poco</a></h1>
+<h1 class="template">template &lt; typename ch, typename tr &gt;</h1>
+<h1 class="symbol">class BasicMemoryStreamBuf</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Foundation" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Foundation<br />
+<b>Package:</b> Streams<br />
+<b>Header:</b> Poco/MemoryStream.h</p>
+<h2>Description</h2>
+<div class="description">
+<p><a href="Poco.BasicMemoryStreamBuf.html" title="class Poco::BasicMemoryStreamBuf">BasicMemoryStreamBuf</a> is a simple implementation of a  stream buffer for reading and writing from a memory area. </p>
+<p>This streambuf only supports unidirectional streams. In other words, the <a href="Poco.BasicMemoryStreamBuf.html" title="class Poco::BasicMemoryStreamBuf">BasicMemoryStreamBuf</a> can be used for the implementation of an istream or an ostream, but not for an iostream. </p>
+</div>
+<h2>Inheritance</h2>
+<p><b>Direct Base Classes: </b>std::basic_streambuf&nbsp;&lt;&nbsp;ch,&nbsp;tr&nbsp;&gt;</p>
+<p><b>All Base Classes: </b>std::basic_streambuf&nbsp;&lt;&nbsp;ch,&nbsp;tr&nbsp;&gt;</p>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.BasicMemoryStreamBuf.html#14732" title="Poco::BasicMemoryStreamBuf::charsWritten()">charsWritten</a>, <a href="Poco.BasicMemoryStreamBuf.html#14724" title="Poco::BasicMemoryStreamBuf::overflow()">overflow</a>, <a href="Poco.BasicMemoryStreamBuf.html#14733" title="Poco::BasicMemoryStreamBuf::reset()">reset</a>, <a href="Poco.BasicMemoryStreamBuf.html#14727" title="Poco::BasicMemoryStreamBuf::seekoff()">seekoff</a>, <a href="Poco.BasicMemoryStreamBuf.html#14731" title="Poco::BasicMemoryStreamBuf::sync()">sync</a>, <a href="Poco.BasicMemoryStreamBuf.html#14726" title="Poco::BasicMemoryStreamBuf::underflow()">underflow</a></p>
+<h2>Types</h2>
+<h3><a id="14713">Base</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">typedef std::basic_streambuf &lt; ch, tr &gt; <a href="Poco.BasicMemoryStreamBuf.html#14713" title="Poco::BasicMemoryStreamBuf::Base">Base</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="14714">IOS</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">typedef std::basic_ios &lt; ch, tr &gt; <a href="Poco.BasicMemoryStreamBuf.html#14714" title="Poco::BasicMemoryStreamBuf::IOS">IOS</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="14716">char_traits</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">typedef tr char_traits;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="14715">char_type</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">typedef ch char_type;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="14717">int_type</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">typedef typename Base::int_type int_type;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="14719">off_type</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">typedef typename Base::off_type off_type;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="14718">pos_type</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">typedef typename Base::pos_type pos_type;</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Constructors</h2>
+<h3><a id="14720">BasicMemoryStreamBuf</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.BasicMemoryStreamBuf.html" title="class Poco::BasicMemoryStreamBuf">BasicMemoryStreamBuf</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;char_type * pBuffer,<br />&nbsp;&nbsp;&nbsp;&nbsp;std::streamsize bufferSize<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="14723">~BasicMemoryStreamBuf</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">~<a href="Poco.BasicMemoryStreamBuf.html" title="class Poco::BasicMemoryStreamBuf">BasicMemoryStreamBuf</a>();</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="14732">charsWritten</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">std::streamsize charsWritten() const;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="14724">overflow</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">virtual int_type overflow(<br />&nbsp;&nbsp;&nbsp;&nbsp;int_type<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="14733">reset</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void reset();</p>
+<div class="description">
+<p>Resets the buffer so that current read and write positions will be set to the beginning of the buffer. </p>
+</div>
+<h3><a id="14727">seekoff</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">virtual pos_type seekoff(<br />&nbsp;&nbsp;&nbsp;&nbsp;off_type off,<br />&nbsp;&nbsp;&nbsp;&nbsp;std::ios_base::seekdir way,<br />&nbsp;&nbsp;&nbsp;&nbsp;std::ios_base::openmode which = std::ios_base::in | std::ios_base::out<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="14731">sync</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">virtual int sync();</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="14726">underflow</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">virtual int_type underflow();</p>
+<div class="description">
+<p></p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

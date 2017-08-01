@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::Timespan</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.html" class="namespace">Poco</a></h1>
+<h1 class="symbol">class Timespan</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Foundation" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Foundation<br />
+<b>Package:</b> DateTime<br />
+<b>Header:</b> Poco/Timespan.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>A class that represents time spans up to microsecond resolution. </p>
+</div>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.Timespan.html#18092" title="Poco::Timespan::assign()">assign</a>, <a href="Poco.Timespan.html#18143" title="Poco::Timespan::days()">days</a>, <a href="Poco.Timespan.html#18144" title="Poco::Timespan::hours()">hours</a>, <a href="Poco.Timespan.html#18152" title="Poco::Timespan::microseconds()">microseconds</a>, <a href="Poco.Timespan.html#18150" title="Poco::Timespan::milliseconds()">milliseconds</a>, <a href="Poco.Timespan.html#18146" title="Poco::Timespan::minutes()">minutes</a>, <a href="Poco.Timespan.html#18105" title="Poco::Timespan::operator !=()">operator&nbsp;!=</a>, <a href="Poco.Timespan.html#18127" title="Poco::Timespan::operator +()">operator&nbsp;+</a>, <a href="Poco.Timespan.html#18131" title="Poco::Timespan::operator +=()">operator&nbsp;+=</a>, <a href="Poco.Timespan.html#18129" title="Poco::Timespan::operator -()">operator&nbsp;-</a>, <a href="Poco.Timespan.html#18133" title="Poco::Timespan::operator -=()">operator&nbsp;-=</a>, <a href="Poco.Timespan.html#18111" title="Poco::Timespan::operator <()">operator&nbsp;&lt;</a>, <a href="Poco.Timespan.html#18113" title="Poco::Timespan::operator <=()">operator&nbsp;&lt;=</a>, <a href="Poco.Timespan.html#18088" title="Poco::Timespan::operator =()">operator&nbsp;=</a>, <a href="Poco.Timespan.html#18103" title="Poco::Timespan::operator ==()">operator&nbsp;==</a>, <a href="Poco.Timespan.html#18107" title="Poco::Timespan::operator >()">operator&nbsp;&gt;</a>, <a href="Poco.Timespan.html#18109" title="Poco::Timespan::operator >=()">operator&nbsp;&gt;=</a>, <a href="Poco.Timespan.html#18148" title="Poco::Timespan::seconds()">seconds</a>, <a href="Poco.Timespan.html#18101" title="Poco::Timespan::swap()">swap</a>, <a href="Poco.Timespan.html#18145" title="Poco::Timespan::totalHours()">totalHours</a>, <a href="Poco.Timespan.html#18154" title="Poco::Timespan::totalMicroseconds()">totalMicroseconds</a>, <a href="Poco.Timespan.html#18151" title="Poco::Timespan::totalMilliseconds()">totalMilliseconds</a>, <a href="Poco.Timespan.html#18147" title="Poco::Timespan::totalMinutes()">totalMinutes</a>, <a href="Poco.Timespan.html#18149" title="Poco::Timespan::totalSeconds()">totalSeconds</a>, <a href="Poco.Timespan.html#18153" title="Poco::Timespan::useconds()">useconds</a></p>
+<h2>Types</h2>
+<h3><a id="18072">TimeDiff</a></h3>
+<p class="decl">typedef <a href="Poco.Timestamp.html#18167" title="Poco::Timestamp::TimeDiff">Timestamp::TimeDiff</a> <a href="Poco.Timespan.html#18072" title="Poco::Timespan::TimeDiff">TimeDiff</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Constructors</h2>
+<h3><a id="18073">Timespan</a></h3>
+<p class="decl"><a href="Poco.Timespan.html" title="class Poco::Timespan">Timespan</a>();</p>
+<div class="description">
+<p>Creates a zero <a href="Poco.Timespan.html" title="class Poco::Timespan">Timespan</a>. </p>
+</div>
+<h3><a id="18074">Timespan</a></h3>
+<p class="decl"><a href="Poco.Timespan.html" title="class Poco::Timespan">Timespan</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Timespan.html#18072" title="Poco::Timespan::TimeDiff">TimeDiff</a> microseconds<br />);</p>
+<div class="description">
+<p>Creates a <a href="Poco.Timespan.html" title="class Poco::Timespan">Timespan</a>. </p>
+</div>
+<h3><a id="18085">Timespan</a></h3>
+<p class="decl"><a href="Poco.Timespan.html" title="class Poco::Timespan">Timespan</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Timespan.html" title="class Poco::Timespan">Timespan</a> &amp; timespan<br />);</p>
+<div class="description">
+<p>Creates a <a href="Poco.Timespan.html" title="class Poco::Timespan">Timespan</a> from another one. </p>
+</div>
+<h3><a id="18076">Timespan</a></h3>
+<p class="decl"><a href="Poco.Timespan.html" title="class Poco::Timespan">Timespan</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;long seconds,<br />&nbsp;&nbsp;&nbsp;&nbsp;long microseconds<br />);</p>
+<div class="description">
+<p>Creates a <a href="Poco.Timespan.html" title="class Poco::Timespan">Timespan</a>. Useful for creating a <a href="Poco.Timespan.html" title="class Poco::Timespan">Timespan</a> from a struct timeval. </p>
+</div>
+<h3><a id="18079">Timespan</a></h3>
+<p class="decl"><a href="Poco.Timespan.html" title="class Poco::Timespan">Timespan</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;int days,<br />&nbsp;&nbsp;&nbsp;&nbsp;int hours,<br />&nbsp;&nbsp;&nbsp;&nbsp;int minutes,<br />&nbsp;&nbsp;&nbsp;&nbsp;int seconds,<br />&nbsp;&nbsp;&nbsp;&nbsp;int microSeconds<br />);</p>
+<div class="description">
+<p>Creates a <a href="Poco.Timespan.html" title="class Poco::Timespan">Timespan</a>. </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="18087">~Timespan</a></h3>
+<p class="decl">~<a href="Poco.Timespan.html" title="class Poco::Timespan">Timespan</a>();</p>
+<div class="description">
+<p>Destroys the <a href="Poco.Timespan.html" title="class Poco::Timespan">Timespan</a>. </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="18092">assign</a></h3>
+<p class="decl"><a href="Poco.Timespan.html" title="class Poco::Timespan">Timespan</a> &amp; assign(<br />&nbsp;&nbsp;&nbsp;&nbsp;int days,<br />&nbsp;&nbsp;&nbsp;&nbsp;int hours,<br />&nbsp;&nbsp;&nbsp;&nbsp;int minutes,<br />&nbsp;&nbsp;&nbsp;&nbsp;int seconds,<br />&nbsp;&nbsp;&nbsp;&nbsp;int microSeconds<br />);</p>
+<div class="description">
+<p>Assigns a new span. </p>
+</div>
+<h3><a id="18098">assign</a></h3>
+<p class="decl"><a href="Poco.Timespan.html" title="class Poco::Timespan">Timespan</a> &amp; assign(<br />&nbsp;&nbsp;&nbsp;&nbsp;long seconds,<br />&nbsp;&nbsp;&nbsp;&nbsp;long microseconds<br />);</p>
+<div class="description">
+<p>Assigns a new span. Useful for assigning from a struct timeval. </p>
+</div>
+<h3><a id="18143">days</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">int days() const;</p>
+<div class="description">
+<p>Returns the number of days. </p>
+</div>
+<h3><a id="18144">hours</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">int hours() const;</p>
+<div class="description">
+<p>Returns the number of hours (0 to 23). </p>
+</div>
+<h3><a id="18152">microseconds</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">int microseconds() const;</p>
+<div class="description">
+<p>Returns the fractions of a millisecond in microseconds (0 to 999). </p>
+</div>
+<h3><a id="18150">milliseconds</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">int milliseconds() const;</p>
+<div class="description">
+<p>Returns the number of milliseconds (0 to 999). </p>
+</div>
+<h3><a id="18146">minutes</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">int minutes() const;</p>
+<div class="description">
+<p>Returns the number of minutes (0 to 59). </p>
+</div>
+<h3><a id="18105">operator !=</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool operator != (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Timespan.html" title="class Poco::Timespan">Timespan</a> &amp; ts<br />) const;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="18117">operator !=</a></h3>
+<p class="decl">bool operator != (<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Timespan.html#18072" title="Poco::Timespan::TimeDiff">TimeDiff</a> microSeconds<br />) const;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="18127">operator +</a></h3>
+<p class="decl"><a href="Poco.Timespan.html" title="class Poco::Timespan">Timespan</a> operator + (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Timespan.html" title="class Poco::Timespan">Timespan</a> &amp; d<br />) const;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="18135">operator +</a></h3>
+<p class="decl"><a href="Poco.Timespan.html" title="class Poco::Timespan">Timespan</a> operator + (<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Timespan.html#18072" title="Poco::Timespan::TimeDiff">TimeDiff</a> microSeconds<br />) const;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="18131">operator +=</a></h3>
+<p class="decl"><a href="Poco.Timespan.html" title="class Poco::Timespan">Timespan</a> &amp; operator += (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Timespan.html" title="class Poco::Timespan">Timespan</a> &amp; d<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="18139">operator +=</a></h3>
+<p class="decl"><a href="Poco.Timespan.html" title="class Poco::Timespan">Timespan</a> &amp; operator += (<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Timespan.html#18072" title="Poco::Timespan::TimeDiff">TimeDiff</a> microSeconds<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="18129">operator -</a></h3>
+<p class="decl"><a href="Poco.Timespan.html" title="class Poco::Timespan">Timespan</a> operator - (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Timespan.html" title="class Poco::Timespan">Timespan</a> &amp; d<br />) const;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="18137">operator -</a></h3>
+<p class="decl"><a href="Poco.Timespan.html" title="class Poco::Timespan">Timespan</a> operator - (<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Timespan.html#18072" title="Poco::Timespan::TimeDiff">TimeDiff</a> microSeconds<br />) const;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="18133">operator -=</a></h3>
+<p class="decl"><a href="Poco.Timespan.html" title="class Poco::Timespan">Timespan</a> &amp; operator -= (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Timespan.html" title="class Poco::Timespan">Timespan</a> &amp; d<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="18141">operator -=</a></h3>
+<p class="decl"><a href="Poco.Timespan.html" title="class Poco::Timespan">Timespan</a> &amp; operator -= (<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Timespan.html#18072" title="Poco::Timespan::TimeDiff">TimeDiff</a> microSeconds<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="18111">operator &lt;</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool operator &lt; (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Timespan.html" title="class Poco::Timespan">Timespan</a> &amp; ts<br />) const;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="18123">operator &lt;</a></h3>
+<p class="decl">bool operator &lt; (<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Timespan.html#18072" title="Poco::Timespan::TimeDiff">TimeDiff</a> microSeconds<br />) const;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="18113">operator &lt;=</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool operator &lt;= (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Timespan.html" title="class Poco::Timespan">Timespan</a> &amp; ts<br />) const;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="18125">operator &lt;=</a></h3>
+<p class="decl">bool operator &lt;= (<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Timespan.html#18072" title="Poco::Timespan::TimeDiff">TimeDiff</a> microSeconds<br />) const;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="18088">operator =</a></h3>
+<p class="decl"><a href="Poco.Timespan.html" title="class Poco::Timespan">Timespan</a> &amp; operator = (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Timespan.html" title="class Poco::Timespan">Timespan</a> &amp; timespan<br />);</p>
+<div class="description">
+<p>Assignment operator. </p>
+</div>
+<h3><a id="18090">operator =</a></h3>
+<p class="decl"><a href="Poco.Timespan.html" title="class Poco::Timespan">Timespan</a> &amp; operator = (<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Timespan.html#18072" title="Poco::Timespan::TimeDiff">TimeDiff</a> microseconds<br />);</p>
+<div class="description">
+<p>Assignment operator. </p>
+</div>
+<h3><a id="18103">operator ==</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool operator == (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Timespan.html" title="class Poco::Timespan">Timespan</a> &amp; ts<br />) const;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="18115">operator ==</a></h3>
+<p class="decl">bool operator == (<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Timespan.html#18072" title="Poco::Timespan::TimeDiff">TimeDiff</a> microSeconds<br />) const;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="18107">operator &gt;</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool operator &gt; (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Timespan.html" title="class Poco::Timespan">Timespan</a> &amp; ts<br />) const;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="18119">operator &gt;</a></h3>
+<p class="decl">bool operator &gt; (<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Timespan.html#18072" title="Poco::Timespan::TimeDiff">TimeDiff</a> microSeconds<br />) const;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="18109">operator &gt;=</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool operator &gt;= (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Timespan.html" title="class Poco::Timespan">Timespan</a> &amp; ts<br />) const;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="18121">operator &gt;=</a></h3>
+<p class="decl">bool operator &gt;= (<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Timespan.html#18072" title="Poco::Timespan::TimeDiff">TimeDiff</a> microSeconds<br />) const;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="18148">seconds</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">int seconds() const;</p>
+<div class="description">
+<p>Returns the number of seconds (0 to 59). </p>
+</div>
+<h3><a id="18101">swap</a></h3>
+<p class="decl">void swap(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Timespan.html" title="class Poco::Timespan">Timespan</a> &amp; timespan<br />);</p>
+<div class="description">
+<p>Swaps the <a href="Poco.Timespan.html" title="class Poco::Timespan">Timespan</a> with another one. </p>
+</div>
+<h3><a id="18145">totalHours</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">int totalHours() const;</p>
+<div class="description">
+<p>Returns the total number of hours. </p>
+</div>
+<h3><a id="18154">totalMicroseconds</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Timespan.html#18072" title="Poco::Timespan::TimeDiff">TimeDiff</a> totalMicroseconds() const;</p>
+<div class="description">
+<p>Returns the total number of microseconds. </p>
+</div>
+<h3><a id="18151">totalMilliseconds</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Timespan.html#18072" title="Poco::Timespan::TimeDiff">TimeDiff</a> totalMilliseconds() const;</p>
+<div class="description">
+<p>Returns the total number of milliseconds. </p>
+</div>
+<h3><a id="18147">totalMinutes</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">int totalMinutes() const;</p>
+<div class="description">
+<p>Returns the total number of minutes. </p>
+</div>
+<h3><a id="18149">totalSeconds</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">int totalSeconds() const;</p>
+<div class="description">
+<p>Returns the total number of seconds. </p>
+</div>
+<h3><a id="18153">useconds</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">int useconds() const;</p>
+<div class="description">
+<p>Returns the fractions of a second in microseconds (0 to 999999). </p>
+</div>
+<h2>Variables</h2>
+<h3><a id="18159">DAYS</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static const <a href="Poco.Timespan.html#18072" title="Poco::Timespan::TimeDiff">TimeDiff</a> <a href="Poco.Timespan.html#18159" title="Poco::Timespan::DAYS">DAYS</a>;</p>
+<div class="description">
+<p>The number of microseconds in a day. </p>
+</div>
+<h3><a id="18158">HOURS</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static const <a href="Poco.Timespan.html#18072" title="Poco::Timespan::TimeDiff">TimeDiff</a> <a href="Poco.Timespan.html#18158" title="Poco::Timespan::HOURS">HOURS</a>;</p>
+<div class="description">
+<p>The number of microseconds in a hour. </p>
+</div>
+<h3><a id="18155">MILLISECONDS</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static const <a href="Poco.Timespan.html#18072" title="Poco::Timespan::TimeDiff">TimeDiff</a> <a href="Poco.Timespan.html#18155" title="Poco::Timespan::MILLISECONDS">MILLISECONDS</a>;</p>
+<div class="description">
+<p>The number of microseconds in a millisecond. </p>
+</div>
+<h3><a id="18157">MINUTES</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static const <a href="Poco.Timespan.html#18072" title="Poco::Timespan::TimeDiff">TimeDiff</a> <a href="Poco.Timespan.html#18157" title="Poco::Timespan::MINUTES">MINUTES</a>;</p>
+<div class="description">
+<p>The number of microseconds in a minute. </p>
+</div>
+<h3><a id="18156">SECONDS</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static const <a href="Poco.Timespan.html#18072" title="Poco::Timespan::TimeDiff">TimeDiff</a> <a href="Poco.Timespan.html#18156" title="Poco::Timespan::SECONDS">SECONDS</a>;</p>
+<div class="description">
+<p>The number of microseconds in a second. </p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

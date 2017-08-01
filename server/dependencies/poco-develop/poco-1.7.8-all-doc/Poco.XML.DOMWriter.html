@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::XML::DOMWriter</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.XML.html" class="namespace">Poco::XML</a></h1>
+<h1 class="symbol">class DOMWriter</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-XML" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> XML<br />
+<b>Package:</b> DOM<br />
+<b>Header:</b> Poco/DOM/DOMWriter.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>The <a href="Poco.XML.DOMWriter.html" title="class Poco::XML::DOMWriter">DOMWriter</a> uses a <a href="Poco.XML.DOMSerializer.html" title="class Poco::XML::DOMSerializer">DOMSerializer</a> with an <a href="Poco.XML.XMLWriter.html" title="class Poco::XML::XMLWriter">XMLWriter</a> to serialize a DOM document into textual <a href="Poco.XML.html" title="namespace Poco::XML">XML</a>. </p>
+</div>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.XML.DOMWriter.html#28685" title="Poco::XML::DOMWriter::getEncoding()">getEncoding</a>, <a href="Poco.XML.DOMWriter.html#28694" title="Poco::XML::DOMWriter::getIndent()">getIndent</a>, <a href="Poco.XML.DOMWriter.html#28691" title="Poco::XML::DOMWriter::getNewLine()">getNewLine</a>, <a href="Poco.XML.DOMWriter.html#28688" title="Poco::XML::DOMWriter::getOptions()">getOptions</a>, <a href="Poco.XML.DOMWriter.html#28682" title="Poco::XML::DOMWriter::setEncoding()">setEncoding</a>, <a href="Poco.XML.DOMWriter.html#28692" title="Poco::XML::DOMWriter::setIndent()">setIndent</a>, <a href="Poco.XML.DOMWriter.html#28689" title="Poco::XML::DOMWriter::setNewLine()">setNewLine</a>, <a href="Poco.XML.DOMWriter.html#28686" title="Poco::XML::DOMWriter::setOptions()">setOptions</a>, <a href="Poco.XML.DOMWriter.html#28695" title="Poco::XML::DOMWriter::writeNode()">writeNode</a></p>
+<h2>Constructors</h2>
+<h3><a id="28680">DOMWriter</a></h3>
+<p class="decl"><a href="Poco.XML.DOMWriter.html" title="class Poco::XML::DOMWriter">DOMWriter</a>();</p>
+<div class="description">
+<p>Creates a <a href="Poco.XML.DOMWriter.html" title="class Poco::XML::DOMWriter">DOMWriter</a>. </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="28681">~DOMWriter</a></h3>
+<p class="decl">~<a href="Poco.XML.DOMWriter.html" title="class Poco::XML::DOMWriter">DOMWriter</a>();</p>
+<div class="description">
+<p>Destroys a <a href="Poco.XML.DOMWriter.html" title="class Poco::XML::DOMWriter">DOMWriter</a>. </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="28685">getEncoding</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">const std::string &amp; getEncoding() const;</p>
+<div class="description">
+<p>Returns the encoding name set with setEncoding. </p>
+</div>
+<h3><a id="28694">getIndent</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">const std::string &amp; getIndent() const;</p>
+<div class="description">
+<p>Returns the string used for one indentation step. </p>
+</div>
+<h3><a id="28691">getNewLine</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">const std::string &amp; getNewLine() const;</p>
+<div class="description">
+<p>Returns the line ending characters used by the internal <a href="Poco.XML.XMLWriter.html" title="class Poco::XML::XMLWriter">XMLWriter</a>. </p>
+</div>
+<h3><a id="28688">getOptions</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">int getOptions() const;</p>
+<div class="description">
+<p>Returns the options for the internal <a href="Poco.XML.XMLWriter.html" title="class Poco::XML::XMLWriter">XMLWriter</a>. </p>
+</div>
+<h3><a id="28682">setEncoding</a></h3>
+<p class="decl">void setEncoding(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; encodingName,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.TextEncoding.html" title="class Poco::TextEncoding">Poco::TextEncoding</a> &amp; textEncoding<br />);</p>
+<div class="description">
+<p>Sets the encoding, which will be reflected in the written <a href="Poco.XML.html" title="namespace Poco::XML">XML</a> declaration. </p>
+</div>
+<h3><a id="28692">setIndent</a></h3>
+<p class="decl">void setIndent(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; indent<br />);</p>
+<div class="description">
+<p>Sets the string used for one indentation step. </p>
+<p>The default is a single TAB character. The given string should only contain TAB or SPACE characters (e.g., a single TAB character, or two to four SPACE characters). </p>
+</div>
+<h3><a id="28689">setNewLine</a></h3>
+<p class="decl">void setNewLine(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; newLine<br />);</p>
+<div class="description">
+<p>Sets the line ending characters for the internal <a href="Poco.XML.XMLWriter.html" title="class Poco::XML::XMLWriter">XMLWriter</a>. See <a href="Poco.XML.XMLWriter.html#30572" title="Poco::XML::XMLWriter::setNewLine()">XMLWriter::setNewLine</a>() for a list of supported values.  </p>
+</div>
+<h3><a id="28686">setOptions</a></h3>
+<p class="decl">void setOptions(<br />&nbsp;&nbsp;&nbsp;&nbsp;int options<br />);</p>
+<div class="description">
+<p>Sets options for the internal <a href="Poco.XML.XMLWriter.html" title="class Poco::XML::XMLWriter">XMLWriter</a>. </p>
+<p>See class <a href="Poco.XML.XMLWriter.html" title="class Poco::XML::XMLWriter">XMLWriter</a> for available options. </p>
+</div>
+<h3><a id="28695">writeNode</a></h3>
+<p class="decl">void writeNode(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.XML.html#30542" title="Poco::XML::XMLByteOutputStream">XMLByteOutputStream</a> &amp; ostr,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.Node.html" title="class Poco::XML::Node">Node</a> * pNode<br />);</p>
+<div class="description">
+<p>Writes the <a href="Poco.XML.html" title="namespace Poco::XML">XML</a> for the given node to the specified stream. </p>
+</div>
+<h3><a id="28698">writeNode</a></h3>
+<p class="decl">void writeNode(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; systemId,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.Node.html" title="class Poco::XML::Node">Node</a> * pNode<br />);</p>
+<div class="description">
+<p>Writes the <a href="Poco.XML.html" title="namespace Poco::XML">XML</a> for the given node to the file specified in systemId, using a standard file output stream (<a href="Poco.FileOutputStream.html" title="class Poco::FileOutputStream">Poco::FileOutputStream</a>). </p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

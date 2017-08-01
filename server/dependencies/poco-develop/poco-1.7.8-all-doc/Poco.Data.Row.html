@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::Data::Row</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.Data.html" class="namespace">Poco::Data</a></h1>
+<h1 class="symbol">class Row</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Data" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Data<br />
+<b>Package:</b> DataCore<br />
+<b>Header:</b> Poco/Data/Row.h</p>
+<h2>Description</h2>
+<div class="description">
+<p><a href="Poco.Data.Row.html" title="class Poco::Data::Row">Row</a> class provides a data type for <a href="Poco.Data.RecordSet.html" title="class Poco::Data::RecordSet">RecordSet</a> iteration purposes. Dereferencing a <a href="Poco.Data.RowIterator.html" title="class Poco::Data::RowIterator">RowIterator</a> returns <a href="Poco.Data.Row.html" title="class Poco::Data::Row">Row</a>. Rows are sortable. The sortability is maintained at all times (i.e. there is always at least one column specified as a sorting criteria) . The default and minimal sorting criteria is the first field (position 0). The default sorting criteria can be replaced with any other field by  calling <a href="Poco.Data.Row.html#6701" title="Poco::Data::Row::replaceSortField()">replaceSortField</a>() member function. Additional fields can be added to sorting criteria, in which case the field precedence corresponds to addition order (i.e. later added fields have lower sorting precedence). These features make <a href="Poco.Data.Row.html" title="class Poco::Data::Row">Row</a> suitable for use with standard sorted  containers and algorithms. The main constraint is that all the rows from a set that is being sorted must have the same sorting criteria (i.e., the same set of fields must be in sorting criteria in the same order). Since rows don't know about each other, it is the programmer's responsibility to ensure this constraint is satisfied. Field names are a shared pointer to a vector of strings. For efficiency sake, a constructor taking a shared pointer to names vector argument is provided. The stream operator is provided for <a href="Poco.Data.Row.html" title="class Poco::Data::Row">Row</a> data type as a free-standing function. </p>
+</div>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.Data.Row.html#6693" title="Poco::Data::Row::addSortField()">addSortField</a>, <a href="Poco.Data.Row.html#6680" title="Poco::Data::Row::append()">append</a>, <a href="Poco.Data.Row.html#6689" title="Poco::Data::Row::fieldCount()">fieldCount</a>, <a href="Poco.Data.Row.html#6709" title="Poco::Data::Row::formatNames()">formatNames</a>, <a href="Poco.Data.Row.html#6711" title="Poco::Data::Row::formatValues()">formatValues</a>, <a href="Poco.Data.Row.html#6674" title="Poco::Data::Row::get()">get</a>, <a href="Poco.Data.Row.html#6722" title="Poco::Data::Row::getFormatter()">getFormatter</a>, <a href="Poco.Data.Row.html#6725" title="Poco::Data::Row::getSortMap()">getSortMap</a>, <a href="Poco.Data.Row.html#6718" title="Poco::Data::Row::names()">names</a>, <a href="Poco.Data.Row.html#6708" title="Poco::Data::Row::namesToString()">namesToString</a>, <a href="Poco.Data.Row.html#6714" title="Poco::Data::Row::operator !=()">operator&nbsp;!=</a>, <a href="Poco.Data.Row.html#6716" title="Poco::Data::Row::operator <()">operator&nbsp;&lt;</a>, <a href="Poco.Data.Row.html#6712" title="Poco::Data::Row::operator ==()">operator&nbsp;==</a>, <a href="Poco.Data.Row.html#6676" title="Poco::Data::Row::operator []()">operator&nbsp;[]</a>, <a href="Poco.Data.Row.html#6697" title="Poco::Data::Row::removeSortField()">removeSortField</a>, <a href="Poco.Data.Row.html#6701" title="Poco::Data::Row::replaceSortField()">replaceSortField</a>, <a href="Poco.Data.Row.html#6690" title="Poco::Data::Row::reset()">reset</a>, <a href="Poco.Data.Row.html#6707" title="Poco::Data::Row::resetSort()">resetSort</a>, <a href="Poco.Data.Row.html#6691" title="Poco::Data::Row::separator()">separator</a>, <a href="Poco.Data.Row.html#6683" title="Poco::Data::Row::set()">set</a>, <a href="Poco.Data.Row.html#6720" title="Poco::Data::Row::setFormatter()">setFormatter</a>, <a href="Poco.Data.Row.html#6723" title="Poco::Data::Row::setSortMap()">setSortMap</a>, <a href="Poco.Data.Row.html#6719" title="Poco::Data::Row::values()">values</a>, <a href="Poco.Data.Row.html#6710" title="Poco::Data::Row::valuesToString()">valuesToString</a></p>
+<h2>Types</h2>
+<h3><a id="6654">NameVec</a></h3>
+<p class="decl">typedef <a href="Poco.Data.RowFormatter.html#6856" title="Poco::Data::RowFormatter::NameVec">RowFormatter::NameVec</a> <a href="Poco.Data.Row.html#6654" title="Poco::Data::Row::NameVec">NameVec</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="6655">NameVecPtr</a></h3>
+<p class="decl">typedef <a href="Poco.Data.RowFormatter.html#6857" title="Poco::Data::RowFormatter::NameVecPtr">RowFormatter::NameVecPtr</a> <a href="Poco.Data.Row.html#6655" title="Poco::Data::Row::NameVecPtr">NameVecPtr</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="6663">SortMap</a></h3>
+<p class="decl">typedef std::vector &lt; <a href="Poco.Data.Row.html#6662" title="Poco::Data::Row::SortTuple">SortTuple</a> &gt; <a href="Poco.Data.Row.html#6663" title="Poco::Data::Row::SortMap">SortMap</a>;</p>
+<div class="description">
+<p>The type for map holding fields used for sorting criteria. Fields are added sequentially and have precedence that corresponds to field adding sequence order (rather than field's  position in the row). This requirement rules out use of std::map due to its sorted nature. </p>
+</div>
+<h3><a id="6664">SortMapPtr</a></h3>
+<p class="decl">typedef <a href="Poco.SharedPtr.html" title="class Poco::SharedPtr">SharedPtr</a> &lt; <a href="Poco.Data.Row.html#6663" title="Poco::Data::Row::SortMap">SortMap</a> &gt; <a href="Poco.Data.Row.html#6664" title="Poco::Data::Row::SortMapPtr">SortMapPtr</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="6662">SortTuple</a></h3>
+<p class="decl">typedef <a href="Poco.Tuple.html" title="struct Poco::Tuple">Tuple</a> &lt; std::size_t, <a href="Poco.Data.Row.html#6657" title="enum  Poco::Data::Row::ComparisonType">ComparisonType</a> &gt; <a href="Poco.Data.Row.html#6662" title="Poco::Data::Row::SortTuple">SortTuple</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="6656">ValueVec</a></h3>
+<p class="decl">typedef <a href="Poco.Data.RowFormatter.html#6858" title="Poco::Data::RowFormatter::ValueVec">RowFormatter::ValueVec</a> <a href="Poco.Data.Row.html#6656" title="Poco::Data::Row::ValueVec">ValueVec</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Enumerations</h2>
+<h3><a id="6657">ComparisonType</a></h3>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="6658">COMPARE_AS_EMPTY</a></p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="6659">COMPARE_AS_INTEGER</a></p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="6660">COMPARE_AS_FLOAT</a></p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="6661">COMPARE_AS_STRING</a></p>
+<div class="description">
+<p></p>
+</div>
+<h2>Constructors</h2>
+<h3><a id="6665">Row</a></h3>
+<p class="decl"><a href="Poco.Data.Row.html" title="class Poco::Data::Row">Row</a>();</p>
+<div class="description">
+<p>Creates the <a href="Poco.Data.Row.html" title="class Poco::Data::Row">Row</a>. </p>
+</div>
+<h3><a id="6666">Row</a></h3>
+<p class="decl"><a href="Poco.Data.Row.html" title="class Poco::Data::Row">Row</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Data.Row.html#6655" title="Poco::Data::Row::NameVecPtr">NameVecPtr</a> pNames,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Data.RowFormatter.html#6855" title="Poco::Data::RowFormatter::Ptr">RowFormatter::Ptr</a> &amp; pFormatter = 0<br />);</p>
+<div class="description">
+<p>Creates the <a href="Poco.Data.Row.html" title="class Poco::Data::Row">Row</a>. </p>
+</div>
+<h3><a id="6669">Row</a></h3>
+<p class="decl"><a href="Poco.Data.Row.html" title="class Poco::Data::Row">Row</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Data.Row.html#6655" title="Poco::Data::Row::NameVecPtr">NameVecPtr</a> pNames,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Data.Row.html#6664" title="Poco::Data::Row::SortMapPtr">SortMapPtr</a> &amp; pSortMap,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Data.RowFormatter.html#6855" title="Poco::Data::RowFormatter::Ptr">RowFormatter::Ptr</a> &amp; pFormatter = 0<br />);</p>
+<div class="description">
+<p>Creates the <a href="Poco.Data.Row.html" title="class Poco::Data::Row">Row</a>. </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="6673">~Row</a></h3>
+<p class="decl">~<a href="Poco.Data.Row.html" title="class Poco::Data::Row">Row</a>();</p>
+<div class="description">
+<p>Destroys the <a href="Poco.Data.Row.html" title="class Poco::Data::Row">Row</a>. </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="6693">addSortField</a></h3>
+<p class="decl">void addSortField(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos<br />);</p>
+<div class="description">
+<p>Adds the field used for sorting. </p>
+</div>
+<h3><a id="6695">addSortField</a></h3>
+<p class="decl">void addSortField(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; name<br />);</p>
+<div class="description">
+<p>Adds the field used for sorting. </p>
+</div>
+<h3><a id="6680">append</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">template &lt; typename T &gt; void append(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; name,<br />&nbsp;&nbsp;&nbsp;&nbsp;const T &amp; val<br />);</p>
+<div class="description">
+<p>Appends the value to the row. </p>
+</div>
+<h3><a id="6689">fieldCount</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">std::size_t fieldCount() const;</p>
+<div class="description">
+<p>Returns the number of fields in this row. </p>
+</div>
+<h3><a id="6709">formatNames</a></h3>
+<p class="decl">void formatNames() const;</p>
+<div class="description">
+<p>Fomats the column names. </p>
+</div>
+<h3><a id="6711">formatValues</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void formatValues() const;</p>
+<div class="description">
+<p>Fomats the row values. </p>
+</div>
+<h3><a id="6674">get</a></h3>
+<p class="decl"><a href="Poco.Dynamic.Var.html" title="class Poco::Dynamic::Var">Poco::Dynamic::Var</a> &amp; get(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t col<br />);</p>
+<div class="description">
+<p>Returns the reference to data value at column location. </p>
+</div>
+<h3><a id="6722">getFormatter</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">const <a href="Poco.Data.RowFormatter.html" title="class Poco::Data::RowFormatter">RowFormatter</a> &amp; getFormatter() const;</p>
+<div class="description">
+<p>Returns the reference to the formatter. </p>
+</div>
+<h3><a id="6725">getSortMap</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">const <a href="Poco.Data.Row.html#6664" title="Poco::Data::Row::SortMapPtr">SortMapPtr</a> &amp; getSortMap() const;</p>
+<div class="description">
+<p>Returns the reference to the sorting fields. </p>
+</div>
+<h3><a id="6718">names</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">const <a href="Poco.Data.Row.html#6655" title="Poco::Data::Row::NameVecPtr">NameVecPtr</a> names() const;</p>
+<div class="description">
+<p>Returns the shared pointer to names vector. </p>
+</div>
+<h3><a id="6708">namesToString</a></h3>
+<p class="decl">const std::string &amp; namesToString() const;</p>
+<div class="description">
+<p>Converts the column names to string. </p>
+</div>
+<h3><a id="6714">operator !=</a></h3>
+<p class="decl">bool operator != (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Data.Row.html" title="class Poco::Data::Row">Row</a> &amp; other<br />) const;</p>
+<div class="description">
+<p>Inequality operator. </p>
+</div>
+<h3><a id="6716">operator &lt;</a></h3>
+<p class="decl">bool operator &lt; (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Data.Row.html" title="class Poco::Data::Row">Row</a> &amp; other<br />) const;</p>
+<div class="description">
+<p>Less-than operator. </p>
+</div>
+<h3><a id="6712">operator ==</a></h3>
+<p class="decl">bool operator == (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Data.Row.html" title="class Poco::Data::Row">Row</a> &amp; other<br />) const;</p>
+<div class="description">
+<p>Equality operator. </p>
+</div>
+<h3><a id="6676">operator []</a></h3>
+<p class="decl"><a href="Poco.Dynamic.Var.html" title="class Poco::Dynamic::Var">Poco::Dynamic::Var</a> &amp; operator[] (<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t col<br />);</p>
+<div class="description">
+<p>Returns the reference to data value at column location. </p>
+</div>
+<h3><a id="6678">operator []</a></h3>
+<p class="decl"><a href="Poco.Dynamic.Var.html" title="class Poco::Dynamic::Var">Poco::Dynamic::Var</a> &amp; operator[] (<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; name<br />);</p>
+<div class="description">
+<p>Returns the reference to data value at named column location. </p>
+</div>
+<h3><a id="6697">removeSortField</a></h3>
+<p class="decl">void removeSortField(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos<br />);</p>
+<div class="description">
+<p>Removes the field used for sorting. </p>
+</div>
+<h3><a id="6699">removeSortField</a></h3>
+<p class="decl">void removeSortField(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; name<br />);</p>
+<div class="description">
+<p>Removes the field used for sorting. </p>
+</div>
+<h3><a id="6701">replaceSortField</a></h3>
+<p class="decl">void replaceSortField(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t oldPos,<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t newPos<br />);</p>
+<div class="description">
+<p>Replaces the field used for sorting. </p>
+</div>
+<h3><a id="6704">replaceSortField</a></h3>
+<p class="decl">void replaceSortField(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; oldName,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; newName<br />);</p>
+<div class="description">
+<p>Replaces the field used for sorting. </p>
+</div>
+<h3><a id="6690">reset</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void reset();</p>
+<div class="description">
+<p>Resets the row by clearing all field names and values. </p>
+</div>
+<h3><a id="6707">resetSort</a></h3>
+<p class="decl">void resetSort();</p>
+<div class="description">
+<p>Resets the sorting criteria to field 0 only. </p>
+</div>
+<h3><a id="6691">separator</a></h3>
+<p class="decl">void separator(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; sep<br />);</p>
+<div class="description">
+<p>Sets the separator. </p>
+</div>
+<h3><a id="6683">set</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">template &lt; typename T &gt; void set(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const T &amp; val<br />);</p>
+<div class="description">
+<p>Assigns the value to the row. </p>
+</div>
+<h3><a id="6686">set</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">template &lt; typename T &gt; void set(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; name,<br />&nbsp;&nbsp;&nbsp;&nbsp;const T &amp; val<br />);</p>
+<div class="description">
+<p>Assigns the value to the row. </p>
+</div>
+<h3><a id="6720">setFormatter</a></h3>
+<p class="decl">void setFormatter(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Data.RowFormatter.html#6855" title="Poco::Data::RowFormatter::Ptr">RowFormatter::Ptr</a> &amp; pFormatter = 0<br />);</p>
+<div class="description">
+<p>Sets the formatter for this row and takes the shared ownership of it. </p>
+</div>
+<h3><a id="6723">setSortMap</a></h3>
+<p class="decl">void setSortMap(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Data.Row.html#6664" title="Poco::Data::Row::SortMapPtr">SortMapPtr</a> &amp; pSortMap = 0<br />);</p>
+<div class="description">
+<p>Adds the sorting fields entry and takes the shared ownership of it. </p>
+</div>
+<h3><a id="6719">values</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">const <a href="Poco.Data.Row.html#6656" title="Poco::Data::Row::ValueVec">ValueVec</a> &amp; values() const;</p>
+<div class="description">
+<p>Returns the const reference to values vector. </p>
+</div>
+<h3><a id="6710">valuesToString</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">const std::string &amp; valuesToString() const;</p>
+<div class="description">
+<p>Converts the row values to string and returns the formated string. </p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

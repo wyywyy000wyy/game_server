@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::NestedDiagnosticContext</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.html" class="namespace">Poco</a></h1>
+<h1 class="symbol">class NestedDiagnosticContext</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Foundation" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Foundation<br />
+<b>Package:</b> Core<br />
+<b>Header:</b> Poco/NestedDiagnosticContext.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>This class implements a Nested Diagnostic <a href="Poco.NestedDiagnosticContext.Context.html" title="struct Poco::NestedDiagnosticContext::Context">Context</a> (<a href="Poco.html#15149" title="Poco::NDC">NDC</a>), as described in Neil Harrison's article &quot;Patterns for Logging  Diagnostic Messages&quot; in &quot;Pattern Languages of Program Design 3&quot; (Addison-Wesley). </p>
+<p>A <a href="Poco.html#15149" title="Poco::NDC">NDC</a> maintains a stack of context information, consisting of an informational string (e.g., a method name), as well as an optional source code line number and file name. NDCs are especially useful for tagging log messages with context information which is very helpful in a multithreaded server scenario. Every thread has its own private <a href="Poco.html#15149" title="Poco::NDC">NDC</a>, which is automatically created when needed and destroyed when the thread terminates. </p>
+<p>The <a href="Poco.NDCScope.html" title="class Poco::NDCScope">NDCScope</a> (or NDC::<a href="Poco.NestedDiagnosticContext.html#15120" title="Poco::NestedDiagnosticContext::Scope">Scope</a>) class can be used to automatically push information at the beginning of a scope, and to pop it at the end. The poco_ndc(info) macro augments the information with a source code line number and file name. </p>
+</div>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.NestedDiagnosticContext.html#15141" title="Poco::NestedDiagnosticContext::clear()">clear</a>, <a href="Poco.NestedDiagnosticContext.html#15142" title="Poco::NestedDiagnosticContext::current()">current</a>, <a href="Poco.NestedDiagnosticContext.html#15134" title="Poco::NestedDiagnosticContext::depth()">depth</a>, <a href="Poco.NestedDiagnosticContext.html#15136" title="Poco::NestedDiagnosticContext::dump()">dump</a>, <a href="Poco.NestedDiagnosticContext.html#15125" title="Poco::NestedDiagnosticContext::operator =()">operator&nbsp;=</a>, <a href="Poco.NestedDiagnosticContext.html#15133" title="Poco::NestedDiagnosticContext::pop()">pop</a>, <a href="Poco.NestedDiagnosticContext.html#15127" title="Poco::NestedDiagnosticContext::push()">push</a>, <a href="Poco.NestedDiagnosticContext.html#15135" title="Poco::NestedDiagnosticContext::toString()">toString</a></p>
+<h2>Types</h2>
+<h3><a id="15120">Scope</a></h3>
+<p class="decl">typedef <a href="Poco.NDCScope.html" title="class Poco::NDCScope">NDCScope</a> <a href="Poco.NestedDiagnosticContext.html#15120" title="Poco::NestedDiagnosticContext::Scope">Scope</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Constructors</h2>
+<h3><a id="15121">NestedDiagnosticContext</a></h3>
+<p class="decl"><a href="Poco.NestedDiagnosticContext.html" title="class Poco::NestedDiagnosticContext">NestedDiagnosticContext</a>();</p>
+<div class="description">
+<p>Creates the <a href="Poco.NestedDiagnosticContext.html" title="class Poco::NestedDiagnosticContext">NestedDiagnosticContext</a>. </p>
+</div>
+<h3><a id="15122">NestedDiagnosticContext</a></h3>
+<p class="decl"><a href="Poco.NestedDiagnosticContext.html" title="class Poco::NestedDiagnosticContext">NestedDiagnosticContext</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.NestedDiagnosticContext.html" title="class Poco::NestedDiagnosticContext">NestedDiagnosticContext</a> &amp; ctx<br />);</p>
+<div class="description">
+<p>Copy constructor. </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="15124">~NestedDiagnosticContext</a></h3>
+<p class="decl">~<a href="Poco.NestedDiagnosticContext.html" title="class Poco::NestedDiagnosticContext">NestedDiagnosticContext</a>();</p>
+<div class="description">
+<p>Destroys the <a href="Poco.NestedDiagnosticContext.html" title="class Poco::NestedDiagnosticContext">NestedDiagnosticContext</a>. </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="15141">clear</a></h3>
+<p class="decl">void clear();</p>
+<div class="description">
+<p>Clears the <a href="Poco.html#15149" title="Poco::NDC">NDC</a> stack. </p>
+</div>
+<h3><a id="15142">current</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static <a href="Poco.NestedDiagnosticContext.html" title="class Poco::NestedDiagnosticContext">NestedDiagnosticContext</a> &amp; current();</p>
+<div class="description">
+<p>Returns the current thread's <a href="Poco.html#15149" title="Poco::NDC">NDC</a>. </p>
+</div>
+<h3><a id="15134">depth</a></h3>
+<p class="decl">int depth() const;</p>
+<div class="description">
+<p>Returns the depth (number of contexts) of the stack. </p>
+</div>
+<h3><a id="15136">dump</a></h3>
+<p class="decl">void dump(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::ostream &amp; ostr<br />) const;</p>
+<div class="description">
+<p>Dumps the stack (including line number and filenames) to the given stream. The entries are delimited by a newline. </p>
+</div>
+<h3><a id="15138">dump</a></h3>
+<p class="decl">void dump(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::ostream &amp; ostr,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; delimiter<br />) const;</p>
+<div class="description">
+<p>Dumps the stack (including line number and filenames) to the given stream. </p>
+</div>
+<h3><a id="15125">operator =</a></h3>
+<p class="decl"><a href="Poco.NestedDiagnosticContext.html" title="class Poco::NestedDiagnosticContext">NestedDiagnosticContext</a> &amp; operator = (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.NestedDiagnosticContext.html" title="class Poco::NestedDiagnosticContext">NestedDiagnosticContext</a> &amp; ctx<br />);</p>
+<div class="description">
+<p>Assignment operator. </p>
+</div>
+<h3><a id="15133">pop</a></h3>
+<p class="decl">void pop();</p>
+<div class="description">
+<p>Pops the top-most context off the stack. </p>
+</div>
+<h3><a id="15127">push</a></h3>
+<p class="decl">void push(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; info<br />);</p>
+<div class="description">
+<p>Pushes a context (without line number and filename) onto the stack. </p>
+</div>
+<h3><a id="15129">push</a></h3>
+<p class="decl">void push(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; info,<br />&nbsp;&nbsp;&nbsp;&nbsp;int line,<br />&nbsp;&nbsp;&nbsp;&nbsp;const char * filename<br />);</p>
+<div class="description">
+<p>Pushes a context (including line number and filename)  onto the stack. Filename must be a static string, such as the one produced by the __FILE__ preprocessor macro. </p>
+</div>
+<h3><a id="15135">toString</a></h3>
+<p class="decl">std::string toString() const;</p>
+<div class="description">
+<p>Returns the stack as a string with entries delimited by colons. The string does not contain line numbers and filenames. </p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::Data::RecordSet</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.Data.html" class="namespace">Poco::Data</a></h1>
+<h1 class="symbol">class RecordSet</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Data" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Data<br />
+<b>Package:</b> DataCore<br />
+<b>Header:</b> Poco/Data/RecordSet.h</p>
+<h2>Description</h2>
+<div class="description">
+<p><a href="Poco.Data.RecordSet.html" title="class Poco::Data::RecordSet">RecordSet</a> provides access to data returned from a query. <a href="Poco.Data.html" title="namespace Poco::Data">Data</a> access indices (row and column) are 0-based, as usual in C++. </p>
+<p>Recordset provides navigation methods to iterate through the recordset, retrieval methods to extract data, and methods to get metadata (type, etc.) about columns. </p>
+<p>To work with a <a href="Poco.Data.RecordSet.html" title="class Poco::Data::RecordSet">RecordSet</a>, first create a <a href="Poco.Data.Statement.html" title="class Poco::Data::Statement">Statement</a>, execute it, and create the <a href="Poco.Data.RecordSet.html" title="class Poco::Data::RecordSet">RecordSet</a> from the <a href="Poco.Data.Statement.html" title="class Poco::Data::Statement">Statement</a>, as follows: </p>
+<p></p>
+<pre>Statement select(session);
+select &lt;&lt; &quot;SELECT * FROM Person&quot;;
+select.execute();
+RecordSet rs(select);
+</pre>
+<p>The shorter way to do the above is following: </p>
+<p></p>
+<pre>RecordSet rs(session, &quot;SELECT * FROM Person&quot;[, new SimpleRowFormatter]);
+</pre>
+<p>The third (optional) argument passed to the Recordset constructor is a <a href="Poco.Data.RowFormatter.html" title="class Poco::Data::RowFormatter">RowFormatter</a> implementation. The formatter is used in conjunction with &lt;&lt; operator for recordset data formating. </p>
+<p>The number of rows in the <a href="Poco.Data.RecordSet.html" title="class Poco::Data::RecordSet">RecordSet</a> can be limited by specifying a limit for the <a href="Poco.Data.Statement.html" title="class Poco::Data::Statement">Statement</a>. </p>
+</div>
+<h2>Inheritance</h2>
+<p><b>Direct Base Classes: </b><a href="Poco.Data.Statement.html" title="class Poco::Data::Statement">Statement</a></p>
+<p><b>All Base Classes: </b><a href="Poco.Data.Statement.html" title="class Poco::Data::Statement">Statement</a></p>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.Data.RecordSet.html#6578" title="Poco::Data::RecordSet::begin()">begin</a>, <a href="Poco.Data.RecordSet.html#6550" title="Poco::Data::RecordSet::column()">column</a>, <a href="Poco.Data.RecordSet.html#6549" title="Poco::Data::RecordSet::columnCount()">columnCount</a>, <a href="Poco.Data.RecordSet.html#6603" title="Poco::Data::RecordSet::columnLength()">columnLength</a>, <a href="Poco.Data.RecordSet.html#6601" title="Poco::Data::RecordSet::columnName()">columnName</a>, <a href="Poco.Data.RecordSet.html#6607" title="Poco::Data::RecordSet::columnPrecision()">columnPrecision</a>, <a href="Poco.Data.RecordSet.html#6597" title="Poco::Data::RecordSet::columnType()">columnType</a>, <a href="Poco.Data.RecordSet.html#6623" title="Poco::Data::RecordSet::copy()">copy</a>, <a href="Poco.Data.RecordSet.html#6613" title="Poco::Data::RecordSet::copyNames()">copyNames</a>, <a href="Poco.Data.RecordSet.html#6616" title="Poco::Data::RecordSet::copyValues()">copyValues</a>, <a href="Poco.Data.RecordSet.html#6579" title="Poco::Data::RecordSet::end()">end</a>, <a href="Poco.Data.RecordSet.html#6542" title="Poco::Data::RecordSet::extractedRowCount()">extractedRowCount</a>, <a href="Poco.Data.RecordSet.html#6615" title="Poco::Data::RecordSet::formatNames()">formatNames</a>, <a href="Poco.Data.RecordSet.html#6620" title="Poco::Data::RecordSet::formatValues()">formatValues</a>, <a href="Poco.Data.RecordSet.html#6544" title="Poco::Data::RecordSet::getTotalRowCount()">getTotalRowCount</a>, <a href="Poco.Data.RecordSet.html#6627" title="Poco::Data::RecordSet::isFiltered()">isFiltered</a>, <a href="Poco.Data.RecordSet.html#6611" title="Poco::Data::RecordSet::isNull()">isNull</a>, <a href="Poco.Data.RecordSet.html#6582" title="Poco::Data::RecordSet::moveFirst()">moveFirst</a>, <a href="Poco.Data.RecordSet.html#6585" title="Poco::Data::RecordSet::moveLast()">moveLast</a>, <a href="Poco.Data.RecordSet.html#6583" title="Poco::Data::RecordSet::moveNext()">moveNext</a>, <a href="Poco.Data.RecordSet.html#6584" title="Poco::Data::RecordSet::movePrevious()">movePrevious</a>, <a href="Poco.Data.RecordSet.html#6572" title="Poco::Data::RecordSet::nvl()">nvl</a>, <a href="Poco.Data.RecordSet.html#6539" title="Poco::Data::RecordSet::operator =()">operator&nbsp;=</a>, <a href="Poco.Data.RecordSet.html#6593" title="Poco::Data::RecordSet::operator []()">operator&nbsp;[]</a>, <a href="Poco.Data.RecordSet.html#6587" title="Poco::Data::RecordSet::reset()">reset</a>, <a href="Poco.Data.RecordSet.html#6554" title="Poco::Data::RecordSet::row()">row</a>, <a href="Poco.Data.RecordSet.html#6541" title="Poco::Data::RecordSet::rowCount()">rowCount</a>, <a href="Poco.Data.RecordSet.html#6537" title="Poco::Data::RecordSet::setRowFormatter()">setRowFormatter</a>, <a href="Poco.Data.RecordSet.html#6545" title="Poco::Data::RecordSet::setTotalRowCount()">setTotalRowCount</a>, <a href="Poco.Data.RecordSet.html#6543" title="Poco::Data::RecordSet::totalRowCount()">totalRowCount</a>, <a href="Poco.Data.RecordSet.html#6556" title="Poco::Data::RecordSet::value()">value</a></p>
+<p><b>Inherited Functions: </b><a href="Poco.Data.Statement.html#7324" title="Poco::Data::Statement::addBind()">addBind</a>, <a href="Poco.Data.Statement.html#7330" title="Poco::Data::Statement::addBinding()">addBinding</a>, <a href="Poco.Data.Statement.html#7344" title="Poco::Data::Statement::addExtract()">addExtract</a>, <a href="Poco.Data.Statement.html#7339" title="Poco::Data::Statement::addExtraction()">addExtraction</a>, <a href="Poco.Data.Statement.html#7342" title="Poco::Data::Statement::addExtractions()">addExtractions</a>, <a href="Poco.Data.Statement.html#7399" title="Poco::Data::Statement::canModifyStorage()">canModifyStorage</a>, <a href="Poco.Data.Statement.html#7404" title="Poco::Data::Statement::columnsExtracted()">columnsExtracted</a>, <a href="Poco.Data.Statement.html#7411" title="Poco::Data::Statement::dataSetCount()">dataSetCount</a>, <a href="Poco.Data.Statement.html#7396" title="Poco::Data::Statement::done()">done</a>, <a href="Poco.Data.Statement.html#7385" title="Poco::Data::Statement::execute()">execute</a>, <a href="Poco.Data.Statement.html#7387" title="Poco::Data::Statement::executeAsync()">executeAsync</a>, <a href="Poco.Data.Statement.html#7410" title="Poco::Data::Statement::extractionCount()">extractionCount</a>, <a href="Poco.Data.Statement.html#7418" title="Poco::Data::Statement::extractions()">extractions</a>, <a href="Poco.Data.Statement.html#7428" title="Poco::Data::Statement::getRowFormatter()">getRowFormatter</a>, <a href="Poco.Data.Statement.html#7403" title="Poco::Data::Statement::getStorage()">getStorage</a>, <a href="Poco.Data.Statement.html#7414" title="Poco::Data::Statement::hasMoreDataSets()">hasMoreDataSets</a>, <a href="Poco.Data.Statement.html#7427" title="Poco::Data::Statement::impl()">impl</a>, <a href="Poco.Data.Statement.html#7394" title="Poco::Data::Statement::initialized()">initialized</a>, <a href="Poco.Data.Statement.html#7391" title="Poco::Data::Statement::isAsync()">isAsync</a>, <a href="Poco.Data.Statement.html#7426" title="Poco::Data::Statement::isBulkExtraction()">isBulkExtraction</a>, <a href="Poco.Data.Statement.html#7423" title="Poco::Data::Statement::isNull()">isNull</a>, <a href="Poco.Data.Statement.html#7419" title="Poco::Data::Statement::metaColumn()">metaColumn</a>, <a href="Poco.Data.Statement.html#7412" title="Poco::Data::Statement::nextDataSet()">nextDataSet</a>, <a href="Poco.Data.Statement.html#7318" title="Poco::Data::Statement::operator <<()">operator&nbsp;&lt;&lt;</a>, <a href="Poco.Data.Statement.html#7314" title="Poco::Data::Statement::operator =()">operator&nbsp;=</a>, <a href="Poco.Data.Statement.html#7320" title="Poco::Data::Statement::operator,()">operator,</a>, <a href="Poco.Data.Statement.html#7395" title="Poco::Data::Statement::paused()">paused</a>, <a href="Poco.Data.Statement.html#7413" title="Poco::Data::Statement::previousDataSet()">previousDataSet</a>, <a href="Poco.Data.Statement.html#7326" title="Poco::Data::Statement::removeBind()">removeBind</a>, <a href="Poco.Data.Statement.html#7397" title="Poco::Data::Statement::reset()">reset</a>, <a href="Poco.Data.Statement.html#7406" title="Poco::Data::Statement::rowsExtracted()">rowsExtracted</a>, <a href="Poco.Data.Statement.html#7429" title="Poco::Data::Statement::session()">session</a>, <a href="Poco.Data.Statement.html#7389" title="Poco::Data::Statement::setAsync()">setAsync</a>, <a href="Poco.Data.Statement.html#7415" title="Poco::Data::Statement::setRowFormatter()">setRowFormatter</a>, <a href="Poco.Data.Statement.html#7401" title="Poco::Data::Statement::setStorage()">setStorage</a>, <a href="Poco.Data.Statement.html#7400" title="Poco::Data::Statement::storage()">storage</a>, <a href="Poco.Data.Statement.html#7408" title="Poco::Data::Statement::subTotalRowCount()">subTotalRowCount</a>, <a href="Poco.Data.Statement.html#7316" title="Poco::Data::Statement::swap()">swap</a>, <a href="Poco.Data.Statement.html#7384" title="Poco::Data::Statement::toString()">toString</a>, <a href="Poco.Data.Statement.html#7392" title="Poco::Data::Statement::wait()">wait</a></p>
+<h2>Types</h2>
+<h3><a id="6514">ConstIterator</a></h3>
+<p class="decl">typedef const <a href="Poco.Data.RowIterator.html" title="class Poco::Data::RowIterator">RowIterator</a> <a href="Poco.Data.RecordSet.html#6514" title="Poco::Data::RecordSet::ConstIterator">ConstIterator</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="6515">Iterator</a></h3>
+<p class="decl">typedef <a href="Poco.Data.RowIterator.html" title="class Poco::Data::RowIterator">RowIterator</a> <a href="Poco.Data.RecordSet.html#6515" title="Poco::Data::RecordSet::Iterator">Iterator</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="6513">RowMap</a></h3>
+<p class="decl">typedef std::map &lt; std::size_t, <a href="Poco.Data.Row.html" title="class Poco::Data::Row">Row</a> * &gt; <a href="Poco.Data.RecordSet.html#6513" title="Poco::Data::RecordSet::RowMap">RowMap</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Constructors</h2>
+<h3><a id="6534">RecordSet</a></h3>
+<p class="decl"><a href="Poco.Data.RecordSet.html" title="class Poco::Data::RecordSet">RecordSet</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Data.RecordSet.html" title="class Poco::Data::RecordSet">RecordSet</a> &amp; other<br />);</p>
+<div class="description">
+<p>Copy-creates the recordset. </p>
+</div>
+<h3><a id="6519">RecordSet</a></h3>
+<p class="decl">explicit <a href="Poco.Data.RecordSet.html" title="class Poco::Data::RecordSet">RecordSet</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Data.Statement.html" title="class Poco::Data::Statement">Statement</a> &amp; rStatement,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Data.RowFormatter.html#6855" title="Poco::Data::RowFormatter::Ptr">RowFormatter::Ptr</a> pRowFormatter = 0<br />);</p>
+<div class="description">
+<p>Creates the <a href="Poco.Data.RecordSet.html" title="class Poco::Data::RecordSet">RecordSet</a>. </p>
+</div>
+<h3><a id="6522">RecordSet</a></h3>
+<p class="decl"><a href="Poco.Data.RecordSet.html" title="class Poco::Data::RecordSet">RecordSet</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Data.Session.html" title="class Poco::Data::Session">Session</a> &amp; rSession,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; query,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Data.RowFormatter.html#6855" title="Poco::Data::RowFormatter::Ptr">RowFormatter::Ptr</a> pRowFormatter = 0<br />);</p>
+<div class="description">
+<p>Creates the <a href="Poco.Data.RecordSet.html" title="class Poco::Data::RecordSet">RecordSet</a>. </p>
+</div>
+<h3><a id="6526">RecordSet</a></h3>
+<p class="decl"><a href="Poco.Data.RecordSet.html" title="class Poco::Data::RecordSet">RecordSet</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Data.Session.html" title="class Poco::Data::Session">Session</a> &amp; rSession,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; query,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Data.RowFormatter.html" title="class Poco::Data::RowFormatter">RowFormatter</a> &amp; rowFormatter<br />);</p>
+<div class="description">
+<p>Creates the <a href="Poco.Data.RecordSet.html" title="class Poco::Data::RecordSet">RecordSet</a>. </p>
+</div>
+<h3><a id="6530">RecordSet</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">template &lt; class RF &gt; <a href="Poco.Data.RecordSet.html" title="class Poco::Data::RecordSet">RecordSet</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Data.Session.html" title="class Poco::Data::Session">Session</a> &amp; rSession,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; query,<br />&nbsp;&nbsp;&nbsp;&nbsp;const RF &amp; rowFormatter<br />);</p>
+<div class="description">
+<p>Creates the <a href="Poco.Data.RecordSet.html" title="class Poco::Data::RecordSet">RecordSet</a>. </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="6536">~RecordSet</a></h3>
+<p class="decl">~<a href="Poco.Data.RecordSet.html" title="class Poco::Data::RecordSet">RecordSet</a>();</p>
+<div class="description">
+<p>Destroys the <a href="Poco.Data.RecordSet.html" title="class Poco::Data::RecordSet">RecordSet</a>. </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="6578">begin</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Data.RecordSet.html#6514" title="Poco::Data::RecordSet::ConstIterator">ConstIterator</a> &amp; begin() const;</p>
+<div class="description">
+<p>Returns the const row iterator. </p>
+</div>
+<h3><a id="6580">begin</a></h3>
+<p class="decl"><a href="Poco.Data.RecordSet.html#6515" title="Poco::Data::RecordSet::Iterator">Iterator</a> begin();</p>
+<div class="description">
+<p>Returns the row iterator. </p>
+</div>
+<h3><a id="6550">column</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">template &lt; class C &gt; const <a href="Poco.Data.Column.html" title="class Poco::Data::Column">Column</a> &lt; C &gt; &amp; column(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; name<br />) const;</p>
+<div class="description">
+<p>Returns the reference to the first <a href="Poco.Data.Column.html" title="class Poco::Data::Column">Column</a> with the specified name. </p>
+</div>
+<h3><a id="6552">column</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">template &lt; class C &gt; const <a href="Poco.Data.Column.html" title="class Poco::Data::Column">Column</a> &lt; C &gt; &amp; column(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos<br />) const;</p>
+<div class="description">
+<p>Returns the reference to column at specified position. </p>
+</div>
+<h3><a id="6549">columnCount</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">std::size_t columnCount() const;</p>
+<div class="description">
+<p>Returns the number of columns in the recordset. </p>
+</div>
+<h3><a id="6603">columnLength</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">std::size_t columnLength(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos<br />) const;</p>
+<div class="description">
+<p>Returns column maximum length for the column at specified position. </p>
+</div>
+<h3><a id="6605">columnLength</a></h3>
+<p class="decl">std::size_t columnLength(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; name<br />) const;</p>
+<div class="description">
+<p>Returns column maximum length for the column with specified name. </p>
+</div>
+<h3><a id="6601">columnName</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">const std::string &amp; columnName(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos<br />) const;</p>
+<div class="description">
+<p>Returns column name for the column at specified position. </p>
+</div>
+<h3><a id="6607">columnPrecision</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">std::size_t columnPrecision(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos<br />) const;</p>
+<div class="description">
+<p>Returns column precision for the column at specified position. Valid for floating point fields only (zero for other data types). </p>
+</div>
+<h3><a id="6609">columnPrecision</a></h3>
+<p class="decl">std::size_t columnPrecision(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; name<br />) const;</p>
+<div class="description">
+<p>Returns column precision for the column with specified name. Valid for floating point fields only (zero for other data types). </p>
+</div>
+<h3><a id="6597">columnType</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Data.MetaColumn.html#6370" title="enum  Poco::Data::MetaColumn::ColumnDataType">MetaColumn::ColumnDataType</a> columnType(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos<br />) const;</p>
+<div class="description">
+<p>Returns the type for the column at specified position. </p>
+</div>
+<h3><a id="6599">columnType</a></h3>
+<p class="decl"><a href="Poco.Data.MetaColumn.html#6370" title="enum  Poco::Data::MetaColumn::ColumnDataType">MetaColumn::ColumnDataType</a> columnType(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; name<br />) const;</p>
+<div class="description">
+<p>Returns the type for the column with specified name. </p>
+</div>
+<h3><a id="6623">copy</a></h3>
+<p class="decl">std::ostream &amp; copy(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::ostream &amp; os,<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t offset = 0,<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t length = RowIterator::POSITION_END<br />) const;</p>
+<div class="description">
+<p>Copies the column names and values to the target output stream. Copied strings are formatted by the current <a href="Poco.Data.RowFormatter.html" title="class Poco::Data::RowFormatter">RowFormatter</a>. </p>
+</div>
+<h3><a id="6613">copyNames</a></h3>
+<p class="decl">std::ostream &amp; copyNames(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::ostream &amp; os<br />) const;</p>
+<div class="description">
+<p>Copies the column names to the target output stream. Copied string is formatted by the current <a href="Poco.Data.RowFormatter.html" title="class Poco::Data::RowFormatter">RowFormatter</a>. </p>
+</div>
+<h3><a id="6616">copyValues</a></h3>
+<p class="decl">std::ostream &amp; copyValues(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::ostream &amp; os,<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t offset = 0,<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t length = RowIterator::POSITION_END<br />) const;</p>
+<div class="description">
+<p>Copies the data values to the supplied output stream. The data set to be copied is starting at the specified offset  from the recordset beginning. The number of rows to be copied is specified by length argument. An invalid combination of offset/length arguments shall cause <a href="Poco.RangeException.html" title="class Poco::RangeException">RangeException</a> to be thrown. Copied string is formatted by the current <a href="Poco.Data.RowFormatter.html" title="class Poco::Data::RowFormatter">RowFormatter</a>. </p>
+</div>
+<h3><a id="6579">end</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Data.RecordSet.html#6514" title="Poco::Data::RecordSet::ConstIterator">ConstIterator</a> &amp; end() const;</p>
+<div class="description">
+<p>Returns the const row iterator. </p>
+</div>
+<h3><a id="6581">end</a></h3>
+<p class="decl"><a href="Poco.Data.RecordSet.html#6515" title="Poco::Data::RecordSet::Iterator">Iterator</a> end();</p>
+<div class="description">
+<p>Returns the row iterator. </p>
+</div>
+<h3><a id="6542">extractedRowCount</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">std::size_t extractedRowCount() const;</p>
+<div class="description">
+<p>Returns the number of rows extracted during the last statement execution. The number of rows reported is independent of filtering. </p>
+</div>
+<h3><a id="6615">formatNames</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void formatNames() const;</p>
+<div class="description">
+<p>Formats names using the current <a href="Poco.Data.RowFormatter.html" title="class Poco::Data::RowFormatter">RowFormatter</a>. </p>
+</div>
+<h3><a id="6620">formatValues</a></h3>
+<p class="decl">void formatValues(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t offset,<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t length<br />) const;</p>
+<div class="description">
+<p>Formats values using the current <a href="Poco.Data.RowFormatter.html" title="class Poco::Data::RowFormatter">RowFormatter</a>. The data set to be formatted is starting at the specified offset  from the recordset beginning. The number of rows to be copied is specified by length argument. An invalid combination of offset/length arguments shall cause <a href="Poco.RangeException.html" title="class Poco::RangeException">RangeException</a> to be thrown. </p>
+</div>
+<h3><a id="6544">getTotalRowCount</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">std::size_t getTotalRowCount() const;</p>
+<div class="description">
+<p><b>Deprecated.</b> <i>This function is deprecated and should no longer be used.</i></p>
+</div>
+<div class="description">
+<p>Returns the total number of rows in the <a href="Poco.Data.RecordSet.html" title="class Poco::Data::RecordSet">RecordSet</a>. The number of rows reported is independent of filtering. If the total row count has not been set externally  (either explicitly or implicitly through SQL), the value returned shall only be accurate if the statement limit is less or equal to the total row count. </p>
+</div>
+<h3><a id="6627">isFiltered</a></h3>
+<p class="decl">bool isFiltered() const;</p>
+<div class="description">
+<p>Returns true if recordset is filtered. </p>
+</div>
+<h3><a id="6611">isNull</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool isNull(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; name<br />) const;</p>
+<div class="description">
+<p>Returns true if column value of the current row is null. </p>
+</div>
+<h3><a id="6582">moveFirst</a></h3>
+<p class="decl">bool moveFirst();</p>
+<div class="description">
+<p>Moves the row cursor to the first row. </p>
+<p>Returns true if there is at least one row in the <a href="Poco.Data.RecordSet.html" title="class Poco::Data::RecordSet">RecordSet</a>, false otherwise. </p>
+</div>
+<h3><a id="6585">moveLast</a></h3>
+<p class="decl">bool moveLast();</p>
+<div class="description">
+<p>Moves the row cursor to the last row. </p>
+<p>Returns true if there is at least one row in the <a href="Poco.Data.RecordSet.html" title="class Poco::Data::RecordSet">RecordSet</a>, false otherwise. </p>
+</div>
+<h3><a id="6583">moveNext</a></h3>
+<p class="decl">bool moveNext();</p>
+<div class="description">
+<p>Moves the row cursor to the next row. </p>
+<p>Returns true if the row is available, or false if the end of the record set has been reached and no more rows are available. </p>
+</div>
+<h3><a id="6584">movePrevious</a></h3>
+<p class="decl">bool movePrevious();</p>
+<div class="description">
+<p>Moves the row cursor to the previous row. </p>
+<p>Returns true if the row is available, or false if there are no more rows available. </p>
+</div>
+<h3><a id="6572">nvl</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">template &lt; typename T &gt; <a href="Poco.Dynamic.Var.html" title="class Poco::Dynamic::Var">Poco::Dynamic::Var</a> nvl(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; name,<br />&nbsp;&nbsp;&nbsp;&nbsp;const T &amp; deflt = T ()<br />) const;</p>
+<div class="description">
+<p>Returns the value in the named column of the current row if the value is not NULL, or deflt otherwise. </p>
+</div>
+<h3><a id="6575">nvl</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">template &lt; typename T &gt; <a href="Poco.Dynamic.Var.html" title="class Poco::Dynamic::Var">Poco::Dynamic::Var</a> nvl(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t index,<br />&nbsp;&nbsp;&nbsp;&nbsp;const T &amp; deflt = T ()<br />) const;</p>
+<div class="description">
+<p>Returns the value in the given column of the current row if the value is not NULL, or deflt otherwise. </p>
+</div>
+<h3><a id="6539">operator =</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Data.Statement.html" title="class Poco::Data::Statement">Statement</a> &amp; operator = (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Data.Statement.html" title="class Poco::Data::Statement">Statement</a> &amp; stmt<br />);</p>
+<div class="description">
+<p>Assignment operator. </p>
+</div>
+<h3><a id="6593">operator []</a></h3>
+<p class="decl"><a href="Poco.Dynamic.Var.html" title="class Poco::Dynamic::Var">Poco::Dynamic::Var</a> operator[] (<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; name<br />);</p>
+<div class="description">
+<p>Returns the value in the named column of the current row. </p>
+</div>
+<h3><a id="6595">operator []</a></h3>
+<p class="decl"><a href="Poco.Dynamic.Var.html" title="class Poco::Dynamic::Var">Poco::Dynamic::Var</a> operator[] (<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t index<br />);</p>
+<div class="description">
+<p>Returns the value in the named column of the current row. </p>
+</div>
+<h3><a id="6587">reset</a></h3>
+<p class="decl">void reset(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Data.Statement.html" title="class Poco::Data::Statement">Statement</a> &amp; stmt<br />);</p>
+<div class="description">
+<p>Resets the <a href="Poco.Data.RecordSet.html" title="class Poco::Data::RecordSet">RecordSet</a> and assigns a new statement. Should be called after the given statement has been reset, assigned a new SQL statement, and executed. </p>
+<p>Does not remove the associated <a href="Poco.Data.RowFilter.html" title="class Poco::Data::RowFilter">RowFilter</a> or <a href="Poco.Data.RowFormatter.html" title="class Poco::Data::RowFormatter">RowFormatter</a>. </p>
+</div>
+<h3><a id="6554">row</a></h3>
+<p class="decl"><a href="Poco.Data.Row.html" title="class Poco::Data::Row">Row</a> &amp; row(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos<br />);</p>
+<div class="description">
+<p>Returns reference to row at position pos. Rows are lazy-created and cached. </p>
+</div>
+<h3><a id="6541">rowCount</a></h3>
+<p class="decl">std::size_t rowCount() const;</p>
+<div class="description">
+<p>Returns the number of rows in the <a href="Poco.Data.RecordSet.html" title="class Poco::Data::RecordSet">RecordSet</a>. The number of rows reported is dependent on filtering. Due to the need for filter conditions checking, this function may suffer significant performance penalty for large recordsets, so it should be used judiciously. Use <a href="Poco.Data.RecordSet.html#6543" title="Poco::Data::RecordSet::totalRowCount()">totalRowCount</a>() to obtain the total number of rows. </p>
+</div>
+<h3><a id="6537">setRowFormatter</a></h3>
+<p class="decl">void setRowFormatter(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Data.RowFormatter.html#6855" title="Poco::Data::RowFormatter::Ptr">RowFormatter::Ptr</a> pRowFormatter<br />);</p>
+<div class="description">
+<p>Assigns the row formatter to the statement and all recordset rows. </p>
+</div>
+<h3><a id="6545">setTotalRowCount</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void setTotalRowCount(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t totalRowCount<br />);</p>
+<div class="description">
+<p>Explicitly sets the total row count. </p>
+</div>
+<h3><a id="6547">setTotalRowCount</a></h3>
+<p class="decl">void setTotalRowCount(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; sql<br />);</p>
+<div class="description">
+<p>Implicitly sets the total row count. The supplied sql must return exactly one column and one row. The returned value must be an unsigned integer. The value is set as the total number of rows. </p>
+</div>
+<h3><a id="6543">totalRowCount</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">std::size_t totalRowCount() const;</p>
+<div class="description">
+<p>Replaced with subTotalRowCount() and <a href="Poco.Data.RecordSet.html#6544" title="Poco::Data::RecordSet::getTotalRowCount()">getTotalRowCount</a>(). </p>
+</div>
+<h3><a id="6556">value</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">template &lt; class T &gt; const T &amp; value(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t col,<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t row,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool useFilter = true<br />) const;</p>
+<div class="description">
+<p>Returns the reference to data value at [col, row] location. </p>
+</div>
+<h3><a id="6560">value</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">template &lt; class T &gt; const T &amp; value(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; name,<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t row,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool useFilter = true<br />) const;</p>
+<div class="description">
+<p>Returns the reference to data value at named column, row location. </p>
+</div>
+<h3><a id="6564">value</a></h3>
+<p class="decl"><a href="Poco.Dynamic.Var.html" title="class Poco::Dynamic::Var">Poco::Dynamic::Var</a> value(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t col,<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t row,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool checkFiltering = true<br />) const;</p>
+<div class="description">
+<p>Returns the data value at column, row location. </p>
+</div>
+<h3><a id="6568">value</a></h3>
+<p class="decl"><a href="Poco.Dynamic.Var.html" title="class Poco::Dynamic::Var">Poco::Dynamic::Var</a> value(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; name,<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t row,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool checkFiltering = true<br />) const;</p>
+<div class="description">
+<p>Returns the data value at named column, row location. </p>
+</div>
+<h3><a id="6589">value</a></h3>
+<p class="decl"><a href="Poco.Dynamic.Var.html" title="class Poco::Dynamic::Var">Poco::Dynamic::Var</a> value(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; name<br />);</p>
+<div class="description">
+<p>Returns the value in the named column of the current row. </p>
+</div>
+<h3><a id="6591">value</a></h3>
+<p class="decl"><a href="Poco.Dynamic.Var.html" title="class Poco::Dynamic::Var">Poco::Dynamic::Var</a> value(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t index<br />);</p>
+<div class="description">
+<p>Returns the value in the given column of the current row. </p>
+</div>
+<h2>Variables</h2>
+<h3><a id="6516">Statement::isNull</a></h3>
+<p class="decl">using <a href="Poco.Data.Statement.html#7423" title="Poco::Data::Statement::isNull()">Statement::isNull</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="6586">Statement::reset</a></h3>
+<p class="decl">using <a href="Poco.Data.Statement.html#7397" title="Poco::Data::Statement::reset()">Statement::reset</a>;</p>
+<div class="description">
+<p>Don't hide base class method. </p>
+</div>
+<h3><a id="6517">Statement::subTotalRowCount</a></h3>
+<p class="decl">using <a href="Poco.Data.Statement.html#7408" title="Poco::Data::Statement::subTotalRowCount()">Statement::subTotalRowCount</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="6518">UNKNOWN_TOTAL_ROW_COUNT</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static const std::size_t <a href="Poco.Data.RecordSet.html#6518" title="Poco::Data::RecordSet::UNKNOWN_TOTAL_ROW_COUNT">UNKNOWN_TOTAL_ROW_COUNT</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

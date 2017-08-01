@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::FormattingChannel</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.html" class="namespace">Poco</a></h1>
+<h1 class="symbol">class FormattingChannel</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Foundation" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Foundation<br />
+<b>Package:</b> Logging<br />
+<b>Header:</b> Poco/FormattingChannel.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>The <a href="Poco.FormattingChannel.html" title="class Poco::FormattingChannel">FormattingChannel</a> is a filter channel that routes a <a href="Poco.Message.html" title="class Poco::Message">Message</a> through a <a href="Poco.Formatter.html" title="class Poco::Formatter">Formatter</a> before passing it on to the destination channel. </p>
+</div>
+<h2>Inheritance</h2>
+<p><b>Direct Base Classes: </b><a href="Poco.Channel.html" title="class Poco::Channel">Channel</a></p>
+<p><b>All Base Classes: </b><a href="Poco.Channel.html" title="class Poco::Channel">Channel</a>, <a href="Poco.Configurable.html" title="class Poco::Configurable">Configurable</a>, <a href="Poco.RefCountedObject.html" title="class Poco::RefCountedObject">RefCountedObject</a></p>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.FormattingChannel.html#12773" title="Poco::FormattingChannel::close()">close</a>, <a href="Poco.FormattingChannel.html#12766" title="Poco::FormattingChannel::getChannel()">getChannel</a>, <a href="Poco.FormattingChannel.html#12763" title="Poco::FormattingChannel::getFormatter()">getFormatter</a>, <a href="Poco.FormattingChannel.html#12767" title="Poco::FormattingChannel::log()">log</a>, <a href="Poco.FormattingChannel.html#12772" title="Poco::FormattingChannel::open()">open</a>, <a href="Poco.FormattingChannel.html#12764" title="Poco::FormattingChannel::setChannel()">setChannel</a>, <a href="Poco.FormattingChannel.html#12761" title="Poco::FormattingChannel::setFormatter()">setFormatter</a>, <a href="Poco.FormattingChannel.html#12769" title="Poco::FormattingChannel::setProperty()">setProperty</a></p>
+<p><b>Inherited Functions: </b><a href="Poco.Channel.html#9020" title="Poco::Channel::close()">close</a>, <a href="Poco.RefCountedObject.html#16511" title="Poco::RefCountedObject::duplicate()">duplicate</a>, <a href="Poco.Channel.html#9026" title="Poco::Channel::getProperty()">getProperty</a>, <a href="Poco.Channel.html#9021" title="Poco::Channel::log()">log</a>, <a href="Poco.Channel.html#9019" title="Poco::Channel::open()">open</a>, <a href="Poco.RefCountedObject.html#16513" title="Poco::RefCountedObject::referenceCount()">referenceCount</a>, <a href="Poco.RefCountedObject.html#16512" title="Poco::RefCountedObject::release()">release</a>, <a href="Poco.Channel.html#9023" title="Poco::Channel::setProperty()">setProperty</a></p>
+<h2>Constructors</h2>
+<h3><a id="12755">FormattingChannel</a></h3>
+<p class="decl"><a href="Poco.FormattingChannel.html" title="class Poco::FormattingChannel">FormattingChannel</a>();</p>
+<div class="description">
+<p>Creates a <a href="Poco.FormattingChannel.html" title="class Poco::FormattingChannel">FormattingChannel</a>. </p>
+</div>
+<h3><a id="12756">FormattingChannel</a></h3>
+<p class="decl"><a href="Poco.FormattingChannel.html" title="class Poco::FormattingChannel">FormattingChannel</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Formatter.html" title="class Poco::Formatter">Formatter</a> * pFormatter<br />);</p>
+<div class="description">
+<p>Creates a <a href="Poco.FormattingChannel.html" title="class Poco::FormattingChannel">FormattingChannel</a> and attaches a <a href="Poco.Formatter.html" title="class Poco::Formatter">Formatter</a>. </p>
+</div>
+<h3><a id="12758">FormattingChannel</a></h3>
+<p class="decl"><a href="Poco.FormattingChannel.html" title="class Poco::FormattingChannel">FormattingChannel</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Formatter.html" title="class Poco::Formatter">Formatter</a> * pFormatter,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Channel.html" title="class Poco::Channel">Channel</a> * pChannel<br />);</p>
+<div class="description">
+<p>Creates a <a href="Poco.FormattingChannel.html" title="class Poco::FormattingChannel">FormattingChannel</a> and attaches a <a href="Poco.Formatter.html" title="class Poco::Formatter">Formatter</a> and a <a href="Poco.Channel.html" title="class Poco::Channel">Channel</a>. </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="12774">~FormattingChannel</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">~<a href="Poco.FormattingChannel.html" title="class Poco::FormattingChannel">FormattingChannel</a>();</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="12773">close</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">void close();</p>
+<div class="description">
+<p>Closes the attached channel. </p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Channel.html#9020" title="Poco::Channel::close()">Poco::Channel::close()</a></p></div>
+<h3><a id="12766">getChannel</a></h3>
+<p class="decl"><a href="Poco.Channel.html" title="class Poco::Channel">Channel</a> * getChannel() const;</p>
+<div class="description">
+<p>Returns the channel to which the formatted messages are passed on. </p>
+</div>
+<h3><a id="12763">getFormatter</a></h3>
+<p class="decl"><a href="Poco.Formatter.html" title="class Poco::Formatter">Formatter</a> * getFormatter() const;</p>
+<div class="description">
+<p>Returns the <a href="Poco.Formatter.html" title="class Poco::Formatter">Formatter</a> used to format messages, which may be null. </p>
+</div>
+<h3><a id="12767">log</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">void log(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Message.html" title="class Poco::Message">Message</a> &amp; msg<br />);</p>
+<div class="description">
+<p>Formats the given <a href="Poco.Message.html" title="class Poco::Message">Message</a> using the <a href="Poco.Formatter.html" title="class Poco::Formatter">Formatter</a> and passes the formatted message on to the destination <a href="Poco.Channel.html" title="class Poco::Channel">Channel</a>. </p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Channel.html#9021" title="Poco::Channel::log()">Poco::Channel::log()</a></p></div>
+<h3><a id="12772">open</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">void open();</p>
+<div class="description">
+<p>Opens the attached channel. </p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Channel.html#9019" title="Poco::Channel::open()">Poco::Channel::open()</a></p></div>
+<h3><a id="12764">setChannel</a></h3>
+<p class="decl">void setChannel(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Channel.html" title="class Poco::Channel">Channel</a> * pChannel<br />);</p>
+<div class="description">
+<p>Sets the destination channel to which the formatted  messages are passed on. </p>
+</div>
+<h3><a id="12761">setFormatter</a></h3>
+<p class="decl">void setFormatter(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Formatter.html" title="class Poco::Formatter">Formatter</a> * pFormatter<br />);</p>
+<div class="description">
+<p>Sets the <a href="Poco.Formatter.html" title="class Poco::Formatter">Formatter</a> used to format the messages before they are passed on. If null, the message is passed on unmodified. </p>
+</div>
+<h3><a id="12769">setProperty</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">void setProperty(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; name,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; value<br />);</p>
+<div class="description">
+<p>Sets or changes a configuration property. </p>
+<p>Only the &quot;channel&quot; and &quot;formatter&quot; properties are supported, which allow setting the target channel and formatter, respectively, via the <a href="Poco.LoggingRegistry.html" title="class Poco::LoggingRegistry">LoggingRegistry</a>. The &quot;channel&quot; and &quot;formatter&quot; properties are set-only. </p>
+<p>Unsupported properties are passed to the attached <a href="Poco.Channel.html" title="class Poco::Channel">Channel</a>. </p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Channel.html#9023" title="Poco::Channel::setProperty()">Poco::Channel::setProperty()</a></p></div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::MemoryPool</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.html" class="namespace">Poco</a></h1>
+<h1 class="symbol">class MemoryPool</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Foundation" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Foundation<br />
+<b>Package:</b> Core<br />
+<b>Header:</b> Poco/MemoryPool.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>A simple pool for fixed-size memory blocks. </p>
+<p>The main purpose of this class is to speed-up memory allocations, as well as to reduce memory fragmentation in situations where the same blocks are allocated all over again, such as in server applications. </p>
+<p>All allocated blocks are retained for future use. A limit on the number of blocks can be specified. Blocks can be preallocated. </p>
+</div>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.MemoryPool.html#14696" title="Poco::MemoryPool::allocated()">allocated</a>, <a href="Poco.MemoryPool.html#14697" title="Poco::MemoryPool::available()">available</a>, <a href="Poco.MemoryPool.html#14695" title="Poco::MemoryPool::blockSize()">blockSize</a>, <a href="Poco.MemoryPool.html#14692" title="Poco::MemoryPool::get()">get</a>, <a href="Poco.MemoryPool.html#14693" title="Poco::MemoryPool::release()">release</a></p>
+<h2>Constructors</h2>
+<h3><a id="14687">MemoryPool</a></h3>
+<p class="decl"><a href="Poco.MemoryPool.html" title="class Poco::MemoryPool">MemoryPool</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t blockSize,<br />&nbsp;&nbsp;&nbsp;&nbsp;int preAlloc = 0,<br />&nbsp;&nbsp;&nbsp;&nbsp;int maxAlloc = 0<br />);</p>
+<div class="description">
+<p>Creates a <a href="Poco.MemoryPool.html" title="class Poco::MemoryPool">MemoryPool</a> for blocks with the given blockSize. The number of blocks given in preAlloc are preallocated. </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="14691">~MemoryPool</a></h3>
+<p class="decl">~<a href="Poco.MemoryPool.html" title="class Poco::MemoryPool">MemoryPool</a>();</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="14696">allocated</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">int allocated() const;</p>
+<div class="description">
+<p>Returns the number of allocated blocks. </p>
+</div>
+<h3><a id="14697">available</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">int available() const;</p>
+<div class="description">
+<p>Returns the number of available blocks in the pool. </p>
+</div>
+<h3><a id="14695">blockSize</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">std::size_t blockSize() const;</p>
+<div class="description">
+<p>Returns the block size. </p>
+</div>
+<h3><a id="14692">get</a></h3>
+<p class="decl">void * get();</p>
+<div class="description">
+<p>Returns a memory block. If there are no more blocks in the pool, a new block will be allocated. </p>
+<p>If maxAlloc blocks are already allocated, an <a href="Poco.OutOfMemoryException.html" title="class Poco::OutOfMemoryException">OutOfMemoryException</a> is thrown. </p>
+</div>
+<h3><a id="14693">release</a></h3>
+<p class="decl">void release(<br />&nbsp;&nbsp;&nbsp;&nbsp;void * ptr<br />);</p>
+<div class="description">
+<p>Releases a memory block and returns it to the pool. </p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

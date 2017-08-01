@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::Net::HTTPAuthenticationParams</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.Net.html" class="namespace">Poco::Net</a></h1>
+<h1 class="symbol">class HTTPAuthenticationParams</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Net" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Net<br />
+<b>Package:</b> HTTP<br />
+<b>Header:</b> Poco/Net/HTTPAuthenticationParams.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>Collection of name-value pairs of HTTP authentication header (i.e. &quot;realm&quot;, &quot;qop&quot;, &quot;nonce&quot; in case of digest authentication header). </p>
+</div>
+<h2>Inheritance</h2>
+<p><b>Direct Base Classes: </b><a href="Poco.Net.NameValueCollection.html" title="class Poco::Net::NameValueCollection">NameValueCollection</a></p>
+<p><b>All Base Classes: </b><a href="Poco.Net.NameValueCollection.html" title="class Poco::Net::NameValueCollection">NameValueCollection</a></p>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.Net.HTTPAuthenticationParams.html#20930" title="Poco::Net::HTTPAuthenticationParams::fromAuthInfo()">fromAuthInfo</a>, <a href="Poco.Net.HTTPAuthenticationParams.html#20932" title="Poco::Net::HTTPAuthenticationParams::fromRequest()">fromRequest</a>, <a href="Poco.Net.HTTPAuthenticationParams.html#20934" title="Poco::Net::HTTPAuthenticationParams::fromResponse()">fromResponse</a>, <a href="Poco.Net.HTTPAuthenticationParams.html#20939" title="Poco::Net::HTTPAuthenticationParams::getRealm()">getRealm</a>, <a href="Poco.Net.HTTPAuthenticationParams.html#20928" title="Poco::Net::HTTPAuthenticationParams::operator =()">operator&nbsp;=</a>, <a href="Poco.Net.HTTPAuthenticationParams.html#20937" title="Poco::Net::HTTPAuthenticationParams::setRealm()">setRealm</a>, <a href="Poco.Net.HTTPAuthenticationParams.html#20940" title="Poco::Net::HTTPAuthenticationParams::toString()">toString</a></p>
+<p><b>Inherited Functions: </b><a href="Poco.Net.NameValueCollection.html#23040" title="Poco::Net::NameValueCollection::add()">add</a>, <a href="Poco.Net.NameValueCollection.html#23052" title="Poco::Net::NameValueCollection::begin()">begin</a>, <a href="Poco.Net.NameValueCollection.html#23058" title="Poco::Net::NameValueCollection::clear()">clear</a>, <a href="Poco.Net.NameValueCollection.html#23054" title="Poco::Net::NameValueCollection::empty()">empty</a>, <a href="Poco.Net.NameValueCollection.html#23053" title="Poco::Net::NameValueCollection::end()">end</a>, <a href="Poco.Net.NameValueCollection.html#23056" title="Poco::Net::NameValueCollection::erase()">erase</a>, <a href="Poco.Net.NameValueCollection.html#23050" title="Poco::Net::NameValueCollection::find()">find</a>, <a href="Poco.Net.NameValueCollection.html#23043" title="Poco::Net::NameValueCollection::get()">get</a>, <a href="Poco.Net.NameValueCollection.html#23048" title="Poco::Net::NameValueCollection::has()">has</a>, <a href="Poco.Net.NameValueCollection.html#23031" title="Poco::Net::NameValueCollection::operator =()">operator&nbsp;=</a>, <a href="Poco.Net.NameValueCollection.html#23035" title="Poco::Net::NameValueCollection::operator []()">operator&nbsp;[]</a>, <a href="Poco.Net.NameValueCollection.html#23037" title="Poco::Net::NameValueCollection::set()">set</a>, <a href="Poco.Net.NameValueCollection.html#23055" title="Poco::Net::NameValueCollection::size()">size</a>, <a href="Poco.Net.NameValueCollection.html#23033" title="Poco::Net::NameValueCollection::swap()">swap</a></p>
+<h2>Constructors</h2>
+<h3><a id="20919">HTTPAuthenticationParams</a></h3>
+<p class="decl"><a href="Poco.Net.HTTPAuthenticationParams.html" title="class Poco::Net::HTTPAuthenticationParams">HTTPAuthenticationParams</a>();</p>
+<div class="description">
+<p>Creates an empty authentication parameters collection. </p>
+</div>
+<h3><a id="20920">HTTPAuthenticationParams</a></h3>
+<p class="decl">explicit <a href="Poco.Net.HTTPAuthenticationParams.html" title="class Poco::Net::HTTPAuthenticationParams">HTTPAuthenticationParams</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; authInfo<br />);</p>
+<div class="description">
+<p>See <a href="Poco.Net.HTTPAuthenticationParams.html#20930" title="Poco::Net::HTTPAuthenticationParams::fromAuthInfo()">fromAuthInfo</a>() documentation. </p>
+</div>
+<h3><a id="20922">HTTPAuthenticationParams</a></h3>
+<p class="decl">explicit <a href="Poco.Net.HTTPAuthenticationParams.html" title="class Poco::Net::HTTPAuthenticationParams">HTTPAuthenticationParams</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Net.HTTPRequest.html" title="class Poco::Net::HTTPRequest">HTTPRequest</a> &amp; request<br />);</p>
+<div class="description">
+<p>See <a href="Poco.Net.HTTPAuthenticationParams.html#20932" title="Poco::Net::HTTPAuthenticationParams::fromRequest()">fromRequest</a>() documentation. </p>
+</div>
+<h3><a id="20924">HTTPAuthenticationParams</a></h3>
+<p class="decl"><a href="Poco.Net.HTTPAuthenticationParams.html" title="class Poco::Net::HTTPAuthenticationParams">HTTPAuthenticationParams</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Net.HTTPResponse.html" title="class Poco::Net::HTTPResponse">HTTPResponse</a> &amp; response,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; header = WWW_AUTHENTICATE<br />);</p>
+<div class="description">
+<p>See <a href="Poco.Net.HTTPAuthenticationParams.html#20934" title="Poco::Net::HTTPAuthenticationParams::fromResponse()">fromResponse</a>() documentation. </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="20927">~HTTPAuthenticationParams</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual ~<a href="Poco.Net.HTTPAuthenticationParams.html" title="class Poco::Net::HTTPAuthenticationParams">HTTPAuthenticationParams</a>();</p>
+<div class="description">
+<p>Destroys the <a href="Poco.Net.HTTPAuthenticationParams.html" title="class Poco::Net::HTTPAuthenticationParams">HTTPAuthenticationParams</a>. </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="20930">fromAuthInfo</a></h3>
+<p class="decl">void fromAuthInfo(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; authInfo<br />);</p>
+<div class="description">
+<p>Creates an <a href="Poco.Net.HTTPAuthenticationParams.html" title="class Poco::Net::HTTPAuthenticationParams">HTTPAuthenticationParams</a> by parsing authentication information. </p>
+</div>
+<h3><a id="20932">fromRequest</a></h3>
+<p class="decl">void fromRequest(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Net.HTTPRequest.html" title="class Poco::Net::HTTPRequest">HTTPRequest</a> &amp; request<br />);</p>
+<div class="description">
+<p>Extracts authentication information from the request and creates <a href="Poco.Net.HTTPAuthenticationParams.html" title="class Poco::Net::HTTPAuthenticationParams">HTTPAuthenticationParams</a> by parsing it. </p>
+<p>Throws a <a href="Poco.Net.NotAuthenticatedException.html" title="class Poco::Net::NotAuthenticatedException">NotAuthenticatedException</a> if no authentication information is contained in request. Throws a <a href="Poco.InvalidArgumentException.html" title="class Poco::InvalidArgumentException">InvalidArgumentException</a> if authentication scheme is unknown or invalid. </p>
+</div>
+<h3><a id="20934">fromResponse</a></h3>
+<p class="decl">void fromResponse(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Net.HTTPResponse.html" title="class Poco::Net::HTTPResponse">HTTPResponse</a> &amp; response,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; header = WWW_AUTHENTICATE<br />);</p>
+<div class="description">
+<p>Extracts authentication information from the response and creates <a href="Poco.Net.HTTPAuthenticationParams.html" title="class Poco::Net::HTTPAuthenticationParams">HTTPAuthenticationParams</a> by parsing it. </p>
+<p>Throws a <a href="Poco.Net.NotAuthenticatedException.html" title="class Poco::Net::NotAuthenticatedException">NotAuthenticatedException</a> if no authentication information is contained in response. Throws a <a href="Poco.InvalidArgumentException.html" title="class Poco::InvalidArgumentException">InvalidArgumentException</a> if authentication scheme is unknown or invalid. </p>
+</div>
+<h3><a id="20939">getRealm</a></h3>
+<p class="decl">const std::string &amp; getRealm() const;</p>
+<div class="description">
+<p>Returns value of the &quot;realm&quot; parameter. </p>
+<p>Throws <a href="Poco.NotFoundException.html" title="class Poco::NotFoundException">NotFoundException</a> is there is no &quot;realm&quot; set in the <a href="Poco.Net.HTTPAuthenticationParams.html" title="class Poco::Net::HTTPAuthenticationParams">HTTPAuthenticationParams</a>. </p>
+</div>
+<h3><a id="20928">operator =</a></h3>
+<p class="decl"><a href="Poco.Net.HTTPAuthenticationParams.html" title="class Poco::Net::HTTPAuthenticationParams">HTTPAuthenticationParams</a> &amp; operator = (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Net.HTTPAuthenticationParams.html" title="class Poco::Net::HTTPAuthenticationParams">HTTPAuthenticationParams</a> &amp; authParams<br />);</p>
+<div class="description">
+<p>Assigns the content of another <a href="Poco.Net.HTTPAuthenticationParams.html" title="class Poco::Net::HTTPAuthenticationParams">HTTPAuthenticationParams</a>. </p>
+</div>
+<h3><a id="20937">setRealm</a></h3>
+<p class="decl">void setRealm(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; realm<br />);</p>
+<div class="description">
+<p>Sets the &quot;realm&quot; parameter to the provided string. </p>
+</div>
+<h3><a id="20940">toString</a></h3>
+<p class="decl">std::string toString() const;</p>
+<div class="description">
+<p>Formats the <a href="Poco.Net.HTTPAuthenticationParams.html" title="class Poco::Net::HTTPAuthenticationParams">HTTPAuthenticationParams</a> for inclusion in HTTP request or response authentication header. </p>
+</div>
+<h2>Variables</h2>
+<h3><a id="20943">PROXY_AUTHENTICATE</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static const std::string <a href="Poco.Net.HTTPAuthenticationParams.html#20943" title="Poco::Net::HTTPAuthenticationParams::PROXY_AUTHENTICATE">PROXY_AUTHENTICATE</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="20941">REALM</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static const std::string <a href="Poco.Net.HTTPAuthenticationParams.html#20941" title="Poco::Net::HTTPAuthenticationParams::REALM">REALM</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="20942">WWW_AUTHENTICATE</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static const std::string <a href="Poco.Net.HTTPAuthenticationParams.html#20942" title="Poco::Net::HTTPAuthenticationParams::WWW_AUTHENTICATE">WWW_AUTHENTICATE</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

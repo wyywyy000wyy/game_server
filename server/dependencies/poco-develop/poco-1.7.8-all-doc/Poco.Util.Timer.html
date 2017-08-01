@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::Util::Timer</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.Util.html" class="namespace">Poco::Util</a></h1>
+<h1 class="symbol">class Timer</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Util" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Util<br />
+<b>Package:</b> Timer<br />
+<b>Header:</b> Poco/Util/Timer.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>A <a href="Poco.Util.Timer.html" title="class Poco::Util::Timer">Timer</a> allows to schedule tasks (<a href="Poco.Util.TimerTask.html" title="class Poco::Util::TimerTask">TimerTask</a> objects) for future execution  in a background thread. Tasks may be scheduled for one-time execution,  or for repeated execution at regular intervals.  </p>
+<p>The <a href="Poco.Util.Timer.html" title="class Poco::Util::Timer">Timer</a> object creates a thread that executes all scheduled tasks sequentially. Therefore, tasks should complete their work as quickly as possible, otherwise subsequent tasks may be delayed. </p>
+<p><a href="Poco.Util.Timer.html" title="class Poco::Util::Timer">Timer</a> is save for multithreaded use - multiple threads can schedule new tasks simultaneously. </p>
+<p>Acknowledgement: The interface of this class has been inspired by the java.util.<a href="Poco.Util.Timer.html" title="class Poco::Util::Timer">Timer</a> class from Java 1.3. </p>
+</div>
+<h2>Inheritance</h2>
+<p><b>Direct Base Classes: </b><a href="Poco.Runnable.html" title="class Poco::Runnable">Poco::Runnable</a></p>
+<p><b>All Base Classes: </b><a href="Poco.Runnable.html" title="class Poco::Runnable">Poco::Runnable</a></p>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.Util.Timer.html#27328" title="Poco::Util::Timer::cancel()">cancel</a>, <a href="Poco.Util.Timer.html#27360" title="Poco::Util::Timer::run()">run</a>, <a href="Poco.Util.Timer.html#27330" title="Poco::Util::Timer::schedule()">schedule</a>, <a href="Poco.Util.Timer.html#27348" title="Poco::Util::Timer::scheduleAtFixedRate()">scheduleAtFixedRate</a>, <a href="Poco.Util.Timer.html#27361" title="Poco::Util::Timer::validateTask()">validateTask</a></p>
+<p><b>Inherited Functions: </b><a href="Poco.Runnable.html#16662" title="Poco::Runnable::run()">run</a></p>
+<h2>Constructors</h2>
+<h3><a id="27324">Timer</a></h3>
+<p class="decl"><a href="Poco.Util.Timer.html" title="class Poco::Util::Timer">Timer</a>();</p>
+<div class="description">
+<p>Creates the <a href="Poco.Util.Timer.html" title="class Poco::Util::Timer">Timer</a>. </p>
+</div>
+<h3><a id="27325">Timer</a></h3>
+<p class="decl">explicit <a href="Poco.Util.Timer.html" title="class Poco::Util::Timer">Timer</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Thread.html#17808" title="enum  Poco::Thread::Priority">Poco::Thread::Priority</a> priority<br />);</p>
+<div class="description">
+<p>Creates the <a href="Poco.Util.Timer.html" title="class Poco::Util::Timer">Timer</a>, using a timer thread with the given priority. </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="27327">~Timer</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">~<a href="Poco.Util.Timer.html" title="class Poco::Util::Timer">Timer</a>();</p>
+<div class="description">
+<p>Destroys the <a href="Poco.Util.Timer.html" title="class Poco::Util::Timer">Timer</a>, cancelling all pending tasks. </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="27328">cancel</a></h3>
+<p class="decl">void cancel(<br />&nbsp;&nbsp;&nbsp;&nbsp;bool wait = false<br />);</p>
+<div class="description">
+<p>Cancels all pending tasks. </p>
+<p>If a task is currently running, it is allowed to finish. </p>
+<p><a href="Poco.Task.html" title="class Poco::Task">Task</a> cancellation is done asynchronously. If wait is false, <a href="Poco.Util.Timer.html#27328" title="Poco::Util::Timer::cancel()">cancel</a>() returns immediately and the task queue will be purged as soon as the currently running task finishes. If wait is true, waits until the queue has been purged. </p>
+</div>
+<h3><a id="27330">schedule</a></h3>
+<p class="decl">void schedule(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Util.TimerTask.html#27370" title="Poco::Util::TimerTask::Ptr">TimerTask::Ptr</a> pTask,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Timestamp.html" title="class Poco::Timestamp">Poco::Timestamp</a> time<br />);</p>
+<div class="description">
+<p>Schedules a task for execution at the specified time. </p>
+<p>If the time lies in the past, the task is executed immediately. </p>
+<p>Note: the relative time the task will be executed won't change if the system's time changes. If the given time is 10 seconds in the future at the point <a href="Poco.Util.Timer.html#27330" title="Poco::Util::Timer::schedule()">schedule</a>() is called, the task will be executed 10 seconds later, even if the system time changes in between. </p>
+</div>
+<h3><a id="27333">schedule</a></h3>
+<p class="decl">void schedule(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Util.TimerTask.html#27370" title="Poco::Util::TimerTask::Ptr">TimerTask::Ptr</a> pTask,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Clock.html" title="class Poco::Clock">Poco::Clock</a> clock<br />);</p>
+<div class="description">
+<p>Schedules a task for execution at the specified time. </p>
+<p>If the time lies in the past, the task is executed immediately. </p>
+</div>
+<h3><a id="27336">schedule</a></h3>
+<p class="decl">void schedule(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Util.TimerTask.html#27370" title="Poco::Util::TimerTask::Ptr">TimerTask::Ptr</a> pTask,<br />&nbsp;&nbsp;&nbsp;&nbsp;long delay,<br />&nbsp;&nbsp;&nbsp;&nbsp;long interval<br />);</p>
+<div class="description">
+<p>Schedules a task for periodic execution. </p>
+<p>The task is first executed after the given delay. Subsequently, the task is executed periodically with the given interval in milliseconds between invocations. </p>
+</div>
+<h3><a id="27340">schedule</a></h3>
+<p class="decl">void schedule(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Util.TimerTask.html#27370" title="Poco::Util::TimerTask::Ptr">TimerTask::Ptr</a> pTask,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Timestamp.html" title="class Poco::Timestamp">Poco::Timestamp</a> time,<br />&nbsp;&nbsp;&nbsp;&nbsp;long interval<br />);</p>
+<div class="description">
+<p>Schedules a task for periodic execution. </p>
+<p>The task is first executed at the given time. Subsequently, the task is executed periodically with the given interval in milliseconds between invocations. </p>
+<p>Note: the relative time the task will be executed won't change if the system's time changes. If the given time is 10 seconds in the future at the point <a href="Poco.Util.Timer.html#27330" title="Poco::Util::Timer::schedule()">schedule</a>() is called, the task will be executed 10 seconds later, even if the system time changes in between. </p>
+</div>
+<h3><a id="27344">schedule</a></h3>
+<p class="decl">void schedule(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Util.TimerTask.html#27370" title="Poco::Util::TimerTask::Ptr">TimerTask::Ptr</a> pTask,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Clock.html" title="class Poco::Clock">Poco::Clock</a> clock,<br />&nbsp;&nbsp;&nbsp;&nbsp;long interval<br />);</p>
+<div class="description">
+<p>Schedules a task for periodic execution. </p>
+<p>The task is first executed at the given time. Subsequently, the task is executed periodically with the given interval in milliseconds between invocations. </p>
+</div>
+<h3><a id="27348">scheduleAtFixedRate</a></h3>
+<p class="decl">void scheduleAtFixedRate(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Util.TimerTask.html#27370" title="Poco::Util::TimerTask::Ptr">TimerTask::Ptr</a> pTask,<br />&nbsp;&nbsp;&nbsp;&nbsp;long delay,<br />&nbsp;&nbsp;&nbsp;&nbsp;long interval<br />);</p>
+<div class="description">
+<p>Schedules a task for periodic execution at a fixed rate. </p>
+<p>The task is first executed after the given delay. Subsequently, the task is executed periodically  every number of milliseconds specified by interval. </p>
+<p>If task execution takes longer than the given interval, further executions are delayed. </p>
+</div>
+<h3><a id="27352">scheduleAtFixedRate</a></h3>
+<p class="decl">void scheduleAtFixedRate(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Util.TimerTask.html#27370" title="Poco::Util::TimerTask::Ptr">TimerTask::Ptr</a> pTask,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Timestamp.html" title="class Poco::Timestamp">Poco::Timestamp</a> time,<br />&nbsp;&nbsp;&nbsp;&nbsp;long interval<br />);</p>
+<div class="description">
+<p>Schedules a task for periodic execution at a fixed rate. </p>
+<p>The task is first executed at the given time. Subsequently, the task is executed periodically  every number of milliseconds specified by interval. </p>
+<p>If task execution takes longer than the given interval, further executions are delayed. </p>
+<p>Note: the relative time the task will be executed won't change if the system's time changes. If the given time is 10 seconds in the future at the point <a href="Poco.Util.Timer.html#27348" title="Poco::Util::Timer::scheduleAtFixedRate()">scheduleAtFixedRate</a>() is called, the task will be executed 10 seconds later, even if the system time changes in between. </p>
+</div>
+<h3><a id="27356">scheduleAtFixedRate</a></h3>
+<p class="decl">void scheduleAtFixedRate(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Util.TimerTask.html#27370" title="Poco::Util::TimerTask::Ptr">TimerTask::Ptr</a> pTask,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Clock.html" title="class Poco::Clock">Poco::Clock</a> clock,<br />&nbsp;&nbsp;&nbsp;&nbsp;long interval<br />);</p>
+<div class="description">
+<p>Schedules a task for periodic execution at a fixed rate. </p>
+<p>The task is first executed at the given time. Subsequently, the task is executed periodically  every number of milliseconds specified by interval. </p>
+<p>If task execution takes longer than the given interval, further executions are delayed. </p>
+</div>
+<h3><a id="27360">run</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">void run();</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Runnable.html#16662" title="Poco::Runnable::run()">Poco::Runnable::run()</a></p></div>
+<h3><a id="27361">validateTask</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static void validateTask(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Util.TimerTask.html#27370" title="Poco::Util::TimerTask::Ptr">TimerTask::Ptr</a> &amp; pTask<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

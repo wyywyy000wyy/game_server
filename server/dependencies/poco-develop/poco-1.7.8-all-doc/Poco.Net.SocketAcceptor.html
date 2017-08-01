@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::Net::SocketAcceptor</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.Net.html" class="namespace">Poco::Net</a></h1>
+<h1 class="template">template &lt; class ServiceHandler &gt;</h1>
+<h1 class="symbol">class SocketAcceptor</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Net" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Net<br />
+<b>Package:</b> Reactor<br />
+<b>Header:</b> Poco/Net/SocketAcceptor.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>This class implements the Acceptor part of the Acceptor-Connector design pattern. </p>
+<p>The Acceptor-Connector pattern has been described in the book &quot;Pattern Languages of Program Design 3&quot;, edited by Robert Martin, Frank Buschmann and Dirk Riehle (Addison Wesley, 1997). </p>
+<p>The Acceptor-Connector design pattern decouples connection establishment and service initialization in a distributed system from the processing performed once a service is initialized. This decoupling is achieved with three components: Acceptors,  Connectors and Service Handlers. The <a href="Poco.Net.SocketAcceptor.html" title="class Poco::Net::SocketAcceptor">SocketAcceptor</a> passively waits for connection requests (usually from a remote Connector) and establishes a connection upon arrival of a connection requests. Also, a Service Handler is initialized to process the data arriving via the connection in an application-specific way. </p>
+<p>The <a href="Poco.Net.SocketAcceptor.html" title="class Poco::Net::SocketAcceptor">SocketAcceptor</a> sets up a <a href="Poco.Net.ServerSocket.html" title="class Poco::Net::ServerSocket">ServerSocket</a> and registers itself for a <a href="Poco.Net.ReadableNotification.html" title="class Poco::Net::ReadableNotification">ReadableNotification</a>, denoting an incoming connection request. </p>
+<p>When the <a href="Poco.Net.ServerSocket.html" title="class Poco::Net::ServerSocket">ServerSocket</a> becomes readable the <a href="Poco.Net.SocketAcceptor.html" title="class Poco::Net::SocketAcceptor">SocketAcceptor</a> accepts the connection request and creates a ServiceHandler to service the connection. </p>
+<p>The ServiceHandler class must provide a constructor that takes a <a href="Poco.Net.StreamSocket.html" title="class Poco::Net::StreamSocket">StreamSocket</a> and a <a href="Poco.Net.SocketReactor.html" title="class Poco::Net::SocketReactor">SocketReactor</a> as arguments, e.g.: </p>
+<pre>MyServiceHandler(const StreamSocket&amp; socket, ServiceReactor&amp; reactor)
+</pre>
+<p>When the ServiceHandler is done, it must destroy itself. </p>
+<p>Subclasses can override the <a href="Poco.Net.SocketAcceptor.html#24554" title="Poco::Net::SocketAcceptor::createServiceHandler()">createServiceHandler</a>() factory method if special steps are necessary to create a ServiceHandler object. </p>
+</div>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.Net.SocketAcceptor.html#24554" title="Poco::Net::SocketAcceptor::createServiceHandler()">createServiceHandler</a>, <a href="Poco.Net.SocketAcceptor.html#24552" title="Poco::Net::SocketAcceptor::onAccept()">onAccept</a>, <a href="Poco.Net.SocketAcceptor.html#24556" title="Poco::Net::SocketAcceptor::reactor()">reactor</a>, <a href="Poco.Net.SocketAcceptor.html#24549" title="Poco::Net::SocketAcceptor::registerAcceptor()">registerAcceptor</a>, <a href="Poco.Net.SocketAcceptor.html#24547" title="Poco::Net::SocketAcceptor::setReactor()">setReactor</a>, <a href="Poco.Net.SocketAcceptor.html#24557" title="Poco::Net::SocketAcceptor::socket()">socket</a>, <a href="Poco.Net.SocketAcceptor.html#24551" title="Poco::Net::SocketAcceptor::unregisterAcceptor()">unregisterAcceptor</a></p>
+<h2>Constructors</h2>
+<h3><a id="24541">SocketAcceptor</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">explicit <a href="Poco.Net.SocketAcceptor.html" title="class Poco::Net::SocketAcceptor">SocketAcceptor</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Net.ServerSocket.html" title="class Poco::Net::ServerSocket">ServerSocket</a> &amp; socket<br />);</p>
+<div class="description">
+<p>Creates a <a href="Poco.Net.SocketAcceptor.html" title="class Poco::Net::SocketAcceptor">SocketAcceptor</a>, using the given <a href="Poco.Net.ServerSocket.html" title="class Poco::Net::ServerSocket">ServerSocket</a>. </p>
+</div>
+<h3><a id="24543">SocketAcceptor</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Net.SocketAcceptor.html" title="class Poco::Net::SocketAcceptor">SocketAcceptor</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Net.ServerSocket.html" title="class Poco::Net::ServerSocket">ServerSocket</a> &amp; socket,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Net.SocketReactor.html" title="class Poco::Net::SocketReactor">SocketReactor</a> &amp; reactor<br />);</p>
+<div class="description">
+<p>Creates a <a href="Poco.Net.SocketAcceptor.html" title="class Poco::Net::SocketAcceptor">SocketAcceptor</a>, using the given <a href="Poco.Net.ServerSocket.html" title="class Poco::Net::ServerSocket">ServerSocket</a>. The <a href="Poco.Net.SocketAcceptor.html" title="class Poco::Net::SocketAcceptor">SocketAcceptor</a> registers itself with the given <a href="Poco.Net.SocketReactor.html" title="class Poco::Net::SocketReactor">SocketReactor</a>. </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="24546">~SocketAcceptor</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">virtual ~<a href="Poco.Net.SocketAcceptor.html" title="class Poco::Net::SocketAcceptor">SocketAcceptor</a>();</p>
+<div class="description">
+<p>Destroys the <a href="Poco.Net.SocketAcceptor.html" title="class Poco::Net::SocketAcceptor">SocketAcceptor</a>. </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="24552">onAccept</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void onAccept(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Net.ReadableNotification.html" title="class Poco::Net::ReadableNotification">ReadableNotification</a> * pNotification<br />);</p>
+<div class="description">
+<p>Accepts connection and creates event handler. </p>
+</div>
+<h3><a id="24549">registerAcceptor</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">virtual void registerAcceptor(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Net.SocketReactor.html" title="class Poco::Net::SocketReactor">SocketReactor</a> &amp; reactor<br />);</p>
+<div class="description">
+<p>Registers the <a href="Poco.Net.SocketAcceptor.html" title="class Poco::Net::SocketAcceptor">SocketAcceptor</a> with a <a href="Poco.Net.SocketReactor.html" title="class Poco::Net::SocketReactor">SocketReactor</a>. </p>
+<p>A subclass can override this function to e.g. register an event handler for timeout event. </p>
+<p>If acceptor was constructed without providing reactor to it, the override of this method must either call the base class implementation or directly register the accept handler with the reactor. </p>
+</div>
+<h3><a id="24547">setReactor</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void setReactor(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Net.SocketReactor.html" title="class Poco::Net::SocketReactor">SocketReactor</a> &amp; reactor<br />);</p>
+<div class="description">
+<p>Sets the reactor for this acceptor. </p>
+</div>
+<h3><a id="24551">unregisterAcceptor</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">virtual void unregisterAcceptor();</p>
+<div class="description">
+<p>Unregisters the <a href="Poco.Net.SocketAcceptor.html" title="class Poco::Net::SocketAcceptor">SocketAcceptor</a>. </p>
+<p>A subclass can override this function to e.g. unregister its event handler for a timeout event. </p>
+<p>If the accept handler was registered with the reactor, the overriding method must either call the base class implementation or directly unregister the accept handler. </p>
+</div>
+<h3><a id="24554">createServiceHandler</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">virtual ServiceHandler * createServiceHandler(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Net.StreamSocket.html" title="class Poco::Net::StreamSocket">StreamSocket</a> &amp; socket<br />);</p>
+<div class="description">
+<p>Create and initialize a new ServiceHandler instance. </p>
+<p>Subclasses can override this method. </p>
+</div>
+<h3><a id="24556">reactor</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Net.SocketReactor.html" title="class Poco::Net::SocketReactor">SocketReactor</a> * reactor();</p>
+<div class="description">
+<p>Returns a pointer to the <a href="Poco.Net.SocketReactor.html" title="class Poco::Net::SocketReactor">SocketReactor</a> where this <a href="Poco.Net.SocketAcceptor.html" title="class Poco::Net::SocketAcceptor">SocketAcceptor</a> is registered. </p>
+<p>The pointer may be null. </p>
+</div>
+<h3><a id="24557">socket</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Net.Socket.html" title="class Poco::Net::Socket">Socket</a> &amp; socket();</p>
+<div class="description">
+<p>Returns a reference to the <a href="Poco.Net.SocketAcceptor.html" title="class Poco::Net::SocketAcceptor">SocketAcceptor</a>'s socket. </p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

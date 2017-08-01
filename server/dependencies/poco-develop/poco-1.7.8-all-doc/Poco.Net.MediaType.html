@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::Net::MediaType</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.Net.html" class="namespace">Poco::Net</a></h1>
+<h1 class="symbol">class MediaType</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Net" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Net<br />
+<b>Package:</b> Messages<br />
+<b>Header:</b> Poco/Net/MediaType.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>This class represents a MIME media type, consisting of a top-level type, a subtype and an optional set of parameters. </p>
+<p>The implementation conforms with <a href="https://www.ietf.org/rfc/rfc2045.txt" target="_blank">RFC 2045</a> and <a href="https://www.ietf.org/rfc/rfc2046.txt" target="_blank">RFC 2046</a>. </p>
+</div>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.Net.MediaType.html#22781" title="Poco::Net::MediaType::getParameter()">getParameter</a>, <a href="Poco.Net.MediaType.html#22777" title="Poco::Net::MediaType::getSubType()">getSubType</a>, <a href="Poco.Net.MediaType.html#22774" title="Poco::Net::MediaType::getType()">getType</a>, <a href="Poco.Net.MediaType.html#22783" title="Poco::Net::MediaType::hasParameter()">hasParameter</a>, <a href="Poco.Net.MediaType.html#22789" title="Poco::Net::MediaType::matches()">matches</a>, <a href="Poco.Net.MediaType.html#22796" title="Poco::Net::MediaType::matchesRange()">matchesRange</a>, <a href="Poco.Net.MediaType.html#22766" title="Poco::Net::MediaType::operator =()">operator&nbsp;=</a>, <a href="Poco.Net.MediaType.html#22787" title="Poco::Net::MediaType::parameters()">parameters</a>, <a href="Poco.Net.MediaType.html#22803" title="Poco::Net::MediaType::parse()">parse</a>, <a href="Poco.Net.MediaType.html#22785" title="Poco::Net::MediaType::removeParameter()">removeParameter</a>, <a href="Poco.Net.MediaType.html#22778" title="Poco::Net::MediaType::setParameter()">setParameter</a>, <a href="Poco.Net.MediaType.html#22775" title="Poco::Net::MediaType::setSubType()">setSubType</a>, <a href="Poco.Net.MediaType.html#22772" title="Poco::Net::MediaType::setType()">setType</a>, <a href="Poco.Net.MediaType.html#22770" title="Poco::Net::MediaType::swap()">swap</a>, <a href="Poco.Net.MediaType.html#22788" title="Poco::Net::MediaType::toString()">toString</a></p>
+<h2>Constructors</h2>
+<h3><a id="22758">MediaType</a></h3>
+<p class="decl"><a href="Poco.Net.MediaType.html" title="class Poco::Net::MediaType">MediaType</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; mediaType<br />);</p>
+<div class="description">
+<p>Creates the <a href="Poco.Net.MediaType.html" title="class Poco::Net::MediaType">MediaType</a> from the given string, which must have the format &lt;type&gt;/&lt;subtype&gt;{;&lt;parameter&gt;=&lt;value&gt;}. </p>
+</div>
+<h3><a id="22763">MediaType</a></h3>
+<p class="decl"><a href="Poco.Net.MediaType.html" title="class Poco::Net::MediaType">MediaType</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Net.MediaType.html" title="class Poco::Net::MediaType">MediaType</a> &amp; mediaType<br />);</p>
+<div class="description">
+<p>Creates a <a href="Poco.Net.MediaType.html" title="class Poco::Net::MediaType">MediaType</a> from another one. </p>
+</div>
+<h3><a id="22760">MediaType</a></h3>
+<p class="decl"><a href="Poco.Net.MediaType.html" title="class Poco::Net::MediaType">MediaType</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; type,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; subType<br />);</p>
+<div class="description">
+<p>Creates the <a href="Poco.Net.MediaType.html" title="class Poco::Net::MediaType">MediaType</a>, using the given type and subtype. </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="22765">~MediaType</a></h3>
+<p class="decl">~<a href="Poco.Net.MediaType.html" title="class Poco::Net::MediaType">MediaType</a>();</p>
+<div class="description">
+<p>Destroys the <a href="Poco.Net.MediaType.html" title="class Poco::Net::MediaType">MediaType</a>. </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="22781">getParameter</a></h3>
+<p class="decl">const std::string &amp; getParameter(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; name<br />) const;</p>
+<div class="description">
+<p>Returns the parameter with the given name. </p>
+<p>Throws a <a href="Poco.NotFoundException.html" title="class Poco::NotFoundException">NotFoundException</a> if the parameter does not exist. </p>
+</div>
+<h3><a id="22777">getSubType</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">const std::string &amp; getSubType() const;</p>
+<div class="description">
+<p>Returns the sub type. </p>
+</div>
+<h3><a id="22774">getType</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">const std::string &amp; getType() const;</p>
+<div class="description">
+<p>Returns the top-level type. </p>
+</div>
+<h3><a id="22783">hasParameter</a></h3>
+<p class="decl">bool hasParameter(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; name<br />) const;</p>
+<div class="description">
+<p>Returns true if and only if a parameter with the given name exists. </p>
+</div>
+<h3><a id="22789">matches</a></h3>
+<p class="decl">bool matches(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Net.MediaType.html" title="class Poco::Net::MediaType">MediaType</a> &amp; mediaType<br />) const;</p>
+<div class="description">
+<p>Returns true if and only if the type and subtype match the type and subtype of the given media type. Matching is case insensitive. </p>
+</div>
+<h3><a id="22791">matches</a></h3>
+<p class="decl">bool matches(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; type,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; subType<br />) const;</p>
+<div class="description">
+<p>Returns true if and only if the type and subtype match the given type and subtype. Matching is case insensitive. </p>
+</div>
+<h3><a id="22794">matches</a></h3>
+<p class="decl">bool matches(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; type<br />) const;</p>
+<div class="description">
+<p>Returns true if and only if the type matches the given type. Matching is case insensitive. </p>
+</div>
+<h3><a id="22796">matchesRange</a></h3>
+<p class="decl">bool matchesRange(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Net.MediaType.html" title="class Poco::Net::MediaType">MediaType</a> &amp; mediaType<br />) const;</p>
+<div class="description">
+<p>Returns true if the type and subtype match the type and subtype of the given media type. If the MIME type is a range of types it matches any media type within the range (e.g. &quot;image/*&quot; matches any image media type, &quot;*/*&quot; matches anything). Matching is case insensitive. </p>
+</div>
+<h3><a id="22798">matchesRange</a></h3>
+<p class="decl">bool matchesRange(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; type,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; subType<br />) const;</p>
+<div class="description">
+<p>Returns true if the type and subtype match the given type and subtype. If the MIME type is a range of types it matches any media type within the range (e.g. &quot;image/*&quot; matches any image media type, &quot;*/*&quot; matches anything). Matching is case insensitive. </p>
+</div>
+<h3><a id="22801">matchesRange</a></h3>
+<p class="decl">bool matchesRange(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; type<br />) const;</p>
+<div class="description">
+<p>Returns true if the type matches the given type or the type is a range of types denoted by &quot;*&quot;. Matching is case insensitive. </p>
+</div>
+<h3><a id="22766">operator =</a></h3>
+<p class="decl"><a href="Poco.Net.MediaType.html" title="class Poco::Net::MediaType">MediaType</a> &amp; operator = (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Net.MediaType.html" title="class Poco::Net::MediaType">MediaType</a> &amp; mediaType<br />);</p>
+<div class="description">
+<p>Assigns another media type. </p>
+</div>
+<h3><a id="22768">operator =</a></h3>
+<p class="decl"><a href="Poco.Net.MediaType.html" title="class Poco::Net::MediaType">MediaType</a> &amp; operator = (<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; mediaType<br />);</p>
+<div class="description">
+<p>Assigns another media type. </p>
+</div>
+<h3><a id="22787">parameters</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">const <a href="Poco.Net.NameValueCollection.html" title="class Poco::Net::NameValueCollection">NameValueCollection</a> &amp; parameters() const;</p>
+<div class="description">
+<p>Returns the parameters. </p>
+</div>
+<h3><a id="22785">removeParameter</a></h3>
+<p class="decl">void removeParameter(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; name<br />);</p>
+<div class="description">
+<p>Removes the parameter with the given name.	 </p>
+</div>
+<h3><a id="22778">setParameter</a></h3>
+<p class="decl">void setParameter(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; name,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; value<br />);</p>
+<div class="description">
+<p>Sets the parameter with the given name. </p>
+</div>
+<h3><a id="22775">setSubType</a></h3>
+<p class="decl">void setSubType(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; subType<br />);</p>
+<div class="description">
+<p>Sets the sub type. </p>
+</div>
+<h3><a id="22772">setType</a></h3>
+<p class="decl">void setType(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; type<br />);</p>
+<div class="description">
+<p>Sets the top-level type. </p>
+</div>
+<h3><a id="22770">swap</a></h3>
+<p class="decl">void swap(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Net.MediaType.html" title="class Poco::Net::MediaType">MediaType</a> &amp; mediaType<br />);</p>
+<div class="description">
+<p>Swaps the <a href="Poco.Net.MediaType.html" title="class Poco::Net::MediaType">MediaType</a> with another one. </p>
+</div>
+<h3><a id="22788">toString</a></h3>
+<p class="decl">std::string toString() const;</p>
+<div class="description">
+<p>Returns the string representation of the media type which is &lt;type&gt;/&lt;subtype&gt;{;&lt;parameter&gt;=&lt;value&gt;} </p>
+</div>
+<h3><a id="22803">parse</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">void parse(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; mediaType<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

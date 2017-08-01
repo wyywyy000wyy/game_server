@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::MongoDB::MessageHeader</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.MongoDB.html" class="namespace">Poco::MongoDB</a></h1>
+<h1 class="symbol">class MessageHeader</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-MongoDB" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> MongoDB<br />
+<b>Package:</b> MongoDB<br />
+<b>Header:</b> Poco/MongoDB/MessageHeader.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>Represents the message header which is always prepended to a  <a href="Poco.MongoDB.html" title="namespace Poco::MongoDB">MongoDB</a> request or response message. </p>
+</div>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.MongoDB.MessageHeader.html#20350" title="Poco::MongoDB::MessageHeader::getMessageLength()">getMessageLength</a>, <a href="Poco.MongoDB.MessageHeader.html#20352" title="Poco::MongoDB::MessageHeader::getRequestID()">getRequestID</a>, <a href="Poco.MongoDB.MessageHeader.html#20351" title="Poco::MongoDB::MessageHeader::opCode()">opCode</a>, <a href="Poco.MongoDB.MessageHeader.html#20346" title="Poco::MongoDB::MessageHeader::read()">read</a>, <a href="Poco.MongoDB.MessageHeader.html#20355" title="Poco::MongoDB::MessageHeader::responseTo()">responseTo</a>, <a href="Poco.MongoDB.MessageHeader.html#20353" title="Poco::MongoDB::MessageHeader::setRequestID()">setRequestID</a>, <a href="Poco.MongoDB.MessageHeader.html#20348" title="Poco::MongoDB::MessageHeader::write()">write</a></p>
+<h2>Enumerations</h2>
+<h3><a id="20334">OpCode</a></h3>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="20335">OP_REPLY</a> = 1</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="20336">OP_MSG</a> = 1000</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="20337">OP_UPDATE</a> = 2001</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="20338">OP_INSERT</a> = 2002</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="20339">OP_QUERY</a> = 2004</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="20340">OP_GET_MORE</a> = 2005</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="20341">OP_DELETE</a> = 2006</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="20342">OP_KILL_CURSORS</a> = 2007</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Constructors</h2>
+<h3><a id="20343">MessageHeader</a></h3>
+<p class="decl">explicit <a href="Poco.MongoDB.MessageHeader.html" title="class Poco::MongoDB::MessageHeader">MessageHeader</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.MongoDB.MessageHeader.html#20334" title="enum  Poco::MongoDB::MessageHeader::OpCode">OpCode</a><br />);</p>
+<div class="description">
+<p>Creates the <a href="Poco.MongoDB.MessageHeader.html" title="class Poco::MongoDB::MessageHeader">MessageHeader</a> using the given <a href="Poco.MongoDB.MessageHeader.html#20334" title="enum  Poco::MongoDB::MessageHeader::OpCode">OpCode</a>. </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="20345">~MessageHeader</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual ~<a href="Poco.MongoDB.MessageHeader.html" title="class Poco::MongoDB::MessageHeader">MessageHeader</a>();</p>
+<div class="description">
+<p>Destroys the <a href="Poco.MongoDB.MessageHeader.html" title="class Poco::MongoDB::MessageHeader">MessageHeader</a>. </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="20350">getMessageLength</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.html#18380" title="Poco::Int32">Int32</a> getMessageLength() const;</p>
+<div class="description">
+<p>Returns the message length. </p>
+</div>
+<h3><a id="20352">getRequestID</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.html#18380" title="Poco::Int32">Int32</a> getRequestID() const;</p>
+<div class="description">
+<p>Returns the request ID of the current message. </p>
+</div>
+<h3><a id="20351">opCode</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.MongoDB.MessageHeader.html#20334" title="enum  Poco::MongoDB::MessageHeader::OpCode">OpCode</a> opCode() const;</p>
+<div class="description">
+<p>Returns the <a href="Poco.MongoDB.MessageHeader.html#20334" title="enum  Poco::MongoDB::MessageHeader::OpCode">OpCode</a>. </p>
+</div>
+<h3><a id="20346">read</a></h3>
+<p class="decl">void read(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.BinaryReader.html" title="class Poco::BinaryReader">BinaryReader</a> &amp; reader<br />);</p>
+<div class="description">
+<p>Reads the header using the given <a href="Poco.BinaryReader.html" title="class Poco::BinaryReader">BinaryReader</a>. </p>
+</div>
+<h3><a id="20355">responseTo</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.html#18380" title="Poco::Int32">Int32</a> responseTo() const;</p>
+<div class="description">
+<p>Returns the request id from the original request.  </p>
+</div>
+<h3><a id="20353">setRequestID</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void setRequestID(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.html#18380" title="Poco::Int32">Int32</a> id<br />);</p>
+<div class="description">
+<p>Sets the request ID of the current message. </p>
+</div>
+<h3><a id="20348">write</a></h3>
+<p class="decl">void write(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.BinaryWriter.html" title="class Poco::BinaryWriter">BinaryWriter</a> &amp; writer<br />);</p>
+<div class="description">
+<p>Writes the header using the given <a href="Poco.BinaryWriter.html" title="class Poco::BinaryWriter">BinaryWriter</a>. </p>
+</div>
+<h2>Variables</h2>
+<h3><a id="20333">MSG_HEADER_SIZE</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static const unsigned int <a href="Poco.MongoDB.MessageHeader.html#20333" title="Poco::MongoDB::MessageHeader::MSG_HEADER_SIZE">MSG_HEADER_SIZE</a> = 16;</p>
+<div class="description">
+<p></p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

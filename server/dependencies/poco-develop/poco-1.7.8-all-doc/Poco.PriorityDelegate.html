@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::PriorityDelegate</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.html" class="namespace">Poco</a></h1>
+<h1 class="template">template &lt; class TObj, class TArgs, bool useSender = true &gt;</h1>
+<h1 class="symbol">class PriorityDelegate</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Foundation" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Foundation<br />
+<b>Package:</b> Events<br />
+<b>Header:</b> Poco/PriorityDelegate.h</p>
+<h2>Inheritance</h2>
+<p><b>Direct Base Classes: </b>AbstractPriorityDelegate&nbsp;&lt;&nbsp;TArgs&nbsp;&gt;</p>
+<p><b>All Base Classes: </b>AbstractPriorityDelegate&nbsp;&lt;&nbsp;TArgs&nbsp;&gt;</p>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.PriorityDelegate.html#16090" title="Poco::PriorityDelegate::clone()">clone</a>, <a href="Poco.PriorityDelegate.html#16091" title="Poco::PriorityDelegate::disable()">disable</a>, <a href="Poco.PriorityDelegate.html#16088" title="Poco::PriorityDelegate::equals()">equals</a>, <a href="Poco.PriorityDelegate.html#16085" title="Poco::PriorityDelegate::notify()">notify</a>, <a href="Poco.PriorityDelegate.html#16082" title="Poco::PriorityDelegate::operator =()">operator&nbsp;=</a></p>
+<h2>Types</h2>
+<h3><a id="16075">void</a></h3>
+<p class="decl">typedef void (TObj::* NotifyMethod)(const void *, TArgs &amp;);</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Constructors</h2>
+<h3><a id="16080">PriorityDelegate</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.PriorityDelegate.html" title="class Poco::PriorityDelegate">PriorityDelegate</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.PriorityDelegate.html" title="class Poco::PriorityDelegate">PriorityDelegate</a> &amp; delegate<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="16076">PriorityDelegate</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.PriorityDelegate.html" title="class Poco::PriorityDelegate">PriorityDelegate</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;TObj * obj,<br />&nbsp;&nbsp;&nbsp;&nbsp;NotifyMethod method,<br />&nbsp;&nbsp;&nbsp;&nbsp;int prio<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="16084">~PriorityDelegate</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">~<a href="Poco.PriorityDelegate.html" title="class Poco::PriorityDelegate">PriorityDelegate</a>();</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="16090">clone</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.AbstractDelegate.html" title="class Poco::AbstractDelegate">AbstractDelegate</a> &lt; TArgs &gt; * clone() const;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="16091">disable</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void disable();</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="16088">equals</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool equals(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.AbstractDelegate.html" title="class Poco::AbstractDelegate">AbstractDelegate</a> &lt; TArgs &gt; &amp; other<br />) const;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="16085">notify</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool notify(<br />&nbsp;&nbsp;&nbsp;&nbsp;const void * sender,<br />&nbsp;&nbsp;&nbsp;&nbsp;TArgs &amp; arguments<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="16082">operator =</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.PriorityDelegate.html" title="class Poco::PriorityDelegate">PriorityDelegate</a> &amp; operator = (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.PriorityDelegate.html" title="class Poco::PriorityDelegate">PriorityDelegate</a> &amp; delegate<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Variables</h2>
+<h3><a id="16094">_mutex</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Mutex.html" title="class Poco::Mutex">Mutex</a> _mutex;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="16093">_receiverMethod</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">NotifyMethod _receiverMethod;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="16092">_receiverObject</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">TObj * _receiverObject;</p>
+<div class="description">
+<p></p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

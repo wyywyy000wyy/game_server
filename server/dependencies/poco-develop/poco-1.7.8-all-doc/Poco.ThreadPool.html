@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::ThreadPool</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.html" class="namespace">Poco</a></h1>
+<h1 class="symbol">class ThreadPool</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Foundation" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Foundation<br />
+<b>Package:</b> Threading<br />
+<b>Header:</b> Poco/ThreadPool.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>A thread pool always keeps a number of threads running, ready to accept work. Creating and starting a threads can impose a significant runtime overhead to an application. A thread pool helps to improve the performance of an application by reducing the number of threads that have to be created (and destroyed again). Threads in a thread pool are re-used once they become available again. The thread pool always keeps a minimum number of threads running. If the demans for threads increases, additional threads are created. Once the demand for threads sinks again, no-longer used threads are stopped and removed from the pool. </p>
+</div>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.ThreadPool.html#17925" title="Poco::ThreadPool::addCapacity()">addCapacity</a>, <a href="Poco.ThreadPool.html#17932" title="Poco::ThreadPool::allocated()">allocated</a>, <a href="Poco.ThreadPool.html#17933" title="Poco::ThreadPool::available()">available</a>, <a href="Poco.ThreadPool.html#17927" title="Poco::ThreadPool::capacity()">capacity</a>, <a href="Poco.ThreadPool.html#17948" title="Poco::ThreadPool::collect()">collect</a>, <a href="Poco.ThreadPool.html#17952" title="Poco::ThreadPool::createThread()">createThread</a>, <a href="Poco.ThreadPool.html#17950" title="Poco::ThreadPool::defaultPool()">defaultPool</a>, <a href="Poco.ThreadPool.html#17930" title="Poco::ThreadPool::getStackSize()">getStackSize</a>, <a href="Poco.ThreadPool.html#17951" title="Poco::ThreadPool::getThread()">getThread</a>, <a href="Poco.ThreadPool.html#17953" title="Poco::ThreadPool::housekeep()">housekeep</a>, <a href="Poco.ThreadPool.html#17947" title="Poco::ThreadPool::joinAll()">joinAll</a>, <a href="Poco.ThreadPool.html#17949" title="Poco::ThreadPool::name()">name</a>, <a href="Poco.ThreadPool.html#17928" title="Poco::ThreadPool::setStackSize()">setStackSize</a>, <a href="Poco.ThreadPool.html#17934" title="Poco::ThreadPool::start()">start</a>, <a href="Poco.ThreadPool.html#17939" title="Poco::ThreadPool::startWithPriority()">startWithPriority</a>, <a href="Poco.ThreadPool.html#17946" title="Poco::ThreadPool::stopAll()">stopAll</a>, <a href="Poco.ThreadPool.html#17931" title="Poco::ThreadPool::used()">used</a></p>
+<h2>Constructors</h2>
+<h3><a id="17913">ThreadPool</a></h3>
+<p class="decl"><a href="Poco.ThreadPool.html" title="class Poco::ThreadPool">ThreadPool</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;int minCapacity = 2,<br />&nbsp;&nbsp;&nbsp;&nbsp;int maxCapacity = 16,<br />&nbsp;&nbsp;&nbsp;&nbsp;int idleTime = 60,<br />&nbsp;&nbsp;&nbsp;&nbsp;int stackSize = 0<br />);</p>
+<div class="description">
+<p>Creates a thread pool with minCapacity threads. If required, up to maxCapacity threads are created a <a href="Poco.NoThreadAvailableException.html" title="class Poco::NoThreadAvailableException">NoThreadAvailableException</a> exception is thrown. If a thread is running idle for more than idleTime seconds, and more than minCapacity threads are running, the thread is killed. Threads are created with given stack size. </p>
+</div>
+<h3><a id="17918">ThreadPool</a></h3>
+<p class="decl"><a href="Poco.ThreadPool.html" title="class Poco::ThreadPool">ThreadPool</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; name,<br />&nbsp;&nbsp;&nbsp;&nbsp;int minCapacity = 2,<br />&nbsp;&nbsp;&nbsp;&nbsp;int maxCapacity = 16,<br />&nbsp;&nbsp;&nbsp;&nbsp;int idleTime = 60,<br />&nbsp;&nbsp;&nbsp;&nbsp;int stackSize = 0<br />);</p>
+<div class="description">
+<p>Creates a thread pool with the given name and minCapacity threads. If required, up to maxCapacity threads are created a <a href="Poco.NoThreadAvailableException.html" title="class Poco::NoThreadAvailableException">NoThreadAvailableException</a> exception is thrown. If a thread is running idle for more than idleTime seconds, and more than minCapacity threads are running, the thread is killed. Threads are created with given stack size. </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="17924">~ThreadPool</a></h3>
+<p class="decl">~<a href="Poco.ThreadPool.html" title="class Poco::ThreadPool">ThreadPool</a>();</p>
+<div class="description">
+<p>Currently running threads will remain active until they complete.  </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="17925">addCapacity</a></h3>
+<p class="decl">void addCapacity(<br />&nbsp;&nbsp;&nbsp;&nbsp;int n<br />);</p>
+<div class="description">
+<p>Increases (or decreases, if n is negative) the maximum number of threads. </p>
+</div>
+<h3><a id="17932">allocated</a></h3>
+<p class="decl">int allocated() const;</p>
+<div class="description">
+<p>Returns the number of currently allocated threads. </p>
+</div>
+<h3><a id="17933">available</a></h3>
+<p class="decl">int available() const;</p>
+<div class="description">
+<p>Returns the number available threads. </p>
+</div>
+<h3><a id="17927">capacity</a></h3>
+<p class="decl">int capacity() const;</p>
+<div class="description">
+<p>Returns the maximum capacity of threads. </p>
+</div>
+<h3><a id="17948">collect</a></h3>
+<p class="decl">void collect();</p>
+<div class="description">
+<p>Stops and removes no longer used threads from the thread pool. Can be called at various times in an application's life time to help the thread pool manage its threads. Calling this method is optional, as the thread pool is also implicitly managed in calls to <a href="Poco.ThreadPool.html#17934" title="Poco::ThreadPool::start()">start</a>(), <a href="Poco.ThreadPool.html#17925" title="Poco::ThreadPool::addCapacity()">addCapacity</a>() and <a href="Poco.ThreadPool.html#17947" title="Poco::ThreadPool::joinAll()">joinAll</a>(). </p>
+</div>
+<h3><a id="17950">defaultPool</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static <a href="Poco.ThreadPool.html" title="class Poco::ThreadPool">ThreadPool</a> &amp; defaultPool();</p>
+<div class="description">
+<p>Returns a reference to the default thread pool. </p>
+</div>
+<h3><a id="17930">getStackSize</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">int getStackSize() const;</p>
+<div class="description">
+<p>Returns the stack size used to create new threads. </p>
+</div>
+<h3><a id="17947">joinAll</a></h3>
+<p class="decl">void joinAll();</p>
+<div class="description">
+<p>Waits for all threads to complete. </p>
+<p>Note that this will not actually join() the underlying thread, but rather wait for the thread's runnables to finish. </p>
+</div>
+<h3><a id="17949">name</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">const std::string &amp; name() const;</p>
+<div class="description">
+<p>Returns the name of the thread pool, or an empty string if no name has been specified in the constructor. </p>
+</div>
+<h3><a id="17928">setStackSize</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void setStackSize(<br />&nbsp;&nbsp;&nbsp;&nbsp;int stackSize<br />);</p>
+<div class="description">
+<p>Sets the stack size for threads. New stack size applies only for newly created threads. </p>
+</div>
+<h3><a id="17934">start</a></h3>
+<p class="decl">void start(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Runnable.html" title="class Poco::Runnable">Runnable</a> &amp; target<br />);</p>
+<div class="description">
+<p>Obtains a thread and starts the target. Throws a <a href="Poco.NoThreadAvailableException.html" title="class Poco::NoThreadAvailableException">NoThreadAvailableException</a> if no more threads are available. </p>
+</div>
+<h3><a id="17936">start</a></h3>
+<p class="decl">void start(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Runnable.html" title="class Poco::Runnable">Runnable</a> &amp; target,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; name<br />);</p>
+<div class="description">
+<p>Obtains a thread and starts the target. Assigns the given name to the thread. Throws a <a href="Poco.NoThreadAvailableException.html" title="class Poco::NoThreadAvailableException">NoThreadAvailableException</a> if no more threads are available. </p>
+</div>
+<h3><a id="17939">startWithPriority</a></h3>
+<p class="decl">void startWithPriority(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Thread.html#17808" title="enum  Poco::Thread::Priority">Thread::Priority</a> priority,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Runnable.html" title="class Poco::Runnable">Runnable</a> &amp; target<br />);</p>
+<div class="description">
+<p>Obtains a thread, adjusts the thread's priority, and starts the target. Throws a <a href="Poco.NoThreadAvailableException.html" title="class Poco::NoThreadAvailableException">NoThreadAvailableException</a> if no more threads are available. </p>
+</div>
+<h3><a id="17942">startWithPriority</a></h3>
+<p class="decl">void startWithPriority(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Thread.html#17808" title="enum  Poco::Thread::Priority">Thread::Priority</a> priority,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Runnable.html" title="class Poco::Runnable">Runnable</a> &amp; target,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; name<br />);</p>
+<div class="description">
+<p>Obtains a thread, adjusts the thread's priority, and starts the target. Assigns the given name to the thread. Throws a <a href="Poco.NoThreadAvailableException.html" title="class Poco::NoThreadAvailableException">NoThreadAvailableException</a> if no more threads are available. </p>
+</div>
+<h3><a id="17946">stopAll</a></h3>
+<p class="decl">void stopAll();</p>
+<div class="description">
+<p>Stops all running threads and waits for their completion. </p>
+<p>Will also delete all thread objects. If used, this method should be the last action before the thread pool is deleted. </p>
+<p>Note: If a thread fails to stop within 10 seconds  (due to a programming error, for example), the underlying thread object will not be deleted and this method will return anyway. This allows for a more or less graceful shutdown in case of a misbehaving thread. </p>
+</div>
+<h3><a id="17931">used</a></h3>
+<p class="decl">int used() const;</p>
+<div class="description">
+<p>Returns the number of currently used threads. </p>
+</div>
+<h3><a id="17952">createThread</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">PooledThread * createThread();</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="17951">getThread</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">PooledThread * getThread();</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="17953">housekeep</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">void housekeep();</p>
+<div class="description">
+<p></p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

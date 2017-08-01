@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::Net::HTTPClientSession</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.Net.html" class="namespace">Poco::Net</a></h1>
+<h1 class="symbol">class HTTPClientSession</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Net" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Net<br />
+<b>Package:</b> HTTPClient<br />
+<b>Header:</b> Poco/Net/HTTPClientSession.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>This class implements the client-side of a HTTP session. </p>
+<p>To send a HTTP request to a HTTP server, first instantiate a <a href="Poco.Net.HTTPClientSession.html" title="class Poco::Net::HTTPClientSession">HTTPClientSession</a> object and specify the server's host name and port number. </p>
+<p>Then create a <a href="Poco.Net.HTTPRequest.html" title="class Poco::Net::HTTPRequest">HTTPRequest</a> object, fill it accordingly, and pass it as argument to the <a href="Poco.Net.HTTPClientSession.html#21082" title="Poco::Net::HTTPClientSession::sendRequest()">sendRequest</a>() method. </p>
+<p><a href="Poco.Net.HTTPClientSession.html#21082" title="Poco::Net::HTTPClientSession::sendRequest()">sendRequest</a>() will return an output stream that can be used to send the request body, if there is any. </p>
+<p>After you are done sending the request body, create a <a href="Poco.Net.HTTPResponse.html" title="class Poco::Net::HTTPResponse">HTTPResponse</a> object and pass it to <a href="Poco.Net.HTTPClientSession.html#21084" title="Poco::Net::HTTPClientSession::receiveResponse()">receiveResponse</a>(). </p>
+<p>This will return an input stream that can be used to read the response body. </p>
+<p>See <a href="https://www.ietf.org/rfc/rfc2616.txt" target="_blank">RFC 2616</a> &lt;<a href="http://www.faqs.org/rfcs/rfc2616.html" target="_blank">http://www.faqs.org/rfcs/rfc2616.html</a>&gt; for more information about the HTTP protocol. </p>
+<p>Proxies and proxy authorization (only HTTP Basic Authorization) is supported. Use <a href="Poco.Net.HTTPClientSession.html#21055" title="Poco::Net::HTTPClientSession::setProxy()">setProxy</a>() and <a href="Poco.Net.HTTPClientSession.html#21064" title="Poco::Net::HTTPClientSession::setProxyCredentials()">setProxyCredentials</a>() to set up a session through a proxy. </p>
+</div>
+<h2>Inheritance</h2>
+<p><b>Direct Base Classes: </b><a href="Poco.Net.HTTPSession.html" title="class Poco::Net::HTTPSession">HTTPSession</a></p>
+<p><b>All Base Classes: </b><a href="Poco.Net.HTTPSession.html" title="class Poco::Net::HTTPSession">HTTPSession</a></p>
+<p><b>Known Derived Classes: </b><a href="Poco.Net.HTTPSClientSession.html" title="class Poco::Net::HTTPSClientSession">HTTPSClientSession</a></p>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.Net.HTTPClientSession.html#21088" title="Poco::Net::HTTPClientSession::bypassProxy()">bypassProxy</a>, <a href="Poco.Net.HTTPClientSession.html#21078" title="Poco::Net::HTTPClientSession::getGlobalProxyConfig()">getGlobalProxyConfig</a>, <a href="Poco.Net.HTTPClientSession.html#21051" title="Poco::Net::HTTPClientSession::getHost()">getHost</a>, <a href="Poco.Net.HTTPClientSession.html#21081" title="Poco::Net::HTTPClientSession::getKeepAliveTimeout()">getKeepAliveTimeout</a>, <a href="Poco.Net.HTTPClientSession.html#21054" title="Poco::Net::HTTPClientSession::getPort()">getPort</a>, <a href="Poco.Net.HTTPClientSession.html#21075" title="Poco::Net::HTTPClientSession::getProxyConfig()">getProxyConfig</a>, <a href="Poco.Net.HTTPClientSession.html#21062" title="Poco::Net::HTTPClientSession::getProxyHost()">getProxyHost</a>, <a href="Poco.Net.HTTPClientSession.html#21072" title="Poco::Net::HTTPClientSession::getProxyPassword()">getProxyPassword</a>, <a href="Poco.Net.HTTPClientSession.html#21063" title="Poco::Net::HTTPClientSession::getProxyPort()">getProxyPort</a>, <a href="Poco.Net.HTTPClientSession.html#21069" title="Poco::Net::HTTPClientSession::getProxyUsername()">getProxyUsername</a>, <a href="Poco.Net.HTTPClientSession.html#21096" title="Poco::Net::HTTPClientSession::mustReconnect()">mustReconnect</a>, <a href="Poco.Net.HTTPClientSession.html#21097" title="Poco::Net::HTTPClientSession::proxyAuthenticate()">proxyAuthenticate</a>, <a href="Poco.Net.HTTPClientSession.html#21099" title="Poco::Net::HTTPClientSession::proxyAuthenticateImpl()">proxyAuthenticateImpl</a>, <a href="Poco.Net.HTTPClientSession.html#21101" title="Poco::Net::HTTPClientSession::proxyConnect()">proxyConnect</a>, <a href="Poco.Net.HTTPClientSession.html#21095" title="Poco::Net::HTTPClientSession::proxyRequestPrefix()">proxyRequestPrefix</a>, <a href="Poco.Net.HTTPClientSession.html#21102" title="Poco::Net::HTTPClientSession::proxyTunnel()">proxyTunnel</a>, <a href="Poco.Net.HTTPClientSession.html#21084" title="Poco::Net::HTTPClientSession::receiveResponse()">receiveResponse</a>, <a href="Poco.Net.HTTPClientSession.html#21091" title="Poco::Net::HTTPClientSession::reconnect()">reconnect</a>, <a href="Poco.Net.HTTPClientSession.html#21086" title="Poco::Net::HTTPClientSession::reset()">reset</a>, <a href="Poco.Net.HTTPClientSession.html#21087" title="Poco::Net::HTTPClientSession::secure()">secure</a>, <a href="Poco.Net.HTTPClientSession.html#21082" title="Poco::Net::HTTPClientSession::sendRequest()">sendRequest</a>, <a href="Poco.Net.HTTPClientSession.html#21076" title="Poco::Net::HTTPClientSession::setGlobalProxyConfig()">setGlobalProxyConfig</a>, <a href="Poco.Net.HTTPClientSession.html#21049" title="Poco::Net::HTTPClientSession::setHost()">setHost</a>, <a href="Poco.Net.HTTPClientSession.html#21079" title="Poco::Net::HTTPClientSession::setKeepAliveTimeout()">setKeepAliveTimeout</a>, <a href="Poco.Net.HTTPClientSession.html#21052" title="Poco::Net::HTTPClientSession::setPort()">setPort</a>, <a href="Poco.Net.HTTPClientSession.html#21055" title="Poco::Net::HTTPClientSession::setProxy()">setProxy</a>, <a href="Poco.Net.HTTPClientSession.html#21073" title="Poco::Net::HTTPClientSession::setProxyConfig()">setProxyConfig</a>, <a href="Poco.Net.HTTPClientSession.html#21064" title="Poco::Net::HTTPClientSession::setProxyCredentials()">setProxyCredentials</a>, <a href="Poco.Net.HTTPClientSession.html#21058" title="Poco::Net::HTTPClientSession::setProxyHost()">setProxyHost</a>, <a href="Poco.Net.HTTPClientSession.html#21070" title="Poco::Net::HTTPClientSession::setProxyPassword()">setProxyPassword</a>, <a href="Poco.Net.HTTPClientSession.html#21060" title="Poco::Net::HTTPClientSession::setProxyPort()">setProxyPort</a>, <a href="Poco.Net.HTTPClientSession.html#21067" title="Poco::Net::HTTPClientSession::setProxyUsername()">setProxyUsername</a>, <a href="Poco.Net.HTTPClientSession.html#21092" title="Poco::Net::HTTPClientSession::write()">write</a></p>
+<p><b>Inherited Functions: </b><a href="Poco.Net.HTTPSession.html#21840" title="Poco::Net::HTTPSession::abort()">abort</a>, <a href="Poco.Net.HTTPSession.html#21842" title="Poco::Net::HTTPSession::attachSessionData()">attachSessionData</a>, <a href="Poco.Net.HTTPSession.html#21873" title="Poco::Net::HTTPSession::attachSocket()">attachSocket</a>, <a href="Poco.Net.HTTPSession.html#21869" title="Poco::Net::HTTPSession::buffered()">buffered</a>, <a href="Poco.Net.HTTPSession.html#21878" title="Poco::Net::HTTPSession::clearException()">clearException</a>, <a href="Poco.Net.HTTPSession.html#21875" title="Poco::Net::HTTPSession::close()">close</a>, <a href="Poco.Net.HTTPSession.html#21871" title="Poco::Net::HTTPSession::connect()">connect</a>, <a href="Poco.Net.HTTPSession.html#21839" title="Poco::Net::HTTPSession::connected()">connected</a>, <a href="Poco.Net.HTTPSession.html#21847" title="Poco::Net::HTTPSession::detachSocket()">detachSocket</a>, <a href="Poco.Net.HTTPSession.html#21849" title="Poco::Net::HTTPSession::drainBuffer()">drainBuffer</a>, <a href="Poco.Net.HTTPSession.html#21858" title="Poco::Net::HTTPSession::get()">get</a>, <a href="Poco.Net.HTTPSession.html#21835" title="Poco::Net::HTTPSession::getKeepAlive()">getKeepAlive</a>, <a href="Poco.Net.HTTPSession.html#21838" title="Poco::Net::HTTPSession::getTimeout()">getTimeout</a>, <a href="Poco.Net.HTTPSession.html#21841" title="Poco::Net::HTTPSession::networkException()">networkException</a>, <a href="Poco.Net.HTTPSession.html#21859" title="Poco::Net::HTTPSession::peek()">peek</a>, <a href="Poco.Net.HTTPSession.html#21860" title="Poco::Net::HTTPSession::read()">read</a>, <a href="Poco.Net.HTTPSession.html#21866" title="Poco::Net::HTTPSession::receive()">receive</a>, <a href="Poco.Net.HTTPSession.html#21870" title="Poco::Net::HTTPSession::refill()">refill</a>, <a href="Poco.Net.HTTPSession.html#21844" title="Poco::Net::HTTPSession::sessionData()">sessionData</a>, <a href="Poco.Net.HTTPSession.html#21876" title="Poco::Net::HTTPSession::setException()">setException</a>, <a href="Poco.Net.HTTPSession.html#21833" title="Poco::Net::HTTPSession::setKeepAlive()">setKeepAlive</a>, <a href="Poco.Net.HTTPSession.html#21836" title="Poco::Net::HTTPSession::setTimeout()">setTimeout</a>, <a href="Poco.Net.HTTPSession.html#21848" title="Poco::Net::HTTPSession::socket()">socket</a>, <a href="Poco.Net.HTTPSession.html#21863" title="Poco::Net::HTTPSession::write()">write</a></p>
+<h2>Nested Classes</h2>
+<h3><a href="Poco.Net.HTTPClientSession.ProxyConfig.html" class="class">struct ProxyConfig</a></h3>
+<p> HTTP proxy server configuration.&nbsp;<a href="Poco.Net.HTTPClientSession.ProxyConfig.html"><img src="images/arrow.png" alt="more..." /> </a></p>
+<h2>Enumerations</h2>
+<h3><i>Anonymous</i> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="21090">DEFAULT_KEEP_ALIVE_TIMEOUT</a> = 8</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Constructors</h2>
+<h3><a id="21036">HTTPClientSession</a></h3>
+<p class="decl"><a href="Poco.Net.HTTPClientSession.html" title="class Poco::Net::HTTPClientSession">HTTPClientSession</a>();</p>
+<div class="description">
+<p>Creates an unconnected <a href="Poco.Net.HTTPClientSession.html" title="class Poco::Net::HTTPClientSession">HTTPClientSession</a>. </p>
+</div>
+<h3><a id="21037">HTTPClientSession</a></h3>
+<p class="decl">explicit <a href="Poco.Net.HTTPClientSession.html" title="class Poco::Net::HTTPClientSession">HTTPClientSession</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Net.StreamSocket.html" title="class Poco::Net::StreamSocket">StreamSocket</a> &amp; socket<br />);</p>
+<div class="description">
+<p>Creates a <a href="Poco.Net.HTTPClientSession.html" title="class Poco::Net::HTTPClientSession">HTTPClientSession</a> using the given socket. The socket must not be connected. The session takes ownership of the socket. </p>
+</div>
+<h3><a id="21039">HTTPClientSession</a></h3>
+<p class="decl">explicit <a href="Poco.Net.HTTPClientSession.html" title="class Poco::Net::HTTPClientSession">HTTPClientSession</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Net.SocketAddress.html" title="class Poco::Net::SocketAddress">SocketAddress</a> &amp; address<br />);</p>
+<div class="description">
+<p>Creates a <a href="Poco.Net.HTTPClientSession.html" title="class Poco::Net::HTTPClientSession">HTTPClientSession</a> using the given address. </p>
+</div>
+<h3><a id="21041">HTTPClientSession</a></h3>
+<p class="decl"><a href="Poco.Net.HTTPClientSession.html" title="class Poco::Net::HTTPClientSession">HTTPClientSession</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; host,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.html#18379" title="Poco::UInt16">Poco::UInt16</a> port = HTTPSession::HTTP_PORT<br />);</p>
+<div class="description">
+<p>Creates a <a href="Poco.Net.HTTPClientSession.html" title="class Poco::Net::HTTPClientSession">HTTPClientSession</a> using the given host and port. </p>
+</div>
+<h3><a id="21044">HTTPClientSession</a></h3>
+<p class="decl"><a href="Poco.Net.HTTPClientSession.html" title="class Poco::Net::HTTPClientSession">HTTPClientSession</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; host,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.html#18379" title="Poco::UInt16">Poco::UInt16</a> port,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Net.HTTPClientSession.ProxyConfig.html" title="struct Poco::Net::HTTPClientSession::ProxyConfig">ProxyConfig</a> &amp; proxyConfig<br />);</p>
+<div class="description">
+<p>Creates a <a href="Poco.Net.HTTPClientSession.html" title="class Poco::Net::HTTPClientSession">HTTPClientSession</a> using the given host, port and proxy configuration. </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="21048">~HTTPClientSession</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual ~<a href="Poco.Net.HTTPClientSession.html" title="class Poco::Net::HTTPClientSession">HTTPClientSession</a>();</p>
+<div class="description">
+<p>Destroys the <a href="Poco.Net.HTTPClientSession.html" title="class Poco::Net::HTTPClientSession">HTTPClientSession</a> and closes the underlying socket. </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="21088">bypassProxy</a></h3>
+<p class="decl">bool bypassProxy() const;</p>
+<div class="description">
+<p>Returns true if the proxy should be bypassed for the current host. </p>
+</div>
+<h3><a id="21078">getGlobalProxyConfig</a> <img src="images/static.png" alt="static" title="static" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">static const <a href="Poco.Net.HTTPClientSession.ProxyConfig.html" title="struct Poco::Net::HTTPClientSession::ProxyConfig">ProxyConfig</a> &amp; getGlobalProxyConfig();</p>
+<div class="description">
+<p>Returns the global proxy configuration. </p>
+</div>
+<h3><a id="21051">getHost</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">const std::string &amp; getHost() const;</p>
+<div class="description">
+<p>Returns the host name of the target HTTP server. </p>
+</div>
+<h3><a id="21081">getKeepAliveTimeout</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">const <a href="Poco.Timespan.html" title="class Poco::Timespan">Poco::Timespan</a> &amp; getKeepAliveTimeout() const;</p>
+<div class="description">
+<p>Returns the connection timeout for HTTP connections. </p>
+</div>
+<h3><a id="21054">getPort</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.html#18379" title="Poco::UInt16">Poco::UInt16</a> getPort() const;</p>
+<div class="description">
+<p>Returns the port number of the target HTTP server. </p>
+</div>
+<h3><a id="21075">getProxyConfig</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">const <a href="Poco.Net.HTTPClientSession.ProxyConfig.html" title="struct Poco::Net::HTTPClientSession::ProxyConfig">ProxyConfig</a> &amp; getProxyConfig() const;</p>
+<div class="description">
+<p>Returns the proxy configuration. </p>
+</div>
+<h3><a id="21062">getProxyHost</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">const std::string &amp; getProxyHost() const;</p>
+<div class="description">
+<p>Returns the proxy host name. </p>
+</div>
+<h3><a id="21072">getProxyPassword</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">const std::string &amp; getProxyPassword() const;</p>
+<div class="description">
+<p>Returns the password for proxy authentication. </p>
+</div>
+<h3><a id="21063">getProxyPort</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.html#18379" title="Poco::UInt16">Poco::UInt16</a> getProxyPort() const;</p>
+<div class="description">
+<p>Returns the proxy port number. </p>
+</div>
+<h3><a id="21069">getProxyUsername</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">const std::string &amp; getProxyUsername() const;</p>
+<div class="description">
+<p>Returns the username for proxy authentication. </p>
+</div>
+<h3><a id="21084">receiveResponse</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual std::istream &amp; receiveResponse(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Net.HTTPResponse.html" title="class Poco::Net::HTTPResponse">HTTPResponse</a> &amp; response<br />);</p>
+<div class="description">
+<p>Receives the header for the response to the previous  HTTP request. </p>
+<p>The returned input stream can be used to read the response body. The stream is valid until <a href="Poco.Net.HTTPClientSession.html#21082" title="Poco::Net::HTTPClientSession::sendRequest()">sendRequest</a>() is called or the session is destroyed. </p>
+<p>It must be ensured that the response stream is fully consumed before sending a new request and persistent connections are enabled. Otherwise, the unread part of the response body may be treated as  part of the next request's response header, resulting in a <a href="Poco.Net.MessageException.html" title="class Poco::Net::MessageException">Poco::Net::MessageException</a> being thrown. </p>
+<p>In case a network or server failure happens while reading the response body from the returned stream, the stream state will change to bad or fail. In this case, <a href="Poco.Net.HTTPClientSession.html#21086" title="Poco::Net::HTTPClientSession::reset()">reset</a>() should be called if the session will be reused and persistent connections are enabled to ensure a new connection will be set up for the next request. </p>
+</div>
+<h3><a id="21086">reset</a></h3>
+<p class="decl">void reset();</p>
+<div class="description">
+<p>Resets the session and closes the socket. </p>
+<p>The next request will initiate a new connection, even if persistent connections are enabled. </p>
+<p>This should be called whenever something went wrong when sending a request (e.g., <a href="Poco.Net.HTTPClientSession.html#21082" title="Poco::Net::HTTPClientSession::sendRequest()">sendRequest</a>() or <a href="Poco.Net.HTTPClientSession.html#21084" title="Poco::Net::HTTPClientSession::receiveResponse()">receiveResponse</a>() throws an exception, or the request or response stream changes into fail or bad state, but not eof state). </p>
+</div>
+<h3><a id="21087">secure</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual bool secure() const;</p>
+<div class="description">
+<p>Return true if and only if the session uses SSL or TLS, or false otherwise. </p>
+</div>
+<h3><a id="21082">sendRequest</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual std::ostream &amp; sendRequest(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Net.HTTPRequest.html" title="class Poco::Net::HTTPRequest">HTTPRequest</a> &amp; request<br />);</p>
+<div class="description">
+<p>Sends the header for the given HTTP request to the server. </p>
+<p>The <a href="Poco.Net.HTTPClientSession.html" title="class Poco::Net::HTTPClientSession">HTTPClientSession</a> will set the request's Host and Keep-Alive headers accordingly. </p>
+<p>The returned output stream can be used to write the request body. The stream is valid until <a href="Poco.Net.HTTPClientSession.html#21084" title="Poco::Net::HTTPClientSession::receiveResponse()">receiveResponse</a>() is called or the session is destroyed. </p>
+<p>In case a network or server failure happens while writing the request body to the returned stream, the stream state will change to bad or fail. In this case, <a href="Poco.Net.HTTPClientSession.html#21086" title="Poco::Net::HTTPClientSession::reset()">reset</a>() should be called if the session will be reused and persistent connections are enabled to ensure a new connection will be set up for the next request. </p>
+</div>
+<h3><a id="21076">setGlobalProxyConfig</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static void setGlobalProxyConfig(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Net.HTTPClientSession.ProxyConfig.html" title="struct Poco::Net::HTTPClientSession::ProxyConfig">ProxyConfig</a> &amp; config<br />);</p>
+<div class="description">
+<p>Sets the global proxy configuration. </p>
+<p>The global proxy configuration is used by all <a href="Poco.Net.HTTPClientSession.html" title="class Poco::Net::HTTPClientSession">HTTPClientSession</a> instances, unless a different proxy configuration is explicitly set. </p>
+<p>Warning: Setting the global proxy configuration is not thread safe. The global proxy configuration should be set at start up, before the first <a href="Poco.Net.HTTPClientSession.html" title="class Poco::Net::HTTPClientSession">HTTPClientSession</a> instance is created. </p>
+</div>
+<h3><a id="21049">setHost</a></h3>
+<p class="decl">void setHost(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; host<br />);</p>
+<div class="description">
+<p>Sets the host name of the target HTTP server. </p>
+<p>The host must not be changed once there is an open connection to the server. </p>
+</div>
+<h3><a id="21079">setKeepAliveTimeout</a></h3>
+<p class="decl">void setKeepAliveTimeout(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Timespan.html" title="class Poco::Timespan">Poco::Timespan</a> &amp; timeout<br />);</p>
+<div class="description">
+<p>Sets the connection timeout for HTTP connections. </p>
+</div>
+<h3><a id="21052">setPort</a></h3>
+<p class="decl">void setPort(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.html#18379" title="Poco::UInt16">Poco::UInt16</a> port<br />);</p>
+<div class="description">
+<p>Sets the port number of the target HTTP server. </p>
+<p>The port number must not be changed once there is an open connection to the server. </p>
+</div>
+<h3><a id="21055">setProxy</a></h3>
+<p class="decl">void setProxy(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; host,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.html#18379" title="Poco::UInt16">Poco::UInt16</a> port = HTTPSession::HTTP_PORT<br />);</p>
+<div class="description">
+<p>Sets the proxy host name and port number. </p>
+</div>
+<h3><a id="21073">setProxyConfig</a></h3>
+<p class="decl">void setProxyConfig(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Net.HTTPClientSession.ProxyConfig.html" title="struct Poco::Net::HTTPClientSession::ProxyConfig">ProxyConfig</a> &amp; config<br />);</p>
+<div class="description">
+<p>Sets the proxy configuration. </p>
+</div>
+<h3><a id="21064">setProxyCredentials</a></h3>
+<p class="decl">void setProxyCredentials(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; username,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; password<br />);</p>
+<div class="description">
+<p>Sets the username and password for proxy authentication. Only Basic authentication is supported. </p>
+</div>
+<h3><a id="21058">setProxyHost</a></h3>
+<p class="decl">void setProxyHost(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; host<br />);</p>
+<div class="description">
+<p>Sets the host name of the proxy server. </p>
+</div>
+<h3><a id="21070">setProxyPassword</a></h3>
+<p class="decl">void setProxyPassword(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; password<br />);</p>
+<div class="description">
+<p>Sets the password for proxy authentication.	 Only Basic authentication is supported. </p>
+</div>
+<h3><a id="21060">setProxyPort</a></h3>
+<p class="decl">void setProxyPort(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.html#18379" title="Poco::UInt16">Poco::UInt16</a> port<br />);</p>
+<div class="description">
+<p>Sets the port number of the proxy server. </p>
+</div>
+<h3><a id="21067">setProxyUsername</a></h3>
+<p class="decl">void setProxyUsername(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; username<br />);</p>
+<div class="description">
+<p>Sets the username for proxy authentication. Only Basic authentication is supported. </p>
+</div>
+<h3><a id="21096">mustReconnect</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual bool mustReconnect() const;</p>
+<div class="description">
+<p>Checks if we can reuse a persistent connection. </p>
+</div>
+<h3><a id="21097">proxyAuthenticate</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void proxyAuthenticate(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Net.HTTPRequest.html" title="class Poco::Net::HTTPRequest">HTTPRequest</a> &amp; request<br />);</p>
+<div class="description">
+<p>Sets the proxy credentials (Proxy-Authorization header), if proxy username and password have been set. </p>
+</div>
+<h3><a id="21099">proxyAuthenticateImpl</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">void proxyAuthenticateImpl(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Net.HTTPRequest.html" title="class Poco::Net::HTTPRequest">HTTPRequest</a> &amp; request<br />);</p>
+<div class="description">
+<p>Sets the proxy credentials (Proxy-Authorization header), if proxy username and password have been set. </p>
+</div>
+<h3><a id="21101">proxyConnect</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Net.StreamSocket.html" title="class Poco::Net::StreamSocket">StreamSocket</a> proxyConnect();</p>
+<div class="description">
+<p>Sends a CONNECT request to the proxy server and returns a <a href="Poco.Net.StreamSocket.html" title="class Poco::Net::StreamSocket">StreamSocket</a> for the resulting connection. </p>
+</div>
+<h3><a id="21095">proxyRequestPrefix</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual std::string proxyRequestPrefix() const;</p>
+<div class="description">
+<p>Returns the prefix prepended to the <a href="Poco.URI.html" title="class Poco::URI">URI</a> for proxy requests (e.g., &quot;<a href="http://myhost.com"" target="_blank">http://myhost.com"</a>). </p>
+</div>
+<h3><a id="21102">proxyTunnel</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">void proxyTunnel();</p>
+<div class="description">
+<p>Calls <a href="Poco.Net.HTTPClientSession.html#21101" title="Poco::Net::HTTPClientSession::proxyConnect()">proxyConnect</a>() and attaches the resulting <a href="Poco.Net.StreamSocket.html" title="class Poco::Net::StreamSocket">StreamSocket</a> to the <a href="Poco.Net.HTTPClientSession.html" title="class Poco::Net::HTTPClientSession">HTTPClientSession</a>. </p>
+</div>
+<h3><a id="21091">reconnect</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">void reconnect();</p>
+<div class="description">
+<p>Connects the underlying socket to the HTTP server. </p>
+</div>
+<h3><a id="21092">write</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">int write(<br />&nbsp;&nbsp;&nbsp;&nbsp;const char * buffer,<br />&nbsp;&nbsp;&nbsp;&nbsp;std::streamsize length<br />);</p>
+<div class="description">
+<p>Tries to re-connect if keep-alive is on. </p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Net.HTTPSession.html#21863" title="Poco::Net::HTTPSession::write()">Poco::Net::HTTPSession::write()</a></p></div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

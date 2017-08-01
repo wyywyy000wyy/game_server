@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::XML::DOMException</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.XML.html" class="namespace">Poco::XML</a></h1>
+<h1 class="symbol">class DOMException</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-XML" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> XML<br />
+<b>Package:</b> DOM<br />
+<b>Header:</b> Poco/DOM/DOMException.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>DOM operations only raise exceptions in &quot;exceptional&quot; circumstances, i.e., when an operation is impossible to perform (either for logical reasons, because data is lost, or because the implementation has become unstable). In general, DOM methods return specific error values in ordinary processing situations, such as out-of-bound errors when using <a href="Poco.XML.NodeList.html" title="class Poco::XML::NodeList">NodeList</a>. </p>
+<p>Implementations should raise other exceptions under other circumstances. For example, implementations should raise an implementation-dependent exception if a null argument is passed when null was not expected. </p>
+</div>
+<h2>Inheritance</h2>
+<p><b>Direct Base Classes: </b><a href="Poco.XML.XMLException.html" title="class Poco::XML::XMLException">XMLException</a></p>
+<p><b>All Base Classes: </b><a href="Poco.Exception.html" title="class Poco::Exception">Poco::Exception</a>, <a href="Poco.RuntimeException.html" title="class Poco::RuntimeException">Poco::RuntimeException</a>, <a href="Poco.XML.XMLException.html" title="class Poco::XML::XMLException">XMLException</a>, std::exception</p>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.XML.DOMException.html#28536" title="Poco::XML::DOMException::className()">className</a>, <a href="Poco.XML.DOMException.html#28537" title="Poco::XML::DOMException::clone()">clone</a>, <a href="Poco.XML.DOMException.html#28539" title="Poco::XML::DOMException::code()">code</a>, <a href="Poco.XML.DOMException.html#28540" title="Poco::XML::DOMException::message()">message</a>, <a href="Poco.XML.DOMException.html#28535" title="Poco::XML::DOMException::name()">name</a>, <a href="Poco.XML.DOMException.html#28533" title="Poco::XML::DOMException::operator =()">operator&nbsp;=</a>, <a href="Poco.XML.DOMException.html#28538" title="Poco::XML::DOMException::rethrow()">rethrow</a></p>
+<p><b>Inherited Functions: </b><a href="Poco.Exception.html#10987" title="Poco::Exception::className()">className</a>, <a href="Poco.Exception.html#10993" title="Poco::Exception::clone()">clone</a>, <a href="Poco.Exception.html#10991" title="Poco::Exception::code()">code</a>, <a href="Poco.Exception.html#10992" title="Poco::Exception::displayText()">displayText</a>, <a href="Poco.Exception.html#10999" title="Poco::Exception::extendedMessage()">extendedMessage</a>, <a href="Poco.Exception.html#10990" title="Poco::Exception::message()">message</a>, <a href="Poco.Exception.html#10986" title="Poco::Exception::name()">name</a>, <a href="Poco.Exception.html#10989" title="Poco::Exception::nested()">nested</a>, <a href="Poco.Exception.html#10984" title="Poco::Exception::operator =()">operator&nbsp;=</a>, <a href="Poco.Exception.html#10994" title="Poco::Exception::rethrow()">rethrow</a>, <a href="Poco.Exception.html#10988" title="Poco::Exception::what()">what</a></p>
+<h2>Enumerations</h2>
+<h3><i>Anonymous</i></h3>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="28512">INDEX_SIZE_ERR</a> = 1</p>
+<div class="description">
+<p>index or size is negative or greater than allowed value </p>
+</div>
+<p class="decl"><a id="28513">DOMSTRING_SIZE_ERR</a></p>
+<div class="description">
+<p>the specified range of text does not fit into a DOMString (not used) </p>
+</div>
+<p class="decl"><a id="28514">HIERARCHY_REQUEST_ERR</a></p>
+<div class="description">
+<p>a node is inserted somewhere it doesn't belong </p>
+</div>
+<p class="decl"><a id="28515">WRONG_DOCUMENT_ERR</a></p>
+<div class="description">
+<p>a node is used in a different document than the one that created it </p>
+</div>
+<p class="decl"><a id="28516">INVALID_CHARACTER_ERR</a></p>
+<div class="description">
+<p>an invalid character is specified (not used) </p>
+</div>
+<p class="decl"><a id="28517">NO_DATA_ALLOWED_ERR</a></p>
+<div class="description">
+<p>data is specified for a node which does not support data </p>
+</div>
+<p class="decl"><a id="28518">NO_MODIFICATION_ALLOWED_ERR</a></p>
+<div class="description">
+<p>an attempt is made to modify an object where modifications are not allowed </p>
+</div>
+<p class="decl"><a id="28519">NOT_FOUND_ERR</a></p>
+<div class="description">
+<p>an attempt was made to reference a node in a context where it does not exist </p>
+</div>
+<p class="decl"><a id="28520">NOT_SUPPORTED_ERR</a></p>
+<div class="description">
+<p>the implementation does not support the type of object requested </p>
+</div>
+<p class="decl"><a id="28521">INUSE_ATTRIBUTE_ERR</a></p>
+<div class="description">
+<p>an attempt is made to add an attribute that is already in use elsewhere </p>
+</div>
+<p class="decl"><a id="28522">INVALID_STATE_ERR</a></p>
+<div class="description">
+<p>a parameter or an operation is not supported by the underlying object </p>
+</div>
+<p class="decl"><a id="28523">SYNTAX_ERR</a></p>
+<div class="description">
+<p>an invalid or illegal string is specified </p>
+</div>
+<p class="decl"><a id="28524">INVALID_MODIFICATION_ERR</a></p>
+<div class="description">
+<p>an attempt is made to modify the type of the underlying object </p>
+</div>
+<p class="decl"><a id="28525">NAMESPACE_ERR</a></p>
+<div class="description">
+<p>an attempt is made to create or change an object in a way which is incorrect with regard to namespaces </p>
+</div>
+<p class="decl"><a id="28526">INVALID_ACCESS_ERR</a></p>
+<div class="description">
+<p>an attempt is made to use an object that is not, or is no longer, usable </p>
+</div>
+<p class="decl"><a id="28527">_NUMBER_OF_MESSAGES</a></p>
+<div class="description">
+<p></p>
+</div>
+<h2>Constructors</h2>
+<h3><a id="28528">DOMException</a></h3>
+<p class="decl"><a href="Poco.XML.DOMException.html" title="class Poco::XML::DOMException">DOMException</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;unsigned short code<br />);</p>
+<div class="description">
+<p>Creates a <a href="Poco.XML.DOMException.html" title="class Poco::XML::DOMException">DOMException</a> with the given error code. </p>
+</div>
+<h3><a id="28530">DOMException</a></h3>
+<p class="decl"><a href="Poco.XML.DOMException.html" title="class Poco::XML::DOMException">DOMException</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.DOMException.html" title="class Poco::XML::DOMException">DOMException</a> &amp; exc<br />);</p>
+<div class="description">
+<p>Creates a <a href="Poco.XML.DOMException.html" title="class Poco::XML::DOMException">DOMException</a> by copying another one. </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="28532">~DOMException</a></h3>
+<p class="decl">~<a href="Poco.XML.DOMException.html" title="class Poco::XML::DOMException">DOMException</a>();</p>
+<div class="description">
+<p>Destroys the <a href="Poco.XML.DOMException.html" title="class Poco::XML::DOMException">DOMException</a>. </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="28536">className</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">const char * className() const;</p>
+<div class="description">
+<p>Returns the name of the exception class. </p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.XML.XMLException.html#30538" title="Poco::XML::XMLException::className()">Poco::XML::XMLException::className()</a></p></div>
+<h3><a id="28537">clone</a></h3>
+<p class="decl"><a href="Poco.Exception.html" title="class Poco::Exception">Poco::Exception</a> * clone() const;</p>
+<div class="description">
+<p>Creates an exact copy of the exception. </p>
+</div>
+<h3><a id="28539">code</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">unsigned short code() const;</p>
+<div class="description">
+<p>Returns the DOM exception code. </p>
+</div>
+<h3><a id="28535">name</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">const char * name() const;</p>
+<div class="description">
+<p>Returns a static string describing the exception. </p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.XML.XMLException.html#30537" title="Poco::XML::XMLException::name()">Poco::XML::XMLException::name()</a></p></div>
+<h3><a id="28533">operator =</a></h3>
+<p class="decl"><a href="Poco.XML.DOMException.html" title="class Poco::XML::DOMException">DOMException</a> &amp; operator = (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.DOMException.html" title="class Poco::XML::DOMException">DOMException</a> &amp; exc<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="28538">rethrow</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">void rethrow() const;</p>
+<div class="description">
+<p>(Re)Throws the exception. </p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.XML.XMLException.html#30540" title="Poco::XML::XMLException::rethrow()">Poco::XML::XMLException::rethrow()</a></p></div>
+<h3><a id="28540">message</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static const std::string &amp; message(<br />&nbsp;&nbsp;&nbsp;&nbsp;unsigned short code<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

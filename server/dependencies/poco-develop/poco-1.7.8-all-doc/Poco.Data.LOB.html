@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::Data::LOB</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.Data.html" class="namespace">Poco::Data</a></h1>
+<h1 class="template">template &lt; typename T &gt;</h1>
+<h1 class="symbol">class LOB</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Data" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Data<br />
+<b>Package:</b> DataCore<br />
+<b>Header:</b> Poco/Data/LOB.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>Representation of a Large OBject. </p>
+<p>A <a href="Poco.Data.LOB.html" title="class Poco::Data::LOB">LOB</a> can hold arbitrary data. The maximum size depends on the underlying database. </p>
+<p>The <a href="Poco.Data.LOBInputStream.html" title="class Poco::Data::LOBInputStream">LOBInputStream</a> and <a href="Poco.Data.LOBOutputStream.html" title="class Poco::Data::LOBOutputStream">LOBOutputStream</a> classes provide a convenient way to access the data in a <a href="Poco.Data.LOB.html" title="class Poco::Data::LOB">LOB</a>. </p>
+</div>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.Data.LOB.html#6298" title="Poco::Data::LOB::appendRaw()">appendRaw</a>, <a href="Poco.Data.LOB.html#6295" title="Poco::Data::LOB::assignRaw()">assignRaw</a>, <a href="Poco.Data.LOB.html#6292" title="Poco::Data::LOB::assignVal()">assignVal</a>, <a href="Poco.Data.LOB.html#6304" title="Poco::Data::LOB::begin()">begin</a>, <a href="Poco.Data.LOB.html#6301" title="Poco::Data::LOB::clear()">clear</a>, <a href="Poco.Data.LOB.html#6303" title="Poco::Data::LOB::compact()">compact</a>, <a href="Poco.Data.LOB.html#6290" title="Poco::Data::LOB::content()">content</a>, <a href="Poco.Data.LOB.html#6305" title="Poco::Data::LOB::end()">end</a>, <a href="Poco.Data.LOB.html#6286" title="Poco::Data::LOB::operator !=()">operator&nbsp;!=</a>, <a href="Poco.Data.LOB.html#6282" title="Poco::Data::LOB::operator =()">operator&nbsp;=</a>, <a href="Poco.Data.LOB.html#6284" title="Poco::Data::LOB::operator ==()">operator&nbsp;==</a>, <a href="Poco.Data.LOB.html#6291" title="Poco::Data::LOB::rawContent()">rawContent</a>, <a href="Poco.Data.LOB.html#6306" title="Poco::Data::LOB::size()">size</a>, <a href="Poco.Data.LOB.html#6288" title="Poco::Data::LOB::swap()">swap</a></p>
+<h2>Types</h2>
+<h3><a id="6269">Container</a></h3>
+<p class="decl">typedef typename std::vector &lt; T &gt; <a href="Poco.Data.LOB.html#6269" title="Poco::Data::LOB::Container">Container</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="6270">ContentPtr</a></h3>
+<p class="decl">typedef <a href="Poco.SharedPtr.html" title="class Poco::SharedPtr">Poco::SharedPtr</a> &lt; <a href="Poco.Data.LOB.html#6269" title="Poco::Data::LOB::Container">Container</a> &gt; <a href="Poco.Data.LOB.html#6270" title="Poco::Data::LOB::ContentPtr">ContentPtr</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="6267">Iterator</a></h3>
+<p class="decl">typedef typename std::vector &lt; T &gt;::const_iterator <a href="Poco.Data.LOB.html#6267" title="Poco::Data::LOB::Iterator">Iterator</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="6268">ValueType</a></h3>
+<p class="decl">typedef T <a href="Poco.Data.LOB.html#6268" title="Poco::Data::LOB::ValueType">ValueType</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Constructors</h2>
+<h3><a id="6271">LOB</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Data.LOB.html" title="class Poco::Data::LOB">LOB</a>();</p>
+<div class="description">
+<p>Creates an empty <a href="Poco.Data.LOB.html" title="class Poco::Data::LOB">LOB</a>. </p>
+</div>
+<h3><a id="6272">LOB</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Data.LOB.html" title="class Poco::Data::LOB">LOB</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::vector &lt; T &gt; &amp; content<br />);</p>
+<div class="description">
+<p>Creates the <a href="Poco.Data.LOB.html" title="class Poco::Data::LOB">LOB</a>, content is deep-copied. </p>
+</div>
+<h3><a id="6277">LOB</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Data.LOB.html" title="class Poco::Data::LOB">LOB</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::basic_string &lt; T &gt; &amp; content<br />);</p>
+<div class="description">
+<p>Creates a <a href="Poco.Data.LOB.html" title="class Poco::Data::LOB">LOB</a> from a string. </p>
+</div>
+<h3><a id="6279">LOB</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Data.LOB.html" title="class Poco::Data::LOB">LOB</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Data.LOB.html" title="class Poco::Data::LOB">LOB</a> &amp; other<br />);</p>
+<div class="description">
+<p>Creates a <a href="Poco.Data.LOB.html" title="class Poco::Data::LOB">LOB</a> by copying another one. </p>
+</div>
+<h3><a id="6274">LOB</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Data.LOB.html" title="class Poco::Data::LOB">LOB</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const T * const pContent,<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t size<br />);</p>
+<div class="description">
+<p>Creates the <a href="Poco.Data.LOB.html" title="class Poco::Data::LOB">LOB</a> by deep-copying pContent. </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="6281">~LOB</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">~<a href="Poco.Data.LOB.html" title="class Poco::Data::LOB">LOB</a>();</p>
+<div class="description">
+<p>Destroys the <a href="Poco.Data.LOB.html" title="class Poco::Data::LOB">LOB</a>. </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="6298">appendRaw</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void appendRaw(<br />&nbsp;&nbsp;&nbsp;&nbsp;const T * pChar,<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t count<br />);</p>
+<div class="description">
+<p>Assigns raw content to internal storage. </p>
+</div>
+<h3><a id="6295">assignRaw</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void assignRaw(<br />&nbsp;&nbsp;&nbsp;&nbsp;const T * ptr,<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t count<br />);</p>
+<div class="description">
+<p>Assigns raw content to internal storage. </p>
+</div>
+<h3><a id="6292">assignVal</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void assignVal(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t count,<br />&nbsp;&nbsp;&nbsp;&nbsp;const T &amp; val<br />);</p>
+<div class="description">
+<p>Assigns raw content to internal storage. </p>
+</div>
+<h3><a id="6304">begin</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Data.LOB.html#6267" title="Poco::Data::LOB::Iterator">Iterator</a> begin() const;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="6301">clear</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void clear(<br />&nbsp;&nbsp;&nbsp;&nbsp;bool doCompact = false<br />);</p>
+<div class="description">
+<p>Clears the content of the blob. If doCompact is true, trims the excess capacity. </p>
+</div>
+<h3><a id="6303">compact</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void compact();</p>
+<div class="description">
+<p>Trims the internal storage excess capacity. </p>
+</div>
+<h3><a id="6290">content</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">const std::vector &lt; T &gt; &amp; content() const;</p>
+<div class="description">
+<p>Returns the content. </p>
+</div>
+<h3><a id="6305">end</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Data.LOB.html#6267" title="Poco::Data::LOB::Iterator">Iterator</a> end() const;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="6286">operator !=</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool operator != (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Data.LOB.html" title="class Poco::Data::LOB">LOB</a> &amp; other<br />) const;</p>
+<div class="description">
+<p>Compares for inequality <a href="Poco.Data.LOB.html" title="class Poco::Data::LOB">LOB</a> by value. </p>
+</div>
+<h3><a id="6282">operator =</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Data.LOB.html" title="class Poco::Data::LOB">LOB</a> &amp; operator = (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Data.LOB.html" title="class Poco::Data::LOB">LOB</a> &amp; other<br />);</p>
+<div class="description">
+<p>Assignment operator. </p>
+</div>
+<h3><a id="6284">operator ==</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool operator == (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Data.LOB.html" title="class Poco::Data::LOB">LOB</a> &amp; other<br />) const;</p>
+<div class="description">
+<p>Compares for equality <a href="Poco.Data.LOB.html" title="class Poco::Data::LOB">LOB</a> by value. </p>
+</div>
+<h3><a id="6291">rawContent</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">const T * rawContent() const;</p>
+<div class="description">
+<p>Returns the raw content. </p>
+<p>If the <a href="Poco.Data.LOB.html" title="class Poco::Data::LOB">LOB</a> is empty, returns NULL. </p>
+</div>
+<h3><a id="6306">size</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">std::size_t size() const;</p>
+<div class="description">
+<p>Returns the size of the <a href="Poco.Data.LOB.html" title="class Poco::Data::LOB">LOB</a> in bytes. </p>
+</div>
+<h3><a id="6288">swap</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void swap(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Data.LOB.html" title="class Poco::Data::LOB">LOB</a> &amp; other<br />);</p>
+<div class="description">
+<p>Swaps the <a href="Poco.Data.LOB.html" title="class Poco::Data::LOB">LOB</a> with another one. </p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

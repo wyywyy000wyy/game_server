@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::Net::ICMPPacket</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.Net.html" class="namespace">Poco::Net</a></h1>
+<h1 class="symbol">class ICMPPacket</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Net" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Net<br />
+<b>Package:</b> ICMP<br />
+<b>Header:</b> Poco/Net/ICMPPacket.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>This class is the ICMP packet abstraction.  </p>
+</div>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.Net.ICMPPacket.html#22125" title="Poco::Net::ICMPPacket::errorDescription()">errorDescription</a>, <a href="Poco.Net.ICMPPacket.html#22117" title="Poco::Net::ICMPPacket::getDataSize()">getDataSize</a>, <a href="Poco.Net.ICMPPacket.html#22118" title="Poco::Net::ICMPPacket::maxPacketSize()">maxPacketSize</a>, <a href="Poco.Net.ICMPPacket.html#22112" title="Poco::Net::ICMPPacket::packet()">packet</a>, <a href="Poco.Net.ICMPPacket.html#22113" title="Poco::Net::ICMPPacket::packetSize()">packetSize</a>, <a href="Poco.Net.ICMPPacket.html#22114" title="Poco::Net::ICMPPacket::sequence()">sequence</a>, <a href="Poco.Net.ICMPPacket.html#22115" title="Poco::Net::ICMPPacket::setDataSize()">setDataSize</a>, <a href="Poco.Net.ICMPPacket.html#22119" title="Poco::Net::ICMPPacket::time()">time</a>, <a href="Poco.Net.ICMPPacket.html#22128" title="Poco::Net::ICMPPacket::typeDescription()">typeDescription</a>, <a href="Poco.Net.ICMPPacket.html#22122" title="Poco::Net::ICMPPacket::validReplyID()">validReplyID</a></p>
+<h2>Constructors</h2>
+<h3><a id="22108">ICMPPacket</a></h3>
+<p class="decl"><a href="Poco.Net.ICMPPacket.html" title="class Poco::Net::ICMPPacket">ICMPPacket</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Net.IPAddress.html#22302" title="enum  Poco::Net::IPAddress::Family">IPAddress::Family</a> family,<br />&nbsp;&nbsp;&nbsp;&nbsp;int dataSize = 48<br />);</p>
+<div class="description">
+<p>Creates an <a href="Poco.Net.ICMPPacket.html" title="class Poco::Net::ICMPPacket">ICMPPacket</a> of specified family. </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="22111">~ICMPPacket</a></h3>
+<p class="decl">~<a href="Poco.Net.ICMPPacket.html" title="class Poco::Net::ICMPPacket">ICMPPacket</a>();</p>
+<div class="description">
+<p>Destroys the <a href="Poco.Net.ICMPPacket.html" title="class Poco::Net::ICMPPacket">ICMPPacket</a>. </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="22125">errorDescription</a></h3>
+<p class="decl">std::string errorDescription(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.html#18377" title="Poco::UInt8">Poco::UInt8</a> * buffer,<br />&nbsp;&nbsp;&nbsp;&nbsp;int length<br />);</p>
+<div class="description">
+<p>Returns error description string. If supplied buffer contains an ICMP echo reply packet, an empty string is returned indicating the absence of error. </p>
+<p>Supplied buffer includes IP header, ICMP header and data. </p>
+</div>
+<h3><a id="22117">getDataSize</a></h3>
+<p class="decl">int getDataSize() const;</p>
+<div class="description">
+<p>Returns data size. </p>
+</div>
+<h3><a id="22118">maxPacketSize</a></h3>
+<p class="decl">int maxPacketSize() const;</p>
+<div class="description">
+<p>Returns the total length of packet (header + data); </p>
+</div>
+<h3><a id="22112">packet</a></h3>
+<p class="decl">const <a href="Poco.html#18377" title="Poco::UInt8">Poco::UInt8</a> * packet();</p>
+<div class="description">
+<p>Returns raw ICMP packet. ICMP header and data are included in the returned packet. </p>
+</div>
+<h3><a id="22113">packetSize</a></h3>
+<p class="decl">int packetSize() const;</p>
+<div class="description">
+<p>Returns the total length of packet (header + data); </p>
+</div>
+<h3><a id="22114">sequence</a></h3>
+<p class="decl"><a href="Poco.html#18379" title="Poco::UInt16">Poco::UInt16</a> sequence() const;</p>
+<div class="description">
+<p>Returns the most recent sequence number generated. </p>
+</div>
+<h3><a id="22115">setDataSize</a></h3>
+<p class="decl">void setDataSize(<br />&nbsp;&nbsp;&nbsp;&nbsp;int dataSize<br />);</p>
+<div class="description">
+<p>Sets data size. </p>
+</div>
+<h3><a id="22119">time</a></h3>
+<p class="decl">struct timeval time(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.html#18377" title="Poco::UInt8">Poco::UInt8</a> * buffer = 0,<br />&nbsp;&nbsp;&nbsp;&nbsp;int length = 0<br />) const;</p>
+<div class="description">
+<p>Returns current epoch time if either buffer or length are equal to zero. Otherwise, it extracts the time value from the supplied buffer and  returns the extracted value. </p>
+<p>Supplied buffer includes IP header, ICMP header and data. </p>
+</div>
+<h3><a id="22128">typeDescription</a></h3>
+<p class="decl">std::string typeDescription(<br />&nbsp;&nbsp;&nbsp;&nbsp;int typeId<br />);</p>
+<div class="description">
+<p>Returns the description of the packet type. </p>
+</div>
+<h3><a id="22122">validReplyID</a></h3>
+<p class="decl">bool validReplyID(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.html#18377" title="Poco::UInt8">Poco::UInt8</a> * buffer,<br />&nbsp;&nbsp;&nbsp;&nbsp;int length<br />) const;</p>
+<div class="description">
+<p>Returns true if the extracted id is recognized  (equals the process id). </p>
+<p>Supplied buffer includes IP header, ICMP header and data. </p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

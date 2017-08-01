@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::Net::TCPServer</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.Net.html" class="namespace">Poco::Net</a></h1>
+<h1 class="symbol">class TCPServer</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Net" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Net<br />
+<b>Package:</b> TCPServer<br />
+<b>Header:</b> Poco/Net/TCPServer.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>This class implements a multithreaded TCP server. </p>
+<p>The server uses a <a href="Poco.Net.ServerSocket.html" title="class Poco::Net::ServerSocket">ServerSocket</a> to listen for incoming connections. The <a href="Poco.Net.ServerSocket.html" title="class Poco::Net::ServerSocket">ServerSocket</a> must have been bound to an address before it is passed to the <a href="Poco.Net.TCPServer.html" title="class Poco::Net::TCPServer">TCPServer</a> constructor. Additionally, the <a href="Poco.Net.ServerSocket.html" title="class Poco::Net::ServerSocket">ServerSocket</a> must be put into listening state before the <a href="Poco.Net.TCPServer.html" title="class Poco::Net::TCPServer">TCPServer</a> is started by calling the <a href="Poco.Net.TCPServer.html#25108" title="Poco::Net::TCPServer::start()">start</a>() method. </p>
+<p>The server uses a thread pool to assign threads to incoming connections. Before incoming connections are assigned to a connection thread, they are put into a queue. Connection threads fetch new connections from the queue as soon as they become free. Thus, a connection thread may serve more than one connection. </p>
+<p>As soon as a connection thread fetches the next connection from the queue, it creates a <a href="Poco.Net.TCPServerConnection.html" title="class Poco::Net::TCPServerConnection">TCPServerConnection</a> object for it (using the <a href="Poco.Net.TCPServerConnectionFactory.html" title="class Poco::Net::TCPServerConnectionFactory">TCPServerConnectionFactory</a> passed to the constructor) and calls the <a href="Poco.Net.TCPServerConnection.html" title="class Poco::Net::TCPServerConnection">TCPServerConnection</a>'s <a href="Poco.Net.TCPServer.html#25108" title="Poco::Net::TCPServer::start()">start</a>() method. When the <a href="Poco.Net.TCPServer.html#25108" title="Poco::Net::TCPServer::start()">start</a>() method returns, the connection object is deleted. </p>
+<p>The number of connection threads is adjusted dynamically, depending on the number of connections waiting to be served. </p>
+<p>It is possible to specify a maximum number of queued connections. This prevents the connection queue from overflowing in the  case of an extreme server load. In such a case, connections that cannot be queued are silently and immediately closed. </p>
+<p><a href="Poco.Net.TCPServer.html" title="class Poco::Net::TCPServer">TCPServer</a> uses a separate thread to accept incoming connections. Thus, the call to <a href="Poco.Net.TCPServer.html#25108" title="Poco::Net::TCPServer::start()">start</a>() returns immediately, and the server continues to run in the background. </p>
+<p>To stop the server from accepting new connections, call <a href="Poco.Net.TCPServer.html#25109" title="Poco::Net::TCPServer::stop()">stop</a>(). </p>
+<p>After calling <a href="Poco.Net.TCPServer.html#25109" title="Poco::Net::TCPServer::stop()">stop</a>(), no new connections will be accepted and all queued connections will be discarded. Already served connections, however, will continue being served. </p>
+</div>
+<h2>Inheritance</h2>
+<p><b>Direct Base Classes: </b><a href="Poco.Runnable.html" title="class Poco::Runnable">Poco::Runnable</a></p>
+<p><b>All Base Classes: </b><a href="Poco.Runnable.html" title="class Poco::Runnable">Poco::Runnable</a></p>
+<p><b>Known Derived Classes: </b><a href="Poco.Net.HTTPServer.html" title="class Poco::Net::HTTPServer">HTTPServer</a></p>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.Net.TCPServer.html#25113" title="Poco::Net::TCPServer::currentConnections()">currentConnections</a>, <a href="Poco.Net.TCPServer.html#25110" title="Poco::Net::TCPServer::currentThreads()">currentThreads</a>, <a href="Poco.Net.TCPServer.html#25114" title="Poco::Net::TCPServer::maxConcurrentConnections()">maxConcurrentConnections</a>, <a href="Poco.Net.TCPServer.html#25111" title="Poco::Net::TCPServer::maxThreads()">maxThreads</a>, <a href="Poco.Net.TCPServer.html#25107" title="Poco::Net::TCPServer::params()">params</a>, <a href="Poco.Net.TCPServer.html#25118" title="Poco::Net::TCPServer::port()">port</a>, <a href="Poco.Net.TCPServer.html#25115" title="Poco::Net::TCPServer::queuedConnections()">queuedConnections</a>, <a href="Poco.Net.TCPServer.html#25116" title="Poco::Net::TCPServer::refusedConnections()">refusedConnections</a>, <a href="Poco.Net.TCPServer.html#25119" title="Poco::Net::TCPServer::run()">run</a>, <a href="Poco.Net.TCPServer.html#25117" title="Poco::Net::TCPServer::socket()">socket</a>, <a href="Poco.Net.TCPServer.html#25108" title="Poco::Net::TCPServer::start()">start</a>, <a href="Poco.Net.TCPServer.html#25109" title="Poco::Net::TCPServer::stop()">stop</a>, <a href="Poco.Net.TCPServer.html#25120" title="Poco::Net::TCPServer::threadName()">threadName</a>, <a href="Poco.Net.TCPServer.html#25112" title="Poco::Net::TCPServer::totalConnections()">totalConnections</a></p>
+<p><b>Inherited Functions: </b><a href="Poco.Runnable.html#16662" title="Poco::Runnable::run()">run</a></p>
+<h2>Constructors</h2>
+<h3><a id="25093">TCPServer</a></h3>
+<p class="decl"><a href="Poco.Net.TCPServer.html" title="class Poco::Net::TCPServer">TCPServer</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Net.TCPServerConnectionFactory.html#25144" title="Poco::Net::TCPServerConnectionFactory::Ptr">TCPServerConnectionFactory::Ptr</a> pFactory,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.html#18379" title="Poco::UInt16">Poco::UInt16</a> portNumber = 0,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Net.TCPServerParams.html#25198" title="Poco::Net::TCPServerParams::Ptr">TCPServerParams::Ptr</a> pParams = 0<br />);</p>
+<div class="description">
+<p>Creates the <a href="Poco.Net.TCPServer.html" title="class Poco::Net::TCPServer">TCPServer</a>, with <a href="Poco.Net.ServerSocket.html" title="class Poco::Net::ServerSocket">ServerSocket</a> listening on the given port. Default port is zero, allowing any available port. The port number can be queried through <a href="Poco.Net.TCPServer.html#25118" title="Poco::Net::TCPServer::port()">TCPServer::port</a>() member. </p>
+<p>The server takes ownership of the <a href="Poco.Net.TCPServerConnectionFactory.html" title="class Poco::Net::TCPServerConnectionFactory">TCPServerConnectionFactory</a> and deletes it when it's no longer needed. </p>
+<p>The server also takes ownership of the <a href="Poco.Net.TCPServerParams.html" title="class Poco::Net::TCPServerParams">TCPServerParams</a> object. If no <a href="Poco.Net.TCPServerParams.html" title="class Poco::Net::TCPServerParams">TCPServerParams</a> object is given, the server's <a href="Poco.Net.TCPServerDispatcher.html" title="class Poco::Net::TCPServerDispatcher">TCPServerDispatcher</a> creates its own one. </p>
+<p>New threads are taken from the default thread pool. </p>
+</div>
+<h3><a id="25097">TCPServer</a></h3>
+<p class="decl"><a href="Poco.Net.TCPServer.html" title="class Poco::Net::TCPServer">TCPServer</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Net.TCPServerConnectionFactory.html#25144" title="Poco::Net::TCPServerConnectionFactory::Ptr">TCPServerConnectionFactory::Ptr</a> pFactory,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Net.ServerSocket.html" title="class Poco::Net::ServerSocket">ServerSocket</a> &amp; socket,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Net.TCPServerParams.html#25198" title="Poco::Net::TCPServerParams::Ptr">TCPServerParams::Ptr</a> pParams = 0<br />);</p>
+<div class="description">
+<p>Creates the <a href="Poco.Net.TCPServer.html" title="class Poco::Net::TCPServer">TCPServer</a>, using the given <a href="Poco.Net.ServerSocket.html" title="class Poco::Net::ServerSocket">ServerSocket</a>. </p>
+<p>The server takes ownership of the <a href="Poco.Net.TCPServerConnectionFactory.html" title="class Poco::Net::TCPServerConnectionFactory">TCPServerConnectionFactory</a> and deletes it when it's no longer needed. </p>
+<p>The server also takes ownership of the <a href="Poco.Net.TCPServerParams.html" title="class Poco::Net::TCPServerParams">TCPServerParams</a> object. If no <a href="Poco.Net.TCPServerParams.html" title="class Poco::Net::TCPServerParams">TCPServerParams</a> object is given, the server's <a href="Poco.Net.TCPServerDispatcher.html" title="class Poco::Net::TCPServerDispatcher">TCPServerDispatcher</a> creates its own one. </p>
+<p>New threads are taken from the default thread pool. </p>
+</div>
+<h3><a id="25101">TCPServer</a></h3>
+<p class="decl"><a href="Poco.Net.TCPServer.html" title="class Poco::Net::TCPServer">TCPServer</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Net.TCPServerConnectionFactory.html#25144" title="Poco::Net::TCPServerConnectionFactory::Ptr">TCPServerConnectionFactory::Ptr</a> pFactory,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.ThreadPool.html" title="class Poco::ThreadPool">Poco::ThreadPool</a> &amp; threadPool,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Net.ServerSocket.html" title="class Poco::Net::ServerSocket">ServerSocket</a> &amp; socket,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Net.TCPServerParams.html#25198" title="Poco::Net::TCPServerParams::Ptr">TCPServerParams::Ptr</a> pParams = 0<br />);</p>
+<div class="description">
+<p>Creates the <a href="Poco.Net.TCPServer.html" title="class Poco::Net::TCPServer">TCPServer</a>, using the given <a href="Poco.Net.ServerSocket.html" title="class Poco::Net::ServerSocket">ServerSocket</a>. </p>
+<p>The server takes ownership of the <a href="Poco.Net.TCPServerConnectionFactory.html" title="class Poco::Net::TCPServerConnectionFactory">TCPServerConnectionFactory</a> and deletes it when it's no longer needed. </p>
+<p>The server also takes ownership of the <a href="Poco.Net.TCPServerParams.html" title="class Poco::Net::TCPServerParams">TCPServerParams</a> object. If no <a href="Poco.Net.TCPServerParams.html" title="class Poco::Net::TCPServerParams">TCPServerParams</a> object is given, the server's <a href="Poco.Net.TCPServerDispatcher.html" title="class Poco::Net::TCPServerDispatcher">TCPServerDispatcher</a> creates its own one. </p>
+<p>New threads are taken from the given thread pool. </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="25106">~TCPServer</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual ~<a href="Poco.Net.TCPServer.html" title="class Poco::Net::TCPServer">TCPServer</a>();</p>
+<div class="description">
+<p>Destroys the <a href="Poco.Net.TCPServer.html" title="class Poco::Net::TCPServer">TCPServer</a> and its <a href="Poco.Net.TCPServerConnectionFactory.html" title="class Poco::Net::TCPServerConnectionFactory">TCPServerConnectionFactory</a>. </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="25113">currentConnections</a></h3>
+<p class="decl">int currentConnections() const;</p>
+<div class="description">
+<p>Returns the number of currently handled connections. </p>
+</div>
+<h3><a id="25110">currentThreads</a></h3>
+<p class="decl">int currentThreads() const;</p>
+<div class="description">
+<p>Returns the number of currently used connection threads. </p>
+</div>
+<h3><a id="25114">maxConcurrentConnections</a></h3>
+<p class="decl">int maxConcurrentConnections() const;</p>
+<div class="description">
+<p>Returns the maximum number of concurrently handled connections.	 </p>
+</div>
+<h3><a id="25111">maxThreads</a></h3>
+<p class="decl">int maxThreads() const;</p>
+<div class="description">
+<p>Returns the maximum number of threads available. </p>
+</div>
+<h3><a id="25107">params</a></h3>
+<p class="decl">const <a href="Poco.Net.TCPServerParams.html" title="class Poco::Net::TCPServerParams">TCPServerParams</a> &amp; params() const;</p>
+<div class="description">
+<p>Returns a const reference to the TCPServerParam object used by the server's <a href="Poco.Net.TCPServerDispatcher.html" title="class Poco::Net::TCPServerDispatcher">TCPServerDispatcher</a>.	 </p>
+</div>
+<h3><a id="25118">port</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.html#18379" title="Poco::UInt16">Poco::UInt16</a> port() const;</p>
+<div class="description">
+<p>Returns the port the server socket listens on. </p>
+</div>
+<h3><a id="25115">queuedConnections</a></h3>
+<p class="decl">int queuedConnections() const;</p>
+<div class="description">
+<p>Returns the number of queued connections. </p>
+</div>
+<h3><a id="25116">refusedConnections</a></h3>
+<p class="decl">int refusedConnections() const;</p>
+<div class="description">
+<p>Returns the number of refused connections. </p>
+</div>
+<h3><a id="25117">socket</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">const <a href="Poco.Net.ServerSocket.html" title="class Poco::Net::ServerSocket">ServerSocket</a> &amp; socket() const;</p>
+<div class="description">
+<p>Returns the underlying server socket. </p>
+</div>
+<h3><a id="25108">start</a></h3>
+<p class="decl">void start();</p>
+<div class="description">
+<p>Starts the server. A new thread will be created that waits for and accepts incoming connections. </p>
+<p>Before <a href="Poco.Net.TCPServer.html#25108" title="Poco::Net::TCPServer::start()">start</a>() is called, the <a href="Poco.Net.ServerSocket.html" title="class Poco::Net::ServerSocket">ServerSocket</a> passed to <a href="Poco.Net.TCPServer.html" title="class Poco::Net::TCPServer">TCPServer</a> must have been bound and put into listening state. </p>
+</div>
+<h3><a id="25109">stop</a></h3>
+<p class="decl">void stop();</p>
+<div class="description">
+<p>Stops the server. </p>
+<p>No new connections will be accepted. Already handled connections will continue to be served. </p>
+<p>Once the server has been stopped, it cannot be restarted. </p>
+</div>
+<h3><a id="25112">totalConnections</a></h3>
+<p class="decl">int totalConnections() const;</p>
+<div class="description">
+<p>Returns the total number of handled connections. </p>
+</div>
+<h3><a id="25119">run</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">void run();</p>
+<div class="description">
+<p>Runs the server. The server will run until the <a href="Poco.Net.TCPServer.html#25109" title="Poco::Net::TCPServer::stop()">stop</a>() method is called, or the server object is destroyed, which implicitly calls the <a href="Poco.Net.TCPServer.html#25109" title="Poco::Net::TCPServer::stop()">stop</a>() method. </p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Runnable.html#16662" title="Poco::Runnable::run()">Poco::Runnable::run()</a></p></div>
+<h3><a id="25120">threadName</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static std::string threadName(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Net.ServerSocket.html" title="class Poco::Net::ServerSocket">ServerSocket</a> &amp; socket<br />);</p>
+<div class="description">
+<p>Returns a thread name for the server thread. </p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

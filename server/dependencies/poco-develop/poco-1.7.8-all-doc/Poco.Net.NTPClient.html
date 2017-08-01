@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::Net::NTPClient</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.Net.html" class="namespace">Poco::Net</a></h1>
+<h1 class="symbol">class NTPClient</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Net" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Net<br />
+<b>Package:</b> NTP<br />
+<b>Header:</b> Poco/Net/NTPClient.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>This class provides NTP (Network Time Protocol) client functionality. </p>
+</div>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.Net.NTPClient.html#22964" title="Poco::Net::NTPClient::request()">request</a></p>
+<h2>Constructors</h2>
+<h3><a id="22960">NTPClient</a></h3>
+<p class="decl">explicit <a href="Poco.Net.NTPClient.html" title="class Poco::Net::NTPClient">NTPClient</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Net.IPAddress.html#22302" title="enum  Poco::Net::IPAddress::Family">IPAddress::Family</a> family,<br />&nbsp;&nbsp;&nbsp;&nbsp;int timeout = 3000000<br />);</p>
+<div class="description">
+<p>Creates an NTP client. </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="22963">~NTPClient</a></h3>
+<p class="decl">~<a href="Poco.Net.NTPClient.html" title="class Poco::Net::NTPClient">NTPClient</a>();</p>
+<div class="description">
+<p>Destroys the NTP client. </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="22964">request</a></h3>
+<p class="decl">int request(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Net.SocketAddress.html" title="class Poco::Net::SocketAddress">SocketAddress</a> &amp; address<br />) const;</p>
+<div class="description">
+<p>Request the time from the server at address. Notifications are posted for events. </p>
+<p>Returns the number of valid replies. </p>
+</div>
+<h3><a id="22966">request</a></h3>
+<p class="decl">int request(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; address<br />) const;</p>
+<div class="description">
+<p>Request the time from the server at address. Notifications are posted for events. </p>
+<p>Returns the number of valid replies. </p>
+</div>
+<h2>Variables</h2>
+<h3><a id="22959">response</a></h3>
+<p class="decl">mutable <a href="Poco.BasicEvent.html" title="class Poco::BasicEvent">Poco::BasicEvent</a> &lt; <a href="Poco.Net.NTPEventArgs.html" title="class Poco::Net::NTPEventArgs">NTPEventArgs</a> &gt; response;</p>
+<div class="description">
+<p></p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

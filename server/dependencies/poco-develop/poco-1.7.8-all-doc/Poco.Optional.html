@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::Optional</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.html" class="namespace">Poco</a></h1>
+<h1 class="template">template &lt; typename C &gt;</h1>
+<h1 class="symbol">class Optional</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Foundation" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Foundation<br />
+<b>Package:</b> Core<br />
+<b>Header:</b> Poco/Optional.h</p>
+<h2>Description</h2>
+<div class="description">
+<p><a href="Poco.Optional.html" title="class Poco::Optional">Optional</a> is a simple wrapper class for value types that allows to introduce a specified/unspecified state to value objects. </p>
+<p>An <a href="Poco.Optional.html" title="class Poco::Optional">Optional</a> can be default constructed. In this case,  the <a href="Poco.Optional.html" title="class Poco::Optional">Optional</a> will have a Null value and <a href="Poco.Optional.html#15801" title="Poco::Optional::isSpecified()">isSpecified</a>() will return false. Calling <a href="Poco.Optional.html#15798" title="Poco::Optional::value()">value</a>()(without default value) on a Null object will throw a <a href="Poco.NullValueException.html" title="class Poco::NullValueException">NullValueException</a>. </p>
+<p>An <a href="Poco.Optional.html" title="class Poco::Optional">Optional</a> can also be constructed from a value. It is possible to assign a value to an <a href="Poco.Optional.html" title="class Poco::Optional">Optional</a>, and to reset an <a href="Poco.Optional.html" title="class Poco::Optional">Optional</a> to contain a Null value by calling <a href="Poco.Optional.html#15802" title="Poco::Optional::clear()">clear</a>(). </p>
+<p>For use with <a href="Poco.Optional.html" title="class Poco::Optional">Optional</a>, the value type should support default construction. </p>
+<p>Note that the <a href="Poco.Optional.html" title="class Poco::Optional">Optional</a> class is basically the same as <a href="Poco.Nullable.html" title="class Poco::Nullable">Nullable</a>. However, serializers may treat <a href="Poco.Nullable.html" title="class Poco::Nullable">Nullable</a> and <a href="Poco.Optional.html" title="class Poco::Optional">Optional</a> differently. An example is <a href="Poco.XML.html" title="namespace Poco::XML">XML</a> serialization based on <a href="Poco.XML.html" title="namespace Poco::XML">XML</a> Schema, where <a href="Poco.Optional.html" title="class Poco::Optional">Optional</a> would be used for an element with minOccurs == 0, whereas <a href="Poco.Nullable.html" title="class Poco::Nullable">Nullable</a> would be used on an element with nillable == true. </p>
+</div>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.Optional.html#15788" title="Poco::Optional::assign()">assign</a>, <a href="Poco.Optional.html#15802" title="Poco::Optional::clear()">clear</a>, <a href="Poco.Optional.html#15801" title="Poco::Optional::isSpecified()">isSpecified</a>, <a href="Poco.Optional.html#15792" title="Poco::Optional::operator =()">operator&nbsp;=</a>, <a href="Poco.Optional.html#15796" title="Poco::Optional::swap()">swap</a>, <a href="Poco.Optional.html#15798" title="Poco::Optional::value()">value</a></p>
+<h2>Constructors</h2>
+<h3><a id="15782">Optional</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Optional.html" title="class Poco::Optional">Optional</a>();</p>
+<div class="description">
+<p>Creates an empty <a href="Poco.Optional.html" title="class Poco::Optional">Optional</a>. </p>
+</div>
+<h3><a id="15783">Optional</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Optional.html" title="class Poco::Optional">Optional</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const C &amp; value<br />);</p>
+<div class="description">
+<p>Creates a <a href="Poco.Optional.html" title="class Poco::Optional">Optional</a> with the given value. </p>
+</div>
+<h3><a id="15785">Optional</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Optional.html" title="class Poco::Optional">Optional</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Optional.html" title="class Poco::Optional">Optional</a> &amp; other<br />);</p>
+<div class="description">
+<p>Creates a <a href="Poco.Optional.html" title="class Poco::Optional">Optional</a> by copying another one. </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="15787">~Optional</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">~<a href="Poco.Optional.html" title="class Poco::Optional">Optional</a>();</p>
+<div class="description">
+<p>Destroys the <a href="Poco.Optional.html" title="class Poco::Optional">Optional</a>. </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="15788">assign</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Optional.html" title="class Poco::Optional">Optional</a> &amp; assign(<br />&nbsp;&nbsp;&nbsp;&nbsp;const C &amp; value<br />);</p>
+<div class="description">
+<p>Assigns a value to the <a href="Poco.Optional.html" title="class Poco::Optional">Optional</a>. </p>
+</div>
+<h3><a id="15790">assign</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Optional.html" title="class Poco::Optional">Optional</a> &amp; assign(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Optional.html" title="class Poco::Optional">Optional</a> &amp; other<br />);</p>
+<div class="description">
+<p>Assigns another <a href="Poco.Optional.html" title="class Poco::Optional">Optional</a>. </p>
+</div>
+<h3><a id="15802">clear</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void clear();</p>
+<div class="description">
+<p>Clears the <a href="Poco.Optional.html" title="class Poco::Optional">Optional</a>. </p>
+</div>
+<h3><a id="15801">isSpecified</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool isSpecified() const;</p>
+<div class="description">
+<p>Returns true if and only if the <a href="Poco.Optional.html" title="class Poco::Optional">Optional</a>'s value has been specified. </p>
+</div>
+<h3><a id="15792">operator =</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Optional.html" title="class Poco::Optional">Optional</a> &amp; operator = (<br />&nbsp;&nbsp;&nbsp;&nbsp;const C &amp; value<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="15794">operator =</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Optional.html" title="class Poco::Optional">Optional</a> &amp; operator = (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Optional.html" title="class Poco::Optional">Optional</a> &amp; other<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="15796">swap</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void swap(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Optional.html" title="class Poco::Optional">Optional</a> &amp; other<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="15798">value</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">const C &amp; value() const;</p>
+<div class="description">
+<p>Returns the <a href="Poco.Optional.html" title="class Poco::Optional">Optional</a>'s value. </p>
+<p>Throws a <a href="Poco.NullValueException.html" title="class Poco::NullValueException">Poco::NullValueException</a> if the value has not been specified. </p>
+</div>
+<h3><a id="15799">value</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">const C &amp; value(<br />&nbsp;&nbsp;&nbsp;&nbsp;const C &amp; deflt<br />) const;</p>
+<div class="description">
+<p>Returns the <a href="Poco.Optional.html" title="class Poco::Optional">Optional</a>'s value, or the given default value if the <a href="Poco.Optional.html" title="class Poco::Optional">Optional</a>'s  value has not been specified. </p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

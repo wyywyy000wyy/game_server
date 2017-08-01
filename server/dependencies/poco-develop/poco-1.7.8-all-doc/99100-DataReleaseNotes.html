@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>POCO Data Release Notes</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="category">POCO Data Library</h1>
+<h1 class="title">POCO Data Release Notes</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=category-POCO Data Library" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<div class="toc">
+<ul class="collapsibleList"><li>Contents
+<ul>
+<li class="level1"><a href="#0">Release 1.5.0</a>
+<ul>
+<li class="level2"><a href="#1">Summary of Changes</a>
+</li>
+<li class="level2"><a href="#2">Incompatible Changes and Possible Transition Issues</a>
+</li>
+</ul></li>
+<li class="level1"><a href="#3">Release 1.5.2</a>
+<ul>
+<li class="level2"><a href="#4">Summary of Changes</a>
+</li>
+<li class="level2"><a href="#5">Incompatible Changes and Possible Transition Issues</a>
+</li></ul>
+</li></ul>
+</li></ul>
+</div>
+<div class="description">
+<p></p><h2><a id="0">Release 1.5.0</a></h2><p>
+</p>
+<p>The Data library has been available since the 1.2 release. For the 1.5.0 release, a few things have been changed in an incompatible way that requires changes to existing code. </p>
+<p></p><h3><a id="1">Summary of Changes</a></h3><p>
+</p>
+<p></p>
+<ul>
+<li><a href="Poco.Data.RowFormatter.html" title="class Poco::Data::RowFormatter">Poco::Data::RowFormatter</a> class for convenient output formatting. </li>
+<li>Stored procedures support (for databases and ODBC drivers that support it). </li>
+<li>Improved transaction support (for databases that support it). </li>
+<li>Bulk execution (for ODBC drivers that support it). </li>
+<li>Batch queries and multiple results (for databases and ODBC drivers that support it). </li>
+<li>Stored procedures/functions support (for databases that support it) </li>
+<li>New <a href="Poco.Data.SessionPoolContainer.html" title="class Poco::Data::SessionPoolContainer">Poco::Data::SessionPoolContainer</a> class. </li>
+</ul>
+<p></p>
+<p></p><h3><a id="2">Incompatible Changes and Possible Transition Issues</a></h3><p>
+</p>
+<p>Keywords (use, into, limit, etc) now reside in <a href="Poco.Data.Keywords.html" title="namespace Poco::Data::Keywords">Poco::Data::Keywords</a> namespace. </p>
+<p></p>
+<p></p><h2><a id="3">Release 1.5.2</a></h2><p>
+</p>
+<p></p><h3><a id="4">Summary of Changes</a></h3><p>
+</p>
+<p></p>
+<ul>
+<li>framework-wide refactoring to use SharedPtr-based garbage collection </li>
+</ul>
+<p></p><h3><a id="5">Incompatible Changes and Possible Transition Issues</a></h3><p>
+</p>
+<p>Internally, (Abstract)Binder, Extracion nas (where applicable) Preparator are garbage collected. While old way of passing pointers to TypeHandler may still work, it is strongly recommended  to pass SharedPtr to handler functions, e.g. : </p>
+<p></p>
+<pre>template &lt;&gt;
+class TypeHandler&lt;Person&gt;
+{
+public:
+</pre>
+<p>static std::size_t size() { </p>
+<pre>return 3;
+</pre>
+<p>} </p>
+<p>static void bind(std::size_t pos, const Person&amp; person, AbstractBinder::Ptr pBinder, AbstractBinder::Direction dir) { </p>
+<pre>TypeHandler&lt;std::string&gt;::bind(pos++, person.name, pBinder, dir);
+// ...
+</pre>
+<p>} </p>
+<p>static void extract(std::size_t pos, Person&amp; person, const Person&amp; deflt, AbstractExtractor::Ptr pExtr) { </p>
+<pre>TypeHandler&lt;std::string&gt;::extract(pos++, person.name, deflt.name, pExtr);
+// ...
+</pre>
+<p>} </p>
+<p>static void prepare(std::size_t pos, const Person&amp; person, AbstractPreparator::Ptr pPrep) { </p>
+<pre>TypeHandler&lt;std::string&gt;::prepare(pos++, person.name, pPrep);
+// ...
+</pre>
+<p>} </p>
+<pre>};
+</pre>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+<script>CollapsibleLists.apply(true)</script>
+</body>
+</html>

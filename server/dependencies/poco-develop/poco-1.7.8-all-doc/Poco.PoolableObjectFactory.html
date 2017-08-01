@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::PoolableObjectFactory</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.html" class="namespace">Poco</a></h1>
+<h1 class="template">template &lt; class C, class P = C * &gt;</h1>
+<h1 class="symbol">class PoolableObjectFactory</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Foundation" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Foundation<br />
+<b>Package:</b> Core<br />
+<b>Header:</b> Poco/ObjectPool.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>A <a href="Poco.PoolableObjectFactory.html" title="class Poco::PoolableObjectFactory">PoolableObjectFactory</a> is responsible for creating and resetting objects managed by an <a href="Poco.ObjectPool.html" title="class Poco::ObjectPool">ObjectPool</a>. </p>
+<p>Together with an <a href="Poco.ObjectPool.html" title="class Poco::ObjectPool">ObjectPool</a>, a <a href="Poco.PoolableObjectFactory.html" title="class Poco::PoolableObjectFactory">PoolableObjectFactory</a> is used as a policy class to change the behavior of the <a href="Poco.ObjectPool.html" title="class Poco::ObjectPool">ObjectPool</a> when creating new objects, returning used objects back to the pool and destroying objects, when the pool itself is destroyed or shrinked. </p>
+</div>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.PoolableObjectFactory.html#15710" title="Poco::PoolableObjectFactory::activateObject()">activateObject</a>, <a href="Poco.PoolableObjectFactory.html#15707" title="Poco::PoolableObjectFactory::createObject()">createObject</a>, <a href="Poco.PoolableObjectFactory.html#15712" title="Poco::PoolableObjectFactory::deactivateObject()">deactivateObject</a>, <a href="Poco.PoolableObjectFactory.html#15714" title="Poco::PoolableObjectFactory::destroyObject()">destroyObject</a>, <a href="Poco.PoolableObjectFactory.html#15708" title="Poco::PoolableObjectFactory::validateObject()">validateObject</a></p>
+<h2>Member Functions</h2>
+<h3><a id="15710">activateObject</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void activateObject(<br />&nbsp;&nbsp;&nbsp;&nbsp;P pObject<br />);</p>
+<div class="description">
+<p>Called before an object is handed out by the pool. Also called for newly created objects, before they are given out for the first time. </p>
+</div>
+<h3><a id="15707">createObject</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">P createObject();</p>
+<div class="description">
+<p>Create and return a new object. </p>
+</div>
+<h3><a id="15712">deactivateObject</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void deactivateObject(<br />&nbsp;&nbsp;&nbsp;&nbsp;P pObject<br />);</p>
+<div class="description">
+<p>Called after an object has been given back to the pool and the object is still valid (a prior call to <a href="Poco.PoolableObjectFactory.html#15708" title="Poco::PoolableObjectFactory::validateObject()">validateObject</a>() returned true). </p>
+<p>To maintain the integrity of the pool, this method  must not throw an exception. </p>
+</div>
+<h3><a id="15714">destroyObject</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void destroyObject(<br />&nbsp;&nbsp;&nbsp;&nbsp;P pObject<br />);</p>
+<div class="description">
+<p>Destroy an object. </p>
+<p>To maintain the integrity of the pool, this method  must not throw an exception. </p>
+</div>
+<h3><a id="15708">validateObject</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool validateObject(<br />&nbsp;&nbsp;&nbsp;&nbsp;P pObject<br />);</p>
+<div class="description">
+<p>Checks whether the object is still valid and can be reused. </p>
+<p>Returns true if the object is valid, false otherwise. </p>
+<p>To maintain the integrity of the pool, this method  must not throw an exception. </p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

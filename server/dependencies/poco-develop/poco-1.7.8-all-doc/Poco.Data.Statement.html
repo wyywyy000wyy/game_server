@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::Data::Statement</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.Data.html" class="namespace">Poco::Data</a></h1>
+<h1 class="symbol">class Statement</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Data" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Data<br />
+<b>Package:</b> DataCore<br />
+<b>Header:</b> Poco/Data/Statement.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>A <a href="Poco.Data.Statement.html" title="class Poco::Data::Statement">Statement</a> is used to execute SQL statements.  It does not contain code of its own. Its main purpose is to forward calls to the concrete <a href="Poco.Data.StatementImpl.html" title="class Poco::Data::StatementImpl">StatementImpl</a> stored inside. <a href="Poco.Data.Statement.html" title="class Poco::Data::Statement">Statement</a> execution can be synchronous or asynchronous. Synchronous ececution is achieved through <a href="Poco.Data.Statement.html#7385" title="Poco::Data::Statement::execute()">execute</a>() call, while asynchronous is achieved through <a href="Poco.Data.Statement.html#7387" title="Poco::Data::Statement::executeAsync()">executeAsync</a>() method call. An asynchronously executing statement should not be copied during the execution.  </p>
+<p>Note: </p>
+<p>Once set as asynchronous through 'async' manipulator, statement remains asynchronous for all subsequent execution calls, both <a href="Poco.Data.Statement.html#7385" title="Poco::Data::Statement::execute()">execute</a>() and <a href="Poco.Data.Statement.html#7387" title="Poco::Data::Statement::executeAsync()">executeAsync</a>(). However, calling executAsync() on a synchronous statement shall execute  asynchronously but without altering the underlying statement's synchronous nature. </p>
+<p>Once asynchronous, a statement can be reverted back to synchronous state in two ways: </p>
+<p></p>
+<pre>1) By calling setAsync(false)
+2) By means of 'sync' or 'reset' manipulators
+</pre>
+<p>See individual functions documentation for more details. </p>
+<p><a href="Poco.Data.Statement.html" title="class Poco::Data::Statement">Statement</a> owns the <a href="Poco.Data.RowFormatter.html" title="class Poco::Data::RowFormatter">RowFormatter</a>, which can be provided externaly through setFormatter() member function. If no formatter is externally supplied to the statement, the <a href="Poco.Data.SimpleRowFormatter.html" title="class Poco::Data::SimpleRowFormatter">SimpleRowFormatter</a> is lazy created and used. </p>
+</div>
+<h2>Inheritance</h2>
+<p><b>Known Derived Classes: </b><a href="Poco.Data.RecordSet.html" title="class Poco::Data::RecordSet">RecordSet</a></p>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.Data.Statement.html#7324" title="Poco::Data::Statement::addBind()">addBind</a>, <a href="Poco.Data.Statement.html#7330" title="Poco::Data::Statement::addBinding()">addBinding</a>, <a href="Poco.Data.Statement.html#7344" title="Poco::Data::Statement::addExtract()">addExtract</a>, <a href="Poco.Data.Statement.html#7339" title="Poco::Data::Statement::addExtraction()">addExtraction</a>, <a href="Poco.Data.Statement.html#7342" title="Poco::Data::Statement::addExtractions()">addExtractions</a>, <a href="Poco.Data.Statement.html#7399" title="Poco::Data::Statement::canModifyStorage()">canModifyStorage</a>, <a href="Poco.Data.Statement.html#7404" title="Poco::Data::Statement::columnsExtracted()">columnsExtracted</a>, <a href="Poco.Data.Statement.html#7411" title="Poco::Data::Statement::dataSetCount()">dataSetCount</a>, <a href="Poco.Data.Statement.html#7396" title="Poco::Data::Statement::done()">done</a>, <a href="Poco.Data.Statement.html#7385" title="Poco::Data::Statement::execute()">execute</a>, <a href="Poco.Data.Statement.html#7387" title="Poco::Data::Statement::executeAsync()">executeAsync</a>, <a href="Poco.Data.Statement.html#7410" title="Poco::Data::Statement::extractionCount()">extractionCount</a>, <a href="Poco.Data.Statement.html#7418" title="Poco::Data::Statement::extractions()">extractions</a>, <a href="Poco.Data.Statement.html#7428" title="Poco::Data::Statement::getRowFormatter()">getRowFormatter</a>, <a href="Poco.Data.Statement.html#7403" title="Poco::Data::Statement::getStorage()">getStorage</a>, <a href="Poco.Data.Statement.html#7414" title="Poco::Data::Statement::hasMoreDataSets()">hasMoreDataSets</a>, <a href="Poco.Data.Statement.html#7427" title="Poco::Data::Statement::impl()">impl</a>, <a href="Poco.Data.Statement.html#7394" title="Poco::Data::Statement::initialized()">initialized</a>, <a href="Poco.Data.Statement.html#7391" title="Poco::Data::Statement::isAsync()">isAsync</a>, <a href="Poco.Data.Statement.html#7426" title="Poco::Data::Statement::isBulkExtraction()">isBulkExtraction</a>, <a href="Poco.Data.Statement.html#7423" title="Poco::Data::Statement::isNull()">isNull</a>, <a href="Poco.Data.Statement.html#7419" title="Poco::Data::Statement::metaColumn()">metaColumn</a>, <a href="Poco.Data.Statement.html#7412" title="Poco::Data::Statement::nextDataSet()">nextDataSet</a>, <a href="Poco.Data.Statement.html#7318" title="Poco::Data::Statement::operator <<()">operator&nbsp;&lt;&lt;</a>, <a href="Poco.Data.Statement.html#7314" title="Poco::Data::Statement::operator =()">operator&nbsp;=</a>, <a href="Poco.Data.Statement.html#7320" title="Poco::Data::Statement::operator,()">operator,</a>, <a href="Poco.Data.Statement.html#7395" title="Poco::Data::Statement::paused()">paused</a>, <a href="Poco.Data.Statement.html#7413" title="Poco::Data::Statement::previousDataSet()">previousDataSet</a>, <a href="Poco.Data.Statement.html#7326" title="Poco::Data::Statement::removeBind()">removeBind</a>, <a href="Poco.Data.Statement.html#7397" title="Poco::Data::Statement::reset()">reset</a>, <a href="Poco.Data.Statement.html#7406" title="Poco::Data::Statement::rowsExtracted()">rowsExtracted</a>, <a href="Poco.Data.Statement.html#7429" title="Poco::Data::Statement::session()">session</a>, <a href="Poco.Data.Statement.html#7389" title="Poco::Data::Statement::setAsync()">setAsync</a>, <a href="Poco.Data.Statement.html#7415" title="Poco::Data::Statement::setRowFormatter()">setRowFormatter</a>, <a href="Poco.Data.Statement.html#7401" title="Poco::Data::Statement::setStorage()">setStorage</a>, <a href="Poco.Data.Statement.html#7400" title="Poco::Data::Statement::storage()">storage</a>, <a href="Poco.Data.Statement.html#7408" title="Poco::Data::Statement::subTotalRowCount()">subTotalRowCount</a>, <a href="Poco.Data.Statement.html#7316" title="Poco::Data::Statement::swap()">swap</a>, <a href="Poco.Data.Statement.html#7384" title="Poco::Data::Statement::toString()">toString</a>, <a href="Poco.Data.Statement.html#7392" title="Poco::Data::Statement::wait()">wait</a></p>
+<h2>Types</h2>
+<h3><a id="7299">AsyncExecMethod</a></h3>
+<p class="decl">typedef <a href="Poco.ActiveMethod.html" title="class Poco::ActiveMethod">ActiveMethod</a> &lt; std::size_t, bool, <a href="Poco.Data.StatementImpl.html" title="class Poco::Data::StatementImpl">StatementImpl</a> &gt; <a href="Poco.Data.Statement.html#7299" title="Poco::Data::Statement::AsyncExecMethod">AsyncExecMethod</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="7300">AsyncExecMethodPtr</a></h3>
+<p class="decl">typedef <a href="Poco.SharedPtr.html" title="class Poco::SharedPtr">SharedPtr</a> &lt; <a href="Poco.Data.Statement.html#7299" title="Poco::Data::Statement::AsyncExecMethod">AsyncExecMethod</a> &gt; <a href="Poco.Data.Statement.html#7300" title="Poco::Data::Statement::AsyncExecMethodPtr">AsyncExecMethodPtr</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="7417">ImplPtr</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">typedef <a href="Poco.Data.StatementImpl.html#7477" title="Poco::Data::StatementImpl::Ptr">StatementImpl::Ptr</a> <a href="Poco.Data.Statement.html#7417" title="Poco::Data::Statement::ImplPtr">ImplPtr</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="7296">Manipulator</a></h3>
+<p class="decl">typedef void (* <a href="Poco.Data.Statement.html#7296" title="Poco::Data::Statement::Manipulator">Manipulator</a>)(<a href="Poco.Data.Statement.html" title="class Poco::Data::Statement">Statement</a> &amp;);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="7297">Result</a></h3>
+<p class="decl">typedef <a href="Poco.ActiveResult.html" title="class Poco::ActiveResult">ActiveResult</a> &lt; std::size_t &gt; <a href="Poco.Data.Statement.html#7297" title="Poco::Data::Statement::Result">Result</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="7298">ResultPtr</a></h3>
+<p class="decl">typedef <a href="Poco.SharedPtr.html" title="class Poco::SharedPtr">SharedPtr</a> &lt; <a href="Poco.Data.Statement.html#7297" title="Poco::Data::Statement::Result">Result</a> &gt; <a href="Poco.Data.Statement.html#7298" title="Poco::Data::Statement::ResultPtr">ResultPtr</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Enumerations</h2>
+<h3><a id="7302">Storage</a></h3>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="7303">STORAGE_DEQUE</a> = StatementImpl::STORAGE_DEQUE_IMPL</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="7304">STORAGE_VECTOR</a> = StatementImpl::STORAGE_VECTOR_IMPL</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="7305">STORAGE_LIST</a> = StatementImpl::STORAGE_LIST_IMPL</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="7306">STORAGE_UNKNOWN</a> = StatementImpl::STORAGE_UNKNOWN_IMPL</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Constructors</h2>
+<h3><a id="7307">Statement</a></h3>
+<p class="decl"><a href="Poco.Data.Statement.html" title="class Poco::Data::Statement">Statement</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Data.StatementImpl.html#7477" title="Poco::Data::StatementImpl::Ptr">StatementImpl::Ptr</a> pImpl<br />);</p>
+<div class="description">
+<p>Creates the <a href="Poco.Data.Statement.html" title="class Poco::Data::Statement">Statement</a>. </p>
+</div>
+<h3><a id="7309">Statement</a></h3>
+<p class="decl">explicit <a href="Poco.Data.Statement.html" title="class Poco::Data::Statement">Statement</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Data.Session.html" title="class Poco::Data::Session">Session</a> &amp; session<br />);</p>
+<div class="description">
+<p>Creates the <a href="Poco.Data.Statement.html" title="class Poco::Data::Statement">Statement</a> for the given <a href="Poco.Data.Session.html" title="class Poco::Data::Session">Session</a>. </p>
+<p>The following: </p>
+<p></p>
+<pre>Statement stmt(sess);
+stmt &lt;&lt; &quot;SELECT * FROM Table&quot;, ...
+</pre>
+<p>is equivalent to: </p>
+<p></p>
+<pre>Statement stmt(sess &lt;&lt; &quot;SELECT * FROM Table&quot;, ...);
+</pre>
+<p>but in some cases better readable. </p>
+</div>
+<h3><a id="7312">Statement</a></h3>
+<p class="decl"><a href="Poco.Data.Statement.html" title="class Poco::Data::Statement">Statement</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Data.Statement.html" title="class Poco::Data::Statement">Statement</a> &amp; stmt<br />);</p>
+<div class="description">
+<p>Copy constructor.  If the statement has been executed asynchronously and has not been synchronized prior to copy operation (i.e. is copied while executing),  this constructor shall synchronize it. </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="7311">~Statement</a></h3>
+<p class="decl">~<a href="Poco.Data.Statement.html" title="class Poco::Data::Statement">Statement</a>();</p>
+<div class="description">
+<p>Destroys the <a href="Poco.Data.Statement.html" title="class Poco::Data::Statement">Statement</a>. </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="7324">addBind</a></h3>
+<p class="decl"><a href="Poco.Data.Statement.html" title="class Poco::Data::Statement">Statement</a> &amp; addBind(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Data.AbstractBinding.html#4792" title="Poco::Data::AbstractBinding::Ptr">AbstractBinding::Ptr</a> pBind<br />);</p>
+<div class="description">
+<p>Registers a single binding with the statement. </p>
+</div>
+<h3><a id="7330">addBinding</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">template &lt; typename C &gt; <a href="Poco.Data.Statement.html" title="class Poco::Data::Statement">Statement</a> &amp; addBinding(<br />&nbsp;&nbsp;&nbsp;&nbsp;C &amp; bindingCont,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool reset<br />);</p>
+<div class="description">
+<p>Registers binding container with the <a href="Poco.Data.Statement.html" title="class Poco::Data::Statement">Statement</a>. </p>
+</div>
+<h3><a id="7344">addExtract</a></h3>
+<p class="decl"><a href="Poco.Data.Statement.html" title="class Poco::Data::Statement">Statement</a> &amp; addExtract(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Data.AbstractExtraction.html#4824" title="Poco::Data::AbstractExtraction::Ptr">AbstractExtraction::Ptr</a> pExtract<br />);</p>
+<div class="description">
+<p>Registers a single extraction with the statement. </p>
+</div>
+<h3><a id="7339">addExtraction</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">template &lt; typename C &gt; <a href="Poco.Data.Statement.html" title="class Poco::Data::Statement">Statement</a> &amp; addExtraction(<br />&nbsp;&nbsp;&nbsp;&nbsp;C &amp; val,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool reset<br />);</p>
+<div class="description">
+<p>Registers extraction container with the <a href="Poco.Data.Statement.html" title="class Poco::Data::Statement">Statement</a>. </p>
+</div>
+<h3><a id="7342">addExtractions</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">template &lt; typename C &gt; <a href="Poco.Data.Statement.html" title="class Poco::Data::Statement">Statement</a> &amp; addExtractions(<br />&nbsp;&nbsp;&nbsp;&nbsp;C &amp; val<br />);</p>
+<div class="description">
+<p>Registers container of extraction containers with the <a href="Poco.Data.Statement.html" title="class Poco::Data::Statement">Statement</a>. </p>
+</div>
+<h3><a id="7399">canModifyStorage</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool canModifyStorage();</p>
+<div class="description">
+<p>Returns true if statement is in a state that allows the internal storage to be modified. </p>
+</div>
+<h3><a id="7404">columnsExtracted</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">std::size_t columnsExtracted(<br />&nbsp;&nbsp;&nbsp;&nbsp;int dataSet = StatementImpl::USE_CURRENT_DATA_SET<br />) const;</p>
+<div class="description">
+<p>Returns the number of columns returned for current data set. Default value indicates current data set (if any). </p>
+</div>
+<h3><a id="7411">dataSetCount</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">std::size_t dataSetCount() const;</p>
+<div class="description">
+<p>Returns the number of data sets associated with the statement. </p>
+</div>
+<h3><a id="7396">done</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool done();</p>
+<div class="description">
+<p>Returns true if the statement was completely executed or false if a range limit stopped it and there is more work to do. When no limit is set, it will always return true after calling <a href="Poco.Data.Statement.html#7385" title="Poco::Data::Statement::execute()">execute</a>(). </p>
+</div>
+<h3><a id="7385">execute</a></h3>
+<p class="decl">std::size_t execute(<br />&nbsp;&nbsp;&nbsp;&nbsp;bool reset = true<br />);</p>
+<div class="description">
+<p>Executes the statement synchronously or asynchronously.  Stops when either a limit is hit or the whole statement was executed. Returns the number of rows extracted from the database (for statements returning data) or number of rows affected (for all other statements). If reset is true (default), associated storage is reset and reused. Otherwise, the results from this execution step are appended. Reset argument has no meaning for unlimited statements that return all rows. If <a href="Poco.Data.Statement.html#7391" title="Poco::Data::Statement::isAsync()">isAsync</a>() returns  true, the statement is executed asynchronously  and the return value from this function is zero. The result of execution (i.e. number of returned or affected rows) can be  obtained by calling <a href="Poco.Data.Statement.html#7392" title="Poco::Data::Statement::wait()">wait</a>() on the statement at a later point in time. </p>
+</div>
+<h3><a id="7387">executeAsync</a></h3>
+<p class="decl">const <a href="Poco.Data.Statement.html#7297" title="Poco::Data::Statement::Result">Result</a> &amp; executeAsync(<br />&nbsp;&nbsp;&nbsp;&nbsp;bool reset = true<br />);</p>
+<div class="description">
+<p>Executes the statement asynchronously.  Stops when either a limit is hit or the whole statement was executed. Returns immediately. Calling <a href="Poco.Data.Statement.html#7392" title="Poco::Data::Statement::wait()">wait</a>() (on either the result returned from this  call or the statement itself) returns the number of rows extracted or number  of rows affected by the statement execution. When executed on a synchronous statement, this method does not alter the statement's synchronous nature. </p>
+</div>
+<h3><a id="7410">extractionCount</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">std::size_t extractionCount() const;</p>
+<div class="description">
+<p>Returns the number of extraction storage buffers associated with the current data set. </p>
+</div>
+<h3><a id="7403">getStorage</a></h3>
+<p class="decl">const std::string &amp; getStorage() const;</p>
+<div class="description">
+<p>Returns the internal storage type for the statement. </p>
+</div>
+<h3><a id="7414">hasMoreDataSets</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool hasMoreDataSets() const;</p>
+<div class="description">
+<p>Returns false if the current data set index points to the last data set. Otherwise, it returns true. </p>
+</div>
+<h3><a id="7394">initialized</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool initialized();</p>
+<div class="description">
+<p>Returns true if the statement was initialized (i.e. not executed yet). </p>
+</div>
+<h3><a id="7391">isAsync</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool isAsync() const;</p>
+<div class="description">
+<p>Returns true if statement was marked for asynchronous execution. </p>
+</div>
+<h3><a id="7412">nextDataSet</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">std::size_t nextDataSet();</p>
+<div class="description">
+<p>Returns the index of the next data set. </p>
+</div>
+<h3><a id="7318">operator &lt;&lt;</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">template &lt; typename T &gt; <a href="Poco.Data.Statement.html" title="class Poco::Data::Statement">Statement</a> &amp; operator &lt;&lt; (<br />&nbsp;&nbsp;&nbsp;&nbsp;const T &amp; t<br />);</p>
+<div class="description">
+<p>Concatenates data with the SQL statement string. </p>
+</div>
+<h3><a id="7314">operator =</a></h3>
+<p class="decl"><a href="Poco.Data.Statement.html" title="class Poco::Data::Statement">Statement</a> &amp; operator = (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Data.Statement.html" title="class Poco::Data::Statement">Statement</a> &amp; stmt<br />);</p>
+<div class="description">
+<p>Assignment operator. </p>
+</div>
+<h3><a id="7320">operator,</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Data.Statement.html" title="class Poco::Data::Statement">Statement</a> &amp; operator, (<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Data.Statement.html#7296" title="Poco::Data::Statement::Manipulator">Manipulator</a> manip<br />);</p>
+<div class="description">
+<p>Handles manipulators, such as now, async, etc. </p>
+</div>
+<h3><a id="7322">operator,</a></h3>
+<p class="decl"><a href="Poco.Data.Statement.html" title="class Poco::Data::Statement">Statement</a> &amp; operator, (<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Data.AbstractBinding.html#4792" title="Poco::Data::AbstractBinding::Ptr">AbstractBinding::Ptr</a> pBind<br />);</p>
+<div class="description">
+<p>Registers the <a href="Poco.Data.Binding.html" title="class Poco::Data::Binding">Binding</a> with the <a href="Poco.Data.Statement.html" title="class Poco::Data::Statement">Statement</a> by calling <a href="Poco.Data.Statement.html#7324" title="Poco::Data::Statement::addBind()">addBind</a>(). </p>
+</div>
+<h3><a id="7328">operator,</a></h3>
+<p class="decl"><a href="Poco.Data.Statement.html" title="class Poco::Data::Statement">Statement</a> &amp; operator, (<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Data.html#4820" title="Poco::Data::AbstractBindingVec">AbstractBindingVec</a> &amp; bindVec<br />);</p>
+<div class="description">
+<p>Registers the <a href="Poco.Data.Binding.html" title="class Poco::Data::Binding">Binding</a> vector with the <a href="Poco.Data.Statement.html" title="class Poco::Data::Statement">Statement</a>. </p>
+</div>
+<h3><a id="7333">operator,</a></h3>
+<p class="decl"><a href="Poco.Data.Statement.html" title="class Poco::Data::Statement">Statement</a> &amp; operator, (<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Data.AbstractExtraction.html#4824" title="Poco::Data::AbstractExtraction::Ptr">AbstractExtraction::Ptr</a> extract<br />);</p>
+<div class="description">
+<p>Registers objects used for extracting data with the <a href="Poco.Data.Statement.html" title="class Poco::Data::Statement">Statement</a> by  calling <a href="Poco.Data.Statement.html#7344" title="Poco::Data::Statement::addExtract()">addExtract</a>(). </p>
+</div>
+<h3><a id="7335">operator,</a></h3>
+<p class="decl"><a href="Poco.Data.Statement.html" title="class Poco::Data::Statement">Statement</a> &amp; operator, (<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Data.html#4876" title="Poco::Data::AbstractExtractionVec">AbstractExtractionVec</a> &amp; extVec<br />);</p>
+<div class="description">
+<p>Registers the extraction vector with the <a href="Poco.Data.Statement.html" title="class Poco::Data::Statement">Statement</a>. The vector is registered at position 0 (i.e. for the first returned data set). </p>
+</div>
+<h3><a id="7337">operator,</a></h3>
+<p class="decl"><a href="Poco.Data.Statement.html" title="class Poco::Data::Statement">Statement</a> &amp; operator, (<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Data.html#4877" title="Poco::Data::AbstractExtractionVecVec">AbstractExtractionVecVec</a> &amp; extVecVec<br />);</p>
+<div class="description">
+<p>Registers the vector of extraction vectors with the <a href="Poco.Data.Statement.html" title="class Poco::Data::Statement">Statement</a>. </p>
+</div>
+<h3><a id="7346">operator,</a></h3>
+<p class="decl"><a href="Poco.Data.Statement.html" title="class Poco::Data::Statement">Statement</a> &amp; operator, (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Data.Bulk.html" title="class Poco::Data::Bulk">Bulk</a> &amp; bulk<br />);</p>
+<div class="description">
+<p>Sets the bulk execution mode (both binding and extraction) for this  statement.<a href="Poco.Data.Statement.html" title="class Poco::Data::Statement">Statement</a> must not have any extractors or binders set at the  time when this operator is applied.  Failure to adhere to the above constraint shall result in  <a href="Poco.InvalidAccessException.html" title="class Poco::InvalidAccessException">InvalidAccessException</a>. </p>
+</div>
+<h3><a id="7348">operator,</a></h3>
+<p class="decl"><a href="Poco.Data.Statement.html" title="class Poco::Data::Statement">Statement</a> &amp; operator, (<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Data.html#5635" title="Poco::Data::BulkFnType">BulkFnType</a><br />);</p>
+<div class="description">
+<p>Sets the bulk execution mode (both binding and extraction) for this  statement.<a href="Poco.Data.Statement.html" title="class Poco::Data::Statement">Statement</a> must not have any extractors or binders set at the  time when this operator is applied.  Additionally, this function requires limit to be set in order to determine the bulk size. Failure to adhere to the above constraints shall result in  <a href="Poco.InvalidAccessException.html" title="class Poco::InvalidAccessException">InvalidAccessException</a>. </p>
+</div>
+<h3><a id="7350">operator,</a></h3>
+<p class="decl"><a href="Poco.Data.Statement.html" title="class Poco::Data::Statement">Statement</a> &amp; operator, (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Data.Limit.html" title="class Poco::Data::Limit">Limit</a> &amp; extrLimit<br />);</p>
+<div class="description">
+<p>Sets a limit on the maximum number of rows a select is allowed to return. </p>
+<p>Set per default to zero to <a href="Poco.Data.Limit.html#6353" title="Poco::Data::Limit::LIMIT_UNLIMITED">Limit::LIMIT_UNLIMITED</a>, which disables the limit. </p>
+</div>
+<h3><a id="7352">operator,</a></h3>
+<p class="decl"><a href="Poco.Data.Statement.html" title="class Poco::Data::Statement">Statement</a> &amp; operator, (<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Data.RowFormatter.html#6855" title="Poco::Data::RowFormatter::Ptr">RowFormatter::Ptr</a> pRowFformatter<br />);</p>
+<div class="description">
+<p>Sets the row formatter for the statement. </p>
+</div>
+<h3><a id="7354">operator,</a></h3>
+<p class="decl"><a href="Poco.Data.Statement.html" title="class Poco::Data::Statement">Statement</a> &amp; operator, (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Data.Range.html" title="class Poco::Data::Range">Range</a> &amp; extrRange<br />);</p>
+<div class="description">
+<p>Sets a an extraction range for the maximum number of rows a select is allowed to return. </p>
+<p>Set per default to <a href="Poco.Data.Limit.html#6353" title="Poco::Data::Limit::LIMIT_UNLIMITED">Limit::LIMIT_UNLIMITED</a> which disables the range. </p>
+</div>
+<h3><a id="7356">operator,</a></h3>
+<p class="decl"><a href="Poco.Data.Statement.html" title="class Poco::Data::Statement">Statement</a> &amp; operator, (<br />&nbsp;&nbsp;&nbsp;&nbsp;char value<br />);</p>
+<div class="description">
+<p>Adds the value to the list of values to be supplied to the SQL string formatting function. </p>
+</div>
+<h3><a id="7358">operator,</a></h3>
+<p class="decl"><a href="Poco.Data.Statement.html" title="class Poco::Data::Statement">Statement</a> &amp; operator, (<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.html#18377" title="Poco::UInt8">Poco::UInt8</a> value<br />);</p>
+<div class="description">
+<p>Adds the value to the list of values to be supplied to the SQL string formatting function. </p>
+</div>
+<h3><a id="7360">operator,</a></h3>
+<p class="decl"><a href="Poco.Data.Statement.html" title="class Poco::Data::Statement">Statement</a> &amp; operator, (<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.html#18376" title="Poco::Int8">Poco::Int8</a> value<br />);</p>
+<div class="description">
+<p>Adds the value to the list of values to be supplied to the SQL string formatting function. </p>
+</div>
+<h3><a id="7362">operator,</a></h3>
+<p class="decl"><a href="Poco.Data.Statement.html" title="class Poco::Data::Statement">Statement</a> &amp; operator, (<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.html#18379" title="Poco::UInt16">Poco::UInt16</a> value<br />);</p>
+<div class="description">
+<p>Adds the value to the list of values to be supplied to the SQL string formatting function. </p>
+</div>
+<h3><a id="7364">operator,</a></h3>
+<p class="decl"><a href="Poco.Data.Statement.html" title="class Poco::Data::Statement">Statement</a> &amp; operator, (<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.html#18378" title="Poco::Int16">Poco::Int16</a> value<br />);</p>
+<div class="description">
+<p>Adds the value to the list of values to be supplied to the SQL string formatting function. </p>
+</div>
+<h3><a id="7366">operator,</a></h3>
+<p class="decl"><a href="Poco.Data.Statement.html" title="class Poco::Data::Statement">Statement</a> &amp; operator, (<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.html#18381" title="Poco::UInt32">Poco::UInt32</a> value<br />);</p>
+<div class="description">
+<p>Adds the value to the list of values to be supplied to the SQL string formatting function. </p>
+</div>
+<h3><a id="7368">operator,</a></h3>
+<p class="decl"><a href="Poco.Data.Statement.html" title="class Poco::Data::Statement">Statement</a> &amp; operator, (<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.html#18380" title="Poco::Int32">Poco::Int32</a> value<br />);</p>
+<div class="description">
+<p>Adds the value to the list of values to be supplied to the SQL string formatting function. </p>
+</div>
+<h3><a id="7370">operator,</a></h3>
+<p class="decl"><a href="Poco.Data.Statement.html" title="class Poco::Data::Statement">Statement</a> &amp; operator, (<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.html#18385" title="Poco::UInt64">Poco::UInt64</a> value<br />);</p>
+<div class="description">
+<p>Adds the value to the list of values to be supplied to the SQL string formatting function. </p>
+</div>
+<h3><a id="7372">operator,</a></h3>
+<p class="decl"><a href="Poco.Data.Statement.html" title="class Poco::Data::Statement">Statement</a> &amp; operator, (<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.html#18384" title="Poco::Int64">Poco::Int64</a> value<br />);</p>
+<div class="description">
+<p>Adds the value to the list of values to be supplied to the SQL string formatting function. </p>
+</div>
+<h3><a id="7374">operator,</a></h3>
+<p class="decl"><a href="Poco.Data.Statement.html" title="class Poco::Data::Statement">Statement</a> &amp; operator, (<br />&nbsp;&nbsp;&nbsp;&nbsp;double value<br />);</p>
+<div class="description">
+<p>Adds the value to the list of values to be supplied to the SQL string formatting function. </p>
+</div>
+<h3><a id="7376">operator,</a></h3>
+<p class="decl"><a href="Poco.Data.Statement.html" title="class Poco::Data::Statement">Statement</a> &amp; operator, (<br />&nbsp;&nbsp;&nbsp;&nbsp;float value<br />);</p>
+<div class="description">
+<p>Adds the value to the list of values to be supplied to the SQL string formatting function. </p>
+</div>
+<h3><a id="7378">operator,</a></h3>
+<p class="decl"><a href="Poco.Data.Statement.html" title="class Poco::Data::Statement">Statement</a> &amp; operator, (<br />&nbsp;&nbsp;&nbsp;&nbsp;bool value<br />);</p>
+<div class="description">
+<p>Adds the value to the list of values to be supplied to the SQL string formatting function. </p>
+</div>
+<h3><a id="7380">operator,</a></h3>
+<p class="decl"><a href="Poco.Data.Statement.html" title="class Poco::Data::Statement">Statement</a> &amp; operator, (<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; value<br />);</p>
+<div class="description">
+<p>Adds the value to the list of values to be supplied to the SQL string formatting function. </p>
+</div>
+<h3><a id="7382">operator,</a></h3>
+<p class="decl"><a href="Poco.Data.Statement.html" title="class Poco::Data::Statement">Statement</a> &amp; operator, (<br />&nbsp;&nbsp;&nbsp;&nbsp;const char * value<br />);</p>
+<div class="description">
+<p>Adds the value to the list of values to be supplied to the SQL string formatting function. </p>
+</div>
+<h3><a id="7395">paused</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool paused();</p>
+<div class="description">
+<p>Returns true if the statement was paused (a range limit stopped it and there is more work to do). </p>
+</div>
+<h3><a id="7413">previousDataSet</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">std::size_t previousDataSet();</p>
+<div class="description">
+<p>Returns the index of the previous data set. </p>
+</div>
+<h3><a id="7326">removeBind</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void removeBind(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; name<br />);</p>
+<div class="description">
+<p>Removes the all the bindings with specified name from the statement. </p>
+</div>
+<h3><a id="7397">reset</a></h3>
+<p class="decl"><a href="Poco.Data.Statement.html" title="class Poco::Data::Statement">Statement</a> &amp; reset(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Data.Session.html" title="class Poco::Data::Session">Session</a> &amp; session<br />);</p>
+<div class="description">
+<p>Resets the <a href="Poco.Data.Statement.html" title="class Poco::Data::Statement">Statement</a> so that it can be filled with a new SQL command. </p>
+</div>
+<h3><a id="7406">rowsExtracted</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">std::size_t rowsExtracted(<br />&nbsp;&nbsp;&nbsp;&nbsp;int dataSet = StatementImpl::USE_CURRENT_DATA_SET<br />) const;</p>
+<div class="description">
+<p>Returns the number of rows returned for current data set during last statement execution. Default value indicates current data set (if any). </p>
+</div>
+<h3><a id="7389">setAsync</a></h3>
+<p class="decl">void setAsync(<br />&nbsp;&nbsp;&nbsp;&nbsp;bool async = true<br />);</p>
+<div class="description">
+<p>Sets the asynchronous flag. If this flag is true, <a href="Poco.Data.Statement.html#7387" title="Poco::Data::Statement::executeAsync()">executeAsync</a>() is called  from the now() manipulator. This setting does not affect the statement's capability to be executed synchronously by directly calling <a href="Poco.Data.Statement.html#7385" title="Poco::Data::Statement::execute()">execute</a>(). </p>
+</div>
+<h3><a id="7415">setRowFormatter</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void setRowFormatter(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Data.RowFormatter.html#6855" title="Poco::Data::RowFormatter::Ptr">RowFormatter::Ptr</a> pRowFormatter<br />);</p>
+<div class="description">
+<p>Sets the row formatter for this statement. <a href="Poco.Data.Statement.html" title="class Poco::Data::Statement">Statement</a> takes the ownership of the formatter. </p>
+</div>
+<h3><a id="7401">setStorage</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void setStorage(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; storage<br />);</p>
+<div class="description">
+<p>Sets the internal storage type for the statement. </p>
+</div>
+<h3><a id="7400">storage</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Data.Statement.html#7302" title="enum  Poco::Data::Statement::Storage">Storage</a> storage() const;</p>
+<div class="description">
+<p>Returns the internal storage type for the statement. </p>
+</div>
+<h3><a id="7408">subTotalRowCount</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">std::size_t subTotalRowCount(<br />&nbsp;&nbsp;&nbsp;&nbsp;int dataSet = StatementImpl::USE_CURRENT_DATA_SET<br />) const;</p>
+<div class="description">
+<p>Returns the number of rows extracted so far for the data set. Default value indicates current data set (if any). </p>
+</div>
+<h3><a id="7316">swap</a></h3>
+<p class="decl">void swap(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Data.Statement.html" title="class Poco::Data::Statement">Statement</a> &amp; other<br />);</p>
+<div class="description">
+<p>Swaps the statement with another one. </p>
+</div>
+<h3><a id="7384">toString</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">const std::string &amp; toString() const;</p>
+<div class="description">
+<p>Creates a string from the accumulated SQL statement. </p>
+</div>
+<h3><a id="7392">wait</a></h3>
+<p class="decl">std::size_t wait(<br />&nbsp;&nbsp;&nbsp;&nbsp;long milliseconds = WAIT_FOREVER<br />);</p>
+<div class="description">
+<p>Waits for the execution completion for asynchronous statements or returns immediately for synchronous ones. The return value for  asynchronous statement is the execution result (i.e. number of  rows retrieved). For synchronous statements, the return value is zero. </p>
+</div>
+<h3><a id="7418">extractions</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">const <a href="Poco.Data.html#4876" title="Poco::Data::AbstractExtractionVec">AbstractExtractionVec</a> &amp; extractions() const;</p>
+<div class="description">
+<p>Returns the extractions vector. </p>
+</div>
+<h3><a id="7428">getRowFormatter</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">const <a href="Poco.Data.RowFormatter.html#6855" title="Poco::Data::RowFormatter::Ptr">RowFormatter::Ptr</a> &amp; getRowFormatter();</p>
+<div class="description">
+<p>Returns the row formatter for this statement. </p>
+</div>
+<h3><a id="7427">impl</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Data.Statement.html#7417" title="Poco::Data::Statement::ImplPtr">ImplPtr</a> impl() const;</p>
+<div class="description">
+<p>Returns pointer to statement implementation. </p>
+</div>
+<h3><a id="7426">isBulkExtraction</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool isBulkExtraction() const;</p>
+<div class="description">
+<p>Returns true if this statement extracts data in bulk. </p>
+</div>
+<h3><a id="7423">isNull</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool isNull(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t col,<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t row<br />) const;</p>
+<div class="description">
+<p>Returns true if the current row value at column pos is null. </p>
+</div>
+<h3><a id="7419">metaColumn</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">const <a href="Poco.Data.MetaColumn.html" title="class Poco::Data::MetaColumn">MetaColumn</a> &amp; metaColumn(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos<br />) const;</p>
+<div class="description">
+<p>Returns the type for the column at specified position. </p>
+</div>
+<h3><a id="7421">metaColumn</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">const <a href="Poco.Data.MetaColumn.html" title="class Poco::Data::MetaColumn">MetaColumn</a> &amp; metaColumn(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; name<br />) const;</p>
+<div class="description">
+<p>Returns the type for the column with specified name. </p>
+</div>
+<h3><a id="7429">session</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Data.Session.html" title="class Poco::Data::Session">Session</a> session();</p>
+<div class="description">
+<p>Returns the underlying session. </p>
+</div>
+<h2>Variables</h2>
+<h3><a id="7301">WAIT_FOREVER</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static const int <a href="Poco.Data.Statement.html#7301" title="Poco::Data::Statement::WAIT_FOREVER">WAIT_FOREVER</a> = - 1;</p>
+<div class="description">
+<p></p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

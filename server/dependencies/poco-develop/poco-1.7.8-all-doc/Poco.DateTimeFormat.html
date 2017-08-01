@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::DateTimeFormat</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.html" class="namespace">Poco</a></h1>
+<h1 class="symbol">class DateTimeFormat</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Foundation" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Foundation<br />
+<b>Package:</b> DateTime<br />
+<b>Header:</b> Poco/DateTimeFormat.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>Definition of date/time formats and various constants used by <a href="Poco.DateTimeFormatter.html" title="class Poco::DateTimeFormatter">DateTimeFormatter</a> and <a href="Poco.DateTimeParser.html" title="class Poco::DateTimeParser">DateTimeParser</a>. </p>
+</div>
+<h2>Variables</h2>
+<h3><a id="9469">ASCTIME_FORMAT</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static const std::string <a href="Poco.DateTimeFormat.html#9469" title="Poco::DateTimeFormat::ASCTIME_FORMAT">ASCTIME_FORMAT</a>;</p>
+<div class="description">
+<p>The date/time format produced by the ANSI C asctime() function. </p>
+<p>Example:  </p>
+<pre>Sat Jan  1 12:00:00 2005
+</pre>
+</div>
+<h3><a id="9466">HTTP_FORMAT</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static const std::string <a href="Poco.DateTimeFormat.html#9466" title="Poco::DateTimeFormat::HTTP_FORMAT">HTTP_FORMAT</a>;</p>
+<div class="description">
+<p>The date/time format defined in the HTTP specification (<a href="https://www.ietf.org/rfc/rfc2616.txt" target="_blank">RFC 2616</a>), which is basically a variant of <a href="https://www.ietf.org/rfc/rfc1036.txt" target="_blank">RFC 1036</a> with a zero-padded day field. </p>
+<p>Examples:  </p>
+<pre>Sat, 01 Jan 2005 12:00:00 +0100
+Sat, 01 Jan 2005 11:00:00 GMT
+</pre>
+</div>
+<h3><a id="9462">ISO8601_FORMAT</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static const std::string <a href="Poco.DateTimeFormat.html#9462" title="Poco::DateTimeFormat::ISO8601_FORMAT">ISO8601_FORMAT</a>;</p>
+<div class="description">
+<p>The date/time format defined in the ISO 8601 standard. </p>
+<p>Examples:  </p>
+<pre>2005-01-01T12:00:00+01:00
+2005-01-01T11:00:00Z
+</pre>
+</div>
+<h3><a id="9463">ISO8601_FRAC_FORMAT</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static const std::string <a href="Poco.DateTimeFormat.html#9463" title="Poco::DateTimeFormat::ISO8601_FRAC_FORMAT">ISO8601_FRAC_FORMAT</a>;</p>
+<div class="description">
+<p>The date/time format defined in the ISO 8601 standard, with fractional seconds. </p>
+<p>Examples:  </p>
+<pre>2005-01-01T12:00:00.000000+01:00
+2005-01-01T11:00:00.000000Z
+</pre>
+</div>
+<h3><a id="9472">MONTH_NAMES</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static const std::string <a href="Poco.DateTimeFormat.html#9472" title="Poco::DateTimeFormat::MONTH_NAMES">MONTH_NAMES</a>[12];</p>
+<div class="description">
+<p>English names of months (January, February, ...).	 </p>
+</div>
+<h3><a id="9468">RFC1036_FORMAT</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static const std::string <a href="Poco.DateTimeFormat.html#9468" title="Poco::DateTimeFormat::RFC1036_FORMAT">RFC1036_FORMAT</a>;</p>
+<div class="description">
+<p>The date/time format defined in <a href="https://www.ietf.org/rfc/rfc1036.txt" target="_blank">RFC 1036</a> (obsoletes <a href="https://www.ietf.org/rfc/rfc850.txt" target="_blank">RFC 850</a>). </p>
+<p>Examples:  </p>
+<pre>Saturday, 1 Jan 05 12:00:00 +0100
+Saturday, 1 Jan 05 11:00:00 GMT
+</pre>
+</div>
+<h3><a id="9465">RFC1123_FORMAT</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static const std::string <a href="Poco.DateTimeFormat.html#9465" title="Poco::DateTimeFormat::RFC1123_FORMAT">RFC1123_FORMAT</a>;</p>
+<div class="description">
+<p>The date/time format defined in <a href="https://www.ietf.org/rfc/rfc1123.txt" target="_blank">RFC 1123</a> (obsoletes <a href="https://www.ietf.org/rfc/rfc822.txt" target="_blank">RFC 822</a>). </p>
+<p>Examples:  </p>
+<pre>Sat, 1 Jan 2005 12:00:00 +0100
+Sat, 1 Jan 2005 11:00:00 GMT
+</pre>
+</div>
+<h3><a id="9464">RFC822_FORMAT</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static const std::string <a href="Poco.DateTimeFormat.html#9464" title="Poco::DateTimeFormat::RFC822_FORMAT">RFC822_FORMAT</a>;</p>
+<div class="description">
+<p>The date/time format defined in <a href="https://www.ietf.org/rfc/rfc822.txt" target="_blank">RFC 822</a> (obsoleted by <a href="https://www.ietf.org/rfc/rfc1123.txt" target="_blank">RFC 1123</a>). </p>
+<p>Examples:  </p>
+<pre>Sat, 1 Jan 05 12:00:00 +0100
+Sat, 1 Jan 05 11:00:00 GMT
+</pre>
+</div>
+<h3><a id="9467">RFC850_FORMAT</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static const std::string <a href="Poco.DateTimeFormat.html#9467" title="Poco::DateTimeFormat::RFC850_FORMAT">RFC850_FORMAT</a>;</p>
+<div class="description">
+<p>The date/time format defined in <a href="https://www.ietf.org/rfc/rfc850.txt" target="_blank">RFC 850</a> (obsoleted by <a href="https://www.ietf.org/rfc/rfc1036.txt" target="_blank">RFC 1036</a>). </p>
+<p>Examples:  </p>
+<pre>Saturday, 1-Jan-05 12:00:00 +0100
+Saturday, 1-Jan-05 11:00:00 GMT
+</pre>
+</div>
+<h3><a id="9470">SORTABLE_FORMAT</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static const std::string <a href="Poco.DateTimeFormat.html#9470" title="Poco::DateTimeFormat::SORTABLE_FORMAT">SORTABLE_FORMAT</a>;</p>
+<div class="description">
+<p>A simple, sortable date/time format. </p>
+<p>Example: </p>
+<pre>2005-01-01 12:00:00
+</pre>
+</div>
+<h3><a id="9471">WEEKDAY_NAMES</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static const std::string <a href="Poco.DateTimeFormat.html#9471" title="Poco::DateTimeFormat::WEEKDAY_NAMES">WEEKDAY_NAMES</a>[7];</p>
+<div class="description">
+<p>English names of week days (Sunday, Monday, Tuesday, ...). </p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::AbstractDelegate</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.html" class="namespace">Poco</a></h1>
+<h1 class="template">template &lt; class TArgs &gt;</h1>
+<h1 class="symbol">class AbstractDelegate</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Foundation" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Foundation<br />
+<b>Package:</b> Events<br />
+<b>Header:</b> Poco/AbstractDelegate.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>Base class for <a href="Poco.Delegate.html" title="class Poco::Delegate">Delegate</a> and <a href="Poco.Expire.html" title="class Poco::Expire">Expire</a>. </p>
+</div>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.AbstractDelegate.html#7819" title="Poco::AbstractDelegate::clone()">clone</a>, <a href="Poco.AbstractDelegate.html#7820" title="Poco::AbstractDelegate::disable()">disable</a>, <a href="Poco.AbstractDelegate.html#7817" title="Poco::AbstractDelegate::equals()">equals</a>, <a href="Poco.AbstractDelegate.html#7814" title="Poco::AbstractDelegate::notify()">notify</a>, <a href="Poco.AbstractDelegate.html#7821" title="Poco::AbstractDelegate::unwrap()">unwrap</a></p>
+<h2>Constructors</h2>
+<h3><a id="7810">AbstractDelegate</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.AbstractDelegate.html" title="class Poco::AbstractDelegate">AbstractDelegate</a>();</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="7811">AbstractDelegate</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.AbstractDelegate.html" title="class Poco::AbstractDelegate">AbstractDelegate</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.AbstractDelegate.html" title="class Poco::AbstractDelegate">AbstractDelegate</a> &amp; param86<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="7813">~AbstractDelegate</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">virtual ~<a href="Poco.AbstractDelegate.html" title="class Poco::AbstractDelegate">AbstractDelegate</a>();</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="7819">clone</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual <a href="Poco.AbstractDelegate.html" title="class Poco::AbstractDelegate">AbstractDelegate</a> * clone() const = 0;</p>
+<div class="description">
+<p>Returns a deep copy of the <a href="Poco.AbstractDelegate.html" title="class Poco::AbstractDelegate">AbstractDelegate</a>. </p>
+</div>
+<h3><a id="7820">disable</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void disable() = 0;</p>
+<div class="description">
+<p>Disables the delegate, which is done prior to removal. </p>
+</div>
+<h3><a id="7817">equals</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual bool equals(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.AbstractDelegate.html" title="class Poco::AbstractDelegate">AbstractDelegate</a> &amp; other<br />) const = 0;</p>
+<div class="description">
+<p>Compares the <a href="Poco.AbstractDelegate.html" title="class Poco::AbstractDelegate">AbstractDelegate</a> with the other one for equality. </p>
+</div>
+<h3><a id="7814">notify</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual bool notify(<br />&nbsp;&nbsp;&nbsp;&nbsp;const void * sender,<br />&nbsp;&nbsp;&nbsp;&nbsp;TArgs &amp; arguments<br />) = 0;</p>
+<div class="description">
+<p>Invokes the delegate's callback function. Returns true if successful, or false if the delegate has been disabled or has expired. </p>
+</div>
+<h3><a id="7821">unwrap</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">virtual const <a href="Poco.AbstractDelegate.html" title="class Poco::AbstractDelegate">AbstractDelegate</a> * unwrap() const;</p>
+<div class="description">
+<p>Returns the unwrapped delegate. Must be overridden by decorators like <a href="Poco.Expire.html" title="class Poco::Expire">Expire</a>. </p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

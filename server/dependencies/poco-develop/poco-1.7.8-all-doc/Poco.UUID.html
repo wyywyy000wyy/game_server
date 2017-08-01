@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::UUID</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.html" class="namespace">Poco</a></h1>
+<h1 class="symbol">class UUID</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Foundation" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Foundation<br />
+<b>Package:</b> UUID<br />
+<b>Header:</b> Poco/UUID.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>A <a href="Poco.UUID.html" title="class Poco::UUID">UUID</a> is an identifier that is unique across both space and time, with respect to the space of all UUIDs. Since a <a href="Poco.UUID.html" title="class Poco::UUID">UUID</a> is a fixed size and contains a time field, it is possible for values to rollover (around A.D. 3400, depending on the specific algorithm used). A <a href="Poco.UUID.html" title="class Poco::UUID">UUID</a> can be used for multiple purposes, from tagging objects with an extremely short lifetime, to reliably identifying very persistent objects across a network. </p>
+<p>This class implements a Universal Unique Identifier, as specified in Appendix A of the DCE 1.1 Remote Procedure Call Specification (<a href="http://www.opengroup.org/onlinepubs/9629399/" target="_blank">http://www.opengroup.org/onlinepubs/9629399/</a>), <a href="https://www.ietf.org/rfc/rfc2518.txt" target="_blank">RFC 2518</a> (WebDAV), section 6.4.1 and the UUIDs and GUIDs internet draft by Leach/Salz from February, 1998  (<a href="http://www.ics.uci.edu/~ejw/authoring/uuid-guid/draft-leach-uuids-guids-01.txt" target="_blank">http://www.ics.uci.edu/~ejw/authoring/uuid-guid/draft-leach-uuids-guids-01.txt</a>) and also <a href="http://tools.ietf.org/html/draft-mealling-uuid-urn-05" target="_blank">http://tools.ietf.org/html/draft-mealling-uuid-urn-05</a> </p>
+</div>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.UUID.html#18904" title="Poco::UUID::appendHex()">appendHex</a>, <a href="Poco.UUID.html#18902" title="Poco::UUID::compare()">compare</a>, <a href="Poco.UUID.html#18869" title="Poco::UUID::copyFrom()">copyFrom</a>, <a href="Poco.UUID.html#18871" title="Poco::UUID::copyTo()">copyTo</a>, <a href="Poco.UUID.html#18889" title="Poco::UUID::dns()">dns</a>, <a href="Poco.UUID.html#18915" title="Poco::UUID::fromNetwork()">fromNetwork</a>, <a href="Poco.UUID.html#18887" title="Poco::UUID::isNull()">isNull</a>, <a href="Poco.UUID.html#18913" title="Poco::UUID::nibble()">nibble</a>, <a href="Poco.UUID.html#18888" title="Poco::UUID::null()">null</a>, <a href="Poco.UUID.html#18891" title="Poco::UUID::oid()">oid</a>, <a href="Poco.UUID.html#18877" title="Poco::UUID::operator !=()">operator&nbsp;!=</a>, <a href="Poco.UUID.html#18879" title="Poco::UUID::operator <()">operator&nbsp;&lt;</a>, <a href="Poco.UUID.html#18881" title="Poco::UUID::operator <=()">operator&nbsp;&lt;=</a>, <a href="Poco.UUID.html#18860" title="Poco::UUID::operator =()">operator&nbsp;=</a>, <a href="Poco.UUID.html#18875" title="Poco::UUID::operator ==()">operator&nbsp;==</a>, <a href="Poco.UUID.html#18883" title="Poco::UUID::operator >()">operator&nbsp;&gt;</a>, <a href="Poco.UUID.html#18885" title="Poco::UUID::operator >=()">operator&nbsp;&gt;=</a>, <a href="Poco.UUID.html#18864" title="Poco::UUID::parse()">parse</a>, <a href="Poco.UUID.html#18862" title="Poco::UUID::swap()">swap</a>, <a href="Poco.UUID.html#18916" title="Poco::UUID::toNetwork()">toNetwork</a>, <a href="Poco.UUID.html#18868" title="Poco::UUID::toString()">toString</a>, <a href="Poco.UUID.html#18866" title="Poco::UUID::tryParse()">tryParse</a>, <a href="Poco.UUID.html#18890" title="Poco::UUID::uri()">uri</a>, <a href="Poco.UUID.html#18874" title="Poco::UUID::variant()">variant</a>, <a href="Poco.UUID.html#18873" title="Poco::UUID::version()">version</a>, <a href="Poco.UUID.html#18892" title="Poco::UUID::x500()">x500</a></p>
+<h2>Enumerations</h2>
+<h3><a id="18846">Version</a></h3>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="18847">UUID_TIME_BASED</a> = 0x01</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="18848">UUID_DCE_UID</a> = 0x02</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="18849">UUID_NAME_BASED</a> = 0x03</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="18850">UUID_RANDOM</a> = 0x04</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="18851">UUID_NAME_BASED_SHA1</a> = 0x05</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Constructors</h2>
+<h3><a id="18852">UUID</a></h3>
+<p class="decl"><a href="Poco.UUID.html" title="class Poco::UUID">UUID</a>();</p>
+<div class="description">
+<p>Creates a nil (all zero) <a href="Poco.UUID.html" title="class Poco::UUID">UUID</a>. </p>
+</div>
+<h3><a id="18853">UUID</a></h3>
+<p class="decl"><a href="Poco.UUID.html" title="class Poco::UUID">UUID</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.UUID.html" title="class Poco::UUID">UUID</a> &amp; uuid<br />);</p>
+<div class="description">
+<p>Copy constructor. </p>
+</div>
+<h3><a id="18855">UUID</a></h3>
+<p class="decl">explicit <a href="Poco.UUID.html" title="class Poco::UUID">UUID</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; uuid<br />);</p>
+<div class="description">
+<p>Parses the <a href="Poco.UUID.html" title="class Poco::UUID">UUID</a> from a string. </p>
+</div>
+<h3><a id="18857">UUID</a></h3>
+<p class="decl">explicit <a href="Poco.UUID.html" title="class Poco::UUID">UUID</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const char * uuid<br />);</p>
+<div class="description">
+<p>Parses the <a href="Poco.UUID.html" title="class Poco::UUID">UUID</a> from a string. </p>
+</div>
+<h3><a id="18899">UUID</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl"><a href="Poco.UUID.html" title="class Poco::UUID">UUID</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const char * bytes,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.UUID.html#18846" title="enum  Poco::UUID::Version">Version</a> version<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="18893">UUID</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl"><a href="Poco.UUID.html" title="class Poco::UUID">UUID</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.html#18381" title="Poco::UInt32">UInt32</a> timeLow,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.html#18381" title="Poco::UInt32">UInt32</a> timeMid,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.html#18381" title="Poco::UInt32">UInt32</a> timeHiAndVersion,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.html#18379" title="Poco::UInt16">UInt16</a> clockSeq,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.html#18377" title="Poco::UInt8">UInt8</a> node[]<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="18859">~UUID</a></h3>
+<p class="decl">~<a href="Poco.UUID.html" title="class Poco::UUID">UUID</a>();</p>
+<div class="description">
+<p>Destroys the <a href="Poco.UUID.html" title="class Poco::UUID">UUID</a>. </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="18869">copyFrom</a></h3>
+<p class="decl">void copyFrom(<br />&nbsp;&nbsp;&nbsp;&nbsp;const char * buffer<br />);</p>
+<div class="description">
+<p>Copies the <a href="Poco.UUID.html" title="class Poco::UUID">UUID</a> (16 bytes) from a buffer or byte array. The <a href="Poco.UUID.html" title="class Poco::UUID">UUID</a> fields are expected to be stored in network byte order. The buffer need not be aligned. </p>
+</div>
+<h3><a id="18871">copyTo</a></h3>
+<p class="decl">void copyTo(<br />&nbsp;&nbsp;&nbsp;&nbsp;char * buffer<br />) const;</p>
+<div class="description">
+<p>Copies the <a href="Poco.UUID.html" title="class Poco::UUID">UUID</a> to the buffer. The fields are in network byte order. The buffer need not be aligned. There must have room for at least 16 bytes. </p>
+</div>
+<h3><a id="18889">dns</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static const <a href="Poco.UUID.html" title="class Poco::UUID">UUID</a> &amp; dns();</p>
+<div class="description">
+<p>Returns the namespace identifier for the DNS namespace. </p>
+</div>
+<h3><a id="18887">isNull</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool isNull() const;</p>
+<div class="description">
+<p>Returns true if and only if the <a href="Poco.UUID.html" title="class Poco::UUID">UUID</a> is nil (in other words, consists of all zeros). </p>
+</div>
+<h3><a id="18888">null</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static const <a href="Poco.UUID.html" title="class Poco::UUID">UUID</a> &amp; null();</p>
+<div class="description">
+<p>Returns a null/nil <a href="Poco.UUID.html" title="class Poco::UUID">UUID</a>. </p>
+</div>
+<h3><a id="18891">oid</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static const <a href="Poco.UUID.html" title="class Poco::UUID">UUID</a> &amp; oid();</p>
+<div class="description">
+<p>Returns the namespace identifier for the OID namespace. </p>
+</div>
+<h3><a id="18877">operator !=</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool operator != (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.UUID.html" title="class Poco::UUID">UUID</a> &amp; uuid<br />) const;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="18879">operator &lt;</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool operator &lt; (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.UUID.html" title="class Poco::UUID">UUID</a> &amp; uuid<br />) const;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="18881">operator &lt;=</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool operator &lt;= (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.UUID.html" title="class Poco::UUID">UUID</a> &amp; uuid<br />) const;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="18860">operator =</a></h3>
+<p class="decl"><a href="Poco.UUID.html" title="class Poco::UUID">UUID</a> &amp; operator = (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.UUID.html" title="class Poco::UUID">UUID</a> &amp; uuid<br />);</p>
+<div class="description">
+<p>Assignment operator. </p>
+</div>
+<h3><a id="18875">operator ==</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool operator == (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.UUID.html" title="class Poco::UUID">UUID</a> &amp; uuid<br />) const;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="18883">operator &gt;</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool operator &gt; (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.UUID.html" title="class Poco::UUID">UUID</a> &amp; uuid<br />) const;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="18885">operator &gt;=</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool operator &gt;= (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.UUID.html" title="class Poco::UUID">UUID</a> &amp; uuid<br />) const;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="18864">parse</a></h3>
+<p class="decl">void parse(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; uuid<br />);</p>
+<div class="description">
+<p>Parses the <a href="Poco.UUID.html" title="class Poco::UUID">UUID</a> from its string representation. </p>
+</div>
+<h3><a id="18862">swap</a></h3>
+<p class="decl">void swap(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.UUID.html" title="class Poco::UUID">UUID</a> &amp; uuid<br />);</p>
+<div class="description">
+<p>Swaps the <a href="Poco.UUID.html" title="class Poco::UUID">UUID</a> with another one.	 </p>
+</div>
+<h3><a id="18868">toString</a></h3>
+<p class="decl">std::string toString() const;</p>
+<div class="description">
+<p>Returns a string representation of the <a href="Poco.UUID.html" title="class Poco::UUID">UUID</a> consisting of groups of hexadecimal digits separated by hyphens. </p>
+</div>
+<h3><a id="18866">tryParse</a></h3>
+<p class="decl">bool tryParse(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; uuid<br />);</p>
+<div class="description">
+<p>Tries to interpret the given string as an <a href="Poco.UUID.html" title="class Poco::UUID">UUID</a>. If the <a href="Poco.UUID.html" title="class Poco::UUID">UUID</a> is syntactically valid, assigns the members and returns true. Otherwise leaves the  object unchanged and returns false. </p>
+</div>
+<h3><a id="18890">uri</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static const <a href="Poco.UUID.html" title="class Poco::UUID">UUID</a> &amp; uri();</p>
+<div class="description">
+<p>Returns the namespace identifier for the <a href="Poco.URI.html" title="class Poco::URI">URI</a> (former URL) namespace. </p>
+</div>
+<h3><a id="18874">variant</a></h3>
+<p class="decl">int variant() const;</p>
+<div class="description">
+<p>Returns the variant number of the <a href="Poco.UUID.html" title="class Poco::UUID">UUID</a>: </p>
+<ul>
+<li>0 reserved for NCS backward compatibility </li>
+<li>2 the Leach-Salz variant (used by this class) </li>
+<li>6 reserved, Microsoft Corporation backward compatibility </li>
+<li>7 reserved for future definition </li>
+</ul>
+</div>
+<h3><a id="18873">version</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.UUID.html#18846" title="enum  Poco::UUID::Version">Version</a> version() const;</p>
+<div class="description">
+<p>Returns the version of the <a href="Poco.UUID.html" title="class Poco::UUID">UUID</a>. </p>
+</div>
+<h3><a id="18892">x500</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static const <a href="Poco.UUID.html" title="class Poco::UUID">UUID</a> &amp; x500();</p>
+<div class="description">
+<p>Returns the namespace identifier for the X500 namespace. </p>
+</div>
+<h3><a id="18904">appendHex</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static void appendHex(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::string &amp; str,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.html#18377" title="Poco::UInt8">UInt8</a> n<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="18907">appendHex</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static void appendHex(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::string &amp; str,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.html#18379" title="Poco::UInt16">UInt16</a> n<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="18910">appendHex</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static void appendHex(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::string &amp; str,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.html#18381" title="Poco::UInt32">UInt32</a> n<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="18902">compare</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">int compare(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.UUID.html" title="class Poco::UUID">UUID</a> &amp; uuid<br />) const;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="18915">fromNetwork</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">void fromNetwork();</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="18913">nibble</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static <a href="Poco.html#18378" title="Poco::Int16">Int16</a> nibble(<br />&nbsp;&nbsp;&nbsp;&nbsp;char hex<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="18916">toNetwork</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">void toNetwork();</p>
+<div class="description">
+<p></p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

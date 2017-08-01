@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::Data::AbstractPreparator</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.Data.html" class="namespace">Poco::Data</a></h1>
+<h1 class="symbol">class AbstractPreparator</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Data" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Data<br />
+<b>Package:</b> DataCore<br />
+<b>Header:</b> Poco/Data/AbstractPreparator.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>Interface used for database preparation where we first have to register all data types (and memory output locations) before extracting data, e.g. <a href="Poco.Data.ODBC.html" title="namespace Poco::Data::ODBC">ODBC</a>. Extract works as two-phase extract: first we call prepare once, then extract n-times. There are cases (bulk operations using std::vector storage) when extract is called only once. The value passed to a <a href="Poco.Data.AbstractPreparator.html#5161" title="Poco::Data::AbstractPreparator::prepare()">prepare</a>() call is not used by the prepare, serving only as an indication  of the data type being prepared, thus all values are passed as const references.  Implementing this interface is not mandatory for a connector. Connectors that only extract data  after SQL execution (e.g. <a href="Poco.Data.SQLite.html" title="namespace Poco::Data::SQLite">SQLite</a>) do not need this functionality at all. </p>
+</div>
+<h2>Inheritance</h2>
+<p><b>Known Derived Classes: </b><a href="Poco.Data.ODBC.Preparator.html" title="class Poco::Data::ODBC::Preparator">Poco::Data::ODBC::Preparator</a></p>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.Data.AbstractPreparator.html#5415" title="Poco::Data::AbstractPreparator::getLength()">getLength</a>, <a href="Poco.Data.AbstractPreparator.html#5418" title="Poco::Data::AbstractPreparator::isBulk()">isBulk</a>, <a href="Poco.Data.AbstractPreparator.html#5161" title="Poco::Data::AbstractPreparator::prepare()">prepare</a>, <a href="Poco.Data.AbstractPreparator.html#5416" title="Poco::Data::AbstractPreparator::setBulk()">setBulk</a>, <a href="Poco.Data.AbstractPreparator.html#5413" title="Poco::Data::AbstractPreparator::setLength()">setLength</a></p>
+<h2>Types</h2>
+<h3><a id="5157">Ptr</a></h3>
+<p class="decl">typedef <a href="Poco.SharedPtr.html" title="class Poco::SharedPtr">SharedPtr</a> &lt; <a href="Poco.Data.AbstractPreparator.html" title="class Poco::Data::AbstractPreparator">AbstractPreparator</a> &gt; <a href="Poco.Data.AbstractPreparator.html#5157" title="Poco::Data::AbstractPreparator::Ptr">Ptr</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Constructors</h2>
+<h3><a id="5158">AbstractPreparator</a></h3>
+<p class="decl"><a href="Poco.Data.AbstractPreparator.html" title="class Poco::Data::AbstractPreparator">AbstractPreparator</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.html#18381" title="Poco::UInt32">Poco::UInt32</a> length = 1u<br />);</p>
+<div class="description">
+<p>Creates the <a href="Poco.Data.AbstractPreparator.html" title="class Poco::Data::AbstractPreparator">AbstractPreparator</a>. </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="5160">~AbstractPreparator</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual ~<a href="Poco.Data.AbstractPreparator.html" title="class Poco::Data::AbstractPreparator">AbstractPreparator</a>();</p>
+<div class="description">
+<p>Destroys the <a href="Poco.Data.AbstractPreparator.html" title="class Poco::Data::AbstractPreparator">AbstractPreparator</a>. </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="5415">getLength</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.html#18381" title="Poco::UInt32">Poco::UInt32</a> getLength() const;</p>
+<div class="description">
+<p>Returns the length of prepared data. Defaults to 1. The length is greater than one for bulk operations. </p>
+</div>
+<h3><a id="5418">isBulk</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool isBulk() const;</p>
+<div class="description">
+<p>Returns bulk operation flag. </p>
+</div>
+<h3><a id="5161">prepare</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void prepare(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.html#18376" title="Poco::Int8">Poco::Int8</a> &amp; param37<br />) = 0;</p>
+<div class="description">
+<p>Prepares an <a href="Poco.html#18376" title="Poco::Int8">Int8</a>. </p>
+</div>
+<h3><a id="5164">prepare</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void prepare(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::vector &lt; <a href="Poco.html#18376" title="Poco::Int8">Poco::Int8</a> &gt; &amp; val<br />);</p>
+<div class="description">
+<p>Prepares an <a href="Poco.html#18376" title="Poco::Int8">Int8</a> vector. </p>
+</div>
+<h3><a id="5167">prepare</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void prepare(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::deque &lt; <a href="Poco.html#18376" title="Poco::Int8">Poco::Int8</a> &gt; &amp; val<br />);</p>
+<div class="description">
+<p>Prepares an <a href="Poco.html#18376" title="Poco::Int8">Int8</a> deque. </p>
+</div>
+<h3><a id="5170">prepare</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void prepare(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::list &lt; <a href="Poco.html#18376" title="Poco::Int8">Poco::Int8</a> &gt; &amp; val<br />);</p>
+<div class="description">
+<p>Prepares an <a href="Poco.html#18376" title="Poco::Int8">Int8</a> list. </p>
+</div>
+<h3><a id="5173">prepare</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void prepare(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.html#18377" title="Poco::UInt8">Poco::UInt8</a> &amp; param38<br />) = 0;</p>
+<div class="description">
+<p>Prepares an <a href="Poco.html#18377" title="Poco::UInt8">UInt8</a>. </p>
+</div>
+<h3><a id="5176">prepare</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void prepare(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::vector &lt; <a href="Poco.html#18377" title="Poco::UInt8">Poco::UInt8</a> &gt; &amp; val<br />);</p>
+<div class="description">
+<p>Prepares an <a href="Poco.html#18377" title="Poco::UInt8">UInt8</a> vector. </p>
+</div>
+<h3><a id="5179">prepare</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void prepare(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::deque &lt; <a href="Poco.html#18377" title="Poco::UInt8">Poco::UInt8</a> &gt; &amp; val<br />);</p>
+<div class="description">
+<p>Prepares an <a href="Poco.html#18377" title="Poco::UInt8">UInt8</a> deque. </p>
+</div>
+<h3><a id="5182">prepare</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void prepare(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::list &lt; <a href="Poco.html#18377" title="Poco::UInt8">Poco::UInt8</a> &gt; &amp; val<br />);</p>
+<div class="description">
+<p>Prepares an <a href="Poco.html#18377" title="Poco::UInt8">UInt8</a> list. </p>
+</div>
+<h3><a id="5185">prepare</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void prepare(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.html#18378" title="Poco::Int16">Poco::Int16</a> &amp; param39<br />) = 0;</p>
+<div class="description">
+<p>Prepares an <a href="Poco.html#18378" title="Poco::Int16">Int16</a>. </p>
+</div>
+<h3><a id="5188">prepare</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void prepare(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::vector &lt; <a href="Poco.html#18378" title="Poco::Int16">Poco::Int16</a> &gt; &amp; val<br />);</p>
+<div class="description">
+<p>Prepares an <a href="Poco.html#18378" title="Poco::Int16">Int16</a> vector. </p>
+</div>
+<h3><a id="5191">prepare</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void prepare(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::deque &lt; <a href="Poco.html#18378" title="Poco::Int16">Poco::Int16</a> &gt; &amp; val<br />);</p>
+<div class="description">
+<p>Prepares an <a href="Poco.html#18378" title="Poco::Int16">Int16</a> deque. </p>
+</div>
+<h3><a id="5194">prepare</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void prepare(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::list &lt; <a href="Poco.html#18378" title="Poco::Int16">Poco::Int16</a> &gt; &amp; val<br />);</p>
+<div class="description">
+<p>Prepares an <a href="Poco.html#18378" title="Poco::Int16">Int16</a> list. </p>
+</div>
+<h3><a id="5197">prepare</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void prepare(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.html#18379" title="Poco::UInt16">Poco::UInt16</a> &amp; param40<br />) = 0;</p>
+<div class="description">
+<p>Prepares an <a href="Poco.html#18379" title="Poco::UInt16">UInt16</a>. </p>
+</div>
+<h3><a id="5200">prepare</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void prepare(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::vector &lt; <a href="Poco.html#18379" title="Poco::UInt16">Poco::UInt16</a> &gt; &amp; val<br />);</p>
+<div class="description">
+<p>Prepares an <a href="Poco.html#18379" title="Poco::UInt16">UInt16</a> vector. </p>
+</div>
+<h3><a id="5203">prepare</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void prepare(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::deque &lt; <a href="Poco.html#18379" title="Poco::UInt16">Poco::UInt16</a> &gt; &amp; val<br />);</p>
+<div class="description">
+<p>Prepares an <a href="Poco.html#18379" title="Poco::UInt16">UInt16</a> deque. </p>
+</div>
+<h3><a id="5206">prepare</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void prepare(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::list &lt; <a href="Poco.html#18379" title="Poco::UInt16">Poco::UInt16</a> &gt; &amp; val<br />);</p>
+<div class="description">
+<p>Prepares an <a href="Poco.html#18379" title="Poco::UInt16">UInt16</a> list. </p>
+</div>
+<h3><a id="5209">prepare</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void prepare(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.html#18380" title="Poco::Int32">Poco::Int32</a> &amp; param41<br />) = 0;</p>
+<div class="description">
+<p>Prepares an <a href="Poco.html#18380" title="Poco::Int32">Int32</a>. </p>
+</div>
+<h3><a id="5212">prepare</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void prepare(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::vector &lt; <a href="Poco.html#18380" title="Poco::Int32">Poco::Int32</a> &gt; &amp; val<br />);</p>
+<div class="description">
+<p>Prepares an <a href="Poco.html#18380" title="Poco::Int32">Int32</a> vector. </p>
+</div>
+<h3><a id="5215">prepare</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void prepare(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::deque &lt; <a href="Poco.html#18380" title="Poco::Int32">Poco::Int32</a> &gt; &amp; val<br />);</p>
+<div class="description">
+<p>Prepares an <a href="Poco.html#18380" title="Poco::Int32">Int32</a> deque. </p>
+</div>
+<h3><a id="5218">prepare</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void prepare(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::list &lt; <a href="Poco.html#18380" title="Poco::Int32">Poco::Int32</a> &gt; &amp; val<br />);</p>
+<div class="description">
+<p>Prepares an <a href="Poco.html#18380" title="Poco::Int32">Int32</a> list. </p>
+</div>
+<h3><a id="5221">prepare</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void prepare(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.html#18381" title="Poco::UInt32">Poco::UInt32</a> &amp; param42<br />) = 0;</p>
+<div class="description">
+<p>Prepares an <a href="Poco.html#18381" title="Poco::UInt32">UInt32</a>. </p>
+</div>
+<h3><a id="5224">prepare</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void prepare(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::vector &lt; <a href="Poco.html#18381" title="Poco::UInt32">Poco::UInt32</a> &gt; &amp; val<br />);</p>
+<div class="description">
+<p>Prepares an <a href="Poco.html#18381" title="Poco::UInt32">UInt32</a> vector. </p>
+</div>
+<h3><a id="5227">prepare</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void prepare(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::deque &lt; <a href="Poco.html#18381" title="Poco::UInt32">Poco::UInt32</a> &gt; &amp; val<br />);</p>
+<div class="description">
+<p>Prepares an <a href="Poco.html#18381" title="Poco::UInt32">UInt32</a> deque. </p>
+</div>
+<h3><a id="5230">prepare</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void prepare(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::list &lt; <a href="Poco.html#18381" title="Poco::UInt32">Poco::UInt32</a> &gt; &amp; val<br />);</p>
+<div class="description">
+<p>Prepares an <a href="Poco.html#18381" title="Poco::UInt32">UInt32</a> list. </p>
+</div>
+<h3><a id="5233">prepare</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void prepare(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.html#18384" title="Poco::Int64">Poco::Int64</a> &amp; param43<br />) = 0;</p>
+<div class="description">
+<p>Prepares an <a href="Poco.html#18384" title="Poco::Int64">Int64</a>. </p>
+</div>
+<h3><a id="5236">prepare</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void prepare(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::vector &lt; <a href="Poco.html#18384" title="Poco::Int64">Poco::Int64</a> &gt; &amp; val<br />);</p>
+<div class="description">
+<p>Prepares an <a href="Poco.html#18384" title="Poco::Int64">Int64</a> vector. </p>
+</div>
+<h3><a id="5239">prepare</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void prepare(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::deque &lt; <a href="Poco.html#18384" title="Poco::Int64">Poco::Int64</a> &gt; &amp; val<br />);</p>
+<div class="description">
+<p>Prepares an <a href="Poco.html#18384" title="Poco::Int64">Int64</a> deque. </p>
+</div>
+<h3><a id="5242">prepare</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void prepare(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::list &lt; <a href="Poco.html#18384" title="Poco::Int64">Poco::Int64</a> &gt; &amp; val<br />);</p>
+<div class="description">
+<p>Prepares an <a href="Poco.html#18384" title="Poco::Int64">Int64</a> list. </p>
+</div>
+<h3><a id="5245">prepare</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void prepare(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.html#18385" title="Poco::UInt64">Poco::UInt64</a> &amp; param44<br />) = 0;</p>
+<div class="description">
+<p>Prepares an <a href="Poco.html#18385" title="Poco::UInt64">UInt64</a>. </p>
+</div>
+<h3><a id="5248">prepare</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void prepare(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::vector &lt; <a href="Poco.html#18385" title="Poco::UInt64">Poco::UInt64</a> &gt; &amp; val<br />);</p>
+<div class="description">
+<p>Prepares an <a href="Poco.html#18385" title="Poco::UInt64">UInt64</a> vector. </p>
+</div>
+<h3><a id="5251">prepare</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void prepare(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::deque &lt; <a href="Poco.html#18385" title="Poco::UInt64">Poco::UInt64</a> &gt; &amp; val<br />);</p>
+<div class="description">
+<p>Prepares an <a href="Poco.html#18385" title="Poco::UInt64">UInt64</a> deque. </p>
+</div>
+<h3><a id="5254">prepare</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void prepare(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::list &lt; <a href="Poco.html#18385" title="Poco::UInt64">Poco::UInt64</a> &gt; &amp; val<br />);</p>
+<div class="description">
+<p>Prepares an <a href="Poco.html#18385" title="Poco::UInt64">UInt64</a> list. </p>
+</div>
+<h3><a id="5257">prepare</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void prepare(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const bool &amp; param45<br />) = 0;</p>
+<div class="description">
+<p>Prepares a boolean. </p>
+</div>
+<h3><a id="5260">prepare</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void prepare(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::vector &lt; bool &gt; &amp; val<br />);</p>
+<div class="description">
+<p>Prepares a boolean vector. </p>
+</div>
+<h3><a id="5263">prepare</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void prepare(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::deque &lt; bool &gt; &amp; val<br />);</p>
+<div class="description">
+<p>Prepares a boolean deque. </p>
+</div>
+<h3><a id="5266">prepare</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void prepare(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::list &lt; bool &gt; &amp; val<br />);</p>
+<div class="description">
+<p>Prepares a boolean list. </p>
+</div>
+<h3><a id="5269">prepare</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void prepare(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const float &amp; param46<br />) = 0;</p>
+<div class="description">
+<p>Prepares a float. </p>
+</div>
+<h3><a id="5272">prepare</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void prepare(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::vector &lt; float &gt; &amp; val<br />);</p>
+<div class="description">
+<p>Prepares a float vector. </p>
+</div>
+<h3><a id="5275">prepare</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void prepare(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::deque &lt; float &gt; &amp; val<br />);</p>
+<div class="description">
+<p>Prepares a float deque. </p>
+</div>
+<h3><a id="5278">prepare</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void prepare(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::list &lt; float &gt; &amp; val<br />);</p>
+<div class="description">
+<p>Prepares a float list. </p>
+</div>
+<h3><a id="5281">prepare</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void prepare(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const double &amp; param47<br />) = 0;</p>
+<div class="description">
+<p>Prepares a double. </p>
+</div>
+<h3><a id="5284">prepare</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void prepare(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::vector &lt; double &gt; &amp; val<br />);</p>
+<div class="description">
+<p>Prepares a double vector. </p>
+</div>
+<h3><a id="5287">prepare</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void prepare(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::deque &lt; double &gt; &amp; val<br />);</p>
+<div class="description">
+<p>Prepares a double deque. </p>
+</div>
+<h3><a id="5290">prepare</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void prepare(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::list &lt; double &gt; &amp; val<br />);</p>
+<div class="description">
+<p>Prepares a double list. </p>
+</div>
+<h3><a id="5293">prepare</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void prepare(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const char &amp; param48<br />) = 0;</p>
+<div class="description">
+<p>Prepares a single character. </p>
+</div>
+<h3><a id="5296">prepare</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void prepare(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::vector &lt; char &gt; &amp; val<br />);</p>
+<div class="description">
+<p>Prepares a character vector. </p>
+</div>
+<h3><a id="5299">prepare</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void prepare(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::deque &lt; char &gt; &amp; val<br />);</p>
+<div class="description">
+<p>Prepares a character deque. </p>
+</div>
+<h3><a id="5302">prepare</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void prepare(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::list &lt; char &gt; &amp; val<br />);</p>
+<div class="description">
+<p>Prepares a character list. </p>
+</div>
+<h3><a id="5305">prepare</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void prepare(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; param49<br />) = 0;</p>
+<div class="description">
+<p>Prepares a string. </p>
+</div>
+<h3><a id="5308">prepare</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void prepare(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::vector &lt; std::string &gt; &amp; val<br />);</p>
+<div class="description">
+<p>Prepares a string vector. </p>
+</div>
+<h3><a id="5311">prepare</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void prepare(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::deque &lt; std::string &gt; &amp; val<br />);</p>
+<div class="description">
+<p>Prepares a string deque. </p>
+</div>
+<h3><a id="5314">prepare</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void prepare(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::list &lt; std::string &gt; &amp; val<br />);</p>
+<div class="description">
+<p>Prepares a character list. </p>
+</div>
+<h3><a id="5317">prepare</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void prepare(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.html#18842" title="Poco::UTF16String">UTF16String</a> &amp; param50<br />);</p>
+<div class="description">
+<p>Prepares a <a href="Poco.html#18842" title="Poco::UTF16String">UTF16String</a>. </p>
+</div>
+<h3><a id="5320">prepare</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void prepare(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::vector &lt; <a href="Poco.html#18842" title="Poco::UTF16String">UTF16String</a> &gt; &amp; val<br />);</p>
+<div class="description">
+<p>Prepares a <a href="Poco.html#18842" title="Poco::UTF16String">UTF16String</a> vector. </p>
+</div>
+<h3><a id="5323">prepare</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void prepare(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::deque &lt; <a href="Poco.html#18842" title="Poco::UTF16String">UTF16String</a> &gt; &amp; val<br />);</p>
+<div class="description">
+<p>Prepares a <a href="Poco.html#18842" title="Poco::UTF16String">UTF16String</a> deque. </p>
+</div>
+<h3><a id="5326">prepare</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void prepare(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::list &lt; <a href="Poco.html#18842" title="Poco::UTF16String">UTF16String</a> &gt; &amp; val<br />);</p>
+<div class="description">
+<p>Prepares a <a href="Poco.html#18842" title="Poco::UTF16String">UTF16String</a> list. </p>
+</div>
+<h3><a id="5329">prepare</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void prepare(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Data.html#6200" title="Poco::Data::BLOB">BLOB</a> &amp; param51<br />) = 0;</p>
+<div class="description">
+<p>Prepares a <a href="Poco.Data.html#6200" title="Poco::Data::BLOB">BLOB</a>. </p>
+</div>
+<h3><a id="5332">prepare</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void prepare(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Data.html#6201" title="Poco::Data::CLOB">CLOB</a> &amp; param52<br />) = 0;</p>
+<div class="description">
+<p>Prepares a <a href="Poco.Data.html#6201" title="Poco::Data::CLOB">CLOB</a>. </p>
+</div>
+<h3><a id="5335">prepare</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void prepare(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::vector &lt; <a href="Poco.Data.html#6200" title="Poco::Data::BLOB">BLOB</a> &gt; &amp; val<br />);</p>
+<div class="description">
+<p>Prepares a <a href="Poco.Data.html#6200" title="Poco::Data::BLOB">BLOB</a> vector. </p>
+</div>
+<h3><a id="5338">prepare</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void prepare(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::deque &lt; <a href="Poco.Data.html#6200" title="Poco::Data::BLOB">BLOB</a> &gt; &amp; val<br />);</p>
+<div class="description">
+<p>Prepares a <a href="Poco.Data.html#6200" title="Poco::Data::BLOB">BLOB</a> deque. </p>
+</div>
+<h3><a id="5341">prepare</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void prepare(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::list &lt; <a href="Poco.Data.html#6200" title="Poco::Data::BLOB">BLOB</a> &gt; &amp; val<br />);</p>
+<div class="description">
+<p>Prepares a <a href="Poco.Data.html#6200" title="Poco::Data::BLOB">BLOB</a> list. </p>
+</div>
+<h3><a id="5344">prepare</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void prepare(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::vector &lt; <a href="Poco.Data.html#6201" title="Poco::Data::CLOB">CLOB</a> &gt; &amp; val<br />);</p>
+<div class="description">
+<p>Prepares a <a href="Poco.Data.html#6201" title="Poco::Data::CLOB">CLOB</a> vector. </p>
+</div>
+<h3><a id="5347">prepare</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void prepare(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::deque &lt; <a href="Poco.Data.html#6201" title="Poco::Data::CLOB">CLOB</a> &gt; &amp; val<br />);</p>
+<div class="description">
+<p>Prepares a <a href="Poco.Data.html#6201" title="Poco::Data::CLOB">CLOB</a> deque. </p>
+</div>
+<h3><a id="5350">prepare</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void prepare(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::list &lt; <a href="Poco.Data.html#6201" title="Poco::Data::CLOB">CLOB</a> &gt; &amp; val<br />);</p>
+<div class="description">
+<p>Prepares a <a href="Poco.Data.html#6201" title="Poco::Data::CLOB">CLOB</a> list. </p>
+</div>
+<h3><a id="5353">prepare</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void prepare(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.DateTime.html" title="class Poco::DateTime">DateTime</a> &amp; param53<br />) = 0;</p>
+<div class="description">
+<p>Prepares a <a href="Poco.DateTime.html" title="class Poco::DateTime">DateTime</a>. </p>
+</div>
+<h3><a id="5356">prepare</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void prepare(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::vector &lt; <a href="Poco.DateTime.html" title="class Poco::DateTime">DateTime</a> &gt; &amp; val<br />);</p>
+<div class="description">
+<p>Prepares a <a href="Poco.DateTime.html" title="class Poco::DateTime">DateTime</a> vector. </p>
+</div>
+<h3><a id="5359">prepare</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void prepare(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::deque &lt; <a href="Poco.DateTime.html" title="class Poco::DateTime">DateTime</a> &gt; &amp; val<br />);</p>
+<div class="description">
+<p>Prepares a <a href="Poco.DateTime.html" title="class Poco::DateTime">DateTime</a> deque. </p>
+</div>
+<h3><a id="5362">prepare</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void prepare(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::list &lt; <a href="Poco.DateTime.html" title="class Poco::DateTime">DateTime</a> &gt; &amp; val<br />);</p>
+<div class="description">
+<p>Prepares a <a href="Poco.DateTime.html" title="class Poco::DateTime">DateTime</a> list. </p>
+</div>
+<h3><a id="5365">prepare</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void prepare(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Data.Date.html" title="class Poco::Data::Date">Date</a> &amp; param54<br />) = 0;</p>
+<div class="description">
+<p>Prepares a <a href="Poco.Data.Date.html" title="class Poco::Data::Date">Date</a>. </p>
+</div>
+<h3><a id="5368">prepare</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void prepare(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::vector &lt; <a href="Poco.Data.Date.html" title="class Poco::Data::Date">Date</a> &gt; &amp; val<br />);</p>
+<div class="description">
+<p>Prepares a <a href="Poco.Data.Date.html" title="class Poco::Data::Date">Date</a> vector. </p>
+</div>
+<h3><a id="5371">prepare</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void prepare(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::deque &lt; <a href="Poco.Data.Date.html" title="class Poco::Data::Date">Date</a> &gt; &amp; val<br />);</p>
+<div class="description">
+<p>Prepares a <a href="Poco.Data.Date.html" title="class Poco::Data::Date">Date</a> deque. </p>
+</div>
+<h3><a id="5374">prepare</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void prepare(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::list &lt; <a href="Poco.Data.Date.html" title="class Poco::Data::Date">Date</a> &gt; &amp; val<br />);</p>
+<div class="description">
+<p>Prepares a <a href="Poco.Data.Date.html" title="class Poco::Data::Date">Date</a> list. </p>
+</div>
+<h3><a id="5377">prepare</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void prepare(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Data.Time.html" title="class Poco::Data::Time">Time</a> &amp; param55<br />) = 0;</p>
+<div class="description">
+<p>Prepares a <a href="Poco.Data.Time.html" title="class Poco::Data::Time">Time</a>. </p>
+</div>
+<h3><a id="5380">prepare</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void prepare(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::vector &lt; <a href="Poco.Data.Time.html" title="class Poco::Data::Time">Time</a> &gt; &amp; val<br />);</p>
+<div class="description">
+<p>Prepares a <a href="Poco.Data.Time.html" title="class Poco::Data::Time">Time</a> vector. </p>
+</div>
+<h3><a id="5383">prepare</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void prepare(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::deque &lt; <a href="Poco.Data.Time.html" title="class Poco::Data::Time">Time</a> &gt; &amp; val<br />);</p>
+<div class="description">
+<p>Prepares a <a href="Poco.Data.Time.html" title="class Poco::Data::Time">Time</a> deque. </p>
+</div>
+<h3><a id="5386">prepare</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void prepare(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::list &lt; <a href="Poco.Data.Time.html" title="class Poco::Data::Time">Time</a> &gt; &amp; val<br />);</p>
+<div class="description">
+<p>Prepares a <a href="Poco.Data.Time.html" title="class Poco::Data::Time">Time</a> list. </p>
+</div>
+<h3><a id="5389">prepare</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void prepare(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Any.html" title="class Poco::Any">Any</a> &amp; param56<br />) = 0;</p>
+<div class="description">
+<p>Prepares an <a href="Poco.Any.html" title="class Poco::Any">Any</a>. </p>
+</div>
+<h3><a id="5392">prepare</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void prepare(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::vector &lt; <a href="Poco.Any.html" title="class Poco::Any">Any</a> &gt; &amp; val<br />);</p>
+<div class="description">
+<p>Prepares an <a href="Poco.Any.html" title="class Poco::Any">Any</a> vector. </p>
+</div>
+<h3><a id="5395">prepare</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void prepare(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::deque &lt; <a href="Poco.Any.html" title="class Poco::Any">Any</a> &gt; &amp; val<br />);</p>
+<div class="description">
+<p>Prepares an <a href="Poco.Any.html" title="class Poco::Any">Any</a> deque. </p>
+</div>
+<h3><a id="5398">prepare</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void prepare(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::list &lt; <a href="Poco.Any.html" title="class Poco::Any">Any</a> &gt; &amp; val<br />);</p>
+<div class="description">
+<p>Prepares an <a href="Poco.Any.html" title="class Poco::Any">Any</a> list. </p>
+</div>
+<h3><a id="5401">prepare</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void prepare(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Dynamic.Var.html" title="class Poco::Dynamic::Var">Poco::Dynamic::Var</a> &amp; param57<br />) = 0;</p>
+<div class="description">
+<p>Prepares a Var. </p>
+</div>
+<h3><a id="5404">prepare</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void prepare(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::vector &lt; <a href="Poco.Dynamic.Var.html" title="class Poco::Dynamic::Var">Poco::Dynamic::Var</a> &gt; &amp; val<br />);</p>
+<div class="description">
+<p>Prepares a Var vector. </p>
+</div>
+<h3><a id="5407">prepare</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void prepare(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::deque &lt; <a href="Poco.Dynamic.Var.html" title="class Poco::Dynamic::Var">Poco::Dynamic::Var</a> &gt; &amp; val<br />);</p>
+<div class="description">
+<p>Prepares a Var deque. </p>
+</div>
+<h3><a id="5410">prepare</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void prepare(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::list &lt; <a href="Poco.Dynamic.Var.html" title="class Poco::Dynamic::Var">Poco::Dynamic::Var</a> &gt; &amp; val<br />);</p>
+<div class="description">
+<p>Prepares a Var list. </p>
+</div>
+<h3><a id="5416">setBulk</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void setBulk(<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bulkPrep = true<br />);</p>
+<div class="description">
+<p>Sets bulk operation flag (always false at object creation time) </p>
+</div>
+<h3><a id="5413">setLength</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void setLength(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.html#18381" title="Poco::UInt32">Poco::UInt32</a> length<br />);</p>
+<div class="description">
+<p>Sets the length of prepared data. Needed only for data lengths greater than 1 (i.e. for bulk operations). </p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

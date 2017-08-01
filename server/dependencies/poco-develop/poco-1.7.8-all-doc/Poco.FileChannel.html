@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::FileChannel</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.html" class="namespace">Poco</a></h1>
+<h1 class="symbol">class FileChannel</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Foundation" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Foundation<br />
+<b>Package:</b> Logging<br />
+<b>Header:</b> Poco/FileChannel.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>A <a href="Poco.Channel.html" title="class Poco::Channel">Channel</a> that writes to a file. This class supports flexible log file rotation and archiving, as well as automatic purging of archived log files. </p>
+<p>Only the message's text is written, followed by a newline. </p>
+<p>Chain this channel to a <a href="Poco.FormattingChannel.html" title="class Poco::FormattingChannel">FormattingChannel</a> with an appropriate <a href="Poco.Formatter.html" title="class Poco::Formatter">Formatter</a> to control what is in the text.  </p>
+<p>The <a href="Poco.FileChannel.html" title="class Poco::FileChannel">FileChannel</a> support log file rotation based on log file size or time intervals. Archived log files can be compressed in gzip format. Older archived files can be automatically deleted (purged). </p>
+<p>The rotation strategy can be specified with the &quot;rotation&quot; property, which can take one of the follwing values: </p>
+<p></p>
+<ul>
+<li>never:         no log rotation </li>
+<li>[day,][hh]:mm: the file is rotated on specified day/time day - day is specified as long or short day name (Monday|Mon, Tuesday|Tue, ... ); day can be omitted, in which case log is rotated every day hh  - valid hour range is 00-23; hour can be omitted, in which case log is rotated every hour mm  - valid minute range is 00-59; minute must be specified </li>
+<li>daily:         the file is rotated daily </li>
+<li>weekly:        the file is rotated every seven days </li>
+<li>monthly:       the file is rotated every 30 days </li>
+<li>&lt;n&gt; minutes:   the file is rotated every &lt;n&gt; minutes,  where &lt;n&gt; is an integer greater than zero. </li>
+<li>&lt;n&gt; hours:     the file is rotated every &lt;n&gt; hours, where &lt;n&gt; is an integer greater than zero. </li>
+<li>&lt;n&gt; days:      the file is rotated every &lt;n&gt; days, where &lt;n&gt; is an integer greater than zero. </li>
+<li>&lt;n&gt; weeks:     the file is rotated every &lt;n&gt; weeks, where &lt;n&gt; is an integer greater than zero. </li>
+<li>&lt;n&gt; months:    the file is rotated every &lt;n&gt; months, where &lt;n&gt; is an integer greater than zero and a month has 30 days. </li>
+<li>&lt;n&gt;:           the file is rotated when its size exceeds &lt;n&gt; bytes. </li>
+<li>&lt;n&gt; K:         the file is rotated when its size exceeds &lt;n&gt; Kilobytes. </li>
+<li>&lt;n&gt; M:         the file is rotated when its size exceeds &lt;n&gt; Megabytes. </li>
+</ul>
+<p>NOTE: For periodic log file rotation (daily, weekly, monthly, etc.), the date and time of log file creation or last rotation is written into the first line of the log file. This is because there is no reliable way to find out the real creation date of a file on many platforms (e.g., most Unix platforms do not provide the creation date, and Windows has its own issues with its &quot;<a href="Poco.File.html" title="class Poco::File">File</a> System Tunneling Capabilities&quot;). </p>
+<p>Using the &quot;archive&quot; property it is possible to specify how archived log files are named. The following values for the &quot;archive&quot; property are supported: </p>
+<p></p>
+<ul>
+<li>number:     A number, starting with 0, is appended to the name of archived log files. The newest archived log file always has the number 0. For example, if the log file is named &quot;access.log&quot;, and it fulfils the criteria for rotation, the file is renamed to &quot;access.log.0&quot;. If a file named &quot;access.log.0&quot; already exists, it is renamed to &quot;access.log.1&quot;, and so on. </li>
+<li>timestamp:  A timestamp is appended to the log file name. For example, if the log file is named &quot;access.log&quot;, and it fulfils the criteria for rotation, the file is renamed to &quot;access.log.20050802110300&quot;. </li>
+</ul>
+<p>Using the &quot;times&quot; property it is possible to specify time mode for the day/time based rotation. The following values for the &quot;times&quot; property are supported: </p>
+<p></p>
+<ul>
+<li>utc:        Rotation strategy is based on UTC time (default). </li>
+<li>local:      Rotation strategy is based on local time. </li>
+</ul>
+<p>Archived log files can be compressed using the gzip compression method. Compressing can be controlled with the &quot;compress&quot; property. The following values for the &quot;compress&quot; property are supported: </p>
+<p></p>
+<ul>
+<li>true:       Compress archived log files. </li>
+<li>false:      Do not compress archived log files. </li>
+</ul>
+<p>Archived log files can be automatically purged, either if they reach a certain age, or if the number of archived log files reaches a given maximum number. This is  controlled by the purgeAge and purgeCount properties. </p>
+<p>The purgeAge property can have the following values: </p>
+<p></p>
+<ul>
+<li>&lt;n&gt; [seconds]: the maximum age is &lt;n&gt; seconds. </li>
+<li>&lt;n&gt; minutes:   the maximum age is &lt;n&gt; minutes. </li>
+<li>&lt;n&gt; hours:     the maximum age is &lt;n&gt; hours. </li>
+<li>&lt;n&gt; days:      the maximum age is &lt;n&gt; days. </li>
+<li>&lt;n&gt; weeks:     the maximum age is &lt;n&gt; weeks. </li>
+<li>&lt;n&gt; months:    the maximum age is &lt;n&gt; months, where a month has 30 days. </li>
+</ul>
+<p>The purgeCount property has an integer value that specifies the maximum number of archived log files. If the number is exceeded, archived log files are deleted, starting with the oldest. When &quot;none&quot; or empty string are supplied, they reset purgeCount to none (no purging). </p>
+<p>The flush property specifies whether each log message is flushed immediately to the log file (which may hurt application performance, but ensures that everything is in the log in case of a system crash), Valid values are: </p>
+<p></p>
+<ul>
+<li>true:  Every essages is immediately flushed to the log file (default). </li>
+<li>false: Messages are not immediately flushed to the log file. </li>
+</ul>
+<p>The rotateOnOpen property specifies whether an existing log file should be  rotated (and archived) when the channel is opened. Valid values are: </p>
+<p></p>
+<ul>
+<li>true:  The log file is rotated (and archived) when the channel is opened. </li>
+<li>false: Log messages will be appended to an existing log file, if it exists (unless other conditions for a rotation are met).  This is the default. </li>
+</ul>
+<p>For a more lightweight file channel class, see <a href="Poco.SimpleFileChannel.html" title="class Poco::SimpleFileChannel">SimpleFileChannel</a>. </p>
+</div>
+<h2>Inheritance</h2>
+<p><b>Direct Base Classes: </b><a href="Poco.Channel.html" title="class Poco::Channel">Channel</a></p>
+<p><b>All Base Classes: </b><a href="Poco.Channel.html" title="class Poco::Channel">Channel</a>, <a href="Poco.Configurable.html" title="class Poco::Configurable">Configurable</a>, <a href="Poco.RefCountedObject.html" title="class Poco::RefCountedObject">RefCountedObject</a></p>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.FileChannel.html#12483" title="Poco::FileChannel::close()">close</a>, <a href="Poco.FileChannel.html#12491" title="Poco::FileChannel::creationDate()">creationDate</a>, <a href="Poco.FileChannel.html#12489" title="Poco::FileChannel::getProperty()">getProperty</a>, <a href="Poco.FileChannel.html#12484" title="Poco::FileChannel::log()">log</a>, <a href="Poco.FileChannel.html#12482" title="Poco::FileChannel::open()">open</a>, <a href="Poco.FileChannel.html#12493" title="Poco::FileChannel::path()">path</a>, <a href="Poco.FileChannel.html#12518" title="Poco::FileChannel::purge()">purge</a>, <a href="Poco.FileChannel.html#12506" title="Poco::FileChannel::setArchive()">setArchive</a>, <a href="Poco.FileChannel.html#12508" title="Poco::FileChannel::setCompress()">setCompress</a>, <a href="Poco.FileChannel.html#12514" title="Poco::FileChannel::setFlush()">setFlush</a>, <a href="Poco.FileChannel.html#12486" title="Poco::FileChannel::setProperty()">setProperty</a>, <a href="Poco.FileChannel.html#12510" title="Poco::FileChannel::setPurgeAge()">setPurgeAge</a>, <a href="Poco.FileChannel.html#12512" title="Poco::FileChannel::setPurgeCount()">setPurgeCount</a>, <a href="Poco.FileChannel.html#12516" title="Poco::FileChannel::setRotateOnOpen()">setRotateOnOpen</a>, <a href="Poco.FileChannel.html#12504" title="Poco::FileChannel::setRotation()">setRotation</a>, <a href="Poco.FileChannel.html#12492" title="Poco::FileChannel::size()">size</a></p>
+<p><b>Inherited Functions: </b><a href="Poco.Channel.html#9020" title="Poco::Channel::close()">close</a>, <a href="Poco.RefCountedObject.html#16511" title="Poco::RefCountedObject::duplicate()">duplicate</a>, <a href="Poco.Channel.html#9026" title="Poco::Channel::getProperty()">getProperty</a>, <a href="Poco.Channel.html#9021" title="Poco::Channel::log()">log</a>, <a href="Poco.Channel.html#9019" title="Poco::Channel::open()">open</a>, <a href="Poco.RefCountedObject.html#16513" title="Poco::RefCountedObject::referenceCount()">referenceCount</a>, <a href="Poco.RefCountedObject.html#16512" title="Poco::RefCountedObject::release()">release</a>, <a href="Poco.Channel.html#9023" title="Poco::Channel::setProperty()">setProperty</a></p>
+<h2>Constructors</h2>
+<h3><a id="12479">FileChannel</a></h3>
+<p class="decl"><a href="Poco.FileChannel.html" title="class Poco::FileChannel">FileChannel</a>();</p>
+<div class="description">
+<p>Creates the <a href="Poco.FileChannel.html" title="class Poco::FileChannel">FileChannel</a>. </p>
+</div>
+<h3><a id="12480">FileChannel</a></h3>
+<p class="decl"><a href="Poco.FileChannel.html" title="class Poco::FileChannel">FileChannel</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; path<br />);</p>
+<div class="description">
+<p>Creates the <a href="Poco.FileChannel.html" title="class Poco::FileChannel">FileChannel</a> for a file with the given path. </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="12503">~FileChannel</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">~<a href="Poco.FileChannel.html" title="class Poco::FileChannel">FileChannel</a>();</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="12483">close</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">void close();</p>
+<div class="description">
+<p>Closes the <a href="Poco.FileChannel.html" title="class Poco::FileChannel">FileChannel</a>. </p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Channel.html#9020" title="Poco::Channel::close()">Poco::Channel::close()</a></p></div>
+<h3><a id="12491">creationDate</a></h3>
+<p class="decl"><a href="Poco.Timestamp.html" title="class Poco::Timestamp">Timestamp</a> creationDate() const;</p>
+<div class="description">
+<p>Returns the log file's creation date. </p>
+</div>
+<h3><a id="12489">getProperty</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">std::string getProperty(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; name<br />) const;</p>
+<div class="description">
+<p>Returns the value of the property with the given name. See <a href="Poco.FileChannel.html#12486" title="Poco::FileChannel::setProperty()">setProperty</a>() for a description of the supported properties. </p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Channel.html#9026" title="Poco::Channel::getProperty()">Poco::Channel::getProperty()</a></p></div>
+<h3><a id="12484">log</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">void log(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Message.html" title="class Poco::Message">Message</a> &amp; msg<br />);</p>
+<div class="description">
+<p>Logs the given message to the file. </p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Channel.html#9021" title="Poco::Channel::log()">Poco::Channel::log()</a></p></div>
+<h3><a id="12482">open</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">void open();</p>
+<div class="description">
+<p>Opens the <a href="Poco.FileChannel.html" title="class Poco::FileChannel">FileChannel</a> and creates the log file if necessary. </p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Channel.html#9019" title="Poco::Channel::open()">Poco::Channel::open()</a></p></div>
+<h3><a id="12493">path</a></h3>
+<p class="decl">const std::string &amp; path() const;</p>
+<div class="description">
+<p>Returns the log file's path. </p>
+</div>
+<h3><a id="12486">setProperty</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">void setProperty(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; name,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; value<br />);</p>
+<div class="description">
+<p>Sets the property with the given name.  </p>
+<p>The following properties are supported: </p>
+<ul>
+<li>path:         The log file's path. </li>
+<li>rotation:     The log file's rotation mode. See the  <a href="Poco.FileChannel.html" title="class Poco::FileChannel">FileChannel</a> class for details. </li>
+<li>archive:      The log file's archive mode. See the <a href="Poco.FileChannel.html" title="class Poco::FileChannel">FileChannel</a> class for details. </li>
+<li>times:        The log file's time mode. See the <a href="Poco.FileChannel.html" title="class Poco::FileChannel">FileChannel</a> class for details. </li>
+<li>compress:     Enable or disable compression of archived files. See the <a href="Poco.FileChannel.html" title="class Poco::FileChannel">FileChannel</a> class for details. </li>
+<li>purgeAge:     Maximum age of an archived log file before it is purged. See the <a href="Poco.FileChannel.html" title="class Poco::FileChannel">FileChannel</a> class for details. </li>
+<li>purgeCount:   Maximum number of archived log files before files are purged. See the <a href="Poco.FileChannel.html" title="class Poco::FileChannel">FileChannel</a> class for details. </li>
+<li>flush:        Specifies whether messages are immediately flushed to the log file. See the <a href="Poco.FileChannel.html" title="class Poco::FileChannel">FileChannel</a> class for details. </li>
+<li>rotateOnOpen: Specifies whether an existing log file should be  rotated and archived when the channel is opened. </li>
+</ul>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Channel.html#9023" title="Poco::Channel::setProperty()">Poco::Channel::setProperty()</a></p></div>
+<h3><a id="12492">size</a></h3>
+<p class="decl"><a href="Poco.html#18385" title="Poco::UInt64">UInt64</a> size() const;</p>
+<div class="description">
+<p>Returns the log file's current size in bytes. </p>
+</div>
+<h3><a id="12518">purge</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">void purge();</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="12506">setArchive</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">void setArchive(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; archive<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="12508">setCompress</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">void setCompress(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; compress<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="12514">setFlush</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">void setFlush(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; flush<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="12510">setPurgeAge</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">void setPurgeAge(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; age<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="12512">setPurgeCount</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">void setPurgeCount(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; count<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="12516">setRotateOnOpen</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">void setRotateOnOpen(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; rotateOnOpen<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="12504">setRotation</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">void setRotation(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; rotation<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Variables</h2>
+<h3><a id="12496">PROP_ARCHIVE</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static const std::string <a href="Poco.FileChannel.html#12496" title="Poco::FileChannel::PROP_ARCHIVE">PROP_ARCHIVE</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="12498">PROP_COMPRESS</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static const std::string <a href="Poco.FileChannel.html#12498" title="Poco::FileChannel::PROP_COMPRESS">PROP_COMPRESS</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="12501">PROP_FLUSH</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static const std::string <a href="Poco.FileChannel.html#12501" title="Poco::FileChannel::PROP_FLUSH">PROP_FLUSH</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="12494">PROP_PATH</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static const std::string <a href="Poco.FileChannel.html#12494" title="Poco::FileChannel::PROP_PATH">PROP_PATH</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="12499">PROP_PURGEAGE</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static const std::string <a href="Poco.FileChannel.html#12499" title="Poco::FileChannel::PROP_PURGEAGE">PROP_PURGEAGE</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="12500">PROP_PURGECOUNT</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static const std::string <a href="Poco.FileChannel.html#12500" title="Poco::FileChannel::PROP_PURGECOUNT">PROP_PURGECOUNT</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="12502">PROP_ROTATEONOPEN</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static const std::string <a href="Poco.FileChannel.html#12502" title="Poco::FileChannel::PROP_ROTATEONOPEN">PROP_ROTATEONOPEN</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="12495">PROP_ROTATION</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static const std::string <a href="Poco.FileChannel.html#12495" title="Poco::FileChannel::PROP_ROTATION">PROP_ROTATION</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="12497">PROP_TIMES</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static const std::string <a href="Poco.FileChannel.html#12497" title="Poco::FileChannel::PROP_TIMES">PROP_TIMES</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

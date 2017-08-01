@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::Net::PrivateKeyFactory</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.Net.html" class="namespace">Poco::Net</a></h1>
+<h1 class="symbol">class PrivateKeyFactory</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-NetSSL_OpenSSL" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> NetSSL_OpenSSL<br />
+<b>Package:</b> SSLCore<br />
+<b>Header:</b> Poco/Net/PrivateKeyFactory.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>A <a href="Poco.Net.PrivateKeyFactory.html" title="class Poco::Net::PrivateKeyFactory">PrivateKeyFactory</a> is responsible for creating PrivateKeyPassphraseHandlers. </p>
+<p>You don't need to access this class directly. Use the macro </p>
+<pre>POCO_REGISTER_KEYFACTORY(namespace, PrivateKeyPassphraseHandlerName) 
+</pre>
+<p>instead (see the documentation of <a href="Poco.Net.PrivateKeyPassphraseHandler.html" title="class Poco::Net::PrivateKeyPassphraseHandler">PrivateKeyPassphraseHandler</a> for an example). </p>
+</div>
+<h2>Inheritance</h2>
+<p><b>Known Derived Classes: </b><a href="Poco.Net.PrivateKeyFactoryImpl.html" title="class Poco::Net::PrivateKeyFactoryImpl">PrivateKeyFactoryImpl</a></p>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.Net.PrivateKeyFactory.html#25627" title="Poco::Net::PrivateKeyFactory::create()">create</a></p>
+<h2>Constructors</h2>
+<h3><a id="25625">PrivateKeyFactory</a></h3>
+<p class="decl"><a href="Poco.Net.PrivateKeyFactory.html" title="class Poco::Net::PrivateKeyFactory">PrivateKeyFactory</a>();</p>
+<div class="description">
+<p>Creates the <a href="Poco.Net.PrivateKeyFactory.html" title="class Poco::Net::PrivateKeyFactory">PrivateKeyFactory</a>. </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="25626">~PrivateKeyFactory</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual ~<a href="Poco.Net.PrivateKeyFactory.html" title="class Poco::Net::PrivateKeyFactory">PrivateKeyFactory</a>();</p>
+<div class="description">
+<p>Destroys the <a href="Poco.Net.PrivateKeyFactory.html" title="class Poco::Net::PrivateKeyFactory">PrivateKeyFactory</a>. </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="25627">create</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual <a href="Poco.Net.PrivateKeyPassphraseHandler.html" title="class Poco::Net::PrivateKeyPassphraseHandler">PrivateKeyPassphraseHandler</a> * create(<br />&nbsp;&nbsp;&nbsp;&nbsp;bool onServer<br />) const = 0;</p>
+<div class="description">
+<p>Creates a new <a href="Poco.Net.PrivateKeyPassphraseHandler.html" title="class Poco::Net::PrivateKeyPassphraseHandler">PrivateKeyPassphraseHandler</a> </p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

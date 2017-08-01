@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::Net::HTTPSessionFactory</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.Net.html" class="namespace">Poco::Net</a></h1>
+<h1 class="symbol">class HTTPSessionFactory</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Net" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Net<br />
+<b>Package:</b> HTTPClient<br />
+<b>Header:</b> Poco/Net/HTTPSessionFactory.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>A factory for <a href="Poco.Net.HTTPClientSession.html" title="class Poco::Net::HTTPClientSession">HTTPClientSession</a> objects. </p>
+<p>Given a <a href="Poco.URI.html" title="class Poco::URI">URI</a>, this class creates a <a href="Poco.Net.HTTPClientSession.html" title="class Poco::Net::HTTPClientSession">HTTPClientSession</a> (for http) or a <a href="Poco.Net.HTTPSClientSession.html" title="class Poco::Net::HTTPSClientSession">HTTPSClientSession</a> (for https) for accessing the <a href="Poco.URI.html" title="class Poco::URI">URI</a>. </p>
+<p>The actual work of creating the session is done by <a href="Poco.Net.HTTPSessionInstantiator.html" title="class Poco::Net::HTTPSessionInstantiator">HTTPSessionInstantiator</a> objects that must be registered with a <a href="Poco.Net.HTTPSessionFactory.html" title="class Poco::Net::HTTPSessionFactory">HTTPSessionFactory</a>. </p>
+</div>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.Net.HTTPSessionFactory.html#21906" title="Poco::Net::HTTPSessionFactory::createClientSession()">createClientSession</a>, <a href="Poco.Net.HTTPSessionFactory.html#21918" title="Poco::Net::HTTPSessionFactory::defaultFactory()">defaultFactory</a>, <a href="Poco.Net.HTTPSessionFactory.html#21908" title="Poco::Net::HTTPSessionFactory::proxyHost()">proxyHost</a>, <a href="Poco.Net.HTTPSessionFactory.html#21917" title="Poco::Net::HTTPSessionFactory::proxyPassword()">proxyPassword</a>, <a href="Poco.Net.HTTPSessionFactory.html#21909" title="Poco::Net::HTTPSessionFactory::proxyPort()">proxyPort</a>, <a href="Poco.Net.HTTPSessionFactory.html#21916" title="Poco::Net::HTTPSessionFactory::proxyUsername()">proxyUsername</a>, <a href="Poco.Net.HTTPSessionFactory.html#21899" title="Poco::Net::HTTPSessionFactory::registerProtocol()">registerProtocol</a>, <a href="Poco.Net.HTTPSessionFactory.html#21910" title="Poco::Net::HTTPSessionFactory::setProxy()">setProxy</a>, <a href="Poco.Net.HTTPSessionFactory.html#21913" title="Poco::Net::HTTPSessionFactory::setProxyCredentials()">setProxyCredentials</a>, <a href="Poco.Net.HTTPSessionFactory.html#21904" title="Poco::Net::HTTPSessionFactory::supportsProtocol()">supportsProtocol</a>, <a href="Poco.Net.HTTPSessionFactory.html#21902" title="Poco::Net::HTTPSessionFactory::unregisterProtocol()">unregisterProtocol</a></p>
+<h2>Constructors</h2>
+<h3><a id="21894">HTTPSessionFactory</a></h3>
+<p class="decl"><a href="Poco.Net.HTTPSessionFactory.html" title="class Poco::Net::HTTPSessionFactory">HTTPSessionFactory</a>();</p>
+<div class="description">
+<p>Creates the <a href="Poco.Net.HTTPSessionFactory.html" title="class Poco::Net::HTTPSessionFactory">HTTPSessionFactory</a>. </p>
+</div>
+<h3><a id="21895">HTTPSessionFactory</a></h3>
+<p class="decl"><a href="Poco.Net.HTTPSessionFactory.html" title="class Poco::Net::HTTPSessionFactory">HTTPSessionFactory</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; proxyHost,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.html#18379" title="Poco::UInt16">Poco::UInt16</a> proxyPort<br />);</p>
+<div class="description">
+<p>Creates the <a href="Poco.Net.HTTPSessionFactory.html" title="class Poco::Net::HTTPSessionFactory">HTTPSessionFactory</a> and sets the proxy host and port. </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="21898">~HTTPSessionFactory</a></h3>
+<p class="decl">~<a href="Poco.Net.HTTPSessionFactory.html" title="class Poco::Net::HTTPSessionFactory">HTTPSessionFactory</a>();</p>
+<div class="description">
+<p>Destroys the <a href="Poco.Net.HTTPSessionFactory.html" title="class Poco::Net::HTTPSessionFactory">HTTPSessionFactory</a>. </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="21906">createClientSession</a></h3>
+<p class="decl"><a href="Poco.Net.HTTPClientSession.html" title="class Poco::Net::HTTPClientSession">HTTPClientSession</a> * createClientSession(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.URI.html" title="class Poco::URI">Poco::URI</a> &amp; uri<br />);</p>
+<div class="description">
+<p>Creates a client session for the given uri scheme. Throws exception if no factory is registered for the given scheme </p>
+</div>
+<h3><a id="21918">defaultFactory</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static <a href="Poco.Net.HTTPSessionFactory.html" title="class Poco::Net::HTTPSessionFactory">HTTPSessionFactory</a> &amp; defaultFactory();</p>
+<div class="description">
+<p>Returns the default <a href="Poco.Net.HTTPSessionFactory.html" title="class Poco::Net::HTTPSessionFactory">HTTPSessionFactory</a>. </p>
+</div>
+<h3><a id="21908">proxyHost</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">const std::string &amp; proxyHost() const;</p>
+<div class="description">
+<p>Returns the proxy host, if one has been set, or an empty string otherwise. </p>
+</div>
+<h3><a id="21917">proxyPassword</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">const std::string &amp; proxyPassword() const;</p>
+<div class="description">
+<p>Returns the password for proxy authorization. </p>
+</div>
+<h3><a id="21909">proxyPort</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.html#18379" title="Poco::UInt16">Poco::UInt16</a> proxyPort() const;</p>
+<div class="description">
+<p>Returns the proxy port number, if one has been set, or zero otherwise. </p>
+</div>
+<h3><a id="21916">proxyUsername</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">const std::string &amp; proxyUsername() const;</p>
+<div class="description">
+<p>Returns the username for proxy authorization. </p>
+</div>
+<h3><a id="21899">registerProtocol</a></h3>
+<p class="decl">void registerProtocol(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; protocol,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Net.HTTPSessionInstantiator.html" title="class Poco::Net::HTTPSessionInstantiator">HTTPSessionInstantiator</a> * pSessionInstantiator<br />);</p>
+<div class="description">
+<p>Registers the session instantiator for the given protocol. The factory takes ownership of the SessionInstantiator. </p>
+<p>A protocol can be registered more than once. However, only the instantiator that has been registered first is used. Also, for each call to <a href="Poco.Net.HTTPSessionFactory.html#21899" title="Poco::Net::HTTPSessionFactory::registerProtocol()">registerProtocol</a>(), a corresponding call to <a href="Poco.Net.HTTPSessionFactory.html#21902" title="Poco::Net::HTTPSessionFactory::unregisterProtocol()">unregisterProtocol</a>() must be made. </p>
+</div>
+<h3><a id="21910">setProxy</a></h3>
+<p class="decl">void setProxy(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; proxyHost,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.html#18379" title="Poco::UInt16">Poco::UInt16</a> proxyPort<br />);</p>
+<div class="description">
+<p>Sets the proxy host and port number. </p>
+</div>
+<h3><a id="21913">setProxyCredentials</a></h3>
+<p class="decl">void setProxyCredentials(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; username,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; password<br />);</p>
+<div class="description">
+<p>Sets the username and password for proxy authorization (Basic auth only). </p>
+</div>
+<h3><a id="21904">supportsProtocol</a></h3>
+<p class="decl">bool supportsProtocol(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; protocol<br />);</p>
+<div class="description">
+<p>Returns true if a session instantiator for the given protocol has been registered. </p>
+</div>
+<h3><a id="21902">unregisterProtocol</a></h3>
+<p class="decl">void unregisterProtocol(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; protocol<br />);</p>
+<div class="description">
+<p>Removes the registration of a protocol. </p>
+<p>Throws a <a href="Poco.NotFoundException.html" title="class Poco::NotFoundException">NotFoundException</a> if no instantiator has been registered for the given protocol. </p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

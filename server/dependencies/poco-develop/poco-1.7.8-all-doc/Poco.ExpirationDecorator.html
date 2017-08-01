@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::ExpirationDecorator</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.html" class="namespace">Poco</a></h1>
+<h1 class="template">template &lt; typename TArgs &gt;</h1>
+<h1 class="symbol">class ExpirationDecorator</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Foundation" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Foundation<br />
+<b>Package:</b> Events<br />
+<b>Header:</b> Poco/ExpirationDecorator.h</p>
+<h2>Description</h2>
+<div class="description">
+<p><a href="Poco.ExpirationDecorator.html" title="class Poco::ExpirationDecorator">ExpirationDecorator</a> adds an expiration method to values so that they can be used with the <a href="Poco.UniqueExpireCache.html" title="class Poco::UniqueExpireCache">UniqueExpireCache</a>. </p>
+</div>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.ExpirationDecorator.html#12120" title="Poco::ExpirationDecorator::getExpiration()">getExpiration</a>, <a href="Poco.ExpirationDecorator.html#12121" title="Poco::ExpirationDecorator::value()">value</a></p>
+<h2>Constructors</h2>
+<h3><a id="12109">ExpirationDecorator</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.ExpirationDecorator.html" title="class Poco::ExpirationDecorator">ExpirationDecorator</a>();</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="12110">ExpirationDecorator</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.ExpirationDecorator.html" title="class Poco::ExpirationDecorator">ExpirationDecorator</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const TArgs &amp; p,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Timespan.html#18072" title="Poco::Timespan::TimeDiff">Poco::Timespan::TimeDiff</a> &amp; diffInMs<br />);</p>
+<div class="description">
+<p>Creates an element that will expire in diff milliseconds </p>
+</div>
+<h3><a id="12113">ExpirationDecorator</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.ExpirationDecorator.html" title="class Poco::ExpirationDecorator">ExpirationDecorator</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const TArgs &amp; p,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Timespan.html" title="class Poco::Timespan">Poco::Timespan</a> &amp; timeSpan<br />);</p>
+<div class="description">
+<p>Creates an element that will expire after the given timeSpan </p>
+</div>
+<h3><a id="12116">ExpirationDecorator</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.ExpirationDecorator.html" title="class Poco::ExpirationDecorator">ExpirationDecorator</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const TArgs &amp; p,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Timestamp.html" title="class Poco::Timestamp">Poco::Timestamp</a> &amp; timeStamp<br />);</p>
+<div class="description">
+<p>Creates an element that will expire at the given time point </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="12119">~ExpirationDecorator</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">~<a href="Poco.ExpirationDecorator.html" title="class Poco::ExpirationDecorator">ExpirationDecorator</a>();</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="12120">getExpiration</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">const <a href="Poco.Timestamp.html" title="class Poco::Timestamp">Poco::Timestamp</a> &amp; getExpiration() const;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="12121">value</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">const TArgs &amp; value() const;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="12122">value</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">TArgs &amp; value();</p>
+<div class="description">
+<p></p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

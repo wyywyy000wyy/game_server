@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::CountingStreamBuf</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.html" class="namespace">Poco</a></h1>
+<h1 class="symbol">class CountingStreamBuf</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Foundation" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Foundation<br />
+<b>Package:</b> Streams<br />
+<b>Header:</b> Poco/CountingStream.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>This stream buffer counts all characters and lines going through it. </p>
+</div>
+<h2>Inheritance</h2>
+<p><b>Direct Base Classes: </b>UnbufferedStreamBuf</p>
+<p><b>All Base Classes: </b><a href="Poco.html#18987" title="Poco::UnbufferedStreamBuf">UnbufferedStreamBuf</a></p>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.CountingStreamBuf.html#9266" title="Poco::CountingStreamBuf::addChars()">addChars</a>, <a href="Poco.CountingStreamBuf.html#9268" title="Poco::CountingStreamBuf::addLines()">addLines</a>, <a href="Poco.CountingStreamBuf.html#9270" title="Poco::CountingStreamBuf::addPos()">addPos</a>, <a href="Poco.CountingStreamBuf.html#9259" title="Poco::CountingStreamBuf::chars()">chars</a>, <a href="Poco.CountingStreamBuf.html#9265" title="Poco::CountingStreamBuf::getCurrentLineNumber()">getCurrentLineNumber</a>, <a href="Poco.CountingStreamBuf.html#9260" title="Poco::CountingStreamBuf::lines()">lines</a>, <a href="Poco.CountingStreamBuf.html#9261" title="Poco::CountingStreamBuf::pos()">pos</a>, <a href="Poco.CountingStreamBuf.html#9272" title="Poco::CountingStreamBuf::readFromDevice()">readFromDevice</a>, <a href="Poco.CountingStreamBuf.html#9262" title="Poco::CountingStreamBuf::reset()">reset</a>, <a href="Poco.CountingStreamBuf.html#9263" title="Poco::CountingStreamBuf::setCurrentLineNumber()">setCurrentLineNumber</a>, <a href="Poco.CountingStreamBuf.html#9273" title="Poco::CountingStreamBuf::writeToDevice()">writeToDevice</a></p>
+<h2>Constructors</h2>
+<h3><a id="9253">CountingStreamBuf</a></h3>
+<p class="decl"><a href="Poco.CountingStreamBuf.html" title="class Poco::CountingStreamBuf">CountingStreamBuf</a>();</p>
+<div class="description">
+<p>Creates an unconnected <a href="Poco.CountingStreamBuf.html" title="class Poco::CountingStreamBuf">CountingStreamBuf</a>. </p>
+</div>
+<h3><a id="9254">CountingStreamBuf</a></h3>
+<p class="decl"><a href="Poco.CountingStreamBuf.html" title="class Poco::CountingStreamBuf">CountingStreamBuf</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::istream &amp; istr<br />);</p>
+<div class="description">
+<p>Creates the <a href="Poco.CountingStreamBuf.html" title="class Poco::CountingStreamBuf">CountingStreamBuf</a> and connects it to the given input stream. </p>
+</div>
+<h3><a id="9256">CountingStreamBuf</a></h3>
+<p class="decl"><a href="Poco.CountingStreamBuf.html" title="class Poco::CountingStreamBuf">CountingStreamBuf</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::ostream &amp; ostr<br />);</p>
+<div class="description">
+<p>Creates the <a href="Poco.CountingStreamBuf.html" title="class Poco::CountingStreamBuf">CountingStreamBuf</a> and connects it to the given output stream. </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="9258">~CountingStreamBuf</a></h3>
+<p class="decl">~<a href="Poco.CountingStreamBuf.html" title="class Poco::CountingStreamBuf">CountingStreamBuf</a>();</p>
+<div class="description">
+<p>Destroys the CountingStream. </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="9266">addChars</a></h3>
+<p class="decl">void addChars(<br />&nbsp;&nbsp;&nbsp;&nbsp;int chars<br />);</p>
+<div class="description">
+<p>Add to the total number of characters. </p>
+</div>
+<h3><a id="9268">addLines</a></h3>
+<p class="decl">void addLines(<br />&nbsp;&nbsp;&nbsp;&nbsp;int lines<br />);</p>
+<div class="description">
+<p>Add to the total number of lines. </p>
+</div>
+<h3><a id="9270">addPos</a></h3>
+<p class="decl">void addPos(<br />&nbsp;&nbsp;&nbsp;&nbsp;int pos<br />);</p>
+<div class="description">
+<p>Add to the number of characters on the current line. </p>
+</div>
+<h3><a id="9259">chars</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">int chars() const;</p>
+<div class="description">
+<p>Returns the total number of characters. </p>
+</div>
+<h3><a id="9265">getCurrentLineNumber</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">int getCurrentLineNumber() const;</p>
+<div class="description">
+<p>Returns the current line number (same as <a href="Poco.CountingStreamBuf.html#9260" title="Poco::CountingStreamBuf::lines()">lines</a>()). </p>
+</div>
+<h3><a id="9260">lines</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">int lines() const;</p>
+<div class="description">
+<p>Returns the total number of lines. </p>
+</div>
+<h3><a id="9261">pos</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">int pos() const;</p>
+<div class="description">
+<p>Returns the number of characters on the current line. </p>
+</div>
+<h3><a id="9262">reset</a></h3>
+<p class="decl">void reset();</p>
+<div class="description">
+<p>Resets all counters. </p>
+</div>
+<h3><a id="9263">setCurrentLineNumber</a></h3>
+<p class="decl">void setCurrentLineNumber(<br />&nbsp;&nbsp;&nbsp;&nbsp;int line<br />);</p>
+<div class="description">
+<p>Sets the current line number. </p>
+<p>This is mainly useful when parsing C/C++ preprocessed source code containing #line directives. </p>
+</div>
+<h3><a id="9272">readFromDevice</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">int readFromDevice();</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="9273">writeToDevice</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">int writeToDevice(<br />&nbsp;&nbsp;&nbsp;&nbsp;char c<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

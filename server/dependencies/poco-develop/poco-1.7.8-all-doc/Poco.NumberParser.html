@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::NumberParser</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.html" class="namespace">Poco</a></h1>
+<h1 class="symbol">class NumberParser</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Foundation" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Foundation<br />
+<b>Package:</b> Core<br />
+<b>Header:</b> Poco/NumberParser.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>The <a href="Poco.NumberParser.html" title="class Poco::NumberParser">NumberParser</a> class provides static methods for parsing numbers out of strings. </p>
+<p>Note that leading or trailing whitespace is not allowed in the string. <a href="Poco.html#17226" title="Poco::trim()">Poco::trim</a>() or <a href="Poco.html#17228" title="Poco::trimInPlace()">Poco::trimInPlace</a>() can be used to remove leading or trailing whitespace. </p>
+</div>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.NumberParser.html#15512" title="Poco::NumberParser::parse()">parse</a>, <a href="Poco.NumberParser.html#15536" title="Poco::NumberParser::parse64()">parse64</a>, <a href="Poco.NumberParser.html#15569" title="Poco::NumberParser::parseBool()">parseBool</a>, <a href="Poco.NumberParser.html#15560" title="Poco::NumberParser::parseFloat()">parseFloat</a>, <a href="Poco.NumberParser.html#15526" title="Poco::NumberParser::parseHex()">parseHex</a>, <a href="Poco.NumberParser.html#15550" title="Poco::NumberParser::parseHex64()">parseHex64</a>, <a href="Poco.NumberParser.html#15531" title="Poco::NumberParser::parseOct()">parseOct</a>, <a href="Poco.NumberParser.html#15555" title="Poco::NumberParser::parseOct64()">parseOct64</a>, <a href="Poco.NumberParser.html#15519" title="Poco::NumberParser::parseUnsigned()">parseUnsigned</a>, <a href="Poco.NumberParser.html#15543" title="Poco::NumberParser::parseUnsigned64()">parseUnsigned64</a>, <a href="Poco.NumberParser.html#15515" title="Poco::NumberParser::tryParse()">tryParse</a>, <a href="Poco.NumberParser.html#15539" title="Poco::NumberParser::tryParse64()">tryParse64</a>, <a href="Poco.NumberParser.html#15571" title="Poco::NumberParser::tryParseBool()">tryParseBool</a>, <a href="Poco.NumberParser.html#15564" title="Poco::NumberParser::tryParseFloat()">tryParseFloat</a>, <a href="Poco.NumberParser.html#15528" title="Poco::NumberParser::tryParseHex()">tryParseHex</a>, <a href="Poco.NumberParser.html#15552" title="Poco::NumberParser::tryParseHex64()">tryParseHex64</a>, <a href="Poco.NumberParser.html#15533" title="Poco::NumberParser::tryParseOct()">tryParseOct</a>, <a href="Poco.NumberParser.html#15557" title="Poco::NumberParser::tryParseOct64()">tryParseOct64</a>, <a href="Poco.NumberParser.html#15522" title="Poco::NumberParser::tryParseUnsigned()">tryParseUnsigned</a>, <a href="Poco.NumberParser.html#15546" title="Poco::NumberParser::tryParseUnsigned64()">tryParseUnsigned64</a></p>
+<h2>Member Functions</h2>
+<h3><a id="15512">parse</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static int parse(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; s,<br />&nbsp;&nbsp;&nbsp;&nbsp;char thousandSeparator = ','<br />);</p>
+<div class="description">
+<p>Parses an integer value in decimal notation from the given string. Throws a <a href="Poco.SyntaxException.html" title="class Poco::SyntaxException">SyntaxException</a> if the string does not hold a number in decimal notation. </p>
+</div>
+<h3><a id="15536">parse64</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static <a href="Poco.html#18384" title="Poco::Int64">Int64</a> parse64(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; s,<br />&nbsp;&nbsp;&nbsp;&nbsp;char thousandSeparator = ','<br />);</p>
+<div class="description">
+<p>Parses a 64-bit integer value in decimal notation from the given string. Throws a <a href="Poco.SyntaxException.html" title="class Poco::SyntaxException">SyntaxException</a> if the string does not hold a number in decimal notation. </p>
+</div>
+<h3><a id="15569">parseBool</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static bool parseBool(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; s<br />);</p>
+<div class="description">
+<p>Parses a bool value in decimal or string notation from the given string. Valid forms are: &quot;0&quot;, &quot;1&quot;, &quot;true&quot;, &quot;on&quot;, false&quot;, &quot;yes&quot;, &quot;no&quot;, &quot;off&quot;. String forms are NOT case sensitive. Throws a <a href="Poco.SyntaxException.html" title="class Poco::SyntaxException">SyntaxException</a> if the string does not hold a valid bool number </p>
+</div>
+<h3><a id="15560">parseFloat</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static double parseFloat(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; s,<br />&nbsp;&nbsp;&nbsp;&nbsp;char decimalSeparator = '.',<br />&nbsp;&nbsp;&nbsp;&nbsp;char thousandSeparator = ','<br />);</p>
+<div class="description">
+<p>Parses a double value in decimal floating point notation from the given string. Throws a <a href="Poco.SyntaxException.html" title="class Poco::SyntaxException">SyntaxException</a> if the string does not hold a floating-point  number in decimal notation. </p>
+</div>
+<h3><a id="15526">parseHex</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static unsigned parseHex(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; s<br />);</p>
+<div class="description">
+<p>Parses an integer value in hexadecimal notation from the given string. Throws a <a href="Poco.SyntaxException.html" title="class Poco::SyntaxException">SyntaxException</a> if the string does not hold a number in hexadecimal notation. </p>
+</div>
+<h3><a id="15550">parseHex64</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static <a href="Poco.html#18385" title="Poco::UInt64">UInt64</a> parseHex64(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; s<br />);</p>
+<div class="description">
+<p>Parses a 64 bit-integer value in hexadecimal notation from the given string. Throws a <a href="Poco.SyntaxException.html" title="class Poco::SyntaxException">SyntaxException</a> if the string does not hold a number in hexadecimal notation. </p>
+</div>
+<h3><a id="15531">parseOct</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static unsigned parseOct(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; s<br />);</p>
+<div class="description">
+<p>Parses an integer value in octal notation from the given string. Throws a <a href="Poco.SyntaxException.html" title="class Poco::SyntaxException">SyntaxException</a> if the string does not hold a number in hexadecimal notation. </p>
+</div>
+<h3><a id="15555">parseOct64</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static <a href="Poco.html#18385" title="Poco::UInt64">UInt64</a> parseOct64(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; s<br />);</p>
+<div class="description">
+<p>Parses a 64 bit-integer value in octal notation from the given string. Throws a <a href="Poco.SyntaxException.html" title="class Poco::SyntaxException">SyntaxException</a> if the string does not hold a number in hexadecimal notation. </p>
+</div>
+<h3><a id="15519">parseUnsigned</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static unsigned parseUnsigned(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; s,<br />&nbsp;&nbsp;&nbsp;&nbsp;char thousandSeparator = ','<br />);</p>
+<div class="description">
+<p>Parses an unsigned integer value in decimal notation from the given string. Throws a <a href="Poco.SyntaxException.html" title="class Poco::SyntaxException">SyntaxException</a> if the string does not hold a number in decimal notation. </p>
+</div>
+<h3><a id="15543">parseUnsigned64</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static <a href="Poco.html#18385" title="Poco::UInt64">UInt64</a> parseUnsigned64(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; s,<br />&nbsp;&nbsp;&nbsp;&nbsp;char thousandSeparator = ','<br />);</p>
+<div class="description">
+<p>Parses an unsigned 64-bit integer value in decimal notation from the given string. Throws a <a href="Poco.SyntaxException.html" title="class Poco::SyntaxException">SyntaxException</a> if the string does not hold a number in decimal notation. </p>
+</div>
+<h3><a id="15515">tryParse</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static bool tryParse(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; s,<br />&nbsp;&nbsp;&nbsp;&nbsp;int &amp; value,<br />&nbsp;&nbsp;&nbsp;&nbsp;char thousandSeparator = ','<br />);</p>
+<div class="description">
+<p>Parses an integer value in decimal notation from the given string. Returns true if a valid integer has been found, false otherwise.  If parsing was not successful, value is undefined. </p>
+</div>
+<h3><a id="15539">tryParse64</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static bool tryParse64(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; s,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.html#18384" title="Poco::Int64">Int64</a> &amp; value,<br />&nbsp;&nbsp;&nbsp;&nbsp;char thousandSeparator = ','<br />);</p>
+<div class="description">
+<p>Parses a 64-bit integer value in decimal notation from the given string. Returns true if a valid integer has been found, false otherwise.  If parsing was not successful, value is undefined. </p>
+</div>
+<h3><a id="15571">tryParseBool</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static bool tryParseBool(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; s,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool &amp; value<br />);</p>
+<div class="description">
+<p>Parses a bool value in decimal or string notation from the given string. Valid forms are: &quot;0&quot;, &quot;1&quot;, &quot;true&quot;, &quot;on&quot;, false&quot;, &quot;yes&quot;, &quot;no&quot;, &quot;off&quot;. String forms are NOT case sensitive. Returns true if a valid bool number has been found, false otherwise. If parsing was not successful, value is undefined. </p>
+</div>
+<h3><a id="15564">tryParseFloat</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static bool tryParseFloat(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; s,<br />&nbsp;&nbsp;&nbsp;&nbsp;double &amp; value,<br />&nbsp;&nbsp;&nbsp;&nbsp;char decimalSeparator = '.',<br />&nbsp;&nbsp;&nbsp;&nbsp;char thousandSeparator = ','<br />);</p>
+<div class="description">
+<p>Parses a double value in decimal floating point notation from the given string. Returns true if a valid floating point number has been found, false otherwise. If parsing was not successful, value is undefined. </p>
+</div>
+<h3><a id="15528">tryParseHex</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static bool tryParseHex(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; s,<br />&nbsp;&nbsp;&nbsp;&nbsp;unsigned &amp; value<br />);</p>
+<div class="description">
+<p>Parses an unsigned integer value in hexadecimal notation from the given string. Returns true if a valid integer has been found, false otherwise.  If parsing was not successful, value is undefined. </p>
+</div>
+<h3><a id="15552">tryParseHex64</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static bool tryParseHex64(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; s,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.html#18385" title="Poco::UInt64">UInt64</a> &amp; value<br />);</p>
+<div class="description">
+<p>Parses an unsigned 64-bit integer value in hexadecimal notation from the given string. Returns true if a valid integer has been found, false otherwise.  If parsing was not successful, value is undefined. </p>
+</div>
+<h3><a id="15533">tryParseOct</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static bool tryParseOct(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; s,<br />&nbsp;&nbsp;&nbsp;&nbsp;unsigned &amp; value<br />);</p>
+<div class="description">
+<p>Parses an unsigned integer value in octal notation from the given string. Returns true if a valid integer has been found, false otherwise.  If parsing was not successful, value is undefined. </p>
+</div>
+<h3><a id="15557">tryParseOct64</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static bool tryParseOct64(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; s,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.html#18385" title="Poco::UInt64">UInt64</a> &amp; value<br />);</p>
+<div class="description">
+<p>Parses an unsigned 64-bit integer value in octal notation from the given string. Returns true if a valid integer has been found, false otherwise.  If parsing was not successful, value is undefined. </p>
+</div>
+<h3><a id="15522">tryParseUnsigned</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static bool tryParseUnsigned(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; s,<br />&nbsp;&nbsp;&nbsp;&nbsp;unsigned &amp; value,<br />&nbsp;&nbsp;&nbsp;&nbsp;char thousandSeparator = ','<br />);</p>
+<div class="description">
+<p>Parses an unsigned integer value in decimal notation from the given string. Returns true if a valid integer has been found, false otherwise.  If parsing was not successful, value is undefined. </p>
+</div>
+<h3><a id="15546">tryParseUnsigned64</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static bool tryParseUnsigned64(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; s,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.html#18385" title="Poco::UInt64">UInt64</a> &amp; value,<br />&nbsp;&nbsp;&nbsp;&nbsp;char thousandSeparator = ','<br />);</p>
+<div class="description">
+<p>Parses an unsigned 64-bit integer value in decimal notation from the given string. Returns true if a valid integer has been found, false otherwise.  If parsing was not successful, value is undefined. </p>
+</div>
+<h2>Variables</h2>
+<h3><a id="15510">NUM_BASE_DEC</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static const unsigned short <a href="Poco.NumberParser.html#15510" title="Poco::NumberParser::NUM_BASE_DEC">NUM_BASE_DEC</a> = 10;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="15511">NUM_BASE_HEX</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static const unsigned short <a href="Poco.NumberParser.html#15511" title="Poco::NumberParser::NUM_BASE_HEX">NUM_BASE_HEX</a> = 0x10;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="15509">NUM_BASE_OCT</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static const unsigned short <a href="Poco.NumberParser.html#15509" title="Poco::NumberParser::NUM_BASE_OCT">NUM_BASE_OCT</a> = 010;</p>
+<div class="description">
+<p></p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

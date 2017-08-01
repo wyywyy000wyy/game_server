@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::Ascii</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.html" class="namespace">Poco</a></h1>
+<h1 class="symbol">class Ascii</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Foundation" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Foundation<br />
+<b>Package:</b> Core<br />
+<b>Header:</b> Poco/Ascii.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>This class contains enumerations and static utility functions for dealing with ASCII characters and their properties. </p>
+<p>The classification functions will also work if non-ASCII character codes are passed to them, but classification will only check for ASCII characters. </p>
+<p>This allows the classification methods to be used on the single bytes of a UTF-8 string, without causing assertions or inconsistent results (depending upon the current locale) on bytes outside the ASCII range, as may be produced by <a href="Poco.Ascii.html#8294" title="Poco::Ascii::isSpace()">Ascii::isSpace</a>(), etc. </p>
+</div>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.Ascii.html#8289" title="Poco::Ascii::hasProperties()">hasProperties</a>, <a href="Poco.Ascii.html#8286" title="Poco::Ascii::hasSomeProperties()">hasSomeProperties</a>, <a href="Poco.Ascii.html#8302" title="Poco::Ascii::isAlpha()">isAlpha</a>, <a href="Poco.Ascii.html#8304" title="Poco::Ascii::isAlphaNumeric()">isAlphaNumeric</a>, <a href="Poco.Ascii.html#8292" title="Poco::Ascii::isAscii()">isAscii</a>, <a href="Poco.Ascii.html#8296" title="Poco::Ascii::isDigit()">isDigit</a>, <a href="Poco.Ascii.html#8298" title="Poco::Ascii::isHexDigit()">isHexDigit</a>, <a href="Poco.Ascii.html#8306" title="Poco::Ascii::isLower()">isLower</a>, <a href="Poco.Ascii.html#8300" title="Poco::Ascii::isPunct()">isPunct</a>, <a href="Poco.Ascii.html#8294" title="Poco::Ascii::isSpace()">isSpace</a>, <a href="Poco.Ascii.html#8308" title="Poco::Ascii::isUpper()">isUpper</a>, <a href="Poco.Ascii.html#8284" title="Poco::Ascii::properties()">properties</a>, <a href="Poco.Ascii.html#8310" title="Poco::Ascii::toLower()">toLower</a>, <a href="Poco.Ascii.html#8312" title="Poco::Ascii::toUpper()">toUpper</a></p>
+<h2>Enumerations</h2>
+<h3><a id="8273">CharacterProperties</a></h3>
+<div class="description">
+<p>ASCII character properties. </p>
+</div>
+<p class="decl"><a id="8274">ACP_CONTROL</a> = 0x0001</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="8275">ACP_SPACE</a> = 0x0002</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="8276">ACP_PUNCT</a> = 0x0004</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="8277">ACP_DIGIT</a> = 0x0008</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="8278">ACP_HEXDIGIT</a> = 0x0010</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="8279">ACP_ALPHA</a> = 0x0020</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="8280">ACP_LOWER</a> = 0x0040</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="8281">ACP_UPPER</a> = 0x0080</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="8282">ACP_GRAPH</a> = 0x0100</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="8283">ACP_PRINT</a> = 0x0200</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="8289">hasProperties</a> <img src="images/static.png" alt="static" title="static" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">static bool hasProperties(<br />&nbsp;&nbsp;&nbsp;&nbsp;int ch,<br />&nbsp;&nbsp;&nbsp;&nbsp;int properties<br />);</p>
+<div class="description">
+<p>Returns true if the given character is within the ASCII range and has all of  the given properties. </p>
+</div>
+<h3><a id="8286">hasSomeProperties</a> <img src="images/static.png" alt="static" title="static" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">static bool hasSomeProperties(<br />&nbsp;&nbsp;&nbsp;&nbsp;int ch,<br />&nbsp;&nbsp;&nbsp;&nbsp;int properties<br />);</p>
+<div class="description">
+<p>Returns true if the given character is within the ASCII range and has at least one of  the given properties. </p>
+</div>
+<h3><a id="8302">isAlpha</a> <img src="images/static.png" alt="static" title="static" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">static bool isAlpha(<br />&nbsp;&nbsp;&nbsp;&nbsp;int ch<br />);</p>
+<div class="description">
+<p>Returns true if and only if the given character is an alphabetic character.	 </p>
+</div>
+<h3><a id="8304">isAlphaNumeric</a> <img src="images/static.png" alt="static" title="static" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">static bool isAlphaNumeric(<br />&nbsp;&nbsp;&nbsp;&nbsp;int ch<br />);</p>
+<div class="description">
+<p>Returns true if and only if the given character is an alphabetic character.	 </p>
+</div>
+<h3><a id="8292">isAscii</a> <img src="images/static.png" alt="static" title="static" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">static bool isAscii(<br />&nbsp;&nbsp;&nbsp;&nbsp;int ch<br />);</p>
+<div class="description">
+<p>Returns true if and only if the given character code is within the ASCII range (0 .. 127). </p>
+</div>
+<h3><a id="8296">isDigit</a> <img src="images/static.png" alt="static" title="static" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">static bool isDigit(<br />&nbsp;&nbsp;&nbsp;&nbsp;int ch<br />);</p>
+<div class="description">
+<p>Returns true if and only if the given character is a digit. </p>
+</div>
+<h3><a id="8298">isHexDigit</a> <img src="images/static.png" alt="static" title="static" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">static bool isHexDigit(<br />&nbsp;&nbsp;&nbsp;&nbsp;int ch<br />);</p>
+<div class="description">
+<p>Returns true if and only if the given character is a hexadecimal digit. </p>
+</div>
+<h3><a id="8306">isLower</a> <img src="images/static.png" alt="static" title="static" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">static bool isLower(<br />&nbsp;&nbsp;&nbsp;&nbsp;int ch<br />);</p>
+<div class="description">
+<p>Returns true if and only if the given character is a lowercase alphabetic character. </p>
+</div>
+<h3><a id="8300">isPunct</a> <img src="images/static.png" alt="static" title="static" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">static bool isPunct(<br />&nbsp;&nbsp;&nbsp;&nbsp;int ch<br />);</p>
+<div class="description">
+<p>Returns true if and only if the given character is a punctuation character. </p>
+</div>
+<h3><a id="8294">isSpace</a> <img src="images/static.png" alt="static" title="static" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">static bool isSpace(<br />&nbsp;&nbsp;&nbsp;&nbsp;int ch<br />);</p>
+<div class="description">
+<p>Returns true if and only if the given character is a whitespace. </p>
+</div>
+<h3><a id="8308">isUpper</a> <img src="images/static.png" alt="static" title="static" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">static bool isUpper(<br />&nbsp;&nbsp;&nbsp;&nbsp;int ch<br />);</p>
+<div class="description">
+<p>Returns true if and only if the given character is an uppercase alphabetic character. </p>
+</div>
+<h3><a id="8284">properties</a> <img src="images/static.png" alt="static" title="static" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">static int properties(<br />&nbsp;&nbsp;&nbsp;&nbsp;int ch<br />);</p>
+<div class="description">
+<p>Return the ASCII character properties for the character with the given ASCII value. </p>
+<p>If the character is outside the ASCII range (0 .. 127), 0 is returned. </p>
+</div>
+<h3><a id="8310">toLower</a> <img src="images/static.png" alt="static" title="static" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">static int toLower(<br />&nbsp;&nbsp;&nbsp;&nbsp;int ch<br />);</p>
+<div class="description">
+<p>If the given character is an uppercase character, return its lowercase counterpart, otherwise return the character. </p>
+</div>
+<h3><a id="8312">toUpper</a> <img src="images/static.png" alt="static" title="static" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">static int toUpper(<br />&nbsp;&nbsp;&nbsp;&nbsp;int ch<br />);</p>
+<div class="description">
+<p>If the given character is a lowercase character, return its uppercase counterpart, otherwise return the character. </p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::Data::ArchiveStrategy</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.Data.html" class="namespace">Poco::Data</a></h1>
+<h1 class="symbol">class ArchiveStrategy</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Data" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Data<br />
+<b>Package:</b> Logging<br />
+<b>Header:</b> Poco/Data/ArchiveStrategy.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>The <a href="Poco.Data.ArchiveStrategy.html" title="class Poco::Data::ArchiveStrategy">ArchiveStrategy</a> is used by <a href="Poco.Data.SQLChannel.html" title="class Poco::Data::SQLChannel">SQLChannel</a> to archive log rows. </p>
+</div>
+<h2>Inheritance</h2>
+<p><b>Known Derived Classes: </b><a href="Poco.Data.ArchiveByAgeStrategy.html" title="class Poco::Data::ArchiveByAgeStrategy">ArchiveByAgeStrategy</a></p>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.Data.ArchiveStrategy.html#5499" title="Poco::Data::ArchiveStrategy::archive()">archive</a>, <a href="Poco.Data.ArchiveStrategy.html#5515" title="Poco::Data::ArchiveStrategy::getCopyStatement()">getCopyStatement</a>, <a href="Poco.Data.ArchiveStrategy.html#5517" title="Poco::Data::ArchiveStrategy::getCountStatement()">getCountStatement</a>, <a href="Poco.Data.ArchiveStrategy.html#5516" title="Poco::Data::ArchiveStrategy::getDeleteStatement()">getDeleteStatement</a>, <a href="Poco.Data.ArchiveStrategy.html#5503" title="Poco::Data::ArchiveStrategy::getDestination()">getDestination</a>, <a href="Poco.Data.ArchiveStrategy.html#5500" title="Poco::Data::ArchiveStrategy::getSource()">getSource</a>, <a href="Poco.Data.ArchiveStrategy.html#5506" title="Poco::Data::ArchiveStrategy::getThreshold()">getThreshold</a>, <a href="Poco.Data.ArchiveStrategy.html#5498" title="Poco::Data::ArchiveStrategy::open()">open</a>, <a href="Poco.Data.ArchiveStrategy.html#5511" title="Poco::Data::ArchiveStrategy::session()">session</a>, <a href="Poco.Data.ArchiveStrategy.html#5512" title="Poco::Data::ArchiveStrategy::setCopyStatement()">setCopyStatement</a>, <a href="Poco.Data.ArchiveStrategy.html#5514" title="Poco::Data::ArchiveStrategy::setCountStatement()">setCountStatement</a>, <a href="Poco.Data.ArchiveStrategy.html#5513" title="Poco::Data::ArchiveStrategy::setDeleteStatement()">setDeleteStatement</a>, <a href="Poco.Data.ArchiveStrategy.html#5504" title="Poco::Data::ArchiveStrategy::setDestination()">setDestination</a>, <a href="Poco.Data.ArchiveStrategy.html#5501" title="Poco::Data::ArchiveStrategy::setSource()">setSource</a>, <a href="Poco.Data.ArchiveStrategy.html#5507" title="Poco::Data::ArchiveStrategy::setThreshold()">setThreshold</a></p>
+<h2>Types</h2>
+<h3><a id="5509">SessionPtr</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">typedef <a href="Poco.SharedPtr.html" title="class Poco::SharedPtr">Poco::SharedPtr</a> &lt; <a href="Poco.Data.Session.html" title="class Poco::Data::Session">Session</a> &gt; <a href="Poco.Data.ArchiveStrategy.html#5509" title="Poco::Data::ArchiveStrategy::SessionPtr">SessionPtr</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="5510">StatementPtr</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">typedef <a href="Poco.SharedPtr.html" title="class Poco::SharedPtr">Poco::SharedPtr</a> &lt; <a href="Poco.Data.Statement.html" title="class Poco::Data::Statement">Statement</a> &gt; <a href="Poco.Data.ArchiveStrategy.html#5510" title="Poco::Data::ArchiveStrategy::StatementPtr">StatementPtr</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Constructors</h2>
+<h3><a id="5492">ArchiveStrategy</a></h3>
+<p class="decl"><a href="Poco.Data.ArchiveStrategy.html" title="class Poco::Data::ArchiveStrategy">ArchiveStrategy</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; connector,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; connect,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; source,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; destination = DEFAULT_ARCHIVE_DESTINATION<br />);</p>
+<div class="description">
+<p>Creates archive strategy. </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="5497">~ArchiveStrategy</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual ~<a href="Poco.Data.ArchiveStrategy.html" title="class Poco::Data::ArchiveStrategy">ArchiveStrategy</a>();</p>
+<div class="description">
+<p>Destroys archive strategy. </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="5499">archive</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void archive() = 0;</p>
+<div class="description">
+<p>Archives the rows. </p>
+</div>
+<h3><a id="5503">getDestination</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">const std::string &amp; getDestination() const;</p>
+<div class="description">
+<p>Returns the name of the destination table for rows to be archived. </p>
+</div>
+<h3><a id="5500">getSource</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">const std::string &amp; getSource() const;</p>
+<div class="description">
+<p>Returns the name of the source table containing rows to be archived. </p>
+</div>
+<h3><a id="5506">getThreshold</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual const std::string &amp; getThreshold() const = 0;</p>
+<div class="description">
+<p>Returns the archive threshold. </p>
+</div>
+<h3><a id="5498">open</a></h3>
+<p class="decl">void open();</p>
+<div class="description">
+<p>Opens the session. </p>
+</div>
+<h3><a id="5504">setDestination</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void setDestination(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; destination<br />);</p>
+<div class="description">
+<p>Sets the name of the destination table. </p>
+</div>
+<h3><a id="5501">setSource</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void setSource(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; source<br />);</p>
+<div class="description">
+<p>Sets the name of the source table. </p>
+</div>
+<h3><a id="5507">setThreshold</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void setThreshold(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; threshold<br />) = 0;</p>
+<div class="description">
+<p>Sets the archive threshold. </p>
+</div>
+<h3><a id="5515">getCopyStatement</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Data.Statement.html" title="class Poco::Data::Statement">Statement</a> &amp; getCopyStatement();</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="5517">getCountStatement</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Data.Statement.html" title="class Poco::Data::Statement">Statement</a> &amp; getCountStatement();</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="5516">getDeleteStatement</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Data.Statement.html" title="class Poco::Data::Statement">Statement</a> &amp; getDeleteStatement();</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="5511">session</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Data.Session.html" title="class Poco::Data::Session">Session</a> &amp; session();</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="5512">setCopyStatement</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void setCopyStatement();</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="5514">setCountStatement</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void setCountStatement();</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="5513">setDeleteStatement</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void setDeleteStatement();</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Variables</h2>
+<h3><a id="5491">DEFAULT_ARCHIVE_DESTINATION</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static const std::string <a href="Poco.Data.ArchiveStrategy.html#5491" title="Poco::Data::ArchiveStrategy::DEFAULT_ARCHIVE_DESTINATION">DEFAULT_ARCHIVE_DESTINATION</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::ClassLoader::Iterator</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.ClassLoader.html" class="namespace">Poco::ClassLoader</a></h1>
+<h1 class="symbol">class Iterator</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Foundation" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Foundation<br />
+<b>Package:</b> SharedLibrary<br />
+<b>Header:</b> Poco/ClassLoader.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>The <a href="Poco.ClassLoader.html" title="class Poco::ClassLoader">ClassLoader</a>'s very own iterator class. </p>
+</div>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.ClassLoader.Iterator.html#9074" title="Poco::ClassLoader::Iterator::operator !=()">operator&nbsp;!=</a>, <a href="Poco.ClassLoader.Iterator.html#9079" title="Poco::ClassLoader::Iterator::operator *()">operator&nbsp;*</a>, <a href="Poco.ClassLoader.Iterator.html#9076" title="Poco::ClassLoader::Iterator::operator ++()">operator&nbsp;++</a>, <a href="Poco.ClassLoader.Iterator.html#9070" title="Poco::ClassLoader::Iterator::operator =()">operator&nbsp;=</a>, <a href="Poco.ClassLoader.Iterator.html#9072" title="Poco::ClassLoader::Iterator::operator ==()">operator&nbsp;==</a>, <a href="Poco.ClassLoader.Iterator.html#9080" title="Poco::ClassLoader::Iterator::operator->()">operator-&gt;</a></p>
+<h2>Types</h2>
+<h3><a id="9064">Pair</a></h3>
+<p class="decl">typedef std::pair &lt; std::string, const <a href="Poco.ClassLoader.html#9054" title="Poco::ClassLoader::Manif">Manif</a> * &gt; <a href="Poco.ClassLoader.Iterator.html#9064" title="Poco::ClassLoader::Iterator::Pair">Pair</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Constructors</h2>
+<h3><a id="9065">Iterator</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.ClassLoader.Iterator.html" title="class Poco::ClassLoader::Iterator">Iterator</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const typename LibraryMap::const_iterator &amp; it<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="9067">Iterator</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.ClassLoader.Iterator.html" title="class Poco::ClassLoader::Iterator">Iterator</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.ClassLoader.Iterator.html" title="class Poco::ClassLoader::Iterator">Iterator</a> &amp; it<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="9069">~Iterator</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">~<a href="Poco.ClassLoader.Iterator.html" title="class Poco::ClassLoader::Iterator">Iterator</a>();</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="9074">operator !=</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">inline bool operator != (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.ClassLoader.Iterator.html" title="class Poco::ClassLoader::Iterator">Iterator</a> &amp; it<br />) const;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="9079">operator *</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">inline const <a href="Poco.ClassLoader.Iterator.html#9064" title="Poco::ClassLoader::Iterator::Pair">Pair</a> * operator * () const;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="9076">operator ++</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.ClassLoader.Iterator.html" title="class Poco::ClassLoader::Iterator">Iterator</a> &amp; operator ++ ();</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="9077">operator ++</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.ClassLoader.Iterator.html" title="class Poco::ClassLoader::Iterator">Iterator</a> operator ++ (<br />&nbsp;&nbsp;&nbsp;&nbsp;int<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="9070">operator =</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.ClassLoader.Iterator.html" title="class Poco::ClassLoader::Iterator">Iterator</a> &amp; operator = (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.ClassLoader.Iterator.html" title="class Poco::ClassLoader::Iterator">Iterator</a> &amp; it<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="9072">operator ==</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">inline bool operator == (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.ClassLoader.Iterator.html" title="class Poco::ClassLoader::Iterator">Iterator</a> &amp; it<br />) const;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="9080">operator-&gt;</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">inline const <a href="Poco.ClassLoader.Iterator.html#9064" title="Poco::ClassLoader::Iterator::Pair">Pair</a> * operator-&gt; () const;</p>
+<div class="description">
+<p></p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

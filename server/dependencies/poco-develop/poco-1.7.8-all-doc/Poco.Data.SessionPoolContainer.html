@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::Data::SessionPoolContainer</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.Data.html" class="namespace">Poco::Data</a></h1>
+<h1 class="symbol">class SessionPoolContainer</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Data" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Data<br />
+<b>Package:</b> SessionPooling<br />
+<b>Header:</b> Poco/Data/SessionPoolContainer.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>This class implements container of session pools. </p>
+</div>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.Data.SessionPoolContainer.html#7237" title="Poco::Data::SessionPoolContainer::add()">add</a>, <a href="Poco.Data.SessionPoolContainer.html#7256" title="Poco::Data::SessionPoolContainer::count()">count</a>, <a href="Poco.Data.SessionPoolContainer.html#7250" title="Poco::Data::SessionPoolContainer::get()">get</a>, <a href="Poco.Data.SessionPoolContainer.html#7252" title="Poco::Data::SessionPoolContainer::getPool()">getPool</a>, <a href="Poco.Data.SessionPoolContainer.html#7245" title="Poco::Data::SessionPoolContainer::has()">has</a>, <a href="Poco.Data.SessionPoolContainer.html#7247" title="Poco::Data::SessionPoolContainer::isActive()">isActive</a>, <a href="Poco.Data.SessionPoolContainer.html#7254" title="Poco::Data::SessionPoolContainer::remove()">remove</a>, <a href="Poco.Data.SessionPoolContainer.html#7257" title="Poco::Data::SessionPoolContainer::shutdown()">shutdown</a></p>
+<h2>Constructors</h2>
+<h3><a id="7235">SessionPoolContainer</a></h3>
+<p class="decl"><a href="Poco.Data.SessionPoolContainer.html" title="class Poco::Data::SessionPoolContainer">SessionPoolContainer</a>();</p>
+<div class="description">
+<p>Creates the <a href="Poco.Data.SessionPoolContainer.html" title="class Poco::Data::SessionPoolContainer">SessionPoolContainer</a> for sessions with the given session parameters. </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="7236">~SessionPoolContainer</a></h3>
+<p class="decl">~<a href="Poco.Data.SessionPoolContainer.html" title="class Poco::Data::SessionPoolContainer">SessionPoolContainer</a>();</p>
+<div class="description">
+<p>Destroys the <a href="Poco.Data.SessionPoolContainer.html" title="class Poco::Data::SessionPoolContainer">SessionPoolContainer</a>. </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="7237">add</a></h3>
+<p class="decl">void add(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Data.SessionPool.html" title="class Poco::Data::SessionPool">SessionPool</a> * pPool<br />);</p>
+<div class="description">
+<p>Adds existing session pool to the container. Throws <a href="Poco.Data.SessionPoolExistsException.html" title="class Poco::Data::SessionPoolExistsException">SessionPoolExistsException</a> if pool already exists. </p>
+</div>
+<h3><a id="7239">add</a></h3>
+<p class="decl"><a href="Poco.Data.Session.html" title="class Poco::Data::Session">Session</a> add(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; sessionKey,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; connectionString,<br />&nbsp;&nbsp;&nbsp;&nbsp;int minSessions = 1,<br />&nbsp;&nbsp;&nbsp;&nbsp;int maxSessions = 32,<br />&nbsp;&nbsp;&nbsp;&nbsp;int idleTime = 60<br />);</p>
+<div class="description">
+<p>Adds a new session pool to the container and returns a <a href="Poco.Data.Session.html" title="class Poco::Data::Session">Session</a> from newly created pool. If pool already exists, request to add is silently ignored and session is returned from the existing pool. </p>
+</div>
+<h3><a id="7256">count</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">int count() const;</p>
+<div class="description">
+<p>Returns the number of session pols in the container. </p>
+</div>
+<h3><a id="7250">get</a></h3>
+<p class="decl"><a href="Poco.Data.Session.html" title="class Poco::Data::Session">Session</a> get(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; name<br />);</p>
+<div class="description">
+<p>Returns the requested <a href="Poco.Data.Session.html" title="class Poco::Data::Session">Session</a>. Throws <a href="Poco.NotFoundException.html" title="class Poco::NotFoundException">NotFoundException</a> if session is not found. </p>
+</div>
+<h3><a id="7252">getPool</a></h3>
+<p class="decl"><a href="Poco.Data.SessionPool.html" title="class Poco::Data::SessionPool">SessionPool</a> &amp; getPool(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; name<br />);</p>
+<div class="description">
+<p>Returns a <a href="Poco.Data.SessionPool.html" title="class Poco::Data::SessionPool">SessionPool</a> reference. Throws <a href="Poco.NotFoundException.html" title="class Poco::NotFoundException">NotFoundException</a> if session is not found. </p>
+</div>
+<h3><a id="7245">has</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool has(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; name<br />) const;</p>
+<div class="description">
+<p>Returns true if the requested name exists, false otherwise. </p>
+</div>
+<h3><a id="7247">isActive</a></h3>
+<p class="decl">bool isActive(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; sessionKey,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; connectionString = ""<br />) const;</p>
+<div class="description">
+<p>Returns true if the session is active (i.e. not shut down). If connectionString is empty string, sessionKey must be a  fully qualified session name as registered with the pool container. </p>
+</div>
+<h3><a id="7254">remove</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void remove(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; name<br />);</p>
+<div class="description">
+<p>Removes a <a href="Poco.Data.SessionPool.html" title="class Poco::Data::SessionPool">SessionPool</a>. </p>
+</div>
+<h3><a id="7257">shutdown</a></h3>
+<p class="decl">void shutdown();</p>
+<div class="description">
+<p>Shuts down all the held pools. </p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

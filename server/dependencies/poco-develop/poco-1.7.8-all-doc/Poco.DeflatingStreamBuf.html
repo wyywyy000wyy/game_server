@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::DeflatingStreamBuf</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.html" class="namespace">Poco</a></h1>
+<h1 class="symbol">class DeflatingStreamBuf</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Foundation" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Foundation<br />
+<b>Package:</b> Streams<br />
+<b>Header:</b> Poco/DeflatingStream.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>This is the streambuf class used by <a href="Poco.DeflatingInputStream.html" title="class Poco::DeflatingInputStream">DeflatingInputStream</a> and <a href="Poco.DeflatingOutputStream.html" title="class Poco::DeflatingOutputStream">DeflatingOutputStream</a>. The actual work is delegated to zlib (see <a href="http://zlib.net" target="_blank">http://zlib.net</a>). Both zlib (deflate) streams and gzip streams are supported. Output streams should always call <a href="Poco.DeflatingStreamBuf.html#9619" title="Poco::DeflatingStreamBuf::close()">close</a>() to ensure proper completion of compression. A compression level (0 to 9) can be specified in the constructor. </p>
+</div>
+<h2>Inheritance</h2>
+<p><b>Direct Base Classes: </b>BufferedStreamBuf</p>
+<p><b>All Base Classes: </b><a href="Poco.html#8898" title="Poco::BufferedStreamBuf">BufferedStreamBuf</a></p>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.DeflatingStreamBuf.html#9619" title="Poco::DeflatingStreamBuf::close()">close</a>, <a href="Poco.DeflatingStreamBuf.html#9620" title="Poco::DeflatingStreamBuf::readFromDevice()">readFromDevice</a>, <a href="Poco.DeflatingStreamBuf.html#9626" title="Poco::DeflatingStreamBuf::sync()">sync</a>, <a href="Poco.DeflatingStreamBuf.html#9623" title="Poco::DeflatingStreamBuf::writeToDevice()">writeToDevice</a></p>
+<h2>Enumerations</h2>
+<h3><a id="9599">StreamType</a></h3>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="9600">STREAM_ZLIB</a></p>
+<div class="description">
+<p>Create a zlib header, use Adler-32 checksum. </p>
+</div>
+<p class="decl"><a id="9601">STREAM_GZIP</a></p>
+<div class="description">
+<p>Create a gzip header, use CRC-32 checksum. </p>
+</div>
+<h2>Constructors</h2>
+<h3><a id="9602">DeflatingStreamBuf</a></h3>
+<p class="decl"><a href="Poco.DeflatingStreamBuf.html" title="class Poco::DeflatingStreamBuf">DeflatingStreamBuf</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::istream &amp; istr,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.DeflatingStreamBuf.html#9599" title="enum  Poco::DeflatingStreamBuf::StreamType">StreamType</a> type,<br />&nbsp;&nbsp;&nbsp;&nbsp;int level<br />);</p>
+<div class="description">
+<p>Creates a <a href="Poco.DeflatingStreamBuf.html" title="class Poco::DeflatingStreamBuf">DeflatingStreamBuf</a> for compressing data read from the given input stream. </p>
+</div>
+<h3><a id="9606">DeflatingStreamBuf</a></h3>
+<p class="decl"><a href="Poco.DeflatingStreamBuf.html" title="class Poco::DeflatingStreamBuf">DeflatingStreamBuf</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::istream &amp; istr,<br />&nbsp;&nbsp;&nbsp;&nbsp;int windowBits,<br />&nbsp;&nbsp;&nbsp;&nbsp;int level<br />);</p>
+<div class="description">
+<p>Creates a <a href="Poco.DeflatingStreamBuf.html" title="class Poco::DeflatingStreamBuf">DeflatingStreamBuf</a> for compressing data read from the given input stream. </p>
+<p>Please refer to the zlib documentation of deflateInit2() for a description of the windowBits parameter. </p>
+</div>
+<h3><a id="9610">DeflatingStreamBuf</a></h3>
+<p class="decl"><a href="Poco.DeflatingStreamBuf.html" title="class Poco::DeflatingStreamBuf">DeflatingStreamBuf</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::ostream &amp; ostr,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.DeflatingStreamBuf.html#9599" title="enum  Poco::DeflatingStreamBuf::StreamType">StreamType</a> type,<br />&nbsp;&nbsp;&nbsp;&nbsp;int level<br />);</p>
+<div class="description">
+<p>Creates a <a href="Poco.DeflatingStreamBuf.html" title="class Poco::DeflatingStreamBuf">DeflatingStreamBuf</a> for compressing data passed through and forwarding it to the given output stream. </p>
+</div>
+<h3><a id="9614">DeflatingStreamBuf</a></h3>
+<p class="decl"><a href="Poco.DeflatingStreamBuf.html" title="class Poco::DeflatingStreamBuf">DeflatingStreamBuf</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::ostream &amp; ostr,<br />&nbsp;&nbsp;&nbsp;&nbsp;int windowBits,<br />&nbsp;&nbsp;&nbsp;&nbsp;int level<br />);</p>
+<div class="description">
+<p>Creates a <a href="Poco.DeflatingStreamBuf.html" title="class Poco::DeflatingStreamBuf">DeflatingStreamBuf</a> for compressing data passed through and forwarding it to the given output stream. </p>
+<p>Please refer to the zlib documentation of deflateInit2() for a description of the windowBits parameter. </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="9618">~DeflatingStreamBuf</a></h3>
+<p class="decl">~<a href="Poco.DeflatingStreamBuf.html" title="class Poco::DeflatingStreamBuf">DeflatingStreamBuf</a>();</p>
+<div class="description">
+<p>Destroys the <a href="Poco.DeflatingStreamBuf.html" title="class Poco::DeflatingStreamBuf">DeflatingStreamBuf</a>. </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="9619">close</a></h3>
+<p class="decl">int close();</p>
+<div class="description">
+<p>Finishes up the stream.  </p>
+<p>Must be called when deflating to an output stream. </p>
+</div>
+<h3><a id="9620">readFromDevice</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">int readFromDevice(<br />&nbsp;&nbsp;&nbsp;&nbsp;char * buffer,<br />&nbsp;&nbsp;&nbsp;&nbsp;std::streamsize length<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="9626">sync</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual int sync();</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="9623">writeToDevice</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">int writeToDevice(<br />&nbsp;&nbsp;&nbsp;&nbsp;const char * buffer,<br />&nbsp;&nbsp;&nbsp;&nbsp;std::streamsize length<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

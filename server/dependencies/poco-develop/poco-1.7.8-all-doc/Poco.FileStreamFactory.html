@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::FileStreamFactory</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.html" class="namespace">Poco</a></h1>
+<h1 class="symbol">class FileStreamFactory</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Foundation" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Foundation<br />
+<b>Package:</b> URI<br />
+<b>Header:</b> Poco/FileStreamFactory.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>An implementation of the <a href="Poco.URIStreamFactory.html" title="class Poco::URIStreamFactory">URIStreamFactory</a> interface that handles file URIs. </p>
+</div>
+<h2>Inheritance</h2>
+<p><b>Direct Base Classes: </b><a href="Poco.URIStreamFactory.html" title="class Poco::URIStreamFactory">URIStreamFactory</a></p>
+<p><b>All Base Classes: </b><a href="Poco.URIStreamFactory.html" title="class Poco::URIStreamFactory">URIStreamFactory</a></p>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.FileStreamFactory.html#12575" title="Poco::FileStreamFactory::open()">open</a></p>
+<p><b>Inherited Functions: </b><a href="Poco.URIStreamFactory.html#18543" title="Poco::URIStreamFactory::open()">open</a></p>
+<h2>Constructors</h2>
+<h3><a id="12573">FileStreamFactory</a></h3>
+<p class="decl"><a href="Poco.FileStreamFactory.html" title="class Poco::FileStreamFactory">FileStreamFactory</a>();</p>
+<div class="description">
+<p>Creates the <a href="Poco.FileStreamFactory.html" title="class Poco::FileStreamFactory">FileStreamFactory</a>. </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="12574">~FileStreamFactory</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">~<a href="Poco.FileStreamFactory.html" title="class Poco::FileStreamFactory">FileStreamFactory</a>();</p>
+<div class="description">
+<p>Destroys the <a href="Poco.FileStreamFactory.html" title="class Poco::FileStreamFactory">FileStreamFactory</a>. </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="12575">open</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">std::istream * open(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.URI.html" title="class Poco::URI">URI</a> &amp; uri<br />);</p>
+<div class="description">
+<p>Creates and opens a file stream in binary mode for the given <a href="Poco.URI.html" title="class Poco::URI">URI</a>. The <a href="Poco.URI.html" title="class Poco::URI">URI</a> must be either a file <a href="Poco.URI.html" title="class Poco::URI">URI</a> or a relative <a href="Poco.URI.html" title="class Poco::URI">URI</a> reference containing a path to a local file. </p>
+<p>Throws an FileNotFound exception if the file cannot be opened. </p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.URIStreamFactory.html#18543" title="Poco::URIStreamFactory::open()">Poco::URIStreamFactory::open()</a></p></div>
+<h3><a id="12577">open</a></h3>
+<p class="decl">std::istream * open(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Path.html" title="class Poco::Path">Path</a> &amp; path<br />);</p>
+<div class="description">
+<p>Creates and opens a file stream in binary mode for the given path. </p>
+<p>Throws an FileNotFound exception if the file cannot be opened. </p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

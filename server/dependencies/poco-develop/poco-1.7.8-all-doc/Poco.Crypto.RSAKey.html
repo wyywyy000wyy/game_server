@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::Crypto::RSAKey</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.Crypto.html" class="namespace">Poco::Crypto</a></h1>
+<h1 class="symbol">class RSAKey</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Crypto" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Crypto<br />
+<b>Package:</b> RSA<br />
+<b>Header:</b> Poco/Crypto/RSAKey.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>This class stores an <a href="#360" title="RSA">RSA</a> key pair, consisting of private and public key. Storage of the private key is optional. </p>
+<p>If a private key is available, the <a href="Poco.Crypto.RSAKey.html" title="class Poco::Crypto::RSAKey">RSAKey</a> can be used for decrypting data (encrypted with the public key) or computing secure digital signatures. </p>
+</div>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.Crypto.RSAKey.html#347" title="Poco::Crypto::RSAKey::decryptionExponent()">decryptionExponent</a>, <a href="Poco.Crypto.RSAKey.html#346" title="Poco::Crypto::RSAKey::encryptionExponent()">encryptionExponent</a>, <a href="Poco.Crypto.RSAKey.html#356" title="Poco::Crypto::RSAKey::impl()">impl</a>, <a href="Poco.Crypto.RSAKey.html#345" title="Poco::Crypto::RSAKey::modulus()">modulus</a>, <a href="Poco.Crypto.RSAKey.html#357" title="Poco::Crypto::RSAKey::name()">name</a>, <a href="Poco.Crypto.RSAKey.html#348" title="Poco::Crypto::RSAKey::save()">save</a>, <a href="Poco.Crypto.RSAKey.html#344" title="Poco::Crypto::RSAKey::size()">size</a></p>
+<h2>Enumerations</h2>
+<h3><a id="327">Exponent</a></h3>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="328">EXP_SMALL</a> = 0</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="329">EXP_LARGE</a></p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="322">KeyLength</a></h3>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="323">KL_512</a> = 512</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="324">KL_1024</a> = 1024</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="325">KL_2048</a> = 2048</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="326">KL_4096</a> = 4096</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Constructors</h2>
+<h3><a id="330">RSAKey</a></h3>
+<p class="decl">explicit <a href="Poco.Crypto.RSAKey.html" title="class Poco::Crypto::RSAKey">RSAKey</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Crypto.X509Certificate.html" title="class Poco::Crypto::X509Certificate">X509Certificate</a> &amp; cert<br />);</p>
+<div class="description">
+<p>Extracts the <a href="#360" title="RSA">RSA</a> public key from the given certificate. </p>
+</div>
+<h3><a id="332">RSAKey</a></h3>
+<p class="decl"><a href="Poco.Crypto.RSAKey.html" title="class Poco::Crypto::RSAKey">RSAKey</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Crypto.RSAKey.html#322" title="enum  Poco::Crypto::RSAKey::KeyLength">KeyLength</a> keyLength,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Crypto.RSAKey.html#327" title="enum  Poco::Crypto::RSAKey::Exponent">Exponent</a> exp<br />);</p>
+<div class="description">
+<p>Creates the <a href="Poco.Crypto.RSAKey.html" title="class Poco::Crypto::RSAKey">RSAKey</a>. Creates a new public/private keypair using the given parameters. Can be used to sign data and verify signatures. </p>
+</div>
+<h3><a id="335">RSAKey</a></h3>
+<p class="decl"><a href="Poco.Crypto.RSAKey.html" title="class Poco::Crypto::RSAKey">RSAKey</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; publicKeyFile,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; privateKeyFile = "",<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; privateKeyPassphrase = ""<br />);</p>
+<div class="description">
+<p>Creates the <a href="Poco.Crypto.RSAKey.html" title="class Poco::Crypto::RSAKey">RSAKey</a>, by reading public and private key from the given files and using the given passphrase for the private key. </p>
+<p>Cannot be used for signing or decryption unless a private key is available. </p>
+<p>If a private key is specified, you don't need to specify a public key file. OpenSSL will auto-create the public key from the private key. </p>
+</div>
+<h3><a id="339">RSAKey</a></h3>
+<p class="decl"><a href="Poco.Crypto.RSAKey.html" title="class Poco::Crypto::RSAKey">RSAKey</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::istream * pPublicKeyStream,<br />&nbsp;&nbsp;&nbsp;&nbsp;std::istream * pPrivateKeyStream = 0,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; privateKeyPassphrase = ""<br />);</p>
+<div class="description">
+<p>Creates the <a href="Poco.Crypto.RSAKey.html" title="class Poco::Crypto::RSAKey">RSAKey</a>, by reading public and private key from the given streams and using the given passphrase for the private key. </p>
+<p>Cannot be used for signing or decryption unless a private key is available. </p>
+<p>If a private key is specified, you don't need to specify a public key file. OpenSSL will auto-create the public key from the private key. </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="343">~RSAKey</a></h3>
+<p class="decl">~<a href="Poco.Crypto.RSAKey.html" title="class Poco::Crypto::RSAKey">RSAKey</a>();</p>
+<div class="description">
+<p>Destroys the <a href="Poco.Crypto.RSAKey.html" title="class Poco::Crypto::RSAKey">RSAKey</a>. </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="347">decryptionExponent</a></h3>
+<p class="decl"><a href="Poco.Crypto.RSAKeyImpl.html#363" title="Poco::Crypto::RSAKeyImpl::ByteVec">RSAKeyImpl::ByteVec</a> decryptionExponent() const;</p>
+<div class="description">
+<p>Returns the <a href="#360" title="RSA">RSA</a> decryption exponent. </p>
+</div>
+<h3><a id="346">encryptionExponent</a></h3>
+<p class="decl"><a href="Poco.Crypto.RSAKeyImpl.html#363" title="Poco::Crypto::RSAKeyImpl::ByteVec">RSAKeyImpl::ByteVec</a> encryptionExponent() const;</p>
+<div class="description">
+<p>Returns the <a href="#360" title="RSA">RSA</a> encryption exponent. </p>
+</div>
+<h3><a id="356">impl</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Crypto.RSAKeyImpl.html#362" title="Poco::Crypto::RSAKeyImpl::Ptr">RSAKeyImpl::Ptr</a> impl() const;</p>
+<div class="description">
+<p>Returns the impl object. </p>
+</div>
+<h3><a id="345">modulus</a></h3>
+<p class="decl"><a href="Poco.Crypto.RSAKeyImpl.html#363" title="Poco::Crypto::RSAKeyImpl::ByteVec">RSAKeyImpl::ByteVec</a> modulus() const;</p>
+<div class="description">
+<p>Returns the <a href="#360" title="RSA">RSA</a> modulus. </p>
+</div>
+<h3><a id="357">name</a></h3>
+<p class="decl">const std::string &amp; name() const;</p>
+<div class="description">
+<p>Returns &quot;rsa&quot; </p>
+</div>
+<h3><a id="348">save</a></h3>
+<p class="decl">void save(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; publicKeyFile,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; privateKeyFile = "",<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; privateKeyPassphrase = ""<br />);</p>
+<div class="description">
+<p>Exports the public and private keys to the given files.  </p>
+<p>If an empty filename is specified, the corresponding key is not exported. </p>
+</div>
+<h3><a id="352">save</a></h3>
+<p class="decl">void save(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::ostream * pPublicKeyStream,<br />&nbsp;&nbsp;&nbsp;&nbsp;std::ostream * pPrivateKeyStream = 0,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; privateKeyPassphrase = ""<br />);</p>
+<div class="description">
+<p>Exports the public and private key to the given streams. </p>
+<p>If a null pointer is passed for a stream, the corresponding key is not exported. </p>
+</div>
+<h3><a id="344">size</a></h3>
+<p class="decl">int size() const;</p>
+<div class="description">
+<p>Returns the <a href="#360" title="RSA">RSA</a> modulus size. </p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

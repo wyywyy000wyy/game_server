@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::XML::LocatorImpl</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.XML.html" class="namespace">Poco::XML</a></h1>
+<h1 class="symbol">class LocatorImpl</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-XML" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> XML<br />
+<b>Package:</b> SAX<br />
+<b>Header:</b> Poco/SAX/LocatorImpl.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>Provide an optional convenience implementation of <a href="Poco.XML.Locator.html" title="class Poco::XML::Locator">Locator</a>. </p>
+</div>
+<h2>Inheritance</h2>
+<p><b>Direct Base Classes: </b><a href="Poco.XML.Locator.html" title="class Poco::XML::Locator">Locator</a></p>
+<p><b>All Base Classes: </b><a href="Poco.XML.Locator.html" title="class Poco::XML::Locator">Locator</a></p>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.XML.LocatorImpl.html#29763" title="Poco::XML::LocatorImpl::getColumnNumber()">getColumnNumber</a>, <a href="Poco.XML.LocatorImpl.html#29762" title="Poco::XML::LocatorImpl::getLineNumber()">getLineNumber</a>, <a href="Poco.XML.LocatorImpl.html#29760" title="Poco::XML::LocatorImpl::getPublicId()">getPublicId</a>, <a href="Poco.XML.LocatorImpl.html#29761" title="Poco::XML::LocatorImpl::getSystemId()">getSystemId</a>, <a href="Poco.XML.LocatorImpl.html#29758" title="Poco::XML::LocatorImpl::operator =()">operator&nbsp;=</a>, <a href="Poco.XML.LocatorImpl.html#29770" title="Poco::XML::LocatorImpl::setColumnNumber()">setColumnNumber</a>, <a href="Poco.XML.LocatorImpl.html#29768" title="Poco::XML::LocatorImpl::setLineNumber()">setLineNumber</a>, <a href="Poco.XML.LocatorImpl.html#29764" title="Poco::XML::LocatorImpl::setPublicId()">setPublicId</a>, <a href="Poco.XML.LocatorImpl.html#29766" title="Poco::XML::LocatorImpl::setSystemId()">setSystemId</a></p>
+<p><b>Inherited Functions: </b><a href="Poco.XML.Locator.html#29751" title="Poco::XML::Locator::getColumnNumber()">getColumnNumber</a>, <a href="Poco.XML.Locator.html#29750" title="Poco::XML::Locator::getLineNumber()">getLineNumber</a>, <a href="Poco.XML.Locator.html#29748" title="Poco::XML::Locator::getPublicId()">getPublicId</a>, <a href="Poco.XML.Locator.html#29749" title="Poco::XML::Locator::getSystemId()">getSystemId</a></p>
+<h2>Constructors</h2>
+<h3><a id="29754">LocatorImpl</a></h3>
+<p class="decl"><a href="Poco.XML.LocatorImpl.html" title="class Poco::XML::LocatorImpl">LocatorImpl</a>();</p>
+<div class="description">
+<p>Zero-argument constructor. </p>
+<p>This will not normally be useful, since the main purpose of this class is  to make a snapshot of an existing <a href="Poco.XML.Locator.html" title="class Poco::XML::Locator">Locator</a>. </p>
+</div>
+<h3><a id="29755">LocatorImpl</a></h3>
+<p class="decl"><a href="Poco.XML.LocatorImpl.html" title="class Poco::XML::LocatorImpl">LocatorImpl</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.Locator.html" title="class Poco::XML::Locator">Locator</a> &amp; loc<br />);</p>
+<div class="description">
+<p>Copy constructor. </p>
+<p>Create a persistent copy of the current state of a locator. When the original  locator changes, this copy will still keep the original values (and it can be  used outside the scope of DocumentHandler methods). </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="29757">~LocatorImpl</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">~<a href="Poco.XML.LocatorImpl.html" title="class Poco::XML::LocatorImpl">LocatorImpl</a>();</p>
+<div class="description">
+<p>Destroys the <a href="Poco.XML.Locator.html" title="class Poco::XML::Locator">Locator</a>. </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="29763">getColumnNumber</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">int getColumnNumber() const;</p>
+<div class="description">
+<p>Return the saved column number (1-based). </p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.XML.Locator.html#29751" title="Poco::XML::Locator::getColumnNumber()">Poco::XML::Locator::getColumnNumber()</a></p></div>
+<h3><a id="29762">getLineNumber</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">int getLineNumber() const;</p>
+<div class="description">
+<p>Return the saved line number (1-based). </p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.XML.Locator.html#29750" title="Poco::XML::Locator::getLineNumber()">Poco::XML::Locator::getLineNumber()</a></p></div>
+<h3><a id="29760">getPublicId</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl"><a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> getPublicId() const;</p>
+<div class="description">
+<p>Return the saved public identifier. </p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.XML.Locator.html#29748" title="Poco::XML::Locator::getPublicId()">Poco::XML::Locator::getPublicId()</a></p></div>
+<h3><a id="29761">getSystemId</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl"><a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> getSystemId() const;</p>
+<div class="description">
+<p>Return the saved system identifier. </p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.XML.Locator.html#29749" title="Poco::XML::Locator::getSystemId()">Poco::XML::Locator::getSystemId()</a></p></div>
+<h3><a id="29758">operator =</a></h3>
+<p class="decl"><a href="Poco.XML.LocatorImpl.html" title="class Poco::XML::LocatorImpl">LocatorImpl</a> &amp; operator = (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.Locator.html" title="class Poco::XML::Locator">Locator</a> &amp; loc<br />);</p>
+<div class="description">
+<p>Assignment operator. </p>
+</div>
+<h3><a id="29770">setColumnNumber</a></h3>
+<p class="decl">void setColumnNumber(<br />&nbsp;&nbsp;&nbsp;&nbsp;int columnNumber<br />);</p>
+<div class="description">
+<p>Set the column number for this locator (1-based). </p>
+</div>
+<h3><a id="29768">setLineNumber</a></h3>
+<p class="decl">void setLineNumber(<br />&nbsp;&nbsp;&nbsp;&nbsp;int lineNumber<br />);</p>
+<div class="description">
+<p>Set the line number for this locator (1-based). </p>
+</div>
+<h3><a id="29764">setPublicId</a></h3>
+<p class="decl">void setPublicId(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; publicId<br />);</p>
+<div class="description">
+<p>Set the public identifier for this locator. </p>
+</div>
+<h3><a id="29766">setSystemId</a></h3>
+<p class="decl">void setSystemId(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; systemId<br />);</p>
+<div class="description">
+<p>Set the system identifier for this locator. </p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

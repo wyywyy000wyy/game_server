@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::HashMap</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.html" class="namespace">Poco</a></h1>
+<h1 class="template">template &lt; class Key, class Mapped, class HashFunc = Hash &lt; Key &gt; &gt;</h1>
+<h1 class="symbol">class HashMap</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Foundation" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Foundation<br />
+<b>Package:</b> Hashing<br />
+<b>Header:</b> Poco/HashMap.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>This class implements a map using a <a href="Poco.LinearHashTable.html" title="class Poco::LinearHashTable">LinearHashTable</a>. </p>
+<p>A <a href="Poco.HashMap.html" title="class Poco::HashMap">HashMap</a> can be used just like a std::map. </p>
+</div>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.HashMap.html#12982" title="Poco::HashMap::begin()">begin</a>, <a href="Poco.HashMap.html#13000" title="Poco::HashMap::clear()">clear</a>, <a href="Poco.HashMap.html#12990" title="Poco::HashMap::count()">count</a>, <a href="Poco.HashMap.html#13002" title="Poco::HashMap::empty()">empty</a>, <a href="Poco.HashMap.html#12983" title="Poco::HashMap::end()">end</a>, <a href="Poco.HashMap.html#12996" title="Poco::HashMap::erase()">erase</a>, <a href="Poco.HashMap.html#12986" title="Poco::HashMap::find()">find</a>, <a href="Poco.HashMap.html#12992" title="Poco::HashMap::insert()">insert</a>, <a href="Poco.HashMap.html#12978" title="Poco::HashMap::operator =()">operator&nbsp;=</a>, <a href="Poco.HashMap.html#13003" title="Poco::HashMap::operator []()">operator&nbsp;[]</a>, <a href="Poco.HashMap.html#13001" title="Poco::HashMap::size()">size</a>, <a href="Poco.HashMap.html#12980" title="Poco::HashMap::swap()">swap</a></p>
+<h2>Types</h2>
+<h3><a id="12974">ConstIterator</a></h3>
+<p class="decl">typedef typename <a href="Poco.HashTable.html#13072" title="Poco::HashTable::ConstIterator">HashTable::ConstIterator</a> <a href="Poco.HashMap.html#12974" title="Poco::HashMap::ConstIterator">ConstIterator</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="12968">ConstPointer</a></h3>
+<p class="decl">typedef const Mapped * <a href="Poco.HashMap.html#12968" title="Poco::HashMap::ConstPointer">ConstPointer</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="12966">ConstReference</a></h3>
+<p class="decl">typedef const Mapped &amp; <a href="Poco.HashMap.html#12966" title="Poco::HashMap::ConstReference">ConstReference</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="12972">HashTable</a></h3>
+<p class="decl">typedef <a href="Poco.LinearHashTable.html" title="class Poco::LinearHashTable">LinearHashTable</a> &lt; <a href="Poco.HashMap.html#12969" title="Poco::HashMap::ValueType">ValueType</a>, <a href="Poco.HashMap.html#12971" title="Poco::HashMap::HashType">HashType</a> &gt; <a href="Poco.HashMap.html#12972" title="Poco::HashMap::HashTable">HashTable</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="12971">HashType</a></h3>
+<p class="decl">typedef <a href="Poco.HashMapEntryHash.html" title="struct Poco::HashMapEntryHash">HashMapEntryHash</a> &lt; <a href="Poco.HashMap.html#12969" title="Poco::HashMap::ValueType">ValueType</a>, HashFunc &gt; <a href="Poco.HashMap.html#12971" title="Poco::HashMap::HashType">HashType</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="12973">Iterator</a></h3>
+<p class="decl">typedef typename <a href="Poco.HashTable.html#13073" title="Poco::HashTable::Iterator">HashTable::Iterator</a> <a href="Poco.HashMap.html#12973" title="Poco::HashMap::Iterator">Iterator</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="12963">KeyType</a></h3>
+<p class="decl">typedef Key <a href="Poco.HashMap.html#12963" title="Poco::HashMap::KeyType">KeyType</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="12964">MappedType</a></h3>
+<p class="decl">typedef Mapped <a href="Poco.HashMap.html#12964" title="Poco::HashMap::MappedType">MappedType</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="12970">PairType</a></h3>
+<p class="decl">typedef std::pair &lt; <a href="Poco.HashMap.html#12963" title="Poco::HashMap::KeyType">KeyType</a>, <a href="Poco.HashMap.html#12964" title="Poco::HashMap::MappedType">MappedType</a> &gt; <a href="Poco.HashMap.html#12970" title="Poco::HashMap::PairType">PairType</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="12967">Pointer</a></h3>
+<p class="decl">typedef Mapped * <a href="Poco.HashMap.html#12967" title="Poco::HashMap::Pointer">Pointer</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="12965">Reference</a></h3>
+<p class="decl">typedef Mapped &amp; <a href="Poco.HashMap.html#12965" title="Poco::HashMap::Reference">Reference</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="12969">ValueType</a></h3>
+<p class="decl">typedef <a href="Poco.HashMapEntry.html" title="struct Poco::HashMapEntry">HashMapEntry</a> &lt; Key, Mapped &gt; <a href="Poco.HashMap.html#12969" title="Poco::HashMap::ValueType">ValueType</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Constructors</h2>
+<h3><a id="12975">HashMap</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.HashMap.html" title="class Poco::HashMap">HashMap</a>();</p>
+<div class="description">
+<p>Creates an empty <a href="Poco.HashMap.html" title="class Poco::HashMap">HashMap</a>. </p>
+</div>
+<h3><a id="12976">HashMap</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.HashMap.html" title="class Poco::HashMap">HashMap</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t initialReserve<br />);</p>
+<div class="description">
+<p>Creates the <a href="Poco.HashMap.html" title="class Poco::HashMap">HashMap</a> with room for initialReserve entries. </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="12982">begin</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.HashMap.html#12974" title="Poco::HashMap::ConstIterator">ConstIterator</a> begin() const;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="12984">begin</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.HashMap.html#12973" title="Poco::HashMap::Iterator">Iterator</a> begin();</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="13000">clear</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void clear();</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="12990">count</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">std::size_t count(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.HashMap.html#12963" title="Poco::HashMap::KeyType">KeyType</a> &amp; key<br />) const;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="13002">empty</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool empty() const;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="12983">end</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.HashMap.html#12974" title="Poco::HashMap::ConstIterator">ConstIterator</a> end() const;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="12985">end</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.HashMap.html#12973" title="Poco::HashMap::Iterator">Iterator</a> end();</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="12996">erase</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void erase(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.HashMap.html#12973" title="Poco::HashMap::Iterator">Iterator</a> it<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="12998">erase</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void erase(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.HashMap.html#12963" title="Poco::HashMap::KeyType">KeyType</a> &amp; key<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="12986">find</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.HashMap.html#12974" title="Poco::HashMap::ConstIterator">ConstIterator</a> find(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.HashMap.html#12963" title="Poco::HashMap::KeyType">KeyType</a> &amp; key<br />) const;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="12988">find</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.HashMap.html#12973" title="Poco::HashMap::Iterator">Iterator</a> find(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.HashMap.html#12963" title="Poco::HashMap::KeyType">KeyType</a> &amp; key<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="12992">insert</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">std::pair &lt; <a href="Poco.HashMap.html#12973" title="Poco::HashMap::Iterator">Iterator</a>, bool &gt; insert(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.HashMap.html#12970" title="Poco::HashMap::PairType">PairType</a> &amp; pair<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="12994">insert</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">std::pair &lt; <a href="Poco.HashMap.html#12973" title="Poco::HashMap::Iterator">Iterator</a>, bool &gt; insert(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.HashMap.html#12969" title="Poco::HashMap::ValueType">ValueType</a> &amp; value<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="12978">operator =</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.HashMap.html" title="class Poco::HashMap">HashMap</a> &amp; operator = (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.HashMap.html" title="class Poco::HashMap">HashMap</a> &amp; map<br />);</p>
+<div class="description">
+<p>Assigns another <a href="Poco.HashMap.html" title="class Poco::HashMap">HashMap</a>. </p>
+</div>
+<h3><a id="13003">operator []</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.HashMap.html#12966" title="Poco::HashMap::ConstReference">ConstReference</a> operator[] (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.HashMap.html#12963" title="Poco::HashMap::KeyType">KeyType</a> &amp; key<br />) const;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="13005">operator []</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.HashMap.html#12965" title="Poco::HashMap::Reference">Reference</a> operator[] (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.HashMap.html#12963" title="Poco::HashMap::KeyType">KeyType</a> &amp; key<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="13001">size</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">std::size_t size() const;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="12980">swap</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void swap(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.HashMap.html" title="class Poco::HashMap">HashMap</a> &amp; map<br />);</p>
+<div class="description">
+<p>Swaps the <a href="Poco.HashMap.html" title="class Poco::HashMap">HashMap</a> with another one. </p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

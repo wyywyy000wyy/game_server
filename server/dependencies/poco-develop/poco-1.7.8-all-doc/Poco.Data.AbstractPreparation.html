@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::Data::AbstractPreparation</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.Data.html" class="namespace">Poco::Data</a></h1>
+<h1 class="symbol">class AbstractPreparation</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Data" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Data<br />
+<b>Package:</b> DataCore<br />
+<b>Header:</b> Poco/Data/AbstractPreparation.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>Interface for calling the appropriate <a href="Poco.Data.AbstractPreparator.html" title="class Poco::Data::AbstractPreparator">AbstractPreparator</a> method </p>
+</div>
+<h2>Inheritance</h2>
+<p><b>Known Derived Classes: </b><a href="Poco.Data.Preparation.html" title="class Poco::Data::Preparation">Preparation</a></p>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.Data.AbstractPreparation.html#5152" title="Poco::Data::AbstractPreparation::operator =()">operator&nbsp;=</a>, <a href="Poco.Data.AbstractPreparation.html#5154" title="Poco::Data::AbstractPreparation::preparation()">preparation</a>, <a href="Poco.Data.AbstractPreparation.html#5148" title="Poco::Data::AbstractPreparation::prepare()">prepare</a></p>
+<h2>Types</h2>
+<h3><a id="5144">PreparatorPtr</a></h3>
+<p class="decl">typedef <a href="Poco.Data.AbstractPreparator.html#5157" title="Poco::Data::AbstractPreparator::Ptr">AbstractPreparator::Ptr</a> <a href="Poco.Data.AbstractPreparation.html#5144" title="Poco::Data::AbstractPreparation::PreparatorPtr">PreparatorPtr</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="5143">Ptr</a></h3>
+<p class="decl">typedef <a href="Poco.SharedPtr.html" title="class Poco::SharedPtr">SharedPtr</a> &lt; <a href="Poco.Data.AbstractPreparation.html" title="class Poco::Data::AbstractPreparation">AbstractPreparation</a> &gt; <a href="Poco.Data.AbstractPreparation.html#5143" title="Poco::Data::AbstractPreparation::Ptr">Ptr</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Constructors</h2>
+<h3><a id="5145">AbstractPreparation</a></h3>
+<p class="decl"><a href="Poco.Data.AbstractPreparation.html" title="class Poco::Data::AbstractPreparation">AbstractPreparation</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Data.AbstractPreparation.html#5144" title="Poco::Data::AbstractPreparation::PreparatorPtr">PreparatorPtr</a> pPreparator<br />);</p>
+<div class="description">
+<p>Creates the <a href="Poco.Data.AbstractPreparation.html" title="class Poco::Data::AbstractPreparation">AbstractPreparation</a>. </p>
+</div>
+<h3><a id="5149">AbstractPreparation</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Data.AbstractPreparation.html" title="class Poco::Data::AbstractPreparation">AbstractPreparation</a>();</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="5150">AbstractPreparation</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Data.AbstractPreparation.html" title="class Poco::Data::AbstractPreparation">AbstractPreparation</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Data.AbstractPreparation.html" title="class Poco::Data::AbstractPreparation">AbstractPreparation</a> &amp; param35<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="5147">~AbstractPreparation</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual ~<a href="Poco.Data.AbstractPreparation.html" title="class Poco::Data::AbstractPreparation">AbstractPreparation</a>();</p>
+<div class="description">
+<p>Destroys the <a href="Poco.Data.AbstractPreparation.html" title="class Poco::Data::AbstractPreparation">AbstractPreparation</a>. </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="5148">prepare</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void prepare() = 0;</p>
+<div class="description">
+<p>Prepares data. </p>
+</div>
+<h3><a id="5152">operator =</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Data.AbstractPreparation.html" title="class Poco::Data::AbstractPreparation">AbstractPreparation</a> &amp; operator = (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Data.AbstractPreparation.html" title="class Poco::Data::AbstractPreparation">AbstractPreparation</a> &amp; param36<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="5154">preparation</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Data.AbstractPreparation.html#5144" title="Poco::Data::AbstractPreparation::PreparatorPtr">PreparatorPtr</a> preparation();</p>
+<div class="description">
+<p>Returns the preparation object </p>
+</div>
+<h2>Variables</h2>
+<h3><a id="5155">_pPreparator</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Data.AbstractPreparation.html#5144" title="Poco::Data::AbstractPreparation::PreparatorPtr">PreparatorPtr</a> _pPreparator;</p>
+<div class="description">
+<p></p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

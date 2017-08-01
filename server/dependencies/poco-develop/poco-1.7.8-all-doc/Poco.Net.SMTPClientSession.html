@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::Net::SMTPClientSession</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.Net.html" class="namespace">Poco::Net</a></h1>
+<h1 class="symbol">class SMTPClientSession</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Net" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Net<br />
+<b>Package:</b> Mail<br />
+<b>Header:</b> Poco/Net/SMTPClientSession.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>This class implements an Simple Mail Transfer Protocol (SMTP, <a href="https://www.ietf.org/rfc/rfc2821.txt" target="_blank">RFC 2821</a>) client for sending e-mail messages. </p>
+</div>
+<h2>Inheritance</h2>
+<p><b>Known Derived Classes: </b><a href="Poco.Net.SecureSMTPClientSession.html" title="class Poco::Net::SecureSMTPClientSession">SecureSMTPClientSession</a></p>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.Net.SMTPClientSession.html#24316" title="Poco::Net::SMTPClientSession::close()">close</a>, <a href="Poco.Net.SMTPClientSession.html#24302" title="Poco::Net::SMTPClientSession::getTimeout()">getTimeout</a>, <a href="Poco.Net.SMTPClientSession.html#24348" title="Poco::Net::SMTPClientSession::isPermanentNegative()">isPermanentNegative</a>, <a href="Poco.Net.SMTPClientSession.html#24342" title="Poco::Net::SMTPClientSession::isPositiveCompletion()">isPositiveCompletion</a>, <a href="Poco.Net.SMTPClientSession.html#24344" title="Poco::Net::SMTPClientSession::isPositiveIntermediate()">isPositiveIntermediate</a>, <a href="Poco.Net.SMTPClientSession.html#24346" title="Poco::Net::SMTPClientSession::isTransientNegative()">isTransientNegative</a>, <a href="Poco.Net.SMTPClientSession.html#24303" title="Poco::Net::SMTPClientSession::login()">login</a>, <a href="Poco.Net.SMTPClientSession.html#24359" title="Poco::Net::SMTPClientSession::loginUsingCRAM()">loginUsingCRAM</a>, <a href="Poco.Net.SMTPClientSession.html#24353" title="Poco::Net::SMTPClientSession::loginUsingCRAMMD5()">loginUsingCRAMMD5</a>, <a href="Poco.Net.SMTPClientSession.html#24356" title="Poco::Net::SMTPClientSession::loginUsingCRAMSHA1()">loginUsingCRAMSHA1</a>, <a href="Poco.Net.SMTPClientSession.html#24363" title="Poco::Net::SMTPClientSession::loginUsingLogin()">loginUsingLogin</a>, <a href="Poco.Net.SMTPClientSession.html#24366" title="Poco::Net::SMTPClientSession::loginUsingPlain()">loginUsingPlain</a>, <a href="Poco.Net.SMTPClientSession.html#24369" title="Poco::Net::SMTPClientSession::loginUsingXOAUTH2()">loginUsingXOAUTH2</a>, <a href="Poco.Net.SMTPClientSession.html#24315" title="Poco::Net::SMTPClientSession::open()">open</a>, <a href="Poco.Net.SMTPClientSession.html#24331" title="Poco::Net::SMTPClientSession::sendAddresses()">sendAddresses</a>, <a href="Poco.Net.SMTPClientSession.html#24324" title="Poco::Net::SMTPClientSession::sendCommand()">sendCommand</a>, <a href="Poco.Net.SMTPClientSession.html#24334" title="Poco::Net::SMTPClientSession::sendData()">sendData</a>, <a href="Poco.Net.SMTPClientSession.html#24317" title="Poco::Net::SMTPClientSession::sendMessage()">sendMessage</a>, <a href="Poco.Net.SMTPClientSession.html#24300" title="Poco::Net::SMTPClientSession::setTimeout()">setTimeout</a>, <a href="Poco.Net.SMTPClientSession.html#24372" title="Poco::Net::SMTPClientSession::socket()">socket</a></p>
+<h2>Types</h2>
+<h3><a id="24284">Recipients</a></h3>
+<p class="decl">typedef std::vector &lt; std::string &gt; <a href="Poco.Net.SMTPClientSession.html#24284" title="Poco::Net::SMTPClientSession::Recipients">Recipients</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Enumerations</h2>
+<h3><i>Anonymous</i></h3>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="24286">SMTP_PORT</a> = 25</p>
+<div class="description">
+<p></p>
+</div>
+<h3><i>Anonymous</i> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="24341">DEFAULT_TIMEOUT</a> = 30000000</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="24287">LoginMethod</a></h3>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="24288">AUTH_NONE</a></p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="24289">AUTH_CRAM_MD5</a></p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="24290">AUTH_CRAM_SHA1</a></p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="24291">AUTH_LOGIN</a></p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="24292">AUTH_PLAIN</a></p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="24293">AUTH_XOAUTH2</a></p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="24335">StatusClass</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="24336">SMTP_POSITIVE_COMPLETION</a> = 2</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="24337">SMTP_POSITIVE_INTERMEDIATE</a> = 3</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="24338">SMTP_TRANSIENT_NEGATIVE</a> = 4</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="24339">SMTP_PERMANENT_NEGATIVE</a> = 5</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Constructors</h2>
+<h3><a id="24294">SMTPClientSession</a></h3>
+<p class="decl">explicit <a href="Poco.Net.SMTPClientSession.html" title="class Poco::Net::SMTPClientSession">SMTPClientSession</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Net.StreamSocket.html" title="class Poco::Net::StreamSocket">StreamSocket</a> &amp; socket<br />);</p>
+<div class="description">
+<p>Creates the <a href="Poco.Net.SMTPClientSession.html" title="class Poco::Net::SMTPClientSession">SMTPClientSession</a> using the given socket, which must be connected to a SMTP server. </p>
+</div>
+<h3><a id="24296">SMTPClientSession</a></h3>
+<p class="decl"><a href="Poco.Net.SMTPClientSession.html" title="class Poco::Net::SMTPClientSession">SMTPClientSession</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; host,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.html#18379" title="Poco::UInt16">Poco::UInt16</a> port = SMTP_PORT<br />);</p>
+<div class="description">
+<p>Creates the <a href="Poco.Net.SMTPClientSession.html" title="class Poco::Net::SMTPClientSession">SMTPClientSession</a> using a socket connected to the given host and port. </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="24299">~SMTPClientSession</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual ~<a href="Poco.Net.SMTPClientSession.html" title="class Poco::Net::SMTPClientSession">SMTPClientSession</a>();</p>
+<div class="description">
+<p>Destroys the <a href="Poco.Net.SMTPClientSession.html" title="class Poco::Net::SMTPClientSession">SMTPClientSession</a>. </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="24316">close</a></h3>
+<p class="decl">void close();</p>
+<div class="description">
+<p>Sends a QUIT command and closes the connection to the server.	 </p>
+<p>Throws a <a href="Poco.Net.SMTPException.html" title="class Poco::Net::SMTPException">SMTPException</a> in case of a SMTP-specific error, or a <a href="Poco.Net.NetException.html" title="class Poco::Net::NetException">NetException</a> in case of a general network communication failure. </p>
+</div>
+<h3><a id="24302">getTimeout</a></h3>
+<p class="decl"><a href="Poco.Timespan.html" title="class Poco::Timespan">Poco::Timespan</a> getTimeout() const;</p>
+<div class="description">
+<p>Returns the timeout for socket read operations. </p>
+</div>
+<h3><a id="24303">login</a></h3>
+<p class="decl">void login(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; hostname<br />);</p>
+<div class="description">
+<p>Greets the SMTP server by sending a EHLO command with the given hostname as argument. </p>
+<p>If the server does not understand the EHLO command, a HELO command is sent instead. </p>
+<p>Throws a <a href="Poco.Net.SMTPException.html" title="class Poco::Net::SMTPException">SMTPException</a> in case of a SMTP-specific error, or a <a href="Poco.Net.NetException.html" title="class Poco::Net::NetException">NetException</a> in case of a general network communication failure. </p>
+</div>
+<h3><a id="24305">login</a></h3>
+<p class="decl">void login();</p>
+<div class="description">
+<p>Calls <a href="Poco.Net.SMTPClientSession.html#24303" title="Poco::Net::SMTPClientSession::login()">login</a>(hostname) with the current host name. </p>
+</div>
+<h3><a id="24306">login</a></h3>
+<p class="decl">void login(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; hostname,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Net.SMTPClientSession.html#24287" title="enum  Poco::Net::SMTPClientSession::LoginMethod">LoginMethod</a> loginMethod,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; username,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; password<br />);</p>
+<div class="description">
+<p>Logs in to the SMTP server using the given authentication method and the given credentials. </p>
+</div>
+<h3><a id="24311">login</a></h3>
+<p class="decl">void login(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Net.SMTPClientSession.html#24287" title="enum  Poco::Net::SMTPClientSession::LoginMethod">LoginMethod</a> loginMethod,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; username,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; password<br />);</p>
+<div class="description">
+<p>Logs in to the SMTP server using the given authentication method and the given credentials. </p>
+</div>
+<h3><a id="24315">open</a></h3>
+<p class="decl">void open();</p>
+<div class="description">
+<p>Reads the initial response from the SMTP server. </p>
+<p>Usually called implicitly through <a href="Poco.Net.SMTPClientSession.html#24303" title="Poco::Net::SMTPClientSession::login()">login</a>(), but can also be called explicitly to implement different forms of SMTP authentication. </p>
+<p>Does nothing if called more than once. </p>
+</div>
+<h3><a id="24331">sendAddresses</a></h3>
+<p class="decl">void sendAddresses(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; from,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Net.SMTPClientSession.html#24284" title="Poco::Net::SMTPClientSession::Recipients">Recipients</a> &amp; recipients<br />);</p>
+<div class="description">
+<p>Sends the message preamble by sending a MAIL FROM command, and a RCPT TO command for every recipient. </p>
+<p>Throws a <a href="Poco.Net.SMTPException.html" title="class Poco::Net::SMTPException">SMTPException</a> in case of a SMTP-specific error, or a <a href="Poco.Net.NetException.html" title="class Poco::Net::NetException">NetException</a> in case of a general network communication failure. </p>
+</div>
+<h3><a id="24324">sendCommand</a></h3>
+<p class="decl">int sendCommand(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; command,<br />&nbsp;&nbsp;&nbsp;&nbsp;std::string &amp; response<br />);</p>
+<div class="description">
+<p>Sends the given command verbatim to the server and waits for a response. </p>
+<p>Throws a <a href="Poco.Net.SMTPException.html" title="class Poco::Net::SMTPException">SMTPException</a> in case of a SMTP-specific error, or a <a href="Poco.Net.NetException.html" title="class Poco::Net::NetException">NetException</a> in case of a general network communication failure. </p>
+</div>
+<h3><a id="24327">sendCommand</a></h3>
+<p class="decl">int sendCommand(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; command,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; arg,<br />&nbsp;&nbsp;&nbsp;&nbsp;std::string &amp; response<br />);</p>
+<div class="description">
+<p>Sends the given command verbatim to the server and waits for a response. </p>
+<p>Throws a <a href="Poco.Net.SMTPException.html" title="class Poco::Net::SMTPException">SMTPException</a> in case of a SMTP-specific error, or a <a href="Poco.Net.NetException.html" title="class Poco::Net::NetException">NetException</a> in case of a general network communication failure. </p>
+</div>
+<h3><a id="24334">sendData</a></h3>
+<p class="decl">void sendData();</p>
+<div class="description">
+<p>Sends the message preamble by sending a DATA command. </p>
+<p>Throws a <a href="Poco.Net.SMTPException.html" title="class Poco::Net::SMTPException">SMTPException</a> in case of a SMTP-specific error, or a <a href="Poco.Net.NetException.html" title="class Poco::Net::NetException">NetException</a> in case of a general network communication failure. </p>
+</div>
+<h3><a id="24317">sendMessage</a></h3>
+<p class="decl">void sendMessage(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Net.MailMessage.html" title="class Poco::Net::MailMessage">MailMessage</a> &amp; message<br />);</p>
+<div class="description">
+<p>Sends the given mail message by sending a MAIL FROM command, a RCPT TO command for every recipient, and a DATA command with the message headers and content. Using this function results in RCPT TO commands list generated from the recipient list supplied with the message itself. </p>
+<p>Throws a <a href="Poco.Net.SMTPException.html" title="class Poco::Net::SMTPException">SMTPException</a> in case of a SMTP-specific error, or a <a href="Poco.Net.NetException.html" title="class Poco::Net::NetException">NetException</a> in case of a general network communication failure. </p>
+</div>
+<h3><a id="24319">sendMessage</a></h3>
+<p class="decl">void sendMessage(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Net.MailMessage.html" title="class Poco::Net::MailMessage">MailMessage</a> &amp; message,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Net.SMTPClientSession.html#24284" title="Poco::Net::SMTPClientSession::Recipients">Recipients</a> &amp; recipients<br />);</p>
+<div class="description">
+<p>Sends the given mail message by sending a MAIL FROM command, a RCPT TO command for every recipient, and a DATA command with the message headers and content. Using this function results in message header being generated from the supplied recipients list. </p>
+<p>Throws a <a href="Poco.Net.SMTPException.html" title="class Poco::Net::SMTPException">SMTPException</a> in case of a SMTP-specific error, or a <a href="Poco.Net.NetException.html" title="class Poco::Net::NetException">NetException</a> in case of a general network communication failure. </p>
+</div>
+<h3><a id="24322">sendMessage</a></h3>
+<p class="decl">void sendMessage(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::istream &amp; istr<br />);</p>
+<div class="description">
+<p>Sends the mail message from the supplied stream. Content of the stream is copied without any checking. Only the completion status is checked and, if not valid, SMTPExcpetion is thrown. </p>
+</div>
+<h3><a id="24300">setTimeout</a></h3>
+<p class="decl">void setTimeout(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Timespan.html" title="class Poco::Timespan">Poco::Timespan</a> &amp; timeout<br />);</p>
+<div class="description">
+<p>Sets the timeout for socket read operations. </p>
+</div>
+<h3><a id="24348">isPermanentNegative</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/static.png" alt="static" title="static" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">static bool isPermanentNegative(<br />&nbsp;&nbsp;&nbsp;&nbsp;int status<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="24342">isPositiveCompletion</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/static.png" alt="static" title="static" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">static bool isPositiveCompletion(<br />&nbsp;&nbsp;&nbsp;&nbsp;int status<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="24344">isPositiveIntermediate</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/static.png" alt="static" title="static" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">static bool isPositiveIntermediate(<br />&nbsp;&nbsp;&nbsp;&nbsp;int status<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="24346">isTransientNegative</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/static.png" alt="static" title="static" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">static bool isTransientNegative(<br />&nbsp;&nbsp;&nbsp;&nbsp;int status<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="24350">login</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">void login(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; hostname,<br />&nbsp;&nbsp;&nbsp;&nbsp;std::string &amp; response<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="24359">loginUsingCRAM</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">void loginUsingCRAM(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; username,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; method,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.DigestEngine.html" title="class Poco::DigestEngine">Poco::DigestEngine</a> &amp; hmac<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="24353">loginUsingCRAMMD5</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">void loginUsingCRAMMD5(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; username,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; password<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="24356">loginUsingCRAMSHA1</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">void loginUsingCRAMSHA1(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; username,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; password<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="24363">loginUsingLogin</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">void loginUsingLogin(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; username,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; password<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="24366">loginUsingPlain</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">void loginUsingPlain(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; username,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; password<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="24369">loginUsingXOAUTH2</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">void loginUsingXOAUTH2(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; username,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; password<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="24372">socket</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Net.DialogSocket.html" title="class Poco::Net::DialogSocket">DialogSocket</a> &amp; socket();</p>
+<div class="description">
+<p></p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

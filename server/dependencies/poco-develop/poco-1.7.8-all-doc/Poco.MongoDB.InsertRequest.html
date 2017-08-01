@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::MongoDB::InsertRequest</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.MongoDB.html" class="namespace">Poco::MongoDB</a></h1>
+<h1 class="symbol">class InsertRequest</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-MongoDB" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> MongoDB<br />
+<b>Package:</b> MongoDB<br />
+<b>Header:</b> Poco/MongoDB/InsertRequest.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>A request for inserting one or more documents to the database (OP_INSERT). </p>
+</div>
+<h2>Inheritance</h2>
+<p><b>Direct Base Classes: </b><a href="Poco.MongoDB.RequestMessage.html" title="class Poco::MongoDB::RequestMessage">RequestMessage</a></p>
+<p><b>All Base Classes: </b><a href="Poco.MongoDB.Message.html" title="class Poco::MongoDB::Message">Message</a>, <a href="Poco.MongoDB.RequestMessage.html" title="class Poco::MongoDB::RequestMessage">RequestMessage</a></p>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.MongoDB.InsertRequest.html#20302" title="Poco::MongoDB::InsertRequest::addNewDocument()">addNewDocument</a>, <a href="Poco.MongoDB.InsertRequest.html#20304" title="Poco::MongoDB::InsertRequest::buildRequest()">buildRequest</a>, <a href="Poco.MongoDB.InsertRequest.html#20303" title="Poco::MongoDB::InsertRequest::documents()">documents</a></p>
+<p><b>Inherited Functions: </b><a href="Poco.MongoDB.RequestMessage.html#20447" title="Poco::MongoDB::RequestMessage::buildRequest()">buildRequest</a>, <a href="Poco.MongoDB.Message.html#20328" title="Poco::MongoDB::Message::header()">header</a>, <a href="Poco.MongoDB.Message.html#20330" title="Poco::MongoDB::Message::messageLength()">messageLength</a>, <a href="Poco.MongoDB.RequestMessage.html#20445" title="Poco::MongoDB::RequestMessage::send()">send</a></p>
+<h2>Enumerations</h2>
+<h3><a id="20295">Flags</a></h3>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="20296">INSERT_DEFAULT</a> = 0</p>
+<div class="description">
+<p>If specified, perform a normal insert operation. </p>
+</div>
+<p class="decl"><a id="20297">INSERT_CONTINUE_ON_ERROR</a> = 1</p>
+<div class="description">
+<p>If set, the database will not stop processing a bulk insert if one  fails (e.g. due to duplicate IDs). This makes bulk insert behave similarly  to a series of single inserts, except lastError will be set if any insert  fails, not just the last one. If multiple errors occur, only the most  recent will be reported. </p>
+</div>
+<h2>Constructors</h2>
+<h3><a id="20298">InsertRequest</a></h3>
+<p class="decl"><a href="Poco.MongoDB.InsertRequest.html" title="class Poco::MongoDB::InsertRequest">InsertRequest</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; collectionName,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.MongoDB.InsertRequest.html#20295" title="enum  Poco::MongoDB::InsertRequest::Flags">Flags</a> flags = INSERT_DEFAULT<br />);</p>
+<div class="description">
+<p>Creates an <a href="Poco.MongoDB.InsertRequest.html" title="class Poco::MongoDB::InsertRequest">InsertRequest</a>. </p>
+<p>The full collection name is the concatenation of the database  name with the collection name, using a &quot;.&quot; for the concatenation. For example,  for the database &quot;foo&quot; and the collection &quot;bar&quot;, the full collection name is  &quot;foo.bar&quot;. </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="20301">~InsertRequest</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual ~<a href="Poco.MongoDB.InsertRequest.html" title="class Poco::MongoDB::InsertRequest">InsertRequest</a>();</p>
+<div class="description">
+<p>Destroys the <a href="Poco.MongoDB.InsertRequest.html" title="class Poco::MongoDB::InsertRequest">InsertRequest</a>. </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="20302">addNewDocument</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.MongoDB.Document.html" title="class Poco::MongoDB::Document">Document</a> &amp; addNewDocument();</p>
+<div class="description">
+<p>Adds a new document for insertion. A reference to the empty document is returned. <a href="Poco.MongoDB.InsertRequest.html" title="class Poco::MongoDB::InsertRequest">InsertRequest</a> is the owner of the <a href="Poco.MongoDB.Document.html" title="class Poco::MongoDB::Document">Document</a> and will free it on destruction. </p>
+</div>
+<h3><a id="20303">documents</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.MongoDB.Document.html#20208" title="Poco::MongoDB::Document::Vector">Document::Vector</a> &amp; documents();</p>
+<div class="description">
+<p>Returns the documents to insert into the database. </p>
+</div>
+<h3><a id="20304">buildRequest</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">void buildRequest(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.BinaryWriter.html" title="class Poco::BinaryWriter">BinaryWriter</a> &amp; writer<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.MongoDB.RequestMessage.html#20447" title="Poco::MongoDB::RequestMessage::buildRequest()">Poco::MongoDB::RequestMessage::buildRequest()</a></p></div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

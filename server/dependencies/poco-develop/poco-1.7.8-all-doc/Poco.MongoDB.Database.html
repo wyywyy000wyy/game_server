@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::MongoDB::Database</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.MongoDB.html" class="namespace">Poco::MongoDB</a></h1>
+<h1 class="symbol">class Database</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-MongoDB" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> MongoDB<br />
+<b>Package:</b> MongoDB<br />
+<b>Header:</b> Poco/MongoDB/Database.h</p>
+<h2>Description</h2>
+<div class="description">
+<p><a href="Poco.MongoDB.Database.html" title="class Poco::MongoDB::Database">Database</a> is a helper class for creating requests. <a href="Poco.MongoDB.html" title="namespace Poco::MongoDB">MongoDB</a> works with collection names and uses the part before the first dot as the name of the database. </p>
+</div>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.MongoDB.Database.html#20171" title="Poco::MongoDB::Database::authCR()">authCR</a>, <a href="Poco.MongoDB.Database.html#20175" title="Poco::MongoDB::Database::authSCRAM()">authSCRAM</a>, <a href="Poco.MongoDB.Database.html#20137" title="Poco::MongoDB::Database::authenticate()">authenticate</a>, <a href="Poco.MongoDB.Database.html#20142" title="Poco::MongoDB::Database::count()">count</a>, <a href="Poco.MongoDB.Database.html#20145" title="Poco::MongoDB::Database::createCommand()">createCommand</a>, <a href="Poco.MongoDB.Database.html#20146" title="Poco::MongoDB::Database::createCountRequest()">createCountRequest</a>, <a href="Poco.MongoDB.Database.html#20148" title="Poco::MongoDB::Database::createDeleteRequest()">createDeleteRequest</a>, <a href="Poco.MongoDB.Database.html#20150" title="Poco::MongoDB::Database::createInsertRequest()">createInsertRequest</a>, <a href="Poco.MongoDB.Database.html#20152" title="Poco::MongoDB::Database::createQueryRequest()">createQueryRequest</a>, <a href="Poco.MongoDB.Database.html#20154" title="Poco::MongoDB::Database::createUpdateRequest()">createUpdateRequest</a>, <a href="Poco.MongoDB.Database.html#20156" title="Poco::MongoDB::Database::ensureIndex()">ensureIndex</a>, <a href="Poco.MongoDB.Database.html#20167" title="Poco::MongoDB::Database::getLastError()">getLastError</a>, <a href="Poco.MongoDB.Database.html#20165" title="Poco::MongoDB::Database::getLastErrorDoc()">getLastErrorDoc</a></p>
+<h2>Constructors</h2>
+<h3><a id="20134">Database</a></h3>
+<p class="decl">explicit <a href="Poco.MongoDB.Database.html" title="class Poco::MongoDB::Database">Database</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; name<br />);</p>
+<div class="description">
+<p>Creates a <a href="Poco.MongoDB.Database.html" title="class Poco::MongoDB::Database">Database</a> for the database with the given name. </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="20136">~Database</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual ~<a href="Poco.MongoDB.Database.html" title="class Poco::MongoDB::Database">Database</a>();</p>
+<div class="description">
+<p>Destroys the <a href="Poco.MongoDB.Database.html" title="class Poco::MongoDB::Database">Database</a>. </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="20137">authenticate</a></h3>
+<p class="decl">bool authenticate(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.MongoDB.Connection.html" title="class Poco::MongoDB::Connection">Connection</a> &amp; connection,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; username,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; password,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; method = AUTH_SCRAM_SHA1<br />);</p>
+<div class="description">
+<p>Authenticates against the database using the given connection, username and password, as well as authentication method. </p>
+<p>&quot;MONGODB-CR&quot; (default prior to <a href="Poco.MongoDB.html" title="namespace Poco::MongoDB">MongoDB</a> 3.0) and  &quot;SCRAM-SHA-1&quot; (default starting in 3.0) are the only supported  authentication methods. </p>
+<p>Returns true if authentication was successful, otherwise false. </p>
+<p>May throw a <a href="Poco.ProtocolException.html" title="class Poco::ProtocolException">Poco::ProtocolException</a> if authentication fails for a reason other than invalid credentials. </p>
+</div>
+<h3><a id="20142">count</a></h3>
+<p class="decl"><a href="Poco.html#18384" title="Poco::Int64">Int64</a> count(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.MongoDB.Connection.html" title="class Poco::MongoDB::Connection">Connection</a> &amp; connection,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; collectionName<br />) const;</p>
+<div class="description">
+<p>Sends a count request for the given collection to <a href="Poco.MongoDB.html" title="namespace Poco::MongoDB">MongoDB</a>.  </p>
+<p>If the command fails, -1 is returned. </p>
+</div>
+<h3><a id="20145">createCommand</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.SharedPtr.html" title="class Poco::SharedPtr">Poco::SharedPtr</a> &lt; <a href="Poco.MongoDB.QueryRequest.html" title="class Poco::MongoDB::QueryRequest">Poco::MongoDB::QueryRequest</a> &gt; createCommand() const;</p>
+<div class="description">
+<p>Creates a <a href="Poco.MongoDB.QueryRequest.html" title="class Poco::MongoDB::QueryRequest">QueryRequest</a> for a command. </p>
+</div>
+<h3><a id="20146">createCountRequest</a></h3>
+<p class="decl"><a href="Poco.SharedPtr.html" title="class Poco::SharedPtr">Poco::SharedPtr</a> &lt; <a href="Poco.MongoDB.QueryRequest.html" title="class Poco::MongoDB::QueryRequest">Poco::MongoDB::QueryRequest</a> &gt; createCountRequest(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; collectionName<br />) const;</p>
+<div class="description">
+<p>Creates a <a href="Poco.MongoDB.QueryRequest.html" title="class Poco::MongoDB::QueryRequest">QueryRequest</a> to count the given collection.  The collectionname must not contain the database name. </p>
+</div>
+<h3><a id="20148">createDeleteRequest</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.SharedPtr.html" title="class Poco::SharedPtr">Poco::SharedPtr</a> &lt; <a href="Poco.MongoDB.DeleteRequest.html" title="class Poco::MongoDB::DeleteRequest">Poco::MongoDB::DeleteRequest</a> &gt; createDeleteRequest(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; collectionName<br />) const;</p>
+<div class="description">
+<p>Creates a <a href="Poco.MongoDB.DeleteRequest.html" title="class Poco::MongoDB::DeleteRequest">DeleteRequest</a> to delete documents in the given collection. The collectionname must not contain the database name. </p>
+</div>
+<h3><a id="20150">createInsertRequest</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.SharedPtr.html" title="class Poco::SharedPtr">Poco::SharedPtr</a> &lt; <a href="Poco.MongoDB.InsertRequest.html" title="class Poco::MongoDB::InsertRequest">Poco::MongoDB::InsertRequest</a> &gt; createInsertRequest(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; collectionName<br />) const;</p>
+<div class="description">
+<p>Creates an <a href="Poco.MongoDB.InsertRequest.html" title="class Poco::MongoDB::InsertRequest">InsertRequest</a> to insert new documents in the given collection. The collectionname must not contain the database name. </p>
+</div>
+<h3><a id="20152">createQueryRequest</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.SharedPtr.html" title="class Poco::SharedPtr">Poco::SharedPtr</a> &lt; <a href="Poco.MongoDB.QueryRequest.html" title="class Poco::MongoDB::QueryRequest">Poco::MongoDB::QueryRequest</a> &gt; createQueryRequest(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; collectionName<br />) const;</p>
+<div class="description">
+<p>Creates a <a href="Poco.MongoDB.QueryRequest.html" title="class Poco::MongoDB::QueryRequest">QueryRequest</a>.  The collectionname must not contain the database name. </p>
+</div>
+<h3><a id="20154">createUpdateRequest</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.SharedPtr.html" title="class Poco::SharedPtr">Poco::SharedPtr</a> &lt; <a href="Poco.MongoDB.UpdateRequest.html" title="class Poco::MongoDB::UpdateRequest">Poco::MongoDB::UpdateRequest</a> &gt; createUpdateRequest(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; collectionName<br />) const;</p>
+<div class="description">
+<p>Creates an <a href="Poco.MongoDB.UpdateRequest.html" title="class Poco::MongoDB::UpdateRequest">UpdateRequest</a>.  The collectionname must not contain the database name. </p>
+</div>
+<h3><a id="20156">ensureIndex</a></h3>
+<p class="decl"><a href="Poco.MongoDB.Document.html#20207" title="Poco::MongoDB::Document::Ptr">Poco::MongoDB::Document::Ptr</a> ensureIndex(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.MongoDB.Connection.html" title="class Poco::MongoDB::Connection">Connection</a> &amp; connection,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; collection,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; indexName,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.MongoDB.Document.html#20207" title="Poco::MongoDB::Document::Ptr">Poco::MongoDB::Document::Ptr</a> keys,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool unique = false,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool background = false,<br />&nbsp;&nbsp;&nbsp;&nbsp;int version = 0,<br />&nbsp;&nbsp;&nbsp;&nbsp;int ttl = 0<br />);</p>
+<div class="description">
+<p>Creates an index. The document returned is the result of a getLastError call. For more info look at the ensureIndex information on the <a href="Poco.MongoDB.html" title="namespace Poco::MongoDB">MongoDB</a> website. </p>
+</div>
+<h3><a id="20167">getLastError</a></h3>
+<p class="decl">std::string getLastError(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.MongoDB.Connection.html" title="class Poco::MongoDB::Connection">Connection</a> &amp; connection<br />) const;</p>
+<div class="description">
+<p>Sends the getLastError command to the database and returns the err element from the error document. When err is null, an empty string is returned. </p>
+</div>
+<h3><a id="20165">getLastErrorDoc</a></h3>
+<p class="decl"><a href="Poco.MongoDB.Document.html#20207" title="Poco::MongoDB::Document::Ptr">Document::Ptr</a> getLastErrorDoc(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.MongoDB.Connection.html" title="class Poco::MongoDB::Connection">Connection</a> &amp; connection<br />) const;</p>
+<div class="description">
+<p>Sends the getLastError command to the database and returns the error document. </p>
+</div>
+<h3><a id="20171">authCR</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">bool authCR(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.MongoDB.Connection.html" title="class Poco::MongoDB::Connection">Connection</a> &amp; connection,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; username,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; password<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="20175">authSCRAM</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">bool authSCRAM(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.MongoDB.Connection.html" title="class Poco::MongoDB::Connection">Connection</a> &amp; connection,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; username,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; password<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Variables</h2>
+<h3><a id="20169">AUTH_MONGODB_CR</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static const std::string <a href="Poco.MongoDB.Database.html#20169" title="Poco::MongoDB::Database::AUTH_MONGODB_CR">AUTH_MONGODB_CR</a>;</p>
+<div class="description">
+<p>Default authentication mechanism prior to <a href="Poco.MongoDB.html" title="namespace Poco::MongoDB">MongoDB</a> 3.0. </p>
+</div>
+<h3><a id="20170">AUTH_SCRAM_SHA1</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static const std::string <a href="Poco.MongoDB.Database.html#20170" title="Poco::MongoDB::Database::AUTH_SCRAM_SHA1">AUTH_SCRAM_SHA1</a>;</p>
+<div class="description">
+<p>Default authentication mechanism for <a href="Poco.MongoDB.html" title="namespace Poco::MongoDB">MongoDB</a> 3.0. </p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

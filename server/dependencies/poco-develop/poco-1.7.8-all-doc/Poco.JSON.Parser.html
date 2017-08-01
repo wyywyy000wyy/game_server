@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::JSON::Parser</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.JSON.html" class="namespace">Poco::JSON</a></h1>
+<h1 class="symbol">class Parser</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-JSON" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> JSON<br />
+<b>Package:</b> JSON<br />
+<b>Header:</b> Poco/JSON/Parser.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>A parser for reading <a href="https://www.ietf.org/rfc/rfc4627.txt" target="_blank">RFC 4627</a> compliant <a href="Poco.JSON.html" title="namespace Poco::JSON">JSON</a> from strings or streams. </p>
+<p>Simple usage example: </p>
+<p></p>
+<pre>std::string json = &quot;{ \&quot;name\&quot; : \&quot;Franky\&quot;, \&quot;children\&quot; : [ \&quot;Jonas\&quot;, \&quot;Ellen\&quot; ] }&quot;;
+Parser parser;
+Var result = parser.parse(json);
+// ... use result (see next example)
+parser.reset();
+std::ostringstream ostr;
+PrintHandler::Ptr pHandler = new PrintHandler(ostr);
+parser.setHandler(pHandler);
+parser.parse(json); // ostr.str() == json
+</pre>
+<p> </p>
+<p>The result of parsing a valid <a href="Poco.JSON.html" title="namespace Poco::JSON">JSON</a> document will be either an <a href="Poco.JSON.Object.html" title="class Poco::JSON::Object">Object</a> or an <a href="Poco.JSON.Array.html" title="class Poco::JSON::Array">Array</a>. Therefore the result of <a href="Poco.JSON.Parser.html#19798" title="Poco::JSON::Parser::parse()">parse</a>() is a <a href="Poco.Dynamic.Var.html" title="class Poco::Dynamic::Var">Poco::Dynamic::Var</a> containing a <a href="Poco.SharedPtr.html" title="class Poco::SharedPtr">Poco::SharedPtr</a> to an <a href="Poco.JSON.Object.html" title="class Poco::JSON::Object">Object</a> or <a href="Poco.JSON.Array.html" title="class Poco::JSON::Array">Array</a> instance. </p>
+<p>Example: </p>
+<p></p>
+<pre>std::string json = &quot;{ \&quot;name\&quot; : \&quot;Franky\&quot;, \&quot;children\&quot; : [ \&quot;Jonas\&quot;, \&quot;Ellen\&quot; ] }&quot;;
+Parser parser;
+Var result = parser.parse(json);
+Object::Ptr object = result.extract&lt;Object::Ptr&gt;();
+std::string name = object.getValue&lt;std::string&gt;(&quot;name&quot;);
+Array::Ptr children = object.getArray(&quot;children&quot;);
+</pre>
+<p> </p>
+</div>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.JSON.Parser.html#19805" title="Poco::JSON::Parser::asVar()">asVar</a>, <a href="Poco.JSON.Parser.html#19791" title="Poco::JSON::Parser::getAllowComments()">getAllowComments</a>, <a href="Poco.JSON.Parser.html#19794" title="Poco::JSON::Parser::getAllowNullByte()">getAllowNullByte</a>, <a href="Poco.JSON.Parser.html#19797" title="Poco::JSON::Parser::getDepth()">getDepth</a>, <a href="Poco.JSON.Parser.html#19804" title="Poco::JSON::Parser::getHandler()">getHandler</a>, <a href="Poco.JSON.Parser.html#19798" title="Poco::JSON::Parser::parse()">parse</a>, <a href="Poco.JSON.Parser.html#19788" title="Poco::JSON::Parser::reset()">reset</a>, <a href="Poco.JSON.Parser.html#19806" title="Poco::JSON::Parser::result()">result</a>, <a href="Poco.JSON.Parser.html#19789" title="Poco::JSON::Parser::setAllowComments()">setAllowComments</a>, <a href="Poco.JSON.Parser.html#19792" title="Poco::JSON::Parser::setAllowNullByte()">setAllowNullByte</a>, <a href="Poco.JSON.Parser.html#19795" title="Poco::JSON::Parser::setDepth()">setDepth</a>, <a href="Poco.JSON.Parser.html#19802" title="Poco::JSON::Parser::setHandler()">setHandler</a></p>
+<h2>Types</h2>
+<h3><a id="19680">CharIntType</a></h3>
+<p class="decl">typedef CharTraits::int_type <a href="Poco.JSON.Parser.html#19680" title="Poco::JSON::Parser::CharIntType">CharIntType</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="19679">CharTraits</a></h3>
+<p class="decl">typedef std::char_traits &lt; char &gt; <a href="Poco.JSON.Parser.html#19679" title="Poco::JSON::Parser::CharTraits">CharTraits</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Enumerations</h2>
+<h3><a id="19758">Actions</a></h3>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="19759">CB</a> = - 10</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="19760">CE</a> = - 11</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="19761">FA</a> = - 12</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="19762">TR</a> = - 13</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="19763">NU</a> = - 14</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="19764">DE</a> = - 15</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="19765">DF</a> = - 16</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="19766">SB</a> = - 17</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="19767">MX</a> = - 18</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="19768">ZX</a> = - 19</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="19769">IX</a> = - 20</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="19770">EX</a> = - 21</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="19771">UC</a> = - 22</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="19681">Classes</a></h3>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="19682">C_SPACE</a></p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="19683">C_WHITE</a></p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="19684">C_LCURB</a></p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="19685">C_RCURB</a></p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="19686">C_LSQRB</a></p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="19687">C_RSQRB</a></p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="19688">C_COLON</a></p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="19689">C_COMMA</a></p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="19690">C_QUOTE</a></p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="19691">C_BACKS</a></p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="19692">C_SLASH</a></p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="19693">C_PLUS</a></p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="19694">C_MINUS</a></p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="19695">C_POINT</a></p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="19696">C_ZERO</a></p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="19697">C_DIGIT</a></p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="19698">C_LOW_A</a></p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="19699">C_LOW_B</a></p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="19700">C_LOW_C</a></p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="19701">C_LOW_D</a></p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="19702">C_LOW_E</a></p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="19703">C_LOW_F</a></p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="19704">C_LOW_L</a></p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="19705">C_LOW_N</a></p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="19706">C_LOW_R</a></p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="19707">C_LOW_S</a></p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="19708">C_LOW_T</a></p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="19709">C_LOW_U</a></p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="19710">C_ABCDF</a></p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="19711">C_E</a></p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="19712">C_ETC</a></p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="19713">C_STAR</a></p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="19714">NR_CLASSES</a></p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="19772">JSONType</a></h3>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="19773">JSON_T_NONE</a> = 0</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="19774">JSON_T_INTEGER</a></p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="19775">JSON_T_FLOAT</a></p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="19776">JSON_T_NULL</a></p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="19777">JSON_T_TRUE</a></p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="19778">JSON_T_FALSE</a></p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="19779">JSON_T_STRING</a></p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="19780">JSON_T_MAX</a></p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="19753">Modes</a></h3>
+<div class="description">
+<p><a href="Poco.JSON.Parser.html#19753" title="enum  Poco::JSON::Parser::Modes">Modes</a> that can be pushed on the _pStack. </p>
+</div>
+<p class="decl"><a id="19754">MODE_ARRAY</a> = 1</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="19755">MODE_DONE</a> = 2</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="19756">MODE_KEY</a> = 3</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="19757">MODE_OBJECT</a> = 4</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="19715">States</a></h3>
+<div class="description">
+<p>State codes </p>
+</div>
+<p class="decl"><a id="19716">GO</a></p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="19717">OK</a></p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="19718">OB</a></p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="19719">KE</a></p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="19720">CO</a></p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="19721">VA</a></p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="19722">AR</a></p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="19723">ST</a></p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="19724">EC</a></p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="19725">U1</a></p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="19726">U2</a></p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="19727">U3</a></p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="19728">U4</a></p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="19729">MI</a></p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="19730">ZE</a></p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="19731">IT</a></p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="19732">FR</a></p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="19733">E1</a></p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="19734">E2</a></p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="19735">E3</a></p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="19736">T1</a></p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="19737">T2</a></p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="19738">T3</a></p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="19739">F1</a></p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="19740">F2</a></p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="19741">F3</a></p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="19742">F4</a></p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="19743">N1</a></p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="19744">N2</a></p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="19745">N3</a></p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="19746">C1</a></p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="19747">C2</a></p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="19748">C3</a></p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="19749">FX</a></p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="19750">D1</a></p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="19751">D2</a></p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="19752">NR_STATES</a></p>
+<div class="description">
+<p></p>
+</div>
+<h2>Constructors</h2>
+<h3><a id="19784">Parser</a></h3>
+<p class="decl"><a href="Poco.JSON.Parser.html" title="class Poco::JSON::Parser">Parser</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.JSON.Handler.html#19520" title="Poco::JSON::Handler::Ptr">Handler::Ptr</a> &amp; pHandler = new ParseHandler,<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t bufSize = JSON_PARSE_BUFFER_SIZE<br />);</p>
+<div class="description">
+<p>Creates <a href="Poco.JSON.html" title="namespace Poco::JSON">JSON</a> <a href="Poco.JSON.Parser.html" title="class Poco::JSON::Parser">Parser</a>, using the given <a href="Poco.JSON.Handler.html" title="class Poco::JSON::Handler">Handler</a> and buffer size. </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="19787">~Parser</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual ~<a href="Poco.JSON.Parser.html" title="class Poco::JSON::Parser">Parser</a>();</p>
+<div class="description">
+<p>Destroys <a href="Poco.JSON.html" title="namespace Poco::JSON">JSON</a> <a href="Poco.JSON.Parser.html" title="class Poco::JSON::Parser">Parser</a>. </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="19805">asVar</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Dynamic.Var.html" title="class Poco::Dynamic::Var">Dynamic::Var</a> asVar() const;</p>
+<div class="description">
+<p>Returns the result of parsing; </p>
+</div>
+<h3><a id="19791">getAllowComments</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool getAllowComments() const;</p>
+<div class="description">
+<p>Returns true if comments are allowed, false otherwise. </p>
+<p>By default, comments are not allowed. </p>
+</div>
+<h3><a id="19794">getAllowNullByte</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool getAllowNullByte() const;</p>
+<div class="description">
+<p>Returns true if null byte is allowed, false otherwise. </p>
+<p>By default, null bytes are allowed. </p>
+</div>
+<h3><a id="19797">getDepth</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">std::size_t getDepth() const;</p>
+<div class="description">
+<p>Returns the allowed <a href="Poco.JSON.html" title="namespace Poco::JSON">JSON</a> depth. </p>
+</div>
+<h3><a id="19804">getHandler</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">const <a href="Poco.JSON.Handler.html#19520" title="Poco::JSON::Handler::Ptr">Handler::Ptr</a> &amp; getHandler();</p>
+<div class="description">
+<p>Returns the <a href="Poco.JSON.Handler.html" title="class Poco::JSON::Handler">Handler</a>. </p>
+</div>
+<h3><a id="19798">parse</a></h3>
+<p class="decl"><a href="Poco.Dynamic.Var.html" title="class Poco::Dynamic::Var">Dynamic::Var</a> parse(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; json<br />);</p>
+<div class="description">
+<p>Parses <a href="Poco.JSON.html" title="namespace Poco::JSON">JSON</a> from a string. </p>
+</div>
+<h3><a id="19800">parse</a></h3>
+<p class="decl"><a href="Poco.Dynamic.Var.html" title="class Poco::Dynamic::Var">Dynamic::Var</a> parse(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::istream &amp; in<br />);</p>
+<div class="description">
+<p>Parses <a href="Poco.JSON.html" title="namespace Poco::JSON">JSON</a> from an input stream. </p>
+</div>
+<h3><a id="19788">reset</a></h3>
+<p class="decl">void reset();</p>
+<div class="description">
+<p>Resets the parser. </p>
+</div>
+<h3><a id="19806">result</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Dynamic.Var.html" title="class Poco::Dynamic::Var">Dynamic::Var</a> result() const;</p>
+<div class="description">
+<p>Returns the result of parsing as <a href="Poco.Dynamic.Var.html" title="class Poco::Dynamic::Var">Dynamic::Var</a>; </p>
+</div>
+<h3><a id="19789">setAllowComments</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void setAllowComments(<br />&nbsp;&nbsp;&nbsp;&nbsp;bool comments<br />);</p>
+<div class="description">
+<p>Allow or disallow comments. By default, comments are not allowed. </p>
+</div>
+<h3><a id="19792">setAllowNullByte</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void setAllowNullByte(<br />&nbsp;&nbsp;&nbsp;&nbsp;bool nullByte<br />);</p>
+<div class="description">
+<p>Allow or disallow null byte in strings.  </p>
+<p>By default, null byte is allowed. </p>
+</div>
+<h3><a id="19795">setDepth</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void setDepth(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t depth<br />);</p>
+<div class="description">
+<p>Sets the allowed <a href="Poco.JSON.html" title="namespace Poco::JSON">JSON</a> depth. </p>
+</div>
+<h3><a id="19802">setHandler</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void setHandler(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.JSON.Handler.html#19520" title="Poco::JSON::Handler::Ptr">Handler::Ptr</a> &amp; pHandler<br />);</p>
+<div class="description">
+<p>Set the <a href="Poco.JSON.Handler.html" title="class Poco::JSON::Handler">Handler</a>. </p>
+</div>
+<h2>Variables</h2>
+<h3><a id="19782">JSON_PARSER_STACK_SIZE</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static const std::size_t <a href="Poco.JSON.Parser.html#19782" title="Poco::JSON::Parser::JSON_PARSER_STACK_SIZE">JSON_PARSER_STACK_SIZE</a> = 128;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="19781">JSON_PARSE_BUFFER_SIZE</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static const std::size_t <a href="Poco.JSON.Parser.html#19781" title="Poco::JSON::Parser::JSON_PARSE_BUFFER_SIZE">JSON_PARSE_BUFFER_SIZE</a> = 4096;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="19783">JSON_UNLIMITED_DEPTH</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static const int <a href="Poco.JSON.Parser.html#19783" title="Poco::JSON::Parser::JSON_UNLIMITED_DEPTH">JSON_UNLIMITED_DEPTH</a> = - 1;</p>
+<div class="description">
+<p></p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

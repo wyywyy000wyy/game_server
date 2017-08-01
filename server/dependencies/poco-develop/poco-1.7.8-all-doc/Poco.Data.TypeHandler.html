@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::Data::TypeHandler</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.Data.html" class="namespace">Poco::Data</a></h1>
+<h1 class="template">template &lt; class T &gt;</h1>
+<h1 class="symbol">class TypeHandler</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Data" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Data<br />
+<b>Package:</b> DataCore<br />
+<b>Header:</b> Poco/Data/TypeHandler.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>Converts Rows to a Type and the other way around. Provide template specializations to support your own complex types. </p>
+<p>Take as example the following (simplified) class: class Person { private: std::string _lastName; std::string _firstName; int		 _age; public: const std::string&amp; getLastName(); [...] // other set/get methods (returning const reference), a default constructor,  [...] // optional &lt; operator (for set, multiset) or function operator (for map, multimap) }; </p>
+<p>The <a href="Poco.Data.TypeHandler.html" title="class Poco::Data::TypeHandler">TypeHandler</a> must provide a custom bind, size, prepare and extract method: </p>
+<p>template &lt;&gt; class <a href="Poco.Data.TypeHandler.html" title="class Poco::Data::TypeHandler">TypeHandler</a>&lt;struct Person&gt; { public: static std::size_t <a href="Poco.Data.TypeHandler.html#7693" title="Poco::Data::TypeHandler::size()">size</a>() { </p>
+<pre>return 3; // lastName + firstname + age occupy three columns
+</pre>
+<p>} </p>
+<p>static void <a href="Poco.Data.TypeHandler.html#7688" title="Poco::Data::TypeHandler::bind()">bind</a>(std::size_t pos, const Person&amp; obj, <a href="Poco.Data.AbstractBinder.html#4447" title="Poco::Data::AbstractBinder::Ptr">AbstractBinder::Ptr</a> pBinder, <a href="Poco.Data.AbstractBinder.html#4448" title="enum  Poco::Data::AbstractBinder::Direction">AbstractBinder::Direction</a> dir) { </p>
+<pre>// the table is defined as Person (LastName VARCHAR(30), FirstName VARCHAR, Age INTEGER(3))
+// Note that we advance pos by the number of columns the datatype uses! For string/int this is one.
+poco_assert_dbg (!pBinder.isNull());
+TypeHandler&lt;std::string&gt;::bind(pos++, obj.getLastName(), pBinder, dir);
+TypeHandler&lt;std::string&gt;::bind(pos++, obj.getFirstName(), pBinder, dir);
+TypeHandler&lt;int&gt;::bind(pos++, obj.getAge(), pBinder, dir);
+</pre>
+<p>} </p>
+<p>static void <a href="Poco.Data.TypeHandler.html#7699" title="Poco::Data::TypeHandler::prepare()">prepare</a>(std::size_t pos, const Person&amp; obj, <a href="Poco.Data.AbstractPreparator.html#5157" title="Poco::Data::AbstractPreparator::Ptr">AbstractPreparator::Ptr</a> pPreparator) { </p>
+<pre>// the table is defined as Person (LastName VARCHAR(30), FirstName VARCHAR, Age INTEGER(3))
+poco_assert_dbg (!pPreparator.isNull());
+TypeHandler&lt;std::string&gt;::prepare(pos++, obj.getLastName(), pPreparator);
+TypeHandler&lt;std::string&gt;::prepare(pos++, obj.getFirstName(), pPreparator);
+TypeHandler&lt;int&gt;::prepare(pos++, obj.getAge(), pPreparator);
+</pre>
+<p>} </p>
+<p>static void <a href="Poco.Data.TypeHandler.html#7694" title="Poco::Data::TypeHandler::extract()">extract</a>(std::size_t pos, Person&amp; obj, const Person&amp; defVal, <a href="Poco.Data.AbstractExtractor.html#4883" title="Poco::Data::AbstractExtractor::Ptr">AbstractExtractor::Ptr</a> pExt) { </p>
+<pre>// defVal is the default person we should use if we encunter NULL entries, so we take the individual fields
+// as defaults. You can do more complex checking, ie return defVal if only one single entry of the fields is null etc...
+poco_assert_dbg (!pExt.isNull());
+std::string lastName;
+std::string firstName;
+int age = 0;
+// the table is defined as Person (LastName VARCHAR(30), FirstName VARCHAR, Age INTEGER(3))
+TypeHandler&lt;std::string&gt;::extract(pos++, lastName, defVal.getLastName(), pExt);
+TypeHandler&lt;std::string&gt;::extract(pos++, firstName, defVal.getFirstName(), pExt);
+TypeHandler&lt;int&gt;::extract(pos++, age, defVal.getAge(), pExt);
+obj.setLastName(lastName);
+obj.setFirstName(firstName);
+obj.setAge(age);
+</pre>
+<p>} }; </p>
+<p>Note that the <a href="Poco.Data.TypeHandler.html" title="class Poco::Data::TypeHandler">TypeHandler</a> template specialization must always be declared in the namespace <a href="Poco.Data.html" title="namespace Poco::Data">Poco::Data</a>. Apart from that no further work is needed. One can now use Person with into and use clauses. </p>
+</div>
+<h2>Inheritance</h2>
+<p><b>Direct Base Classes: </b><a href="Poco.Data.AbstractTypeHandler.html" title="class Poco::Data::AbstractTypeHandler">AbstractTypeHandler</a></p>
+<p><b>All Base Classes: </b><a href="Poco.Data.AbstractTypeHandler.html" title="class Poco::Data::AbstractTypeHandler">AbstractTypeHandler</a></p>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.Data.TypeHandler.html#7688" title="Poco::Data::TypeHandler::bind()">bind</a>, <a href="Poco.Data.TypeHandler.html#7694" title="Poco::Data::TypeHandler::extract()">extract</a>, <a href="Poco.Data.TypeHandler.html#7699" title="Poco::Data::TypeHandler::prepare()">prepare</a>, <a href="Poco.Data.TypeHandler.html#7693" title="Poco::Data::TypeHandler::size()">size</a></p>
+<p><b>Inherited Functions: </b><a href="Poco.Data.AbstractTypeHandler.html#7685" title="Poco::Data::AbstractTypeHandler::operator =()">operator&nbsp;=</a></p>
+<h2>Constructors</h2>
+<h2>Member Functions</h2>
+<h3><a id="7688">bind</a> <img src="images/static.png" alt="static" title="static" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">static void bind(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const T &amp; obj,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Data.AbstractBinder.html#4447" title="Poco::Data::AbstractBinder::Ptr">AbstractBinder::Ptr</a> pBinder,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Data.AbstractBinder.html#4448" title="enum  Poco::Data::AbstractBinder::Direction">AbstractBinder::Direction</a> dir<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="7694">extract</a> <img src="images/static.png" alt="static" title="static" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">static void extract(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;T &amp; obj,<br />&nbsp;&nbsp;&nbsp;&nbsp;const T &amp; defVal,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Data.AbstractExtractor.html#4883" title="Poco::Data::AbstractExtractor::Ptr">AbstractExtractor::Ptr</a> pExt<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="7699">prepare</a> <img src="images/static.png" alt="static" title="static" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">static void prepare(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const T &amp; obj,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Data.AbstractPreparator.html#5157" title="Poco::Data::AbstractPreparator::Ptr">AbstractPreparator::Ptr</a> pPreparator<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="7693">size</a> <img src="images/static.png" alt="static" title="static" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">static std::size_t size();</p>
+<div class="description">
+<p></p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::Net::RemoteSyslogChannel</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.Net.html" class="namespace">Poco::Net</a></h1>
+<h1 class="symbol">class RemoteSyslogChannel</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Net" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Net<br />
+<b>Package:</b> Logging<br />
+<b>Header:</b> Poco/Net/RemoteSyslogChannel.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>This <a href="Poco.Channel.html" title="class Poco::Channel">Channel</a> implements remote syslog logging over UDP according to <a href="https://www.ietf.org/rfc/rfc5424.txt" target="_blank">RFC 5424</a> &quot;The Syslog Protocol&quot;  and <a href="https://www.ietf.org/rfc/rfc5426.txt" target="_blank">RFC 5426</a> &quot;Transmission of syslog messages over UDP&quot;. </p>
+<p>In addition, <a href="Poco.Net.RemoteSyslogListener.html" title="class Poco::Net::RemoteSyslogListener">RemoteSyslogListener</a> also supports the &quot;old&quot; BSD syslog protocol, as described in <a href="https://www.ietf.org/rfc/rfc3164.txt" target="_blank">RFC 3164</a>. </p>
+</div>
+<h2>Inheritance</h2>
+<p><b>Direct Base Classes: </b><a href="Poco.Channel.html" title="class Poco::Channel">Poco::Channel</a></p>
+<p><b>All Base Classes: </b><a href="Poco.Channel.html" title="class Poco::Channel">Poco::Channel</a>, <a href="Poco.Configurable.html" title="class Poco::Configurable">Poco::Configurable</a>, <a href="Poco.RefCountedObject.html" title="class Poco::RefCountedObject">Poco::RefCountedObject</a></p>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.Net.RemoteSyslogChannel.html#24191" title="Poco::Net::RemoteSyslogChannel::close()">close</a>, <a href="Poco.Net.RemoteSyslogChannel.html#24206" title="Poco::Net::RemoteSyslogChannel::getPrio()">getPrio</a>, <a href="Poco.Net.RemoteSyslogChannel.html#24197" title="Poco::Net::RemoteSyslogChannel::getProperty()">getProperty</a>, <a href="Poco.Net.RemoteSyslogChannel.html#24192" title="Poco::Net::RemoteSyslogChannel::log()">log</a>, <a href="Poco.Net.RemoteSyslogChannel.html#24190" title="Poco::Net::RemoteSyslogChannel::open()">open</a>, <a href="Poco.Net.RemoteSyslogChannel.html#24199" title="Poco::Net::RemoteSyslogChannel::registerChannel()">registerChannel</a>, <a href="Poco.Net.RemoteSyslogChannel.html#24194" title="Poco::Net::RemoteSyslogChannel::setProperty()">setProperty</a></p>
+<p><b>Inherited Functions: </b><a href="Poco.Channel.html#9020" title="Poco::Channel::close()">close</a>, <a href="Poco.RefCountedObject.html#16511" title="Poco::RefCountedObject::duplicate()">duplicate</a>, <a href="Poco.Channel.html#9026" title="Poco::Channel::getProperty()">getProperty</a>, <a href="Poco.Channel.html#9021" title="Poco::Channel::log()">log</a>, <a href="Poco.Channel.html#9019" title="Poco::Channel::open()">open</a>, <a href="Poco.RefCountedObject.html#16513" title="Poco::RefCountedObject::referenceCount()">referenceCount</a>, <a href="Poco.RefCountedObject.html#16512" title="Poco::RefCountedObject::release()">release</a>, <a href="Poco.Channel.html#9023" title="Poco::Channel::setProperty()">setProperty</a></p>
+<h2>Enumerations</h2>
+<h3><i>Anonymous</i></h3>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="24183">SYSLOG_PORT</a> = 514</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="24157">Facility</a></h3>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="24158">SYSLOG_KERN</a> = (0 &lt;&lt; 3)</p>
+<div class="description">
+<p>kernel messages </p>
+</div>
+<p class="decl"><a id="24159">SYSLOG_USER</a> = (1 &lt;&lt; 3)</p>
+<div class="description">
+<p>random user-level messages </p>
+</div>
+<p class="decl"><a id="24160">SYSLOG_MAIL</a> = (2 &lt;&lt; 3)</p>
+<div class="description">
+<p>mail system </p>
+</div>
+<p class="decl"><a id="24161">SYSLOG_DAEMON</a> = (3 &lt;&lt; 3)</p>
+<div class="description">
+<p>system daemons </p>
+</div>
+<p class="decl"><a id="24162">SYSLOG_AUTH</a> = (4 &lt;&lt; 3)</p>
+<div class="description">
+<p>security/authorization messages </p>
+</div>
+<p class="decl"><a id="24163">SYSLOG_SYSLOG</a> = (5 &lt;&lt; 3)</p>
+<div class="description">
+<p>messages generated internally by syslogd </p>
+</div>
+<p class="decl"><a id="24164">SYSLOG_LPR</a> = (6 &lt;&lt; 3)</p>
+<div class="description">
+<p>line printer subsystem </p>
+</div>
+<p class="decl"><a id="24165">SYSLOG_NEWS</a> = (7 &lt;&lt; 3)</p>
+<div class="description">
+<p>network news subsystem </p>
+</div>
+<p class="decl"><a id="24166">SYSLOG_UUCP</a> = (8 &lt;&lt; 3)</p>
+<div class="description">
+<p>UUCP subsystem </p>
+</div>
+<p class="decl"><a id="24167">SYSLOG_CRON</a> = (9 &lt;&lt; 3)</p>
+<div class="description">
+<p>clock daemon </p>
+</div>
+<p class="decl"><a id="24168">SYSLOG_AUTHPRIV</a> = (10 &lt;&lt; 3)</p>
+<div class="description">
+<p>security/authorization messages (private) </p>
+</div>
+<p class="decl"><a id="24169">SYSLOG_FTP</a> = (11 &lt;&lt; 3)</p>
+<div class="description">
+<p>ftp daemon </p>
+</div>
+<p class="decl"><a id="24170">SYSLOG_NTP</a> = (12 &lt;&lt; 3)</p>
+<div class="description">
+<p>ntp subsystem </p>
+</div>
+<p class="decl"><a id="24171">SYSLOG_LOGAUDIT</a> = (13 &lt;&lt; 3)</p>
+<div class="description">
+<p>log audit </p>
+</div>
+<p class="decl"><a id="24172">SYSLOG_LOGALERT</a> = (14 &lt;&lt; 3)</p>
+<div class="description">
+<p>log alert </p>
+</div>
+<p class="decl"><a id="24173">SYSLOG_CLOCK</a> = (15 &lt;&lt; 3)</p>
+<div class="description">
+<p>clock daemon </p>
+</div>
+<p class="decl"><a id="24174">SYSLOG_LOCAL0</a> = (16 &lt;&lt; 3)</p>
+<div class="description">
+<p>reserved for local use </p>
+</div>
+<p class="decl"><a id="24175">SYSLOG_LOCAL1</a> = (17 &lt;&lt; 3)</p>
+<div class="description">
+<p>reserved for local use </p>
+</div>
+<p class="decl"><a id="24176">SYSLOG_LOCAL2</a> = (18 &lt;&lt; 3)</p>
+<div class="description">
+<p>reserved for local use </p>
+</div>
+<p class="decl"><a id="24177">SYSLOG_LOCAL3</a> = (19 &lt;&lt; 3)</p>
+<div class="description">
+<p>reserved for local use </p>
+</div>
+<p class="decl"><a id="24178">SYSLOG_LOCAL4</a> = (20 &lt;&lt; 3)</p>
+<div class="description">
+<p>reserved for local use </p>
+</div>
+<p class="decl"><a id="24179">SYSLOG_LOCAL5</a> = (21 &lt;&lt; 3)</p>
+<div class="description">
+<p>reserved for local use </p>
+</div>
+<p class="decl"><a id="24180">SYSLOG_LOCAL6</a> = (22 &lt;&lt; 3)</p>
+<div class="description">
+<p>reserved for local use </p>
+</div>
+<p class="decl"><a id="24181">SYSLOG_LOCAL7</a> = (23 &lt;&lt; 3)</p>
+<div class="description">
+<p>reserved for local use </p>
+</div>
+<h3><a id="24148">Severity</a></h3>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="24149">SYSLOG_EMERGENCY</a> = 0</p>
+<div class="description">
+<p>Emergency: system is unusable </p>
+</div>
+<p class="decl"><a id="24150">SYSLOG_ALERT</a> = 1</p>
+<div class="description">
+<p>Alert: action must be taken immediately </p>
+</div>
+<p class="decl"><a id="24151">SYSLOG_CRITICAL</a> = 2</p>
+<div class="description">
+<p>Critical: critical conditions </p>
+</div>
+<p class="decl"><a id="24152">SYSLOG_ERROR</a> = 3</p>
+<div class="description">
+<p><a href="Poco.Error.html" title="class Poco::Error">Error</a>: error conditions </p>
+</div>
+<p class="decl"><a id="24153">SYSLOG_WARNING</a> = 4</p>
+<div class="description">
+<p>Warning: warning conditions </p>
+</div>
+<p class="decl"><a id="24154">SYSLOG_NOTICE</a> = 5</p>
+<div class="description">
+<p>Notice: normal but significant condition </p>
+</div>
+<p class="decl"><a id="24155">SYSLOG_INFORMATIONAL</a> = 6</p>
+<div class="description">
+<p>Informational: informational messages </p>
+</div>
+<p class="decl"><a id="24156">SYSLOG_DEBUG</a> = 7</p>
+<div class="description">
+<p>Debug: debug-level messages </p>
+</div>
+<h2>Constructors</h2>
+<h3><a id="24184">RemoteSyslogChannel</a></h3>
+<p class="decl"><a href="Poco.Net.RemoteSyslogChannel.html" title="class Poco::Net::RemoteSyslogChannel">RemoteSyslogChannel</a>();</p>
+<div class="description">
+<p>Creates a <a href="Poco.Net.RemoteSyslogChannel.html" title="class Poco::Net::RemoteSyslogChannel">RemoteSyslogChannel</a>. </p>
+</div>
+<h3><a id="24185">RemoteSyslogChannel</a></h3>
+<p class="decl"><a href="Poco.Net.RemoteSyslogChannel.html" title="class Poco::Net::RemoteSyslogChannel">RemoteSyslogChannel</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; address,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; name,<br />&nbsp;&nbsp;&nbsp;&nbsp;int facility = SYSLOG_USER,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool bsdFormat = false<br />);</p>
+<div class="description">
+<p>Creates a <a href="Poco.Net.RemoteSyslogChannel.html" title="class Poco::Net::RemoteSyslogChannel">RemoteSyslogChannel</a> with the given target address, name, and facility. If bsdFormat is true, messages are formatted according to <a href="https://www.ietf.org/rfc/rfc3164.txt" target="_blank">RFC 3164</a>. </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="24205">~RemoteSyslogChannel</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">~<a href="Poco.Net.RemoteSyslogChannel.html" title="class Poco::Net::RemoteSyslogChannel">RemoteSyslogChannel</a>();</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="24191">close</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">void close();</p>
+<div class="description">
+<p>Closes the <a href="Poco.Net.RemoteSyslogChannel.html" title="class Poco::Net::RemoteSyslogChannel">RemoteSyslogChannel</a>. </p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Channel.html#9020" title="Poco::Channel::close()">Poco::Channel::close()</a></p></div>
+<h3><a id="24197">getProperty</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">std::string getProperty(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; name<br />) const;</p>
+<div class="description">
+<p>Returns the value of the property with the given name. </p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Channel.html#9026" title="Poco::Channel::getProperty()">Poco::Channel::getProperty()</a></p></div>
+<h3><a id="24192">log</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">void log(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Message.html" title="class Poco::Message">Message</a> &amp; msg<br />);</p>
+<div class="description">
+<p>Sends the message's text to the syslog service. </p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Channel.html#9021" title="Poco::Channel::log()">Poco::Channel::log()</a></p></div>
+<h3><a id="24190">open</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">void open();</p>
+<div class="description">
+<p>Opens the <a href="Poco.Net.RemoteSyslogChannel.html" title="class Poco::Net::RemoteSyslogChannel">RemoteSyslogChannel</a>. </p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Channel.html#9019" title="Poco::Channel::open()">Poco::Channel::open()</a></p></div>
+<h3><a id="24199">registerChannel</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static void registerChannel();</p>
+<div class="description">
+<p>Registers the channel with the global <a href="Poco.LoggingFactory.html" title="class Poco::LoggingFactory">LoggingFactory</a>. </p>
+</div>
+<h3><a id="24194">setProperty</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">void setProperty(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; name,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; value<br />);</p>
+<div class="description">
+<p>Sets the property with the given value. </p>
+<p>The following properties are supported: </p>
+<ul>
+<li>name:      The name used to identify the source of log messages. </li>
+<li>facility:  The facility added to each log message. See the <a href="Poco.Net.RemoteSyslogChannel.html#24157" title="enum  Poco::Net::RemoteSyslogChannel::Facility">Facility</a> enumeration for a list of supported values. The LOG_ prefix can be omitted and values are case insensitive (e.g. a facility value &quot;mail&quot; is recognized as <a href="Poco.Net.RemoteSyslogChannel.html#24160" title="Poco::Net::RemoteSyslogChannel::SYSLOG_MAIL">SYSLOG_MAIL</a>) </li>
+<li>format:    &quot;bsd&quot;/&quot;rfc3164&quot; (<a href="https://www.ietf.org/rfc/rfc3164.txt" target="_blank">RFC 3164</a> format) or &quot;new&quot;/&quot;rfc5424&quot; (default) </li>
+<li>loghost:   The target IP address or host name where log messages are sent. Optionally, a port number (separated by a colon) can also be specified. </li>
+<li>host:      (optional) Host name included in syslog messages. If not specified, the host's real domain name or IP address will be used. </li>
+</ul>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Channel.html#9023" title="Poco::Channel::setProperty()">Poco::Channel::setProperty()</a></p></div>
+<h3><a id="24206">getPrio</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static int getPrio(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Message.html" title="class Poco::Message">Message</a> &amp; msg<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Variables</h2>
+<h3><a id="24146">BSD_TIMEFORMAT</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static const std::string <a href="Poco.Net.RemoteSyslogChannel.html#24146" title="Poco::Net::RemoteSyslogChannel::BSD_TIMEFORMAT">BSD_TIMEFORMAT</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="24201">PROP_FACILITY</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static const std::string <a href="Poco.Net.RemoteSyslogChannel.html#24201" title="Poco::Net::RemoteSyslogChannel::PROP_FACILITY">PROP_FACILITY</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="24202">PROP_FORMAT</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static const std::string <a href="Poco.Net.RemoteSyslogChannel.html#24202" title="Poco::Net::RemoteSyslogChannel::PROP_FORMAT">PROP_FORMAT</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="24204">PROP_HOST</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static const std::string <a href="Poco.Net.RemoteSyslogChannel.html#24204" title="Poco::Net::RemoteSyslogChannel::PROP_HOST">PROP_HOST</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="24203">PROP_LOGHOST</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static const std::string <a href="Poco.Net.RemoteSyslogChannel.html#24203" title="Poco::Net::RemoteSyslogChannel::PROP_LOGHOST">PROP_LOGHOST</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="24200">PROP_NAME</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static const std::string <a href="Poco.Net.RemoteSyslogChannel.html#24200" title="Poco::Net::RemoteSyslogChannel::PROP_NAME">PROP_NAME</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="24147">SYSLOG_TIMEFORMAT</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static const std::string <a href="Poco.Net.RemoteSyslogChannel.html#24147" title="Poco::Net::RemoteSyslogChannel::SYSLOG_TIMEFORMAT">SYSLOG_TIMEFORMAT</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

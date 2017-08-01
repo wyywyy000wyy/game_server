@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::TextBufferIterator</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.html" class="namespace">Poco</a></h1>
+<h1 class="symbol">class TextBufferIterator</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Foundation" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Foundation<br />
+<b>Package:</b> Text<br />
+<b>Header:</b> Poco/TextBufferIterator.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>An unidirectional iterator for iterating over characters in a buffer. The <a href="Poco.TextBufferIterator.html" title="class Poco::TextBufferIterator">TextBufferIterator</a> uses a <a href="Poco.TextEncoding.html" title="class Poco::TextEncoding">TextEncoding</a> object to work with multi-byte character encodings like UTF-8. Characters are reported in <a href="Poco.Unicode.html" title="class Poco::Unicode">Unicode</a>. </p>
+<p>Example: Count the number of UTF-8 characters in a buffer. </p>
+<p></p>
+<pre>UTF8Encoding utf8Encoding;
+char buffer[] = &quot;...&quot;;
+TextBufferIterator it(buffer, utf8Encoding);
+TextBufferIterator end(it.end());
+int n = 0;
+while (it != end) { ++n; ++it; }
+</pre>
+<p>NOTE: When an UTF-16 encoding is used, surrogate pairs will be reported as two separate characters, due to restrictions of the <a href="Poco.TextEncoding.html" title="class Poco::TextEncoding">TextEncoding</a> class. </p>
+<p>For iterating over the characters in a std::string, see the <a href="Poco.TextIterator.html" title="class Poco::TextIterator">TextIterator</a> class. </p>
+</div>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.TextBufferIterator.html#17694" title="Poco::TextBufferIterator::end()">end</a>, <a href="Poco.TextBufferIterator.html#17692" title="Poco::TextBufferIterator::operator !=()">operator&nbsp;!=</a>, <a href="Poco.TextBufferIterator.html#17686" title="Poco::TextBufferIterator::operator *()">operator&nbsp;*</a>, <a href="Poco.TextBufferIterator.html#17687" title="Poco::TextBufferIterator::operator ++()">operator&nbsp;++</a>, <a href="Poco.TextBufferIterator.html#17682" title="Poco::TextBufferIterator::operator =()">operator&nbsp;=</a>, <a href="Poco.TextBufferIterator.html#17690" title="Poco::TextBufferIterator::operator ==()">operator&nbsp;==</a>, <a href="Poco.TextBufferIterator.html#17684" title="Poco::TextBufferIterator::swap()">swap</a></p>
+<h2>Constructors</h2>
+<h3><a id="17665">TextBufferIterator</a></h3>
+<p class="decl"><a href="Poco.TextBufferIterator.html" title="class Poco::TextBufferIterator">TextBufferIterator</a>();</p>
+<div class="description">
+<p>Creates an uninitialized <a href="Poco.TextBufferIterator.html" title="class Poco::TextBufferIterator">TextBufferIterator</a>. </p>
+</div>
+<h3><a id="17677">TextBufferIterator</a></h3>
+<p class="decl"><a href="Poco.TextBufferIterator.html" title="class Poco::TextBufferIterator">TextBufferIterator</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const char * end<br />);</p>
+<div class="description">
+<p>Creates an end <a href="Poco.TextBufferIterator.html" title="class Poco::TextBufferIterator">TextBufferIterator</a> for the given buffer. </p>
+</div>
+<h3><a id="17680">TextBufferIterator</a></h3>
+<p class="decl"><a href="Poco.TextBufferIterator.html" title="class Poco::TextBufferIterator">TextBufferIterator</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.TextBufferIterator.html" title="class Poco::TextBufferIterator">TextBufferIterator</a> &amp; it<br />);</p>
+<div class="description">
+<p>Copy constructor. </p>
+</div>
+<h3><a id="17666">TextBufferIterator</a></h3>
+<p class="decl"><a href="Poco.TextBufferIterator.html" title="class Poco::TextBufferIterator">TextBufferIterator</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const char * begin,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.TextEncoding.html" title="class Poco::TextEncoding">TextEncoding</a> &amp; encoding<br />);</p>
+<div class="description">
+<p>Creates a <a href="Poco.TextBufferIterator.html" title="class Poco::TextBufferIterator">TextBufferIterator</a> for the given buffer, which must be 0-terminated. The encoding object must not be deleted as long as the iterator is in use. </p>
+</div>
+<h3><a id="17669">TextBufferIterator</a></h3>
+<p class="decl"><a href="Poco.TextBufferIterator.html" title="class Poco::TextBufferIterator">TextBufferIterator</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const char * begin,<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t size,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.TextEncoding.html" title="class Poco::TextEncoding">TextEncoding</a> &amp; encoding<br />);</p>
+<div class="description">
+<p>Creates a <a href="Poco.TextBufferIterator.html" title="class Poco::TextBufferIterator">TextBufferIterator</a> for the given buffer with the given size. The encoding object must not be deleted as long as the iterator is in use. </p>
+</div>
+<h3><a id="17673">TextBufferIterator</a></h3>
+<p class="decl"><a href="Poco.TextBufferIterator.html" title="class Poco::TextBufferIterator">TextBufferIterator</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const char * begin,<br />&nbsp;&nbsp;&nbsp;&nbsp;const char * end,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.TextEncoding.html" title="class Poco::TextEncoding">TextEncoding</a> &amp; encoding<br />);</p>
+<div class="description">
+<p>Creates a <a href="Poco.TextBufferIterator.html" title="class Poco::TextBufferIterator">TextBufferIterator</a> for the given range. The encoding object must not be deleted as long as the iterator is in use. </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="17679">~TextBufferIterator</a></h3>
+<p class="decl">~<a href="Poco.TextBufferIterator.html" title="class Poco::TextBufferIterator">TextBufferIterator</a>();</p>
+<div class="description">
+<p>Destroys the <a href="Poco.TextBufferIterator.html" title="class Poco::TextBufferIterator">TextBufferIterator</a>. </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="17694">end</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.TextBufferIterator.html" title="class Poco::TextBufferIterator">TextBufferIterator</a> end() const;</p>
+<div class="description">
+<p>Returns the end iterator for the range handled by the iterator. </p>
+</div>
+<h3><a id="17692">operator !=</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool operator != (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.TextBufferIterator.html" title="class Poco::TextBufferIterator">TextBufferIterator</a> &amp; it<br />) const;</p>
+<div class="description">
+<p>Compares two iterators for inequality. </p>
+</div>
+<h3><a id="17686">operator *</a></h3>
+<p class="decl">int operator * () const;</p>
+<div class="description">
+<p>Returns the <a href="Poco.Unicode.html" title="class Poco::Unicode">Unicode</a> value of the current character. If there is no valid character at the current position, -1 is returned. </p>
+</div>
+<h3><a id="17687">operator ++</a></h3>
+<p class="decl"><a href="Poco.TextBufferIterator.html" title="class Poco::TextBufferIterator">TextBufferIterator</a> &amp; operator ++ ();</p>
+<div class="description">
+<p>Prefix increment operator. </p>
+</div>
+<h3><a id="17688">operator ++</a></h3>
+<p class="decl"><a href="Poco.TextBufferIterator.html" title="class Poco::TextBufferIterator">TextBufferIterator</a> operator ++ (<br />&nbsp;&nbsp;&nbsp;&nbsp;int<br />);</p>
+<div class="description">
+<p>Postfix increment operator. </p>
+</div>
+<h3><a id="17682">operator =</a></h3>
+<p class="decl"><a href="Poco.TextBufferIterator.html" title="class Poco::TextBufferIterator">TextBufferIterator</a> &amp; operator = (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.TextBufferIterator.html" title="class Poco::TextBufferIterator">TextBufferIterator</a> &amp; it<br />);</p>
+<div class="description">
+<p>Assignment operator. </p>
+</div>
+<h3><a id="17690">operator ==</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool operator == (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.TextBufferIterator.html" title="class Poco::TextBufferIterator">TextBufferIterator</a> &amp; it<br />) const;</p>
+<div class="description">
+<p>Compares two iterators for equality. </p>
+</div>
+<h3><a id="17684">swap</a></h3>
+<p class="decl">void swap(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.TextBufferIterator.html" title="class Poco::TextBufferIterator">TextBufferIterator</a> &amp; it<br />);</p>
+<div class="description">
+<p>Swaps the iterator with another one. </p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

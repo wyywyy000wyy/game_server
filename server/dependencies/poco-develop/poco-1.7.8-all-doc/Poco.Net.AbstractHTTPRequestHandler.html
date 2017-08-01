@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::Net::AbstractHTTPRequestHandler</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.Net.html" class="namespace">Poco::Net</a></h1>
+<h1 class="symbol">class AbstractHTTPRequestHandler</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Net" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Net<br />
+<b>Package:</b> HTTPServer<br />
+<b>Header:</b> Poco/Net/AbstractHTTPRequestHandler.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>The abstract base class for AbstractHTTPRequestHandlers  created by <a href="Poco.Net.HTTPServer.html" title="class Poco::Net::HTTPServer">HTTPServer</a>. </p>
+<p>Derived classes must override the <a href="Poco.Net.AbstractHTTPRequestHandler.html#20498" title="Poco::Net::AbstractHTTPRequestHandler::run()">run</a>() method. Contrary to a <a href="Poco.Net.HTTPRequestHandler.html" title="class Poco::Net::HTTPRequestHandler">HTTPRequestHandler</a>, an <a href="Poco.Net.AbstractHTTPRequestHandler.html" title="class Poco::Net::AbstractHTTPRequestHandler">AbstractHTTPRequestHandler</a> stores request and response as member variables to avoid having to pass them around as method parameters. Additionally, a <a href="Poco.Net.HTMLForm.html" title="class Poco::Net::HTMLForm">HTMLForm</a> object is created for use by subclasses. </p>
+<p>The <a href="Poco.Net.AbstractHTTPRequestHandler.html#20498" title="Poco::Net::AbstractHTTPRequestHandler::run()">run</a>() method must perform the complete handling of the HTTP request connection. As soon as the <a href="Poco.Net.AbstractHTTPRequestHandler.html#20498" title="Poco::Net::AbstractHTTPRequestHandler::run()">run</a>()  method returns, the request handler object is destroyed. </p>
+<p>A new <a href="Poco.Net.AbstractHTTPRequestHandler.html" title="class Poco::Net::AbstractHTTPRequestHandler">AbstractHTTPRequestHandler</a> object will be created for each new HTTP request that is received by the <a href="Poco.Net.HTTPServer.html" title="class Poco::Net::HTTPServer">HTTPServer</a>. </p>
+</div>
+<h2>Inheritance</h2>
+<p><b>Direct Base Classes: </b><a href="Poco.Net.HTTPRequestHandler.html" title="class Poco::Net::HTTPRequestHandler">HTTPRequestHandler</a></p>
+<p><b>All Base Classes: </b><a href="Poco.Net.HTTPRequestHandler.html" title="class Poco::Net::HTTPRequestHandler">HTTPRequestHandler</a></p>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.Net.AbstractHTTPRequestHandler.html#20499" title="Poco::Net::AbstractHTTPRequestHandler::authenticate()">authenticate</a>, <a href="Poco.Net.AbstractHTTPRequestHandler.html#20494" title="Poco::Net::AbstractHTTPRequestHandler::form()">form</a>, <a href="Poco.Net.AbstractHTTPRequestHandler.html#20489" title="Poco::Net::AbstractHTTPRequestHandler::handleRequest()">handleRequest</a>, <a href="Poco.Net.AbstractHTTPRequestHandler.html#20492" title="Poco::Net::AbstractHTTPRequestHandler::request()">request</a>, <a href="Poco.Net.AbstractHTTPRequestHandler.html#20493" title="Poco::Net::AbstractHTTPRequestHandler::response()">response</a>, <a href="Poco.Net.AbstractHTTPRequestHandler.html#20498" title="Poco::Net::AbstractHTTPRequestHandler::run()">run</a>, <a href="Poco.Net.AbstractHTTPRequestHandler.html#20495" title="Poco::Net::AbstractHTTPRequestHandler::sendErrorResponse()">sendErrorResponse</a></p>
+<p><b>Inherited Functions: </b><a href="Poco.Net.HTTPRequestHandler.html#21525" title="Poco::Net::HTTPRequestHandler::handleRequest()">handleRequest</a></p>
+<h2>Constructors</h2>
+<h3><a id="20487">AbstractHTTPRequestHandler</a></h3>
+<p class="decl"><a href="Poco.Net.AbstractHTTPRequestHandler.html" title="class Poco::Net::AbstractHTTPRequestHandler">AbstractHTTPRequestHandler</a>();</p>
+<div class="description">
+<p>Creates the <a href="Poco.Net.AbstractHTTPRequestHandler.html" title="class Poco::Net::AbstractHTTPRequestHandler">AbstractHTTPRequestHandler</a>. </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="20488">~AbstractHTTPRequestHandler</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual ~<a href="Poco.Net.AbstractHTTPRequestHandler.html" title="class Poco::Net::AbstractHTTPRequestHandler">AbstractHTTPRequestHandler</a>();</p>
+<div class="description">
+<p>Destroys the <a href="Poco.Net.AbstractHTTPRequestHandler.html" title="class Poco::Net::AbstractHTTPRequestHandler">AbstractHTTPRequestHandler</a>. </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="20494">form</a></h3>
+<p class="decl"><a href="Poco.Net.HTMLForm.html" title="class Poco::Net::HTMLForm">HTMLForm</a> &amp; form();</p>
+<div class="description">
+<p>Returns a <a href="Poco.Net.HTMLForm.html" title="class Poco::Net::HTMLForm">HTMLForm</a> for the given request. The <a href="Poco.Net.HTMLForm.html" title="class Poco::Net::HTMLForm">HTMLForm</a> object is created when this member function is executed the first time. </p>
+</div>
+<h3><a id="20489">handleRequest</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">void handleRequest(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Net.HTTPServerRequest.html" title="class Poco::Net::HTTPServerRequest">HTTPServerRequest</a> &amp; request,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Net.HTTPServerResponse.html" title="class Poco::Net::HTTPServerResponse">HTTPServerResponse</a> &amp; response<br />);</p>
+<div class="description">
+<p>This class implements some common behavior, before calling <a href="Poco.Net.AbstractHTTPRequestHandler.html#20498" title="Poco::Net::AbstractHTTPRequestHandler::run()">run</a>() to actually handle the request: </p>
+<ul>
+<li>save request and response objects; </li>
+<li>call authorize(); </li>
+<li>if authorize() returns true call <a href="Poco.Net.AbstractHTTPRequestHandler.html#20498" title="Poco::Net::AbstractHTTPRequestHandler::run()">run</a>(), else send 401 (Unauthorized) response. </li>
+</ul>
+<p>If <a href="Poco.Net.AbstractHTTPRequestHandler.html#20498" title="Poco::Net::AbstractHTTPRequestHandler::run()">run</a>() throws an exception and the response has not been sent yet, sends a 500 (Internal Server <a href="Poco.Error.html" title="class Poco::Error">Error</a>) response with the exception's display text. </p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Net.HTTPRequestHandler.html#21525" title="Poco::Net::HTTPRequestHandler::handleRequest()">Poco::Net::HTTPRequestHandler::handleRequest()</a></p></div>
+<h3><a id="20492">request</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Net.HTTPServerRequest.html" title="class Poco::Net::HTTPServerRequest">HTTPServerRequest</a> &amp; request();</p>
+<div class="description">
+<p>Returns the request. </p>
+</div>
+<h3><a id="20493">response</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Net.HTTPServerResponse.html" title="class Poco::Net::HTTPServerResponse">HTTPServerResponse</a> &amp; response();</p>
+<div class="description">
+<p>Returns the response. </p>
+</div>
+<h3><a id="20495">sendErrorResponse</a></h3>
+<p class="decl">void sendErrorResponse(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Net.HTTPResponse.html#21544" title="enum  Poco::Net::HTTPResponse::HTTPStatus">HTTPResponse::HTTPStatus</a> status,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; message<br />);</p>
+<div class="description">
+<p>Sends a HTML error page for the given status code. The given message is added to the page: </p>
+<pre>&lt;HTML&gt;
+    &lt;HEAD&gt;
+        &lt;TITLE&gt;status - reason&lt;/TITLE&gt;
+    &lt;/HEAD&gt;
+    &lt;BODY&gt;
+       &lt;H1&gt;status - reason&lt;/H1&gt;
+       &lt;P&gt;message&lt;/P&gt;
+    &lt;/BODY&gt;
+&lt;/HTML&gt;
+</pre>
+</div>
+<h3><a id="20499">authenticate</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual bool authenticate();</p>
+<div class="description">
+<p>Check authentication; returns true if okay, false if failed to authenticate. The default implementation always returns true. </p>
+<p>Subclasses can override this member function to perform some form of client or request authentication before the request is actually handled. </p>
+</div>
+<h3><a id="20498">run</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void run() = 0;</p>
+<div class="description">
+<p>Must be overridden by subclasses. </p>
+<p>Handles the given request. </p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

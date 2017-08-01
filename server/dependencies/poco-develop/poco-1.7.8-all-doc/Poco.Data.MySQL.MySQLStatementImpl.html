@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::Data::MySQL::MySQLStatementImpl</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.Data.MySQL.html" class="namespace">Poco::Data::MySQL</a></h1>
+<h1 class="symbol">class MySQLStatementImpl</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Data/MySQL" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Data/MySQL<br />
+<b>Package:</b> MySQL<br />
+<b>Header:</b> Poco/Data/MySQL/MySQLStatementImpl.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>Implements statement functionality needed for <a href="Poco.Data.MySQL.html" title="namespace Poco::Data::MySQL">MySQL</a> </p>
+</div>
+<h2>Inheritance</h2>
+<p><b>Direct Base Classes: </b><a href="Poco.Data.StatementImpl.html" title="class Poco::Data::StatementImpl">Poco::Data::StatementImpl</a></p>
+<p><b>All Base Classes: </b><a href="Poco.Data.StatementImpl.html" title="class Poco::Data::StatementImpl">Poco::Data::StatementImpl</a></p>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.Data.MySQL.MySQLStatementImpl.html#1094" title="Poco::Data::MySQL::MySQLStatementImpl::affectedRowCount()">affectedRowCount</a>, <a href="Poco.Data.MySQL.MySQLStatementImpl.html#1102" title="Poco::Data::MySQL::MySQLStatementImpl::bindImpl()">bindImpl</a>, <a href="Poco.Data.MySQL.MySQLStatementImpl.html#1104" title="Poco::Data::MySQL::MySQLStatementImpl::binder()">binder</a>, <a href="Poco.Data.MySQL.MySQLStatementImpl.html#1099" title="Poco::Data::MySQL::MySQLStatementImpl::canBind()">canBind</a>, <a href="Poco.Data.MySQL.MySQLStatementImpl.html#1100" title="Poco::Data::MySQL::MySQLStatementImpl::canCompile()">canCompile</a>, <a href="Poco.Data.MySQL.MySQLStatementImpl.html#1093" title="Poco::Data::MySQL::MySQLStatementImpl::columnsReturned()">columnsReturned</a>, <a href="Poco.Data.MySQL.MySQLStatementImpl.html#1101" title="Poco::Data::MySQL::MySQLStatementImpl::compileImpl()">compileImpl</a>, <a href="Poco.Data.MySQL.MySQLStatementImpl.html#1103" title="Poco::Data::MySQL::MySQLStatementImpl::extractor()">extractor</a>, <a href="Poco.Data.MySQL.MySQLStatementImpl.html#1097" title="Poco::Data::MySQL::MySQLStatementImpl::hasNext()">hasNext</a>, <a href="Poco.Data.MySQL.MySQLStatementImpl.html#1095" title="Poco::Data::MySQL::MySQLStatementImpl::metaColumn()">metaColumn</a>, <a href="Poco.Data.MySQL.MySQLStatementImpl.html#1098" title="Poco::Data::MySQL::MySQLStatementImpl::next()">next</a></p>
+<p><b>Inherited Functions: </b><a href="Poco.Data.StatementImpl.html#7559" title="Poco::Data::StatementImpl::activateNextDataSet()">activateNextDataSet</a>, <a href="Poco.Data.StatementImpl.html#7560" title="Poco::Data::StatementImpl::activatePreviousDataSet()">activatePreviousDataSet</a>, <a href="Poco.Data.StatementImpl.html#7503" title="Poco::Data::StatementImpl::add()">add</a>, <a href="Poco.Data.StatementImpl.html#7505" title="Poco::Data::StatementImpl::addBind()">addBind</a>, <a href="Poco.Data.StatementImpl.html#7509" title="Poco::Data::StatementImpl::addExtract()">addExtract</a>, <a href="Poco.Data.StatementImpl.html#7526" title="Poco::Data::StatementImpl::affectedRowCount()">affectedRowCount</a>, <a href="Poco.Data.StatementImpl.html#7536" title="Poco::Data::StatementImpl::bindImpl()">bindImpl</a>, <a href="Poco.Data.StatementImpl.html#7552" title="Poco::Data::StatementImpl::binder()">binder</a>, <a href="Poco.Data.StatementImpl.html#7553" title="Poco::Data::StatementImpl::bindings()">bindings</a>, <a href="Poco.Data.StatementImpl.html#7533" title="Poco::Data::StatementImpl::canBind()">canBind</a>, <a href="Poco.Data.StatementImpl.html#7534" title="Poco::Data::StatementImpl::canCompile()">canCompile</a>, <a href="Poco.Data.StatementImpl.html#7543" title="Poco::Data::StatementImpl::columnsExtracted()">columnsExtracted</a>, <a href="Poco.Data.StatementImpl.html#7525" title="Poco::Data::StatementImpl::columnsReturned()">columnsReturned</a>, <a href="Poco.Data.StatementImpl.html#7535" title="Poco::Data::StatementImpl::compileImpl()">compileImpl</a>, <a href="Poco.Data.StatementImpl.html#7558" title="Poco::Data::StatementImpl::currentDataSet()">currentDataSet</a>, <a href="Poco.Data.StatementImpl.html#7524" title="Poco::Data::StatementImpl::dataSetCount()">dataSetCount</a>, <a href="Poco.Data.StatementImpl.html#7514" title="Poco::Data::StatementImpl::execute()">execute</a>, <a href="Poco.Data.StatementImpl.html#7523" title="Poco::Data::StatementImpl::extractionCount()">extractionCount</a>, <a href="Poco.Data.StatementImpl.html#7542" title="Poco::Data::StatementImpl::extractionLimit()">extractionLimit</a>, <a href="Poco.Data.StatementImpl.html#7538" title="Poco::Data::StatementImpl::extractions()">extractions</a>, <a href="Poco.Data.StatementImpl.html#7537" title="Poco::Data::StatementImpl::extractor()">extractor</a>, <a href="Poco.Data.StatementImpl.html#7555" title="Poco::Data::StatementImpl::fixupBinding()">fixupBinding</a>, <a href="Poco.Data.StatementImpl.html#7540" title="Poco::Data::StatementImpl::fixupExtraction()">fixupExtraction</a>, <a href="Poco.Data.StatementImpl.html#7541" title="Poco::Data::StatementImpl::getExtractionLimit()">getExtractionLimit</a>, <a href="Poco.Data.StatementImpl.html#7517" title="Poco::Data::StatementImpl::getState()">getState</a>, <a href="Poco.Data.StatementImpl.html#7522" title="Poco::Data::StatementImpl::getStorage()">getStorage</a>, <a href="Poco.Data.StatementImpl.html#7561" title="Poco::Data::StatementImpl::hasMoreDataSets()">hasMoreDataSets</a>, <a href="Poco.Data.StatementImpl.html#7531" title="Poco::Data::StatementImpl::hasNext()">hasNext</a>, <a href="Poco.Data.StatementImpl.html#7557" title="Poco::Data::StatementImpl::isStoredProcedure()">isStoredProcedure</a>, <a href="Poco.Data.StatementImpl.html#7549" title="Poco::Data::StatementImpl::makeExtractors()">makeExtractors</a>, <a href="Poco.Data.StatementImpl.html#7527" title="Poco::Data::StatementImpl::metaColumn()">metaColumn</a>, <a href="Poco.Data.StatementImpl.html#7532" title="Poco::Data::StatementImpl::next()">next</a>, <a href="Poco.Data.StatementImpl.html#7507" title="Poco::Data::StatementImpl::removeBind()">removeBind</a>, <a href="Poco.Data.StatementImpl.html#7516" title="Poco::Data::StatementImpl::reset()">reset</a>, <a href="Poco.Data.StatementImpl.html#7556" title="Poco::Data::StatementImpl::resetBinding()">resetBinding</a>, <a href="Poco.Data.StatementImpl.html#7545" title="Poco::Data::StatementImpl::rowsExtracted()">rowsExtracted</a>, <a href="Poco.Data.StatementImpl.html#7551" title="Poco::Data::StatementImpl::session()">session</a>, <a href="Poco.Data.StatementImpl.html#7511" title="Poco::Data::StatementImpl::setExtractionLimit()">setExtractionLimit</a>, <a href="Poco.Data.StatementImpl.html#7518" title="Poco::Data::StatementImpl::setStorage()">setStorage</a>, <a href="Poco.Data.StatementImpl.html#7547" title="Poco::Data::StatementImpl::subTotalRowCount()">subTotalRowCount</a>, <a href="Poco.Data.StatementImpl.html#7513" title="Poco::Data::StatementImpl::toString()">toString</a></p>
+<h2>Constructors</h2>
+<h3><a id="1090">MySQLStatementImpl</a></h3>
+<p class="decl"><a href="Poco.Data.MySQL.MySQLStatementImpl.html" title="class Poco::Data::MySQL::MySQLStatementImpl">MySQLStatementImpl</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Data.MySQL.SessionImpl.html" title="class Poco::Data::MySQL::SessionImpl">SessionImpl</a> &amp; s<br />);</p>
+<div class="description">
+<p>Creates the <a href="Poco.Data.MySQL.MySQLStatementImpl.html" title="class Poco::Data::MySQL::MySQLStatementImpl">MySQLStatementImpl</a>. </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="1092">~MySQLStatementImpl</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">~<a href="Poco.Data.MySQL.MySQLStatementImpl.html" title="class Poco::Data::MySQL::MySQLStatementImpl">MySQLStatementImpl</a>();</p>
+<div class="description">
+<p>Destroys the <a href="Poco.Data.MySQL.MySQLStatementImpl.html" title="class Poco::Data::MySQL::MySQLStatementImpl">MySQLStatementImpl</a>. </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="1094">affectedRowCount</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual int affectedRowCount() const;</p>
+<div class="description">
+<p>Returns the number of affected rows. Used to find out the number of rows affected by insert, delete or update. </p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Data.StatementImpl.html#7526" title="Poco::Data::StatementImpl::affectedRowCount()">Poco::Data::StatementImpl::affectedRowCount()</a></p></div>
+<h3><a id="1102">bindImpl</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void bindImpl();</p>
+<div class="description">
+<p>Binds parameters </p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Data.StatementImpl.html#7536" title="Poco::Data::StatementImpl::bindImpl()">Poco::Data::StatementImpl::bindImpl()</a></p></div>
+<h3><a id="1104">binder</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual <a href="Poco.Data.AbstractBinder.html#4447" title="Poco::Data::AbstractBinder::Ptr">Poco::Data::AbstractBinder::Ptr</a> binder();</p>
+<div class="description">
+<p>Returns the concrete binder used by the statement. </p>
+</div>
+<h3><a id="1099">canBind</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual bool canBind() const;</p>
+<div class="description">
+<p>Returns true if a valid statement is set and we can bind. </p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Data.StatementImpl.html#7533" title="Poco::Data::StatementImpl::canBind()">Poco::Data::StatementImpl::canBind()</a></p></div>
+<h3><a id="1100">canCompile</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual bool canCompile() const;</p>
+<div class="description">
+<p>Returns true if another compile is possible. </p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Data.StatementImpl.html#7534" title="Poco::Data::StatementImpl::canCompile()">Poco::Data::StatementImpl::canCompile()</a></p></div>
+<h3><a id="1093">columnsReturned</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual std::size_t columnsReturned() const;</p>
+<div class="description">
+<p>Returns number of columns returned by query. </p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Data.StatementImpl.html#7525" title="Poco::Data::StatementImpl::columnsReturned()">Poco::Data::StatementImpl::columnsReturned()</a></p></div>
+<h3><a id="1101">compileImpl</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void compileImpl();</p>
+<div class="description">
+<p>Compiles the statement, doesn't bind yet </p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Data.StatementImpl.html#7535" title="Poco::Data::StatementImpl::compileImpl()">Poco::Data::StatementImpl::compileImpl()</a></p></div>
+<h3><a id="1103">extractor</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual <a href="Poco.Data.AbstractExtractor.html#4883" title="Poco::Data::AbstractExtractor::Ptr">Poco::Data::AbstractExtractor::Ptr</a> extractor();</p>
+<div class="description">
+<p>Returns the concrete extractor used by the statement. </p>
+</div>
+<h3><a id="1097">hasNext</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual bool hasNext();</p>
+<div class="description">
+<p>Returns true if a call to <a href="Poco.Data.MySQL.MySQLStatementImpl.html#1098" title="Poco::Data::MySQL::MySQLStatementImpl::next()">next</a>() will return data. </p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Data.StatementImpl.html#7531" title="Poco::Data::StatementImpl::hasNext()">Poco::Data::StatementImpl::hasNext()</a></p></div>
+<h3><a id="1095">metaColumn</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual const <a href="Poco.Data.MetaColumn.html" title="class Poco::Data::MetaColumn">MetaColumn</a> &amp; metaColumn(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos<br />) const;</p>
+<div class="description">
+<p>Returns column meta data. </p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Data.StatementImpl.html#7527" title="Poco::Data::StatementImpl::metaColumn()">Poco::Data::StatementImpl::metaColumn()</a></p></div>
+<h3><a id="1098">next</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual std::size_t next();</p>
+<div class="description">
+<p>Retrieves the next row from the resultset. Will throw, if the resultset is empty. </p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Data.StatementImpl.html#7532" title="Poco::Data::StatementImpl::next()">Poco::Data::StatementImpl::next()</a></p></div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

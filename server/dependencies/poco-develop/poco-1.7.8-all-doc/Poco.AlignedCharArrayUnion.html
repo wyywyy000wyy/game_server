@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Struct Poco::AlignedCharArrayUnion</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.html" class="namespace">Poco</a></h1>
+<h1 class="template">template &lt; typename T1, typename T2 = char, typename T3 = char, typename T4 = char &gt;</h1>
+<h1 class="symbol">union AlignedCharArrayUnion</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Foundation" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Foundation<br />
+<b>Package:</b> Dynamic<br />
+<b>Header:</b> Poco/Alignment.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>Helper for building an aligned character array type. </p>
+<p>This template is used to explicitly build up a collection of aligned character types. We have to build these up using a macro and explicit specialization to cope with old versions of MSVC and GCC where only an integer literal can be used to specify an alignment constraint. Once built up here, we can then begin to indirect between these using normal C++ template parameters. This union template exposes a suitably aligned and sized character array member which can hold elements of any of up to four types. </p>
+<p>These types may be arrays, structs, or any other types. The goal is to produce a union type containing a character array which, when used, forms storage suitable to placement new any of these types over. Support for more than four types can be added at the cost of more boiler plate. </p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::MongoDB::KillCursorsRequest</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.MongoDB.html" class="namespace">Poco::MongoDB</a></h1>
+<h1 class="symbol">class KillCursorsRequest</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-MongoDB" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> MongoDB<br />
+<b>Package:</b> MongoDB<br />
+<b>Header:</b> Poco/MongoDB/KillCursorsRequest.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>Class for creating an OP_KILL_CURSORS client request. This request is used to kill cursors, which are still open,  returned by query requests. </p>
+</div>
+<h2>Inheritance</h2>
+<p><b>Direct Base Classes: </b><a href="Poco.MongoDB.RequestMessage.html" title="class Poco::MongoDB::RequestMessage">RequestMessage</a></p>
+<p><b>All Base Classes: </b><a href="Poco.MongoDB.Message.html" title="class Poco::MongoDB::Message">Message</a>, <a href="Poco.MongoDB.RequestMessage.html" title="class Poco::MongoDB::RequestMessage">RequestMessage</a></p>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.MongoDB.KillCursorsRequest.html#20321" title="Poco::MongoDB::KillCursorsRequest::buildRequest()">buildRequest</a>, <a href="Poco.MongoDB.KillCursorsRequest.html#20320" title="Poco::MongoDB::KillCursorsRequest::cursors()">cursors</a></p>
+<p><b>Inherited Functions: </b><a href="Poco.MongoDB.RequestMessage.html#20447" title="Poco::MongoDB::RequestMessage::buildRequest()">buildRequest</a>, <a href="Poco.MongoDB.Message.html#20328" title="Poco::MongoDB::Message::header()">header</a>, <a href="Poco.MongoDB.Message.html#20330" title="Poco::MongoDB::Message::messageLength()">messageLength</a>, <a href="Poco.MongoDB.RequestMessage.html#20445" title="Poco::MongoDB::RequestMessage::send()">send</a></p>
+<h2>Constructors</h2>
+<h3><a id="20318">KillCursorsRequest</a></h3>
+<p class="decl"><a href="Poco.MongoDB.KillCursorsRequest.html" title="class Poco::MongoDB::KillCursorsRequest">KillCursorsRequest</a>();</p>
+<div class="description">
+<p>Creates a <a href="Poco.MongoDB.KillCursorsRequest.html" title="class Poco::MongoDB::KillCursorsRequest">KillCursorsRequest</a>. </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="20319">~KillCursorsRequest</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual ~<a href="Poco.MongoDB.KillCursorsRequest.html" title="class Poco::MongoDB::KillCursorsRequest">KillCursorsRequest</a>();</p>
+<div class="description">
+<p>Destroys the <a href="Poco.MongoDB.KillCursorsRequest.html" title="class Poco::MongoDB::KillCursorsRequest">KillCursorsRequest</a>. </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="20320">cursors</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">std::vector &lt; <a href="Poco.html#18384" title="Poco::Int64">Int64</a> &gt; &amp; cursors();</p>
+<div class="description">
+<p>The internal list of cursors. </p>
+</div>
+<h3><a id="20321">buildRequest</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">void buildRequest(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.BinaryWriter.html" title="class Poco::BinaryWriter">BinaryWriter</a> &amp; writer<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.MongoDB.RequestMessage.html#20447" title="Poco::MongoDB::RequestMessage::buildRequest()">Poco::MongoDB::RequestMessage::buildRequest()</a></p></div>
+<h2>Variables</h2>
+<h3><a id="20323">_cursors</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">std::vector &lt; <a href="Poco.html#18384" title="Poco::Int64">Int64</a> &gt; _cursors;</p>
+<div class="description">
+<p></p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

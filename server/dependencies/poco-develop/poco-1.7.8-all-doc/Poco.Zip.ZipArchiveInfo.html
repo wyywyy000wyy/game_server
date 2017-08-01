@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::Zip::ZipArchiveInfo</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.Zip.html" class="namespace">Poco::Zip</a></h1>
+<h1 class="symbol">class ZipArchiveInfo</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Zip" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Zip<br />
+<b>Package:</b> Zip<br />
+<b>Header:</b> Poco/Zip/ZipArchiveInfo.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>A <a href="Poco.Zip.ZipArchiveInfo.html" title="class Poco::Zip::ZipArchiveInfo">ZipArchiveInfo</a> stores central directory info </p>
+</div>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.Zip.ZipArchiveInfo.html#31083" title="Poco::Zip::ZipArchiveInfo::createHeader()">createHeader</a>, <a href="Poco.Zip.ZipArchiveInfo.html#31070" title="Poco::Zip::ZipArchiveInfo::getCentralDirectorySize()">getCentralDirectorySize</a>, <a href="Poco.Zip.ZipArchiveInfo.html#31066" title="Poco::Zip::ZipArchiveInfo::getDiskNumber()">getDiskNumber</a>, <a href="Poco.Zip.ZipArchiveInfo.html#31067" title="Poco::Zip::ZipArchiveInfo::getFirstDiskForDirectoryHeader()">getFirstDiskForDirectoryHeader</a>, <a href="Poco.Zip.ZipArchiveInfo.html#31071" title="Poco::Zip::ZipArchiveInfo::getHeaderOffset()">getHeaderOffset</a>, <a href="Poco.Zip.ZipArchiveInfo.html#31068" title="Poco::Zip::ZipArchiveInfo::getNumberOfEntries()">getNumberOfEntries</a>, <a href="Poco.Zip.ZipArchiveInfo.html#31069" title="Poco::Zip::ZipArchiveInfo::getTotalNumberOfEntries()">getTotalNumberOfEntries</a>, <a href="Poco.Zip.ZipArchiveInfo.html#31072" title="Poco::Zip::ZipArchiveInfo::getZipComment()">getZipComment</a>, <a href="Poco.Zip.ZipArchiveInfo.html#31079" title="Poco::Zip::ZipArchiveInfo::setCentralDirectorySize()">setCentralDirectorySize</a>, <a href="Poco.Zip.ZipArchiveInfo.html#31081" title="Poco::Zip::ZipArchiveInfo::setHeaderOffset()">setHeaderOffset</a>, <a href="Poco.Zip.ZipArchiveInfo.html#31075" title="Poco::Zip::ZipArchiveInfo::setNumberOfEntries()">setNumberOfEntries</a>, <a href="Poco.Zip.ZipArchiveInfo.html#31077" title="Poco::Zip::ZipArchiveInfo::setTotalNumberOfEntries()">setTotalNumberOfEntries</a>, <a href="Poco.Zip.ZipArchiveInfo.html#31073" title="Poco::Zip::ZipArchiveInfo::setZipComment()">setZipComment</a></p>
+<h2>Constructors</h2>
+<h3><a id="31061">ZipArchiveInfo</a></h3>
+<p class="decl"><a href="Poco.Zip.ZipArchiveInfo.html" title="class Poco::Zip::ZipArchiveInfo">ZipArchiveInfo</a>();</p>
+<div class="description">
+<p>Default constructor, everything set to zero or empty </p>
+</div>
+<h3><a id="31062">ZipArchiveInfo</a></h3>
+<p class="decl"><a href="Poco.Zip.ZipArchiveInfo.html" title="class Poco::Zip::ZipArchiveInfo">ZipArchiveInfo</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::istream &amp; in,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool assumeHeaderRead<br />);</p>
+<div class="description">
+<p>Creates the <a href="Poco.Zip.ZipArchiveInfo.html" title="class Poco::Zip::ZipArchiveInfo">ZipArchiveInfo</a> by parsing the input stream. If assumeHeaderRead is true we assume that the first 4 bytes were already read outside. </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="31065">~ZipArchiveInfo</a></h3>
+<p class="decl">~<a href="Poco.Zip.ZipArchiveInfo.html" title="class Poco::Zip::ZipArchiveInfo">ZipArchiveInfo</a>();</p>
+<div class="description">
+<p>Destroys the <a href="Poco.Zip.ZipArchiveInfo.html" title="class Poco::Zip::ZipArchiveInfo">ZipArchiveInfo</a>. </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="31083">createHeader</a></h3>
+<p class="decl">std::string createHeader() const;</p>
+<div class="description">
+<p>Creates a header </p>
+</div>
+<h3><a id="31070">getCentralDirectorySize</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.html#18381" title="Poco::UInt32">Poco::UInt32</a> getCentralDirectorySize() const;</p>
+<div class="description">
+<p>Returns the size of the central directory in bytes </p>
+</div>
+<h3><a id="31066">getDiskNumber</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.html#18379" title="Poco::UInt16">Poco::UInt16</a> getDiskNumber() const;</p>
+<div class="description">
+<p>Get the number of the disk where this header can be found </p>
+</div>
+<h3><a id="31067">getFirstDiskForDirectoryHeader</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.html#18379" title="Poco::UInt16">Poco::UInt16</a> getFirstDiskForDirectoryHeader() const;</p>
+<div class="description">
+<p>Returns the number of the disk that contains the start of the directory header </p>
+</div>
+<h3><a id="31071">getHeaderOffset</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">std::streamoff getHeaderOffset() const;</p>
+<div class="description">
+<p>Returns the offset of the header in relation to the begin of this disk </p>
+</div>
+<h3><a id="31068">getNumberOfEntries</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.html#18379" title="Poco::UInt16">Poco::UInt16</a> getNumberOfEntries() const;</p>
+<div class="description">
+<p>Returns the number of entries on this disk </p>
+</div>
+<h3><a id="31069">getTotalNumberOfEntries</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.html#18379" title="Poco::UInt16">Poco::UInt16</a> getTotalNumberOfEntries() const;</p>
+<div class="description">
+<p>Returns the total number of entries on all disks </p>
+</div>
+<h3><a id="31072">getZipComment</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">const std::string &amp; getZipComment() const;</p>
+<div class="description">
+<p>Returns the (optional) <a href="Poco.Zip.html" title="namespace Poco::Zip">Zip</a> Comment </p>
+</div>
+<h3><a id="31079">setCentralDirectorySize</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void setCentralDirectorySize(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.html#18381" title="Poco::UInt32">Poco::UInt32</a> val<br />);</p>
+<div class="description">
+<p>Returns the size of the central directory in bytes </p>
+</div>
+<h3><a id="31081">setHeaderOffset</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void setHeaderOffset(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.html#18381" title="Poco::UInt32">Poco::UInt32</a> val<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="31075">setNumberOfEntries</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void setNumberOfEntries(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.html#18379" title="Poco::UInt16">Poco::UInt16</a> val<br />);</p>
+<div class="description">
+<p>Returns the number of entries on this disk </p>
+</div>
+<h3><a id="31077">setTotalNumberOfEntries</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void setTotalNumberOfEntries(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.html#18379" title="Poco::UInt16">Poco::UInt16</a> val<br />);</p>
+<div class="description">
+<p>Returns the total number of entries on all disks </p>
+</div>
+<h3><a id="31073">setZipComment</a></h3>
+<p class="decl">void setZipComment(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; comment<br />);</p>
+<div class="description">
+<p>Sets the optional <a href="Poco.Zip.html" title="namespace Poco::Zip">Zip</a> comment. </p>
+</div>
+<h2>Variables</h2>
+<h3><a id="31060">HEADER</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static const char <a href="Poco.Zip.ZipArchiveInfo.html#31060" title="Poco::Zip::ZipArchiveInfo::HEADER">HEADER</a>[<a href="Poco.Zip.ZipCommon.html#31110" title="Poco::Zip::ZipCommon::HEADER_SIZE">ZipCommon::HEADER_SIZE</a>];</p>
+<div class="description">
+<p></p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

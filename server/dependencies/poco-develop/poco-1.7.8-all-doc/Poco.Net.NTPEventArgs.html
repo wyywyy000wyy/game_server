@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::Net::NTPEventArgs</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.Net.html" class="namespace">Poco::Net</a></h1>
+<h1 class="symbol">class NTPEventArgs</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Net" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Net<br />
+<b>Package:</b> NTP<br />
+<b>Header:</b> Poco/Net/NTPEventArgs.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>The purpose of the <a href="Poco.Net.NTPEventArgs.html" title="class Poco::Net::NTPEventArgs">NTPEventArgs</a> class is to be used as template parameter to instantiate event members in <a href="Poco.Net.NTPClient.html" title="class Poco::Net::NTPClient">NTPClient</a> class. When clients register for an event notification, the reference to the class is  passed to the handler function to provide information about the event. </p>
+</div>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.Net.NTPEventArgs.html#22975" title="Poco::Net::NTPEventArgs::hostAddress()">hostAddress</a>, <a href="Poco.Net.NTPEventArgs.html#22974" title="Poco::Net::NTPEventArgs::hostName()">hostName</a>, <a href="Poco.Net.NTPEventArgs.html#22976" title="Poco::Net::NTPEventArgs::packet()">packet</a></p>
+<h2>Constructors</h2>
+<h3><a id="22971">NTPEventArgs</a></h3>
+<p class="decl"><a href="Poco.Net.NTPEventArgs.html" title="class Poco::Net::NTPEventArgs">NTPEventArgs</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Net.SocketAddress.html" title="class Poco::Net::SocketAddress">SocketAddress</a> &amp; address<br />);</p>
+<div class="description">
+<p>Creates <a href="Poco.Net.NTPEventArgs.html" title="class Poco::Net::NTPEventArgs">NTPEventArgs</a>. </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="22973">~NTPEventArgs</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual ~<a href="Poco.Net.NTPEventArgs.html" title="class Poco::Net::NTPEventArgs">NTPEventArgs</a>();</p>
+<div class="description">
+<p>Destroys <a href="Poco.Net.NTPEventArgs.html" title="class Poco::Net::NTPEventArgs">NTPEventArgs</a>. </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="22975">hostAddress</a></h3>
+<p class="decl">std::string hostAddress() const;</p>
+<div class="description">
+<p>Returns the target IP address. </p>
+</div>
+<h3><a id="22974">hostName</a></h3>
+<p class="decl">std::string hostName() const;</p>
+<div class="description">
+<p>Tries to resolve the target IP address into host name. If unsuccessful, all exceptions are silently ignored and  the IP address is returned. </p>
+</div>
+<h3><a id="22976">packet</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">const <a href="Poco.Net.NTPPacket.html" title="class Poco::Net::NTPPacket">NTPPacket</a> &amp; packet();</p>
+<div class="description">
+<p>Returns the NTP packet. </p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

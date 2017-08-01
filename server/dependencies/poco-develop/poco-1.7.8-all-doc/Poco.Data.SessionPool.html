@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::Data::SessionPool</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.Data.html" class="namespace">Poco::Data</a></h1>
+<h1 class="symbol">class SessionPool</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Data" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Data<br />
+<b>Package:</b> SessionPooling<br />
+<b>Header:</b> Poco/Data/SessionPool.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>This class implements session pooling for POCO <a href="Poco.Data.html" title="namespace Poco::Data">Data</a>. </p>
+<p>Creating a connection to a database is often a time consuming operation. Therefore it makes sense to reuse a session object once it is no longer needed. </p>
+<p>A <a href="Poco.Data.SessionPool.html" title="class Poco::Data::SessionPool">SessionPool</a> manages a collection of <a href="Poco.Data.SessionImpl.html" title="class Poco::Data::SessionImpl">SessionImpl</a> objects  (decorated with a <a href="Poco.Data.PooledSessionImpl.html" title="class Poco::Data::PooledSessionImpl">PooledSessionImpl</a>). </p>
+<p>When a <a href="Poco.Data.SessionImpl.html" title="class Poco::Data::SessionImpl">SessionImpl</a> object is requested, the <a href="Poco.Data.SessionPool.html" title="class Poco::Data::SessionPool">SessionPool</a> first looks in its set of already initialized <a href="Poco.Data.SessionImpl.html" title="class Poco::Data::SessionImpl">SessionImpl</a> for an available object. If one is found, it is returned to the client and marked as &quot;in-use&quot;. If no <a href="Poco.Data.SessionImpl.html" title="class Poco::Data::SessionImpl">SessionImpl</a> is available, the <a href="Poco.Data.SessionPool.html" title="class Poco::Data::SessionPool">SessionPool</a> attempts to create a new one for the client. To avoid excessive creation of <a href="Poco.Data.SessionImpl.html" title="class Poco::Data::SessionImpl">SessionImpl</a> objects, a limit can be set on the maximum number of objects. Sessions found not to be connected to the database are purged from the pool whenever one of the following events occurs: </p>
+<p></p>
+<ul>
+<li>JanitorTimer event </li>
+<li><a href="Poco.Data.SessionPool.html#7164" title="Poco::Data::SessionPool::get()">get</a>() request </li>
+<li><a href="Poco.Data.SessionPool.html#7205" title="Poco::Data::SessionPool::putBack()">putBack</a>() request </li>
+</ul>
+<p>Not connected idle sessions can not exist. </p>
+<p>Usage example: </p>
+<p></p>
+<pre>SessionPool pool(&quot;ODBC&quot;, &quot;...&quot;);
+...
+Session sess(pool.get());
+...
+</pre>
+</div>
+<h2>Inheritance</h2>
+<p><b>Direct Base Classes: </b><a href="Poco.RefCountedObject.html" title="class Poco::RefCountedObject">Poco::RefCountedObject</a></p>
+<p><b>All Base Classes: </b><a href="Poco.RefCountedObject.html" title="class Poco::RefCountedObject">Poco::RefCountedObject</a></p>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.Data.SessionPool.html#7175" title="Poco::Data::SessionPool::allocated()">allocated</a>, <a href="Poco.Data.SessionPool.html#7203" title="Poco::Data::SessionPool::applySettings()">applySettings</a>, <a href="Poco.Data.SessionPool.html#7176" title="Poco::Data::SessionPool::available()">available</a>, <a href="Poco.Data.SessionPool.html#7171" title="Poco::Data::SessionPool::capacity()">capacity</a>, <a href="Poco.Data.SessionPool.html#7193" title="Poco::Data::SessionPool::customizeSession()">customizeSession</a>, <a href="Poco.Data.SessionPool.html#7174" title="Poco::Data::SessionPool::dead()">dead</a>, <a href="Poco.Data.SessionPool.html#7201" title="Poco::Data::SessionPool::deadImpl()">deadImpl</a>, <a href="Poco.Data.SessionPool.html#7164" title="Poco::Data::SessionPool::get()">get</a>, <a href="Poco.Data.SessionPool.html#7184" title="Poco::Data::SessionPool::getFeature()">getFeature</a>, <a href="Poco.Data.SessionPool.html#7189" title="Poco::Data::SessionPool::getProperty()">getProperty</a>, <a href="Poco.Data.SessionPool.html#7173" title="Poco::Data::SessionPool::idle()">idle</a>, <a href="Poco.Data.SessionPool.html#7192" title="Poco::Data::SessionPool::isActive()">isActive</a>, <a href="Poco.Data.SessionPool.html#7177" title="Poco::Data::SessionPool::name()">name</a>, <a href="Poco.Data.SessionPool.html#7207" title="Poco::Data::SessionPool::onJanitorTimer()">onJanitorTimer</a>, <a href="Poco.Data.SessionPool.html#7200" title="Poco::Data::SessionPool::purgeDeadSessions()">purgeDeadSessions</a>, <a href="Poco.Data.SessionPool.html#7205" title="Poco::Data::SessionPool::putBack()">putBack</a>, <a href="Poco.Data.SessionPool.html#7181" title="Poco::Data::SessionPool::setFeature()">setFeature</a>, <a href="Poco.Data.SessionPool.html#7186" title="Poco::Data::SessionPool::setProperty()">setProperty</a>, <a href="Poco.Data.SessionPool.html#7191" title="Poco::Data::SessionPool::shutdown()">shutdown</a>, <a href="Poco.Data.SessionPool.html#7172" title="Poco::Data::SessionPool::used()">used</a></p>
+<p><b>Inherited Functions: </b><a href="Poco.RefCountedObject.html#16511" title="Poco::RefCountedObject::duplicate()">duplicate</a>, <a href="Poco.RefCountedObject.html#16513" title="Poco::RefCountedObject::referenceCount()">referenceCount</a>, <a href="Poco.RefCountedObject.html#16512" title="Poco::RefCountedObject::release()">release</a></p>
+<h2>Types</h2>
+<h3><a id="7198">FeatureMap</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">typedef <a href="Poco.HashMap.html" title="class Poco::HashMap">Poco::HashMap</a> &lt; std::string, bool &gt; <a href="Poco.Data.SessionPool.html#7198" title="Poco::Data::SessionPool::FeatureMap">FeatureMap</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="7195">PooledSessionHolderPtr</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">typedef <a href="Poco.AutoPtr.html" title="class Poco::AutoPtr">Poco::AutoPtr</a> &lt; <a href="Poco.Data.PooledSessionHolder.html" title="class Poco::Data::PooledSessionHolder">PooledSessionHolder</a> &gt; <a href="Poco.Data.SessionPool.html#7195" title="Poco::Data::SessionPool::PooledSessionHolderPtr">PooledSessionHolderPtr</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="7196">PooledSessionImplPtr</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">typedef <a href="Poco.AutoPtr.html" title="class Poco::AutoPtr">Poco::AutoPtr</a> &lt; <a href="Poco.Data.PooledSessionImpl.html" title="class Poco::Data::PooledSessionImpl">PooledSessionImpl</a> &gt; <a href="Poco.Data.SessionPool.html#7196" title="Poco::Data::SessionPool::PooledSessionImplPtr">PooledSessionImplPtr</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="7199">PropertyMap</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">typedef <a href="Poco.HashMap.html" title="class Poco::HashMap">Poco::HashMap</a> &lt; std::string, <a href="Poco.Any.html" title="class Poco::Any">Poco::Any</a> &gt; <a href="Poco.Data.SessionPool.html#7199" title="Poco::Data::SessionPool::PropertyMap">PropertyMap</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="7197">SessionList</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">typedef std::list &lt; <a href="Poco.Data.SessionPool.html#7195" title="Poco::Data::SessionPool::PooledSessionHolderPtr">PooledSessionHolderPtr</a> &gt; <a href="Poco.Data.SessionPool.html#7197" title="Poco::Data::SessionPool::SessionList">SessionList</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Constructors</h2>
+<h3><a id="7157">SessionPool</a></h3>
+<p class="decl"><a href="Poco.Data.SessionPool.html" title="class Poco::Data::SessionPool">SessionPool</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; connector,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; connectionString,<br />&nbsp;&nbsp;&nbsp;&nbsp;int minSessions = 1,<br />&nbsp;&nbsp;&nbsp;&nbsp;int maxSessions = 32,<br />&nbsp;&nbsp;&nbsp;&nbsp;int idleTime = 60<br />);</p>
+<div class="description">
+<p>Creates the <a href="Poco.Data.SessionPool.html" title="class Poco::Data::SessionPool">SessionPool</a> for sessions with the given connector and connectionString. </p>
+<p>The pool allows for at most maxSessions sessions to be created. If a session has been idle for more than idleTime seconds, and more than minSessions sessions are in the pool, the session is automatically destroyed. </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="7163">~SessionPool</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">~<a href="Poco.Data.SessionPool.html" title="class Poco::Data::SessionPool">SessionPool</a>();</p>
+<div class="description">
+<p>Destroys the <a href="Poco.Data.SessionPool.html" title="class Poco::Data::SessionPool">SessionPool</a>. </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="7175">allocated</a></h3>
+<p class="decl">int allocated() const;</p>
+<div class="description">
+<p>Returns the number of allocated sessions. </p>
+</div>
+<h3><a id="7176">available</a></h3>
+<p class="decl">int available() const;</p>
+<div class="description">
+<p>Returns the number of available (idle + remaining capacity) sessions. </p>
+</div>
+<h3><a id="7171">capacity</a></h3>
+<p class="decl">int capacity() const;</p>
+<div class="description">
+<p>Returns the maximum number of sessions the <a href="Poco.Data.SessionPool.html" title="class Poco::Data::SessionPool">SessionPool</a> will manage. </p>
+</div>
+<h3><a id="7174">dead</a></h3>
+<p class="decl">int dead();</p>
+<div class="description">
+<p>Returns the number of not connected active sessions. </p>
+</div>
+<h3><a id="7164">get</a></h3>
+<p class="decl"><a href="Poco.Data.Session.html" title="class Poco::Data::Session">Session</a> get();</p>
+<div class="description">
+<p>Returns a <a href="Poco.Data.Session.html" title="class Poco::Data::Session">Session</a>. </p>
+<p>If there are unused sessions available, one of the unused sessions is recycled. Otherwise, a new session is created.  </p>
+<p>If the maximum number of sessions for this pool has already been created, a <a href="Poco.Data.SessionPoolExhaustedException.html" title="class Poco::Data::SessionPoolExhaustedException">SessionPoolExhaustedException</a> is thrown. </p>
+</div>
+<h3><a id="7165">get</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">template &lt; typename T &gt; <a href="Poco.Data.Session.html" title="class Poco::Data::Session">Session</a> get(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; name,<br />&nbsp;&nbsp;&nbsp;&nbsp;const T &amp; value<br />);</p>
+<div class="description">
+<p>Returns a <a href="Poco.Data.Session.html" title="class Poco::Data::Session">Session</a> with requested property set. The property can be different from the default pool value, in which case it is reset back to the pool  value when the session is reclaimed by the pool. </p>
+</div>
+<h3><a id="7168">get</a></h3>
+<p class="decl"><a href="Poco.Data.Session.html" title="class Poco::Data::Session">Session</a> get(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; name,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool value<br />);</p>
+<div class="description">
+<p>Returns a <a href="Poco.Data.Session.html" title="class Poco::Data::Session">Session</a> with requested feature set. The feature can be different from the default pool value, in which case it is reset back to the pool  value when the session is reclaimed by the pool. </p>
+</div>
+<h3><a id="7184">getFeature</a></h3>
+<p class="decl">bool getFeature(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; name<br />);</p>
+<div class="description">
+<p>Returns the requested feature. </p>
+</div>
+<h3><a id="7189">getProperty</a></h3>
+<p class="decl"><a href="Poco.Any.html" title="class Poco::Any">Poco::Any</a> getProperty(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; name<br />);</p>
+<div class="description">
+<p>Returns the requested property. </p>
+</div>
+<h3><a id="7173">idle</a></h3>
+<p class="decl">int idle() const;</p>
+<div class="description">
+<p>Returns the number of idle sessions. </p>
+</div>
+<h3><a id="7192">isActive</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool isActive() const;</p>
+<div class="description">
+<p>Returns true if session pool is active (not shut down). </p>
+</div>
+<h3><a id="7177">name</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">std::string name() const;</p>
+<div class="description">
+<p>Returns the name for this pool. </p>
+</div>
+<h3><a id="7178">name</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static std::string name(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; connector,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; connectionString<br />);</p>
+<div class="description">
+<p>Returns the name formatted from supplied arguments as &quot;connector:///connectionString&quot;. </p>
+</div>
+<h3><a id="7181">setFeature</a></h3>
+<p class="decl">void setFeature(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; name,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool state<br />);</p>
+<div class="description">
+<p>Sets feature for all the sessions. </p>
+</div>
+<h3><a id="7186">setProperty</a></h3>
+<p class="decl">void setProperty(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; name,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Any.html" title="class Poco::Any">Poco::Any</a> &amp; value<br />);</p>
+<div class="description">
+<p>Sets property for all sessions. </p>
+</div>
+<h3><a id="7191">shutdown</a></h3>
+<p class="decl">void shutdown();</p>
+<div class="description">
+<p>Shuts down the session pool. </p>
+</div>
+<h3><a id="7172">used</a></h3>
+<p class="decl">int used() const;</p>
+<div class="description">
+<p>Returns the number of sessions currently in use. </p>
+</div>
+<h3><a id="7203">applySettings</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">void applySettings(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Data.SessionImpl.html" title="class Poco::Data::SessionImpl">SessionImpl</a> * pImpl<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="7193">customizeSession</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void customizeSession(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Data.Session.html" title="class Poco::Data::Session">Session</a> &amp; session<br />);</p>
+<div class="description">
+<p>Can be overridden by subclass to perform custom initialization of a newly created database session. </p>
+<p>The default implementation does nothing. </p>
+</div>
+<h3><a id="7201">deadImpl</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">int deadImpl(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Data.SessionPool.html#7197" title="Poco::Data::SessionPool::SessionList">SessionList</a> &amp; rSessions<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="7207">onJanitorTimer</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">void onJanitorTimer(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Timer.html" title="class Poco::Timer">Poco::Timer</a> &amp; param75<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="7200">purgeDeadSessions</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">void purgeDeadSessions();</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="7205">putBack</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">void putBack(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Data.SessionPool.html#7195" title="Poco::Data::SessionPool::PooledSessionHolderPtr">PooledSessionHolderPtr</a> pHolder<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

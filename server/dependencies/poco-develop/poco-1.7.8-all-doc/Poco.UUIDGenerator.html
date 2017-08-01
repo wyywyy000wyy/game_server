@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::UUIDGenerator</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.html" class="namespace">Poco</a></h1>
+<h1 class="symbol">class UUIDGenerator</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Foundation" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Foundation<br />
+<b>Package:</b> UUID<br />
+<b>Header:</b> Poco/UUIDGenerator.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>This class implements a generator for Universal Unique Identifiers, as specified in Appendix A of the DCE 1.1 Remote Procedure Call Specification (<a href="http://www.opengroup.org/onlinepubs/9629399/" target="_blank">http://www.opengroup.org/onlinepubs/9629399/</a>), <a href="https://www.ietf.org/rfc/rfc2518.txt" target="_blank">RFC 2518</a> (WebDAV), section 6.4.1 and the UUIDs and GUIDs internet draft by Leach/Salz from February, 1998  (<a href="http://ftp.ics.uci.edu/pub/ietf/webdav/uuid-guid/draft-leach-uuids-guids-01.txt" target="_blank">http://ftp.ics.uci.edu/pub/ietf/webdav/uuid-guid/draft-leach-uuids-guids-01.txt</a>) </p>
+</div>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.UUIDGenerator.html#18928" title="Poco::UUIDGenerator::create()">create</a>, <a href="Poco.UUIDGenerator.html#18929" title="Poco::UUIDGenerator::createFromName()">createFromName</a>, <a href="Poco.UUIDGenerator.html#18942" title="Poco::UUIDGenerator::createOne()">createOne</a>, <a href="Poco.UUIDGenerator.html#18941" title="Poco::UUIDGenerator::createRandom()">createRandom</a>, <a href="Poco.UUIDGenerator.html#18943" title="Poco::UUIDGenerator::defaultGenerator()">defaultGenerator</a>, <a href="Poco.UUIDGenerator.html#18945" title="Poco::UUIDGenerator::getNode()">getNode</a>, <a href="Poco.UUIDGenerator.html#18944" title="Poco::UUIDGenerator::timeStamp()">timeStamp</a></p>
+<h2>Constructors</h2>
+<h3><a id="18926">UUIDGenerator</a></h3>
+<p class="decl"><a href="Poco.UUIDGenerator.html" title="class Poco::UUIDGenerator">UUIDGenerator</a>();</p>
+<div class="description">
+<p>Creates the <a href="Poco.UUIDGenerator.html" title="class Poco::UUIDGenerator">UUIDGenerator</a>. </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="18927">~UUIDGenerator</a></h3>
+<p class="decl">~<a href="Poco.UUIDGenerator.html" title="class Poco::UUIDGenerator">UUIDGenerator</a>();</p>
+<div class="description">
+<p>Destroys the <a href="Poco.UUIDGenerator.html" title="class Poco::UUIDGenerator">UUIDGenerator</a>. </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="18928">create</a></h3>
+<p class="decl"><a href="Poco.UUID.html" title="class Poco::UUID">UUID</a> create();</p>
+<div class="description">
+<p>Creates a new time-based <a href="Poco.UUID.html" title="class Poco::UUID">UUID</a>, using the MAC address of one of the system's ethernet adapters. </p>
+<p>Throws a <a href="Poco.SystemException.html" title="class Poco::SystemException">SystemException</a> if no MAC address can be obtained. </p>
+</div>
+<h3><a id="18929">createFromName</a></h3>
+<p class="decl"><a href="Poco.UUID.html" title="class Poco::UUID">UUID</a> createFromName(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.UUID.html" title="class Poco::UUID">UUID</a> &amp; nsid,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; name<br />);</p>
+<div class="description">
+<p>Creates a name-based <a href="Poco.UUID.html" title="class Poco::UUID">UUID</a>. </p>
+</div>
+<h3><a id="18932">createFromName</a></h3>
+<p class="decl"><a href="Poco.UUID.html" title="class Poco::UUID">UUID</a> createFromName(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.UUID.html" title="class Poco::UUID">UUID</a> &amp; nsid,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; name,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.DigestEngine.html" title="class Poco::DigestEngine">DigestEngine</a> &amp; de<br />);</p>
+<div class="description">
+<p>Creates a name-based <a href="Poco.UUID.html" title="class Poco::UUID">UUID</a>, using the given digest engine. </p>
+<p>Note: in order to create a standard-compliant <a href="Poco.UUID.html" title="class Poco::UUID">UUID</a>, the given <a href="Poco.DigestEngine.html" title="class Poco::DigestEngine">DigestEngine</a> must be either an instance of <a href="Poco.MD5Engine.html" title="class Poco::MD5Engine">MD5Engine</a> or <a href="Poco.SHA1Engine.html" title="class Poco::SHA1Engine">SHA1Engine</a>. The version field of the <a href="Poco.UUID.html" title="class Poco::UUID">UUID</a> will be set accordingly. </p>
+</div>
+<h3><a id="18936">createFromName</a></h3>
+<p class="decl"><a href="Poco.UUID.html" title="class Poco::UUID">UUID</a> createFromName(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.UUID.html" title="class Poco::UUID">UUID</a> &amp; nsid,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; name,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.DigestEngine.html" title="class Poco::DigestEngine">DigestEngine</a> &amp; de,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.UUID.html#18846" title="enum  Poco::UUID::Version">UUID::Version</a> version<br />);</p>
+<div class="description">
+<p>Creates a name-based <a href="Poco.UUID.html" title="class Poco::UUID">UUID</a>, using the given digest engine and version. </p>
+</div>
+<h3><a id="18942">createOne</a></h3>
+<p class="decl"><a href="Poco.UUID.html" title="class Poco::UUID">UUID</a> createOne();</p>
+<div class="description">
+<p>Tries to create and return a time-based <a href="Poco.UUID.html" title="class Poco::UUID">UUID</a> (see <a href="Poco.UUIDGenerator.html#18928" title="Poco::UUIDGenerator::create()">create</a>()), and,  if that does not work due to the unavailability of a MAC address, creates and returns a random <a href="Poco.UUID.html" title="class Poco::UUID">UUID</a> (see <a href="Poco.UUIDGenerator.html#18941" title="Poco::UUIDGenerator::createRandom()">createRandom</a>()). </p>
+<p>The <a href="Poco.UUID.html#18873" title="Poco::UUID::version()">UUID::version</a>() method can be used to determine the actual kind of the <a href="Poco.UUID.html" title="class Poco::UUID">UUID</a> generated. </p>
+</div>
+<h3><a id="18941">createRandom</a></h3>
+<p class="decl"><a href="Poco.UUID.html" title="class Poco::UUID">UUID</a> createRandom();</p>
+<div class="description">
+<p>Creates a random <a href="Poco.UUID.html" title="class Poco::UUID">UUID</a>. </p>
+</div>
+<h3><a id="18943">defaultGenerator</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static <a href="Poco.UUIDGenerator.html" title="class Poco::UUIDGenerator">UUIDGenerator</a> &amp; defaultGenerator();</p>
+<div class="description">
+<p>Returns a reference to the default <a href="Poco.UUIDGenerator.html" title="class Poco::UUIDGenerator">UUIDGenerator</a>. </p>
+</div>
+<h3><a id="18945">getNode</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">void getNode();</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="18944">timeStamp</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Timestamp.html#18166" title="Poco::Timestamp::UtcTimeVal">Timestamp::UtcTimeVal</a> timeStamp();</p>
+<div class="description">
+<p></p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::ErrorHandler</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.html" class="namespace">Poco</a></h1>
+<h1 class="symbol">class ErrorHandler</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Foundation" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Foundation<br />
+<b>Package:</b> Threading<br />
+<b>Header:</b> Poco/ErrorHandler.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>This is the base class for thread error handlers. </p>
+<p>An unhandled exception that causes a thread to terminate is usually silently ignored, since the class library cannot do anything meaningful about it. </p>
+<p>The <a href="Poco.Thread.html" title="class Poco::Thread">Thread</a> class provides the possibility to register a global <a href="Poco.ErrorHandler.html" title="class Poco::ErrorHandler">ErrorHandler</a> that is invoked whenever a thread has been terminated by an unhandled exception. The <a href="Poco.ErrorHandler.html" title="class Poco::ErrorHandler">ErrorHandler</a> must be derived from this class and can provide implementations of all three <a href="Poco.ErrorHandler.html#10897" title="Poco::ErrorHandler::exception()">exception</a>() overloads. </p>
+<p>The <a href="Poco.ErrorHandler.html" title="class Poco::ErrorHandler">ErrorHandler</a> is always invoked within the context of the offending thread. </p>
+</div>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.ErrorHandler.html#10910" title="Poco::ErrorHandler::defaultHandler()">defaultHandler</a>, <a href="Poco.ErrorHandler.html#10897" title="Poco::ErrorHandler::exception()">exception</a>, <a href="Poco.ErrorHandler.html#10909" title="Poco::ErrorHandler::get()">get</a>, <a href="Poco.ErrorHandler.html#10902" title="Poco::ErrorHandler::handle()">handle</a>, <a href="Poco.ErrorHandler.html#10907" title="Poco::ErrorHandler::set()">set</a></p>
+<h2>Constructors</h2>
+<h3><a id="10895">ErrorHandler</a></h3>
+<p class="decl"><a href="Poco.ErrorHandler.html" title="class Poco::ErrorHandler">ErrorHandler</a>();</p>
+<div class="description">
+<p>Creates the <a href="Poco.ErrorHandler.html" title="class Poco::ErrorHandler">ErrorHandler</a>. </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="10896">~ErrorHandler</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual ~<a href="Poco.ErrorHandler.html" title="class Poco::ErrorHandler">ErrorHandler</a>();</p>
+<div class="description">
+<p>Destroys the <a href="Poco.ErrorHandler.html" title="class Poco::ErrorHandler">ErrorHandler</a>. </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="10897">exception</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void exception(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Exception.html" title="class Poco::Exception">Exception</a> &amp; exc<br />);</p>
+<div class="description">
+<p>Called when a <a href="Poco.Exception.html" title="class Poco::Exception">Poco::Exception</a> (or a subclass) caused the thread to terminate. </p>
+<p>This method should not throw any exception - it would be silently ignored. </p>
+<p>The default implementation just breaks into the debugger. </p>
+</div>
+<h3><a id="10899">exception</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void exception(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::exception &amp; exc<br />);</p>
+<div class="description">
+<p>Called when a std::exception (or a subclass) caused the thread to terminate.		 </p>
+<p>This method should not throw any exception - it would be silently ignored. </p>
+<p>The default implementation just breaks into the debugger. </p>
+</div>
+<h3><a id="10901">exception</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void exception();</p>
+<div class="description">
+<p>Called when an exception that is neither a <a href="Poco.Exception.html" title="class Poco::Exception">Poco::Exception</a> nor a std::exception caused the thread to terminate. </p>
+<p>This method should not throw any exception - it would be silently ignored. </p>
+<p>The default implementation just breaks into the debugger. </p>
+</div>
+<h3><a id="10909">get</a> <img src="images/static.png" alt="static" title="static" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">static <a href="Poco.ErrorHandler.html" title="class Poco::ErrorHandler">ErrorHandler</a> * get();</p>
+<div class="description">
+<p>Returns a pointer to the currently registered <a href="Poco.ErrorHandler.html" title="class Poco::ErrorHandler">ErrorHandler</a>. </p>
+</div>
+<h3><a id="10902">handle</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static void handle(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Exception.html" title="class Poco::Exception">Exception</a> &amp; exc<br />);</p>
+<div class="description">
+<p>Invokes the currently registered <a href="Poco.ErrorHandler.html" title="class Poco::ErrorHandler">ErrorHandler</a>. </p>
+</div>
+<h3><a id="10904">handle</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static void handle(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::exception &amp; exc<br />);</p>
+<div class="description">
+<p>Invokes the currently registered <a href="Poco.ErrorHandler.html" title="class Poco::ErrorHandler">ErrorHandler</a>. </p>
+</div>
+<h3><a id="10906">handle</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static void handle();</p>
+<div class="description">
+<p>Invokes the currently registered <a href="Poco.ErrorHandler.html" title="class Poco::ErrorHandler">ErrorHandler</a>. </p>
+</div>
+<h3><a id="10907">set</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static <a href="Poco.ErrorHandler.html" title="class Poco::ErrorHandler">ErrorHandler</a> * set(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.ErrorHandler.html" title="class Poco::ErrorHandler">ErrorHandler</a> * pHandler<br />);</p>
+<div class="description">
+<p>Registers the given handler as the current error handler. </p>
+<p>Returns the previously registered handler. </p>
+</div>
+<h3><a id="10910">defaultHandler</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static <a href="Poco.ErrorHandler.html" title="class Poco::ErrorHandler">ErrorHandler</a> * defaultHandler();</p>
+<div class="description">
+<p>Returns the default <a href="Poco.ErrorHandler.html" title="class Poco::ErrorHandler">ErrorHandler</a>.	 </p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

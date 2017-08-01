@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::Data::Column</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.Data.html" class="namespace">Poco::Data</a></h1>
+<h1 class="template">template &lt; class C &gt;</h1>
+<h1 class="symbol">class Column</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Data" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Data<br />
+<b>Package:</b> DataCore<br />
+<b>Header:</b> Poco/Data/Column.h</p>
+<h2>Description</h2>
+<div class="description">
+<p><a href="Poco.Data.Column.html" title="class Poco::Data::Column">Column</a> class is column data container. <a href="Poco.Data.html" title="namespace Poco::Data">Data</a> (a pointer to underlying STL container) is assigned to the class  at construction time. Construction with null pointer is not allowed. This class owns the data assigned to it and deletes the storage on destruction. </p>
+</div>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.Data.Column.html#5783" title="Poco::Data::Column::begin()">begin</a>, <a href="Poco.Data.Column.html#5771" title="Poco::Data::Column::data()">data</a>, <a href="Poco.Data.Column.html#5784" title="Poco::Data::Column::end()">end</a>, <a href="Poco.Data.Column.html#5779" title="Poco::Data::Column::length()">length</a>, <a href="Poco.Data.Column.html#5778" title="Poco::Data::Column::name()">name</a>, <a href="Poco.Data.Column.html#5767" title="Poco::Data::Column::operator =()">operator&nbsp;=</a>, <a href="Poco.Data.Column.html#5774" title="Poco::Data::Column::operator []()">operator&nbsp;[]</a>, <a href="Poco.Data.Column.html#5781" title="Poco::Data::Column::position()">position</a>, <a href="Poco.Data.Column.html#5780" title="Poco::Data::Column::precision()">precision</a>, <a href="Poco.Data.Column.html#5777" title="Poco::Data::Column::reset()">reset</a>, <a href="Poco.Data.Column.html#5776" title="Poco::Data::Column::rowCount()">rowCount</a>, <a href="Poco.Data.Column.html#5769" title="Poco::Data::Column::swap()">swap</a>, <a href="Poco.Data.Column.html#5782" title="Poco::Data::Column::type()">type</a>, <a href="Poco.Data.Column.html#5772" title="Poco::Data::Column::value()">value</a></p>
+<h2>Types</h2>
+<h3><a id="5755">Container</a></h3>
+<p class="decl">typedef C <a href="Poco.Data.Column.html#5755" title="Poco::Data::Column::Container">Container</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="5756">ContainerPtr</a></h3>
+<p class="decl">typedef <a href="Poco.SharedPtr.html" title="class Poco::SharedPtr">Poco::SharedPtr</a> &lt; C &gt; <a href="Poco.Data.Column.html#5756" title="Poco::Data::Column::ContainerPtr">ContainerPtr</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="5757">Iterator</a></h3>
+<p class="decl">typedef typename C::const_iterator <a href="Poco.Data.Column.html#5757" title="Poco::Data::Column::Iterator">Iterator</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="5758">RIterator</a></h3>
+<p class="decl">typedef typename C::const_reverse_iterator <a href="Poco.Data.Column.html#5758" title="Poco::Data::Column::RIterator">RIterator</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="5759">Size</a></h3>
+<p class="decl">typedef typename C::size_type <a href="Poco.Data.Column.html#5759" title="Poco::Data::Column::Size">Size</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="5760">Type</a></h3>
+<p class="decl">typedef typename C::value_type <a href="Poco.Data.Column.html#5760" title="Poco::Data::Column::Type">Type</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Constructors</h2>
+<h3><a id="5764">Column</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Data.Column.html" title="class Poco::Data::Column">Column</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Data.Column.html" title="class Poco::Data::Column">Column</a> &amp; col<br />);</p>
+<div class="description">
+<p>Creates the <a href="Poco.Data.Column.html" title="class Poco::Data::Column">Column</a>. </p>
+</div>
+<h3><a id="5761">Column</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Data.Column.html" title="class Poco::Data::Column">Column</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Data.MetaColumn.html" title="class Poco::Data::MetaColumn">MetaColumn</a> &amp; metaColumn,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Data.Column.html#5755" title="Poco::Data::Column::Container">Container</a> * pData<br />);</p>
+<div class="description">
+<p>Creates the <a href="Poco.Data.Column.html" title="class Poco::Data::Column">Column</a>. </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="5766">~Column</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">~<a href="Poco.Data.Column.html" title="class Poco::Data::Column">Column</a>();</p>
+<div class="description">
+<p>Destroys the <a href="Poco.Data.Column.html" title="class Poco::Data::Column">Column</a>. </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="5783">begin</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Data.Column.html#5757" title="Poco::Data::Column::Iterator">Iterator</a> begin() const;</p>
+<div class="description">
+<p>Returns iterator pointing to the beginning of data storage vector. </p>
+</div>
+<h3><a id="5771">data</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Data.Column.html#5755" title="Poco::Data::Column::Container">Container</a> &amp; data();</p>
+<div class="description">
+<p>Returns reference to contained data. </p>
+</div>
+<h3><a id="5784">end</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Data.Column.html#5757" title="Poco::Data::Column::Iterator">Iterator</a> end() const;</p>
+<div class="description">
+<p>Returns iterator pointing to the end of data storage vector. </p>
+</div>
+<h3><a id="5779">length</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">std::size_t length() const;</p>
+<div class="description">
+<p>Returns column maximum length. </p>
+</div>
+<h3><a id="5778">name</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">const std::string &amp; name() const;</p>
+<div class="description">
+<p>Returns column name. </p>
+</div>
+<h3><a id="5767">operator =</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Data.Column.html" title="class Poco::Data::Column">Column</a> &amp; operator = (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Data.Column.html" title="class Poco::Data::Column">Column</a> &amp; col<br />);</p>
+<div class="description">
+<p>Assignment operator. </p>
+</div>
+<h3><a id="5774">operator []</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">const <a href="Poco.Data.Column.html#5760" title="Poco::Data::Column::Type">Type</a> &amp; operator[] (<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t row<br />) const;</p>
+<div class="description">
+<p>Returns the field value in specified row. </p>
+</div>
+<h3><a id="5781">position</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">std::size_t position() const;</p>
+<div class="description">
+<p>Returns column position. </p>
+</div>
+<h3><a id="5780">precision</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">std::size_t precision() const;</p>
+<div class="description">
+<p>Returns column precision. Valid for floating point fields only (zero for other data types). </p>
+</div>
+<h3><a id="5777">reset</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void reset();</p>
+<div class="description">
+<p>Clears and shrinks the storage. </p>
+</div>
+<h3><a id="5776">rowCount</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Data.Column.html#5759" title="Poco::Data::Column::Size">Size</a> rowCount() const;</p>
+<div class="description">
+<p>Returns number of rows. </p>
+</div>
+<h3><a id="5769">swap</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void swap(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Data.Column.html" title="class Poco::Data::Column">Column</a> &amp; other<br />);</p>
+<div class="description">
+<p>Swaps the column with another one. </p>
+</div>
+<h3><a id="5782">type</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Data.MetaColumn.html#6370" title="enum  Poco::Data::MetaColumn::ColumnDataType">MetaColumn::ColumnDataType</a> type() const;</p>
+<div class="description">
+<p>Returns column type. </p>
+</div>
+<h3><a id="5772">value</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">const <a href="Poco.Data.Column.html#5760" title="Poco::Data::Column::Type">Type</a> &amp; value(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t row<br />) const;</p>
+<div class="description">
+<p>Returns the field value in specified row. </p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

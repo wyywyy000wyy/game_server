@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::Data::BulkBinding</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.Data.html" class="namespace">Poco::Data</a></h1>
+<h1 class="template">template &lt; class T &gt;</h1>
+<h1 class="symbol">class BulkBinding</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Data" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Data<br />
+<b>Package:</b> DataCore<br />
+<b>Header:</b> Poco/Data/BulkBinding.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>A <a href="Poco.Data.BulkBinding.html" title="class Poco::Data::BulkBinding">BulkBinding</a> maps a value to a column.  <a href="Poco.Data.Bulk.html" title="class Poco::Data::Bulk">Bulk</a> binding support is provided only for std::vector. </p>
+</div>
+<h2>Inheritance</h2>
+<p><b>Direct Base Classes: </b><a href="Poco.Data.AbstractBinding.html" title="class Poco::Data::AbstractBinding">AbstractBinding</a></p>
+<p><b>All Base Classes: </b><a href="Poco.Data.AbstractBinding.html" title="class Poco::Data::AbstractBinding">AbstractBinding</a></p>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.Data.BulkBinding.html#5646" title="Poco::Data::BulkBinding::bind()">bind</a>, <a href="Poco.Data.BulkBinding.html#5645" title="Poco::Data::BulkBinding::canBind()">canBind</a>, <a href="Poco.Data.BulkBinding.html#5643" title="Poco::Data::BulkBinding::numOfColumnsHandled()">numOfColumnsHandled</a>, <a href="Poco.Data.BulkBinding.html#5644" title="Poco::Data::BulkBinding::numOfRowsHandled()">numOfRowsHandled</a>, <a href="Poco.Data.BulkBinding.html#5648" title="Poco::Data::BulkBinding::reset()">reset</a></p>
+<p><b>Inherited Functions: </b><a href="Poco.Data.AbstractBinding.html#4809" title="Poco::Data::AbstractBinding::bind()">bind</a>, <a href="Poco.Data.AbstractBinding.html#4815" title="Poco::Data::AbstractBinding::bulkSize()">bulkSize</a>, <a href="Poco.Data.AbstractBinding.html#4808" title="Poco::Data::AbstractBinding::canBind()">canBind</a>, <a href="Poco.Data.AbstractBinding.html#4805" title="Poco::Data::AbstractBinding::getBinder()">getBinder</a>, <a href="Poco.Data.AbstractBinding.html#4812" title="Poco::Data::AbstractBinding::getDirection()">getDirection</a>, <a href="Poco.Data.AbstractBinding.html#4814" title="Poco::Data::AbstractBinding::isBulk()">isBulk</a>, <a href="Poco.Data.AbstractBinding.html#4813" title="Poco::Data::AbstractBinding::name()">name</a>, <a href="Poco.Data.AbstractBinding.html#4806" title="Poco::Data::AbstractBinding::numOfColumnsHandled()">numOfColumnsHandled</a>, <a href="Poco.Data.AbstractBinding.html#4807" title="Poco::Data::AbstractBinding::numOfRowsHandled()">numOfRowsHandled</a>, <a href="Poco.Data.AbstractBinding.html#4811" title="Poco::Data::AbstractBinding::reset()">reset</a>, <a href="Poco.Data.AbstractBinding.html#4803" title="Poco::Data::AbstractBinding::setBinder()">setBinder</a></p>
+<h2>Constructors</h2>
+<h3><a id="5637">BulkBinding</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Data.BulkBinding.html" title="class Poco::Data::BulkBinding">BulkBinding</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const T &amp; val,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.html#18381" title="Poco::UInt32">Poco::UInt32</a> bulkSize,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; name = "",<br />&nbsp;&nbsp;&nbsp;&nbsp;Direction direction = PD_IN<br />);</p>
+<div class="description">
+<p>Creates the <a href="Poco.Data.BulkBinding.html" title="class Poco::Data::BulkBinding">BulkBinding</a>. </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="5642">~BulkBinding</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">~<a href="Poco.Data.BulkBinding.html" title="class Poco::Data::BulkBinding">BulkBinding</a>();</p>
+<div class="description">
+<p>Destroys the <a href="Poco.Data.BulkBinding.html" title="class Poco::Data::BulkBinding">BulkBinding</a>. </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="5646">bind</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void bind(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Data.AbstractBinding.html#4809" title="Poco::Data::AbstractBinding::bind()">Poco::Data::AbstractBinding::bind()</a></p></div>
+<h3><a id="5645">canBind</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool canBind() const;</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Data.AbstractBinding.html#4808" title="Poco::Data::AbstractBinding::canBind()">Poco::Data::AbstractBinding::canBind()</a></p></div>
+<h3><a id="5643">numOfColumnsHandled</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">std::size_t numOfColumnsHandled() const;</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Data.AbstractBinding.html#4806" title="Poco::Data::AbstractBinding::numOfColumnsHandled()">Poco::Data::AbstractBinding::numOfColumnsHandled()</a></p></div>
+<h3><a id="5644">numOfRowsHandled</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">std::size_t numOfRowsHandled() const;</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Data.AbstractBinding.html#4807" title="Poco::Data::AbstractBinding::numOfRowsHandled()">Poco::Data::AbstractBinding::numOfRowsHandled()</a></p></div>
+<h3><a id="5648">reset</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void reset();</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Data.AbstractBinding.html#4811" title="Poco::Data::AbstractBinding::reset()">Poco::Data::AbstractBinding::reset()</a></p></div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::MongoDB::Connection</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.MongoDB.html" class="namespace">Poco::MongoDB</a></h1>
+<h1 class="symbol">class Connection</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-MongoDB" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> MongoDB<br />
+<b>Package:</b> MongoDB<br />
+<b>Header:</b> Poco/MongoDB/Connection.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>Represents a connection to a <a href="Poco.MongoDB.html" title="namespace Poco::MongoDB">MongoDB</a> server using the <a href="Poco.MongoDB.html" title="namespace Poco::MongoDB">MongoDB</a> wire protocol. </p>
+<p>See https://docs.mongodb.com/manual/reference/mongodb-wire-protocol/ for more information on the wire protocol. </p>
+</div>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.MongoDB.Connection.html#20098" title="Poco::MongoDB::Connection::address()">address</a>, <a href="Poco.MongoDB.Connection.html#20099" title="Poco::MongoDB::Connection::connect()">connect</a>, <a href="Poco.MongoDB.Connection.html#20108" title="Poco::MongoDB::Connection::disconnect()">disconnect</a>, <a href="Poco.MongoDB.Connection.html#20109" title="Poco::MongoDB::Connection::sendRequest()">sendRequest</a></p>
+<h2>Types</h2>
+<h3><a id="20086">Ptr</a></h3>
+<p class="decl">typedef <a href="Poco.SharedPtr.html" title="class Poco::SharedPtr">Poco::SharedPtr</a> &lt; <a href="Poco.MongoDB.Connection.html" title="class Poco::MongoDB::Connection">Connection</a> &gt; <a href="Poco.MongoDB.Connection.html#20086" title="Poco::MongoDB::Connection::Ptr">Ptr</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Constructors</h2>
+<h3><a id="20087">Connection</a></h3>
+<p class="decl"><a href="Poco.MongoDB.Connection.html" title="class Poco::MongoDB::Connection">Connection</a>();</p>
+<div class="description">
+<p>Creates an unconnected <a href="Poco.MongoDB.Connection.html" title="class Poco::MongoDB::Connection">Connection</a>. </p>
+<p>Use this when you want to connect later on. </p>
+</div>
+<h3><a id="20088">Connection</a></h3>
+<p class="decl"><a href="Poco.MongoDB.Connection.html" title="class Poco::MongoDB::Connection">Connection</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; hostAndPort<br />);</p>
+<div class="description">
+<p>Creates a <a href="Poco.MongoDB.Connection.html" title="class Poco::MongoDB::Connection">Connection</a> connected to the given <a href="Poco.MongoDB.html" title="namespace Poco::MongoDB">MongoDB</a> instance at host:port. </p>
+<p>The host and port must be separated with a colon. </p>
+</div>
+<h3><a id="20093">Connection</a></h3>
+<p class="decl"><a href="Poco.MongoDB.Connection.html" title="class Poco::MongoDB::Connection">Connection</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Net.SocketAddress.html" title="class Poco::Net::SocketAddress">Poco::Net::SocketAddress</a> &amp; addrs<br />);</p>
+<div class="description">
+<p>Creates a <a href="Poco.MongoDB.Connection.html" title="class Poco::MongoDB::Connection">Connection</a> connected to the given <a href="Poco.MongoDB.html" title="namespace Poco::MongoDB">MongoDB</a> instance at the given address. </p>
+</div>
+<h3><a id="20095">Connection</a></h3>
+<p class="decl"><a href="Poco.MongoDB.Connection.html" title="class Poco::MongoDB::Connection">Connection</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Net.StreamSocket.html" title="class Poco::Net::StreamSocket">Poco::Net::StreamSocket</a> &amp; socket<br />);</p>
+<div class="description">
+<p>Creates a <a href="Poco.MongoDB.Connection.html" title="class Poco::MongoDB::Connection">Connection</a> connected to the given <a href="Poco.MongoDB.html" title="namespace Poco::MongoDB">MongoDB</a> instance using the given socket, which must already be connected. </p>
+</div>
+<h3><a id="20090">Connection</a></h3>
+<p class="decl"><a href="Poco.MongoDB.Connection.html" title="class Poco::MongoDB::Connection">Connection</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; host,<br />&nbsp;&nbsp;&nbsp;&nbsp;int port<br />);</p>
+<div class="description">
+<p>Creates a <a href="Poco.MongoDB.Connection.html" title="class Poco::MongoDB::Connection">Connection</a> connected to the given <a href="Poco.MongoDB.html" title="namespace Poco::MongoDB">MongoDB</a> instance at host and port. </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="20097">~Connection</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual ~<a href="Poco.MongoDB.Connection.html" title="class Poco::MongoDB::Connection">Connection</a>();</p>
+<div class="description">
+<p>Destroys the <a href="Poco.MongoDB.Connection.html" title="class Poco::MongoDB::Connection">Connection</a>. </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="20098">address</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Net.SocketAddress.html" title="class Poco::Net::SocketAddress">Poco::Net::SocketAddress</a> address() const;</p>
+<div class="description">
+<p>Returns the address of the <a href="Poco.MongoDB.html" title="namespace Poco::MongoDB">MongoDB</a> server. </p>
+</div>
+<h3><a id="20099">connect</a></h3>
+<p class="decl">void connect(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; hostAndPort<br />);</p>
+<div class="description">
+<p>Connects to the given <a href="Poco.MongoDB.html" title="namespace Poco::MongoDB">MongoDB</a> server.  </p>
+<p>The host and port must be separated with a colon. </p>
+</div>
+<h3><a id="20101">connect</a></h3>
+<p class="decl">void connect(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; host,<br />&nbsp;&nbsp;&nbsp;&nbsp;int port<br />);</p>
+<div class="description">
+<p>Connects to the given <a href="Poco.MongoDB.html" title="namespace Poco::MongoDB">MongoDB</a> server. </p>
+</div>
+<h3><a id="20104">connect</a></h3>
+<p class="decl">void connect(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Net.SocketAddress.html" title="class Poco::Net::SocketAddress">Poco::Net::SocketAddress</a> &amp; addrs<br />);</p>
+<div class="description">
+<p>Connects to the given <a href="Poco.MongoDB.html" title="namespace Poco::MongoDB">MongoDB</a> server. </p>
+</div>
+<h3><a id="20106">connect</a></h3>
+<p class="decl">void connect(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Net.StreamSocket.html" title="class Poco::Net::StreamSocket">Poco::Net::StreamSocket</a> &amp; socket<br />);</p>
+<div class="description">
+<p>Connects using an already connected socket. </p>
+</div>
+<h3><a id="20108">disconnect</a></h3>
+<p class="decl">void disconnect();</p>
+<div class="description">
+<p>Disconnects from the <a href="Poco.MongoDB.html" title="namespace Poco::MongoDB">MongoDB</a> server. </p>
+</div>
+<h3><a id="20109">sendRequest</a></h3>
+<p class="decl">void sendRequest(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.MongoDB.RequestMessage.html" title="class Poco::MongoDB::RequestMessage">RequestMessage</a> &amp; request<br />);</p>
+<div class="description">
+<p>Sends a request to the <a href="Poco.MongoDB.html" title="namespace Poco::MongoDB">MongoDB</a> server. </p>
+<p>Used for one-way requests without a response. </p>
+</div>
+<h3><a id="20111">sendRequest</a></h3>
+<p class="decl">void sendRequest(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.MongoDB.RequestMessage.html" title="class Poco::MongoDB::RequestMessage">RequestMessage</a> &amp; request,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.MongoDB.ResponseMessage.html" title="class Poco::MongoDB::ResponseMessage">ResponseMessage</a> &amp; response<br />);</p>
+<div class="description">
+<p>Sends a request to the <a href="Poco.MongoDB.html" title="namespace Poco::MongoDB">MongoDB</a> server and receives the response. </p>
+<p>Use this when a response is expected: only a &quot;query&quot; or &quot;getmore&quot; request will return a response. </p>
+</div>
+<h3><a id="20114">connect</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">void connect();</p>
+<div class="description">
+<p></p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

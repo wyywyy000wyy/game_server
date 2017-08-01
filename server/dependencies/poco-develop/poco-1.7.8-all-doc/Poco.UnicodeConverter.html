@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::UnicodeConverter</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.html" class="namespace">Poco</a></h1>
+<h1 class="symbol">class UnicodeConverter</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Foundation" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Foundation<br />
+<b>Package:</b> Text<br />
+<b>Header:</b> Poco/UnicodeConverter.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>A convenience class that converts strings from UTF-8 encoded std::strings to UTF-16 or UTF-32 encoded std::wstrings and vice-versa. </p>
+<p>This class is mainly used for working with the <a href="Poco.Unicode.html" title="class Poco::Unicode">Unicode</a> Windows APIs and probably won't be of much use anywhere else ??? </p>
+</div>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.UnicodeConverter.html#19245" title="Poco::UnicodeConverter::UTFStrlen()">UTFStrlen</a>, <a href="Poco.UnicodeConverter.html#19180" title="Poco::UnicodeConverter::convert()">convert</a>, <a href="Poco.UnicodeConverter.html#19241" title="Poco::UnicodeConverter::to()">to</a>, <a href="Poco.UnicodeConverter.html#19227" title="Poco::UnicodeConverter::toUTF16()">toUTF16</a>, <a href="Poco.UnicodeConverter.html#19220" title="Poco::UnicodeConverter::toUTF32()">toUTF32</a>, <a href="Poco.UnicodeConverter.html#19234" title="Poco::UnicodeConverter::toUTF8()">toUTF8</a></p>
+<h2>Member Functions</h2>
+<h3><a id="19245">UTFStrlen</a> <img src="images/static.png" alt="static" title="static" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">template &lt; typename T &gt; static std::size_t <a href="Poco.UnicodeConverter.html#19245" title="Poco::UnicodeConverter::UTFStrlen()">UTFStrlen</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const T * ptr<br />);</p>
+<div class="description">
+<p>Returns the length (in characters) of a zero-terminated UTF string. </p>
+</div>
+<h3><a id="19180">convert</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static void convert(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; utf8String,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.html#18844" title="Poco::UTF32String">UTF32String</a> &amp; utf32String<br />);</p>
+<div class="description">
+<p>Converts the given UTF-8 encoded string into an UTF-32 encoded wide string. </p>
+</div>
+<h3><a id="19183">convert</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static void convert(<br />&nbsp;&nbsp;&nbsp;&nbsp;const char * utf8String,<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t length,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.html#18844" title="Poco::UTF32String">UTF32String</a> &amp; utf32String<br />);</p>
+<div class="description">
+<p>Converts the given UTF-8 encoded character sequence into an UTF-32 encoded wide string. </p>
+</div>
+<h3><a id="19187">convert</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static void convert(<br />&nbsp;&nbsp;&nbsp;&nbsp;const char * utf8String,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.html#18844" title="Poco::UTF32String">UTF32String</a> &amp; utf32String<br />);</p>
+<div class="description">
+<p>Converts the given zero-terminated UTF-8 encoded character sequence into an UTF-32 encoded wide string. </p>
+</div>
+<h3><a id="19190">convert</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static void convert(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; utf8String,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.html#18842" title="Poco::UTF16String">UTF16String</a> &amp; utf16String<br />);</p>
+<div class="description">
+<p>Converts the given UTF-8 encoded string into an UTF-16 encoded wide string. </p>
+</div>
+<h3><a id="19193">convert</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static void convert(<br />&nbsp;&nbsp;&nbsp;&nbsp;const char * utf8String,<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t length,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.html#18842" title="Poco::UTF16String">UTF16String</a> &amp; utf16String<br />);</p>
+<div class="description">
+<p>Converts the given UTF-8 encoded character sequence into an UTF-16 encoded wide string. </p>
+</div>
+<h3><a id="19197">convert</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static void convert(<br />&nbsp;&nbsp;&nbsp;&nbsp;const char * utf8String,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.html#18842" title="Poco::UTF16String">UTF16String</a> &amp; utf16String<br />);</p>
+<div class="description">
+<p>Converts the given zero-terminated UTF-8 encoded character sequence into an UTF-16 encoded wide string. </p>
+</div>
+<h3><a id="19200">convert</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static void convert(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.html#18842" title="Poco::UTF16String">UTF16String</a> &amp; utf16String,<br />&nbsp;&nbsp;&nbsp;&nbsp;std::string &amp; utf8String<br />);</p>
+<div class="description">
+<p>Converts the given UTF-16 encoded wide string into an UTF-8 encoded string. </p>
+</div>
+<h3><a id="19203">convert</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static void convert(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.html#18844" title="Poco::UTF32String">UTF32String</a> &amp; utf32String,<br />&nbsp;&nbsp;&nbsp;&nbsp;std::string &amp; utf8String<br />);</p>
+<div class="description">
+<p>Converts the given UTF-32 encoded wide string into an UTF-8 encoded string. </p>
+</div>
+<h3><a id="19206">convert</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static void convert(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.html#18841" title="Poco::UTF16Char">UTF16Char</a> * utf16String,<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t length,<br />&nbsp;&nbsp;&nbsp;&nbsp;std::string &amp; utf8String<br />);</p>
+<div class="description">
+<p>Converts the given zero-terminated UTF-16 encoded wide character sequence into an UTF-8 encoded string. </p>
+</div>
+<h3><a id="19210">convert</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static void convert(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.html#18843" title="Poco::UTF32Char">UTF32Char</a> * utf16String,<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t length,<br />&nbsp;&nbsp;&nbsp;&nbsp;std::string &amp; utf8String<br />);</p>
+<div class="description">
+<p>Converts the given zero-terminated UTF-32 encoded wide character sequence into an UTF-8 encoded string. </p>
+</div>
+<h3><a id="19214">convert</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static void convert(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.html#18841" title="Poco::UTF16Char">UTF16Char</a> * utf16String,<br />&nbsp;&nbsp;&nbsp;&nbsp;std::string &amp; utf8String<br />);</p>
+<div class="description">
+<p>Converts the given UTF-16 encoded zero terminated character sequence into an UTF-8 encoded string. </p>
+</div>
+<h3><a id="19217">convert</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static void convert(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.html#18843" title="Poco::UTF32Char">UTF32Char</a> * utf32String,<br />&nbsp;&nbsp;&nbsp;&nbsp;std::string &amp; utf8String<br />);</p>
+<div class="description">
+<p>Converts the given UTF-32 encoded zero terminated character sequence into an UTF-8 encoded string. </p>
+</div>
+<h3><a id="19241">to</a> <img src="images/static.png" alt="static" title="static" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">template &lt; typename T &gt; static T to(<br />&nbsp;&nbsp;&nbsp;&nbsp;const char * pChar<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="19243">to</a> <img src="images/static.png" alt="static" title="static" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">template &lt; typename T &gt; static T to(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; str<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="19227">toUTF16</a> <img src="images/static.png" alt="static" title="static" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">template &lt; typename F, typename T &gt; static void toUTF16(<br />&nbsp;&nbsp;&nbsp;&nbsp;const F &amp; f,<br />&nbsp;&nbsp;&nbsp;&nbsp;T &amp; t<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="19230">toUTF16</a> <img src="images/static.png" alt="static" title="static" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">template &lt; typename F, typename T &gt; static void toUTF16(<br />&nbsp;&nbsp;&nbsp;&nbsp;const F &amp; f,<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t l,<br />&nbsp;&nbsp;&nbsp;&nbsp;T &amp; t<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="19220">toUTF32</a> <img src="images/static.png" alt="static" title="static" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">template &lt; typename F, typename T &gt; static void toUTF32(<br />&nbsp;&nbsp;&nbsp;&nbsp;const F &amp; f,<br />&nbsp;&nbsp;&nbsp;&nbsp;T &amp; t<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="19223">toUTF32</a> <img src="images/static.png" alt="static" title="static" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">template &lt; typename F, typename T &gt; static void toUTF32(<br />&nbsp;&nbsp;&nbsp;&nbsp;const F &amp; f,<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t l,<br />&nbsp;&nbsp;&nbsp;&nbsp;T &amp; t<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="19234">toUTF8</a> <img src="images/static.png" alt="static" title="static" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">template &lt; typename F, typename T &gt; static void toUTF8(<br />&nbsp;&nbsp;&nbsp;&nbsp;const F &amp; f,<br />&nbsp;&nbsp;&nbsp;&nbsp;T &amp; t<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="19237">toUTF8</a> <img src="images/static.png" alt="static" title="static" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">template &lt; typename F, typename T &gt; static void toUTF8(<br />&nbsp;&nbsp;&nbsp;&nbsp;const F &amp; f,<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t l,<br />&nbsp;&nbsp;&nbsp;&nbsp;T &amp; t<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

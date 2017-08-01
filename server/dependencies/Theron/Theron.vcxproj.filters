@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\Theron\Theron\Actor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\Theron\Theron\Address.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\Theron\Theron\AllocatorManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\Theron\Theron\BuildDescriptor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\Theron\Theron\Clock.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\Theron\Theron\DefaultHandlerCollection.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\Theron\Theron\EndPoint.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\Theron\Theron\FallbackHandlerCollection.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\Theron\Theron\Framework.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\Theron\Theron\HandlerCollection.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\Theron\Theron\Receiver.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\Theron\Theron\StringPool.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\Theron\Theron\YieldPolicy.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\1MyProgram\NoahGameFrame-master\NoahGameFrame-master\Dependencies\Theron\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{9B5086A9-9D6F-3DED-93CD-CFCE23EC599F}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

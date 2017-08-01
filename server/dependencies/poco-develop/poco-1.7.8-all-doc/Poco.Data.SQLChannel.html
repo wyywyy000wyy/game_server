@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::Data::SQLChannel</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.Data.html" class="namespace">Poco::Data</a></h1>
+<h1 class="symbol">class SQLChannel</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Data" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Data<br />
+<b>Package:</b> Logging<br />
+<b>Header:</b> Poco/Data/SQLChannel.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>This <a href="Poco.Channel.html" title="class Poco::Channel">Channel</a> implements logging to a SQL database. The channel is dependent on the schema. The DDL for table creation (subject to target DDL dialect dependent  modifications) is: </p>
+<p>&quot;CREATE TABLE T_POCO_LOG (Source VARCHAR,  Name VARCHAR,  ProcessId INTEGER,  <a href="Poco.Thread.html" title="class Poco::Thread">Thread</a> VARCHAR,  ThreadId INTEGER,  <a href="Poco.Data.SQLChannel.html#6971" title="Poco::Data::SQLChannel::Priority">Priority</a> INTEGER,  Text VARCHAR,  <a href="Poco.DateTime.html" title="class Poco::DateTime">DateTime</a> DATE)&quot; </p>
+<p>The table name is configurable through &quot;table&quot; property.  Other than <a href="Poco.DateTime.html" title="class Poco::DateTime">DateTime</a> filed name used for optiona time-based archiving purposes, currently the  field names are not mandated. However, it is recomended to use names as specified above. </p>
+<p>To provide as non-intrusive operation as possbile, the log entries are cached and  inserted into the target database asynchronously by default . The blocking, however, will occur  before the next entry insertion with default timeout of 1 second. The default settings can be  overriden (see async, timeout and throw properties for details). If throw property is false, insertion timeouts are ignored, otherwise a <a href="Poco.TimeoutException.html" title="class Poco::TimeoutException">TimeoutException</a> is thrown. To force insertion of every entry, set timeout to 0. This setting, however, introduces a risk of long blocking periods in case of remote server communication delays. </p>
+</div>
+<h2>Inheritance</h2>
+<p><b>Direct Base Classes: </b><a href="Poco.Channel.html" title="class Poco::Channel">Poco::Channel</a></p>
+<p><b>All Base Classes: </b><a href="Poco.Channel.html" title="class Poco::Channel">Poco::Channel</a>, <a href="Poco.Configurable.html" title="class Poco::Configurable">Poco::Configurable</a>, <a href="Poco.RefCountedObject.html" title="class Poco::RefCountedObject">Poco::RefCountedObject</a></p>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.Data.SQLChannel.html#6949" title="Poco::Data::SQLChannel::close()">close</a>, <a href="Poco.Data.SQLChannel.html#6955" title="Poco::Data::SQLChannel::getProperty()">getProperty</a>, <a href="Poco.Data.SQLChannel.html#6950" title="Poco::Data::SQLChannel::log()">log</a>, <a href="Poco.Data.SQLChannel.html#6948" title="Poco::Data::SQLChannel::open()">open</a>, <a href="Poco.Data.SQLChannel.html#6958" title="Poco::Data::SQLChannel::registerChannel()">registerChannel</a>, <a href="Poco.Data.SQLChannel.html#6952" title="Poco::Data::SQLChannel::setProperty()">setProperty</a>, <a href="Poco.Data.SQLChannel.html#6957" title="Poco::Data::SQLChannel::wait()">wait</a></p>
+<p><b>Inherited Functions: </b><a href="Poco.Channel.html#9020" title="Poco::Channel::close()">close</a>, <a href="Poco.RefCountedObject.html#16511" title="Poco::RefCountedObject::duplicate()">duplicate</a>, <a href="Poco.Channel.html#9026" title="Poco::Channel::getProperty()">getProperty</a>, <a href="Poco.Channel.html#9021" title="Poco::Channel::log()">log</a>, <a href="Poco.Channel.html#9019" title="Poco::Channel::open()">open</a>, <a href="Poco.RefCountedObject.html#16513" title="Poco::RefCountedObject::referenceCount()">referenceCount</a>, <a href="Poco.RefCountedObject.html#16512" title="Poco::RefCountedObject::release()">release</a>, <a href="Poco.Channel.html#9023" title="Poco::Channel::setProperty()">setProperty</a></p>
+<h2>Constructors</h2>
+<h3><a id="6943">SQLChannel</a></h3>
+<p class="decl"><a href="Poco.Data.SQLChannel.html" title="class Poco::Data::SQLChannel">SQLChannel</a>();</p>
+<div class="description">
+<p>Creates <a href="Poco.Data.SQLChannel.html" title="class Poco::Data::SQLChannel">SQLChannel</a>. </p>
+</div>
+<h3><a id="6944">SQLChannel</a></h3>
+<p class="decl"><a href="Poco.Data.SQLChannel.html" title="class Poco::Data::SQLChannel">SQLChannel</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; connector,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; connect,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; name = "-"<br />);</p>
+<div class="description">
+<p>Creates a <a href="Poco.Data.SQLChannel.html" title="class Poco::Data::SQLChannel">SQLChannel</a> with the given connector, connect string, timeout, table and name. The connector must be already registered. </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="6968">~SQLChannel</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">~<a href="Poco.Data.SQLChannel.html" title="class Poco::Data::SQLChannel">SQLChannel</a>();</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="6949">close</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">void close();</p>
+<div class="description">
+<p>Closes the <a href="Poco.Data.SQLChannel.html" title="class Poco::Data::SQLChannel">SQLChannel</a>. </p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Channel.html#9020" title="Poco::Channel::close()">Poco::Channel::close()</a></p></div>
+<h3><a id="6955">getProperty</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">std::string getProperty(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; name<br />) const;</p>
+<div class="description">
+<p>Returns the value of the property with the given name. </p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Channel.html#9026" title="Poco::Channel::getProperty()">Poco::Channel::getProperty()</a></p></div>
+<h3><a id="6950">log</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">void log(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Message.html" title="class Poco::Message">Message</a> &amp; msg<br />);</p>
+<div class="description">
+<p>Sends the message's text to the syslog service. </p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Channel.html#9021" title="Poco::Channel::log()">Poco::Channel::log()</a></p></div>
+<h3><a id="6948">open</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">void open();</p>
+<div class="description">
+<p>Opens the <a href="Poco.Data.SQLChannel.html" title="class Poco::Data::SQLChannel">SQLChannel</a>. </p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Channel.html#9019" title="Poco::Channel::open()">Poco::Channel::open()</a></p></div>
+<h3><a id="6958">registerChannel</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static void registerChannel();</p>
+<div class="description">
+<p>Registers the channel with the global <a href="Poco.LoggingFactory.html" title="class Poco::LoggingFactory">LoggingFactory</a>. </p>
+</div>
+<h3><a id="6952">setProperty</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">void setProperty(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; name,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; value<br />);</p>
+<div class="description">
+<p>Sets the property with the given value. </p>
+<p>The following properties are supported: </p>
+<ul>
+<li>name:      The name used to identify the source of log messages. Defaults to &quot;-&quot;. </li>
+</ul>
+<p></p>
+<ul>
+<li>target:    The target data storage type (&quot;<a href="Poco.Data.SQLite.html" title="namespace Poco::Data::SQLite">SQLite</a>&quot;, &quot;<a href="Poco.Data.ODBC.html" title="namespace Poco::Data::ODBC">ODBC</a>&quot;, ...). </li>
+</ul>
+<p></p>
+<ul>
+<li>connector: The target data storage connector name. </li>
+</ul>
+<p></p>
+<ul>
+<li>connect:   The target data storage connection string. </li>
+</ul>
+<p></p>
+<ul>
+<li>table:     Destination log table name. Defaults to &quot;T_POCO_LOG&quot;. Table must exist in the target database. </li>
+</ul>
+<p></p>
+<ul>
+<li>keep:      Max row age for the log table. To disable archiving, set this property to empty string or &quot;forever&quot;. </li>
+</ul>
+<p></p>
+<ul>
+<li>archive:   Archive table name. Defaults to &quot;T_POCO_LOG_ARCHIVE&quot;. Table must exist in the target database. To disable archiving, set this property to empty string. </li>
+</ul>
+<p></p>
+<ul>
+<li>async:     Indicates asynchronous execution. When excuting asynchronously, messages are sent to the target using asyncronous execution. However, prior to the next message being processed and sent to the target, the previous operation must have been either completed  or timed out (see timeout and throw properties for details on how abnormal conditos are handled). </li>
+</ul>
+<p></p>
+<ul>
+<li>timeout:   Timeout (ms) to wait for previous log operation completion. Values &quot;0&quot; and &quot;&quot; mean no timeout. Only valid when logging is asynchronous, otherwise ignored. </li>
+</ul>
+<p></p>
+<ul>
+<li>throw:     Boolean value indicating whether to throw in case of timeout. Setting this property to false may result in log entries being lost. True values are (case insensitive) &quot;true&quot;, &quot;t&quot;, &quot;yes&quot;, &quot;y&quot;. Anything else yields false. </li>
+</ul>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Channel.html#9023" title="Poco::Channel::setProperty()">Poco::Channel::setProperty()</a></p></div>
+<h3><a id="6957">wait</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">std::size_t wait();</p>
+<div class="description">
+<p>Waits for the completion of the previous operation and returns the result. If chanel is in synchronous mode, returns 0 immediately. </p>
+</div>
+<h2>Variables</h2>
+<h3><a id="6963">PROP_ARCHIVE_TABLE</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static const std::string <a href="Poco.Data.SQLChannel.html#6963" title="Poco::Data::SQLChannel::PROP_ARCHIVE_TABLE">PROP_ARCHIVE_TABLE</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="6965">PROP_ASYNC</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static const std::string <a href="Poco.Data.SQLChannel.html#6965" title="Poco::Data::SQLChannel::PROP_ASYNC">PROP_ASYNC</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="6959">PROP_CONNECT</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static const std::string <a href="Poco.Data.SQLChannel.html#6959" title="Poco::Data::SQLChannel::PROP_CONNECT">PROP_CONNECT</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="6960">PROP_CONNECTOR</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static const std::string <a href="Poco.Data.SQLChannel.html#6960" title="Poco::Data::SQLChannel::PROP_CONNECTOR">PROP_CONNECTOR</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="6964">PROP_MAX_AGE</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static const std::string <a href="Poco.Data.SQLChannel.html#6964" title="Poco::Data::SQLChannel::PROP_MAX_AGE">PROP_MAX_AGE</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="6961">PROP_NAME</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static const std::string <a href="Poco.Data.SQLChannel.html#6961" title="Poco::Data::SQLChannel::PROP_NAME">PROP_NAME</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="6962">PROP_TABLE</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static const std::string <a href="Poco.Data.SQLChannel.html#6962" title="Poco::Data::SQLChannel::PROP_TABLE">PROP_TABLE</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="6967">PROP_THROW</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static const std::string <a href="Poco.Data.SQLChannel.html#6967" title="Poco::Data::SQLChannel::PROP_THROW">PROP_THROW</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="6966">PROP_TIMEOUT</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static const std::string <a href="Poco.Data.SQLChannel.html#6966" title="Poco::Data::SQLChannel::PROP_TIMEOUT">PROP_TIMEOUT</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

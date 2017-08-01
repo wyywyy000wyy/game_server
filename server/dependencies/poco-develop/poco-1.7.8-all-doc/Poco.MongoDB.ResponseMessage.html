@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::MongoDB::ResponseMessage</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.MongoDB.html" class="namespace">Poco::MongoDB</a></h1>
+<h1 class="symbol">class ResponseMessage</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-MongoDB" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> MongoDB<br />
+<b>Package:</b> MongoDB<br />
+<b>Header:</b> Poco/MongoDB/ResponseMessage.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>This class represents a response (OP_REPLY) from <a href="Poco.MongoDB.html" title="namespace Poco::MongoDB">MongoDB</a>. </p>
+</div>
+<h2>Inheritance</h2>
+<p><b>Direct Base Classes: </b><a href="Poco.MongoDB.Message.html" title="class Poco::MongoDB::Message">Message</a></p>
+<p><b>All Base Classes: </b><a href="Poco.MongoDB.Message.html" title="class Poco::MongoDB::Message">Message</a></p>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.MongoDB.ResponseMessage.html#20453" title="Poco::MongoDB::ResponseMessage::clear()">clear</a>, <a href="Poco.MongoDB.ResponseMessage.html#20454" title="Poco::MongoDB::ResponseMessage::count()">count</a>, <a href="Poco.MongoDB.ResponseMessage.html#20452" title="Poco::MongoDB::ResponseMessage::cursorID()">cursorID</a>, <a href="Poco.MongoDB.ResponseMessage.html#20455" title="Poco::MongoDB::ResponseMessage::documents()">documents</a>, <a href="Poco.MongoDB.ResponseMessage.html#20456" title="Poco::MongoDB::ResponseMessage::empty()">empty</a>, <a href="Poco.MongoDB.ResponseMessage.html#20457" title="Poco::MongoDB::ResponseMessage::hasDocuments()">hasDocuments</a>, <a href="Poco.MongoDB.ResponseMessage.html#20458" title="Poco::MongoDB::ResponseMessage::read()">read</a></p>
+<p><b>Inherited Functions: </b><a href="Poco.MongoDB.Message.html#20328" title="Poco::MongoDB::Message::header()">header</a>, <a href="Poco.MongoDB.Message.html#20330" title="Poco::MongoDB::Message::messageLength()">messageLength</a></p>
+<h2>Constructors</h2>
+<h3><a id="20450">ResponseMessage</a></h3>
+<p class="decl"><a href="Poco.MongoDB.ResponseMessage.html" title="class Poco::MongoDB::ResponseMessage">ResponseMessage</a>();</p>
+<div class="description">
+<p>Creates an empty <a href="Poco.MongoDB.ResponseMessage.html" title="class Poco::MongoDB::ResponseMessage">ResponseMessage</a>. </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="20451">~ResponseMessage</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual ~<a href="Poco.MongoDB.ResponseMessage.html" title="class Poco::MongoDB::ResponseMessage">ResponseMessage</a>();</p>
+<div class="description">
+<p>Destroys the <a href="Poco.MongoDB.ResponseMessage.html" title="class Poco::MongoDB::ResponseMessage">ResponseMessage</a>. </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="20453">clear</a></h3>
+<p class="decl">void clear();</p>
+<div class="description">
+<p>Clears the response. </p>
+</div>
+<h3><a id="20454">count</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">std::size_t count() const;</p>
+<div class="description">
+<p>Returns the number of documents in the response. </p>
+</div>
+<h3><a id="20452">cursorID</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.html#18384" title="Poco::Int64">Int64</a> cursorID() const;</p>
+<div class="description">
+<p>Returns the cursor ID. </p>
+</div>
+<h3><a id="20455">documents</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.MongoDB.Document.html#20208" title="Poco::MongoDB::Document::Vector">Document::Vector</a> &amp; documents();</p>
+<div class="description">
+<p>Returns a vector containing the received documents. </p>
+</div>
+<h3><a id="20456">empty</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool empty() const;</p>
+<div class="description">
+<p>Returns true if the response does not contain any documents. </p>
+</div>
+<h3><a id="20457">hasDocuments</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool hasDocuments() const;</p>
+<div class="description">
+<p>Returns true if there is at least one document in the response. </p>
+</div>
+<h3><a id="20458">read</a></h3>
+<p class="decl">void read(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::istream &amp; istr<br />);</p>
+<div class="description">
+<p>Reads the response from the stream. </p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

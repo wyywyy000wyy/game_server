@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::Net::MailRecipient</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.Net.html" class="namespace">Poco::Net</a></h1>
+<h1 class="symbol">class MailRecipient</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Net" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Net<br />
+<b>Package:</b> Mail<br />
+<b>Header:</b> Poco/Net/MailRecipient.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>The recipient of an e-mail message. </p>
+<p>A recipient has a type (primary recipient, carbon-copy recipient, blind-carbon-copy recipient), an e-mail address and an optional real name. </p>
+</div>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.Net.MailRecipient.html#22705" title="Poco::Net::MailRecipient::getAddress()">getAddress</a>, <a href="Poco.Net.MailRecipient.html#22708" title="Poco::Net::MailRecipient::getRealName()">getRealName</a>, <a href="Poco.Net.MailRecipient.html#22702" title="Poco::Net::MailRecipient::getType()">getType</a>, <a href="Poco.Net.MailRecipient.html#22698" title="Poco::Net::MailRecipient::operator =()">operator&nbsp;=</a>, <a href="Poco.Net.MailRecipient.html#22706" title="Poco::Net::MailRecipient::setAddress()">setAddress</a>, <a href="Poco.Net.MailRecipient.html#22709" title="Poco::Net::MailRecipient::setRealName()">setRealName</a>, <a href="Poco.Net.MailRecipient.html#22703" title="Poco::Net::MailRecipient::setType()">setType</a>, <a href="Poco.Net.MailRecipient.html#22700" title="Poco::Net::MailRecipient::swap()">swap</a></p>
+<h2>Enumerations</h2>
+<h3><a id="22683">RecipientType</a></h3>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="22684">PRIMARY_RECIPIENT</a></p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="22685">CC_RECIPIENT</a></p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="22686">BCC_RECIPIENT</a></p>
+<div class="description">
+<p></p>
+</div>
+<h2>Constructors</h2>
+<h3><a id="22687">MailRecipient</a></h3>
+<p class="decl"><a href="Poco.Net.MailRecipient.html" title="class Poco::Net::MailRecipient">MailRecipient</a>();</p>
+<div class="description">
+<p>Creates an empty <a href="Poco.Net.MailRecipient.html" title="class Poco::Net::MailRecipient">MailRecipient</a>. </p>
+</div>
+<h3><a id="22688">MailRecipient</a></h3>
+<p class="decl"><a href="Poco.Net.MailRecipient.html" title="class Poco::Net::MailRecipient">MailRecipient</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Net.MailRecipient.html" title="class Poco::Net::MailRecipient">MailRecipient</a> &amp; recipient<br />);</p>
+<div class="description">
+<p>Creates a <a href="Poco.Net.MailRecipient.html" title="class Poco::Net::MailRecipient">MailRecipient</a> by copying another one. </p>
+</div>
+<h3><a id="22690">MailRecipient</a></h3>
+<p class="decl"><a href="Poco.Net.MailRecipient.html" title="class Poco::Net::MailRecipient">MailRecipient</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Net.MailRecipient.html#22683" title="enum  Poco::Net::MailRecipient::RecipientType">RecipientType</a> type,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; address<br />);</p>
+<div class="description">
+<p>Creates a <a href="Poco.Net.MailRecipient.html" title="class Poco::Net::MailRecipient">MailRecipient</a> of the given type. </p>
+</div>
+<h3><a id="22693">MailRecipient</a></h3>
+<p class="decl"><a href="Poco.Net.MailRecipient.html" title="class Poco::Net::MailRecipient">MailRecipient</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Net.MailRecipient.html#22683" title="enum  Poco::Net::MailRecipient::RecipientType">RecipientType</a> type,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; address,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; realName<br />);</p>
+<div class="description">
+<p>Creates a <a href="Poco.Net.MailRecipient.html" title="class Poco::Net::MailRecipient">MailRecipient</a> of the given type. </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="22697">~MailRecipient</a></h3>
+<p class="decl">~<a href="Poco.Net.MailRecipient.html" title="class Poco::Net::MailRecipient">MailRecipient</a>();</p>
+<div class="description">
+<p>Destroys the <a href="Poco.Net.MailRecipient.html" title="class Poco::Net::MailRecipient">MailRecipient</a>. </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="22705">getAddress</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">const std::string &amp; getAddress() const;</p>
+<div class="description">
+<p>Returns the address of the recipient. </p>
+</div>
+<h3><a id="22708">getRealName</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">const std::string &amp; getRealName() const;</p>
+<div class="description">
+<p>Returns the real name of the recipient. </p>
+</div>
+<h3><a id="22702">getType</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Net.MailRecipient.html#22683" title="enum  Poco::Net::MailRecipient::RecipientType">RecipientType</a> getType() const;</p>
+<div class="description">
+<p>Returns the type of the recipient. </p>
+</div>
+<h3><a id="22698">operator =</a></h3>
+<p class="decl"><a href="Poco.Net.MailRecipient.html" title="class Poco::Net::MailRecipient">MailRecipient</a> &amp; operator = (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Net.MailRecipient.html" title="class Poco::Net::MailRecipient">MailRecipient</a> &amp; recipient<br />);</p>
+<div class="description">
+<p>Assigns another recipient. </p>
+</div>
+<h3><a id="22706">setAddress</a></h3>
+<p class="decl">void setAddress(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; address<br />);</p>
+<div class="description">
+<p>Sets the address of the recipient. </p>
+</div>
+<h3><a id="22709">setRealName</a></h3>
+<p class="decl">void setRealName(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; realName<br />);</p>
+<div class="description">
+<p>Sets the real name of the recipient. </p>
+</div>
+<h3><a id="22703">setType</a></h3>
+<p class="decl">void setType(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Net.MailRecipient.html#22683" title="enum  Poco::Net::MailRecipient::RecipientType">RecipientType</a> type<br />);</p>
+<div class="description">
+<p>Sets the type of the recipient. </p>
+</div>
+<h3><a id="22700">swap</a></h3>
+<p class="decl">void swap(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Net.MailRecipient.html" title="class Poco::Net::MailRecipient">MailRecipient</a> &amp; recipient<br />);</p>
+<div class="description">
+<p>Exchanges the content of two recipients. </p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

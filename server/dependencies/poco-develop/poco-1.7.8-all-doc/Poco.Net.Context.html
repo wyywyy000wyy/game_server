@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::Net::Context</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.Net.html" class="namespace">Poco::Net</a></h1>
+<h1 class="symbol">class Context</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-NetSSL_OpenSSL" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> NetSSL_OpenSSL<br />
+<b>Package:</b> SSLCore<br />
+<b>Header:</b> Poco/Net/Context.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>This class encapsulates context information for an SSL server or client, such as the certificate verification mode and the location of certificates and private key files, as well as the list of supported ciphers. </p>
+<p>The <a href="Poco.Net.Context.html" title="class Poco::Net::Context">Context</a> class is also used to control SSL session caching on the server and client side. </p>
+</div>
+<h2>Inheritance</h2>
+<p><b>Direct Base Classes: </b><a href="Poco.RefCountedObject.html" title="class Poco::RefCountedObject">Poco::RefCountedObject</a></p>
+<p><b>All Base Classes: </b><a href="Poco.RefCountedObject.html" title="class Poco::RefCountedObject">Poco::RefCountedObject</a></p>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.Net.Context.html#25482" title="Poco::Net::Context::addChainCertificate()">addChainCertificate</a>, <a href="Poco.Net.Context.html#25507" title="Poco::Net::Context::disableProtocols()">disableProtocols</a>, <a href="Poco.Net.Context.html#25506" title="Poco::Net::Context::disableStatelessSessionResumption()">disableStatelessSessionResumption</a>, <a href="Poco.Net.Context.html#25503" title="Poco::Net::Context::enableExtendedCertificateVerification()">enableExtendedCertificateVerification</a>, <a href="Poco.Net.Context.html#25490" title="Poco::Net::Context::enableSessionCache()">enableSessionCache</a>, <a href="Poco.Net.Context.html#25505" title="Poco::Net::Context::extendedCertificateVerificationEnabled()">extendedCertificateVerificationEnabled</a>, <a href="Poco.Net.Context.html#25502" title="Poco::Net::Context::flushSessionCache()">flushSessionCache</a>, <a href="Poco.Net.Context.html#25498" title="Poco::Net::Context::getSessionCacheSize()">getSessionCacheSize</a>, <a href="Poco.Net.Context.html#25501" title="Poco::Net::Context::getSessionTimeout()">getSessionTimeout</a>, <a href="Poco.Net.Context.html#25488" title="Poco::Net::Context::isForServerUse()">isForServerUse</a>, <a href="Poco.Net.Context.html#25509" title="Poco::Net::Context::preferServerCiphers()">preferServerCiphers</a>, <a href="Poco.Net.Context.html#25495" title="Poco::Net::Context::sessionCacheEnabled()">sessionCacheEnabled</a>, <a href="Poco.Net.Context.html#25496" title="Poco::Net::Context::setSessionCacheSize()">setSessionCacheSize</a>, <a href="Poco.Net.Context.html#25499" title="Poco::Net::Context::setSessionTimeout()">setSessionTimeout</a>, <a href="Poco.Net.Context.html#25486" title="Poco::Net::Context::sslContext()">sslContext</a>, <a href="Poco.Net.Context.html#25487" title="Poco::Net::Context::usage()">usage</a>, <a href="Poco.Net.Context.html#25480" title="Poco::Net::Context::useCertificate()">useCertificate</a>, <a href="Poco.Net.Context.html#25484" title="Poco::Net::Context::usePrivateKey()">usePrivateKey</a>, <a href="Poco.Net.Context.html#25489" title="Poco::Net::Context::verificationMode()">verificationMode</a></p>
+<p><b>Inherited Functions: </b><a href="Poco.RefCountedObject.html#16511" title="Poco::RefCountedObject::duplicate()">duplicate</a>, <a href="Poco.RefCountedObject.html#16513" title="Poco::RefCountedObject::referenceCount()">referenceCount</a>, <a href="Poco.RefCountedObject.html#16512" title="Poco::RefCountedObject::release()">release</a></p>
+<h2>Nested Classes</h2>
+<h3><a href="Poco.Net.Context.Params.html" class="class">struct Params</a></h3>
+<p>&nbsp;<a href="Poco.Net.Context.Params.html"><img src="images/arrow.png" alt="more..." /> </a></p>
+<h2>Types</h2>
+<h3><a id="25428">Ptr</a></h3>
+<p class="decl">typedef <a href="Poco.AutoPtr.html" title="class Poco::AutoPtr">Poco::AutoPtr</a> &lt; <a href="Poco.Net.Context.html" title="class Poco::Net::Context">Context</a> &gt; <a href="Poco.Net.Context.html#25428" title="Poco::Net::Context::Ptr">Ptr</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Enumerations</h2>
+<h3><a id="25443">Protocols</a></h3>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="25444">PROTO_SSLV2</a> = 0x01</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="25445">PROTO_SSLV3</a> = 0x02</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="25446">PROTO_TLSV1</a> = 0x04</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="25447">PROTO_TLSV1_1</a> = 0x08</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="25448">PROTO_TLSV1_2</a> = 0x10</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="25429">Usage</a></h3>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="25430">CLIENT_USE</a></p>
+<div class="description">
+<p><a href="Poco.Net.Context.html" title="class Poco::Net::Context">Context</a> is used by a client. </p>
+</div>
+<p class="decl"><a id="25431">SERVER_USE</a></p>
+<div class="description">
+<p><a href="Poco.Net.Context.html" title="class Poco::Net::Context">Context</a> is used by a server. </p>
+</div>
+<p class="decl"><a id="25432">TLSV1_CLIENT_USE</a></p>
+<div class="description">
+<p><a href="Poco.Net.Context.html" title="class Poco::Net::Context">Context</a> is used by a client requiring TLSv1. </p>
+</div>
+<p class="decl"><a id="25433">TLSV1_SERVER_USE</a></p>
+<div class="description">
+<p><a href="Poco.Net.Context.html" title="class Poco::Net::Context">Context</a> is used by a server requiring TLSv1. </p>
+</div>
+<p class="decl"><a id="25434">TLSV1_1_CLIENT_USE</a></p>
+<div class="description">
+<p><a href="Poco.Net.Context.html" title="class Poco::Net::Context">Context</a> is used by a client requiring TLSv1.1 (OpenSSL 1.0.0 or newer). </p>
+</div>
+<p class="decl"><a id="25435">TLSV1_1_SERVER_USE</a></p>
+<div class="description">
+<p><a href="Poco.Net.Context.html" title="class Poco::Net::Context">Context</a> is used by a server requiring TLSv1.1 (OpenSSL 1.0.0 or newer). </p>
+</div>
+<p class="decl"><a id="25436">TLSV1_2_CLIENT_USE</a></p>
+<div class="description">
+<p><a href="Poco.Net.Context.html" title="class Poco::Net::Context">Context</a> is used by a client requiring TLSv1.2 (OpenSSL 1.0.1 or newer). </p>
+</div>
+<p class="decl"><a id="25437">TLSV1_2_SERVER_USE</a></p>
+<div class="description">
+<p><a href="Poco.Net.Context.html" title="class Poco::Net::Context">Context</a> is used by a server requiring TLSv1.2 (OpenSSL 1.0.1 or newer). </p>
+</div>
+<h3><a id="25438">VerificationMode</a></h3>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="25439">VERIFY_NONE</a> = SSL_VERIFY_NONE</p>
+<div class="description">
+<p>Server: The server will not send a client certificate  request to the client, so the client will not send a certificate.  </p>
+<p>Client: If not using an anonymous cipher (by default disabled),  the server will send a certificate which will be checked, but the result of the check will be ignored. </p>
+</div>
+<p class="decl"><a id="25440">VERIFY_RELAXED</a> = SSL_VERIFY_PEER</p>
+<div class="description">
+<p>Server: The server sends a client certificate request to the  client. The certificate returned (if any) is checked.  If the verification process fails, the TLS/SSL handshake is  immediately terminated with an alert message containing the  reason for the verification failure.  </p>
+<p>Client: The server certificate is verified, if one is provided.  If the verification process fails, the TLS/SSL handshake is immediately terminated with an alert message containing the  reason for the verification failure.  </p>
+</div>
+<p class="decl"><a id="25441">VERIFY_STRICT</a> = SSL_VERIFY_PEER | SSL_VERIFY_FAIL_IF_NO_PEER_CERT</p>
+<div class="description">
+<p>Server: If the client did not return a certificate, the TLS/SSL  handshake is immediately terminated with a handshake failure alert.  </p>
+<p>Client: Same as <a href="Poco.Net.Context.html#25440" title="Poco::Net::Context::VERIFY_RELAXED">VERIFY_RELAXED</a>.  </p>
+</div>
+<p class="decl"><a id="25442">VERIFY_ONCE</a> = SSL_VERIFY_PEER | SSL_VERIFY_CLIENT_ONCE</p>
+<div class="description">
+<p>Server: Only request a client certificate on the initial  TLS/SSL handshake. Do not ask for a client certificate  again in case of a renegotiation. </p>
+<p>Client: Same as <a href="Poco.Net.Context.html#25440" title="Poco::Net::Context::VERIFY_RELAXED">VERIFY_RELAXED</a>.	 </p>
+</div>
+<h2>Constructors</h2>
+<h3><a id="25460">Context</a></h3>
+<p class="decl"><a href="Poco.Net.Context.html" title="class Poco::Net::Context">Context</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Net.Context.html#25429" title="enum  Poco::Net::Context::Usage">Usage</a> usage,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Net.Context.Params.html" title="struct Poco::Net::Context::Params">Params</a> &amp; params<br />);</p>
+<div class="description">
+<p>Creates a <a href="Poco.Net.Context.html" title="class Poco::Net::Context">Context</a> using the given parameters. </p>
+<p></p>
+<ul>
+<li>usage specifies whether the context is used by a client or server. </li>
+<li>params specifies the context parameters. </li>
+</ul>
+</div>
+<h3><a id="25472">Context</a></h3>
+<p class="decl"><a href="Poco.Net.Context.html" title="class Poco::Net::Context">Context</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Net.Context.html#25429" title="enum  Poco::Net::Context::Usage">Usage</a> usage,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; caLocation,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Net.Context.html#25438" title="enum  Poco::Net::Context::VerificationMode">VerificationMode</a> verificationMode = VERIFY_RELAXED,<br />&nbsp;&nbsp;&nbsp;&nbsp;int verificationDepth = 9,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool loadDefaultCAs = false,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; cipherList = "ALL:!ADH:!LOW:!EXP:!MD5:@STRENGTH"<br />);</p>
+<div class="description">
+<p>Creates a <a href="Poco.Net.Context.html" title="class Poco::Net::Context">Context</a>. </p>
+<p></p>
+<ul>
+<li>usage specifies whether the context is used by a client or server. </li>
+<li>caLocation contains the path to the file or directory containing the CA/root certificates. Can be empty if the OpenSSL builtin CA certificates are used (see loadDefaultCAs). </li>
+<li>verificationMode specifies whether and how peer certificates are validated. </li>
+<li>verificationDepth sets the upper limit for verification chain sizes. Verification will fail if a certificate chain larger than this is encountered. </li>
+<li>loadDefaultCAs specifies whether the builtin CA certificates from OpenSSL are used. </li>
+<li>cipherList specifies the supported ciphers in OpenSSL notation. </li>
+</ul>
+<p>Note that a private key and/or certificate must be specified with <a href="Poco.Net.Context.html#25484" title="Poco::Net::Context::usePrivateKey()">usePrivateKey</a>()/<a href="Poco.Net.Context.html#25480" title="Poco::Net::Context::useCertificate()">useCertificate</a>() before the <a href="Poco.Net.Context.html" title="class Poco::Net::Context">Context</a> can be used. </p>
+</div>
+<h3><a id="25463">Context</a></h3>
+<p class="decl"><a href="Poco.Net.Context.html" title="class Poco::Net::Context">Context</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Net.Context.html#25429" title="enum  Poco::Net::Context::Usage">Usage</a> usage,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; privateKeyFile,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; certificateFile,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; caLocation,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Net.Context.html#25438" title="enum  Poco::Net::Context::VerificationMode">VerificationMode</a> verificationMode = VERIFY_RELAXED,<br />&nbsp;&nbsp;&nbsp;&nbsp;int verificationDepth = 9,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool loadDefaultCAs = false,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; cipherList = "ALL:!ADH:!LOW:!EXP:!MD5:@STRENGTH"<br />);</p>
+<div class="description">
+<p>Creates a <a href="Poco.Net.Context.html" title="class Poco::Net::Context">Context</a>. </p>
+<p></p>
+<ul>
+<li>usage specifies whether the context is used by a client or server. </li>
+<li>privateKeyFile contains the path to the private key file used for encryption. Can be empty if no private key file is used. </li>
+<li>certificateFile contains the path to the certificate file (in PEM format). If the private key and the certificate are stored in the same file, this can be empty if privateKeyFile is given. </li>
+<li>caLocation contains the path to the file or directory containing the CA/root certificates. Can be empty if the OpenSSL builtin CA certificates are used (see loadDefaultCAs). </li>
+<li>verificationMode specifies whether and how peer certificates are validated. </li>
+<li>verificationDepth sets the upper limit for verification chain sizes. Verification will fail if a certificate chain larger than this is encountered. </li>
+<li>loadDefaultCAs specifies whether the builtin CA certificates from OpenSSL are used. </li>
+<li>cipherList specifies the supported ciphers in OpenSSL notation. </li>
+</ul>
+<p>Note: If the private key is protected by a passphrase, a <a href="Poco.Net.PrivateKeyPassphraseHandler.html" title="class Poco::Net::PrivateKeyPassphraseHandler">PrivateKeyPassphraseHandler</a> must have been setup with the <a href="Poco.Net.SSLManager.html" title="class Poco::Net::SSLManager">SSLManager</a>, or the <a href="Poco.Net.SSLManager.html" title="class Poco::Net::SSLManager">SSLManager</a>'s PrivateKeyPassphraseRequired event must be handled. </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="25479">~Context</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">~<a href="Poco.Net.Context.html" title="class Poco::Net::Context">Context</a>();</p>
+<div class="description">
+<p>Destroys the <a href="Poco.Net.Context.html" title="class Poco::Net::Context">Context</a>. </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="25482">addChainCertificate</a></h3>
+<p class="decl">void addChainCertificate(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Crypto.X509Certificate.html" title="class Poco::Crypto::X509Certificate">Poco::Crypto::X509Certificate</a> &amp; certificate<br />);</p>
+<div class="description">
+<p>Adds a certificate for certificate chain validation. </p>
+</div>
+<h3><a id="25507">disableProtocols</a></h3>
+<p class="decl">void disableProtocols(<br />&nbsp;&nbsp;&nbsp;&nbsp;int protocols<br />);</p>
+<div class="description">
+<p>Disables the given protocols. </p>
+<p>The protocols to be disabled are specified by OR-ing  values from the <a href="Poco.Net.Context.html#25443" title="enum  Poco::Net::Context::Protocols">Protocols</a> enumeration, e.g.: </p>
+<p></p>
+<pre>context.disableProtocols(PROTO_SSLV2 | PROTO_SSLV3);
+</pre>
+</div>
+<h3><a id="25506">disableStatelessSessionResumption</a></h3>
+<p class="decl">void disableStatelessSessionResumption();</p>
+<div class="description">
+<p>Newer versions of OpenSSL support <a href="https://www.ietf.org/rfc/rfc4507.txt" target="_blank">RFC 4507</a> tickets for stateless session resumption. </p>
+<p>The feature can be disabled by calling this method. </p>
+</div>
+<h3><a id="25503">enableExtendedCertificateVerification</a></h3>
+<p class="decl">void enableExtendedCertificateVerification(<br />&nbsp;&nbsp;&nbsp;&nbsp;bool flag = true<br />);</p>
+<div class="description">
+<p>Enable or disable the automatic post-connection extended certificate verification. </p>
+<p>See <a href="Poco.Net.X509Certificate.html#26235" title="Poco::Net::X509Certificate::verify()">X509Certificate::verify</a>() for more information. </p>
+</div>
+<h3><a id="25490">enableSessionCache</a></h3>
+<p class="decl">void enableSessionCache(<br />&nbsp;&nbsp;&nbsp;&nbsp;bool flag = true<br />);</p>
+<div class="description">
+<p>Enable or disable SSL/TLS session caching. For session caching to work, it must be enabled on the server, as well as on the client side. </p>
+<p>The default is disabled session caching. </p>
+<p>To enable session caching on the server side, use the two-argument version of this method to specify a session ID context. </p>
+</div>
+<h3><a id="25492">enableSessionCache</a></h3>
+<p class="decl">void enableSessionCache(<br />&nbsp;&nbsp;&nbsp;&nbsp;bool flag,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; sessionIdContext<br />);</p>
+<div class="description">
+<p>Enables or disables SSL/TLS session caching on the server. For session caching to work, it must be enabled on the server, as well as on the client side. </p>
+<p>SessionIdContext contains the application's unique session ID context, which becomes part of each session identifier generated by the server within this context. SessionIdContext can be an arbitrary sequence  of bytes with a maximum length of SSL_MAX_SSL_SESSION_ID_LENGTH. </p>
+<p>A non-empty sessionIdContext should be specified even if session caching is disabled to avoid problems with clients requesting to reuse a session (e.g. Firefox 3.6). </p>
+<p>This method may only be called on <a href="Poco.Net.Context.html#25431" title="Poco::Net::Context::SERVER_USE">SERVER_USE</a> <a href="Poco.Net.Context.html" title="class Poco::Net::Context">Context</a> objects. </p>
+</div>
+<h3><a id="25505">extendedCertificateVerificationEnabled</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool extendedCertificateVerificationEnabled() const;</p>
+<div class="description">
+<p>Returns true if and only if automatic extended certificate  verification is enabled. </p>
+</div>
+<h3><a id="25502">flushSessionCache</a></h3>
+<p class="decl">void flushSessionCache();</p>
+<div class="description">
+<p>Flushes the SSL session cache on the server. </p>
+<p>This method may only be called on <a href="Poco.Net.Context.html#25431" title="Poco::Net::Context::SERVER_USE">SERVER_USE</a> <a href="Poco.Net.Context.html" title="class Poco::Net::Context">Context</a> objects. </p>
+</div>
+<h3><a id="25498">getSessionCacheSize</a></h3>
+<p class="decl">std::size_t getSessionCacheSize() const;</p>
+<div class="description">
+<p>Returns the current maximum size of the server session cache. </p>
+<p>This method may only be called on <a href="Poco.Net.Context.html#25431" title="Poco::Net::Context::SERVER_USE">SERVER_USE</a> <a href="Poco.Net.Context.html" title="class Poco::Net::Context">Context</a> objects. </p>
+</div>
+<h3><a id="25501">getSessionTimeout</a></h3>
+<p class="decl">long getSessionTimeout() const;</p>
+<div class="description">
+<p>Returns the timeout (in seconds) of cached sessions on the server. </p>
+<p>This method may only be called on <a href="Poco.Net.Context.html#25431" title="Poco::Net::Context::SERVER_USE">SERVER_USE</a> <a href="Poco.Net.Context.html" title="class Poco::Net::Context">Context</a> objects. </p>
+</div>
+<h3><a id="25488">isForServerUse</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool isForServerUse() const;</p>
+<div class="description">
+<p>Returns true if and only if the context is for use by a server. </p>
+</div>
+<h3><a id="25509">preferServerCiphers</a></h3>
+<p class="decl">void preferServerCiphers();</p>
+<div class="description">
+<p>When choosing a cipher, use the server's preferences instead of the client  preferences. When not called, the SSL server will always follow the clients  preferences. When called, the SSL/TLS server will choose following its own  preferences. </p>
+</div>
+<h3><a id="25495">sessionCacheEnabled</a></h3>
+<p class="decl">bool sessionCacheEnabled() const;</p>
+<div class="description">
+<p>Returns true if and only if the session cache is enabled. </p>
+</div>
+<h3><a id="25496">setSessionCacheSize</a></h3>
+<p class="decl">void setSessionCacheSize(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t size<br />);</p>
+<div class="description">
+<p>Sets the maximum size of the server session cache, in number of sessions. The default size (according to OpenSSL documentation) is 1024*20, which may be too large for many applications, especially on embedded platforms with limited memory. </p>
+<p>Specifying a size of 0 will set an unlimited cache size. </p>
+<p>This method may only be called on <a href="Poco.Net.Context.html#25431" title="Poco::Net::Context::SERVER_USE">SERVER_USE</a> <a href="Poco.Net.Context.html" title="class Poco::Net::Context">Context</a> objects. </p>
+</div>
+<h3><a id="25499">setSessionTimeout</a></h3>
+<p class="decl">void setSessionTimeout(<br />&nbsp;&nbsp;&nbsp;&nbsp;long seconds<br />);</p>
+<div class="description">
+<p>Sets the timeout (in seconds) of cached sessions on the server. A cached session will be removed from the cache if it has not been used for the given number of seconds. </p>
+<p>This method may only be called on <a href="Poco.Net.Context.html#25431" title="Poco::Net::Context::SERVER_USE">SERVER_USE</a> <a href="Poco.Net.Context.html" title="class Poco::Net::Context">Context</a> objects. </p>
+</div>
+<h3><a id="25486">sslContext</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">SSL_CTX * sslContext() const;</p>
+<div class="description">
+<p>Returns the underlying OpenSSL SSL <a href="Poco.Net.Context.html" title="class Poco::Net::Context">Context</a> object. </p>
+</div>
+<h3><a id="25487">usage</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Net.Context.html#25429" title="enum  Poco::Net::Context::Usage">Usage</a> usage() const;</p>
+<div class="description">
+<p>Returns whether the context is for use by a client or by a server and whether TLSv1 is required. </p>
+</div>
+<h3><a id="25480">useCertificate</a></h3>
+<p class="decl">void useCertificate(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Crypto.X509Certificate.html" title="class Poco::Crypto::X509Certificate">Poco::Crypto::X509Certificate</a> &amp; certificate<br />);</p>
+<div class="description">
+<p>Sets the certificate to be used by the <a href="Poco.Net.Context.html" title="class Poco::Net::Context">Context</a>. </p>
+<p>To set-up a complete certificate chain, it might be necessary to call <a href="Poco.Net.Context.html#25482" title="Poco::Net::Context::addChainCertificate()">addChainCertificate</a>() to specify additional certificates. </p>
+<p>Note that <a href="Poco.Net.Context.html#25480" title="Poco::Net::Context::useCertificate()">useCertificate</a>() must always be called before <a href="Poco.Net.Context.html#25484" title="Poco::Net::Context::usePrivateKey()">usePrivateKey</a>(). </p>
+</div>
+<h3><a id="25484">usePrivateKey</a></h3>
+<p class="decl">void usePrivateKey(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Crypto.RSAKey.html" title="class Poco::Crypto::RSAKey">Poco::Crypto::RSAKey</a> &amp; key<br />);</p>
+<div class="description">
+<p>Sets the private key to be used by the <a href="Poco.Net.Context.html" title="class Poco::Net::Context">Context</a>. </p>
+<p>Note that <a href="Poco.Net.Context.html#25480" title="Poco::Net::Context::useCertificate()">useCertificate</a>() must always be called before <a href="Poco.Net.Context.html#25484" title="Poco::Net::Context::usePrivateKey()">usePrivateKey</a>(). </p>
+<p>Note: If the private key is protected by a passphrase, a <a href="Poco.Net.PrivateKeyPassphraseHandler.html" title="class Poco::Net::PrivateKeyPassphraseHandler">PrivateKeyPassphraseHandler</a> must have been setup with the <a href="Poco.Net.SSLManager.html" title="class Poco::Net::SSLManager">SSLManager</a>, or the <a href="Poco.Net.SSLManager.html" title="class Poco::Net::SSLManager">SSLManager</a>'s PrivateKeyPassphraseRequired event must be handled. </p>
+</div>
+<h3><a id="25489">verificationMode</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Net.Context.html#25438" title="enum  Poco::Net::Context::VerificationMode">Context::VerificationMode</a> verificationMode() const;</p>
+<div class="description">
+<p>Returns the verification mode. </p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

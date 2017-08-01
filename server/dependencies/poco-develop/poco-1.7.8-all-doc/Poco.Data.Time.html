@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::Data::Time</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.Data.html" class="namespace">Poco::Data</a></h1>
+<h1 class="symbol">class Time</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Data" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Data<br />
+<b>Package:</b> DataCore<br />
+<b>Header:</b> Poco/Data/Time.h</p>
+<h2>Description</h2>
+<div class="description">
+<p><a href="Poco.Data.Time.html" title="class Poco::Data::Time">Time</a> class wraps a <a href="Poco.DateTime.html" title="class Poco::DateTime">DateTime</a> and exposes time related interface. The purpose of this class is binding/extraction support for time fields. </p>
+</div>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.Data.Time.html#7620" title="Poco::Data::Time::assign()">assign</a>, <a href="Poco.Data.Time.html#7617" title="Poco::Data::Time::hour()">hour</a>, <a href="Poco.Data.Time.html#7618" title="Poco::Data::Time::minute()">minute</a>, <a href="Poco.Data.Time.html#7632" title="Poco::Data::Time::operator !=()">operator&nbsp;!=</a>, <a href="Poco.Data.Time.html#7634" title="Poco::Data::Time::operator <()">operator&nbsp;&lt;</a>, <a href="Poco.Data.Time.html#7624" title="Poco::Data::Time::operator =()">operator&nbsp;=</a>, <a href="Poco.Data.Time.html#7630" title="Poco::Data::Time::operator ==()">operator&nbsp;==</a>, <a href="Poco.Data.Time.html#7636" title="Poco::Data::Time::operator >()">operator&nbsp;&gt;</a>, <a href="Poco.Data.Time.html#7619" title="Poco::Data::Time::second()">second</a></p>
+<h2>Constructors</h2>
+<h3><a id="7609">Time</a></h3>
+<p class="decl"><a href="Poco.Data.Time.html" title="class Poco::Data::Time">Time</a>();</p>
+<div class="description">
+<p>Creates the <a href="Poco.Data.Time.html" title="class Poco::Data::Time">Time</a> </p>
+</div>
+<h3><a id="7614">Time</a></h3>
+<p class="decl"><a href="Poco.Data.Time.html" title="class Poco::Data::Time">Time</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.DateTime.html" title="class Poco::DateTime">DateTime</a> &amp; dt<br />);</p>
+<div class="description">
+<p>Creates the <a href="Poco.Data.Time.html" title="class Poco::Data::Time">Time</a> from <a href="Poco.DateTime.html" title="class Poco::DateTime">DateTime</a> </p>
+</div>
+<h3><a id="7610">Time</a></h3>
+<p class="decl"><a href="Poco.Data.Time.html" title="class Poco::Data::Time">Time</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;int hour,<br />&nbsp;&nbsp;&nbsp;&nbsp;int minute,<br />&nbsp;&nbsp;&nbsp;&nbsp;int second<br />);</p>
+<div class="description">
+<p>Creates the <a href="Poco.Data.Time.html" title="class Poco::Data::Time">Time</a> </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="7616">~Time</a></h3>
+<p class="decl">~<a href="Poco.Data.Time.html" title="class Poco::Data::Time">Time</a>();</p>
+<div class="description">
+<p>Destroys the <a href="Poco.Data.Time.html" title="class Poco::Data::Time">Time</a>. </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="7620">assign</a></h3>
+<p class="decl">void assign(<br />&nbsp;&nbsp;&nbsp;&nbsp;int hour,<br />&nbsp;&nbsp;&nbsp;&nbsp;int minute,<br />&nbsp;&nbsp;&nbsp;&nbsp;int second<br />);</p>
+<div class="description">
+<p>Assigns time. </p>
+</div>
+<h3><a id="7617">hour</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">int hour() const;</p>
+<div class="description">
+<p>Returns the hour. </p>
+</div>
+<h3><a id="7618">minute</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">int minute() const;</p>
+<div class="description">
+<p>Returns the minute. </p>
+</div>
+<h3><a id="7632">operator !=</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool operator != (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Data.Time.html" title="class Poco::Data::Time">Time</a> &amp; time<br />) const;</p>
+<div class="description">
+<p>Inequality operator. </p>
+</div>
+<h3><a id="7634">operator &lt;</a></h3>
+<p class="decl">bool operator &lt; (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Data.Time.html" title="class Poco::Data::Time">Time</a> &amp; time<br />) const;</p>
+<div class="description">
+<p>Less then operator. </p>
+</div>
+<h3><a id="7624">operator =</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Data.Time.html" title="class Poco::Data::Time">Time</a> &amp; operator = (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Data.Time.html" title="class Poco::Data::Time">Time</a> &amp; t<br />);</p>
+<div class="description">
+<p>Assignment operator for <a href="Poco.Data.Time.html" title="class Poco::Data::Time">Time</a>. </p>
+</div>
+<h3><a id="7626">operator =</a></h3>
+<p class="decl"><a href="Poco.Data.Time.html" title="class Poco::Data::Time">Time</a> &amp; operator = (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.DateTime.html" title="class Poco::DateTime">DateTime</a> &amp; dt<br />);</p>
+<div class="description">
+<p>Assignment operator for <a href="Poco.DateTime.html" title="class Poco::DateTime">DateTime</a>. </p>
+</div>
+<h3><a id="7628">operator =</a></h3>
+<p class="decl"><a href="Poco.Data.Time.html" title="class Poco::Data::Time">Time</a> &amp; operator = (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Dynamic.Var.html" title="class Poco::Dynamic::Var">Poco::Dynamic::Var</a> &amp; var<br />);</p>
+<div class="description">
+<p>Assignment operator for Var. </p>
+</div>
+<h3><a id="7630">operator ==</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool operator == (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Data.Time.html" title="class Poco::Data::Time">Time</a> &amp; time<br />) const;</p>
+<div class="description">
+<p>Equality operator. </p>
+</div>
+<h3><a id="7636">operator &gt;</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool operator &gt; (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Data.Time.html" title="class Poco::Data::Time">Time</a> &amp; time<br />) const;</p>
+<div class="description">
+<p>Greater then operator. </p>
+</div>
+<h3><a id="7619">second</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">int second() const;</p>
+<div class="description">
+<p>Returns the second. </p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

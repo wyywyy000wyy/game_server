@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::SimpleHashTable</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.html" class="namespace">Poco</a></h1>
+<h1 class="template">template &lt; class Key, class Value, class KeyHashFunction = HashFunction &lt; Key &gt; &gt;</h1>
+<h1 class="symbol">class SimpleHashTable</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Foundation" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Foundation<br />
+<b>Package:</b> Hashing<br />
+<b>Header:</b> Poco/SimpleHashTable.h</p>
+<div class="description">
+<p><b>Deprecated.</b> <i>This class is deprecated and should no longer be used.</i></p>
+</div>
+<h2>Description</h2>
+<div class="description">
+<p>A <a href="Poco.SimpleHashTable.html" title="class Poco::SimpleHashTable">SimpleHashTable</a> stores a key value pair that can be looked up via a hashed key. </p>
+<p>In comparision to a <a href="Poco.HashTable.html" title="class Poco::HashTable">HashTable</a>, this class handles collisions by sequentially searching the next free location. This also means that the maximum size of this table is limited, i.e. if the hash table is full, it will throw an exception and that this class does not support remove operations. On the plus side it is faster than the <a href="Poco.HashTable.html" title="class Poco::HashTable">HashTable</a>. </p>
+<p>This class is NOT thread safe. </p>
+</div>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.SimpleHashTable.html#17017" title="Poco::SimpleHashTable::capacity()">capacity</a>, <a href="Poco.SimpleHashTable.html#16973" title="Poco::SimpleHashTable::clear()">clear</a>, <a href="Poco.SimpleHashTable.html#17020" title="Poco::SimpleHashTable::currentState()">currentState</a>, <a href="Poco.SimpleHashTable.html#17011" title="Poco::SimpleHashTable::exists()">exists</a>, <a href="Poco.SimpleHashTable.html#17013" title="Poco::SimpleHashTable::existsRaw()">existsRaw</a>, <a href="Poco.SimpleHashTable.html#16990" title="Poco::SimpleHashTable::get()">get</a>, <a href="Poco.SimpleHashTable.html#17001" title="Poco::SimpleHashTable::getKeyRaw()">getKeyRaw</a>, <a href="Poco.SimpleHashTable.html#16992" title="Poco::SimpleHashTable::getRaw()">getRaw</a>, <a href="Poco.SimpleHashTable.html#16988" title="Poco::SimpleHashTable::hash()">hash</a>, <a href="Poco.SimpleHashTable.html#16974" title="Poco::SimpleHashTable::insert()">insert</a>, <a href="Poco.SimpleHashTable.html#16977" title="Poco::SimpleHashTable::insertRaw()">insertRaw</a>, <a href="Poco.SimpleHashTable.html#16969" title="Poco::SimpleHashTable::operator =()">operator&nbsp;=</a>, <a href="Poco.SimpleHashTable.html#16997" title="Poco::SimpleHashTable::operator []()">operator&nbsp;[]</a>, <a href="Poco.SimpleHashTable.html#17018" title="Poco::SimpleHashTable::resize()">resize</a>, <a href="Poco.SimpleHashTable.html#17016" title="Poco::SimpleHashTable::size()">size</a>, <a href="Poco.SimpleHashTable.html#16971" title="Poco::SimpleHashTable::swap()">swap</a>, <a href="Poco.SimpleHashTable.html#16981" title="Poco::SimpleHashTable::update()">update</a>, <a href="Poco.SimpleHashTable.html#16984" title="Poco::SimpleHashTable::updateRaw()">updateRaw</a></p>
+<h2>Nested Classes</h2>
+<h3><a href="Poco.SimpleHashTable.HashEntry.html" class="class">class HashEntry</a></h3>
+<p>&nbsp;<a href="Poco.SimpleHashTable.HashEntry.html"><img src="images/arrow.png" alt="more..." /> </a></p>
+<h2>Types</h2>
+<h3><a id="16963">HashTableVector</a></h3>
+<p class="decl">typedef std::vector &lt; <a href="Poco.SimpleHashTable.HashEntry.html" title="class Poco::SimpleHashTable::HashEntry">HashEntry</a> * &gt; <a href="Poco.SimpleHashTable.html#16963" title="Poco::SimpleHashTable::HashTableVector">HashTableVector</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Constructors</h2>
+<h3><a id="16964">SimpleHashTable</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.SimpleHashTable.html" title="class Poco::SimpleHashTable">SimpleHashTable</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.html#18381" title="Poco::UInt32">UInt32</a> capacity = 251<br />);</p>
+<div class="description">
+<p>Creates the <a href="Poco.SimpleHashTable.html" title="class Poco::SimpleHashTable">SimpleHashTable</a>. </p>
+</div>
+<h3><a id="16966">SimpleHashTable</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.SimpleHashTable.html" title="class Poco::SimpleHashTable">SimpleHashTable</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.SimpleHashTable.html" title="class Poco::SimpleHashTable">SimpleHashTable</a> &amp; ht<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="16968">~SimpleHashTable</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">~<a href="Poco.SimpleHashTable.html" title="class Poco::SimpleHashTable">SimpleHashTable</a>();</p>
+<div class="description">
+<p>Destroys the <a href="Poco.SimpleHashTable.html" title="class Poco::SimpleHashTable">SimpleHashTable</a>. </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="17017">capacity</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.html#18381" title="Poco::UInt32">UInt32</a> capacity() const;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="16973">clear</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void clear();</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="17020">currentState</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.HashStatistic.html" title="class Poco::HashStatistic">HashStatistic</a> currentState(<br />&nbsp;&nbsp;&nbsp;&nbsp;bool details = false<br />) const;</p>
+<div class="description">
+<p>Returns the current internal state </p>
+</div>
+<h3><a id="17011">exists</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool exists(<br />&nbsp;&nbsp;&nbsp;&nbsp;const Key &amp; key<br />) const;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="17013">existsRaw</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool existsRaw(<br />&nbsp;&nbsp;&nbsp;&nbsp;const Key &amp; key,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.html#18381" title="Poco::UInt32">UInt32</a> hsh<br />) const;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="16990">get</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">const Value &amp; get(<br />&nbsp;&nbsp;&nbsp;&nbsp;const Key &amp; key<br />) const;</p>
+<div class="description">
+<p>Throws an exception if the value does not exist </p>
+</div>
+<h3><a id="16995">get</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">Value &amp; get(<br />&nbsp;&nbsp;&nbsp;&nbsp;const Key &amp; key<br />);</p>
+<div class="description">
+<p>Throws an exception if the value does not exist </p>
+</div>
+<h3><a id="17004">get</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool get(<br />&nbsp;&nbsp;&nbsp;&nbsp;const Key &amp; key,<br />&nbsp;&nbsp;&nbsp;&nbsp;Value &amp; v<br />) const;</p>
+<div class="description">
+<p>Sets v to the found value, returns false if no value was found </p>
+</div>
+<h3><a id="17001">getKeyRaw</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">const Key &amp; getKeyRaw(<br />&nbsp;&nbsp;&nbsp;&nbsp;const Key &amp; key,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.html#18381" title="Poco::UInt32">UInt32</a> hsh<br />);</p>
+<div class="description">
+<p>Throws an exception if the key does not exist. returns a reference to the internally stored key. Useful when someone does an insert and wants for performance reason only to store a pointer to the key in another collection </p>
+</div>
+<h3><a id="16992">getRaw</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">const Value &amp; getRaw(<br />&nbsp;&nbsp;&nbsp;&nbsp;const Key &amp; key,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.html#18381" title="Poco::UInt32">UInt32</a> hsh<br />) const;</p>
+<div class="description">
+<p>Throws an exception if the value does not exist </p>
+</div>
+<h3><a id="17007">getRaw</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool getRaw(<br />&nbsp;&nbsp;&nbsp;&nbsp;const Key &amp; key,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.html#18381" title="Poco::UInt32">UInt32</a> hsh,<br />&nbsp;&nbsp;&nbsp;&nbsp;Value &amp; v<br />) const;</p>
+<div class="description">
+<p>Sets v to the found value, returns false if no value was found </p>
+</div>
+<h3><a id="16988">hash</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.html#18381" title="Poco::UInt32">UInt32</a> hash(<br />&nbsp;&nbsp;&nbsp;&nbsp;const Key &amp; key<br />) const;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="16974">insert</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.html#18381" title="Poco::UInt32">UInt32</a> insert(<br />&nbsp;&nbsp;&nbsp;&nbsp;const Key &amp; key,<br />&nbsp;&nbsp;&nbsp;&nbsp;const Value &amp; value<br />);</p>
+<div class="description">
+<p>Returns the hash value of the inserted item. Throws an exception if the entry was already inserted </p>
+</div>
+<h3><a id="16977">insertRaw</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">Value &amp; insertRaw(<br />&nbsp;&nbsp;&nbsp;&nbsp;const Key &amp; key,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.html#18381" title="Poco::UInt32">UInt32</a> hsh,<br />&nbsp;&nbsp;&nbsp;&nbsp;const Value &amp; value<br />);</p>
+<div class="description">
+<p>Returns the hash value of the inserted item. Throws an exception if the entry was already inserted </p>
+</div>
+<h3><a id="16969">operator =</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.SimpleHashTable.html" title="class Poco::SimpleHashTable">SimpleHashTable</a> &amp; operator = (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.SimpleHashTable.html" title="class Poco::SimpleHashTable">SimpleHashTable</a> &amp; ht<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="16997">operator []</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">const Value &amp; operator[] (<br />&nbsp;&nbsp;&nbsp;&nbsp;const Key &amp; key<br />) const;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="16999">operator []</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">Value &amp; operator[] (<br />&nbsp;&nbsp;&nbsp;&nbsp;const Key &amp; key<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="17018">resize</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void resize(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.html#18381" title="Poco::UInt32">UInt32</a> newSize<br />);</p>
+<div class="description">
+<p>Resizes the hashtable, rehashes all existing entries. Expensive! </p>
+</div>
+<h3><a id="17016">size</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">std::size_t size() const;</p>
+<div class="description">
+<p>Returns the number of elements already inserted into the <a href="Poco.SimpleHashTable.html" title="class Poco::SimpleHashTable">SimpleHashTable</a> </p>
+</div>
+<h3><a id="16971">swap</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void swap(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.SimpleHashTable.html" title="class Poco::SimpleHashTable">SimpleHashTable</a> &amp; ht<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="16981">update</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.html#18381" title="Poco::UInt32">UInt32</a> update(<br />&nbsp;&nbsp;&nbsp;&nbsp;const Key &amp; key,<br />&nbsp;&nbsp;&nbsp;&nbsp;const Value &amp; value<br />);</p>
+<div class="description">
+<p>Returns the hash value of the inserted item. Replaces an existing entry if it finds one </p>
+</div>
+<h3><a id="16984">updateRaw</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void updateRaw(<br />&nbsp;&nbsp;&nbsp;&nbsp;const Key &amp; key,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.html#18381" title="Poco::UInt32">UInt32</a> hsh,<br />&nbsp;&nbsp;&nbsp;&nbsp;const Value &amp; value<br />);</p>
+<div class="description">
+<p>Returns the hash value of the inserted item. Replaces an existing entry if it finds one </p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

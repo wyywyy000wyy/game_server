@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::Net::NTPPacket</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.Net.html" class="namespace">Poco::Net</a></h1>
+<h1 class="symbol">class NTPPacket</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Net" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Net<br />
+<b>Package:</b> NTP<br />
+<b>Header:</b> Poco/Net/NTPPacket.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>This class is the NTP packet abstraction.  </p>
+</div>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.Net.NTPPacket.html#22991" title="Poco::Net::NTPPacket::leapIndicator()">leapIndicator</a>, <a href="Poco.Net.NTPPacket.html#22993" title="Poco::Net::NTPPacket::mode()">mode</a>, <a href="Poco.Net.NTPPacket.html#23005" title="Poco::Net::NTPPacket::originateTime()">originateTime</a>, <a href="Poco.Net.NTPPacket.html#23001" title="Poco::Net::NTPPacket::originateTimestamp()">originateTimestamp</a>, <a href="Poco.Net.NTPPacket.html#22987" title="Poco::Net::NTPPacket::packet()">packet</a>, <a href="Poco.Net.NTPPacket.html#22995" title="Poco::Net::NTPPacket::pool()">pool</a>, <a href="Poco.Net.NTPPacket.html#22996" title="Poco::Net::NTPPacket::precision()">precision</a>, <a href="Poco.Net.NTPPacket.html#23006" title="Poco::Net::NTPPacket::receiveTime()">receiveTime</a>, <a href="Poco.Net.NTPPacket.html#23002" title="Poco::Net::NTPPacket::receiveTimestamp()">receiveTimestamp</a>, <a href="Poco.Net.NTPPacket.html#22999" title="Poco::Net::NTPPacket::referenceId()">referenceId</a>, <a href="Poco.Net.NTPPacket.html#23004" title="Poco::Net::NTPPacket::referenceTime()">referenceTime</a>, <a href="Poco.Net.NTPPacket.html#23000" title="Poco::Net::NTPPacket::referenceTimestamp()">referenceTimestamp</a>, <a href="Poco.Net.NTPPacket.html#22997" title="Poco::Net::NTPPacket::rootDelay()">rootDelay</a>, <a href="Poco.Net.NTPPacket.html#22998" title="Poco::Net::NTPPacket::rootDispersion()">rootDispersion</a>, <a href="Poco.Net.NTPPacket.html#22989" title="Poco::Net::NTPPacket::setPacket()">setPacket</a>, <a href="Poco.Net.NTPPacket.html#22994" title="Poco::Net::NTPPacket::stratum()">stratum</a>, <a href="Poco.Net.NTPPacket.html#23007" title="Poco::Net::NTPPacket::transmitTime()">transmitTime</a>, <a href="Poco.Net.NTPPacket.html#23003" title="Poco::Net::NTPPacket::transmitTimestamp()">transmitTimestamp</a>, <a href="Poco.Net.NTPPacket.html#22992" title="Poco::Net::NTPPacket::version()">version</a></p>
+<h2>Constructors</h2>
+<h3><a id="22983">NTPPacket</a></h3>
+<p class="decl"><a href="Poco.Net.NTPPacket.html" title="class Poco::Net::NTPPacket">NTPPacket</a>();</p>
+<div class="description">
+<p>Creates an <a href="Poco.Net.NTPPacket.html" title="class Poco::Net::NTPPacket">NTPPacket</a>. </p>
+</div>
+<h3><a id="22984">NTPPacket</a></h3>
+<p class="decl"><a href="Poco.Net.NTPPacket.html" title="class Poco::Net::NTPPacket">NTPPacket</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.html#18377" title="Poco::UInt8">Poco::UInt8</a> * packet<br />);</p>
+<div class="description">
+<p>Creates an <a href="Poco.Net.NTPPacket.html" title="class Poco::Net::NTPPacket">NTPPacket</a>. </p>
+<p>Assumed to have at least 48 bytes. </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="22986">~NTPPacket</a></h3>
+<p class="decl">~<a href="Poco.Net.NTPPacket.html" title="class Poco::Net::NTPPacket">NTPPacket</a>();</p>
+<div class="description">
+<p>Destroys the <a href="Poco.Net.NTPPacket.html" title="class Poco::Net::NTPPacket">NTPPacket</a>. </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="22991">leapIndicator</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.html#18376" title="Poco::Int8">Poco::Int8</a> leapIndicator() const;</p>
+<div class="description">
+<p>Returns the leap indicator. </p>
+</div>
+<h3><a id="22993">mode</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.html#18376" title="Poco::Int8">Poco::Int8</a> mode() const;</p>
+<div class="description">
+<p>Returns the mode. </p>
+</div>
+<h3><a id="23005">originateTime</a></h3>
+<p class="decl"><a href="Poco.Timestamp.html" title="class Poco::Timestamp">Poco::Timestamp</a> originateTime() const;</p>
+<div class="description">
+<p>Returns the originate time </p>
+</div>
+<h3><a id="23001">originateTimestamp</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.html#18384" title="Poco::Int64">Poco::Int64</a> originateTimestamp() const;</p>
+<div class="description">
+<p>Returns the originate timestamp </p>
+</div>
+<h3><a id="22987">packet</a></h3>
+<p class="decl">void packet(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.html#18377" title="Poco::UInt8">Poco::UInt8</a> * packet<br />) const;</p>
+<div class="description">
+<p>Returns the NTP packet. </p>
+<p>Assumed to have at least 48 bytes. </p>
+</div>
+<h3><a id="22995">pool</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.html#18376" title="Poco::Int8">Poco::Int8</a> pool() const;</p>
+<div class="description">
+<p>Returns the pool. </p>
+</div>
+<h3><a id="22996">precision</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.html#18376" title="Poco::Int8">Poco::Int8</a> precision() const;</p>
+<div class="description">
+<p>Returns the precision </p>
+</div>
+<h3><a id="23006">receiveTime</a></h3>
+<p class="decl"><a href="Poco.Timestamp.html" title="class Poco::Timestamp">Poco::Timestamp</a> receiveTime() const;</p>
+<div class="description">
+<p>Returns the receive time </p>
+</div>
+<h3><a id="23002">receiveTimestamp</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.html#18384" title="Poco::Int64">Poco::Int64</a> receiveTimestamp() const;</p>
+<div class="description">
+<p>Returns the receive timestamp </p>
+</div>
+<h3><a id="22999">referenceId</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.html#18380" title="Poco::Int32">Poco::Int32</a> referenceId() const;</p>
+<div class="description">
+<p>Returns the reference id </p>
+</div>
+<h3><a id="23004">referenceTime</a></h3>
+<p class="decl"><a href="Poco.Timestamp.html" title="class Poco::Timestamp">Poco::Timestamp</a> referenceTime() const;</p>
+<div class="description">
+<p>Returns the reference time </p>
+</div>
+<h3><a id="23000">referenceTimestamp</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.html#18384" title="Poco::Int64">Poco::Int64</a> referenceTimestamp() const;</p>
+<div class="description">
+<p>Returns the reference timestamp </p>
+</div>
+<h3><a id="22997">rootDelay</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.html#18380" title="Poco::Int32">Poco::Int32</a> rootDelay() const;</p>
+<div class="description">
+<p>Returns the root delay </p>
+</div>
+<h3><a id="22998">rootDispersion</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.html#18380" title="Poco::Int32">Poco::Int32</a> rootDispersion() const;</p>
+<div class="description">
+<p>Returns the root dispersion </p>
+</div>
+<h3><a id="22989">setPacket</a></h3>
+<p class="decl">void setPacket(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.html#18377" title="Poco::UInt8">Poco::UInt8</a> * packet<br />);</p>
+<div class="description">
+<p>Returns the NTP packet. </p>
+<p>Assumed to have exactly 48 bytes. </p>
+</div>
+<h3><a id="22994">stratum</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.html#18376" title="Poco::Int8">Poco::Int8</a> stratum() const;</p>
+<div class="description">
+<p>Returns the stratum. </p>
+</div>
+<h3><a id="23007">transmitTime</a></h3>
+<p class="decl"><a href="Poco.Timestamp.html" title="class Poco::Timestamp">Poco::Timestamp</a> transmitTime() const;</p>
+<div class="description">
+<p>Returns the transmit time </p>
+</div>
+<h3><a id="23003">transmitTimestamp</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.html#18384" title="Poco::Int64">Poco::Int64</a> transmitTimestamp() const;</p>
+<div class="description">
+<p>Returns the transmit timestamp </p>
+</div>
+<h3><a id="22992">version</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.html#18376" title="Poco::Int8">Poco::Int8</a> version() const;</p>
+<div class="description">
+<p>Returns the version. </p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

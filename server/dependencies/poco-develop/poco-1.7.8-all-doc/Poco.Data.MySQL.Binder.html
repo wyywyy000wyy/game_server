@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::Data::MySQL::Binder</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.Data.MySQL.html" class="namespace">Poco::Data::MySQL</a></h1>
+<h1 class="symbol">class Binder</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Data/MySQL" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Data/MySQL<br />
+<b>Package:</b> MySQL<br />
+<b>Header:</b> Poco/Data/MySQL/Binder.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>Binds placeholders in the sql query to the provided values. Performs data types mapping. </p>
+</div>
+<h2>Inheritance</h2>
+<p><b>Direct Base Classes: </b><a href="Poco.Data.AbstractBinder.html" title="class Poco::Data::AbstractBinder">Poco::Data::AbstractBinder</a></p>
+<p><b>All Base Classes: </b><a href="Poco.Data.AbstractBinder.html" title="class Poco::Data::AbstractBinder">Poco::Data::AbstractBinder</a></p>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.Data.MySQL.Binder.html#459" title="Poco::Data::MySQL::Binder::bind()">bind</a>, <a href="Poco.Data.MySQL.Binder.html#764" title="Poco::Data::MySQL::Binder::getBindArray()">getBindArray</a>, <a href="Poco.Data.MySQL.Binder.html#763" title="Poco::Data::MySQL::Binder::size()">size</a></p>
+<p><b>Inherited Functions: </b><a href="Poco.Data.AbstractBinder.html#4454" title="Poco::Data::AbstractBinder::bind()">bind</a>, <a href="Poco.Data.AbstractBinder.html#4789" title="Poco::Data::AbstractBinder::isInBound()">isInBound</a>, <a href="Poco.Data.AbstractBinder.html#4787" title="Poco::Data::AbstractBinder::isOutBound()">isOutBound</a>, <a href="Poco.Data.AbstractBinder.html#4786" title="Poco::Data::AbstractBinder::reset()">reset</a></p>
+<h2>Types</h2>
+<h3><a id="456">Ptr</a></h3>
+<p class="decl">typedef <a href="Poco.SharedPtr.html" title="class Poco::SharedPtr">SharedPtr</a> &lt; <a href="Poco.Data.MySQL.Binder.html" title="class Poco::Data::MySQL::Binder">Binder</a> &gt; <a href="Poco.Data.MySQL.Binder.html#456" title="Poco::Data::MySQL::Binder::Ptr">Ptr</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Constructors</h2>
+<h3><a id="457">Binder</a></h3>
+<p class="decl"><a href="Poco.Data.MySQL.Binder.html" title="class Poco::Data::MySQL::Binder">Binder</a>();</p>
+<div class="description">
+<p>Creates the <a href="Poco.Data.MySQL.Binder.html" title="class Poco::Data::MySQL::Binder">Binder</a>. </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="458">~Binder</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual ~<a href="Poco.Data.MySQL.Binder.html" title="class Poco::Data::MySQL::Binder">Binder</a>();</p>
+<div class="description">
+<p>Destroys the <a href="Poco.Data.MySQL.Binder.html" title="class Poco::Data::MySQL::Binder">Binder</a>. </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="459">bind</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void bind(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.html#18376" title="Poco::Int8">Poco::Int8</a> &amp; val,<br />&nbsp;&nbsp;&nbsp;&nbsp;Direction dir<br />);</p>
+<div class="description">
+<p>Binds an <a href="Poco.html#18376" title="Poco::Int8">Int8</a>. </p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Data.AbstractBinder.html#4454" title="Poco::Data::AbstractBinder::bind()">Poco::Data::AbstractBinder::bind()</a></p></div>
+<h3><a id="463">bind</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void bind(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.html#18377" title="Poco::UInt8">Poco::UInt8</a> &amp; val,<br />&nbsp;&nbsp;&nbsp;&nbsp;Direction dir<br />);</p>
+<div class="description">
+<p>Binds an <a href="Poco.html#18377" title="Poco::UInt8">UInt8</a>. </p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Data.AbstractBinder.html#4470" title="Poco::Data::AbstractBinder::bind()">Poco::Data::AbstractBinder::bind()</a></p></div>
+<h3><a id="467">bind</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void bind(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.html#18378" title="Poco::Int16">Poco::Int16</a> &amp; val,<br />&nbsp;&nbsp;&nbsp;&nbsp;Direction dir<br />);</p>
+<div class="description">
+<p>Binds an <a href="Poco.html#18378" title="Poco::Int16">Int16</a>. </p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Data.AbstractBinder.html#4486" title="Poco::Data::AbstractBinder::bind()">Poco::Data::AbstractBinder::bind()</a></p></div>
+<h3><a id="471">bind</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void bind(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.html#18379" title="Poco::UInt16">Poco::UInt16</a> &amp; val,<br />&nbsp;&nbsp;&nbsp;&nbsp;Direction dir<br />);</p>
+<div class="description">
+<p>Binds an <a href="Poco.html#18379" title="Poco::UInt16">UInt16</a>. </p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Data.AbstractBinder.html#4502" title="Poco::Data::AbstractBinder::bind()">Poco::Data::AbstractBinder::bind()</a></p></div>
+<h3><a id="475">bind</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void bind(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.html#18380" title="Poco::Int32">Poco::Int32</a> &amp; val,<br />&nbsp;&nbsp;&nbsp;&nbsp;Direction dir<br />);</p>
+<div class="description">
+<p>Binds an <a href="Poco.html#18380" title="Poco::Int32">Int32</a>. </p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Data.AbstractBinder.html#4518" title="Poco::Data::AbstractBinder::bind()">Poco::Data::AbstractBinder::bind()</a></p></div>
+<h3><a id="479">bind</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void bind(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.html#18381" title="Poco::UInt32">Poco::UInt32</a> &amp; val,<br />&nbsp;&nbsp;&nbsp;&nbsp;Direction dir<br />);</p>
+<div class="description">
+<p>Binds an <a href="Poco.html#18381" title="Poco::UInt32">UInt32</a>. </p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Data.AbstractBinder.html#4534" title="Poco::Data::AbstractBinder::bind()">Poco::Data::AbstractBinder::bind()</a></p></div>
+<h3><a id="483">bind</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void bind(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.html#18384" title="Poco::Int64">Poco::Int64</a> &amp; val,<br />&nbsp;&nbsp;&nbsp;&nbsp;Direction dir<br />);</p>
+<div class="description">
+<p>Binds an <a href="Poco.html#18384" title="Poco::Int64">Int64</a>. </p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Data.AbstractBinder.html#4550" title="Poco::Data::AbstractBinder::bind()">Poco::Data::AbstractBinder::bind()</a></p></div>
+<h3><a id="487">bind</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void bind(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.html#18385" title="Poco::UInt64">Poco::UInt64</a> &amp; val,<br />&nbsp;&nbsp;&nbsp;&nbsp;Direction dir<br />);</p>
+<div class="description">
+<p>Binds an <a href="Poco.html#18385" title="Poco::UInt64">UInt64</a>. </p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Data.AbstractBinder.html#4566" title="Poco::Data::AbstractBinder::bind()">Poco::Data::AbstractBinder::bind()</a></p></div>
+<h3><a id="491">bind</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void bind(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const bool &amp; val,<br />&nbsp;&nbsp;&nbsp;&nbsp;Direction dir<br />);</p>
+<div class="description">
+<p>Binds a boolean. </p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Data.AbstractBinder.html#4582" title="Poco::Data::AbstractBinder::bind()">Poco::Data::AbstractBinder::bind()</a></p></div>
+<h3><a id="495">bind</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void bind(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const float &amp; val,<br />&nbsp;&nbsp;&nbsp;&nbsp;Direction dir<br />);</p>
+<div class="description">
+<p>Binds a float. </p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Data.AbstractBinder.html#4598" title="Poco::Data::AbstractBinder::bind()">Poco::Data::AbstractBinder::bind()</a></p></div>
+<h3><a id="499">bind</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void bind(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const double &amp; val,<br />&nbsp;&nbsp;&nbsp;&nbsp;Direction dir<br />);</p>
+<div class="description">
+<p>Binds a double. </p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Data.AbstractBinder.html#4614" title="Poco::Data::AbstractBinder::bind()">Poco::Data::AbstractBinder::bind()</a></p></div>
+<h3><a id="503">bind</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void bind(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const char &amp; val,<br />&nbsp;&nbsp;&nbsp;&nbsp;Direction dir<br />);</p>
+<div class="description">
+<p>Binds a single character. </p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Data.AbstractBinder.html#4630" title="Poco::Data::AbstractBinder::bind()">Poco::Data::AbstractBinder::bind()</a></p></div>
+<h3><a id="507">bind</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void bind(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; val,<br />&nbsp;&nbsp;&nbsp;&nbsp;Direction dir<br />);</p>
+<div class="description">
+<p>Binds a string. </p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Data.AbstractBinder.html#4650" title="Poco::Data::AbstractBinder::bind()">Poco::Data::AbstractBinder::bind()</a></p></div>
+<h3><a id="511">bind</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void bind(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Data.html#6200" title="Poco::Data::BLOB">Poco::Data::BLOB</a> &amp; val,<br />&nbsp;&nbsp;&nbsp;&nbsp;Direction dir<br />);</p>
+<div class="description">
+<p>Binds a <a href="Poco.Data.html#6200" title="Poco::Data::BLOB">BLOB</a>. </p>
+</div>
+<h3><a id="515">bind</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void bind(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Data.html#6201" title="Poco::Data::CLOB">Poco::Data::CLOB</a> &amp; val,<br />&nbsp;&nbsp;&nbsp;&nbsp;Direction dir<br />);</p>
+<div class="description">
+<p>Binds a <a href="Poco.Data.html#6201" title="Poco::Data::CLOB">CLOB</a>. </p>
+</div>
+<h3><a id="519">bind</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void bind(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.DateTime.html" title="class Poco::DateTime">DateTime</a> &amp; val,<br />&nbsp;&nbsp;&nbsp;&nbsp;Direction dir<br />);</p>
+<div class="description">
+<p>Binds a <a href="Poco.DateTime.html" title="class Poco::DateTime">DateTime</a>. </p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Data.AbstractBinder.html#4714" title="Poco::Data::AbstractBinder::bind()">Poco::Data::AbstractBinder::bind()</a></p></div>
+<h3><a id="523">bind</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void bind(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Data.Date.html" title="class Poco::Data::Date">Date</a> &amp; val,<br />&nbsp;&nbsp;&nbsp;&nbsp;Direction dir<br />);</p>
+<div class="description">
+<p>Binds a <a href="Poco.Data.Date.html" title="class Poco::Data::Date">Date</a>. </p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Data.AbstractBinder.html#4730" title="Poco::Data::AbstractBinder::bind()">Poco::Data::AbstractBinder::bind()</a></p></div>
+<h3><a id="527">bind</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void bind(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Data.Time.html" title="class Poco::Data::Time">Time</a> &amp; val,<br />&nbsp;&nbsp;&nbsp;&nbsp;Direction dir<br />);</p>
+<div class="description">
+<p>Binds a <a href="Poco.Data.Time.html" title="class Poco::Data::Time">Time</a>. </p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Data.AbstractBinder.html#4746" title="Poco::Data::AbstractBinder::bind()">Poco::Data::AbstractBinder::bind()</a></p></div>
+<h3><a id="531">bind</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void bind(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Data.html#4443" title="Poco::Data::NullData">NullData</a> &amp; val,<br />&nbsp;&nbsp;&nbsp;&nbsp;Direction dir<br />);</p>
+<div class="description">
+<p>Binds a null. </p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Data.AbstractBinder.html#4762" title="Poco::Data::AbstractBinder::bind()">Poco::Data::AbstractBinder::bind()</a></p></div>
+<h3><a id="535">bind</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void bind(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::vector &lt; <a href="Poco.html#18376" title="Poco::Int8">Poco::Int8</a> &gt; &amp; val,<br />&nbsp;&nbsp;&nbsp;&nbsp;Direction dir = PD_IN<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Data.AbstractBinder.html#4458" title="Poco::Data::AbstractBinder::bind()">Poco::Data::AbstractBinder::bind()</a></p></div>
+<h3><a id="539">bind</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void bind(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::deque &lt; <a href="Poco.html#18376" title="Poco::Int8">Poco::Int8</a> &gt; &amp; val,<br />&nbsp;&nbsp;&nbsp;&nbsp;Direction dir = PD_IN<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Data.AbstractBinder.html#4462" title="Poco::Data::AbstractBinder::bind()">Poco::Data::AbstractBinder::bind()</a></p></div>
+<h3><a id="543">bind</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void bind(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::list &lt; <a href="Poco.html#18376" title="Poco::Int8">Poco::Int8</a> &gt; &amp; val,<br />&nbsp;&nbsp;&nbsp;&nbsp;Direction dir = PD_IN<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Data.AbstractBinder.html#4466" title="Poco::Data::AbstractBinder::bind()">Poco::Data::AbstractBinder::bind()</a></p></div>
+<h3><a id="547">bind</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void bind(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::vector &lt; <a href="Poco.html#18377" title="Poco::UInt8">Poco::UInt8</a> &gt; &amp; val,<br />&nbsp;&nbsp;&nbsp;&nbsp;Direction dir = PD_IN<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Data.AbstractBinder.html#4474" title="Poco::Data::AbstractBinder::bind()">Poco::Data::AbstractBinder::bind()</a></p></div>
+<h3><a id="551">bind</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void bind(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::deque &lt; <a href="Poco.html#18377" title="Poco::UInt8">Poco::UInt8</a> &gt; &amp; val,<br />&nbsp;&nbsp;&nbsp;&nbsp;Direction dir = PD_IN<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Data.AbstractBinder.html#4478" title="Poco::Data::AbstractBinder::bind()">Poco::Data::AbstractBinder::bind()</a></p></div>
+<h3><a id="555">bind</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void bind(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::list &lt; <a href="Poco.html#18377" title="Poco::UInt8">Poco::UInt8</a> &gt; &amp; val,<br />&nbsp;&nbsp;&nbsp;&nbsp;Direction dir = PD_IN<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Data.AbstractBinder.html#4482" title="Poco::Data::AbstractBinder::bind()">Poco::Data::AbstractBinder::bind()</a></p></div>
+<h3><a id="559">bind</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void bind(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::vector &lt; <a href="Poco.html#18378" title="Poco::Int16">Poco::Int16</a> &gt; &amp; val,<br />&nbsp;&nbsp;&nbsp;&nbsp;Direction dir = PD_IN<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Data.AbstractBinder.html#4490" title="Poco::Data::AbstractBinder::bind()">Poco::Data::AbstractBinder::bind()</a></p></div>
+<h3><a id="563">bind</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void bind(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::deque &lt; <a href="Poco.html#18378" title="Poco::Int16">Poco::Int16</a> &gt; &amp; val,<br />&nbsp;&nbsp;&nbsp;&nbsp;Direction dir = PD_IN<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Data.AbstractBinder.html#4494" title="Poco::Data::AbstractBinder::bind()">Poco::Data::AbstractBinder::bind()</a></p></div>
+<h3><a id="567">bind</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void bind(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::list &lt; <a href="Poco.html#18378" title="Poco::Int16">Poco::Int16</a> &gt; &amp; val,<br />&nbsp;&nbsp;&nbsp;&nbsp;Direction dir = PD_IN<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Data.AbstractBinder.html#4498" title="Poco::Data::AbstractBinder::bind()">Poco::Data::AbstractBinder::bind()</a></p></div>
+<h3><a id="571">bind</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void bind(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::vector &lt; <a href="Poco.html#18379" title="Poco::UInt16">Poco::UInt16</a> &gt; &amp; val,<br />&nbsp;&nbsp;&nbsp;&nbsp;Direction dir = PD_IN<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Data.AbstractBinder.html#4506" title="Poco::Data::AbstractBinder::bind()">Poco::Data::AbstractBinder::bind()</a></p></div>
+<h3><a id="575">bind</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void bind(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::deque &lt; <a href="Poco.html#18379" title="Poco::UInt16">Poco::UInt16</a> &gt; &amp; val,<br />&nbsp;&nbsp;&nbsp;&nbsp;Direction dir = PD_IN<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Data.AbstractBinder.html#4510" title="Poco::Data::AbstractBinder::bind()">Poco::Data::AbstractBinder::bind()</a></p></div>
+<h3><a id="579">bind</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void bind(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::list &lt; <a href="Poco.html#18379" title="Poco::UInt16">Poco::UInt16</a> &gt; &amp; val,<br />&nbsp;&nbsp;&nbsp;&nbsp;Direction dir = PD_IN<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Data.AbstractBinder.html#4514" title="Poco::Data::AbstractBinder::bind()">Poco::Data::AbstractBinder::bind()</a></p></div>
+<h3><a id="583">bind</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void bind(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::vector &lt; <a href="Poco.html#18380" title="Poco::Int32">Poco::Int32</a> &gt; &amp; val,<br />&nbsp;&nbsp;&nbsp;&nbsp;Direction dir = PD_IN<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Data.AbstractBinder.html#4522" title="Poco::Data::AbstractBinder::bind()">Poco::Data::AbstractBinder::bind()</a></p></div>
+<h3><a id="587">bind</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void bind(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::deque &lt; <a href="Poco.html#18380" title="Poco::Int32">Poco::Int32</a> &gt; &amp; val,<br />&nbsp;&nbsp;&nbsp;&nbsp;Direction dir = PD_IN<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Data.AbstractBinder.html#4526" title="Poco::Data::AbstractBinder::bind()">Poco::Data::AbstractBinder::bind()</a></p></div>
+<h3><a id="591">bind</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void bind(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::list &lt; <a href="Poco.html#18380" title="Poco::Int32">Poco::Int32</a> &gt; &amp; val,<br />&nbsp;&nbsp;&nbsp;&nbsp;Direction dir = PD_IN<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Data.AbstractBinder.html#4530" title="Poco::Data::AbstractBinder::bind()">Poco::Data::AbstractBinder::bind()</a></p></div>
+<h3><a id="595">bind</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void bind(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::vector &lt; <a href="Poco.html#18381" title="Poco::UInt32">Poco::UInt32</a> &gt; &amp; val,<br />&nbsp;&nbsp;&nbsp;&nbsp;Direction dir = PD_IN<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Data.AbstractBinder.html#4538" title="Poco::Data::AbstractBinder::bind()">Poco::Data::AbstractBinder::bind()</a></p></div>
+<h3><a id="599">bind</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void bind(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::deque &lt; <a href="Poco.html#18381" title="Poco::UInt32">Poco::UInt32</a> &gt; &amp; val,<br />&nbsp;&nbsp;&nbsp;&nbsp;Direction dir = PD_IN<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Data.AbstractBinder.html#4542" title="Poco::Data::AbstractBinder::bind()">Poco::Data::AbstractBinder::bind()</a></p></div>
+<h3><a id="603">bind</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void bind(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::list &lt; <a href="Poco.html#18381" title="Poco::UInt32">Poco::UInt32</a> &gt; &amp; val,<br />&nbsp;&nbsp;&nbsp;&nbsp;Direction dir = PD_IN<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Data.AbstractBinder.html#4546" title="Poco::Data::AbstractBinder::bind()">Poco::Data::AbstractBinder::bind()</a></p></div>
+<h3><a id="607">bind</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void bind(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::vector &lt; <a href="Poco.html#18384" title="Poco::Int64">Poco::Int64</a> &gt; &amp; val,<br />&nbsp;&nbsp;&nbsp;&nbsp;Direction dir = PD_IN<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Data.AbstractBinder.html#4554" title="Poco::Data::AbstractBinder::bind()">Poco::Data::AbstractBinder::bind()</a></p></div>
+<h3><a id="611">bind</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void bind(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::deque &lt; <a href="Poco.html#18384" title="Poco::Int64">Poco::Int64</a> &gt; &amp; val,<br />&nbsp;&nbsp;&nbsp;&nbsp;Direction dir = PD_IN<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Data.AbstractBinder.html#4558" title="Poco::Data::AbstractBinder::bind()">Poco::Data::AbstractBinder::bind()</a></p></div>
+<h3><a id="615">bind</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void bind(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::list &lt; <a href="Poco.html#18384" title="Poco::Int64">Poco::Int64</a> &gt; &amp; val,<br />&nbsp;&nbsp;&nbsp;&nbsp;Direction dir = PD_IN<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Data.AbstractBinder.html#4562" title="Poco::Data::AbstractBinder::bind()">Poco::Data::AbstractBinder::bind()</a></p></div>
+<h3><a id="619">bind</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void bind(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::vector &lt; <a href="Poco.html#18385" title="Poco::UInt64">Poco::UInt64</a> &gt; &amp; val,<br />&nbsp;&nbsp;&nbsp;&nbsp;Direction dir = PD_IN<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Data.AbstractBinder.html#4570" title="Poco::Data::AbstractBinder::bind()">Poco::Data::AbstractBinder::bind()</a></p></div>
+<h3><a id="623">bind</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void bind(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::deque &lt; <a href="Poco.html#18385" title="Poco::UInt64">Poco::UInt64</a> &gt; &amp; val,<br />&nbsp;&nbsp;&nbsp;&nbsp;Direction dir = PD_IN<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Data.AbstractBinder.html#4574" title="Poco::Data::AbstractBinder::bind()">Poco::Data::AbstractBinder::bind()</a></p></div>
+<h3><a id="627">bind</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void bind(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::list &lt; <a href="Poco.html#18385" title="Poco::UInt64">Poco::UInt64</a> &gt; &amp; val,<br />&nbsp;&nbsp;&nbsp;&nbsp;Direction dir = PD_IN<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Data.AbstractBinder.html#4578" title="Poco::Data::AbstractBinder::bind()">Poco::Data::AbstractBinder::bind()</a></p></div>
+<h3><a id="631">bind</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void bind(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::vector &lt; bool &gt; &amp; val,<br />&nbsp;&nbsp;&nbsp;&nbsp;Direction dir = PD_IN<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Data.AbstractBinder.html#4586" title="Poco::Data::AbstractBinder::bind()">Poco::Data::AbstractBinder::bind()</a></p></div>
+<h3><a id="635">bind</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void bind(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::deque &lt; bool &gt; &amp; val,<br />&nbsp;&nbsp;&nbsp;&nbsp;Direction dir = PD_IN<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Data.AbstractBinder.html#4590" title="Poco::Data::AbstractBinder::bind()">Poco::Data::AbstractBinder::bind()</a></p></div>
+<h3><a id="639">bind</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void bind(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::list &lt; bool &gt; &amp; val,<br />&nbsp;&nbsp;&nbsp;&nbsp;Direction dir = PD_IN<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Data.AbstractBinder.html#4594" title="Poco::Data::AbstractBinder::bind()">Poco::Data::AbstractBinder::bind()</a></p></div>
+<h3><a id="643">bind</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void bind(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::vector &lt; float &gt; &amp; val,<br />&nbsp;&nbsp;&nbsp;&nbsp;Direction dir = PD_IN<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Data.AbstractBinder.html#4602" title="Poco::Data::AbstractBinder::bind()">Poco::Data::AbstractBinder::bind()</a></p></div>
+<h3><a id="647">bind</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void bind(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::deque &lt; float &gt; &amp; val,<br />&nbsp;&nbsp;&nbsp;&nbsp;Direction dir = PD_IN<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Data.AbstractBinder.html#4606" title="Poco::Data::AbstractBinder::bind()">Poco::Data::AbstractBinder::bind()</a></p></div>
+<h3><a id="651">bind</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void bind(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::list &lt; float &gt; &amp; val,<br />&nbsp;&nbsp;&nbsp;&nbsp;Direction dir = PD_IN<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Data.AbstractBinder.html#4610" title="Poco::Data::AbstractBinder::bind()">Poco::Data::AbstractBinder::bind()</a></p></div>
+<h3><a id="655">bind</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void bind(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::vector &lt; double &gt; &amp; val,<br />&nbsp;&nbsp;&nbsp;&nbsp;Direction dir = PD_IN<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Data.AbstractBinder.html#4618" title="Poco::Data::AbstractBinder::bind()">Poco::Data::AbstractBinder::bind()</a></p></div>
+<h3><a id="659">bind</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void bind(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::deque &lt; double &gt; &amp; val,<br />&nbsp;&nbsp;&nbsp;&nbsp;Direction dir = PD_IN<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Data.AbstractBinder.html#4622" title="Poco::Data::AbstractBinder::bind()">Poco::Data::AbstractBinder::bind()</a></p></div>
+<h3><a id="663">bind</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void bind(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::list &lt; double &gt; &amp; val,<br />&nbsp;&nbsp;&nbsp;&nbsp;Direction dir = PD_IN<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Data.AbstractBinder.html#4626" title="Poco::Data::AbstractBinder::bind()">Poco::Data::AbstractBinder::bind()</a></p></div>
+<h3><a id="667">bind</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void bind(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::vector &lt; char &gt; &amp; val,<br />&nbsp;&nbsp;&nbsp;&nbsp;Direction dir = PD_IN<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Data.AbstractBinder.html#4634" title="Poco::Data::AbstractBinder::bind()">Poco::Data::AbstractBinder::bind()</a></p></div>
+<h3><a id="671">bind</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void bind(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::deque &lt; char &gt; &amp; val,<br />&nbsp;&nbsp;&nbsp;&nbsp;Direction dir = PD_IN<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Data.AbstractBinder.html#4638" title="Poco::Data::AbstractBinder::bind()">Poco::Data::AbstractBinder::bind()</a></p></div>
+<h3><a id="675">bind</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void bind(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::list &lt; char &gt; &amp; val,<br />&nbsp;&nbsp;&nbsp;&nbsp;Direction dir = PD_IN<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Data.AbstractBinder.html#4642" title="Poco::Data::AbstractBinder::bind()">Poco::Data::AbstractBinder::bind()</a></p></div>
+<h3><a id="679">bind</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void bind(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::vector &lt; <a href="Poco.Data.html#6200" title="Poco::Data::BLOB">BLOB</a> &gt; &amp; val,<br />&nbsp;&nbsp;&nbsp;&nbsp;Direction dir = PD_IN<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Data.AbstractBinder.html#4690" title="Poco::Data::AbstractBinder::bind()">Poco::Data::AbstractBinder::bind()</a></p></div>
+<h3><a id="683">bind</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void bind(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::deque &lt; <a href="Poco.Data.html#6200" title="Poco::Data::BLOB">BLOB</a> &gt; &amp; val,<br />&nbsp;&nbsp;&nbsp;&nbsp;Direction dir = PD_IN<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Data.AbstractBinder.html#4694" title="Poco::Data::AbstractBinder::bind()">Poco::Data::AbstractBinder::bind()</a></p></div>
+<h3><a id="687">bind</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void bind(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::list &lt; <a href="Poco.Data.html#6200" title="Poco::Data::BLOB">BLOB</a> &gt; &amp; val,<br />&nbsp;&nbsp;&nbsp;&nbsp;Direction dir = PD_IN<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Data.AbstractBinder.html#4698" title="Poco::Data::AbstractBinder::bind()">Poco::Data::AbstractBinder::bind()</a></p></div>
+<h3><a id="691">bind</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void bind(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::vector &lt; <a href="Poco.Data.html#6201" title="Poco::Data::CLOB">CLOB</a> &gt; &amp; val,<br />&nbsp;&nbsp;&nbsp;&nbsp;Direction dir = PD_IN<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Data.AbstractBinder.html#4702" title="Poco::Data::AbstractBinder::bind()">Poco::Data::AbstractBinder::bind()</a></p></div>
+<h3><a id="695">bind</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void bind(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::deque &lt; <a href="Poco.Data.html#6201" title="Poco::Data::CLOB">CLOB</a> &gt; &amp; val,<br />&nbsp;&nbsp;&nbsp;&nbsp;Direction dir = PD_IN<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Data.AbstractBinder.html#4706" title="Poco::Data::AbstractBinder::bind()">Poco::Data::AbstractBinder::bind()</a></p></div>
+<h3><a id="699">bind</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void bind(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::list &lt; <a href="Poco.Data.html#6201" title="Poco::Data::CLOB">CLOB</a> &gt; &amp; val,<br />&nbsp;&nbsp;&nbsp;&nbsp;Direction dir = PD_IN<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Data.AbstractBinder.html#4710" title="Poco::Data::AbstractBinder::bind()">Poco::Data::AbstractBinder::bind()</a></p></div>
+<h3><a id="703">bind</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void bind(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::vector &lt; <a href="Poco.DateTime.html" title="class Poco::DateTime">DateTime</a> &gt; &amp; val,<br />&nbsp;&nbsp;&nbsp;&nbsp;Direction dir = PD_IN<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Data.AbstractBinder.html#4718" title="Poco::Data::AbstractBinder::bind()">Poco::Data::AbstractBinder::bind()</a></p></div>
+<h3><a id="707">bind</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void bind(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::deque &lt; <a href="Poco.DateTime.html" title="class Poco::DateTime">DateTime</a> &gt; &amp; val,<br />&nbsp;&nbsp;&nbsp;&nbsp;Direction dir = PD_IN<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Data.AbstractBinder.html#4722" title="Poco::Data::AbstractBinder::bind()">Poco::Data::AbstractBinder::bind()</a></p></div>
+<h3><a id="711">bind</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void bind(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::list &lt; <a href="Poco.DateTime.html" title="class Poco::DateTime">DateTime</a> &gt; &amp; val,<br />&nbsp;&nbsp;&nbsp;&nbsp;Direction dir = PD_IN<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Data.AbstractBinder.html#4726" title="Poco::Data::AbstractBinder::bind()">Poco::Data::AbstractBinder::bind()</a></p></div>
+<h3><a id="715">bind</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void bind(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::vector &lt; <a href="Poco.Data.Date.html" title="class Poco::Data::Date">Date</a> &gt; &amp; val,<br />&nbsp;&nbsp;&nbsp;&nbsp;Direction dir = PD_IN<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Data.AbstractBinder.html#4734" title="Poco::Data::AbstractBinder::bind()">Poco::Data::AbstractBinder::bind()</a></p></div>
+<h3><a id="719">bind</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void bind(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::deque &lt; <a href="Poco.Data.Date.html" title="class Poco::Data::Date">Date</a> &gt; &amp; val,<br />&nbsp;&nbsp;&nbsp;&nbsp;Direction dir = PD_IN<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Data.AbstractBinder.html#4738" title="Poco::Data::AbstractBinder::bind()">Poco::Data::AbstractBinder::bind()</a></p></div>
+<h3><a id="723">bind</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void bind(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::list &lt; <a href="Poco.Data.Date.html" title="class Poco::Data::Date">Date</a> &gt; &amp; val,<br />&nbsp;&nbsp;&nbsp;&nbsp;Direction dir = PD_IN<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Data.AbstractBinder.html#4742" title="Poco::Data::AbstractBinder::bind()">Poco::Data::AbstractBinder::bind()</a></p></div>
+<h3><a id="727">bind</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void bind(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::vector &lt; <a href="Poco.Data.Time.html" title="class Poco::Data::Time">Time</a> &gt; &amp; val,<br />&nbsp;&nbsp;&nbsp;&nbsp;Direction dir = PD_IN<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Data.AbstractBinder.html#4750" title="Poco::Data::AbstractBinder::bind()">Poco::Data::AbstractBinder::bind()</a></p></div>
+<h3><a id="731">bind</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void bind(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::deque &lt; <a href="Poco.Data.Time.html" title="class Poco::Data::Time">Time</a> &gt; &amp; val,<br />&nbsp;&nbsp;&nbsp;&nbsp;Direction dir = PD_IN<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Data.AbstractBinder.html#4754" title="Poco::Data::AbstractBinder::bind()">Poco::Data::AbstractBinder::bind()</a></p></div>
+<h3><a id="735">bind</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void bind(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::list &lt; <a href="Poco.Data.Time.html" title="class Poco::Data::Time">Time</a> &gt; &amp; val,<br />&nbsp;&nbsp;&nbsp;&nbsp;Direction dir = PD_IN<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Data.AbstractBinder.html#4758" title="Poco::Data::AbstractBinder::bind()">Poco::Data::AbstractBinder::bind()</a></p></div>
+<h3><a id="739">bind</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void bind(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::vector &lt; <a href="Poco.Data.html#4443" title="Poco::Data::NullData">NullData</a> &gt; &amp; val,<br />&nbsp;&nbsp;&nbsp;&nbsp;Direction dir = PD_IN<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Data.AbstractBinder.html#4766" title="Poco::Data::AbstractBinder::bind()">Poco::Data::AbstractBinder::bind()</a></p></div>
+<h3><a id="743">bind</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void bind(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::deque &lt; <a href="Poco.Data.html#4443" title="Poco::Data::NullData">NullData</a> &gt; &amp; val,<br />&nbsp;&nbsp;&nbsp;&nbsp;Direction dir = PD_IN<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Data.AbstractBinder.html#4770" title="Poco::Data::AbstractBinder::bind()">Poco::Data::AbstractBinder::bind()</a></p></div>
+<h3><a id="747">bind</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void bind(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::list &lt; <a href="Poco.Data.html#4443" title="Poco::Data::NullData">NullData</a> &gt; &amp; val,<br />&nbsp;&nbsp;&nbsp;&nbsp;Direction dir = PD_IN<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Data.AbstractBinder.html#4774" title="Poco::Data::AbstractBinder::bind()">Poco::Data::AbstractBinder::bind()</a></p></div>
+<h3><a id="751">bind</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void bind(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::vector &lt; std::string &gt; &amp; val,<br />&nbsp;&nbsp;&nbsp;&nbsp;Direction dir = PD_IN<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Data.AbstractBinder.html#4654" title="Poco::Data::AbstractBinder::bind()">Poco::Data::AbstractBinder::bind()</a></p></div>
+<h3><a id="755">bind</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void bind(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::deque &lt; std::string &gt; &amp; val,<br />&nbsp;&nbsp;&nbsp;&nbsp;Direction dir = PD_IN<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Data.AbstractBinder.html#4658" title="Poco::Data::AbstractBinder::bind()">Poco::Data::AbstractBinder::bind()</a></p></div>
+<h3><a id="759">bind</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void bind(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::list &lt; std::string &gt; &amp; val,<br />&nbsp;&nbsp;&nbsp;&nbsp;Direction dir = PD_IN<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Data.AbstractBinder.html#4662" title="Poco::Data::AbstractBinder::bind()">Poco::Data::AbstractBinder::bind()</a></p></div>
+<h3><a id="764">getBindArray</a></h3>
+<p class="decl">MYSQL_BIND * getBindArray() const;</p>
+<div class="description">
+<p>Return array Update linked times </p>
+</div>
+<h3><a id="763">size</a></h3>
+<p class="decl">std::size_t size() const;</p>
+<div class="description">
+<p>Return count of binded parameters </p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

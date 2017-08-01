@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::Data::LOBIOS</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.Data.html" class="namespace">Poco::Data</a></h1>
+<h1 class="template">template &lt; typename T &gt;</h1>
+<h1 class="symbol">class LOBIOS</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Data" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Data<br />
+<b>Package:</b> DataCore<br />
+<b>Header:</b> Poco/Data/LOBStream.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>The base class for <a href="Poco.Data.LOBInputStream.html" title="class Poco::Data::LOBInputStream">LOBInputStream</a> and <a href="Poco.Data.LOBOutputStream.html" title="class Poco::Data::LOBOutputStream">LOBOutputStream</a>. </p>
+<p>This class is needed to ensure the correct initialization order of the stream buffer and base classes. </p>
+</div>
+<h2>Inheritance</h2>
+<p><b>Direct Base Classes: </b>std::ios</p>
+<p><b>All Base Classes: </b>std::ios</p>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.Data.LOBIOS.html#6336" title="Poco::Data::LOBIOS::rdbuf()">rdbuf</a></p>
+<h2>Constructors</h2>
+<h3><a id="6332">LOBIOS</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Data.LOBIOS.html" title="class Poco::Data::LOBIOS">LOBIOS</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Data.LOB.html" title="class Poco::Data::LOB">LOB</a> &lt; T &gt; &amp; lob,<br />&nbsp;&nbsp;&nbsp;&nbsp;openmode mode<br />);</p>
+<div class="description">
+<p>Creates the <a href="Poco.Data.LOBIOS.html" title="class Poco::Data::LOBIOS">LOBIOS</a> with the given <a href="Poco.Data.LOB.html" title="class Poco::Data::LOB">LOB</a>. </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="6335">~LOBIOS</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">~<a href="Poco.Data.LOBIOS.html" title="class Poco::Data::LOBIOS">LOBIOS</a>();</p>
+<div class="description">
+<p>Destroys the <a href="Poco.Data.LOBIOS.html" title="class Poco::Data::LOBIOS">LOBIOS</a>. </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="6336">rdbuf</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Data.LOBStreamBuf.html" title="class Poco::Data::LOBStreamBuf">LOBStreamBuf</a> &lt; T &gt; * rdbuf();</p>
+<div class="description">
+<p>Returns a pointer to the internal <a href="Poco.Data.LOBStreamBuf.html" title="class Poco::Data::LOBStreamBuf">LOBStreamBuf</a>. </p>
+</div>
+<h2>Variables</h2>
+<h3><a id="6337">_buf</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Data.LOBStreamBuf.html" title="class Poco::Data::LOBStreamBuf">LOBStreamBuf</a> &lt; T &gt; _buf;</p>
+<div class="description">
+<p></p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

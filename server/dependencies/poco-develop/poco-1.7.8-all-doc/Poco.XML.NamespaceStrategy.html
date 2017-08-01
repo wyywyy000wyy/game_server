@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::XML::NamespaceStrategy</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.XML.html" class="namespace">Poco::XML</a></h1>
+<h1 class="symbol">class NamespaceStrategy</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-XML" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> XML<br />
+<b>Package:</b> XML<br />
+<b>Header:</b> Poco/XML/NamespaceStrategy.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>This class is used by <a href="Poco.XML.ParserEngine.html" title="class Poco::XML::ParserEngine">ParserEngine</a> to handle the startElement, endElement, startPrefixMapping and endPrefixMapping events. </p>
+</div>
+<h2>Inheritance</h2>
+<p><b>Known Derived Classes: </b><a href="Poco.XML.NoNamespacesStrategy.html" title="class Poco::XML::NoNamespacesStrategy">NoNamespacesStrategy</a>, <a href="Poco.XML.NoNamespacePrefixesStrategy.html" title="class Poco::XML::NoNamespacePrefixesStrategy">NoNamespacePrefixesStrategy</a>, <a href="Poco.XML.NamespacePrefixesStrategy.html" title="class Poco::XML::NamespacePrefixesStrategy">NamespacePrefixesStrategy</a></p>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.XML.NamespaceStrategy.html#30267" title="Poco::XML::NamespaceStrategy::endElement()">endElement</a>, <a href="Poco.XML.NamespaceStrategy.html#30270" title="Poco::XML::NamespaceStrategy::splitName()">splitName</a>, <a href="Poco.XML.NamespaceStrategy.html#30262" title="Poco::XML::NamespaceStrategy::startElement()">startElement</a></p>
+<h2>Destructor</h2>
+<h3><a id="30261">~NamespaceStrategy</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual ~<a href="Poco.XML.NamespaceStrategy.html" title="class Poco::XML::NamespaceStrategy">NamespaceStrategy</a>();</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="30267">endElement</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void endElement(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30545" title="Poco::XML::XMLChar">XMLChar</a> * name,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.XML.ContentHandler.html" title="class Poco::XML::ContentHandler">ContentHandler</a> * pContentHandler<br />) = 0;</p>
+<div class="description">
+<p>Translate the arguments as delivered by Expat and call the <a href="Poco.XML.NamespaceStrategy.html#30267" title="Poco::XML::NamespaceStrategy::endElement()">endElement</a>() method of the <a href="Poco.XML.ContentHandler.html" title="class Poco::XML::ContentHandler">ContentHandler</a>. </p>
+</div>
+<h3><a id="30262">startElement</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void startElement(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30545" title="Poco::XML::XMLChar">XMLChar</a> * name,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30545" title="Poco::XML::XMLChar">XMLChar</a> * * atts,<br />&nbsp;&nbsp;&nbsp;&nbsp;int specifiedCount,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.XML.ContentHandler.html" title="class Poco::XML::ContentHandler">ContentHandler</a> * pContentHandler<br />) = 0;</p>
+<div class="description">
+<p>Translate the arguments as delivered by Expat and call the <a href="Poco.XML.NamespaceStrategy.html#30262" title="Poco::XML::NamespaceStrategy::startElement()">startElement</a>() method of the <a href="Poco.XML.ContentHandler.html" title="class Poco::XML::ContentHandler">ContentHandler</a>. </p>
+</div>
+<h3><a id="30270">splitName</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static void splitName(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30545" title="Poco::XML::XMLChar">XMLChar</a> * qname,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; uri,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; localName<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="30274">splitName</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static void splitName(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30545" title="Poco::XML::XMLChar">XMLChar</a> * qname,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; uri,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; localName,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; prefix<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Variables</h2>
+<h3><a id="30279">NOTHING</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> <a href="Poco.XML.NamespaceStrategy.html#30279" title="Poco::XML::NamespaceStrategy::NOTHING">NOTHING</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

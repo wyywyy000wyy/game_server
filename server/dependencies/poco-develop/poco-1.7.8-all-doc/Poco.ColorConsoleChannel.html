@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::ColorConsoleChannel</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.html" class="namespace">Poco</a></h1>
+<h1 class="symbol">class ColorConsoleChannel</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Foundation" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Foundation<br />
+<b>Package:</b> Logging<br />
+<b>Header:</b> Poco/ConsoleChannel.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>A channel that writes to an ostream. </p>
+<p>Only the message's text is written, followed by a newline. </p>
+<p>Messages can be colored depending on priority. The console device must support ANSI escape codes in order to display colored messages. </p>
+<p>To enable message coloring, set the &quot;enableColors&quot; property to true (default). Furthermore, colors can be configured by setting the following properties (default values are given in parenthesis): </p>
+<p></p>
+<ul>
+<li>traceColor (gray) </li>
+<li>debugColor (gray) </li>
+<li>informationColor (default) </li>
+<li>noticeColor (default) </li>
+<li>warningColor (yellow) </li>
+<li>errorColor (lightRed) </li>
+<li>criticalColor (lightRed) </li>
+<li>fatalColor (lightRed) </li>
+</ul>
+<p>The following color values are supported: </p>
+<p></p>
+<ul>
+<li>default </li>
+<li>black </li>
+<li>red </li>
+<li>green </li>
+<li>brown </li>
+<li>blue </li>
+<li>magenta </li>
+<li>cyan </li>
+<li>gray </li>
+<li>darkgray </li>
+<li>lightRed </li>
+<li>lightGreen </li>
+<li>yellow </li>
+<li>lightBlue </li>
+<li>lightMagenta </li>
+<li>lightCyan </li>
+<li>white </li>
+</ul>
+<p>Chain this channel to a <a href="Poco.FormattingChannel.html" title="class Poco::FormattingChannel">FormattingChannel</a> with an appropriate <a href="Poco.Formatter.html" title="class Poco::Formatter">Formatter</a> to control what is contained  in the text. </p>
+<p>Similar to <a href="Poco.StreamChannel.html" title="class Poco::StreamChannel">StreamChannel</a>, except that a static mutex is used to protect against multiple console channels concurrently writing to the same stream. </p>
+</div>
+<h2>Inheritance</h2>
+<p><b>Direct Base Classes: </b><a href="Poco.Channel.html" title="class Poco::Channel">Channel</a></p>
+<p><b>All Base Classes: </b><a href="Poco.Channel.html" title="class Poco::Channel">Channel</a>, <a href="Poco.Configurable.html" title="class Poco::Configurable">Configurable</a>, <a href="Poco.RefCountedObject.html" title="class Poco::RefCountedObject">RefCountedObject</a></p>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.ColorConsoleChannel.html#9244" title="Poco::ColorConsoleChannel::formatColor()">formatColor</a>, <a href="Poco.ColorConsoleChannel.html#9221" title="Poco::ColorConsoleChannel::getProperty()">getProperty</a>, <a href="Poco.ColorConsoleChannel.html#9246" title="Poco::ColorConsoleChannel::initColors()">initColors</a>, <a href="Poco.ColorConsoleChannel.html#9216" title="Poco::ColorConsoleChannel::log()">log</a>, <a href="Poco.ColorConsoleChannel.html#9242" title="Poco::ColorConsoleChannel::parseColor()">parseColor</a>, <a href="Poco.ColorConsoleChannel.html#9218" title="Poco::ColorConsoleChannel::setProperty()">setProperty</a></p>
+<p><b>Inherited Functions: </b><a href="Poco.Channel.html#9020" title="Poco::Channel::close()">close</a>, <a href="Poco.RefCountedObject.html#16511" title="Poco::RefCountedObject::duplicate()">duplicate</a>, <a href="Poco.Channel.html#9026" title="Poco::Channel::getProperty()">getProperty</a>, <a href="Poco.Channel.html#9021" title="Poco::Channel::log()">log</a>, <a href="Poco.Channel.html#9019" title="Poco::Channel::open()">open</a>, <a href="Poco.RefCountedObject.html#16513" title="Poco::RefCountedObject::referenceCount()">referenceCount</a>, <a href="Poco.RefCountedObject.html#16512" title="Poco::RefCountedObject::release()">release</a>, <a href="Poco.Channel.html#9023" title="Poco::Channel::setProperty()">setProperty</a></p>
+<h2>Enumerations</h2>
+<h3><a id="9223">Color</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="9224">CC_DEFAULT</a> = 0x0027</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="9225">CC_BLACK</a> = 0x001e</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="9226">CC_RED</a> = 0x001f</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="9227">CC_GREEN</a> = 0x0020</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="9228">CC_BROWN</a> = 0x0021</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="9229">CC_BLUE</a> = 0x0022</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="9230">CC_MAGENTA</a> = 0x0023</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="9231">CC_CYAN</a> = 0x0024</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="9232">CC_GRAY</a> = 0x0025</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="9233">CC_DARKGRAY</a> = 0x011e</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="9234">CC_LIGHTRED</a> = 0x011f</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="9235">CC_LIGHTGREEN</a> = 0x0120</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="9236">CC_YELLOW</a> = 0x0121</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="9237">CC_LIGHTBLUE</a> = 0x0122</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="9238">CC_LIGHTMAGENTA</a> = 0x0123</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="9239">CC_LIGHTCYAN</a> = 0x0124</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="9240">CC_WHITE</a> = 0x0125</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Constructors</h2>
+<h3><a id="9213">ColorConsoleChannel</a></h3>
+<p class="decl"><a href="Poco.ColorConsoleChannel.html" title="class Poco::ColorConsoleChannel">ColorConsoleChannel</a>();</p>
+<div class="description">
+<p>Creates the channel and attaches std::clog. </p>
+</div>
+<h3><a id="9214">ColorConsoleChannel</a></h3>
+<p class="decl"><a href="Poco.ColorConsoleChannel.html" title="class Poco::ColorConsoleChannel">ColorConsoleChannel</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::ostream &amp; str<br />);</p>
+<div class="description">
+<p>Creates the channel using the given stream. </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="9241">~ColorConsoleChannel</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">~<a href="Poco.ColorConsoleChannel.html" title="class Poco::ColorConsoleChannel">ColorConsoleChannel</a>();</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="9221">getProperty</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">std::string getProperty(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; name<br />) const;</p>
+<div class="description">
+<p>Returns the value of the property with the given name. See <a href="Poco.ColorConsoleChannel.html#9218" title="Poco::ColorConsoleChannel::setProperty()">setProperty</a>() for a description of the supported properties. </p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Channel.html#9026" title="Poco::Channel::getProperty()">Poco::Channel::getProperty()</a></p></div>
+<h3><a id="9216">log</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">void log(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Message.html" title="class Poco::Message">Message</a> &amp; msg<br />);</p>
+<div class="description">
+<p>Logs the given message to the channel's stream. </p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Channel.html#9021" title="Poco::Channel::log()">Poco::Channel::log()</a></p></div>
+<h3><a id="9218">setProperty</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">void setProperty(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; name,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; value<br />);</p>
+<div class="description">
+<p>Sets the property with the given name.  </p>
+<p>The following properties are supported: </p>
+<ul>
+<li>enableColors:      Enable or disable colors. </li>
+<li>traceColor:        Specify color for trace messages. </li>
+<li>debugColor:        Specify color for debug messages. </li>
+<li>informationColor:  Specify color for information messages. </li>
+<li>noticeColor:       Specify color for notice messages. </li>
+<li>warningColor:      Specify color for warning messages. </li>
+<li>errorColor:        Specify color for error messages. </li>
+<li>criticalColor:     Specify color for critical messages. </li>
+<li>fatalColor:        Specify color for fatal messages. </li>
+</ul>
+<p>See the class documentation for a list of supported color values. </p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Channel.html#9023" title="Poco::Channel::setProperty()">Poco::Channel::setProperty()</a></p></div>
+<h3><a id="9244">formatColor</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">std::string formatColor(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.ColorConsoleChannel.html#9223" title="enum  Poco::ColorConsoleChannel::Color">Color</a> color<br />) const;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="9246">initColors</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">void initColors();</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="9242">parseColor</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl"><a href="Poco.ColorConsoleChannel.html#9223" title="enum  Poco::ColorConsoleChannel::Color">Color</a> parseColor(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; color<br />) const;</p>
+<div class="description">
+<p></p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

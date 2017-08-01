@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::XML::DOMImplementation</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.XML.html" class="namespace">Poco::XML</a></h1>
+<h1 class="symbol">class DOMImplementation</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-XML" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> XML<br />
+<b>Package:</b> DOM<br />
+<b>Header:</b> Poco/DOM/DOMImplementation.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>The <a href="Poco.XML.DOMImplementation.html" title="class Poco::XML::DOMImplementation">DOMImplementation</a> interface provides a number of methods for performing operations that are independent of any particular instance of the document object model. In this implementation, <a href="Poco.XML.DOMImplementation.html" title="class Poco::XML::DOMImplementation">DOMImplementation</a> is implemented as a singleton. </p>
+</div>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.XML.DOMImplementation.html#28555" title="Poco::XML::DOMImplementation::createDocument()">createDocument</a>, <a href="Poco.XML.DOMImplementation.html#28551" title="Poco::XML::DOMImplementation::createDocumentType()">createDocumentType</a>, <a href="Poco.XML.DOMImplementation.html#28548" title="Poco::XML::DOMImplementation::hasFeature()">hasFeature</a>, <a href="Poco.XML.DOMImplementation.html#28559" title="Poco::XML::DOMImplementation::instance()">instance</a></p>
+<h2>Constructors</h2>
+<h3><a id="28546">DOMImplementation</a></h3>
+<p class="decl"><a href="Poco.XML.DOMImplementation.html" title="class Poco::XML::DOMImplementation">DOMImplementation</a>();</p>
+<div class="description">
+<p>Creates the <a href="Poco.XML.DOMImplementation.html" title="class Poco::XML::DOMImplementation">DOMImplementation</a>. </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="28547">~DOMImplementation</a></h3>
+<p class="decl">~<a href="Poco.XML.DOMImplementation.html" title="class Poco::XML::DOMImplementation">DOMImplementation</a>();</p>
+<div class="description">
+<p>Destroys the <a href="Poco.XML.DOMImplementation.html" title="class Poco::XML::DOMImplementation">DOMImplementation</a>. </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="28555">createDocument</a></h3>
+<p class="decl"><a href="Poco.XML.Document.html" title="class Poco::XML::Document">Document</a> * createDocument(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; namespaceURI,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; qualifiedName,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.XML.DocumentType.html" title="class Poco::XML::DocumentType">DocumentType</a> * doctype<br />) const;</p>
+<div class="description">
+<p>Creates an <a href="Poco.XML.html" title="namespace Poco::XML">XML</a> <a href="Poco.XML.Document.html" title="class Poco::XML::Document">Document</a> object of the specified type with its document element. </p>
+<p>Note: You can also create a <a href="Poco.XML.Document.html" title="class Poco::XML::Document">Document</a> directly using the new operator. </p>
+</div>
+<h3><a id="28551">createDocumentType</a></h3>
+<p class="decl"><a href="Poco.XML.DocumentType.html" title="class Poco::XML::DocumentType">DocumentType</a> * createDocumentType(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; name,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; publicId,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; systemId<br />) const;</p>
+<div class="description">
+<p>Creates an empty <a href="Poco.XML.DocumentType.html" title="class Poco::XML::DocumentType">DocumentType</a> node. <a href="Poco.XML.Entity.html" title="class Poco::XML::Entity">Entity</a> declarations and notations  are not made available. <a href="Poco.XML.Entity.html" title="class Poco::XML::Entity">Entity</a> reference expansions and default attribute  additions do not occur. </p>
+</div>
+<h3><a id="28548">hasFeature</a></h3>
+<p class="decl">bool hasFeature(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; feature,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; version<br />) const;</p>
+<div class="description">
+<p>Tests if the DOM implementation implements a specific feature. </p>
+<p>The only supported features are &quot;<a href="Poco.XML.html" title="namespace Poco::XML">XML</a>&quot;, version &quot;1.0&quot; and &quot;Core&quot;,  &quot;Events&quot;, &quot;MutationEvents&quot; and &quot;Traversal&quot;, version &quot;2.0&quot;. </p>
+</div>
+<h3><a id="28559">instance</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static const <a href="Poco.XML.DOMImplementation.html" title="class Poco::XML::DOMImplementation">DOMImplementation</a> &amp; instance();</p>
+<div class="description">
+<p>Returns a reference to the default <a href="Poco.XML.DOMImplementation.html" title="class Poco::XML::DOMImplementation">DOMImplementation</a> object. </p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::UniqueExpireCache</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.html" class="namespace">Poco</a></h1>
+<h1 class="template">template &lt; class TKey, class TValue, class TMutex = FastMutex, class TEventMutex = FastMutex &gt;</h1>
+<h1 class="symbol">class UniqueExpireCache</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Foundation" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Foundation<br />
+<b>Package:</b> Cache<br />
+<b>Header:</b> Poco/UniqueExpireCache.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>An <a href="Poco.UniqueExpireCache.html" title="class Poco::UniqueExpireCache">UniqueExpireCache</a> caches entries for a given time amount. In contrast to <a href="Poco.ExpireCache.html" title="class Poco::ExpireCache">ExpireCache</a> which only allows to set a per cache expiration value, it allows to define  expiration per CacheEntry. Each TValue object must thus offer the following method: </p>
+<p></p>
+<pre>const Poco::Timestamp&amp; getExpiration() const;
+</pre>
+<p>which returns the absolute timepoint when the entry will be invalidated. Accessing an object will NOT update this absolute expire timepoint. You can use the <a href="Poco.ExpirationDecorator.html" title="class Poco::ExpirationDecorator">Poco::ExpirationDecorator</a> to add the getExpiration method to values that do not have a getExpiration function. </p>
+<p>Be careful when using an <a href="Poco.UniqueExpireCache.html" title="class Poco::UniqueExpireCache">UniqueExpireCache</a>. A cache is often used like cache.has(x) followed by cache.get x). Note that it could happen that the &quot;has&quot; call works, then the current execution thread gets descheduled, time passes, the entry gets invalid, thus leading to an empty <a href="Poco.SharedPtr.html" title="class Poco::SharedPtr">SharedPtr</a> being returned  when &quot;get&quot; is invoked. </p>
+</div>
+<h2>Inheritance</h2>
+<p><b>Direct Base Classes: </b>AbstractCache&nbsp;&lt;&nbsp;TKey,&nbsp;TValue,&nbsp;UniqueExpireStrategy&nbsp;&lt;&nbsp;TKey,&nbsp;TValue&nbsp;&gt;,&nbsp;TMutex,&nbsp;TEventMutex&nbsp;&gt;</p>
+<p><b>All Base Classes: </b>AbstractCache&nbsp;&lt;&nbsp;TKey,&nbsp;TValue,&nbsp;UniqueExpireStrategy&nbsp;&lt;&nbsp;TKey,&nbsp;TValue&nbsp;&gt;,&nbsp;TMutex,&nbsp;TEventMutex&nbsp;&gt;</p>
+<h2>Constructors</h2>
+<h3><a id="19292">UniqueExpireCache</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.UniqueExpireCache.html" title="class Poco::UniqueExpireCache">UniqueExpireCache</a>();</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="19293">~UniqueExpireCache</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">~<a href="Poco.UniqueExpireCache.html" title="class Poco::UniqueExpireCache">UniqueExpireCache</a>();</p>
+<div class="description">
+<p></p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

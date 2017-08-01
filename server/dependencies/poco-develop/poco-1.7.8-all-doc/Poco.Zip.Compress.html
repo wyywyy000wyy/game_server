@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::Zip::Compress</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.Zip.html" class="namespace">Poco::Zip</a></h1>
+<h1 class="symbol">class Compress</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Zip" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Zip<br />
+<b>Package:</b> Zip<br />
+<b>Header:</b> Poco/Zip/Compress.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>Compresses a directory or files as zip. </p>
+</div>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.Zip.Compress.html#30846" title="Poco::Zip::Compress::addDirectory()">addDirectory</a>, <a href="Poco.Zip.Compress.html#30835" title="Poco::Zip::Compress::addFile()">addFile</a>, <a href="Poco.Zip.Compress.html#30849" title="Poco::Zip::Compress::addRecursive()">addRecursive</a>, <a href="Poco.Zip.Compress.html#30863" title="Poco::Zip::Compress::close()">close</a>, <a href="Poco.Zip.Compress.html#30866" title="Poco::Zip::Compress::getStoreExtensions()">getStoreExtensions</a>, <a href="Poco.Zip.Compress.html#30862" title="Poco::Zip::Compress::getZipComment()">getZipComment</a>, <a href="Poco.Zip.Compress.html#30864" title="Poco::Zip::Compress::setStoreExtensions()">setStoreExtensions</a>, <a href="Poco.Zip.Compress.html#30860" title="Poco::Zip::Compress::setZipComment()">setZipComment</a></p>
+<h2>Constructors</h2>
+<h3><a id="30831">Compress</a></h3>
+<p class="decl"><a href="Poco.Zip.Compress.html" title="class Poco::Zip::Compress">Compress</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::ostream &amp; out,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool seekableOut<br />);</p>
+<div class="description">
+<p>seekableOut determines how we write the zip, setting it to true is recommended for local files (smaller zip file), if you are compressing directly to a network, you MUST set it to false </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="30834">~Compress</a></h3>
+<p class="decl">~<a href="Poco.Zip.Compress.html" title="class Poco::Zip::Compress">Compress</a>();</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="30846">addDirectory</a></h3>
+<p class="decl">void addDirectory(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Path.html" title="class Poco::Path">Poco::Path</a> &amp; entryName,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.DateTime.html" title="class Poco::DateTime">Poco::DateTime</a> &amp; lastModifiedAt<br />);</p>
+<div class="description">
+<p>Adds a directory entry excluding all children to the <a href="Poco.Zip.html" title="namespace Poco::Zip">Zip</a> file, entryName must not be empty. </p>
+</div>
+<h3><a id="30835">addFile</a></h3>
+<p class="decl">void addFile(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::istream &amp; input,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.DateTime.html" title="class Poco::DateTime">Poco::DateTime</a> &amp; lastModifiedAt,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Path.html" title="class Poco::Path">Poco::Path</a> &amp; fileName,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Zip.ZipCommon.html#31111" title="enum  Poco::Zip::ZipCommon::CompressionMethod">ZipCommon::CompressionMethod</a> cm = ZipCommon::CM_DEFLATE,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Zip.ZipCommon.html#31125" title="enum  Poco::Zip::ZipCommon::CompressionLevel">ZipCommon::CompressionLevel</a> cl = ZipCommon::CL_MAXIMUM<br />);</p>
+<div class="description">
+<p>Adds a single file to the <a href="Poco.Zip.html" title="namespace Poco::Zip">Zip</a> <a href="Poco.File.html" title="class Poco::File">File</a>. fileName must not be a directory name. </p>
+</div>
+<h3><a id="30841">addFile</a></h3>
+<p class="decl">void addFile(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Path.html" title="class Poco::Path">Poco::Path</a> &amp; file,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Path.html" title="class Poco::Path">Poco::Path</a> &amp; fileName,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Zip.ZipCommon.html#31111" title="enum  Poco::Zip::ZipCommon::CompressionMethod">ZipCommon::CompressionMethod</a> cm = ZipCommon::CM_DEFLATE,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Zip.ZipCommon.html#31125" title="enum  Poco::Zip::ZipCommon::CompressionLevel">ZipCommon::CompressionLevel</a> cl = ZipCommon::CL_MAXIMUM<br />);</p>
+<div class="description">
+<p>Adds a single file to the <a href="Poco.Zip.html" title="namespace Poco::Zip">Zip</a> <a href="Poco.File.html" title="class Poco::File">File</a>. fileName must not be a directory name. The file must exist physically! </p>
+</div>
+<h3><a id="30849">addRecursive</a></h3>
+<p class="decl">void addRecursive(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Path.html" title="class Poco::Path">Poco::Path</a> &amp; entry,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Zip.ZipCommon.html#31125" title="enum  Poco::Zip::ZipCommon::CompressionLevel">ZipCommon::CompressionLevel</a> cl = ZipCommon::CL_MAXIMUM,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool excludeRoot = true,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Path.html" title="class Poco::Path">Poco::Path</a> &amp; name = Poco::Path ()<br />);</p>
+<div class="description">
+<p>Adds a directory entry recursively to the zip file, set excludeRoot to false to exclude the parent directory. If excludeRoot is true you can specify an empty name to add the files as relative files </p>
+</div>
+<h3><a id="30854">addRecursive</a></h3>
+<p class="decl">void addRecursive(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Path.html" title="class Poco::Path">Poco::Path</a> &amp; entry,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Zip.ZipCommon.html#31111" title="enum  Poco::Zip::ZipCommon::CompressionMethod">ZipCommon::CompressionMethod</a> cm,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Zip.ZipCommon.html#31125" title="enum  Poco::Zip::ZipCommon::CompressionLevel">ZipCommon::CompressionLevel</a> cl = ZipCommon::CL_MAXIMUM,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool excludeRoot = true,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Path.html" title="class Poco::Path">Poco::Path</a> &amp; name = Poco::Path ()<br />);</p>
+<div class="description">
+<p>Adds a directory entry recursively to the zip file, set excludeRoot to false to exclude the parent directory. If excludeRoot is true you can specify an empty name to add the files as relative files </p>
+</div>
+<h3><a id="30863">close</a></h3>
+<p class="decl"><a href="Poco.Zip.ZipArchive.html" title="class Poco::Zip::ZipArchive">ZipArchive</a> close();</p>
+<div class="description">
+<p>Finalizes the <a href="Poco.Zip.ZipArchive.html" title="class Poco::Zip::ZipArchive">ZipArchive</a>, closes it. </p>
+</div>
+<h3><a id="30866">getStoreExtensions</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">const std::set &lt; std::string &gt; &amp; getStoreExtensions() const;</p>
+<div class="description">
+<p>Returns the file extensions for which the CM_STORE compression method is used if CM_AUTO is specified in <a href="Poco.Zip.Compress.html#30835" title="Poco::Zip::Compress::addFile()">addFile</a>() or <a href="Poco.Zip.Compress.html#30849" title="Poco::Zip::Compress::addRecursive()">addRecursive</a>(). </p>
+<p>See <a href="Poco.Zip.Compress.html#30864" title="Poco::Zip::Compress::setStoreExtensions()">setStoreExtensions</a>() for more information. </p>
+</div>
+<h3><a id="30862">getZipComment</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">const std::string &amp; getZipComment() const;</p>
+<div class="description">
+<p>Returns the <a href="Poco.Zip.html" title="namespace Poco::Zip">Zip</a> file comment. </p>
+</div>
+<h3><a id="30864">setStoreExtensions</a></h3>
+<p class="decl">void setStoreExtensions(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::set &lt; std::string &gt; &amp; extensions<br />);</p>
+<div class="description">
+<p>Sets the file extensions for which the CM_STORE compression method is used if CM_AUTO is specified in <a href="Poco.Zip.Compress.html#30835" title="Poco::Zip::Compress::addFile()">addFile</a>() or <a href="Poco.Zip.Compress.html#30849" title="Poco::Zip::Compress::addRecursive()">addRecursive</a>(). For all other extensions, CM_DEFLATE is used. This is used to avoid double compression of already compressed file formats, which usually leads to worse results. Extensions will be converted to lower case. </p>
+<p>The default extensions are: </p>
+<ul>
+<li>gif </li>
+<li>jpg </li>
+<li>jpeg </li>
+<li>png </li>
+</ul>
+</div>
+<h3><a id="30860">setZipComment</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void setZipComment(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; comment<br />);</p>
+<div class="description">
+<p>Sets the <a href="Poco.Zip.html" title="namespace Poco::Zip">Zip</a> file comment. </p>
+</div>
+<h2>Variables</h2>
+<h3><a id="30830">EDone</a></h3>
+<p class="decl"><a href="Poco.FIFOEvent.html" title="class Poco::FIFOEvent">Poco::FIFOEvent</a> &lt; const <a href="Poco.Zip.ZipLocalFileHeader.html" title="class Poco::Zip::ZipLocalFileHeader">ZipLocalFileHeader</a> &gt; <a href="Poco.Zip.Compress.html#30830" title="Poco::Zip::Compress::EDone">EDone</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

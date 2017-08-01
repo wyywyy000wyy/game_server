@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::Util::LayeredConfiguration</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.Util.html" class="namespace">Poco::Util</a></h1>
+<h1 class="symbol">class LayeredConfiguration</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Util" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Util<br />
+<b>Package:</b> Configuration<br />
+<b>Header:</b> Poco/Util/LayeredConfiguration.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>A <a href="Poco.Util.LayeredConfiguration.html" title="class Poco::Util::LayeredConfiguration">LayeredConfiguration</a> consists of a number of AbstractConfigurations. </p>
+<p>When reading a configuration property in a <a href="Poco.Util.LayeredConfiguration.html" title="class Poco::Util::LayeredConfiguration">LayeredConfiguration</a>, all added configurations are searched, in order of their priority. Configurations with lower priority values have precedence. </p>
+<p>When setting a property, the property is always written to the first writeable  configuration (see <a href="Poco.Util.LayeredConfiguration.html#26741" title="Poco::Util::LayeredConfiguration::addWriteable()">addWriteable</a>()).  If no writeable configuration has been added to the <a href="Poco.Util.LayeredConfiguration.html" title="class Poco::Util::LayeredConfiguration">LayeredConfiguration</a>, and an attempt is made to set a property, a <a href="Poco.RuntimeException.html" title="class Poco::RuntimeException">RuntimeException</a> is thrown. </p>
+<p>Every configuration added to the <a href="Poco.Util.LayeredConfiguration.html" title="class Poco::Util::LayeredConfiguration">LayeredConfiguration</a> has a priority value. The priority determines the position where the configuration is inserted, with lower priority values coming before higher priority values. </p>
+<p>If no priority is specified, a priority of 0 is assumed. </p>
+</div>
+<h2>Inheritance</h2>
+<p><b>Direct Base Classes: </b><a href="Poco.Util.AbstractConfiguration.html" title="class Poco::Util::AbstractConfiguration">AbstractConfiguration</a></p>
+<p><b>All Base Classes: </b><a href="Poco.RefCountedObject.html" title="class Poco::RefCountedObject">Poco::RefCountedObject</a>, <a href="Poco.Util.AbstractConfiguration.html" title="class Poco::Util::AbstractConfiguration">AbstractConfiguration</a></p>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.Util.LayeredConfiguration.html#26724" title="Poco::Util::LayeredConfiguration::add()">add</a>, <a href="Poco.Util.LayeredConfiguration.html#26748" title="Poco::Util::LayeredConfiguration::addFront()">addFront</a>, <a href="Poco.Util.LayeredConfiguration.html#26741" title="Poco::Util::LayeredConfiguration::addWriteable()">addWriteable</a>, <a href="Poco.Util.LayeredConfiguration.html#26766" title="Poco::Util::LayeredConfiguration::enumerate()">enumerate</a>, <a href="Poco.Util.LayeredConfiguration.html#26760" title="Poco::Util::LayeredConfiguration::getRaw()">getRaw</a>, <a href="Poco.Util.LayeredConfiguration.html#26772" title="Poco::Util::LayeredConfiguration::highest()">highest</a>, <a href="Poco.Util.LayeredConfiguration.html#26773" title="Poco::Util::LayeredConfiguration::insert()">insert</a>, <a href="Poco.Util.LayeredConfiguration.html#26771" title="Poco::Util::LayeredConfiguration::lowest()">lowest</a>, <a href="Poco.Util.LayeredConfiguration.html#26753" title="Poco::Util::LayeredConfiguration::removeConfiguration()">removeConfiguration</a>, <a href="Poco.Util.LayeredConfiguration.html#26769" title="Poco::Util::LayeredConfiguration::removeRaw()">removeRaw</a>, <a href="Poco.Util.LayeredConfiguration.html#26763" title="Poco::Util::LayeredConfiguration::setRaw()">setRaw</a></p>
+<p><b>Inherited Functions: </b><a href="Poco.Util.AbstractConfiguration.html#26336" title="Poco::Util::AbstractConfiguration::createView()">createView</a>, <a href="Poco.RefCountedObject.html#16511" title="Poco::RefCountedObject::duplicate()">duplicate</a>, <a href="Poco.Util.AbstractConfiguration.html#26344" title="Poco::Util::AbstractConfiguration::enableEvents()">enableEvents</a>, <a href="Poco.Util.AbstractConfiguration.html#26353" title="Poco::Util::AbstractConfiguration::enumerate()">enumerate</a>, <a href="Poco.Util.AbstractConfiguration.html#26346" title="Poco::Util::AbstractConfiguration::eventsEnabled()">eventsEnabled</a>, <a href="Poco.Util.AbstractConfiguration.html#26340" title="Poco::Util::AbstractConfiguration::expand()">expand</a>, <a href="Poco.Util.AbstractConfiguration.html#26305" title="Poco::Util::AbstractConfiguration::getBool()">getBool</a>, <a href="Poco.Util.AbstractConfiguration.html#26300" title="Poco::Util::AbstractConfiguration::getDouble()">getDouble</a>, <a href="Poco.Util.AbstractConfiguration.html#26280" title="Poco::Util::AbstractConfiguration::getInt()">getInt</a>, <a href="Poco.Util.AbstractConfiguration.html#26290" title="Poco::Util::AbstractConfiguration::getInt64()">getInt64</a>, <a href="Poco.Util.AbstractConfiguration.html#26347" title="Poco::Util::AbstractConfiguration::getRaw()">getRaw</a>, <a href="Poco.Util.AbstractConfiguration.html#26275" title="Poco::Util::AbstractConfiguration::getRawString()">getRawString</a>, <a href="Poco.Util.AbstractConfiguration.html#26270" title="Poco::Util::AbstractConfiguration::getString()">getString</a>, <a href="Poco.Util.AbstractConfiguration.html#26282" title="Poco::Util::AbstractConfiguration::getUInt()">getUInt</a>, <a href="Poco.Util.AbstractConfiguration.html#26292" title="Poco::Util::AbstractConfiguration::getUInt64()">getUInt64</a>, <a href="Poco.Util.AbstractConfiguration.html#26268" title="Poco::Util::AbstractConfiguration::has()">has</a>, <a href="Poco.Util.AbstractConfiguration.html#26266" title="Poco::Util::AbstractConfiguration::hasOption()">hasOption</a>, <a href="Poco.Util.AbstractConfiguration.html#26264" title="Poco::Util::AbstractConfiguration::hasProperty()">hasProperty</a>, <a href="Poco.Util.AbstractConfiguration.html#26331" title="Poco::Util::AbstractConfiguration::keys()">keys</a>, <a href="Poco.Util.AbstractConfiguration.html#26366" title="Poco::Util::AbstractConfiguration::parseBool()">parseBool</a>, <a href="Poco.Util.AbstractConfiguration.html#26358" title="Poco::Util::AbstractConfiguration::parseInt()">parseInt</a>, <a href="Poco.Util.AbstractConfiguration.html#26362" title="Poco::Util::AbstractConfiguration::parseInt64()">parseInt64</a>, <a href="Poco.Util.AbstractConfiguration.html#26360" title="Poco::Util::AbstractConfiguration::parseUInt()">parseUInt</a>, <a href="Poco.Util.AbstractConfiguration.html#26364" title="Poco::Util::AbstractConfiguration::parseUInt64()">parseUInt64</a>, <a href="Poco.RefCountedObject.html#16513" title="Poco::RefCountedObject::referenceCount()">referenceCount</a>, <a href="Poco.RefCountedObject.html#16512" title="Poco::RefCountedObject::release()">release</a>, <a href="Poco.Util.AbstractConfiguration.html#26342" title="Poco::Util::AbstractConfiguration::remove()">remove</a>, <a href="Poco.Util.AbstractConfiguration.html#26356" title="Poco::Util::AbstractConfiguration::removeRaw()">removeRaw</a>, <a href="Poco.Util.AbstractConfiguration.html#26328" title="Poco::Util::AbstractConfiguration::setBool()">setBool</a>, <a href="Poco.Util.AbstractConfiguration.html#26325" title="Poco::Util::AbstractConfiguration::setDouble()">setDouble</a>, <a href="Poco.Util.AbstractConfiguration.html#26313" title="Poco::Util::AbstractConfiguration::setInt()">setInt</a>, <a href="Poco.Util.AbstractConfiguration.html#26319" title="Poco::Util::AbstractConfiguration::setInt64()">setInt64</a>, <a href="Poco.Util.AbstractConfiguration.html#26350" title="Poco::Util::AbstractConfiguration::setRaw()">setRaw</a>, <a href="Poco.Util.AbstractConfiguration.html#26368" title="Poco::Util::AbstractConfiguration::setRawWithEvent()">setRawWithEvent</a>, <a href="Poco.Util.AbstractConfiguration.html#26310" title="Poco::Util::AbstractConfiguration::setString()">setString</a>, <a href="Poco.Util.AbstractConfiguration.html#26316" title="Poco::Util::AbstractConfiguration::setUInt()">setUInt</a>, <a href="Poco.Util.AbstractConfiguration.html#26322" title="Poco::Util::AbstractConfiguration::setUInt64()">setUInt64</a></p>
+<h2>Nested Classes</h2>
+<h3><a href="Poco.Util.LayeredConfiguration.ConfigItem.html" class="class">struct ConfigItem</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p>&nbsp;<a href="Poco.Util.LayeredConfiguration.ConfigItem.html"><img src="images/arrow.png" alt="more..." /> </a></p>
+<h2>Types</h2>
+<h3><a id="26755">ConfigPtr</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">typedef <a href="Poco.AutoPtr.html" title="class Poco::AutoPtr">Poco::AutoPtr</a> &lt; <a href="Poco.Util.AbstractConfiguration.html" title="class Poco::Util::AbstractConfiguration">AbstractConfiguration</a> &gt; <a href="Poco.Util.LayeredConfiguration.html#26755" title="Poco::Util::LayeredConfiguration::ConfigPtr">ConfigPtr</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Constructors</h2>
+<h3><a id="26723">LayeredConfiguration</a></h3>
+<p class="decl"><a href="Poco.Util.LayeredConfiguration.html" title="class Poco::Util::LayeredConfiguration">LayeredConfiguration</a>();</p>
+<div class="description">
+<p>Creates the <a href="Poco.Util.LayeredConfiguration.html" title="class Poco::Util::LayeredConfiguration">LayeredConfiguration</a>. </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="26775">~LayeredConfiguration</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">~<a href="Poco.Util.LayeredConfiguration.html" title="class Poco::Util::LayeredConfiguration">LayeredConfiguration</a>();</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="26724">add</a></h3>
+<p class="decl">void add(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Util.AbstractConfiguration.html" title="class Poco::Util::AbstractConfiguration">AbstractConfiguration</a> * pConfig<br />);</p>
+<div class="description">
+<p>Adds a read-only configuration to the back of the <a href="Poco.Util.LayeredConfiguration.html" title="class Poco::Util::LayeredConfiguration">LayeredConfiguration</a>. The <a href="Poco.Util.LayeredConfiguration.html" title="class Poco::Util::LayeredConfiguration">LayeredConfiguration</a> does not take ownership of the given configuration. In other words, the configuration's reference count is incremented. </p>
+</div>
+<h3><a id="26726">add</a></h3>
+<p class="decl">void add(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Util.AbstractConfiguration.html" title="class Poco::Util::AbstractConfiguration">AbstractConfiguration</a> * pConfig,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool shared<br />);</p>
+<div class="description">
+<p>Adds a read-only configuration to the back of the <a href="Poco.Util.LayeredConfiguration.html" title="class Poco::Util::LayeredConfiguration">LayeredConfiguration</a>. If shared is false, the <a href="Poco.Util.LayeredConfiguration.html" title="class Poco::Util::LayeredConfiguration">LayeredConfiguration</a> takes ownership of the given configuration (and the configuration's reference count remains unchanged). </p>
+</div>
+<h3><a id="26729">add</a></h3>
+<p class="decl">void add(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Util.AbstractConfiguration.html" title="class Poco::Util::AbstractConfiguration">AbstractConfiguration</a> * pConfig,<br />&nbsp;&nbsp;&nbsp;&nbsp;int priority<br />);</p>
+<div class="description">
+<p>Adds a read-only configuration to the <a href="Poco.Util.LayeredConfiguration.html" title="class Poco::Util::LayeredConfiguration">LayeredConfiguration</a>. The <a href="Poco.Util.LayeredConfiguration.html" title="class Poco::Util::LayeredConfiguration">LayeredConfiguration</a> does not take ownership of the given configuration. In other words, the configuration's reference count is incremented. </p>
+</div>
+<h3><a id="26732">add</a></h3>
+<p class="decl">void add(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Util.AbstractConfiguration.html" title="class Poco::Util::AbstractConfiguration">AbstractConfiguration</a> * pConfig,<br />&nbsp;&nbsp;&nbsp;&nbsp;int priority,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool shared<br />);</p>
+<div class="description">
+<p>Adds a read-only configuration the <a href="Poco.Util.LayeredConfiguration.html" title="class Poco::Util::LayeredConfiguration">LayeredConfiguration</a>. If shared is false, the <a href="Poco.Util.LayeredConfiguration.html" title="class Poco::Util::LayeredConfiguration">LayeredConfiguration</a> takes ownership of the given configuration (and the configuration's reference count remains unchanged). </p>
+</div>
+<h3><a id="26736">add</a></h3>
+<p class="decl">void add(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Util.AbstractConfiguration.html" title="class Poco::Util::AbstractConfiguration">AbstractConfiguration</a> * pConfig,<br />&nbsp;&nbsp;&nbsp;&nbsp;int priority,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool writeable,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool shared<br />);</p>
+<div class="description">
+<p>Adds a configuration to the <a href="Poco.Util.LayeredConfiguration.html" title="class Poco::Util::LayeredConfiguration">LayeredConfiguration</a>. If shared is false, the <a href="Poco.Util.LayeredConfiguration.html" title="class Poco::Util::LayeredConfiguration">LayeredConfiguration</a> takes ownership of the given configuration (and the configuration's reference count remains unchanged). </p>
+</div>
+<h3><a id="26748">addFront</a></h3>
+<p class="decl">void addFront(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Util.AbstractConfiguration.html" title="class Poco::Util::AbstractConfiguration">AbstractConfiguration</a> * pConfig<br />);</p>
+<div class="description">
+<p><b>Deprecated.</b> <i>This function is deprecated and should no longer be used.</i></p>
+</div>
+<div class="description">
+<p>Adds a read-only configuration to the front of the <a href="Poco.Util.LayeredConfiguration.html" title="class Poco::Util::LayeredConfiguration">LayeredConfiguration</a>. The <a href="Poco.Util.LayeredConfiguration.html" title="class Poco::Util::LayeredConfiguration">LayeredConfiguration</a> does not take ownership of the given configuration. In other words, the configuration's reference count is incremented. </p>
+</div>
+<h3><a id="26750">addFront</a></h3>
+<p class="decl">void addFront(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Util.AbstractConfiguration.html" title="class Poco::Util::AbstractConfiguration">AbstractConfiguration</a> * pConfig,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool shared<br />);</p>
+<div class="description">
+<p><b>Deprecated.</b> <i>This function is deprecated and should no longer be used.</i></p>
+</div>
+<div class="description">
+<p>Adds a read-only configuration to the front of the <a href="Poco.Util.LayeredConfiguration.html" title="class Poco::Util::LayeredConfiguration">LayeredConfiguration</a>. If shared is true, the <a href="Poco.Util.LayeredConfiguration.html" title="class Poco::Util::LayeredConfiguration">LayeredConfiguration</a> takes ownership of the given configuration. </p>
+</div>
+<h3><a id="26741">addWriteable</a></h3>
+<p class="decl">void addWriteable(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Util.AbstractConfiguration.html" title="class Poco::Util::AbstractConfiguration">AbstractConfiguration</a> * pConfig,<br />&nbsp;&nbsp;&nbsp;&nbsp;int priority<br />);</p>
+<div class="description">
+<p>Adds a writeable configuration to the <a href="Poco.Util.LayeredConfiguration.html" title="class Poco::Util::LayeredConfiguration">LayeredConfiguration</a>. The <a href="Poco.Util.LayeredConfiguration.html" title="class Poco::Util::LayeredConfiguration">LayeredConfiguration</a> does not take ownership of the given configuration. In other words, the configuration's reference count is incremented. </p>
+</div>
+<h3><a id="26744">addWriteable</a></h3>
+<p class="decl">void addWriteable(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Util.AbstractConfiguration.html" title="class Poco::Util::AbstractConfiguration">AbstractConfiguration</a> * pConfig,<br />&nbsp;&nbsp;&nbsp;&nbsp;int priority,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool shared<br />);</p>
+<div class="description">
+<p>Adds a writeable configuration to the <a href="Poco.Util.LayeredConfiguration.html" title="class Poco::Util::LayeredConfiguration">LayeredConfiguration</a>. If shared is false, the <a href="Poco.Util.LayeredConfiguration.html" title="class Poco::Util::LayeredConfiguration">LayeredConfiguration</a> takes ownership of the given configuration (and the configuration's reference count remains unchanged). </p>
+</div>
+<h3><a id="26753">removeConfiguration</a></h3>
+<p class="decl">void removeConfiguration(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Util.AbstractConfiguration.html" title="class Poco::Util::AbstractConfiguration">AbstractConfiguration</a> * pConfig<br />);</p>
+<div class="description">
+<p>Removes the given configuration from the <a href="Poco.Util.LayeredConfiguration.html" title="class Poco::Util::LayeredConfiguration">LayeredConfiguration</a>. </p>
+<p>Does nothing if the given configuration is not part of the <a href="Poco.Util.LayeredConfiguration.html" title="class Poco::Util::LayeredConfiguration">LayeredConfiguration</a>. </p>
+</div>
+<h3><a id="26766">enumerate</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">void enumerate(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; key,<br />&nbsp;&nbsp;&nbsp;&nbsp;Keys &amp; range<br />) const;</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Util.AbstractConfiguration.html#26353" title="Poco::Util::AbstractConfiguration::enumerate()">Poco::Util::AbstractConfiguration::enumerate()</a></p></div>
+<h3><a id="26760">getRaw</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">bool getRaw(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; key,<br />&nbsp;&nbsp;&nbsp;&nbsp;std::string &amp; value<br />) const;</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Util.AbstractConfiguration.html#26347" title="Poco::Util::AbstractConfiguration::getRaw()">Poco::Util::AbstractConfiguration::getRaw()</a></p></div>
+<h3><a id="26772">highest</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">int highest() const;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="26773">insert</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">void insert(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Util.LayeredConfiguration.ConfigItem.html" title="struct Poco::Util::LayeredConfiguration::ConfigItem">ConfigItem</a> &amp; item<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="26771">lowest</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">int lowest() const;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="26769">removeRaw</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">void removeRaw(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; key<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Util.AbstractConfiguration.html#26356" title="Poco::Util::AbstractConfiguration::removeRaw()">Poco::Util::AbstractConfiguration::removeRaw()</a></p></div>
+<h3><a id="26763">setRaw</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">void setRaw(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; key,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; value<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Util.AbstractConfiguration.html#26350" title="Poco::Util::AbstractConfiguration::setRaw()">Poco::Util::AbstractConfiguration::setRaw()</a></p></div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

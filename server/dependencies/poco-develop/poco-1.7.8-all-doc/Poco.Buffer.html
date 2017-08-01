@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::Buffer</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.html" class="namespace">Poco</a></h1>
+<h1 class="template">template &lt; class T &gt;</h1>
+<h1 class="symbol">class Buffer</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Foundation" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Foundation<br />
+<b>Package:</b> Core<br />
+<b>Header:</b> Poco/Buffer.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>A buffer class that allocates a buffer of a given type and size  in the constructor and deallocates the buffer in the destructor. </p>
+<p>This class is useful everywhere where a temporary buffer is needed. </p>
+</div>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.Buffer.html#8786" title="Poco::Buffer::append()">append</a>, <a href="Poco.Buffer.html#8783" title="Poco::Buffer::assign()">assign</a>, <a href="Poco.Buffer.html#8804" title="Poco::Buffer::begin()">begin</a>, <a href="Poco.Buffer.html#8793" title="Poco::Buffer::capacity()">capacity</a>, <a href="Poco.Buffer.html#8794" title="Poco::Buffer::capacityBytes()">capacityBytes</a>, <a href="Poco.Buffer.html#8801" title="Poco::Buffer::clear()">clear</a>, <a href="Poco.Buffer.html#8808" title="Poco::Buffer::empty()">empty</a>, <a href="Poco.Buffer.html#8806" title="Poco::Buffer::end()">end</a>, <a href="Poco.Buffer.html#8799" title="Poco::Buffer::operator !=()">operator&nbsp;!=</a>, <a href="Poco.Buffer.html#8774" title="Poco::Buffer::operator =()">operator&nbsp;=</a>, <a href="Poco.Buffer.html#8797" title="Poco::Buffer::operator ==()">operator&nbsp;==</a>, <a href="Poco.Buffer.html#8809" title="Poco::Buffer::operator []()">operator&nbsp;[]</a>, <a href="Poco.Buffer.html#8777" title="Poco::Buffer::resize()">resize</a>, <a href="Poco.Buffer.html#8780" title="Poco::Buffer::setCapacity()">setCapacity</a>, <a href="Poco.Buffer.html#8802" title="Poco::Buffer::size()">size</a>, <a href="Poco.Buffer.html#8803" title="Poco::Buffer::sizeBytes()">sizeBytes</a>, <a href="Poco.Buffer.html#8795" title="Poco::Buffer::swap()">swap</a></p>
+<h2>Constructors</h2>
+<h3><a id="8764">Buffer</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Buffer.html" title="class Poco::Buffer">Buffer</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t capacity<br />);</p>
+<div class="description">
+<p>Creates and allocates the <a href="Poco.Buffer.html" title="class Poco::Buffer">Buffer</a>. </p>
+</div>
+<h3><a id="8772">Buffer</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Buffer.html" title="class Poco::Buffer">Buffer</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Buffer.html" title="class Poco::Buffer">Buffer</a> &amp; other<br />);</p>
+<div class="description">
+<p>Copy constructor. </p>
+</div>
+<h3><a id="8766">Buffer</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Buffer.html" title="class Poco::Buffer">Buffer</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;T * pMem,<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t length<br />);</p>
+<div class="description">
+<p>Creates the <a href="Poco.Buffer.html" title="class Poco::Buffer">Buffer</a>. Length argument specifies the length of the supplied memory pointed to by pMem in the number of elements of type T. Supplied pointer is considered blank and not owned by <a href="Poco.Buffer.html" title="class Poco::Buffer">Buffer</a>, so in this case <a href="Poco.Buffer.html" title="class Poco::Buffer">Buffer</a>  only acts as a wrapper around externally supplied  (and lifetime-managed) memory. </p>
+</div>
+<h3><a id="8769">Buffer</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Buffer.html" title="class Poco::Buffer">Buffer</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const T * pMem,<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t length<br />);</p>
+<div class="description">
+<p>Creates and allocates the <a href="Poco.Buffer.html" title="class Poco::Buffer">Buffer</a>; copies the contents of the supplied memory into the buffer. Length argument specifies the length of the supplied memory pointed to by pMem in the number of elements of type T. </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="8776">~Buffer</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">~<a href="Poco.Buffer.html" title="class Poco::Buffer">Buffer</a>();</p>
+<div class="description">
+<p>Destroys the <a href="Poco.Buffer.html" title="class Poco::Buffer">Buffer</a>. </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="8786">append</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void append(<br />&nbsp;&nbsp;&nbsp;&nbsp;const T * buf,<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t sz<br />);</p>
+<div class="description">
+<p>Resizes this buffer and appends the argument buffer. </p>
+</div>
+<h3><a id="8789">append</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void append(<br />&nbsp;&nbsp;&nbsp;&nbsp;T val<br />);</p>
+<div class="description">
+<p>Resizes this buffer by one element and appends the argument value. </p>
+</div>
+<h3><a id="8791">append</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void append(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Buffer.html" title="class Poco::Buffer">Buffer</a> &amp; buf<br />);</p>
+<div class="description">
+<p>Resizes this buffer and appends the argument buffer. </p>
+</div>
+<h3><a id="8783">assign</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void assign(<br />&nbsp;&nbsp;&nbsp;&nbsp;const T * buf,<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t sz<br />);</p>
+<div class="description">
+<p>Assigns the argument buffer to this buffer. If necessary, resizes the buffer. </p>
+</div>
+<h3><a id="8804">begin</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">T * begin();</p>
+<div class="description">
+<p>Returns a pointer to the beginning of the buffer. </p>
+</div>
+<h3><a id="8805">begin</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">const T * begin() const;</p>
+<div class="description">
+<p>Returns a pointer to the beginning of the buffer. </p>
+</div>
+<h3><a id="8793">capacity</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">std::size_t capacity() const;</p>
+<div class="description">
+<p>Returns the allocated memory size in elements. </p>
+</div>
+<h3><a id="8794">capacityBytes</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">std::size_t capacityBytes() const;</p>
+<div class="description">
+<p>Returns the allocated memory size in bytes. </p>
+</div>
+<h3><a id="8801">clear</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void clear();</p>
+<div class="description">
+<p>Sets the contents of the buffer to zero. </p>
+</div>
+<h3><a id="8808">empty</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool empty() const;</p>
+<div class="description">
+<p>Return true if buffer is empty. </p>
+</div>
+<h3><a id="8806">end</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">T * end();</p>
+<div class="description">
+<p>Returns a pointer to end of the buffer. </p>
+</div>
+<h3><a id="8807">end</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">const T * end() const;</p>
+<div class="description">
+<p>Returns a pointer to the end of the buffer. </p>
+</div>
+<h3><a id="8799">operator !=</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool operator != (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Buffer.html" title="class Poco::Buffer">Buffer</a> &amp; other<br />) const;</p>
+<div class="description">
+<p>Compare operator. </p>
+</div>
+<h3><a id="8774">operator =</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Buffer.html" title="class Poco::Buffer">Buffer</a> &amp; operator = (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Buffer.html" title="class Poco::Buffer">Buffer</a> &amp; other<br />);</p>
+<div class="description">
+<p>Assignment operator. </p>
+</div>
+<h3><a id="8797">operator ==</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool operator == (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Buffer.html" title="class Poco::Buffer">Buffer</a> &amp; other<br />) const;</p>
+<div class="description">
+<p>Compare operator. </p>
+</div>
+<h3><a id="8809">operator []</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">T &amp; operator[] (<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t index<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="8811">operator []</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">const T &amp; operator[] (<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t index<br />) const;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="8777">resize</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void resize(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t newCapacity,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool preserveContent = true<br />);</p>
+<div class="description">
+<p>Resizes the buffer capacity and size. If preserveContent is true, the content of the old buffer is copied over to the new buffer. The new capacity can be larger or smaller than the current one; if it is smaller, capacity will remain intact. Size will always be set to the new capacity. </p>
+<p>Buffers only wrapping externally owned storage can not be  resized. If resize is attempted on those, IllegalAccessException is thrown. </p>
+</div>
+<h3><a id="8780">setCapacity</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void setCapacity(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t newCapacity,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool preserveContent = true<br />);</p>
+<div class="description">
+<p>Sets the buffer capacity. If preserveContent is true, the content of the old buffer is copied over to the new buffer. The new capacity can be larger or smaller than the current one; size will be set to the new capacity only if  new capacity is smaller than the current size, otherwise it will remain intact. </p>
+<p>Buffers only wrapping externally owned storage can not be  resized. If resize is attempted on those, IllegalAccessException is thrown. </p>
+</div>
+<h3><a id="8802">size</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">std::size_t size() const;</p>
+<div class="description">
+<p>Returns the used size of the buffer in elements. </p>
+</div>
+<h3><a id="8803">sizeBytes</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">std::size_t sizeBytes() const;</p>
+<div class="description">
+<p>Returns the used size of the buffer in bytes. </p>
+</div>
+<h3><a id="8795">swap</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void swap(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Buffer.html" title="class Poco::Buffer">Buffer</a> &amp; other<br />);</p>
+<div class="description">
+<p>Swaps the buffer with another one. </p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

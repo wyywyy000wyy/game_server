@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::LinearHashTable::ConstIterator</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.LinearHashTable.html" class="namespace">Poco::LinearHashTable</a></h1>
+<h1 class="symbol">class ConstIterator</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Foundation" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Foundation<br />
+<b>Package:</b> Hashing<br />
+<b>Header:</b> Poco/LinearHashTable.h</p>
+<h2>Inheritance</h2>
+<p><b>Direct Base Classes: </b>std::iterator&nbsp;&lt;&nbsp;std::forward_iterator_tag,&nbsp;Value&nbsp;&gt;</p>
+<p><b>All Base Classes: </b>std::iterator&nbsp;&lt;&nbsp;std::forward_iterator_tag,&nbsp;Value&nbsp;&gt;</p>
+<p><b>Known Derived Classes: </b><a href="Poco.LinearHashTable.Iterator.html" title="class Poco::LinearHashTable::Iterator">Iterator</a></p>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.LinearHashTable.ConstIterator.html#13452" title="Poco::LinearHashTable::ConstIterator::operator !=()">operator&nbsp;!=</a>, <a href="Poco.LinearHashTable.ConstIterator.html#13454" title="Poco::LinearHashTable::ConstIterator::operator *()">operator&nbsp;*</a>, <a href="Poco.LinearHashTable.ConstIterator.html#13456" title="Poco::LinearHashTable::ConstIterator::operator ++()">operator&nbsp;++</a>, <a href="Poco.LinearHashTable.ConstIterator.html#13446" title="Poco::LinearHashTable::ConstIterator::operator =()">operator&nbsp;=</a>, <a href="Poco.LinearHashTable.ConstIterator.html#13450" title="Poco::LinearHashTable::ConstIterator::operator ==()">operator&nbsp;==</a>, <a href="Poco.LinearHashTable.ConstIterator.html#13455" title="Poco::LinearHashTable::ConstIterator::operator->()">operator-&gt;</a>, <a href="Poco.LinearHashTable.ConstIterator.html#13448" title="Poco::LinearHashTable::ConstIterator::swap()">swap</a></p>
+<h2>Constructors</h2>
+<h3><a id="13439">ConstIterator</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.LinearHashTable.ConstIterator.html" title="class Poco::LinearHashTable::ConstIterator">ConstIterator</a>();</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="13444">ConstIterator</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.LinearHashTable.ConstIterator.html" title="class Poco::LinearHashTable::ConstIterator">ConstIterator</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.LinearHashTable.ConstIterator.html" title="class Poco::LinearHashTable::ConstIterator">ConstIterator</a> &amp; it<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="13440">ConstIterator</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.LinearHashTable.ConstIterator.html" title="class Poco::LinearHashTable::ConstIterator">ConstIterator</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.LinearHashTable.html#13437" title="Poco::LinearHashTable::BucketVecIterator">BucketVecIterator</a> &amp; vecIt,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.LinearHashTable.html#13437" title="Poco::LinearHashTable::BucketVecIterator">BucketVecIterator</a> &amp; endIt,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.LinearHashTable.html#13436" title="Poco::LinearHashTable::BucketIterator">BucketIterator</a> &amp; buckIt<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="13452">operator !=</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool operator != (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.LinearHashTable.ConstIterator.html" title="class Poco::LinearHashTable::ConstIterator">ConstIterator</a> &amp; it<br />) const;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="13454">operator *</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">const typename Bucket::value_type &amp; operator * () const;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="13456">operator ++</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.LinearHashTable.ConstIterator.html" title="class Poco::LinearHashTable::ConstIterator">ConstIterator</a> &amp; operator ++ ();</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="13457">operator ++</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.LinearHashTable.ConstIterator.html" title="class Poco::LinearHashTable::ConstIterator">ConstIterator</a> operator ++ (<br />&nbsp;&nbsp;&nbsp;&nbsp;int<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="13446">operator =</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.LinearHashTable.ConstIterator.html" title="class Poco::LinearHashTable::ConstIterator">ConstIterator</a> &amp; operator = (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.LinearHashTable.ConstIterator.html" title="class Poco::LinearHashTable::ConstIterator">ConstIterator</a> &amp; it<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="13450">operator ==</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool operator == (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.LinearHashTable.ConstIterator.html" title="class Poco::LinearHashTable::ConstIterator">ConstIterator</a> &amp; it<br />) const;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="13455">operator-&gt;</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">const typename Bucket::value_type * operator-&gt; () const;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="13448">swap</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void swap(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.LinearHashTable.ConstIterator.html" title="class Poco::LinearHashTable::ConstIterator">ConstIterator</a> &amp; it<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Variables</h2>
+<h3><a id="13461">_buckIt</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl"><a href="Poco.LinearHashTable.html#13436" title="Poco::LinearHashTable::BucketIterator">BucketIterator</a> _buckIt;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="13460">_endIt</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl"><a href="Poco.LinearHashTable.html#13437" title="Poco::LinearHashTable::BucketVecIterator">BucketVecIterator</a> _endIt;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="13462">_initialized</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">bool _initialized;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="13459">_vecIt</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl"><a href="Poco.LinearHashTable.html#13437" title="Poco::LinearHashTable::BucketVecIterator">BucketVecIterator</a> _vecIt;</p>
+<div class="description">
+<p></p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

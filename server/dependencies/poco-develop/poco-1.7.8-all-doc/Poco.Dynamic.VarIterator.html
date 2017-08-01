@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::Dynamic::VarIterator</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.Dynamic.html" class="namespace">Poco::Dynamic</a></h1>
+<h1 class="symbol">class VarIterator</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Foundation" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Foundation<br />
+<b>Package:</b> Dynamic<br />
+<b>Header:</b> Poco/Dynamic/VarIterator.h</p>
+<h2>Description</h2>
+<div class="description">
+<p><a href="Poco.Dynamic.VarIterator.html" title="class Poco::Dynamic::VarIterator">VarIterator</a> class. </p>
+</div>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.Dynamic.VarIterator.html#10820" title="Poco::Dynamic::VarIterator::operator !=()">operator&nbsp;!=</a>, <a href="Poco.Dynamic.VarIterator.html#10822" title="Poco::Dynamic::VarIterator::operator *()">operator&nbsp;*</a>, <a href="Poco.Dynamic.VarIterator.html#10830" title="Poco::Dynamic::VarIterator::operator +()">operator&nbsp;+</a>, <a href="Poco.Dynamic.VarIterator.html#10824" title="Poco::Dynamic::VarIterator::operator ++()">operator&nbsp;++</a>, <a href="Poco.Dynamic.VarIterator.html#10832" title="Poco::Dynamic::VarIterator::operator -()">operator&nbsp;-</a>, <a href="Poco.Dynamic.VarIterator.html#10827" title="Poco::Dynamic::VarIterator::operator --()">operator&nbsp;--</a>, <a href="Poco.Dynamic.VarIterator.html#10816" title="Poco::Dynamic::VarIterator::operator =()">operator&nbsp;=</a>, <a href="Poco.Dynamic.VarIterator.html#10818" title="Poco::Dynamic::VarIterator::operator ==()">operator&nbsp;==</a>, <a href="Poco.Dynamic.VarIterator.html#10823" title="Poco::Dynamic::VarIterator::operator->()">operator-&gt;</a>, <a href="Poco.Dynamic.VarIterator.html#10834" title="Poco::Dynamic::VarIterator::swap()">swap</a></p>
+<h2>Types</h2>
+<h3><a id="10806">difference_type</a></h3>
+<p class="decl">typedef std::ptrdiff_t difference_type;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="10804">iterator_category</a></h3>
+<p class="decl">typedef std::bidirectional_iterator_tag iterator_category;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="10807">pointer</a></h3>
+<p class="decl">typedef <a href="Poco.Dynamic.Var.html" title="class Poco::Dynamic::Var">Var</a> * pointer;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="10808">reference</a></h3>
+<p class="decl">typedef <a href="Poco.Dynamic.Var.html" title="class Poco::Dynamic::Var">Var</a> &amp; reference;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="10805">value_type</a></h3>
+<p class="decl">typedef <a href="Poco.Dynamic.Var.html" title="class Poco::Dynamic::Var">Var</a> value_type;</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Constructors</h2>
+<h3><a id="10813">VarIterator</a></h3>
+<p class="decl"><a href="Poco.Dynamic.VarIterator.html" title="class Poco::Dynamic::VarIterator">VarIterator</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Dynamic.VarIterator.html" title="class Poco::Dynamic::VarIterator">VarIterator</a> &amp; other<br />);</p>
+<div class="description">
+<p>Creates a copy of other <a href="Poco.Dynamic.VarIterator.html" title="class Poco::Dynamic::VarIterator">VarIterator</a>. </p>
+</div>
+<h3><a id="10810">VarIterator</a></h3>
+<p class="decl"><a href="Poco.Dynamic.VarIterator.html" title="class Poco::Dynamic::VarIterator">VarIterator</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Dynamic.Var.html" title="class Poco::Dynamic::Var">Var</a> * pVar,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool positionEnd<br />);</p>
+<div class="description">
+<p>Creates the <a href="Poco.Dynamic.VarIterator.html" title="class Poco::Dynamic::VarIterator">VarIterator</a> and positions it at the end of the recordset if positionEnd is true. Otherwise, it is positioned at the beginning. </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="10815">~VarIterator</a></h3>
+<p class="decl">~<a href="Poco.Dynamic.VarIterator.html" title="class Poco::Dynamic::VarIterator">VarIterator</a>();</p>
+<div class="description">
+<p>Destroys the <a href="Poco.Dynamic.VarIterator.html" title="class Poco::Dynamic::VarIterator">VarIterator</a>. </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="10820">operator !=</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool operator != (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Dynamic.VarIterator.html" title="class Poco::Dynamic::VarIterator">VarIterator</a> &amp; other<br />) const;</p>
+<div class="description">
+<p>Inequality operator. </p>
+</div>
+<h3><a id="10822">operator *</a></h3>
+<p class="decl"><a href="Poco.Dynamic.Var.html" title="class Poco::Dynamic::Var">Var</a> &amp; operator * () const;</p>
+<div class="description">
+<p>Returns value at the current position. </p>
+</div>
+<h3><a id="10830">operator +</a></h3>
+<p class="decl"><a href="Poco.Dynamic.VarIterator.html" title="class Poco::Dynamic::VarIterator">VarIterator</a> operator + (<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t diff<br />) const;</p>
+<div class="description">
+<p>Returns a copy the <a href="Poco.Dynamic.VarIterator.html" title="class Poco::Dynamic::VarIterator">VarIterator</a> advanced by diff positions. </p>
+</div>
+<h3><a id="10824">operator ++</a></h3>
+<p class="decl">const <a href="Poco.Dynamic.VarIterator.html" title="class Poco::Dynamic::VarIterator">VarIterator</a> &amp; operator ++ () const;</p>
+<div class="description">
+<p>Advances by one position and returns current position. </p>
+</div>
+<h3><a id="10825">operator ++</a></h3>
+<p class="decl"><a href="Poco.Dynamic.VarIterator.html" title="class Poco::Dynamic::VarIterator">VarIterator</a> operator ++ (<br />&nbsp;&nbsp;&nbsp;&nbsp;int<br />) const;</p>
+<div class="description">
+<p>Advances by one position and returns copy of the iterator with  previous current position. </p>
+</div>
+<h3><a id="10832">operator -</a></h3>
+<p class="decl"><a href="Poco.Dynamic.VarIterator.html" title="class Poco::Dynamic::VarIterator">VarIterator</a> operator - (<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t diff<br />) const;</p>
+<div class="description">
+<p>Returns a copy the <a href="Poco.Dynamic.VarIterator.html" title="class Poco::Dynamic::VarIterator">VarIterator</a> backed by diff positions. Throws <a href="Poco.RangeException.html" title="class Poco::RangeException">RangeException</a> if diff is larger than current position. </p>
+</div>
+<h3><a id="10827">operator --</a></h3>
+<p class="decl">const <a href="Poco.Dynamic.VarIterator.html" title="class Poco::Dynamic::VarIterator">VarIterator</a> &amp; operator -- () const;</p>
+<div class="description">
+<p>Goes back by one position and returns copy of the iterator with  previous current position. </p>
+</div>
+<h3><a id="10828">operator --</a></h3>
+<p class="decl"><a href="Poco.Dynamic.VarIterator.html" title="class Poco::Dynamic::VarIterator">VarIterator</a> operator -- (<br />&nbsp;&nbsp;&nbsp;&nbsp;int<br />) const;</p>
+<div class="description">
+<p>Goes back by one position and returns previous current position. </p>
+</div>
+<h3><a id="10816">operator =</a></h3>
+<p class="decl"><a href="Poco.Dynamic.VarIterator.html" title="class Poco::Dynamic::VarIterator">VarIterator</a> &amp; operator = (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Dynamic.VarIterator.html" title="class Poco::Dynamic::VarIterator">VarIterator</a> &amp; other<br />);</p>
+<div class="description">
+<p>Assigns the other <a href="Poco.Dynamic.VarIterator.html" title="class Poco::Dynamic::VarIterator">VarIterator</a>. </p>
+</div>
+<h3><a id="10818">operator ==</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool operator == (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Dynamic.VarIterator.html" title="class Poco::Dynamic::VarIterator">VarIterator</a> &amp; other<br />) const;</p>
+<div class="description">
+<p>Equality operator. </p>
+</div>
+<h3><a id="10823">operator-&gt;</a></h3>
+<p class="decl"><a href="Poco.Dynamic.Var.html" title="class Poco::Dynamic::Var">Var</a> * operator-&gt; () const;</p>
+<div class="description">
+<p>Returns pointer to the value at current position. </p>
+</div>
+<h3><a id="10834">swap</a></h3>
+<p class="decl">void swap(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Dynamic.VarIterator.html" title="class Poco::Dynamic::VarIterator">VarIterator</a> &amp; other<br />);</p>
+<div class="description">
+<p>Swaps the <a href="Poco.Dynamic.VarIterator.html" title="class Poco::Dynamic::VarIterator">VarIterator</a> with another one. </p>
+</div>
+<h2>Variables</h2>
+<h3><a id="10809">POSITION_END</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static const std::size_t <a href="Poco.Dynamic.VarIterator.html#10809" title="Poco::Dynamic::VarIterator::POSITION_END">POSITION_END</a>;</p>
+<div class="description">
+<p>End position indicator. </p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

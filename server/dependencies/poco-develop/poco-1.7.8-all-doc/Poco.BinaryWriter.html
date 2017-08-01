@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::BinaryWriter</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.html" class="namespace">Poco</a></h1>
+<h1 class="symbol">class BinaryWriter</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Foundation" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Foundation<br />
+<b>Package:</b> Streams<br />
+<b>Header:</b> Poco/BinaryWriter.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>This class writes basic types (and std::vectors of these)  in binary form into an output stream. It provides an inserter-based interface similar to ostream. The writer also supports automatic conversion from big-endian (network byte order) to little-endian and vice-versa. Use a <a href="Poco.BinaryReader.html" title="class Poco::BinaryReader">BinaryReader</a> to read from a stream created by a <a href="Poco.BinaryWriter.html" title="class Poco::BinaryWriter">BinaryWriter</a>. Be careful when exchanging data between systems with different data type sizes (e.g., 32-bit and 64-bit architectures), as the sizes of some of the basic types may be different. For example, writing a long integer on a 64-bit system and reading it on a 32-bit system may yield an incorrent result. Use fixed-size types (<a href="Poco.html#18380" title="Poco::Int32">Int32</a>, <a href="Poco.html#18384" title="Poco::Int64">Int64</a>, etc.) in such a case. </p>
+</div>
+<h2>Inheritance</h2>
+<p><b>Known Derived Classes: </b><a href="Poco.BasicMemoryBinaryWriter.html" title="class Poco::BasicMemoryBinaryWriter">BasicMemoryBinaryWriter</a></p>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.BinaryWriter.html#8741" title="Poco::BinaryWriter::bad()">bad</a>, <a href="Poco.BinaryWriter.html#8743" title="Poco::BinaryWriter::byteOrder()">byteOrder</a>, <a href="Poco.BinaryWriter.html#8740" title="Poco::BinaryWriter::fail()">fail</a>, <a href="Poco.BinaryWriter.html#8738" title="Poco::BinaryWriter::flush()">flush</a>, <a href="Poco.BinaryWriter.html#8739" title="Poco::BinaryWriter::good()">good</a>, <a href="Poco.BinaryWriter.html#8698" title="Poco::BinaryWriter::operator <<()">operator&nbsp;&lt;&lt;</a>, <a href="Poco.BinaryWriter.html#8742" title="Poco::BinaryWriter::stream()">stream</a>, <a href="Poco.BinaryWriter.html#8728" title="Poco::BinaryWriter::write7BitEncoded()">write7BitEncoded</a>, <a href="Poco.BinaryWriter.html#8737" title="Poco::BinaryWriter::writeBOM()">writeBOM</a>, <a href="Poco.BinaryWriter.html#8732" title="Poco::BinaryWriter::writeRaw()">writeRaw</a></p>
+<h2>Enumerations</h2>
+<h3><a id="8685">StreamByteOrder</a></h3>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="8686">NATIVE_BYTE_ORDER</a> = 1</p>
+<div class="description">
+<p>the host's native byte-order </p>
+</div>
+<p class="decl"><a id="8687">BIG_ENDIAN_BYTE_ORDER</a> = 2</p>
+<div class="description">
+<p>big-endian (network) byte-order </p>
+</div>
+<p class="decl"><a id="8688">NETWORK_BYTE_ORDER</a> = 2</p>
+<div class="description">
+<p>big-endian (network) byte-order </p>
+</div>
+<p class="decl"><a id="8689">LITTLE_ENDIAN_BYTE_ORDER</a> = 3</p>
+<div class="description">
+<p>little-endian byte-order </p>
+</div>
+<h2>Constructors</h2>
+<h3><a id="8690">BinaryWriter</a></h3>
+<p class="decl"><a href="Poco.BinaryWriter.html" title="class Poco::BinaryWriter">BinaryWriter</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::ostream &amp; ostr,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.BinaryWriter.html#8685" title="enum  Poco::BinaryWriter::StreamByteOrder">StreamByteOrder</a> byteOrder = NATIVE_BYTE_ORDER<br />);</p>
+<div class="description">
+<p>Creates the <a href="Poco.BinaryWriter.html" title="class Poco::BinaryWriter">BinaryWriter</a>. </p>
+</div>
+<h3><a id="8693">BinaryWriter</a></h3>
+<p class="decl"><a href="Poco.BinaryWriter.html" title="class Poco::BinaryWriter">BinaryWriter</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::ostream &amp; ostr,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.TextEncoding.html" title="class Poco::TextEncoding">TextEncoding</a> &amp; encoding,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.BinaryWriter.html#8685" title="enum  Poco::BinaryWriter::StreamByteOrder">StreamByteOrder</a> byteOrder = NATIVE_BYTE_ORDER<br />);</p>
+<div class="description">
+<p>Creates the <a href="Poco.BinaryWriter.html" title="class Poco::BinaryWriter">BinaryWriter</a> using the given <a href="Poco.TextEncoding.html" title="class Poco::TextEncoding">TextEncoding</a>. </p>
+<p>Strings will be converted from the currently set global encoding (see <a href="Poco.TextEncoding.html#17765" title="Poco::TextEncoding::global()">Poco::TextEncoding::global</a>()) to the specified encoding. </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="8697">~BinaryWriter</a></h3>
+<p class="decl">~<a href="Poco.BinaryWriter.html" title="class Poco::BinaryWriter">BinaryWriter</a>();</p>
+<div class="description">
+<p>Destroys the <a href="Poco.BinaryWriter.html" title="class Poco::BinaryWriter">BinaryWriter</a>. </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="8741">bad</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool bad();</p>
+<div class="description">
+<p>Returns _ostr.<a href="Poco.BinaryWriter.html#8741" title="Poco::BinaryWriter::bad()">bad</a>(); </p>
+</div>
+<h3><a id="8743">byteOrder</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.BinaryWriter.html#8685" title="enum  Poco::BinaryWriter::StreamByteOrder">StreamByteOrder</a> byteOrder() const;</p>
+<div class="description">
+<p>Returns the byte ordering used by the writer, which is either <a href="Poco.BinaryWriter.html#8687" title="Poco::BinaryWriter::BIG_ENDIAN_BYTE_ORDER">BIG_ENDIAN_BYTE_ORDER</a> or <a href="Poco.BinaryWriter.html#8689" title="Poco::BinaryWriter::LITTLE_ENDIAN_BYTE_ORDER">LITTLE_ENDIAN_BYTE_ORDER</a>. </p>
+</div>
+<h3><a id="8740">fail</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool fail();</p>
+<div class="description">
+<p>Returns _ostr.<a href="Poco.BinaryWriter.html#8740" title="Poco::BinaryWriter::fail()">fail</a>(); </p>
+</div>
+<h3><a id="8738">flush</a></h3>
+<p class="decl">void flush();</p>
+<div class="description">
+<p>Flushes the underlying stream. </p>
+</div>
+<h3><a id="8739">good</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool good();</p>
+<div class="description">
+<p>Returns _ostr.<a href="Poco.BinaryWriter.html#8739" title="Poco::BinaryWriter::good()">good</a>(); </p>
+</div>
+<h3><a id="8698">operator &lt;&lt;</a></h3>
+<p class="decl"><a href="Poco.BinaryWriter.html" title="class Poco::BinaryWriter">BinaryWriter</a> &amp; operator &lt;&lt; (<br />&nbsp;&nbsp;&nbsp;&nbsp;bool value<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="8700">operator &lt;&lt;</a></h3>
+<p class="decl"><a href="Poco.BinaryWriter.html" title="class Poco::BinaryWriter">BinaryWriter</a> &amp; operator &lt;&lt; (<br />&nbsp;&nbsp;&nbsp;&nbsp;char value<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="8702">operator &lt;&lt;</a></h3>
+<p class="decl"><a href="Poco.BinaryWriter.html" title="class Poco::BinaryWriter">BinaryWriter</a> &amp; operator &lt;&lt; (<br />&nbsp;&nbsp;&nbsp;&nbsp;unsigned char value<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="8704">operator &lt;&lt;</a></h3>
+<p class="decl"><a href="Poco.BinaryWriter.html" title="class Poco::BinaryWriter">BinaryWriter</a> &amp; operator &lt;&lt; (<br />&nbsp;&nbsp;&nbsp;&nbsp;signed char value<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="8706">operator &lt;&lt;</a></h3>
+<p class="decl"><a href="Poco.BinaryWriter.html" title="class Poco::BinaryWriter">BinaryWriter</a> &amp; operator &lt;&lt; (<br />&nbsp;&nbsp;&nbsp;&nbsp;short value<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="8708">operator &lt;&lt;</a></h3>
+<p class="decl"><a href="Poco.BinaryWriter.html" title="class Poco::BinaryWriter">BinaryWriter</a> &amp; operator &lt;&lt; (<br />&nbsp;&nbsp;&nbsp;&nbsp;unsigned short value<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="8710">operator &lt;&lt;</a></h3>
+<p class="decl"><a href="Poco.BinaryWriter.html" title="class Poco::BinaryWriter">BinaryWriter</a> &amp; operator &lt;&lt; (<br />&nbsp;&nbsp;&nbsp;&nbsp;int value<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="8712">operator &lt;&lt;</a></h3>
+<p class="decl"><a href="Poco.BinaryWriter.html" title="class Poco::BinaryWriter">BinaryWriter</a> &amp; operator &lt;&lt; (<br />&nbsp;&nbsp;&nbsp;&nbsp;unsigned int value<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="8714">operator &lt;&lt;</a></h3>
+<p class="decl"><a href="Poco.BinaryWriter.html" title="class Poco::BinaryWriter">BinaryWriter</a> &amp; operator &lt;&lt; (<br />&nbsp;&nbsp;&nbsp;&nbsp;long value<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="8716">operator &lt;&lt;</a></h3>
+<p class="decl"><a href="Poco.BinaryWriter.html" title="class Poco::BinaryWriter">BinaryWriter</a> &amp; operator &lt;&lt; (<br />&nbsp;&nbsp;&nbsp;&nbsp;unsigned long value<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="8718">operator &lt;&lt;</a></h3>
+<p class="decl"><a href="Poco.BinaryWriter.html" title="class Poco::BinaryWriter">BinaryWriter</a> &amp; operator &lt;&lt; (<br />&nbsp;&nbsp;&nbsp;&nbsp;float value<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="8720">operator &lt;&lt;</a></h3>
+<p class="decl"><a href="Poco.BinaryWriter.html" title="class Poco::BinaryWriter">BinaryWriter</a> &amp; operator &lt;&lt; (<br />&nbsp;&nbsp;&nbsp;&nbsp;double value<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="8722">operator &lt;&lt;</a></h3>
+<p class="decl"><a href="Poco.BinaryWriter.html" title="class Poco::BinaryWriter">BinaryWriter</a> &amp; operator &lt;&lt; (<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; value<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="8724">operator &lt;&lt;</a></h3>
+<p class="decl"><a href="Poco.BinaryWriter.html" title="class Poco::BinaryWriter">BinaryWriter</a> &amp; operator &lt;&lt; (<br />&nbsp;&nbsp;&nbsp;&nbsp;const char * value<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="8726">operator &lt;&lt;</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">template &lt; typename T &gt; <a href="Poco.BinaryWriter.html" title="class Poco::BinaryWriter">BinaryWriter</a> &amp; operator &lt;&lt; (<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::vector &lt; T &gt; &amp; value<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="8742">stream</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">std::ostream &amp; stream() const;</p>
+<div class="description">
+<p>Returns the underlying stream. </p>
+</div>
+<h3><a id="8728">write7BitEncoded</a></h3>
+<p class="decl">void write7BitEncoded(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.html#18381" title="Poco::UInt32">UInt32</a> value<br />);</p>
+<div class="description">
+<p>Writes a 32-bit unsigned integer in a compressed format. The value is written out seven bits at a time, starting  with the seven least-significant bits.  The high bit of a byte indicates whether there are more bytes to be  written after this one. If value will fit in seven bits, it takes only one byte of space.  If value will not fit in seven bits, the high bit is set on the first byte and  written out. value is then shifted by seven bits and the next byte is written.  This process is repeated until the entire integer has been written. </p>
+</div>
+<h3><a id="8730">write7BitEncoded</a></h3>
+<p class="decl">void write7BitEncoded(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.html#18385" title="Poco::UInt64">UInt64</a> value<br />);</p>
+<div class="description">
+<p>Writes a 64-bit unsigned integer in a compressed format. The value written out seven bits at a time, starting  with the seven least-significant bits.  The high bit of a byte indicates whether there are more bytes to be  written after this one. If value will fit in seven bits, it takes only one byte of space.  If value will not fit in seven bits, the high bit is set on the first byte and  written out. value is then shifted by seven bits and the next byte is written.  This process is repeated until the entire integer has been written. </p>
+</div>
+<h3><a id="8737">writeBOM</a></h3>
+<p class="decl">void writeBOM();</p>
+<div class="description">
+<p>Writes a byte-order mark to the stream. A byte order mark is a 16-bit integer with a value of 0xFEFF, written in host byte-order.  A <a href="Poco.BinaryReader.html" title="class Poco::BinaryReader">BinaryReader</a> uses the byte-order mark to determine the byte-order  of the stream. </p>
+</div>
+<h3><a id="8732">writeRaw</a></h3>
+<p class="decl">void writeRaw(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; rawData<br />);</p>
+<div class="description">
+<p>Writes the string as-is to the stream. </p>
+</div>
+<h3><a id="8734">writeRaw</a></h3>
+<p class="decl">void writeRaw(<br />&nbsp;&nbsp;&nbsp;&nbsp;const char * buffer,<br />&nbsp;&nbsp;&nbsp;&nbsp;std::streamsize length<br />);</p>
+<div class="description">
+<p>Writes length raw bytes from the given buffer to the stream. </p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

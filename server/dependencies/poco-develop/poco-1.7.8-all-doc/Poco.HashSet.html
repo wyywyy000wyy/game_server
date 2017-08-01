@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::HashSet</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.html" class="namespace">Poco</a></h1>
+<h1 class="template">template &lt; class Value, class HashFunc = Hash &lt; Value &gt; &gt;</h1>
+<h1 class="symbol">class HashSet</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Foundation" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Foundation<br />
+<b>Package:</b> Hashing<br />
+<b>Header:</b> Poco/HashSet.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>This class implements a set using a <a href="Poco.LinearHashTable.html" title="class Poco::LinearHashTable">LinearHashTable</a>. </p>
+<p>A <a href="Poco.HashSet.html" title="class Poco::HashSet">HashSet</a> can be used just like a std::set. </p>
+</div>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.HashSet.html#13028" title="Poco::HashSet::begin()">begin</a>, <a href="Poco.HashSet.html#13044" title="Poco::HashSet::clear()">clear</a>, <a href="Poco.HashSet.html#13036" title="Poco::HashSet::count()">count</a>, <a href="Poco.HashSet.html#13046" title="Poco::HashSet::empty()">empty</a>, <a href="Poco.HashSet.html#13029" title="Poco::HashSet::end()">end</a>, <a href="Poco.HashSet.html#13040" title="Poco::HashSet::erase()">erase</a>, <a href="Poco.HashSet.html#13032" title="Poco::HashSet::find()">find</a>, <a href="Poco.HashSet.html#13038" title="Poco::HashSet::insert()">insert</a>, <a href="Poco.HashSet.html#13024" title="Poco::HashSet::operator =()">operator&nbsp;=</a>, <a href="Poco.HashSet.html#13045" title="Poco::HashSet::size()">size</a>, <a href="Poco.HashSet.html#13026" title="Poco::HashSet::swap()">swap</a></p>
+<h2>Types</h2>
+<h3><a id="13017">ConstIterator</a></h3>
+<p class="decl">typedef typename <a href="Poco.HashTable.html#13072" title="Poco::HashTable::ConstIterator">HashTable::ConstIterator</a> <a href="Poco.HashSet.html#13017" title="Poco::HashSet::ConstIterator">ConstIterator</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="13013">ConstPointer</a></h3>
+<p class="decl">typedef const Value * <a href="Poco.HashSet.html#13013" title="Poco::HashSet::ConstPointer">ConstPointer</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="13011">ConstReference</a></h3>
+<p class="decl">typedef const Value &amp; <a href="Poco.HashSet.html#13011" title="Poco::HashSet::ConstReference">ConstReference</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="13014">Hash</a></h3>
+<p class="decl">typedef HashFunc <a href="Poco.HashSet.html#13014" title="Poco::HashSet::Hash">Hash</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="13015">HashTable</a></h3>
+<p class="decl">typedef <a href="Poco.LinearHashTable.html" title="class Poco::LinearHashTable">LinearHashTable</a> &lt; <a href="Poco.HashSet.html#13009" title="Poco::HashSet::ValueType">ValueType</a>, <a href="Poco.HashSet.html#13014" title="Poco::HashSet::Hash">Hash</a> &gt; <a href="Poco.HashSet.html#13015" title="Poco::HashSet::HashTable">HashTable</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="13016">Iterator</a></h3>
+<p class="decl">typedef typename <a href="Poco.HashTable.html#13073" title="Poco::HashTable::Iterator">HashTable::Iterator</a> <a href="Poco.HashSet.html#13016" title="Poco::HashSet::Iterator">Iterator</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="13012">Pointer</a></h3>
+<p class="decl">typedef Value * <a href="Poco.HashSet.html#13012" title="Poco::HashSet::Pointer">Pointer</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="13010">Reference</a></h3>
+<p class="decl">typedef Value &amp; <a href="Poco.HashSet.html#13010" title="Poco::HashSet::Reference">Reference</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="13009">ValueType</a></h3>
+<p class="decl">typedef Value <a href="Poco.HashSet.html#13009" title="Poco::HashSet::ValueType">ValueType</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Constructors</h2>
+<h3><a id="13018">HashSet</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.HashSet.html" title="class Poco::HashSet">HashSet</a>();</p>
+<div class="description">
+<p>Creates an empty <a href="Poco.HashSet.html" title="class Poco::HashSet">HashSet</a>. </p>
+</div>
+<h3><a id="13019">HashSet</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.HashSet.html" title="class Poco::HashSet">HashSet</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t initialReserve<br />);</p>
+<div class="description">
+<p>Creates the <a href="Poco.HashSet.html" title="class Poco::HashSet">HashSet</a>, using the given initialReserve. </p>
+</div>
+<h3><a id="13021">HashSet</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.HashSet.html" title="class Poco::HashSet">HashSet</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.HashSet.html" title="class Poco::HashSet">HashSet</a> &amp; set<br />);</p>
+<div class="description">
+<p>Creates the <a href="Poco.HashSet.html" title="class Poco::HashSet">HashSet</a> by copying another one. </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="13023">~HashSet</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">~<a href="Poco.HashSet.html" title="class Poco::HashSet">HashSet</a>();</p>
+<div class="description">
+<p>Destroys the <a href="Poco.HashSet.html" title="class Poco::HashSet">HashSet</a>. </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="13028">begin</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.HashSet.html#13017" title="Poco::HashSet::ConstIterator">ConstIterator</a> begin() const;</p>
+<div class="description">
+<p>Returns an iterator pointing to the first entry, if one exists. </p>
+</div>
+<h3><a id="13030">begin</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.HashSet.html#13016" title="Poco::HashSet::Iterator">Iterator</a> begin();</p>
+<div class="description">
+<p>Returns an iterator pointing to the first entry, if one exists. </p>
+</div>
+<h3><a id="13044">clear</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void clear();</p>
+<div class="description">
+<p>Erases all elements. </p>
+</div>
+<h3><a id="13036">count</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">std::size_t count(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.HashSet.html#13009" title="Poco::HashSet::ValueType">ValueType</a> &amp; value<br />) const;</p>
+<div class="description">
+<p>Returns the number of elements with the given value, with is either 1 or 0. </p>
+</div>
+<h3><a id="13046">empty</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool empty() const;</p>
+<div class="description">
+<p>Returns true if and only if the table is empty. </p>
+</div>
+<h3><a id="13029">end</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.HashSet.html#13017" title="Poco::HashSet::ConstIterator">ConstIterator</a> end() const;</p>
+<div class="description">
+<p>Returns an iterator pointing to the end of the table. </p>
+</div>
+<h3><a id="13031">end</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.HashSet.html#13016" title="Poco::HashSet::Iterator">Iterator</a> end();</p>
+<div class="description">
+<p>Returns an iterator pointing to the end of the table. </p>
+</div>
+<h3><a id="13040">erase</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void erase(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.HashSet.html#13016" title="Poco::HashSet::Iterator">Iterator</a> it<br />);</p>
+<div class="description">
+<p>Erases the element pointed to by it. </p>
+</div>
+<h3><a id="13042">erase</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void erase(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.HashSet.html#13009" title="Poco::HashSet::ValueType">ValueType</a> &amp; value<br />);</p>
+<div class="description">
+<p>Erases the element with the given value, if it exists. </p>
+</div>
+<h3><a id="13032">find</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.HashSet.html#13017" title="Poco::HashSet::ConstIterator">ConstIterator</a> find(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.HashSet.html#13009" title="Poco::HashSet::ValueType">ValueType</a> &amp; value<br />) const;</p>
+<div class="description">
+<p>Finds an entry in the table. </p>
+</div>
+<h3><a id="13034">find</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.HashSet.html#13016" title="Poco::HashSet::Iterator">Iterator</a> find(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.HashSet.html#13009" title="Poco::HashSet::ValueType">ValueType</a> &amp; value<br />);</p>
+<div class="description">
+<p>Finds an entry in the table. </p>
+</div>
+<h3><a id="13038">insert</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">std::pair &lt; <a href="Poco.HashSet.html#13016" title="Poco::HashSet::Iterator">Iterator</a>, bool &gt; insert(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.HashSet.html#13009" title="Poco::HashSet::ValueType">ValueType</a> &amp; value<br />);</p>
+<div class="description">
+<p>Inserts an element into the set. </p>
+<p>If the element already exists in the set, a pair(iterator, false) with iterator pointing to the  existing element is returned. Otherwise, the element is inserted an a  pair(iterator, true) with iterator pointing to the new element is returned. </p>
+</div>
+<h3><a id="13024">operator =</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.HashSet.html" title="class Poco::HashSet">HashSet</a> &amp; operator = (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.HashSet.html" title="class Poco::HashSet">HashSet</a> &amp; table<br />);</p>
+<div class="description">
+<p>Assigns another <a href="Poco.HashSet.html" title="class Poco::HashSet">HashSet</a>. </p>
+</div>
+<h3><a id="13045">size</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">std::size_t size() const;</p>
+<div class="description">
+<p>Returns the number of elements in the table. </p>
+</div>
+<h3><a id="13026">swap</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void swap(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.HashSet.html" title="class Poco::HashSet">HashSet</a> &amp; set<br />);</p>
+<div class="description">
+<p>Swaps the <a href="Poco.HashSet.html" title="class Poco::HashSet">HashSet</a> with another one. </p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

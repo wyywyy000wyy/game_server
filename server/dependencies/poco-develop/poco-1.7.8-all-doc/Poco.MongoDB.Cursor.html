@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::MongoDB::Cursor</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.MongoDB.html" class="namespace">Poco::MongoDB</a></h1>
+<h1 class="symbol">class Cursor</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-MongoDB" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> MongoDB<br />
+<b>Package:</b> MongoDB<br />
+<b>Header:</b> Poco/MongoDB/Cursor.h</p>
+<h2>Description</h2>
+<div class="description">
+<p><a href="Poco.MongoDB.Cursor.html" title="class Poco::MongoDB::Cursor">Cursor</a> is an helper class for querying multiple documents. </p>
+</div>
+<h2>Inheritance</h2>
+<p><b>Direct Base Classes: </b><a href="Poco.MongoDB.Document.html" title="class Poco::MongoDB::Document">Document</a></p>
+<p><b>All Base Classes: </b><a href="Poco.MongoDB.Document.html" title="class Poco::MongoDB::Document">Document</a></p>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.MongoDB.Cursor.html#20129" title="Poco::MongoDB::Cursor::kill()">kill</a>, <a href="Poco.MongoDB.Cursor.html#20126" title="Poco::MongoDB::Cursor::next()">next</a>, <a href="Poco.MongoDB.Cursor.html#20128" title="Poco::MongoDB::Cursor::query()">query</a></p>
+<p><b>Inherited Functions: </b><a href="Poco.MongoDB.Document.html#20213" title="Poco::MongoDB::Document::add()">add</a>, <a href="Poco.MongoDB.Document.html#20211" title="Poco::MongoDB::Document::addElement()">addElement</a>, <a href="Poco.MongoDB.Document.html#20219" title="Poco::MongoDB::Document::addNewDocument()">addNewDocument</a>, <a href="Poco.MongoDB.Document.html#20221" title="Poco::MongoDB::Document::clear()">clear</a>, <a href="Poco.MongoDB.Document.html#20222" title="Poco::MongoDB::Document::elementNames()">elementNames</a>, <a href="Poco.MongoDB.Document.html#20224" title="Poco::MongoDB::Document::empty()">empty</a>, <a href="Poco.MongoDB.Document.html#20225" title="Poco::MongoDB::Document::exists()">exists</a>, <a href="Poco.MongoDB.Document.html#20227" title="Poco::MongoDB::Document::get()">get</a>, <a href="Poco.MongoDB.Document.html#20234" title="Poco::MongoDB::Document::getInteger()">getInteger</a>, <a href="Poco.MongoDB.Document.html#20236" title="Poco::MongoDB::Document::isType()">isType</a>, <a href="Poco.MongoDB.Document.html#20238" title="Poco::MongoDB::Document::read()">read</a>, <a href="Poco.MongoDB.Document.html#20240" title="Poco::MongoDB::Document::size()">size</a>, <a href="Poco.MongoDB.Document.html#20241" title="Poco::MongoDB::Document::toString()">toString</a>, <a href="Poco.MongoDB.Document.html#20243" title="Poco::MongoDB::Document::write()">write</a></p>
+<h2>Constructors</h2>
+<h3><a id="20122">Cursor</a></h3>
+<p class="decl"><a href="Poco.MongoDB.Cursor.html" title="class Poco::MongoDB::Cursor">Cursor</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; fullCollectionName,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.MongoDB.QueryRequest.html#20385" title="enum  Poco::MongoDB::QueryRequest::Flags">QueryRequest::Flags</a> flags = QueryRequest::QUERY_DEFAULT<br />);</p>
+<div class="description">
+<p>Creates a <a href="Poco.MongoDB.Cursor.html" title="class Poco::MongoDB::Cursor">Cursor</a> for the given database and collection (&quot;database.collection&quot;), using the specified flags. </p>
+</div>
+<h3><a id="20118">Cursor</a></h3>
+<p class="decl"><a href="Poco.MongoDB.Cursor.html" title="class Poco::MongoDB::Cursor">Cursor</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; dbname,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; collectionName,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.MongoDB.QueryRequest.html#20385" title="enum  Poco::MongoDB::QueryRequest::Flags">QueryRequest::Flags</a> flags = QueryRequest::QUERY_DEFAULT<br />);</p>
+<div class="description">
+<p>Creates a <a href="Poco.MongoDB.Cursor.html" title="class Poco::MongoDB::Cursor">Cursor</a> for the given database and collection, using the specified flags. </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="20125">~Cursor</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual ~<a href="Poco.MongoDB.Cursor.html" title="class Poco::MongoDB::Cursor">Cursor</a>();</p>
+<div class="description">
+<p>Destroys the <a href="Poco.MongoDB.Cursor.html" title="class Poco::MongoDB::Cursor">Cursor</a>. </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="20129">kill</a></h3>
+<p class="decl">void kill(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.MongoDB.Connection.html" title="class Poco::MongoDB::Connection">Connection</a> &amp; connection<br />);</p>
+<div class="description">
+<p>Kills the cursor and reset it so that it can be reused. </p>
+</div>
+<h3><a id="20126">next</a></h3>
+<p class="decl"><a href="Poco.MongoDB.ResponseMessage.html" title="class Poco::MongoDB::ResponseMessage">ResponseMessage</a> &amp; next(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.MongoDB.Connection.html" title="class Poco::MongoDB::Connection">Connection</a> &amp; connection<br />);</p>
+<div class="description">
+<p>Tries to get the next documents. As long as <a href="Poco.MongoDB.ResponseMessage.html" title="class Poco::MongoDB::ResponseMessage">ResponseMessage</a> has a cursor ID next can be called to retrieve the next bunch of documents. </p>
+<p>The cursor must be killed (see <a href="Poco.MongoDB.Cursor.html#20129" title="Poco::MongoDB::Cursor::kill()">kill</a>()) when not all documents are needed. </p>
+</div>
+<h3><a id="20128">query</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.MongoDB.QueryRequest.html" title="class Poco::MongoDB::QueryRequest">QueryRequest</a> &amp; query();</p>
+<div class="description">
+<p>Returns the associated query. </p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

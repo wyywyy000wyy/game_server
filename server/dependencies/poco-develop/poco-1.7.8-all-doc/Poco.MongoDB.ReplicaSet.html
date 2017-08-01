@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::MongoDB::ReplicaSet</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.MongoDB.html" class="namespace">Poco::MongoDB</a></h1>
+<h1 class="symbol">class ReplicaSet</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-MongoDB" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> MongoDB<br />
+<b>Package:</b> MongoDB<br />
+<b>Header:</b> Poco/MongoDB/ReplicaSet.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>Class for working with a <a href="Poco.MongoDB.html" title="namespace Poco::MongoDB">MongoDB</a> replica set. </p>
+</div>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.MongoDB.ReplicaSet.html#20437" title="Poco::MongoDB::ReplicaSet::findMaster()">findMaster</a>, <a href="Poco.MongoDB.ReplicaSet.html#20438" title="Poco::MongoDB::ReplicaSet::isMaster()">isMaster</a></p>
+<h2>Constructors</h2>
+<h3><a id="20434">ReplicaSet</a></h3>
+<p class="decl">explicit <a href="Poco.MongoDB.ReplicaSet.html" title="class Poco::MongoDB::ReplicaSet">ReplicaSet</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::vector &lt; <a href="Poco.Net.SocketAddress.html" title="class Poco::Net::SocketAddress">Net::SocketAddress</a> &gt; &amp; addresses<br />);</p>
+<div class="description">
+<p>Creates the <a href="Poco.MongoDB.ReplicaSet.html" title="class Poco::MongoDB::ReplicaSet">ReplicaSet</a> using the given server addresses. </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="20436">~ReplicaSet</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual ~<a href="Poco.MongoDB.ReplicaSet.html" title="class Poco::MongoDB::ReplicaSet">ReplicaSet</a>();</p>
+<div class="description">
+<p>Destroys the <a href="Poco.MongoDB.ReplicaSet.html" title="class Poco::MongoDB::ReplicaSet">ReplicaSet</a>. </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="20437">findMaster</a></h3>
+<p class="decl"><a href="Poco.MongoDB.Connection.html#20086" title="Poco::MongoDB::Connection::Ptr">Connection::Ptr</a> findMaster();</p>
+<div class="description">
+<p>Tries to find the master <a href="Poco.MongoDB.html" title="namespace Poco::MongoDB">MongoDB</a> instance from the addresses passed to the constructor. </p>
+<p>Returns the <a href="Poco.MongoDB.Connection.html" title="class Poco::MongoDB::Connection">Connection</a> to the master, or null if no master instance was found. </p>
+</div>
+<h3><a id="20438">isMaster</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl"><a href="Poco.MongoDB.Connection.html#20086" title="Poco::MongoDB::Connection::Ptr">Connection::Ptr</a> isMaster(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Net.SocketAddress.html" title="class Poco::Net::SocketAddress">Net::SocketAddress</a> &amp; host<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::Data::InternalExtraction</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.Data.html" class="namespace">Poco::Data</a></h1>
+<h1 class="template">template &lt; class C &gt;</h1>
+<h1 class="symbol">class InternalExtraction</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Data" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Data<br />
+<b>Package:</b> DataCore<br />
+<b>Header:</b> Poco/Data/Extraction.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>Vector <a href="Poco.Data.html" title="namespace Poco::Data">Data</a> <a href="Poco.Data.InternalExtraction.html#6234" title="Poco::Data::InternalExtraction::Type">Type</a> specialization for extraction of values from a query result set. Vector bool specialization for extraction of values from a query result set. List <a href="Poco.Data.html" title="namespace Poco::Data">Data</a> <a href="Poco.Data.InternalExtraction.html#6234" title="Poco::Data::InternalExtraction::Type">Type</a> specialization for extraction of values from a query result set. Deque <a href="Poco.Data.html" title="namespace Poco::Data">Data</a> <a href="Poco.Data.InternalExtraction.html#6234" title="Poco::Data::InternalExtraction::Type">Type</a> specialization for extraction of values from a query result set. Container <a href="Poco.Data.html" title="namespace Poco::Data">Data</a> <a href="Poco.Data.InternalExtraction.html#6234" title="Poco::Data::InternalExtraction::Type">Type</a> specialization extension for extraction of values from a query result set. </p>
+<p>This class is intended for PocoData internal use - it is used by <a href="Poco.Data.StatementImpl.html" title="class Poco::Data::StatementImpl">StatementImpl</a>  to automaticaly create internal <a href="Poco.Data.Extraction.html" title="class Poco::Data::Extraction">Extraction</a> in cases when statement returns data and no external storage was supplied. It is later used by <a href="Poco.Data.RecordSet.html" title="class Poco::Data::RecordSet">RecordSet</a> to retrieve the fetched data after statement execution. It takes ownership of the <a href="Poco.Data.Column.html" title="class Poco::Data::Column">Column</a> pointer supplied as constructor argument. <a href="Poco.Data.Column.html" title="class Poco::Data::Column">Column</a> object, in turn owns the data container pointer. </p>
+<p><a href="Poco.Data.InternalExtraction.html" title="class Poco::Data::InternalExtraction">InternalExtraction</a> objects can not be copied or assigned. </p>
+</div>
+<h2>Inheritance</h2>
+<p><b>Direct Base Classes: </b>Extraction&nbsp;&lt;&nbsp;C&nbsp;&gt;</p>
+<p><b>All Base Classes: </b>Extraction&nbsp;&lt;&nbsp;C&nbsp;&gt;</p>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.Data.InternalExtraction.html#6246" title="Poco::Data::InternalExtraction::column()">column</a>, <a href="Poco.Data.InternalExtraction.html#6244" title="Poco::Data::InternalExtraction::isNull()">isNull</a>, <a href="Poco.Data.InternalExtraction.html#6241" title="Poco::Data::InternalExtraction::reset()">reset</a>, <a href="Poco.Data.InternalExtraction.html#6242" title="Poco::Data::InternalExtraction::value()">value</a></p>
+<h2>Types</h2>
+<h3><a id="6235">Ptr</a></h3>
+<p class="decl">typedef <a href="Poco.SharedPtr.html" title="class Poco::SharedPtr">SharedPtr</a> &lt; <a href="Poco.Data.InternalExtraction.html#6234" title="Poco::Data::InternalExtraction::Type">Type</a> &gt; <a href="Poco.Data.InternalExtraction.html#6235" title="Poco::Data::InternalExtraction::Ptr">Ptr</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="6234">Type</a></h3>
+<p class="decl">typedef <a href="Poco.Data.Extraction.html" title="class Poco::Data::Extraction">Extraction</a> &lt; <a href="Poco.Data.InternalExtraction.html#6232" title="Poco::Data::InternalExtraction::ValType">ValType</a> &gt; <a href="Poco.Data.InternalExtraction.html#6234" title="Poco::Data::InternalExtraction::Type">Type</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="6233">ValPtr</a></h3>
+<p class="decl">typedef <a href="Poco.SharedPtr.html" title="class Poco::SharedPtr">SharedPtr</a> &lt; <a href="Poco.Data.InternalExtraction.html#6232" title="Poco::Data::InternalExtraction::ValType">ValType</a> &gt; <a href="Poco.Data.InternalExtraction.html#6233" title="Poco::Data::InternalExtraction::ValPtr">ValPtr</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="6232">ValType</a></h3>
+<p class="decl">typedef typename C::value_type <a href="Poco.Data.InternalExtraction.html#6232" title="Poco::Data::InternalExtraction::ValType">ValType</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Constructors</h2>
+<h3><a id="6236">InternalExtraction</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Data.InternalExtraction.html" title="class Poco::Data::InternalExtraction">InternalExtraction</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;C &amp; result,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Data.Column.html" title="class Poco::Data::Column">Column</a> &lt; C &gt; * pColumn,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Data.Position.html" title="class Poco::Data::Position">Position</a> &amp; pos = Position (0)<br />);</p>
+<div class="description">
+<p>Creates <a href="Poco.Data.InternalExtraction.html" title="class Poco::Data::InternalExtraction">InternalExtraction</a>. </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="6240">~InternalExtraction</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">~<a href="Poco.Data.InternalExtraction.html" title="class Poco::Data::InternalExtraction">InternalExtraction</a>();</p>
+<div class="description">
+<p>Destroys <a href="Poco.Data.InternalExtraction.html" title="class Poco::Data::InternalExtraction">InternalExtraction</a>. </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="6246">column</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">const <a href="Poco.Data.Column.html" title="class Poco::Data::Column">Column</a> &lt; C &gt; &amp; column() const;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="6244">isNull</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool isNull(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t row<br />) const;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="6241">reset</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void reset();</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="6242">value</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">const <a href="Poco.Data.InternalExtraction.html#6232" title="Poco::Data::InternalExtraction::ValType">ValType</a> &amp; value(<br />&nbsp;&nbsp;&nbsp;&nbsp;int index<br />) const;</p>
+<div class="description">
+<p></p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

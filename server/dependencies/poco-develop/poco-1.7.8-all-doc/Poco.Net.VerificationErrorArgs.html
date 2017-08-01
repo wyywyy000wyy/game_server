@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::Net::VerificationErrorArgs</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.Net.html" class="namespace">Poco::Net</a></h1>
+<h1 class="symbol">class VerificationErrorArgs</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-NetSSL_OpenSSL" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> NetSSL_OpenSSL<br />
+<b>Package:</b> SSLCore<br />
+<b>Header:</b> Poco/Net/VerificationErrorArgs.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>A utility class for certificate error handling. </p>
+</div>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.Net.VerificationErrorArgs.html#26208" title="Poco::Net::VerificationErrorArgs::certificate()">certificate</a>, <a href="Poco.Net.VerificationErrorArgs.html#26209" title="Poco::Net::VerificationErrorArgs::errorDepth()">errorDepth</a>, <a href="Poco.Net.VerificationErrorArgs.html#26211" title="Poco::Net::VerificationErrorArgs::errorMessage()">errorMessage</a>, <a href="Poco.Net.VerificationErrorArgs.html#26210" title="Poco::Net::VerificationErrorArgs::errorNumber()">errorNumber</a>, <a href="Poco.Net.VerificationErrorArgs.html#26214" title="Poco::Net::VerificationErrorArgs::getIgnoreError()">getIgnoreError</a>, <a href="Poco.Net.VerificationErrorArgs.html#26212" title="Poco::Net::VerificationErrorArgs::setIgnoreError()">setIgnoreError</a></p>
+<h2>Constructors</h2>
+<h3><a id="26202">VerificationErrorArgs</a></h3>
+<p class="decl"><a href="Poco.Net.VerificationErrorArgs.html" title="class Poco::Net::VerificationErrorArgs">VerificationErrorArgs</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Net.X509Certificate.html" title="class Poco::Net::X509Certificate">X509Certificate</a> &amp; cert,<br />&nbsp;&nbsp;&nbsp;&nbsp;int errDepth,<br />&nbsp;&nbsp;&nbsp;&nbsp;int errNum,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; errMsg<br />);</p>
+<div class="description">
+<p>Creates the <a href="Poco.Net.VerificationErrorArgs.html" title="class Poco::Net::VerificationErrorArgs">VerificationErrorArgs</a>. _ignoreError is per default set to false. </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="26207">~VerificationErrorArgs</a></h3>
+<p class="decl">~<a href="Poco.Net.VerificationErrorArgs.html" title="class Poco::Net::VerificationErrorArgs">VerificationErrorArgs</a>();</p>
+<div class="description">
+<p>Destroys the <a href="Poco.Net.VerificationErrorArgs.html" title="class Poco::Net::VerificationErrorArgs">VerificationErrorArgs</a>. </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="26208">certificate</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">const <a href="Poco.Net.X509Certificate.html" title="class Poco::Net::X509Certificate">X509Certificate</a> &amp; certificate() const;</p>
+<div class="description">
+<p>Returns the certificate that caused the error. </p>
+</div>
+<h3><a id="26209">errorDepth</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">int errorDepth() const;</p>
+<div class="description">
+<p>Returns the position of the certificate in the certificate chain. </p>
+</div>
+<h3><a id="26211">errorMessage</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">const std::string &amp; errorMessage() const;</p>
+<div class="description">
+<p>Returns the textual presentation of the errorNumber. </p>
+</div>
+<h3><a id="26210">errorNumber</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">int errorNumber() const;</p>
+<div class="description">
+<p>Returns the id of the error </p>
+</div>
+<h3><a id="26214">getIgnoreError</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool getIgnoreError() const;</p>
+<div class="description">
+<p>returns the value of _ignoreError </p>
+</div>
+<h3><a id="26212">setIgnoreError</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void setIgnoreError(<br />&nbsp;&nbsp;&nbsp;&nbsp;bool ignoreError<br />);</p>
+<div class="description">
+<p>setIgnoreError to true, if a verification error is judged non-fatal by the user. </p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

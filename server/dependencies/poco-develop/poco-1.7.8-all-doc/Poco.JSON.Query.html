@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::JSON::Query</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.JSON.html" class="namespace">Poco::JSON</a></h1>
+<h1 class="symbol">class Query</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-JSON" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> JSON<br />
+<b>Package:</b> JSON<br />
+<b>Header:</b> Poco/JSON/Query.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>Class that can be used to search for a value in a <a href="Poco.JSON.html" title="namespace Poco::JSON">JSON</a> object or array. </p>
+</div>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.JSON.Query.html#19927" title="Poco::JSON::Query::find()">find</a>, <a href="Poco.JSON.Query.html#19922" title="Poco::JSON::Query::findArray()">findArray</a>, <a href="Poco.JSON.Query.html#19917" title="Poco::JSON::Query::findObject()">findObject</a>, <a href="Poco.JSON.Query.html#19929" title="Poco::JSON::Query::findValue()">findValue</a></p>
+<h2>Constructors</h2>
+<h3><a id="19914">Query</a></h3>
+<p class="decl"><a href="Poco.JSON.Query.html" title="class Poco::JSON::Query">Query</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Dynamic.Var.html" title="class Poco::Dynamic::Var">Dynamic::Var</a> &amp; source<br />);</p>
+<div class="description">
+<p>Creates a <a href="Poco.JSON.Query.html" title="class Poco::JSON::Query">Query</a>/ </p>
+<p>Source must be <a href="Poco.JSON.html" title="namespace Poco::JSON">JSON</a> <a href="Poco.JSON.Object.html" title="class Poco::JSON::Object">Object</a>, <a href="Poco.JSON.Array.html" title="class Poco::JSON::Array">Array</a>, <a href="Poco.JSON.Object.html#19571" title="Poco::JSON::Object::Ptr">Object::Ptr</a>, <a href="Poco.JSON.Array.html#19469" title="Poco::JSON::Array::Ptr">Array::Ptr</a> or empty Var. <a href="Poco.Any.html" title="class Poco::Any">Any</a> other type will trigger throwing of  <a href="Poco.InvalidArgumentException.html" title="class Poco::InvalidArgumentException">InvalidArgumentException</a>. </p>
+<p>Creating <a href="Poco.JSON.Query.html" title="class Poco::JSON::Query">Query</a> holding Ptr will typically result in faster performance. </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="19916">~Query</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual ~<a href="Poco.JSON.Query.html" title="class Poco::JSON::Query">Query</a>();</p>
+<div class="description">
+<p>Destroys the <a href="Poco.JSON.Query.html" title="class Poco::JSON::Query">Query</a>. </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="19927">find</a></h3>
+<p class="decl"><a href="Poco.Dynamic.Var.html" title="class Poco::Dynamic::Var">Dynamic::Var</a> find(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; path<br />) const;</p>
+<div class="description">
+<p>Searches a value. </p>
+<p>Example: &quot;person.children[0].name&quot; will return the the name of the first child. When the value can't be found an empty value is returned. </p>
+</div>
+<h3><a id="19922">findArray</a></h3>
+<p class="decl"><a href="Poco.JSON.Array.html#19469" title="Poco::JSON::Array::Ptr">Array::Ptr</a> findArray(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; path<br />) const;</p>
+<div class="description">
+<p>Search for an array.  </p>
+<p>When the array can't be found, a zero Ptr is returned;  otherwise, a shared pointer to internally held array is returned. If array (as opposed to a pointer to array) is held internally, a shared pointer to new (heap-allocated) <a href="Poco.JSON.Object.html" title="class Poco::JSON::Object">Object</a> is returned; this may be expensive operation. </p>
+</div>
+<h3><a id="19924">findArray</a></h3>
+<p class="decl"><a href="Poco.JSON.Array.html" title="class Poco::JSON::Array">Array</a> &amp; findArray(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; path,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.JSON.Array.html" title="class Poco::JSON::Array">Array</a> &amp; obj<br />) const;</p>
+<div class="description">
+<p>Search for an array.  </p>
+<p>If array is found, it is assigned to the <a href="Poco.JSON.Object.html" title="class Poco::JSON::Object">Object</a> through the reference passed in. When the array can't be  found, the provided <a href="Poco.JSON.Object.html" title="class Poco::JSON::Object">Object</a> is emptied and returned. </p>
+</div>
+<h3><a id="19917">findObject</a></h3>
+<p class="decl"><a href="Poco.JSON.Object.html#19571" title="Poco::JSON::Object::Ptr">Object::Ptr</a> findObject(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; path<br />) const;</p>
+<div class="description">
+<p>Search for an object.  </p>
+<p>When the object can't be found, a zero Ptr is returned;  otherwise, a shared pointer to internally held object is returned. If object (as opposed to a pointer to object) is held internally, a shared pointer to new (heap-allocated) <a href="Poco.JSON.Object.html" title="class Poco::JSON::Object">Object</a> is returned; this may be expensive operation. </p>
+</div>
+<h3><a id="19919">findObject</a></h3>
+<p class="decl"><a href="Poco.JSON.Object.html" title="class Poco::JSON::Object">Object</a> &amp; findObject(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; path,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.JSON.Object.html" title="class Poco::JSON::Object">Object</a> &amp; obj<br />) const;</p>
+<div class="description">
+<p>Search for an object.  </p>
+<p>If object is found, it is assigned to the <a href="Poco.JSON.Object.html" title="class Poco::JSON::Object">Object</a> through the reference passed in. When the object can't be  found, the provided <a href="Poco.JSON.Object.html" title="class Poco::JSON::Object">Object</a> is emptied and returned. </p>
+</div>
+<h3><a id="19929">findValue</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">template &lt; typename T &gt; T findValue(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; path,<br />&nbsp;&nbsp;&nbsp;&nbsp;const T &amp; def<br />) const;</p>
+<div class="description">
+<p>Searches for a value will convert it to the given type. When the value can't be found or has an invalid type the default value will be returned. </p>
+</div>
+<h3><a id="19932">findValue</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">std::string findValue(<br />&nbsp;&nbsp;&nbsp;&nbsp;const char * path,<br />&nbsp;&nbsp;&nbsp;&nbsp;const char * def<br />) const;</p>
+<div class="description">
+<p>Searches for a value will convert it to the given type. When the value can't be found or has an invalid type the default value will be returned. </p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

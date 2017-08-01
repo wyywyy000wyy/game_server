@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::Net::TCPServerConnection</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.Net.html" class="namespace">Poco::Net</a></h1>
+<h1 class="symbol">class TCPServerConnection</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Net" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Net<br />
+<b>Package:</b> TCPServer<br />
+<b>Header:</b> Poco/Net/TCPServerConnection.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>The abstract base class for TCP server connections created by <a href="Poco.Net.TCPServer.html" title="class Poco::Net::TCPServer">TCPServer</a>. </p>
+<p>Derived classes must override the run() method (inherited from <a href="Poco.Runnable.html" title="class Poco::Runnable">Runnable</a>). Furthermore, a <a href="Poco.Net.TCPServerConnectionFactory.html" title="class Poco::Net::TCPServerConnectionFactory">TCPServerConnectionFactory</a> must be provided for the subclass. </p>
+<p>The run() method must perform the complete handling of the client connection. As soon as the run() method returns, the server connection object is destroyed and the connection is automatically closed. </p>
+<p>A new <a href="Poco.Net.TCPServerConnection.html" title="class Poco::Net::TCPServerConnection">TCPServerConnection</a> object will be created for each new client connection that is accepted by <a href="Poco.Net.TCPServer.html" title="class Poco::Net::TCPServer">TCPServer</a>. </p>
+</div>
+<h2>Inheritance</h2>
+<p><b>Direct Base Classes: </b><a href="Poco.Runnable.html" title="class Poco::Runnable">Poco::Runnable</a></p>
+<p><b>All Base Classes: </b><a href="Poco.Runnable.html" title="class Poco::Runnable">Poco::Runnable</a></p>
+<p><b>Known Derived Classes: </b><a href="Poco.Net.HTTPServerConnection.html" title="class Poco::Net::HTTPServerConnection">HTTPServerConnection</a></p>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.Net.TCPServerConnection.html#25135" title="Poco::Net::TCPServerConnection::socket()">socket</a>, <a href="Poco.Net.TCPServerConnection.html#25136" title="Poco::Net::TCPServerConnection::start()">start</a></p>
+<p><b>Inherited Functions: </b><a href="Poco.Runnable.html#16662" title="Poco::Runnable::run()">run</a></p>
+<h2>Constructors</h2>
+<h3><a id="25132">TCPServerConnection</a></h3>
+<p class="decl"><a href="Poco.Net.TCPServerConnection.html" title="class Poco::Net::TCPServerConnection">TCPServerConnection</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Net.StreamSocket.html" title="class Poco::Net::StreamSocket">StreamSocket</a> &amp; socket<br />);</p>
+<div class="description">
+<p>Creates the <a href="Poco.Net.TCPServerConnection.html" title="class Poco::Net::TCPServerConnection">TCPServerConnection</a> using the given stream socket. </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="25134">~TCPServerConnection</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual ~<a href="Poco.Net.TCPServerConnection.html" title="class Poco::Net::TCPServerConnection">TCPServerConnection</a>();</p>
+<div class="description">
+<p>Destroys the <a href="Poco.Net.TCPServerConnection.html" title="class Poco::Net::TCPServerConnection">TCPServerConnection</a>. </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="25135">socket</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Net.StreamSocket.html" title="class Poco::Net::StreamSocket">StreamSocket</a> &amp; socket();</p>
+<div class="description">
+<p>Returns a reference to the underlying socket. </p>
+</div>
+<h3><a id="25136">start</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">void start();</p>
+<div class="description">
+<p>Calls run() and catches any exceptions that might be thrown by run(). </p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

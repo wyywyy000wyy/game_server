@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::StrategyCollection</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.html" class="namespace">Poco</a></h1>
+<h1 class="template">template &lt; class TKey, class TValue &gt;</h1>
+<h1 class="symbol">class StrategyCollection</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Foundation" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Foundation<br />
+<b>Package:</b> Cache<br />
+<b>Header:</b> Poco/StrategyCollection.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>An <a href="Poco.StrategyCollection.html" title="class Poco::StrategyCollection">StrategyCollection</a> is a decorator masking n collections as a single one. </p>
+</div>
+<h2>Inheritance</h2>
+<p><b>Direct Base Classes: </b>AbstractStrategy&nbsp;&lt;&nbsp;TKey,&nbsp;TValue&nbsp;&gt;</p>
+<p><b>All Base Classes: </b>AbstractStrategy&nbsp;&lt;&nbsp;TKey,&nbsp;TValue&nbsp;&gt;</p>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.StrategyCollection.html#17093" title="Poco::StrategyCollection::onAdd()">onAdd</a>, <a href="Poco.StrategyCollection.html#17102" title="Poco::StrategyCollection::onClear()">onClear</a>, <a href="Poco.StrategyCollection.html#17099" title="Poco::StrategyCollection::onGet()">onGet</a>, <a href="Poco.StrategyCollection.html#17105" title="Poco::StrategyCollection::onIsValid()">onIsValid</a>, <a href="Poco.StrategyCollection.html#17096" title="Poco::StrategyCollection::onRemove()">onRemove</a>, <a href="Poco.StrategyCollection.html#17108" title="Poco::StrategyCollection::onReplace()">onReplace</a>, <a href="Poco.StrategyCollection.html#17092" title="Poco::StrategyCollection::popBack()">popBack</a>, <a href="Poco.StrategyCollection.html#17090" title="Poco::StrategyCollection::pushBack()">pushBack</a></p>
+<h2>Types</h2>
+<h3><a id="17087">ConstIterator</a></h3>
+<p class="decl">typedef typename Strategies::const_iterator <a href="Poco.StrategyCollection.html#17087" title="Poco::StrategyCollection::ConstIterator">ConstIterator</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="17086">Iterator</a></h3>
+<p class="decl">typedef typename Strategies::iterator <a href="Poco.StrategyCollection.html#17086" title="Poco::StrategyCollection::Iterator">Iterator</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="17085">Strategies</a></h3>
+<p class="decl">typedef std::vector &lt; <a href="Poco.SharedPtr.html" title="class Poco::SharedPtr">SharedPtr</a> &lt; <a href="Poco.AbstractStrategy.html" title="class Poco::AbstractStrategy">AbstractStrategy</a> &lt; TKey, TValue &gt; &gt; &gt; <a href="Poco.StrategyCollection.html#17085" title="Poco::StrategyCollection::Strategies">Strategies</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Constructors</h2>
+<h3><a id="17088">StrategyCollection</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.StrategyCollection.html" title="class Poco::StrategyCollection">StrategyCollection</a>();</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="17089">~StrategyCollection</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">~<a href="Poco.StrategyCollection.html" title="class Poco::StrategyCollection">StrategyCollection</a>();</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="17093">onAdd</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void onAdd(<br />&nbsp;&nbsp;&nbsp;&nbsp;const void * pSender,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.KeyValueArgs.html" title="class Poco::KeyValueArgs">KeyValueArgs</a> &lt; TKey, TValue &gt; &amp; key<br />);</p>
+<div class="description">
+<p>Adds the key to the strategy. If for the key already an entry exists, it will be overwritten. </p>
+</div>
+<h3><a id="17102">onClear</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void onClear(<br />&nbsp;&nbsp;&nbsp;&nbsp;const void * pSender,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.EventArgs.html" title="class Poco::EventArgs">EventArgs</a> &amp; args<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="17099">onGet</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void onGet(<br />&nbsp;&nbsp;&nbsp;&nbsp;const void * pSender,<br />&nbsp;&nbsp;&nbsp;&nbsp;const TKey &amp; key<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="17105">onIsValid</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void onIsValid(<br />&nbsp;&nbsp;&nbsp;&nbsp;const void * pSender,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.ValidArgs.html" title="class Poco::ValidArgs">ValidArgs</a> &lt; TKey &gt; &amp; key<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="17096">onRemove</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void onRemove(<br />&nbsp;&nbsp;&nbsp;&nbsp;const void * pSender,<br />&nbsp;&nbsp;&nbsp;&nbsp;const TKey &amp; key<br />);</p>
+<div class="description">
+<p>Removes an entry from the strategy. If the entry is not found the remove is ignored. </p>
+</div>
+<h3><a id="17108">onReplace</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void onReplace(<br />&nbsp;&nbsp;&nbsp;&nbsp;const void * pSender,<br />&nbsp;&nbsp;&nbsp;&nbsp;std::set &lt; TKey &gt; &amp; elemsToRemove<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="17092">popBack</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void popBack();</p>
+<div class="description">
+<p>Removes the last added <a href="Poco.AbstractStrategy.html" title="class Poco::AbstractStrategy">AbstractStrategy</a> from the collection. </p>
+</div>
+<h3><a id="17090">pushBack</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void pushBack(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.AbstractStrategy.html" title="class Poco::AbstractStrategy">AbstractStrategy</a> &lt; TKey, TValue &gt; * pStrat<br />);</p>
+<div class="description">
+<p>Adds an <a href="Poco.AbstractStrategy.html" title="class Poco::AbstractStrategy">AbstractStrategy</a> to the collection. Class takes ownership of pointer </p>
+</div>
+<h2>Variables</h2>
+<h3><a id="17111">_strategies</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl"><a href="Poco.StrategyCollection.html#17085" title="Poco::StrategyCollection::Strategies">Strategies</a> _strategies;</p>
+<div class="description">
+<p></p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

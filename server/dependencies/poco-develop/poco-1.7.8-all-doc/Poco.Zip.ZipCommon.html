@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::Zip::ZipCommon</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.Zip.html" class="namespace">Poco::Zip</a></h1>
+<h1 class="symbol">class ZipCommon</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Zip" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Zip<br />
+<b>Package:</b> Zip<br />
+<b>Header:</b> Poco/Zip/ZipCommon.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>Common enums used in the <a href="Poco.Zip.html" title="namespace Poco::Zip">Zip</a> project </p>
+</div>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.Zip.ZipCommon.html#31153" title="Poco::Zip::ZipCommon::isValidPath()">isValidPath</a></p>
+<h2>Enumerations</h2>
+<h3><i>Anonymous</i></h3>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="31110">HEADER_SIZE</a> = 4</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="31125">CompressionLevel</a></h3>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="31126">CL_NORMAL</a> = 0</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="31127">CL_MAXIMUM</a> = 1</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="31128">CL_FAST</a> = 2</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="31129">CL_SUPERFAST</a> = 3</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="31111">CompressionMethod</a></h3>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="31112">CM_STORE</a> = 0</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="31113">CM_SHRUNK</a> = 1</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="31114">CM_FACTOR1</a> = 2</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="31115">CM_FACTOR2</a> = 3</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="31116">CM_FACTOR3</a> = 4</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="31117">CM_FACTOR4</a> = 5</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="31118">CM_IMPLODE</a> = 6</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="31119">CM_TOKENIZE</a> = 7</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="31120">CM_DEFLATE</a> = 8</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="31121">CM_ENHANCEDDEFLATE</a> = 9</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="31122">CM_DATECOMPRIMPLODING</a> = 10</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="31123">CM_UNUSED</a> = 11</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="31124">CM_AUTO</a> = 255</p>
+<div class="description">
+<p>automatically select DM_DEFLATE or <a href="Poco.Zip.ZipCommon.html#31112" title="Poco::Zip::ZipCommon::CM_STORE">CM_STORE</a> based on file type (extension) </p>
+</div>
+<h3><a id="31150">FileType</a></h3>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="31151">FT_BINARY</a> = 0</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="31152">FT_ASCII</a> = 1</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="31130">HostSystem</a></h3>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="31131">HS_FAT</a> = 0</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="31132">HS_AMIGA</a> = 1</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="31133">HS_VMS</a> = 2</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="31134">HS_UNIX</a> = 3</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="31135">HS_VM_CMS</a> = 4</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="31136">HS_ATARI</a> = 5</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="31137">HS_HPFS</a> = 6</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="31138">HS_MACINTOSH</a> = 7</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="31139">HS_ZSYSTEM</a> = 8</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="31140">HS_CP_M</a> = 9</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="31141">HS_TOPS20</a> = 10</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="31142">HS_NTFS</a> = 11</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="31143">HS_SMS_QDOS</a> = 12</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="31144">HS_ACORN</a> = 13</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="31145">HS_VFAT</a> = 14</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="31146">HS_MVS</a> = 15</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="31147">HS_BEOS</a> = 16</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="31148">HS_TANDEM</a> = 17</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="31149">HS_UNUSED</a> = 18</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="31153">isValidPath</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static bool isValidPath(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; path<br />);</p>
+<div class="description">
+<p>Checks whether the given path is valid (does not contain &quot;..&quot; path segments). </p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

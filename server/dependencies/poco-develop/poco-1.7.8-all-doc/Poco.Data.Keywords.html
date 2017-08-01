@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Namespace Poco::Data::Keywords</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.Data.html" class="namespace">Poco::Data</a></h1>
+<h1 class="symbol">namespace Keywords</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<h2>Overview</h2>
+<p><b>Functions:</b> 
+<a href="Poco.Data.Keywords.html#7446" title="Poco::Data::Keywords::async()">async</a>, <a href="Poco.Data.Keywords.html#5616" title="Poco::Data::Keywords::bind()">bind</a>, <a href="Poco.Data.Keywords.html#5631" title="Poco::Data::Keywords::bulk()">bulk</a>, <a href="Poco.Data.Keywords.html#7448" title="Poco::Data::Keywords::deque()">deque</a>, <a href="Poco.Data.Keywords.html#6897" title="Poco::Data::Keywords::format()">format</a>, <a href="Poco.Data.Keywords.html#6479" title="Poco::Data::Keywords::from()">from</a>, <a href="Poco.Data.Keywords.html#5598" title="Poco::Data::Keywords::in()">in</a>, <a href="Poco.Data.Keywords.html#5730" title="Poco::Data::Keywords::into()">into</a>, <a href="Poco.Data.Keywords.html#5606" title="Poco::Data::Keywords::io()">io</a>, <a href="Poco.Data.Keywords.html#6500" title="Poco::Data::Keywords::limit()">limit</a>, <a href="Poco.Data.Keywords.html#7452" title="Poco::Data::Keywords::list()">list</a>, <a href="Poco.Data.Keywords.html#6506" title="Poco::Data::Keywords::lowerLimit()">lowerLimit</a>, <a href="Poco.Data.Keywords.html#7442" title="Poco::Data::Keywords::now()">now</a>, <a href="Poco.Data.Keywords.html#5604" title="Poco::Data::Keywords::out()">out</a>, <a href="Poco.Data.Keywords.html#6508" title="Poco::Data::Keywords::range()">range</a>, <a href="Poco.Data.Keywords.html#7454" title="Poco::Data::Keywords::reset()">reset</a>, <a href="Poco.Data.Keywords.html#7444" title="Poco::Data::Keywords::sync()">sync</a>, <a href="Poco.Data.Keywords.html#6503" title="Poco::Data::Keywords::upperLimit()">upperLimit</a>, <a href="Poco.Data.Keywords.html#5589" title="Poco::Data::Keywords::use()">use</a>, <a href="Poco.Data.Keywords.html#5595" title="Poco::Data::Keywords::useRef()">useRef</a>, <a href="Poco.Data.Keywords.html#7450" title="Poco::Data::Keywords::vector()">vector</a></p>
+<h2>Functions</h2>
+<h3><a id="7446">async</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">inline void async(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Data.Statement.html" title="class Poco::Data::Statement">Statement</a> &amp; statement<br />);</p>
+<div class="description">
+<p>Sets the _async flag to true, signalling asynchronous execution. </p>
+</div>
+<h3><a id="5616">bind</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">template &lt; typename T &gt; inline <a href="Poco.Data.AbstractBinding.html#4792" title="Poco::Data::AbstractBinding::Ptr">AbstractBinding::Ptr</a> bind(<br />&nbsp;&nbsp;&nbsp;&nbsp;T t,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; name<br />);</p>
+<div class="description">
+<p>Convenience function for a more compact <a href="Poco.Data.Binding.html" title="class Poco::Data::Binding">Binding</a> creation. This funtion differs from <a href="Poco.Data.Keywords.html#5589" title="Poco::Data::Keywords::use()">use</a>() in its value copy semantics. </p>
+</div>
+<h3><a id="5619">bind</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">template &lt; typename T &gt; inline <a href="Poco.Data.AbstractBinding.html#4792" title="Poco::Data::AbstractBinding::Ptr">AbstractBinding::Ptr</a> bind(<br />&nbsp;&nbsp;&nbsp;&nbsp;T t<br />);</p>
+<div class="description">
+<p>Convenience function for a more compact <a href="Poco.Data.Binding.html" title="class Poco::Data::Binding">Binding</a> creation. This funtion differs from <a href="Poco.Data.Keywords.html#5589" title="Poco::Data::Keywords::use()">use</a>() in its value copy semantics. </p>
+</div>
+<h3><a id="5631">bulk</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">inline <a href="Poco.Data.Bulk.html" title="class Poco::Data::Bulk">Bulk</a> bulk(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Data.Limit.html" title="class Poco::Data::Limit">Limit</a> &amp; limit = Limit (Limit::LIMIT_UNLIMITED, false, false)<br />);</p>
+<div class="description">
+<p>Convenience function for creation of bulk. </p>
+</div>
+<h3><a id="5633">bulk</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">inline void bulk(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Void.html" title="class Poco::Void">Void</a><br />);</p>
+<div class="description">
+<p>Dummy bulk function. Used for bulk binding creation (see <a href="Poco.Data.BulkBinding.html" title="class Poco::Data::BulkBinding">BulkBinding</a>) and bulk extraction signalling to <a href="Poco.Data.Statement.html" title="class Poco::Data::Statement">Statement</a>. </p>
+</div>
+<h3><a id="7448">deque</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">inline void deque(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Data.Statement.html" title="class Poco::Data::Statement">Statement</a> &amp; statement<br />);</p>
+<div class="description">
+<p>Sets the internal storage to std::deque. std::deque is default storage, so specifying this manipulator only makes sense if <a href="Poco.Data.Keywords.html#7452" title="Poco::Data::Keywords::list()">list</a>() or <a href="Poco.Data.Keywords.html#7448" title="Poco::Data::Keywords::deque()">deque</a>() were called for the statement before. </p>
+</div>
+<h3><a id="6897">format</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">template &lt; typename T &gt; inline <a href="Poco.Data.RowFormatter.html#6855" title="Poco::Data::RowFormatter::Ptr">RowFormatter::Ptr</a> format(<br />&nbsp;&nbsp;&nbsp;&nbsp;const T &amp; formatter<br />);</p>
+<div class="description">
+<p>Utility function used to pass formatter to the statement. </p>
+</div>
+<h3><a id="6479">from</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">template &lt; typename T &gt; inline <a href="Poco.Data.Position.html" title="class Poco::Data::Position">Position</a> from(<br />&nbsp;&nbsp;&nbsp;&nbsp;const T &amp; value<br />);</p>
+<div class="description">
+<p>Convenience function for creation of position. </p>
+</div>
+<h3><a id="5598">in</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">template &lt; typename T &gt; inline <a href="Poco.Data.AbstractBinding.html#4792" title="Poco::Data::AbstractBinding::Ptr">AbstractBinding::Ptr</a> in(<br />&nbsp;&nbsp;&nbsp;&nbsp;T &amp; t,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; name = ""<br />);</p>
+<div class="description">
+<p>Convenience function for a more compact <a href="Poco.Data.Binding.html" title="class Poco::Data::Binding">Binding</a> creation. </p>
+</div>
+<h3><a id="5601">in</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">inline <a href="Poco.Data.AbstractBinding.html#4792" title="Poco::Data::AbstractBinding::Ptr">AbstractBinding::Ptr</a> in(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Data.html#4443" title="Poco::Data::NullData">NullData</a> &amp; t,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; name = ""<br />);</p>
+<div class="description">
+<p><a href="Poco.Data.html#4443" title="Poco::Data::NullData">NullData</a> overload. </p>
+</div>
+<h3><a id="5610">in</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">inline <a href="Poco.Data.html#4820" title="Poco::Data::AbstractBindingVec">AbstractBindingVec</a> &amp; in(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Data.html#4820" title="Poco::Data::AbstractBindingVec">AbstractBindingVec</a> &amp; bv<br />);</p>
+<div class="description">
+<p>Convenience dummy function (for syntax purposes only). </p>
+</div>
+<h3><a id="5655">in</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">template &lt; typename T &gt; <a href="Poco.Data.AbstractBinding.html#4792" title="Poco::Data::AbstractBinding::Ptr">AbstractBinding::Ptr</a> in(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::vector &lt; T &gt; &amp; t,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Data.html#5635" title="Poco::Data::BulkFnType">BulkFnType</a>,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; name = ""<br />);</p>
+<div class="description">
+<p>Convenience function for a more compact <a href="Poco.Data.BulkBinding.html" title="class Poco::Data::BulkBinding">BulkBinding</a> creation for std::vector. </p>
+</div>
+<h3><a id="5663">in</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">template &lt; typename T &gt; <a href="Poco.Data.AbstractBinding.html#4792" title="Poco::Data::AbstractBinding::Ptr">AbstractBinding::Ptr</a> in(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::deque &lt; T &gt; &amp; t,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Data.html#5635" title="Poco::Data::BulkFnType">BulkFnType</a>,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; name = ""<br />);</p>
+<div class="description">
+<p>Convenience function for a more compact <a href="Poco.Data.BulkBinding.html" title="class Poco::Data::BulkBinding">BulkBinding</a> creation for std::deque. </p>
+</div>
+<h3><a id="5671">in</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">template &lt; typename T &gt; <a href="Poco.Data.AbstractBinding.html#4792" title="Poco::Data::AbstractBinding::Ptr">AbstractBinding::Ptr</a> in(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::list &lt; T &gt; &amp; t,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Data.html#5635" title="Poco::Data::BulkFnType">BulkFnType</a>,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; name = ""<br />);</p>
+<div class="description">
+<p>Convenience function for a more compact <a href="Poco.Data.BulkBinding.html" title="class Poco::Data::BulkBinding">BulkBinding</a> creation for std::list. </p>
+</div>
+<h3><a id="5730">into</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">template &lt; typename T &gt; <a href="Poco.Data.AbstractExtraction.html#4824" title="Poco::Data::AbstractExtraction::Ptr">AbstractExtraction::Ptr</a> into(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::vector &lt; T &gt; &amp; t,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Data.Bulk.html" title="class Poco::Data::Bulk">Bulk</a> &amp; bulk,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Data.Position.html" title="class Poco::Data::Position">Position</a> &amp; pos = Position (0)<br />);</p>
+<div class="description">
+<p>Convenience function to allow for a more compact creation of an extraction object with std::vector bulk extraction support. </p>
+</div>
+<h3><a id="5734">into</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">template &lt; typename T &gt; <a href="Poco.Data.AbstractExtraction.html#4824" title="Poco::Data::AbstractExtraction::Ptr">AbstractExtraction::Ptr</a> into(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::vector &lt; T &gt; &amp; t,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Data.html#5635" title="Poco::Data::BulkFnType">BulkFnType</a>,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Data.Position.html" title="class Poco::Data::Position">Position</a> &amp; pos = Position (0)<br />);</p>
+<div class="description">
+<p>Convenience function to allow for a more compact creation of an extraction object with std::vector bulk extraction support. </p>
+</div>
+<h3><a id="5738">into</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">template &lt; typename T &gt; <a href="Poco.Data.AbstractExtraction.html#4824" title="Poco::Data::AbstractExtraction::Ptr">AbstractExtraction::Ptr</a> into(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::deque &lt; T &gt; &amp; t,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Data.Bulk.html" title="class Poco::Data::Bulk">Bulk</a> &amp; bulk,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Data.Position.html" title="class Poco::Data::Position">Position</a> &amp; pos = Position (0)<br />);</p>
+<div class="description">
+<p>Convenience function to allow for a more compact creation of an extraction object with std::deque bulk extraction support. </p>
+</div>
+<h3><a id="5742">into</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">template &lt; typename T &gt; <a href="Poco.Data.AbstractExtraction.html#4824" title="Poco::Data::AbstractExtraction::Ptr">AbstractExtraction::Ptr</a> into(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::deque &lt; T &gt; &amp; t,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Data.html#5635" title="Poco::Data::BulkFnType">BulkFnType</a>,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Data.Position.html" title="class Poco::Data::Position">Position</a> &amp; pos = Position (0)<br />);</p>
+<div class="description">
+<p>Convenience function to allow for a more compact creation of an extraction object with std::deque bulk extraction support. </p>
+</div>
+<h3><a id="5746">into</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">template &lt; typename T &gt; <a href="Poco.Data.AbstractExtraction.html#4824" title="Poco::Data::AbstractExtraction::Ptr">AbstractExtraction::Ptr</a> into(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::list &lt; T &gt; &amp; t,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Data.Bulk.html" title="class Poco::Data::Bulk">Bulk</a> &amp; bulk,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Data.Position.html" title="class Poco::Data::Position">Position</a> &amp; pos = Position (0)<br />);</p>
+<div class="description">
+<p>Convenience function to allow for a more compact creation of an extraction object with std::list bulk extraction support. </p>
+</div>
+<h3><a id="5750">into</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">template &lt; typename T &gt; <a href="Poco.Data.AbstractExtraction.html#4824" title="Poco::Data::AbstractExtraction::Ptr">AbstractExtraction::Ptr</a> into(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::list &lt; T &gt; &amp; t,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Data.html#5635" title="Poco::Data::BulkFnType">BulkFnType</a>,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Data.Position.html" title="class Poco::Data::Position">Position</a> &amp; pos = Position (0)<br />);</p>
+<div class="description">
+<p>Convenience function to allow for a more compact creation of an extraction object with std::list bulk extraction support. </p>
+</div>
+<h3><a id="6253">into</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">template &lt; typename T &gt; inline <a href="Poco.Data.AbstractExtraction.html#4824" title="Poco::Data::AbstractExtraction::Ptr">AbstractExtraction::Ptr</a> into(<br />&nbsp;&nbsp;&nbsp;&nbsp;T &amp; t<br />);</p>
+<div class="description">
+<p>Convenience function to allow for a more compact creation of an extraction object. </p>
+</div>
+<h3><a id="6255">into</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">template &lt; typename T &gt; inline <a href="Poco.Data.AbstractExtraction.html#4824" title="Poco::Data::AbstractExtraction::Ptr">AbstractExtraction::Ptr</a> into(<br />&nbsp;&nbsp;&nbsp;&nbsp;T &amp; t,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Data.Position.html" title="class Poco::Data::Position">Position</a> &amp; pos<br />);</p>
+<div class="description">
+<p>Convenience function to allow for a more compact creation of an extraction object with multiple recordset support. </p>
+</div>
+<h3><a id="6258">into</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">template &lt; typename T &gt; inline <a href="Poco.Data.AbstractExtraction.html#4824" title="Poco::Data::AbstractExtraction::Ptr">AbstractExtraction::Ptr</a> into(<br />&nbsp;&nbsp;&nbsp;&nbsp;T &amp; t,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Data.Position.html" title="class Poco::Data::Position">Position</a> &amp; pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;const T &amp; def<br />);</p>
+<div class="description">
+<p>Convenience function to allow for a more compact creation of an extraction object  with multiple recordset support and the given default </p>
+</div>
+<h3><a id="6262">into</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">inline <a href="Poco.Data.html#4877" title="Poco::Data::AbstractExtractionVecVec">AbstractExtractionVecVec</a> &amp; into(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Data.html#4877" title="Poco::Data::AbstractExtractionVecVec">AbstractExtractionVecVec</a> &amp; evv<br />);</p>
+<div class="description">
+<p>Convenience dummy function (for syntax purposes only). </p>
+</div>
+<h3><a id="6264">into</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">inline <a href="Poco.Data.html#4876" title="Poco::Data::AbstractExtractionVec">AbstractExtractionVec</a> &amp; into(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Data.html#4876" title="Poco::Data::AbstractExtractionVec">AbstractExtractionVec</a> &amp; ev<br />);</p>
+<div class="description">
+<p>Convenience dummy function (for syntax purposes only). </p>
+</div>
+<h3><a id="5606">io</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">template &lt; typename T &gt; inline <a href="Poco.Data.AbstractBinding.html#4792" title="Poco::Data::AbstractBinding::Ptr">AbstractBinding::Ptr</a> io(<br />&nbsp;&nbsp;&nbsp;&nbsp;T &amp; t<br />);</p>
+<div class="description">
+<p>Convenience function for a more compact <a href="Poco.Data.Binding.html" title="class Poco::Data::Binding">Binding</a> creation. </p>
+</div>
+<h3><a id="5614">io</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">inline <a href="Poco.Data.html#4820" title="Poco::Data::AbstractBindingVec">AbstractBindingVec</a> &amp; io(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Data.html#4820" title="Poco::Data::AbstractBindingVec">AbstractBindingVec</a> &amp; bv<br />);</p>
+<div class="description">
+<p>Convenience dummy function (for syntax purposes only). </p>
+</div>
+<h3><a id="6500">limit</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">template &lt; typename T &gt; <a href="Poco.Data.Limit.html" title="class Poco::Data::Limit">Limit</a> limit(<br />&nbsp;&nbsp;&nbsp;&nbsp;T lim,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool hard = false<br />);</p>
+<div class="description">
+<p>Creates an upperLimit </p>
+</div>
+<h3><a id="7452">list</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">inline void list(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Data.Statement.html" title="class Poco::Data::Statement">Statement</a> &amp; statement<br />);</p>
+<div class="description">
+<p>Sets the internal storage to std::list. </p>
+</div>
+<h3><a id="6506">lowerLimit</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">template &lt; typename T &gt; <a href="Poco.Data.Limit.html" title="class Poco::Data::Limit">Limit</a> lowerLimit(<br />&nbsp;&nbsp;&nbsp;&nbsp;T lim<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="7442">now</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">inline void now(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Data.Statement.html" title="class Poco::Data::Statement">Statement</a> &amp; statement<br />);</p>
+<div class="description">
+<p>Enforces immediate execution of the statement. If _isAsync flag has been set, execution is invoked asynchronously. </p>
+</div>
+<h3><a id="5604">out</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">template &lt; typename T &gt; inline <a href="Poco.Data.AbstractBinding.html#4792" title="Poco::Data::AbstractBinding::Ptr">AbstractBinding::Ptr</a> out(<br />&nbsp;&nbsp;&nbsp;&nbsp;T &amp; t<br />);</p>
+<div class="description">
+<p>Convenience function for a more compact <a href="Poco.Data.Binding.html" title="class Poco::Data::Binding">Binding</a> creation. </p>
+</div>
+<h3><a id="5612">out</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">inline <a href="Poco.Data.html#4820" title="Poco::Data::AbstractBindingVec">AbstractBindingVec</a> &amp; out(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Data.html#4820" title="Poco::Data::AbstractBindingVec">AbstractBindingVec</a> &amp; bv<br />);</p>
+<div class="description">
+<p>Convenience dummy function (for syntax purposes only). </p>
+</div>
+<h3><a id="6508">range</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">template &lt; typename T &gt; <a href="Poco.Data.Range.html" title="class Poco::Data::Range">Range</a> range(<br />&nbsp;&nbsp;&nbsp;&nbsp;T low,<br />&nbsp;&nbsp;&nbsp;&nbsp;T upp,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool hard = false<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="7454">reset</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">inline void reset(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Data.Statement.html" title="class Poco::Data::Statement">Statement</a> &amp; statement<br />);</p>
+<div class="description">
+<p>Sets all internal settings to their respective default values. </p>
+</div>
+<h3><a id="7444">sync</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">inline void sync(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Data.Statement.html" title="class Poco::Data::Statement">Statement</a> &amp; statement<br />);</p>
+<div class="description">
+<p>Sets the _isAsync flag to false, signalling synchronous execution. Synchronous execution is default, so specifying this manipulator only makes sense if <a href="Poco.Data.Keywords.html#7446" title="Poco::Data::Keywords::async()">async</a>() was called for the statement before. </p>
+</div>
+<h3><a id="6503">upperLimit</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">template &lt; typename T &gt; <a href="Poco.Data.Limit.html" title="class Poco::Data::Limit">Limit</a> upperLimit(<br />&nbsp;&nbsp;&nbsp;&nbsp;T lim,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool hard = false<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="5589">use</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">template &lt; typename T &gt; inline <a href="Poco.Data.AbstractBinding.html#4792" title="Poco::Data::AbstractBinding::Ptr">AbstractBinding::Ptr</a> use(<br />&nbsp;&nbsp;&nbsp;&nbsp;T &amp; t,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; name = ""<br />);</p>
+<div class="description">
+<p>Convenience function for a more compact <a href="Poco.Data.Binding.html" title="class Poco::Data::Binding">Binding</a> creation. </p>
+</div>
+<h3><a id="5592">use</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">inline <a href="Poco.Data.AbstractBinding.html#4792" title="Poco::Data::AbstractBinding::Ptr">AbstractBinding::Ptr</a> use(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Data.html#4443" title="Poco::Data::NullData">NullData</a> &amp; t,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; name = ""<br />);</p>
+<div class="description">
+<p><a href="Poco.Data.html#4443" title="Poco::Data::NullData">NullData</a> overload. </p>
+</div>
+<h3><a id="5608">use</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">inline <a href="Poco.Data.html#4820" title="Poco::Data::AbstractBindingVec">AbstractBindingVec</a> &amp; use(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Data.html#4820" title="Poco::Data::AbstractBindingVec">AbstractBindingVec</a> &amp; bv<br />);</p>
+<div class="description">
+<p>Convenience dummy function (for syntax purposes only). </p>
+</div>
+<h3><a id="5651">use</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">template &lt; typename T &gt; <a href="Poco.Data.AbstractBinding.html#4792" title="Poco::Data::AbstractBinding::Ptr">AbstractBinding::Ptr</a> use(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::vector &lt; T &gt; &amp; t,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Data.html#5635" title="Poco::Data::BulkFnType">BulkFnType</a>,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; name = ""<br />);</p>
+<div class="description">
+<p>Convenience function for a more compact <a href="Poco.Data.BulkBinding.html" title="class Poco::Data::BulkBinding">BulkBinding</a> creation for std::vector. </p>
+</div>
+<h3><a id="5659">use</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">template &lt; typename T &gt; <a href="Poco.Data.AbstractBinding.html#4792" title="Poco::Data::AbstractBinding::Ptr">AbstractBinding::Ptr</a> use(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::deque &lt; T &gt; &amp; t,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Data.html#5635" title="Poco::Data::BulkFnType">BulkFnType</a>,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; name = ""<br />);</p>
+<div class="description">
+<p>Convenience function for a more compact <a href="Poco.Data.BulkBinding.html" title="class Poco::Data::BulkBinding">BulkBinding</a> creation for std::deque. </p>
+</div>
+<h3><a id="5667">use</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">template &lt; typename T &gt; <a href="Poco.Data.AbstractBinding.html#4792" title="Poco::Data::AbstractBinding::Ptr">AbstractBinding::Ptr</a> use(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::list &lt; T &gt; &amp; t,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Data.html#5635" title="Poco::Data::BulkFnType">BulkFnType</a>,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; name = ""<br />);</p>
+<div class="description">
+<p>Convenience function for a more compact <a href="Poco.Data.BulkBinding.html" title="class Poco::Data::BulkBinding">BulkBinding</a> creation for std::list. </p>
+</div>
+<h3><a id="5595">useRef</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">template &lt; typename T &gt; inline <a href="Poco.Data.AbstractBinding.html#4792" title="Poco::Data::AbstractBinding::Ptr">AbstractBinding::Ptr</a> useRef(<br />&nbsp;&nbsp;&nbsp;&nbsp;T &amp; t,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; name = ""<br />);</p>
+<div class="description">
+<p>Convenience function for a more compact <a href="Poco.Data.Binding.html" title="class Poco::Data::Binding">Binding</a> creation. </p>
+</div>
+<h3><a id="7450">vector</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">inline void vector(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Data.Statement.html" title="class Poco::Data::Statement">Statement</a> &amp; statement<br />);</p>
+<div class="description">
+<p>Sets the internal storage to std::vector. </p>
+</div>
+<h2>Variables</h2>
+<h3><a id="4445">null</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static const <a href="Poco.Data.html#4443" title="Poco::Data::NullData">NullData</a> null = <a href="Poco.html#15249" title="Poco::NULL_GENERIC">NULL_GENERIC</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

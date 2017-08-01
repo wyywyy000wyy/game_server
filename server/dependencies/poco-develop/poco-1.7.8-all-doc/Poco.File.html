@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::File</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.html" class="namespace">Poco</a></h1>
+<h1 class="symbol">class File</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Foundation" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Foundation<br />
+<b>Package:</b> Filesystem<br />
+<b>Header:</b> Poco/File.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>The <a href="Poco.File.html" title="class Poco::File">File</a> class provides methods for working with a file. </p>
+<p>Regarding paths passed to the various methods, note that  platform-specific limitations regarding maximum length of the entire path and its components apply. </p>
+<p>On Windows, if compiled with UTF-8 support (POCO_WIN32_UTF8)  the implementation tries to work around the rather low 260 characters MAX_PATH limit by adding the &quot;\\?\&quot; prefix if a path is absolute and exceeds MAX_PATH characters in length. Note that various limitations regarding usage of the &quot;\\?\&quot;  prefix apply in that case, e.g. the path must not contain relative components (&quot;.&quot; and &quot;..&quot;) and must not  use the forward slash (&quot;/&quot;) as directory separator. </p>
+</div>
+<h2>Inheritance</h2>
+<p><b>Direct Base Classes: </b>FileImpl</p>
+<p><b>All Base Classes: </b>FileImpl</p>
+<p><b>Known Derived Classes: </b><a href="Poco.TemporaryFile.html" title="class Poco::TemporaryFile">TemporaryFile</a></p>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.File.html#12425" title="Poco::File::canExecute()">canExecute</a>, <a href="Poco.File.html#12423" title="Poco::File::canRead()">canRead</a>, <a href="Poco.File.html#12424" title="Poco::File::canWrite()">canWrite</a>, <a href="Poco.File.html#12473" title="Poco::File::copyDirectory()">copyDirectory</a>, <a href="Poco.File.html#12444" title="Poco::File::copyTo()">copyTo</a>, <a href="Poco.File.html#12454" title="Poco::File::createDirectories()">createDirectories</a>, <a href="Poco.File.html#12453" title="Poco::File::createDirectory()">createDirectory</a>, <a href="Poco.File.html#12452" title="Poco::File::createFile()">createFile</a>, <a href="Poco.File.html#12431" title="Poco::File::created()">created</a>, <a href="Poco.File.html#12422" title="Poco::File::exists()">exists</a>, <a href="Poco.File.html#12432" title="Poco::File::getLastModified()">getLastModified</a>, <a href="Poco.File.html#12435" title="Poco::File::getSize()">getSize</a>, <a href="Poco.File.html#12471" title="Poco::File::handleLastError()">handleLastError</a>, <a href="Poco.File.html#12429" title="Poco::File::isDevice()">isDevice</a>, <a href="Poco.File.html#12428" title="Poco::File::isDirectory()">isDirectory</a>, <a href="Poco.File.html#12426" title="Poco::File::isFile()">isFile</a>, <a href="Poco.File.html#12430" title="Poco::File::isHidden()">isHidden</a>, <a href="Poco.File.html#12427" title="Poco::File::isLink()">isLink</a>, <a href="Poco.File.html#12455" title="Poco::File::list()">list</a>, <a href="Poco.File.html#12446" title="Poco::File::moveTo()">moveTo</a>, <a href="Poco.File.html#12461" title="Poco::File::operator !=()">operator&nbsp;!=</a>, <a href="Poco.File.html#12463" title="Poco::File::operator <()">operator&nbsp;&lt;</a>, <a href="Poco.File.html#12465" title="Poco::File::operator <=()">operator&nbsp;&lt;=</a>, <a href="Poco.File.html#12411" title="Poco::File::operator =()">operator&nbsp;=</a>, <a href="Poco.File.html#12459" title="Poco::File::operator ==()">operator&nbsp;==</a>, <a href="Poco.File.html#12467" title="Poco::File::operator >()">operator&nbsp;&gt;</a>, <a href="Poco.File.html#12469" title="Poco::File::operator >=()">operator&nbsp;&gt;=</a>, <a href="Poco.File.html#12421" title="Poco::File::path()">path</a>, <a href="Poco.File.html#12450" title="Poco::File::remove()">remove</a>, <a href="Poco.File.html#12448" title="Poco::File::renameTo()">renameTo</a>, <a href="Poco.File.html#12442" title="Poco::File::setExecutable()">setExecutable</a>, <a href="Poco.File.html#12433" title="Poco::File::setLastModified()">setLastModified</a>, <a href="Poco.File.html#12440" title="Poco::File::setReadOnly()">setReadOnly</a>, <a href="Poco.File.html#12436" title="Poco::File::setSize()">setSize</a>, <a href="Poco.File.html#12438" title="Poco::File::setWriteable()">setWriteable</a>, <a href="Poco.File.html#12419" title="Poco::File::swap()">swap</a></p>
+<h2>Types</h2>
+<h3><a id="12400">FileSize</a></h3>
+<p class="decl">typedef FileSizeImpl <a href="Poco.File.html#12400" title="Poco::File::FileSize">FileSize</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Constructors</h2>
+<h3><a id="12401">File</a></h3>
+<p class="decl"><a href="Poco.File.html" title="class Poco::File">File</a>();</p>
+<div class="description">
+<p>Creates the file. </p>
+</div>
+<h3><a id="12402">File</a></h3>
+<p class="decl"><a href="Poco.File.html" title="class Poco::File">File</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; path<br />);</p>
+<div class="description">
+<p>Creates the file. </p>
+</div>
+<h3><a id="12404">File</a></h3>
+<p class="decl"><a href="Poco.File.html" title="class Poco::File">File</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const char * path<br />);</p>
+<div class="description">
+<p>Creates the file. </p>
+</div>
+<h3><a id="12406">File</a></h3>
+<p class="decl"><a href="Poco.File.html" title="class Poco::File">File</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Path.html" title="class Poco::Path">Path</a> &amp; path<br />);</p>
+<div class="description">
+<p>Creates the file. </p>
+</div>
+<h3><a id="12408">File</a></h3>
+<p class="decl"><a href="Poco.File.html" title="class Poco::File">File</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.File.html" title="class Poco::File">File</a> &amp; file<br />);</p>
+<div class="description">
+<p>Copy constructor. </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="12410">~File</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual ~<a href="Poco.File.html" title="class Poco::File">File</a>();</p>
+<div class="description">
+<p>Destroys the file. </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="12425">canExecute</a></h3>
+<p class="decl">bool canExecute() const;</p>
+<div class="description">
+<p>Returns true if and only if the file is executable. </p>
+<p>On Windows and OpenVMS, the file must have the extension &quot;.EXE&quot; to be executable. On Unix platforms, the executable permission bit must be set. </p>
+</div>
+<h3><a id="12423">canRead</a></h3>
+<p class="decl">bool canRead() const;</p>
+<div class="description">
+<p>Returns true if and only if the file is readable. </p>
+</div>
+<h3><a id="12424">canWrite</a></h3>
+<p class="decl">bool canWrite() const;</p>
+<div class="description">
+<p>Returns true if and only if the file is writeable. </p>
+</div>
+<h3><a id="12444">copyTo</a></h3>
+<p class="decl">void copyTo(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; path<br />) const;</p>
+<div class="description">
+<p>Copies the file (or directory) to the given path.  The target path can be a directory. </p>
+<p>A directory is copied recursively. </p>
+</div>
+<h3><a id="12454">createDirectories</a></h3>
+<p class="decl">void createDirectories();</p>
+<div class="description">
+<p>Creates a directory (and all parent directories if necessary). </p>
+</div>
+<h3><a id="12453">createDirectory</a></h3>
+<p class="decl">bool createDirectory();</p>
+<div class="description">
+<p>Creates a directory. Returns true if the directory has been created and false if it already exists. Throws an exception if an error occurs. </p>
+</div>
+<h3><a id="12452">createFile</a></h3>
+<p class="decl">bool createFile();</p>
+<div class="description">
+<p>Creates a new, empty file in an atomic operation. Returns true if the file has been created and false if the file already exists. Throws an exception if an error occurs. </p>
+</div>
+<h3><a id="12431">created</a></h3>
+<p class="decl"><a href="Poco.Timestamp.html" title="class Poco::Timestamp">Timestamp</a> created() const;</p>
+<div class="description">
+<p>Returns the creation date of the file. </p>
+<p>Not all platforms or filesystems (e.g. Linux and most Unix platforms with the exception of FreeBSD and Mac OS X) maintain the creation date of a file. On such platforms, <a href="Poco.File.html#12431" title="Poco::File::created()">created</a>() returns the time of the last inode modification. </p>
+</div>
+<h3><a id="12422">exists</a></h3>
+<p class="decl">bool exists() const;</p>
+<div class="description">
+<p>Returns true if and only if the file exists. </p>
+</div>
+<h3><a id="12432">getLastModified</a></h3>
+<p class="decl"><a href="Poco.Timestamp.html" title="class Poco::Timestamp">Timestamp</a> getLastModified() const;</p>
+<div class="description">
+<p>Returns the modification date of the file. </p>
+</div>
+<h3><a id="12435">getSize</a></h3>
+<p class="decl"><a href="Poco.File.html#12400" title="Poco::File::FileSize">FileSize</a> getSize() const;</p>
+<div class="description">
+<p>Returns the size of the file in bytes. </p>
+</div>
+<h3><a id="12471">handleLastError</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static void handleLastError(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; path<br />);</p>
+<div class="description">
+<p>For internal use only. Throws an appropriate exception for the last file-related error. </p>
+</div>
+<h3><a id="12429">isDevice</a></h3>
+<p class="decl">bool isDevice() const;</p>
+<div class="description">
+<p>Returns true if and only if the file is a device. </p>
+</div>
+<h3><a id="12428">isDirectory</a></h3>
+<p class="decl">bool isDirectory() const;</p>
+<div class="description">
+<p>Returns true if and only if the file is a directory. </p>
+</div>
+<h3><a id="12426">isFile</a></h3>
+<p class="decl">bool isFile() const;</p>
+<div class="description">
+<p>Returns true if and only if the file is a regular file. </p>
+</div>
+<h3><a id="12430">isHidden</a></h3>
+<p class="decl">bool isHidden() const;</p>
+<div class="description">
+<p>Returns true if the file is hidden. </p>
+<p>On Windows platforms, the file's hidden attribute is set for this to be true. </p>
+<p>On Unix platforms, the file name must begin with a period for this to be true. </p>
+</div>
+<h3><a id="12427">isLink</a></h3>
+<p class="decl">bool isLink() const;</p>
+<div class="description">
+<p>Returns true if and only if the file is a symbolic link. </p>
+</div>
+<h3><a id="12455">list</a></h3>
+<p class="decl">void list(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::vector &lt; std::string &gt; &amp; files<br />) const;</p>
+<div class="description">
+<p>Fills the vector with the names of all files in the directory. </p>
+</div>
+<h3><a id="12457">list</a></h3>
+<p class="decl">void list(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::vector &lt; <a href="Poco.File.html" title="class Poco::File">File</a> &gt; &amp; files<br />) const;</p>
+<div class="description">
+<p>Fills the vector with the names of all files in the directory. </p>
+</div>
+<h3><a id="12446">moveTo</a></h3>
+<p class="decl">void moveTo(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; path<br />);</p>
+<div class="description">
+<p>Copies the file (or directory) to the given path and  removes the original file. The target path can be a directory. </p>
+</div>
+<h3><a id="12461">operator !=</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool operator != (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.File.html" title="class Poco::File">File</a> &amp; file<br />) const;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="12463">operator &lt;</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool operator &lt; (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.File.html" title="class Poco::File">File</a> &amp; file<br />) const;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="12465">operator &lt;=</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool operator &lt;= (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.File.html" title="class Poco::File">File</a> &amp; file<br />) const;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="12411">operator =</a></h3>
+<p class="decl"><a href="Poco.File.html" title="class Poco::File">File</a> &amp; operator = (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.File.html" title="class Poco::File">File</a> &amp; file<br />);</p>
+<div class="description">
+<p>Assignment operator. </p>
+</div>
+<h3><a id="12413">operator =</a></h3>
+<p class="decl"><a href="Poco.File.html" title="class Poco::File">File</a> &amp; operator = (<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; path<br />);</p>
+<div class="description">
+<p>Assignment operator. </p>
+</div>
+<h3><a id="12415">operator =</a></h3>
+<p class="decl"><a href="Poco.File.html" title="class Poco::File">File</a> &amp; operator = (<br />&nbsp;&nbsp;&nbsp;&nbsp;const char * path<br />);</p>
+<div class="description">
+<p>Assignment operator. </p>
+</div>
+<h3><a id="12417">operator =</a></h3>
+<p class="decl"><a href="Poco.File.html" title="class Poco::File">File</a> &amp; operator = (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Path.html" title="class Poco::Path">Path</a> &amp; path<br />);</p>
+<div class="description">
+<p>Assignment operator. </p>
+</div>
+<h3><a id="12459">operator ==</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool operator == (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.File.html" title="class Poco::File">File</a> &amp; file<br />) const;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="12467">operator &gt;</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool operator &gt; (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.File.html" title="class Poco::File">File</a> &amp; file<br />) const;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="12469">operator &gt;=</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool operator &gt;= (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.File.html" title="class Poco::File">File</a> &amp; file<br />) const;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="12421">path</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">const std::string &amp; path() const;</p>
+<div class="description">
+<p>Returns the path. </p>
+</div>
+<h3><a id="12450">remove</a></h3>
+<p class="decl">void remove(<br />&nbsp;&nbsp;&nbsp;&nbsp;bool recursive = false<br />);</p>
+<div class="description">
+<p>Deletes the file. If recursive is true and the file is a directory, recursively deletes all files in the directory. </p>
+</div>
+<h3><a id="12448">renameTo</a></h3>
+<p class="decl">void renameTo(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; path<br />);</p>
+<div class="description">
+<p>Renames the file to the new name. </p>
+</div>
+<h3><a id="12442">setExecutable</a></h3>
+<p class="decl"><a href="Poco.File.html" title="class Poco::File">File</a> &amp; setExecutable(<br />&nbsp;&nbsp;&nbsp;&nbsp;bool flag = true<br />);</p>
+<div class="description">
+<p>Makes the file executable (if flag is true), or non-executable (if flag is false) by setting the file's permission bits accordingly. </p>
+<p>Does nothing on Windows and OpenVMS.	 </p>
+</div>
+<h3><a id="12433">setLastModified</a></h3>
+<p class="decl"><a href="Poco.File.html" title="class Poco::File">File</a> &amp; setLastModified(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Timestamp.html" title="class Poco::Timestamp">Timestamp</a> &amp; ts<br />);</p>
+<div class="description">
+<p>Sets the modification date of the file. </p>
+</div>
+<h3><a id="12440">setReadOnly</a></h3>
+<p class="decl"><a href="Poco.File.html" title="class Poco::File">File</a> &amp; setReadOnly(<br />&nbsp;&nbsp;&nbsp;&nbsp;bool flag = true<br />);</p>
+<div class="description">
+<p>Makes the file non-writeable (if flag is true), or writeable (if flag is false) by setting the file's flags in the filesystem accordingly. </p>
+</div>
+<h3><a id="12436">setSize</a></h3>
+<p class="decl"><a href="Poco.File.html" title="class Poco::File">File</a> &amp; setSize(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.File.html#12400" title="Poco::File::FileSize">FileSize</a> size<br />);</p>
+<div class="description">
+<p>Sets the size of the file in bytes. Can be used to truncate a file. </p>
+</div>
+<h3><a id="12438">setWriteable</a></h3>
+<p class="decl"><a href="Poco.File.html" title="class Poco::File">File</a> &amp; setWriteable(<br />&nbsp;&nbsp;&nbsp;&nbsp;bool flag = true<br />);</p>
+<div class="description">
+<p>Makes the file writeable (if flag is true), or non-writeable (if flag is false) by setting the file's flags in the filesystem accordingly. </p>
+</div>
+<h3><a id="12419">swap</a></h3>
+<p class="decl">void swap(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.File.html" title="class Poco::File">File</a> &amp; file<br />);</p>
+<div class="description">
+<p>Swaps the file with another one. </p>
+</div>
+<h3><a id="12473">copyDirectory</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">void copyDirectory(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; path<br />) const;</p>
+<div class="description">
+<p>Copies a directory. Used internally by <a href="Poco.File.html#12444" title="Poco::File::copyTo()">copyTo</a>(). </p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

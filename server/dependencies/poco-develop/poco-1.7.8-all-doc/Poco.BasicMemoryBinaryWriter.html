@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::BasicMemoryBinaryWriter</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.html" class="namespace">Poco</a></h1>
+<h1 class="template">template &lt; typename T &gt;</h1>
+<h1 class="symbol">class BasicMemoryBinaryWriter</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Foundation" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Foundation<br />
+<b>Package:</b> Streams<br />
+<b>Header:</b> Poco/BinaryWriter.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>A convenient wrapper for using <a href="Poco.Buffer.html" title="class Poco::Buffer">Buffer</a> and MemoryStream with BinarWriter. </p>
+</div>
+<h2>Inheritance</h2>
+<p><b>Direct Base Classes: </b><a href="Poco.BinaryWriter.html" title="class Poco::BinaryWriter">BinaryWriter</a></p>
+<p><b>All Base Classes: </b><a href="Poco.BinaryWriter.html" title="class Poco::BinaryWriter">BinaryWriter</a></p>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.BasicMemoryBinaryWriter.html#8756" title="Poco::BasicMemoryBinaryWriter::data()">data</a>, <a href="Poco.BasicMemoryBinaryWriter.html#8758" title="Poco::BasicMemoryBinaryWriter::stream()">stream</a></p>
+<p><b>Inherited Functions: </b><a href="Poco.BinaryWriter.html#8741" title="Poco::BinaryWriter::bad()">bad</a>, <a href="Poco.BinaryWriter.html#8743" title="Poco::BinaryWriter::byteOrder()">byteOrder</a>, <a href="Poco.BinaryWriter.html#8740" title="Poco::BinaryWriter::fail()">fail</a>, <a href="Poco.BinaryWriter.html#8738" title="Poco::BinaryWriter::flush()">flush</a>, <a href="Poco.BinaryWriter.html#8739" title="Poco::BinaryWriter::good()">good</a>, <a href="Poco.BinaryWriter.html#8698" title="Poco::BinaryWriter::operator <<()">operator&nbsp;&lt;&lt;</a>, <a href="Poco.BinaryWriter.html#8742" title="Poco::BinaryWriter::stream()">stream</a>, <a href="Poco.BinaryWriter.html#8728" title="Poco::BinaryWriter::write7BitEncoded()">write7BitEncoded</a>, <a href="Poco.BinaryWriter.html#8737" title="Poco::BinaryWriter::writeBOM()">writeBOM</a>, <a href="Poco.BinaryWriter.html#8732" title="Poco::BinaryWriter::writeRaw()">writeRaw</a></p>
+<h2>Constructors</h2>
+<h3><a id="8748">BasicMemoryBinaryWriter</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.BasicMemoryBinaryWriter.html" title="class Poco::BasicMemoryBinaryWriter">BasicMemoryBinaryWriter</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Buffer.html" title="class Poco::Buffer">Buffer</a> &lt; T &gt; &amp; data,<br />&nbsp;&nbsp;&nbsp;&nbsp;StreamByteOrder byteOrder = NATIVE_BYTE_ORDER<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="8751">BasicMemoryBinaryWriter</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.BasicMemoryBinaryWriter.html" title="class Poco::BasicMemoryBinaryWriter">BasicMemoryBinaryWriter</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Buffer.html" title="class Poco::Buffer">Buffer</a> &lt; T &gt; &amp; data,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.TextEncoding.html" title="class Poco::TextEncoding">TextEncoding</a> &amp; encoding,<br />&nbsp;&nbsp;&nbsp;&nbsp;StreamByteOrder byteOrder = NATIVE_BYTE_ORDER<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="8755">~BasicMemoryBinaryWriter</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">~<a href="Poco.BasicMemoryBinaryWriter.html" title="class Poco::BasicMemoryBinaryWriter">BasicMemoryBinaryWriter</a>();</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="8756">data</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Buffer.html" title="class Poco::Buffer">Buffer</a> &lt; T &gt; &amp; data();</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="8757">data</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">const <a href="Poco.Buffer.html" title="class Poco::Buffer">Buffer</a> &lt; T &gt; &amp; data() const;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="8758">stream</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">const <a href="Poco.MemoryOutputStream.html" title="class Poco::MemoryOutputStream">MemoryOutputStream</a> &amp; stream() const;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="8759">stream</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.MemoryOutputStream.html" title="class Poco::MemoryOutputStream">MemoryOutputStream</a> &amp; stream();</p>
+<div class="description">
+<p></p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

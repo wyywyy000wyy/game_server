@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::FPEnvironment</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.html" class="namespace">Poco</a></h1>
+<h1 class="symbol">class FPEnvironment</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Foundation" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Foundation<br />
+<b>Package:</b> Core<br />
+<b>Header:</b> Poco/FPEnvironment.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>Instances of this class can be used to save and later restore the current floating point environment (consisting of rounding mode and floating-point flags). The class also provides various static methods to query certain properties of a floating-point number.  </p>
+</div>
+<h2>Inheritance</h2>
+<p><b>Direct Base Classes: </b>FPEnvironmentImpl</p>
+<p><b>All Base Classes: </b>FPEnvironmentImpl</p>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.FPEnvironment.html#12371" title="Poco::FPEnvironment::clearFlags()">clearFlags</a>, <a href="Poco.FPEnvironment.html#12389" title="Poco::FPEnvironment::copySign()">copySign</a>, <a href="Poco.FPEnvironment.html#12376" title="Poco::FPEnvironment::getRoundingMode()">getRoundingMode</a>, <a href="Poco.FPEnvironment.html#12372" title="Poco::FPEnvironment::isFlag()">isFlag</a>, <a href="Poco.FPEnvironment.html#12377" title="Poco::FPEnvironment::isInfinite()">isInfinite</a>, <a href="Poco.FPEnvironment.html#12383" title="Poco::FPEnvironment::isNaN()">isNaN</a>, <a href="Poco.FPEnvironment.html#12370" title="Poco::FPEnvironment::keepCurrent()">keepCurrent</a>, <a href="Poco.FPEnvironment.html#12368" title="Poco::FPEnvironment::operator =()">operator&nbsp;=</a>, <a href="Poco.FPEnvironment.html#12374" title="Poco::FPEnvironment::setRoundingMode()">setRoundingMode</a></p>
+<h2>Enumerations</h2>
+<h3><a id="12356">Flag</a></h3>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="12357">FP_DIVIDE_BY_ZERO</a> = FP_DIVIDE_BY_ZERO_IMPL</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="12358">FP_INEXACT</a> = FP_INEXACT_IMPL</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="12359">FP_OVERFLOW</a> = FP_OVERFLOW_IMPL</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="12360">FP_UNDERFLOW</a> = FP_UNDERFLOW_IMPL</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="12361">FP_INVALID</a> = FP_INVALID_IMPL</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="12351">RoundingMode</a></h3>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="12352">FP_ROUND_DOWNWARD</a> = FP_ROUND_DOWNWARD_IMPL</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="12353">FP_ROUND_UPWARD</a> = FP_ROUND_UPWARD_IMPL</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="12354">FP_ROUND_TONEAREST</a> = FP_ROUND_TONEAREST_IMPL</p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="12355">FP_ROUND_TOWARDZERO</a> = FP_ROUND_TOWARDZERO_IMPL</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Constructors</h2>
+<h3><a id="12362">FPEnvironment</a></h3>
+<p class="decl"><a href="Poco.FPEnvironment.html" title="class Poco::FPEnvironment">FPEnvironment</a>();</p>
+<div class="description">
+<p>Standard constructor. Remembers the current environment. </p>
+</div>
+<h3><a id="12363">FPEnvironment</a></h3>
+<p class="decl"><a href="Poco.FPEnvironment.html" title="class Poco::FPEnvironment">FPEnvironment</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.FPEnvironment.html#12351" title="enum  Poco::FPEnvironment::RoundingMode">RoundingMode</a> mode<br />);</p>
+<div class="description">
+<p>Remembers the current environment and sets the given rounding mode. </p>
+</div>
+<h3><a id="12365">FPEnvironment</a></h3>
+<p class="decl"><a href="Poco.FPEnvironment.html" title="class Poco::FPEnvironment">FPEnvironment</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.FPEnvironment.html" title="class Poco::FPEnvironment">FPEnvironment</a> &amp; env<br />);</p>
+<div class="description">
+<p>Copy constructor. </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="12367">~FPEnvironment</a></h3>
+<p class="decl">~<a href="Poco.FPEnvironment.html" title="class Poco::FPEnvironment">FPEnvironment</a>();</p>
+<div class="description">
+<p>Restores the previous environment (unless <a href="Poco.FPEnvironment.html#12370" title="Poco::FPEnvironment::keepCurrent()">keepCurrent</a>() has been called previously) </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="12371">clearFlags</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static void clearFlags();</p>
+<div class="description">
+<p>Resets all flags. </p>
+</div>
+<h3><a id="12389">copySign</a> <img src="images/static.png" alt="static" title="static" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">static float copySign(<br />&nbsp;&nbsp;&nbsp;&nbsp;float target,<br />&nbsp;&nbsp;&nbsp;&nbsp;float source<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="12392">copySign</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static double copySign(<br />&nbsp;&nbsp;&nbsp;&nbsp;double target,<br />&nbsp;&nbsp;&nbsp;&nbsp;double source<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="12395">copySign</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static long double copySign(<br />&nbsp;&nbsp;&nbsp;&nbsp;long double target,<br />&nbsp;&nbsp;&nbsp;&nbsp;long double source<br />);</p>
+<div class="description">
+<p>Copies the sign from source to target. </p>
+</div>
+<h3><a id="12376">getRoundingMode</a> <img src="images/static.png" alt="static" title="static" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">static <a href="Poco.FPEnvironment.html#12351" title="enum  Poco::FPEnvironment::RoundingMode">RoundingMode</a> getRoundingMode();</p>
+<div class="description">
+<p>Returns the current rounding mode. </p>
+</div>
+<h3><a id="12372">isFlag</a> <img src="images/static.png" alt="static" title="static" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">static bool isFlag(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.FPEnvironment.html#12356" title="enum  Poco::FPEnvironment::Flag">Flag</a> flag<br />);</p>
+<div class="description">
+<p>Returns true if and only if the given flag is set. </p>
+</div>
+<h3><a id="12377">isInfinite</a> <img src="images/static.png" alt="static" title="static" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">static bool isInfinite(<br />&nbsp;&nbsp;&nbsp;&nbsp;float value<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="12379">isInfinite</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static bool isInfinite(<br />&nbsp;&nbsp;&nbsp;&nbsp;double value<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="12381">isInfinite</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static bool isInfinite(<br />&nbsp;&nbsp;&nbsp;&nbsp;long double value<br />);</p>
+<div class="description">
+<p>Returns true if and only if the given number is infinite. </p>
+</div>
+<h3><a id="12383">isNaN</a> <img src="images/static.png" alt="static" title="static" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">static bool isNaN(<br />&nbsp;&nbsp;&nbsp;&nbsp;float value<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="12385">isNaN</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static bool isNaN(<br />&nbsp;&nbsp;&nbsp;&nbsp;double value<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="12387">isNaN</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static bool isNaN(<br />&nbsp;&nbsp;&nbsp;&nbsp;long double value<br />);</p>
+<div class="description">
+<p>Returns true if and only if the given number is NaN. </p>
+</div>
+<h3><a id="12370">keepCurrent</a></h3>
+<p class="decl">void keepCurrent();</p>
+<div class="description">
+<p>Keep the current environment even after destroying the <a href="Poco.FPEnvironment.html" title="class Poco::FPEnvironment">FPEnvironment</a> object. </p>
+</div>
+<h3><a id="12368">operator =</a></h3>
+<p class="decl"><a href="Poco.FPEnvironment.html" title="class Poco::FPEnvironment">FPEnvironment</a> &amp; operator = (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.FPEnvironment.html" title="class Poco::FPEnvironment">FPEnvironment</a> &amp; env<br />);</p>
+<div class="description">
+<p>Assignment operator </p>
+</div>
+<h3><a id="12374">setRoundingMode</a> <img src="images/static.png" alt="static" title="static" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">static void setRoundingMode(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.FPEnvironment.html#12351" title="enum  Poco::FPEnvironment::RoundingMode">RoundingMode</a> mode<br />);</p>
+<div class="description">
+<p>Sets the rounding mode. </p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

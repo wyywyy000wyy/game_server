@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::Message</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.html" class="namespace">Poco</a></h1>
+<h1 class="symbol">class Message</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Foundation" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Foundation<br />
+<b>Package:</b> Logging<br />
+<b>Header:</b> Poco/Message.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>This class represents a log message that is sent through a chain of log channels. </p>
+<p>A <a href="Poco.Message.html" title="class Poco::Message">Message</a> contains a priority denoting the severity of the message, a source describing its origin, a text describing its meaning, the time of its creation, and an identifier of the process and thread that created the message. </p>
+<p>Optionally a <a href="Poco.Message.html" title="class Poco::Message">Message</a> can also contain the source file path and line number of the statement generating the message. </p>
+<p>A <a href="Poco.Message.html" title="class Poco::Message">Message</a> can also contain any number of named parameters that contain additional information about the event that caused the message. </p>
+</div>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.Message.html#14820" title="Poco::Message::get()">get</a>, <a href="Poco.Message.html#14811" title="Poco::Message::getPid()">getPid</a>, <a href="Poco.Message.html#14799" title="Poco::Message::getPriority()">getPriority</a>, <a href="Poco.Message.html#14793" title="Poco::Message::getSource()">getSource</a>, <a href="Poco.Message.html#14814" title="Poco::Message::getSourceFile()">getSourceFile</a>, <a href="Poco.Message.html#14817" title="Poco::Message::getSourceLine()">getSourceLine</a>, <a href="Poco.Message.html#14796" title="Poco::Message::getText()">getText</a>, <a href="Poco.Message.html#14805" title="Poco::Message::getThread()">getThread</a>, <a href="Poco.Message.html#14808" title="Poco::Message::getTid()">getTid</a>, <a href="Poco.Message.html#14802" title="Poco::Message::getTime()">getTime</a>, <a href="Poco.Message.html#14818" title="Poco::Message::has()">has</a>, <a href="Poco.Message.html#14832" title="Poco::Message::init()">init</a>, <a href="Poco.Message.html#14787" title="Poco::Message::operator =()">operator&nbsp;=</a>, <a href="Poco.Message.html#14828" title="Poco::Message::operator []()">operator&nbsp;[]</a>, <a href="Poco.Message.html#14825" title="Poco::Message::set()">set</a>, <a href="Poco.Message.html#14809" title="Poco::Message::setPid()">setPid</a>, <a href="Poco.Message.html#14797" title="Poco::Message::setPriority()">setPriority</a>, <a href="Poco.Message.html#14791" title="Poco::Message::setSource()">setSource</a>, <a href="Poco.Message.html#14812" title="Poco::Message::setSourceFile()">setSourceFile</a>, <a href="Poco.Message.html#14815" title="Poco::Message::setSourceLine()">setSourceLine</a>, <a href="Poco.Message.html#14794" title="Poco::Message::setText()">setText</a>, <a href="Poco.Message.html#14803" title="Poco::Message::setThread()">setThread</a>, <a href="Poco.Message.html#14806" title="Poco::Message::setTid()">setTid</a>, <a href="Poco.Message.html#14800" title="Poco::Message::setTime()">setTime</a>, <a href="Poco.Message.html#14789" title="Poco::Message::swap()">swap</a></p>
+<h2>Types</h2>
+<h3><a id="14833">StringMap</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">typedef std::map &lt; std::string, std::string &gt; <a href="Poco.Message.html#14833" title="Poco::Message::StringMap">StringMap</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Enumerations</h2>
+<h3><a id="14761">Priority</a></h3>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="14762">PRIO_FATAL</a> = 1</p>
+<div class="description">
+<p>A fatal error. The application will most likely terminate. This is the highest priority. </p>
+</div>
+<p class="decl"><a id="14763">PRIO_CRITICAL</a></p>
+<div class="description">
+<p>A critical error. The application might not be able to continue running successfully. </p>
+</div>
+<p class="decl"><a id="14764">PRIO_ERROR</a></p>
+<div class="description">
+<p>An error. An operation did not complete successfully, but the application as a whole is not affected. </p>
+</div>
+<p class="decl"><a id="14765">PRIO_WARNING</a></p>
+<div class="description">
+<p>A warning. An operation completed with an unexpected result. </p>
+</div>
+<p class="decl"><a id="14766">PRIO_NOTICE</a></p>
+<div class="description">
+<p>A notice, which is an information with just a higher priority. </p>
+</div>
+<p class="decl"><a id="14767">PRIO_INFORMATION</a></p>
+<div class="description">
+<p>An informational message, usually denoting the successful completion of an operation. </p>
+</div>
+<p class="decl"><a id="14768">PRIO_DEBUG</a></p>
+<div class="description">
+<p>A debugging message. </p>
+</div>
+<p class="decl"><a id="14769">PRIO_TRACE</a></p>
+<div class="description">
+<p>A tracing message. This is the lowest priority. </p>
+</div>
+<h2>Constructors</h2>
+<h3><a id="14770">Message</a></h3>
+<p class="decl"><a href="Poco.Message.html" title="class Poco::Message">Message</a>();</p>
+<div class="description">
+<p>Creates an empty <a href="Poco.Message.html" title="class Poco::Message">Message</a>. The thread and process ids are set. </p>
+</div>
+<h3><a id="14781">Message</a></h3>
+<p class="decl"><a href="Poco.Message.html" title="class Poco::Message">Message</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Message.html" title="class Poco::Message">Message</a> &amp; msg<br />);</p>
+<div class="description">
+<p>Creates a <a href="Poco.Message.html" title="class Poco::Message">Message</a> by copying another one. </p>
+</div>
+<h3><a id="14783">Message</a></h3>
+<p class="decl"><a href="Poco.Message.html" title="class Poco::Message">Message</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Message.html" title="class Poco::Message">Message</a> &amp; msg,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; text<br />);</p>
+<div class="description">
+<p>Creates a <a href="Poco.Message.html" title="class Poco::Message">Message</a> by copying all but the text from another message. </p>
+</div>
+<h3><a id="14771">Message</a></h3>
+<p class="decl"><a href="Poco.Message.html" title="class Poco::Message">Message</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; source,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; text,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Message.html#14761" title="enum  Poco::Message::Priority">Priority</a> prio<br />);</p>
+<div class="description">
+<p>Creates a <a href="Poco.Message.html" title="class Poco::Message">Message</a> with the given source, text and priority. The thread and process ids are set. </p>
+</div>
+<h3><a id="14775">Message</a></h3>
+<p class="decl"><a href="Poco.Message.html" title="class Poco::Message">Message</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; source,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; text,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Message.html#14761" title="enum  Poco::Message::Priority">Priority</a> prio,<br />&nbsp;&nbsp;&nbsp;&nbsp;const char * file,<br />&nbsp;&nbsp;&nbsp;&nbsp;int line<br />);</p>
+<div class="description">
+<p>Creates a <a href="Poco.Message.html" title="class Poco::Message">Message</a> with the given source, text, priority, source file path and line.  </p>
+<p>The source file path must be a  static string with a lifetime that's at least the lifetime of the message object (the string is not copied internally). Usually, this will be the path string obtained from the  __FILE__ macro. </p>
+<p>The thread and process ids are set. </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="14786">~Message</a></h3>
+<p class="decl">~<a href="Poco.Message.html" title="class Poco::Message">Message</a>();</p>
+<div class="description">
+<p>Destroys the <a href="Poco.Message.html" title="class Poco::Message">Message</a>. </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="14820">get</a></h3>
+<p class="decl">const std::string &amp; get(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; param<br />) const;</p>
+<div class="description">
+<p>Returns a const reference to the value of the parameter with the given name. Throws a <a href="Poco.NotFoundException.html" title="class Poco::NotFoundException">NotFoundException</a> if the parameter does not exist. </p>
+</div>
+<h3><a id="14822">get</a></h3>
+<p class="decl">const std::string &amp; get(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; param,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; defaultValue<br />) const;</p>
+<div class="description">
+<p>Returns a const reference to the value of the parameter with the given name. If the parameter with the given name does not exist, then defaultValue is returned. </p>
+</div>
+<h3><a id="14811">getPid</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">long getPid() const;</p>
+<div class="description">
+<p>Returns the process identifier for the message. </p>
+</div>
+<h3><a id="14799">getPriority</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Message.html#14761" title="enum  Poco::Message::Priority">Priority</a> getPriority() const;</p>
+<div class="description">
+<p>Returns the priority of the message. </p>
+</div>
+<h3><a id="14793">getSource</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">const std::string &amp; getSource() const;</p>
+<div class="description">
+<p>Returns the source of the message. </p>
+</div>
+<h3><a id="14814">getSourceFile</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">const char * getSourceFile() const;</p>
+<div class="description">
+<p>Returns the source file path of the code creating the message. May be 0 if not set. </p>
+</div>
+<h3><a id="14817">getSourceLine</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">int getSourceLine() const;</p>
+<div class="description">
+<p>Returns the source file line of the statement generating the log message. May be 0 if not set. </p>
+</div>
+<h3><a id="14796">getText</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">const std::string &amp; getText() const;</p>
+<div class="description">
+<p>Returns the text of the message. </p>
+</div>
+<h3><a id="14805">getThread</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">const std::string &amp; getThread() const;</p>
+<div class="description">
+<p>Returns the thread identifier for the message. </p>
+</div>
+<h3><a id="14808">getTid</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">long getTid() const;</p>
+<div class="description">
+<p>Returns the numeric thread identifier for the message. </p>
+</div>
+<h3><a id="14802">getTime</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">const <a href="Poco.Timestamp.html" title="class Poco::Timestamp">Timestamp</a> &amp; getTime() const;</p>
+<div class="description">
+<p>Returns the time of the message. </p>
+</div>
+<h3><a id="14818">has</a></h3>
+<p class="decl">bool has(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; param<br />) const;</p>
+<div class="description">
+<p>Returns true if a parameter with the given name exists. </p>
+</div>
+<h3><a id="14787">operator =</a></h3>
+<p class="decl"><a href="Poco.Message.html" title="class Poco::Message">Message</a> &amp; operator = (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Message.html" title="class Poco::Message">Message</a> &amp; msg<br />);</p>
+<div class="description">
+<p>Assignment operator. </p>
+</div>
+<h3><a id="14828">operator []</a></h3>
+<p class="decl">const std::string &amp; operator[] (<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; param<br />) const;</p>
+<div class="description">
+<p>Returns a const reference to the value of the parameter with the given name. Throws a <a href="Poco.NotFoundException.html" title="class Poco::NotFoundException">NotFoundException</a> if the parameter does not exist. </p>
+</div>
+<h3><a id="14830">operator []</a></h3>
+<p class="decl">std::string &amp; operator[] (<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; param<br />);</p>
+<div class="description">
+<p>Returns a reference to the value of the parameter with the given name. This can be used to set the parameter's value. If the parameter does not exist, it is created with an empty string value. </p>
+</div>
+<h3><a id="14825">set</a></h3>
+<p class="decl">void set(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; param,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; value<br />);</p>
+<div class="description">
+<p>Sets the value for a parameter. If the parameter does not exist, then it is created. </p>
+</div>
+<h3><a id="14809">setPid</a></h3>
+<p class="decl">void setPid(<br />&nbsp;&nbsp;&nbsp;&nbsp;long pid<br />);</p>
+<div class="description">
+<p>Sets the process identifier for the message. </p>
+</div>
+<h3><a id="14797">setPriority</a></h3>
+<p class="decl">void setPriority(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Message.html#14761" title="enum  Poco::Message::Priority">Priority</a> prio<br />);</p>
+<div class="description">
+<p>Sets the priority of the message. </p>
+</div>
+<h3><a id="14791">setSource</a></h3>
+<p class="decl">void setSource(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; src<br />);</p>
+<div class="description">
+<p>Sets the source of the message. </p>
+</div>
+<h3><a id="14812">setSourceFile</a></h3>
+<p class="decl">void setSourceFile(<br />&nbsp;&nbsp;&nbsp;&nbsp;const char * file<br />);</p>
+<div class="description">
+<p>Sets the source file path of the statement generating the log message. </p>
+<p><a href="Poco.File.html" title="class Poco::File">File</a> must be a static string, such as the value of the __FILE__ macro. The string is not copied internally for performance reasons.	 </p>
+</div>
+<h3><a id="14815">setSourceLine</a></h3>
+<p class="decl">void setSourceLine(<br />&nbsp;&nbsp;&nbsp;&nbsp;int line<br />);</p>
+<div class="description">
+<p>Sets the source file line of the statement generating the log message. </p>
+<p>This is usually the result of the __LINE__ macro. </p>
+</div>
+<h3><a id="14794">setText</a></h3>
+<p class="decl">void setText(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; text<br />);</p>
+<div class="description">
+<p>Sets the text of the message. </p>
+</div>
+<h3><a id="14803">setThread</a></h3>
+<p class="decl">void setThread(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; thread<br />);</p>
+<div class="description">
+<p>Sets the thread identifier for the message. </p>
+</div>
+<h3><a id="14806">setTid</a></h3>
+<p class="decl">void setTid(<br />&nbsp;&nbsp;&nbsp;&nbsp;long pid<br />);</p>
+<div class="description">
+<p>Sets the numeric thread identifier for the message. </p>
+</div>
+<h3><a id="14800">setTime</a></h3>
+<p class="decl">void setTime(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Timestamp.html" title="class Poco::Timestamp">Timestamp</a> &amp; time<br />);</p>
+<div class="description">
+<p>Sets the time of the message. </p>
+</div>
+<h3><a id="14789">swap</a></h3>
+<p class="decl">void swap(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Message.html" title="class Poco::Message">Message</a> &amp; msg<br />);</p>
+<div class="description">
+<p>Swaps the message with another one.	 </p>
+</div>
+<h3><a id="14832">init</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl">void init();</p>
+<div class="description">
+<p></p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

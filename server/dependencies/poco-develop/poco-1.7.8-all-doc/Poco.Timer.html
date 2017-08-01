@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::Timer</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.html" class="namespace">Poco</a></h1>
+<h1 class="symbol">class Timer</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Foundation" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Foundation<br />
+<b>Package:</b> Threading<br />
+<b>Header:</b> Poco/Timer.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>This class implements a thread-based timer. A timer starts a thread that first waits for a given start interval. Once that interval expires, the timer callback is called repeatedly in the given periodic interval. If the interval is 0, the timer is only called once. The timer callback method can stop the timer by setting the  timer's periodic interval to 0. </p>
+<p>The timer callback runs in its own thread, so multithreading issues (proper synchronization) have to be considered when writing  the callback method. </p>
+<p>The exact interval at which the callback is called depends on many  factors like operating system, CPU performance and system load and may differ from the specified interval. </p>
+<p>The time needed to execute the timer callback is not included in the interval between invocations. For example, if the interval is 500 milliseconds, and the callback needs 400 milliseconds to execute, the callback function is nevertheless called every 500 milliseconds. If the callback takes longer to execute than the interval, the callback function will not be called until the next proper interval. The number of skipped invocations since the last invocation will be recorded and can be obtained by the callback by calling <a href="Poco.Timer.html#18031" title="Poco::Timer::skipped()">skipped</a>(). </p>
+<p>The timer thread is taken from a thread pool, so there is a limit to the number of available concurrent timers. </p>
+</div>
+<h2>Inheritance</h2>
+<p><b>Direct Base Classes: </b><a href="Poco.Runnable.html" title="class Poco::Runnable">Runnable</a></p>
+<p><b>All Base Classes: </b><a href="Poco.Runnable.html" title="class Poco::Runnable">Runnable</a></p>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.Timer.html#18028" title="Poco::Timer::getPeriodicInterval()">getPeriodicInterval</a>, <a href="Poco.Timer.html#18025" title="Poco::Timer::getStartInterval()">getStartInterval</a>, <a href="Poco.Timer.html#18022" title="Poco::Timer::restart()">restart</a>, <a href="Poco.Timer.html#18032" title="Poco::Timer::run()">run</a>, <a href="Poco.Timer.html#18029" title="Poco::Timer::setPeriodicInterval()">setPeriodicInterval</a>, <a href="Poco.Timer.html#18026" title="Poco::Timer::setStartInterval()">setStartInterval</a>, <a href="Poco.Timer.html#18031" title="Poco::Timer::skipped()">skipped</a>, <a href="Poco.Timer.html#18009" title="Poco::Timer::start()">start</a>, <a href="Poco.Timer.html#18021" title="Poco::Timer::stop()">stop</a></p>
+<p><b>Inherited Functions: </b><a href="Poco.Runnable.html#16662" title="Poco::Runnable::run()">run</a></p>
+<h2>Constructors</h2>
+<h3><a id="18005">Timer</a></h3>
+<p class="decl"><a href="Poco.Timer.html" title="class Poco::Timer">Timer</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;long startInterval = 0,<br />&nbsp;&nbsp;&nbsp;&nbsp;long periodicInterval = 0<br />);</p>
+<div class="description">
+<p>Creates a new timer object. StartInterval and periodicInterval are given in milliseconds. If a periodicInterval of zero is  specified, the callback will only be called once, after the startInterval expires. To start the timer, call the Start() method. </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="18008">~Timer</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual ~<a href="Poco.Timer.html" title="class Poco::Timer">Timer</a>();</p>
+<div class="description">
+<p>Stops and destroys the timer. </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="18028">getPeriodicInterval</a></h3>
+<p class="decl">long getPeriodicInterval() const;</p>
+<div class="description">
+<p>Returns the periodic interval. </p>
+</div>
+<h3><a id="18025">getStartInterval</a></h3>
+<p class="decl">long getStartInterval() const;</p>
+<div class="description">
+<p>Returns the start interval. </p>
+</div>
+<h3><a id="18022">restart</a></h3>
+<p class="decl">void restart();</p>
+<div class="description">
+<p>Restarts the periodic interval. If the callback method is already running, nothing will happen. </p>
+</div>
+<h3><a id="18023">restart</a></h3>
+<p class="decl">void restart(<br />&nbsp;&nbsp;&nbsp;&nbsp;long milliseconds<br />);</p>
+<div class="description">
+<p>Sets a new periodic interval and restarts the timer. An interval of 0 will stop the timer. </p>
+</div>
+<h3><a id="18029">setPeriodicInterval</a></h3>
+<p class="decl">void setPeriodicInterval(<br />&nbsp;&nbsp;&nbsp;&nbsp;long milliseconds<br />);</p>
+<div class="description">
+<p>Sets the periodic interval. If the timer is already running the new interval will be effective when the current interval expires. </p>
+</div>
+<h3><a id="18026">setStartInterval</a></h3>
+<p class="decl">void setStartInterval(<br />&nbsp;&nbsp;&nbsp;&nbsp;long milliseconds<br />);</p>
+<div class="description">
+<p>Sets the start interval. Will only be  effective before <a href="Poco.Timer.html#18009" title="Poco::Timer::start()">start</a>() is called. </p>
+</div>
+<h3><a id="18031">skipped</a></h3>
+<p class="decl">long skipped() const;</p>
+<div class="description">
+<p>Returns the number of skipped invocations since the last invocation. Skipped invocations happen if the timer callback function takes longer to execute than the timer interval. </p>
+</div>
+<h3><a id="18009">start</a></h3>
+<p class="decl">void start(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.AbstractTimerCallback.html" title="class Poco::AbstractTimerCallback">AbstractTimerCallback</a> &amp; method<br />);</p>
+<div class="description">
+<p>Starts the timer. Create the <a href="Poco.TimerCallback.html" title="class Poco::TimerCallback">TimerCallback</a> as follows: </p>
+<pre>TimerCallback&lt;MyClass&gt; callback(*this, &amp;MyClass::onTimer);
+timer.start(callback);
+</pre>
+<p>The timer thread is taken from the global default thread pool. </p>
+</div>
+<h3><a id="18011">start</a></h3>
+<p class="decl">void start(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.AbstractTimerCallback.html" title="class Poco::AbstractTimerCallback">AbstractTimerCallback</a> &amp; method,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Thread.html#17808" title="enum  Poco::Thread::Priority">Thread::Priority</a> priority<br />);</p>
+<div class="description">
+<p>Starts the timer in a thread with the given priority. Create the <a href="Poco.TimerCallback.html" title="class Poco::TimerCallback">TimerCallback</a> as follows: </p>
+<pre>TimerCallback&lt;MyClass&gt; callback(*this, &amp;MyClass::onTimer);
+timer.start(callback);
+</pre>
+<p>The timer thread is taken from the global default thread pool. </p>
+</div>
+<h3><a id="18014">start</a></h3>
+<p class="decl">void start(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.AbstractTimerCallback.html" title="class Poco::AbstractTimerCallback">AbstractTimerCallback</a> &amp; method,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.ThreadPool.html" title="class Poco::ThreadPool">ThreadPool</a> &amp; threadPool<br />);</p>
+<div class="description">
+<p>Starts the timer. Create the <a href="Poco.TimerCallback.html" title="class Poco::TimerCallback">TimerCallback</a> as follows: </p>
+<pre>TimerCallback&lt;MyClass&gt; callback(*this, &amp;MyClass::onTimer);
+timer.start(callback);
+</pre>
+</div>
+<h3><a id="18017">start</a></h3>
+<p class="decl">void start(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.AbstractTimerCallback.html" title="class Poco::AbstractTimerCallback">AbstractTimerCallback</a> &amp; method,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Thread.html#17808" title="enum  Poco::Thread::Priority">Thread::Priority</a> priority,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.ThreadPool.html" title="class Poco::ThreadPool">ThreadPool</a> &amp; threadPool<br />);</p>
+<div class="description">
+<p>Starts the timer in a thread with the given priority. Create the <a href="Poco.TimerCallback.html" title="class Poco::TimerCallback">TimerCallback</a> as follows: </p>
+<pre>TimerCallback&lt;MyClass&gt; callback(*this, &amp;MyClass::onTimer);
+timer.start(callback);
+</pre>
+</div>
+<h3><a id="18021">stop</a></h3>
+<p class="decl">void stop();</p>
+<div class="description">
+<p>Stops the timer. If the callback method is currently running it will be allowed to finish first. WARNING: Never call this method from within the callback method, as a deadlock would result. To stop the timer from within the callback method, call <a href="Poco.Timer.html#18022" title="Poco::Timer::restart()">restart</a>(0). </p>
+</div>
+<h3><a id="18032">run</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">void run();</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.Runnable.html#16662" title="Poco::Runnable::run()">Poco::Runnable::run()</a></p></div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

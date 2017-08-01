@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::Net::MultipartWriter</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.Net.html" class="namespace">Poco::Net</a></h1>
+<h1 class="symbol">class MultipartWriter</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Net" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Net<br />
+<b>Package:</b> Messages<br />
+<b>Header:</b> Poco/Net/MultipartWriter.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>This class is used to write MIME multipart messages to an output stream. </p>
+<p>The format of multipart messages is described in section 5.1 of <a href="https://www.ietf.org/rfc/rfc2046.txt" target="_blank">RFC 2046</a>. </p>
+<p>To create a multipart message, first create a <a href="Poco.Net.MultipartWriter.html" title="class Poco::Net::MultipartWriter">MultipartWriter</a> object. Then, for each part, call <a href="Poco.Net.MultipartWriter.html#22944" title="Poco::Net::MultipartWriter::nextPart()">nextPart</a>() and write the content to the output stream. Repeat for all parts.  After the last part has been written, call <a href="Poco.Net.MultipartWriter.html#22946" title="Poco::Net::MultipartWriter::close()">close</a>() to finish the multipart message. </p>
+</div>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.Net.MultipartWriter.html#22948" title="Poco::Net::MultipartWriter::boundary()">boundary</a>, <a href="Poco.Net.MultipartWriter.html#22946" title="Poco::Net::MultipartWriter::close()">close</a>, <a href="Poco.Net.MultipartWriter.html#22949" title="Poco::Net::MultipartWriter::createBoundary()">createBoundary</a>, <a href="Poco.Net.MultipartWriter.html#22944" title="Poco::Net::MultipartWriter::nextPart()">nextPart</a>, <a href="Poco.Net.MultipartWriter.html#22947" title="Poco::Net::MultipartWriter::stream()">stream</a></p>
+<h2>Constructors</h2>
+<h3><a id="22938">MultipartWriter</a></h3>
+<p class="decl">explicit <a href="Poco.Net.MultipartWriter.html" title="class Poco::Net::MultipartWriter">MultipartWriter</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::ostream &amp; ostr<br />);</p>
+<div class="description">
+<p>Creates the <a href="Poco.Net.MultipartWriter.html" title="class Poco::Net::MultipartWriter">MultipartWriter</a>, using the given output stream. </p>
+<p>Creates a random boundary string. </p>
+</div>
+<h3><a id="22940">MultipartWriter</a></h3>
+<p class="decl"><a href="Poco.Net.MultipartWriter.html" title="class Poco::Net::MultipartWriter">MultipartWriter</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::ostream &amp; ostr,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; boundary<br />);</p>
+<div class="description">
+<p>Creates the <a href="Poco.Net.MultipartWriter.html" title="class Poco::Net::MultipartWriter">MultipartWriter</a>, using the given output stream and boundary string. </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="22943">~MultipartWriter</a></h3>
+<p class="decl">~<a href="Poco.Net.MultipartWriter.html" title="class Poco::Net::MultipartWriter">MultipartWriter</a>();</p>
+<div class="description">
+<p>Destroys the <a href="Poco.Net.MultipartWriter.html" title="class Poco::Net::MultipartWriter">MultipartWriter</a>. </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="22948">boundary</a></h3>
+<p class="decl">const std::string &amp; boundary() const;</p>
+<div class="description">
+<p>Returns the multipart boundary used by this writer. </p>
+</div>
+<h3><a id="22946">close</a></h3>
+<p class="decl">void close();</p>
+<div class="description">
+<p>Closes the multipart message and writes the terminating boundary string. </p>
+<p>Does not close the underlying stream. </p>
+</div>
+<h3><a id="22949">createBoundary</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static std::string createBoundary();</p>
+<div class="description">
+<p>Creates a random boundary string. </p>
+<p>The string always has the form MIME_boundary_XXXXXXXXXXXX, where XXXXXXXXXXXX is a random hexadecimal number. </p>
+</div>
+<h3><a id="22944">nextPart</a></h3>
+<p class="decl">void nextPart(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Net.MessageHeader.html" title="class Poco::Net::MessageHeader">MessageHeader</a> &amp; header<br />);</p>
+<div class="description">
+<p>Opens a new message part and writes the message boundary string, followed by the message header to the stream. </p>
+</div>
+<h3><a id="22947">stream</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">std::ostream &amp; stream();</p>
+<div class="description">
+<p>Returns the writer's stream. </p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

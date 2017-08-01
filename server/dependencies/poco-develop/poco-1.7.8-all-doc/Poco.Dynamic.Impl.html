@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Namespace Poco::Dynamic::Impl</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.Dynamic.html" class="namespace">Poco::Dynamic</a></h1>
+<h1 class="symbol">namespace Impl</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<h2>Overview</h2>
+<p><b>Functions:</b> 
+<a href="Poco.Dynamic.Impl.html#10695" title="Poco::Dynamic::Impl::appendJSONKey()">appendJSONKey</a>, <a href="Poco.Dynamic.Impl.html#10698" title="Poco::Dynamic::Impl::appendJSONString()">appendJSONString</a>, <a href="Poco.Dynamic.Impl.html#10701" title="Poco::Dynamic::Impl::appendJSONValue()">appendJSONValue</a>, <a href="Poco.Dynamic.Impl.html#10704" title="Poco::Dynamic::Impl::containerToJSON()">containerToJSON</a>, <a href="Poco.Dynamic.Impl.html#10693" title="Poco::Dynamic::Impl::isJSONString()">isJSONString</a></p>
+<h2>Functions</h2>
+<h3><a id="10695">appendJSONKey</a></h3>
+<p class="decl">void appendJSONKey(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::string &amp; val,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Dynamic.Var.html" title="class Poco::Dynamic::Var">Var</a> &amp; any<br />);</p>
+<div class="description">
+<p>Converts the any to a <a href="Poco.JSON.html" title="namespace Poco::JSON">JSON</a> key (i.e. wraps it into double quotes  regardless of the underlying type) and appends it to val. </p>
+</div>
+<h3><a id="10698">appendJSONString</a></h3>
+<p class="decl">void appendJSONString(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::string &amp; val,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Dynamic.Var.html" title="class Poco::Dynamic::Var">Var</a> &amp; any<br />);</p>
+<div class="description">
+<p>Converts the any to a <a href="Poco.JSON.html" title="namespace Poco::JSON">JSON</a> string (i.e. wraps it into double quotes)  regardless of the underlying type) and appends it to val. </p>
+</div>
+<h3><a id="10701">appendJSONValue</a></h3>
+<p class="decl">void appendJSONValue(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::string &amp; val,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Dynamic.Var.html" title="class Poco::Dynamic::Var">Var</a> &amp; any<br />);</p>
+<div class="description">
+<p>Converts the any to a <a href="Poco.JSON.html" title="namespace Poco::JSON">JSON</a> value (if underlying type qualifies  as string - see <a href="Poco.Dynamic.Impl.html#10693" title="Poco::Dynamic::Impl::isJSONString()">isJSONString</a>() - , it is wrapped into double quotes)  and appends it to val </p>
+</div>
+<h3><a id="10704">containerToJSON</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">template &lt; typename C &gt; void containerToJSON(<br />&nbsp;&nbsp;&nbsp;&nbsp;C &amp; cont,<br />&nbsp;&nbsp;&nbsp;&nbsp;std::string &amp; val<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="10693">isJSONString</a></h3>
+<p class="decl">bool isJSONString(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Dynamic.Var.html" title="class Poco::Dynamic::Var">Var</a> &amp; any<br />);</p>
+<div class="description">
+<p>Returns true for values that should be <a href="Poco.JSON.html" title="namespace Poco::JSON">JSON</a>-formatted as string. </p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

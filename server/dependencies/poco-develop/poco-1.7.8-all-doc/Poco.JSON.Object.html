@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::JSON::Object</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.JSON.html" class="namespace">Poco::JSON</a></h1>
+<h1 class="symbol">class Object</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-JSON" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> JSON<br />
+<b>Package:</b> JSON<br />
+<b>Header:</b> Poco/JSON/Object.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>Represents a <a href="Poco.JSON.html" title="namespace Poco::JSON">JSON</a> object. <a href="Poco.JSON.Object.html" title="class Poco::JSON::Object">Object</a> provides a representation based on shared pointers and optimized for performance. It is possible to  convert <a href="Poco.JSON.Object.html" title="class Poco::JSON::Object">Object</a> to <a href="Poco.html#10024" title="Poco::DynamicStruct">DynamicStruct</a>. Conversion requires copying and therefore has performance penalty; the benefit is in improved syntax, eg: </p>
+<p></p>
+<pre>std::string json = &quot;{ \&quot;test\&quot; : { \&quot;property\&quot; : \&quot;value\&quot; } }&quot;;
+Parser parser;
+Var result = parser.parse(json);
+
+// use pointers to avoid copying
+Object::Ptr object = result.extract&lt;Object::Ptr&gt;();
+Var test = object-&gt;get(&quot;test&quot;); // holds { &quot;property&quot; : &quot;value&quot; }
+Object::Ptr subObject = test.extract&lt;Object::Ptr&gt;();
+test = subObject-&gt;get(&quot;property&quot;);
+std::string val = test.toString(); // val holds &quot;value&quot;
+
+// copy/convert to Poco::DynamicStruct
+Poco::DynamicStruct ds = *object;
+val = ds[&quot;test&quot;][&quot;property&quot;]; // val holds &quot;value&quot;
+</pre>
+<p> </p>
+</div>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.JSON.Object.html#19581" title="Poco::JSON::Object::begin()">begin</a>, <a href="Poco.JSON.Object.html#19624" title="Poco::JSON::Object::clear()">clear</a>, <a href="Poco.JSON.Object.html#19583" title="Poco::JSON::Object::end()">end</a>, <a href="Poco.JSON.Object.html#19585" title="Poco::JSON::Object::get()">get</a>, <a href="Poco.JSON.Object.html#19587" title="Poco::JSON::Object::getArray()">getArray</a>, <a href="Poco.JSON.Object.html#19595" title="Poco::JSON::Object::getNames()">getNames</a>, <a href="Poco.JSON.Object.html#19593" title="Poco::JSON::Object::getNullableValue()">getNullableValue</a>, <a href="Poco.JSON.Object.html#19589" title="Poco::JSON::Object::getObject()">getObject</a>, <a href="Poco.JSON.Object.html#19591" title="Poco::JSON::Object::getValue()">getValue</a>, <a href="Poco.JSON.Object.html#19597" title="Poco::JSON::Object::has()">has</a>, <a href="Poco.JSON.Object.html#19599" title="Poco::JSON::Object::isArray()">isArray</a>, <a href="Poco.JSON.Object.html#19603" title="Poco::JSON::Object::isNull()">isNull</a>, <a href="Poco.JSON.Object.html#19605" title="Poco::JSON::Object::isObject()">isObject</a>, <a href="Poco.JSON.Object.html#19622" title="Poco::JSON::Object::makeStruct()">makeStruct</a>, <a href="Poco.JSON.Object.html#19609" title="Poco::JSON::Object::optValue()">optValue</a>, <a href="Poco.JSON.Object.html#19620" title="Poco::JSON::Object::remove()">remove</a>, <a href="Poco.JSON.Object.html#19613" title="Poco::JSON::Object::set()">set</a>, <a href="Poco.JSON.Object.html#19612" title="Poco::JSON::Object::size()">size</a>, <a href="Poco.JSON.Object.html#19616" title="Poco::JSON::Object::stringify()">stringify</a></p>
+<h2>Types</h2>
+<h3><a id="19575">ConstIterator</a></h3>
+<p class="decl">typedef ValueMap::const_iterator <a href="Poco.JSON.Object.html#19575" title="Poco::JSON::Object::ConstIterator">ConstIterator</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="19574">Iterator</a></h3>
+<p class="decl">typedef ValueMap::iterator <a href="Poco.JSON.Object.html#19574" title="Poco::JSON::Object::Iterator">Iterator</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="19571">Ptr</a></h3>
+<p class="decl">typedef <a href="Poco.SharedPtr.html" title="class Poco::SharedPtr">SharedPtr</a> &lt; <a href="Poco.JSON.Object.html" title="class Poco::JSON::Object">Object</a> &gt; <a href="Poco.JSON.Object.html#19571" title="Poco::JSON::Object::Ptr">Ptr</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="19572">ValueMap</a></h3>
+<p class="decl">typedef std::map &lt; std::string, <a href="Poco.Dynamic.Var.html" title="class Poco::Dynamic::Var">Dynamic::Var</a> &gt; <a href="Poco.JSON.Object.html#19572" title="Poco::JSON::Object::ValueMap">ValueMap</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="19573">ValueType</a></h3>
+<p class="decl">typedef ValueMap::value_type <a href="Poco.JSON.Object.html#19573" title="Poco::JSON::Object::ValueType">ValueType</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Constructors</h2>
+<h3><a id="19576">Object</a></h3>
+<p class="decl">explicit <a href="Poco.JSON.Object.html" title="class Poco::JSON::Object">Object</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;bool preserveInsertionOrder = false<br />);</p>
+<div class="description">
+<p>Creates an empty <a href="Poco.JSON.Object.html" title="class Poco::JSON::Object">Object</a>. </p>
+<p>If preserveInsertionOrder, object will preserve the items insertion  order. Otherwise, items will be sorted by keys. </p>
+</div>
+<h3><a id="19578">Object</a></h3>
+<p class="decl"><a href="Poco.JSON.Object.html" title="class Poco::JSON::Object">Object</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.JSON.Object.html" title="class Poco::JSON::Object">Object</a> &amp; copy<br />);</p>
+<div class="description">
+<p>Creates an <a href="Poco.JSON.Object.html" title="class Poco::JSON::Object">Object</a> by copying another one. </p>
+<p>Struct is not copied to keep the operation as efficient as possible (when needed, it will be generated upon request). </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="19580">~Object</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual ~<a href="Poco.JSON.Object.html" title="class Poco::JSON::Object">Object</a>();</p>
+<div class="description">
+<p>Destroys the <a href="Poco.JSON.Object.html" title="class Poco::JSON::Object">Object</a>. </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="19581">begin</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.JSON.Object.html#19574" title="Poco::JSON::Object::Iterator">Iterator</a> begin();</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="19582">begin</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.JSON.Object.html#19575" title="Poco::JSON::Object::ConstIterator">ConstIterator</a> begin() const;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="19624">clear</a></h3>
+<p class="decl">void clear();</p>
+<div class="description">
+<p>Cast operator to Poco::DynamiStruct. Clears the contents of the object. </p>
+<p>Insertion order preservation property is left intact. </p>
+</div>
+<h3><a id="19583">end</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.JSON.Object.html#19574" title="Poco::JSON::Object::Iterator">Iterator</a> end();</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="19584">end</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.JSON.Object.html#19575" title="Poco::JSON::Object::ConstIterator">ConstIterator</a> end() const;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="19585">get</a></h3>
+<p class="decl"><a href="Poco.Dynamic.Var.html" title="class Poco::Dynamic::Var">Dynamic::Var</a> get(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; key<br />) const;</p>
+<div class="description">
+<p>Retrieves a property. An empty value is returned when the property doesn't exist. </p>
+</div>
+<h3><a id="19587">getArray</a></h3>
+<p class="decl"><a href="Poco.JSON.Array.html#19469" title="Poco::JSON::Array::Ptr">Array::Ptr</a> getArray(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; key<br />) const;</p>
+<div class="description">
+<p>Returns a <a href="Poco.SharedPtr.html" title="class Poco::SharedPtr">SharedPtr</a> to an array when the property is an array. An empty <a href="Poco.SharedPtr.html" title="class Poco::SharedPtr">SharedPtr</a> is returned when the element doesn't exist or is not an array. </p>
+</div>
+<h3><a id="19595">getNames</a></h3>
+<p class="decl">void getNames(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::vector &lt; std::string &gt; &amp; names<br />) const;</p>
+<div class="description">
+<p>Returns all property names. </p>
+</div>
+<h3><a id="19593">getNullableValue</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">template &lt; typename T &gt; <a href="Poco.Nullable.html" title="class Poco::Nullable">Poco::Nullable</a> &lt; T &gt; getNullableValue(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; key<br />) const;</p>
+<div class="description">
+<p>Retrieves the property with the given name and will try to convert the value to the given template type. </p>
+<p>The convert&lt;T&gt; method of Var is called which can also throw exceptions for invalid values. Note: This will not work for an array or an object. </p>
+</div>
+<h3><a id="19589">getObject</a></h3>
+<p class="decl"><a href="Poco.JSON.Object.html#19571" title="Poco::JSON::Object::Ptr">Object::Ptr</a> getObject(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; key<br />) const;</p>
+<div class="description">
+<p>Returns a <a href="Poco.SharedPtr.html" title="class Poco::SharedPtr">SharedPtr</a> to an object when the property is an object. An empty <a href="Poco.SharedPtr.html" title="class Poco::SharedPtr">SharedPtr</a> is returned when the property doesn't exist or is not an object </p>
+</div>
+<h3><a id="19591">getValue</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">template &lt; typename T &gt; T getValue(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; key<br />) const;</p>
+<div class="description">
+<p>Retrieves the property with the given name and will try to convert the value to the given template type. The convert&lt;T&gt;() method of Var is called which can also throw exceptions for invalid values. Note: This will not work for an array or an object. </p>
+</div>
+<h3><a id="19597">has</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool has(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; key<br />) const;</p>
+<div class="description">
+<p>Returns true when the given property exists. </p>
+</div>
+<h3><a id="19599">isArray</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool isArray(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; key<br />) const;</p>
+<div class="description">
+<p>Returns true when the given property contains an array. </p>
+</div>
+<h3><a id="19601">isArray</a></h3>
+<p class="decl">bool isArray(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.JSON.Object.html#19575" title="Poco::JSON::Object::ConstIterator">ConstIterator</a> &amp; it<br />) const;</p>
+<div class="description">
+<p>Returns true when the given property contains an array. </p>
+</div>
+<h3><a id="19603">isNull</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool isNull(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; key<br />) const;</p>
+<div class="description">
+<p>Returns true when the given property contains a null value. </p>
+</div>
+<h3><a id="19605">isObject</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool isObject(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; key<br />) const;</p>
+<div class="description">
+<p>Returns true when the given property contains an object. </p>
+</div>
+<h3><a id="19607">isObject</a></h3>
+<p class="decl">bool isObject(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.JSON.Object.html#19575" title="Poco::JSON::Object::ConstIterator">ConstIterator</a> &amp; it<br />) const;</p>
+<div class="description">
+<p>Returns true when the given property contains an object. </p>
+</div>
+<h3><a id="19622">makeStruct</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static <a href="Poco.html#10024" title="Poco::DynamicStruct">Poco::DynamicStruct</a> makeStruct(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.JSON.Object.html#19571" title="Poco::JSON::Object::Ptr">Object::Ptr</a> &amp; obj<br />);</p>
+<div class="description">
+<p>Utility function for creation of struct. </p>
+</div>
+<h3><a id="19609">optValue</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">template &lt; typename T &gt; T optValue(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; key,<br />&nbsp;&nbsp;&nbsp;&nbsp;const T &amp; def<br />) const;</p>
+<div class="description">
+<p>Returns the value of a property when the property exists and can be converted to the given type. Otherwise def will be returned. </p>
+</div>
+<h3><a id="19620">remove</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void remove(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; key<br />);</p>
+<div class="description">
+<p>Removes the property with the given key. </p>
+</div>
+<h3><a id="19613">set</a></h3>
+<p class="decl">void set(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; key,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Dynamic.Var.html" title="class Poco::Dynamic::Var">Dynamic::Var</a> &amp; value<br />);</p>
+<div class="description">
+<p>Sets a new value. </p>
+</div>
+<h3><a id="19612">size</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">std::size_t size() const;</p>
+<div class="description">
+<p>Returns the number of properties. </p>
+</div>
+<h3><a id="19616">stringify</a></h3>
+<p class="decl">void stringify(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::ostream &amp; out,<br />&nbsp;&nbsp;&nbsp;&nbsp;unsigned int indent = 0,<br />&nbsp;&nbsp;&nbsp;&nbsp;int step = - 1<br />) const;</p>
+<div class="description">
+<p>Prints the object to out stream.  </p>
+<p>When indent is 0, the object will be printed on a single  line without indentation. </p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::MongoDB::Message</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.MongoDB.html" class="namespace">Poco::MongoDB</a></h1>
+<h1 class="symbol">class Message</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-MongoDB" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> MongoDB<br />
+<b>Package:</b> MongoDB<br />
+<b>Header:</b> Poco/MongoDB/Message.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>Base class for all messages send or retrieved from <a href="Poco.MongoDB.html" title="namespace Poco::MongoDB">MongoDB</a> server. </p>
+</div>
+<h2>Inheritance</h2>
+<p><b>Known Derived Classes: </b><a href="Poco.MongoDB.DeleteRequest.html" title="class Poco::MongoDB::DeleteRequest">DeleteRequest</a>, <a href="Poco.MongoDB.InsertRequest.html" title="class Poco::MongoDB::InsertRequest">InsertRequest</a>, <a href="Poco.MongoDB.ResponseMessage.html" title="class Poco::MongoDB::ResponseMessage">ResponseMessage</a>, <a href="Poco.MongoDB.GetMoreRequest.html" title="class Poco::MongoDB::GetMoreRequest">GetMoreRequest</a>, <a href="Poco.MongoDB.KillCursorsRequest.html" title="class Poco::MongoDB::KillCursorsRequest">KillCursorsRequest</a>, <a href="Poco.MongoDB.QueryRequest.html" title="class Poco::MongoDB::QueryRequest">QueryRequest</a>, <a href="Poco.MongoDB.RequestMessage.html" title="class Poco::MongoDB::RequestMessage">RequestMessage</a>, <a href="Poco.MongoDB.UpdateRequest.html" title="class Poco::MongoDB::UpdateRequest">UpdateRequest</a></p>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.MongoDB.Message.html#20328" title="Poco::MongoDB::Message::header()">header</a>, <a href="Poco.MongoDB.Message.html#20330" title="Poco::MongoDB::Message::messageLength()">messageLength</a></p>
+<h2>Constructors</h2>
+<h3><a id="20325">Message</a></h3>
+<p class="decl">explicit <a href="Poco.MongoDB.Message.html" title="class Poco::MongoDB::Message">Message</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.MongoDB.MessageHeader.html#20334" title="enum  Poco::MongoDB::MessageHeader::OpCode">MessageHeader::OpCode</a> opcode<br />);</p>
+<div class="description">
+<p>Creates a <a href="Poco.MongoDB.Message.html" title="class Poco::MongoDB::Message">Message</a> using the given OpCode. </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="20327">~Message</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual ~<a href="Poco.MongoDB.Message.html" title="class Poco::MongoDB::Message">Message</a>();</p>
+<div class="description">
+<p>Destructor </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="20328">header</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.MongoDB.MessageHeader.html" title="class Poco::MongoDB::MessageHeader">MessageHeader</a> &amp; header();</p>
+<div class="description">
+<p>Returns the message header </p>
+</div>
+<h3><a id="20330">messageLength</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void messageLength(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.html#18380" title="Poco::Int32">Poco::Int32</a> length<br />);</p>
+<div class="description">
+<p>Sets the message length in the message header </p>
+</div>
+<h2>Variables</h2>
+<h3><a id="20329">_header</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl"><a href="Poco.MongoDB.MessageHeader.html" title="class Poco::MongoDB::MessageHeader">MessageHeader</a> _header;</p>
+<div class="description">
+<p></p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

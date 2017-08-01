@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::XML::Name</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.XML.html" class="namespace">Poco::XML</a></h1>
+<h1 class="symbol">class Name</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-XML" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> XML<br />
+<b>Package:</b> XML<br />
+<b>Header:</b> Poco/XML/Name.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>An <a href="Poco.XML.html" title="namespace Poco::XML">XML</a> element or attribute name, consisting of a qualified name, a namespace <a href="Poco.URI.html" title="class Poco::URI">URI</a> and a local name. </p>
+</div>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.XML.Name.html#30199" title="Poco::XML::Name::assign()">assign</a>, <a href="Poco.XML.Name.html#30208" title="Poco::XML::Name::equals()">equals</a>, <a href="Poco.XML.Name.html#30214" title="Poco::XML::Name::equalsWeakly()">equalsWeakly</a>, <a href="Poco.XML.Name.html#30220" title="Poco::XML::Name::localName()">localName</a>, <a href="Poco.XML.Name.html#30219" title="Poco::XML::Name::namespaceURI()">namespaceURI</a>, <a href="Poco.XML.Name.html#30195" title="Poco::XML::Name::operator =()">operator&nbsp;=</a>, <a href="Poco.XML.Name.html#30221" title="Poco::XML::Name::prefix()">prefix</a>, <a href="Poco.XML.Name.html#30218" title="Poco::XML::Name::qname()">qname</a>, <a href="Poco.XML.Name.html#30222" title="Poco::XML::Name::split()">split</a>, <a href="Poco.XML.Name.html#30197" title="Poco::XML::Name::swap()">swap</a></p>
+<h2>Constructors</h2>
+<h3><a id="30182">Name</a></h3>
+<p class="decl"><a href="Poco.XML.Name.html" title="class Poco::XML::Name">Name</a>();</p>
+<div class="description">
+<p>Creates an empty <a href="Poco.XML.Name.html" title="class Poco::XML::Name">Name</a>. </p>
+</div>
+<h3><a id="30183">Name</a></h3>
+<p class="decl"><a href="Poco.XML.Name.html" title="class Poco::XML::Name">Name</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; qname<br />);</p>
+<div class="description">
+<p>Creates a <a href="Poco.XML.Name.html" title="class Poco::XML::Name">Name</a> from a qualified name only. </p>
+</div>
+<h3><a id="30192">Name</a></h3>
+<p class="decl"><a href="Poco.XML.Name.html" title="class Poco::XML::Name">Name</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.Name.html" title="class Poco::XML::Name">Name</a> &amp; name<br />);</p>
+<div class="description">
+<p>Copy constructor. </p>
+</div>
+<h3><a id="30185">Name</a></h3>
+<p class="decl"><a href="Poco.XML.Name.html" title="class Poco::XML::Name">Name</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; qname,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; namespaceURI<br />);</p>
+<div class="description">
+<p>Creates a <a href="Poco.XML.Name.html" title="class Poco::XML::Name">Name</a> from a qualified name and a namespace <a href="Poco.URI.html" title="class Poco::URI">URI</a>. The local name is extracted from the qualified name. </p>
+</div>
+<h3><a id="30188">Name</a></h3>
+<p class="decl"><a href="Poco.XML.Name.html" title="class Poco::XML::Name">Name</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; qname,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; namespaceURI,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; localName<br />);</p>
+<div class="description">
+<p>Creates a <a href="Poco.XML.Name.html" title="class Poco::XML::Name">Name</a> from a qualified name, a namespace <a href="Poco.URI.html" title="class Poco::URI">URI</a> and a local name. </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="30194">~Name</a></h3>
+<p class="decl">~<a href="Poco.XML.Name.html" title="class Poco::XML::Name">Name</a>();</p>
+<div class="description">
+<p>Destroys the name. </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="30199">assign</a></h3>
+<p class="decl">void assign(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; qname<br />);</p>
+<div class="description">
+<p>Assigns a new value to the name. </p>
+</div>
+<h3><a id="30201">assign</a></h3>
+<p class="decl">void assign(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; qname,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; namespaceURI<br />);</p>
+<div class="description">
+<p>Assigns new values to the name. The local name is extracted from the qualified name. </p>
+</div>
+<h3><a id="30204">assign</a></h3>
+<p class="decl">void assign(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; qname,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; namespaceURI,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; localName<br />);</p>
+<div class="description">
+<p>Assigns new values to the name. </p>
+</div>
+<h3><a id="30208">equals</a></h3>
+<p class="decl">bool equals(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.Name.html" title="class Poco::XML::Name">Name</a> &amp; name<br />) const;</p>
+<div class="description">
+<p>Returns true if both names are equal. </p>
+</div>
+<h3><a id="30210">equals</a></h3>
+<p class="decl">bool equals(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; qname,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; namespaceURI,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; localName<br />) const;</p>
+<div class="description">
+<p>Returns true if all the name's components are equal to the given ones. </p>
+</div>
+<h3><a id="30214">equalsWeakly</a></h3>
+<p class="decl">bool equalsWeakly(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; qname,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; namespaceURI,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; localName<br />) const;</p>
+<div class="description">
+<p>Returns true if either the qnames are identical or the namespaceURIs and the localNames are identical. </p>
+</div>
+<h3><a id="30220">localName</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; localName() const;</p>
+<div class="description">
+<p>Returns the local name. </p>
+</div>
+<h3><a id="30226">localName</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> localName(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; qname<br />);</p>
+<div class="description">
+<p>Returns the local name part of the given qualified name. </p>
+</div>
+<h3><a id="30219">namespaceURI</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; namespaceURI() const;</p>
+<div class="description">
+<p>Returns the namespace <a href="Poco.URI.html" title="class Poco::URI">URI</a>. </p>
+</div>
+<h3><a id="30195">operator =</a></h3>
+<p class="decl"><a href="Poco.XML.Name.html" title="class Poco::XML::Name">Name</a> &amp; operator = (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.Name.html" title="class Poco::XML::Name">Name</a> &amp; name<br />);</p>
+<div class="description">
+<p>Assignment operator. </p>
+</div>
+<h3><a id="30221">prefix</a></h3>
+<p class="decl"><a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> prefix() const;</p>
+<div class="description">
+<p>Returns the namespace prefix. </p>
+</div>
+<h3><a id="30228">prefix</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> prefix(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; qname<br />);</p>
+<div class="description">
+<p>Returns the prefix part of the given qualified name. </p>
+</div>
+<h3><a id="30218">qname</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; qname() const;</p>
+<div class="description">
+<p>Returns the qualified name. </p>
+</div>
+<h3><a id="30222">split</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static void split(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; qname,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; prefix,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> &amp; localName<br />);</p>
+<div class="description">
+<p>Splits the given qualified name into its prefix and localName parts. </p>
+</div>
+<h3><a id="30197">swap</a></h3>
+<p class="decl">void swap(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.XML.Name.html" title="class Poco::XML::Name">Name</a> &amp; name<br />);</p>
+<div class="description">
+<p>Swaps the name with another one.	 </p>
+</div>
+<h2>Variables</h2>
+<h3><a id="30230">EMPTY_NAME</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static const <a href="Poco.XML.html#30546" title="Poco::XML::XMLString">XMLString</a> <a href="Poco.XML.Name.html#30230" title="Poco::XML::Name::EMPTY_NAME">EMPTY_NAME</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

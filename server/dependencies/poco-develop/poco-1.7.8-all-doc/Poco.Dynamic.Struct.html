@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::Dynamic::Struct</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.Dynamic.html" class="namespace">Poco::Dynamic</a></h1>
+<h1 class="template">template &lt; typename K &gt;</h1>
+<h1 class="symbol">class Struct</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Foundation" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Foundation<br />
+<b>Package:</b> Dynamic<br />
+<b>Header:</b> Poco/Dynamic/Struct.h</p>
+<h2>Description</h2>
+<div class="description">
+<p><a href="Poco.Dynamic.Struct.html" title="class Poco::Dynamic::Struct">Struct</a> allows to define a named collection of <a href="Poco.Dynamic.Var.html" title="class Poco::Dynamic::Var">Var</a> objects. </p>
+</div>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.Dynamic.Struct.html#10008" title="Poco::Dynamic::Struct::begin()">begin</a>, <a href="Poco.Dynamic.Struct.html#10000" title="Poco::Dynamic::Struct::contains()">contains</a>, <a href="Poco.Dynamic.Struct.html#10019" title="Poco::Dynamic::Struct::empty()">empty</a>, <a href="Poco.Dynamic.Struct.html#10006" title="Poco::Dynamic::Struct::end()">end</a>, <a href="Poco.Dynamic.Struct.html#10015" title="Poco::Dynamic::Struct::erase()">erase</a>, <a href="Poco.Dynamic.Struct.html#10002" title="Poco::Dynamic::Struct::find()">find</a>, <a href="Poco.Dynamic.Struct.html#10010" title="Poco::Dynamic::Struct::insert()">insert</a>, <a href="Poco.Dynamic.Struct.html#10021" title="Poco::Dynamic::Struct::members()">members</a>, <a href="Poco.Dynamic.Struct.html#9996" title="Poco::Dynamic::Struct::operator []()">operator&nbsp;[]</a>, <a href="Poco.Dynamic.Struct.html#10020" title="Poco::Dynamic::Struct::size()">size</a>, <a href="Poco.Dynamic.Struct.html#10022" title="Poco::Dynamic::Struct::toString()">toString</a></p>
+<h2>Types</h2>
+<h3><a id="9985">ConstIterator</a></h3>
+<p class="decl">typedef typename Data::const_iterator <a href="Poco.Dynamic.Struct.html#9985" title="Poco::Dynamic::Struct::ConstIterator">ConstIterator</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="9982">Data</a></h3>
+<p class="decl">typedef typename std::map &lt; K, <a href="Poco.Dynamic.Var.html" title="class Poco::Dynamic::Var">Var</a> &gt; <a href="Poco.Dynamic.Struct.html#9982" title="Poco::Dynamic::Struct::Data">Data</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="9988">InsRetVal</a></h3>
+<p class="decl">typedef typename std::pair &lt; typename <a href="Poco.Dynamic.Struct.html" title="class Poco::Dynamic::Struct">Struct</a> &lt; K &gt;::<a href="Poco.Dynamic.Struct.html#9984" title="Poco::Dynamic::Struct::Iterator">Iterator</a>, bool &gt; <a href="Poco.Dynamic.Struct.html#9988" title="Poco::Dynamic::Struct::InsRetVal">InsRetVal</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="9984">Iterator</a></h3>
+<p class="decl">typedef typename Data::iterator <a href="Poco.Dynamic.Struct.html#9984" title="Poco::Dynamic::Struct::Iterator">Iterator</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="9983">NameSet</a></h3>
+<p class="decl">typedef typename std::set &lt; K &gt; <a href="Poco.Dynamic.Struct.html#9983" title="Poco::Dynamic::Struct::NameSet">NameSet</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="9989">Ptr</a></h3>
+<p class="decl">typedef typename <a href="Poco.SharedPtr.html" title="class Poco::SharedPtr">Poco::SharedPtr</a> &lt; <a href="Poco.Dynamic.Struct.html" title="class Poco::Dynamic::Struct">Struct</a> &lt; K &gt; &gt; <a href="Poco.Dynamic.Struct.html#9989" title="Poco::Dynamic::Struct::Ptr">Ptr</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="9987">SizeType</a></h3>
+<p class="decl">typedef typename <a href="Poco.Dynamic.Struct.html" title="class Poco::Dynamic::Struct">Struct</a> &lt; K &gt;::Data::size_type <a href="Poco.Dynamic.Struct.html#9987" title="Poco::Dynamic::Struct::SizeType">SizeType</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="9986">ValueType</a></h3>
+<p class="decl">typedef typename <a href="Poco.Dynamic.Struct.html" title="class Poco::Dynamic::Struct">Struct</a> &lt; K &gt;::Data::value_type <a href="Poco.Dynamic.Struct.html#9986" title="Poco::Dynamic::Struct::ValueType">ValueType</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Constructors</h2>
+<h3><a id="9990">Struct</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Dynamic.Struct.html" title="class Poco::Dynamic::Struct">Struct</a>();</p>
+<div class="description">
+<p>Creates an empty <a href="Poco.Dynamic.Struct.html" title="class Poco::Dynamic::Struct">Struct</a> </p>
+</div>
+<h3><a id="9991">Struct</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Dynamic.Struct.html" title="class Poco::Dynamic::Struct">Struct</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Dynamic.Struct.html#9982" title="Poco::Dynamic::Struct::Data">Data</a> &amp; val<br />);</p>
+<div class="description">
+<p>Creates the <a href="Poco.Dynamic.Struct.html" title="class Poco::Dynamic::Struct">Struct</a> from the given value. </p>
+</div>
+<h3><a id="9993">Struct</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">template &lt; typename T &gt; <a href="Poco.Dynamic.Struct.html" title="class Poco::Dynamic::Struct">Struct</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::map &lt; K, T &gt; &amp; val<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="9995">~Struct</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">virtual ~<a href="Poco.Dynamic.Struct.html" title="class Poco::Dynamic::Struct">Struct</a>();</p>
+<div class="description">
+<p>Destroys the <a href="Poco.Dynamic.Struct.html" title="class Poco::Dynamic::Struct">Struct</a>. </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="10008">begin</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">inline <a href="Poco.Dynamic.Struct.html#9984" title="Poco::Dynamic::Struct::Iterator">Iterator</a> begin();</p>
+<div class="description">
+<p>Returns the begin iterator for the <a href="Poco.Dynamic.Struct.html" title="class Poco::Dynamic::Struct">Struct</a> </p>
+</div>
+<h3><a id="10009">begin</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">inline <a href="Poco.Dynamic.Struct.html#9985" title="Poco::Dynamic::Struct::ConstIterator">ConstIterator</a> begin() const;</p>
+<div class="description">
+<p>Returns the begin const iterator for the <a href="Poco.Dynamic.Struct.html" title="class Poco::Dynamic::Struct">Struct</a> </p>
+</div>
+<h3><a id="10000">contains</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">inline bool contains(<br />&nbsp;&nbsp;&nbsp;&nbsp;const K &amp; name<br />) const;</p>
+<div class="description">
+<p>Returns true if the <a href="Poco.Dynamic.Struct.html" title="class Poco::Dynamic::Struct">Struct</a> contains a member with the given name </p>
+</div>
+<h3><a id="10019">empty</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">inline bool empty() const;</p>
+<div class="description">
+<p>Returns true if the <a href="Poco.Dynamic.Struct.html" title="class Poco::Dynamic::Struct">Struct</a> doesn't contain any members </p>
+</div>
+<h3><a id="10006">end</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">inline <a href="Poco.Dynamic.Struct.html#9984" title="Poco::Dynamic::Struct::Iterator">Iterator</a> end();</p>
+<div class="description">
+<p>Returns the end iterator for the <a href="Poco.Dynamic.Struct.html" title="class Poco::Dynamic::Struct">Struct</a> </p>
+</div>
+<h3><a id="10007">end</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">inline <a href="Poco.Dynamic.Struct.html#9985" title="Poco::Dynamic::Struct::ConstIterator">ConstIterator</a> end() const;</p>
+<div class="description">
+<p>Returns the end const iterator for the <a href="Poco.Dynamic.Struct.html" title="class Poco::Dynamic::Struct">Struct</a> </p>
+</div>
+<h3><a id="10015">erase</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">inline <a href="Poco.Dynamic.Struct.html#9987" title="Poco::Dynamic::Struct::SizeType">SizeType</a> erase(<br />&nbsp;&nbsp;&nbsp;&nbsp;const K &amp; key<br />);</p>
+<div class="description">
+<p>Erases the element if found, returns number of elements deleted </p>
+</div>
+<h3><a id="10017">erase</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">inline void erase(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Dynamic.Struct.html#9984" title="Poco::Dynamic::Struct::Iterator">Iterator</a> &amp; it<br />);</p>
+<div class="description">
+<p>Erases the element at the given position </p>
+</div>
+<h3><a id="10002">find</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">inline <a href="Poco.Dynamic.Struct.html#9984" title="Poco::Dynamic::Struct::Iterator">Iterator</a> find(<br />&nbsp;&nbsp;&nbsp;&nbsp;const K &amp; name<br />);</p>
+<div class="description">
+<p>Returns an iterator, pointing to the &lt;name,<a href="Poco.Dynamic.Var.html" title="class Poco::Dynamic::Var">Var</a>&gt; pair containing the element, or it returns <a href="Poco.Dynamic.Struct.html#10006" title="Poco::Dynamic::Struct::end()">end</a>() if the member was not found </p>
+</div>
+<h3><a id="10004">find</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">inline <a href="Poco.Dynamic.Struct.html#9985" title="Poco::Dynamic::Struct::ConstIterator">ConstIterator</a> find(<br />&nbsp;&nbsp;&nbsp;&nbsp;const K &amp; name<br />) const;</p>
+<div class="description">
+<p>Returns a const iterator, pointing to the &lt;name,<a href="Poco.Dynamic.Var.html" title="class Poco::Dynamic::Var">Var</a>&gt; pair containing the element, or it returns <a href="Poco.Dynamic.Struct.html#10006" title="Poco::Dynamic::Struct::end()">end</a>() if the member was not found </p>
+</div>
+<h3><a id="10010">insert</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">template &lt; typename T &gt; inline <a href="Poco.Dynamic.Struct.html#9988" title="Poco::Dynamic::Struct::InsRetVal">InsRetVal</a> insert(<br />&nbsp;&nbsp;&nbsp;&nbsp;const K &amp; key,<br />&nbsp;&nbsp;&nbsp;&nbsp;const T &amp; value<br />);</p>
+<div class="description">
+<p>Inserts a &lt;name, <a href="Poco.Dynamic.Var.html" title="class Poco::Dynamic::Var">Var</a>&gt; pair into the <a href="Poco.Dynamic.Struct.html" title="class Poco::Dynamic::Struct">Struct</a>, returns a pair containing the iterator and a boolean which indicates success or not (is true, when insert succeeded, false, when already another element was present, in this case <a href="Poco.Dynamic.Struct.html#9984" title="Poco::Dynamic::Struct::Iterator">Iterator</a> points to that other element) </p>
+</div>
+<h3><a id="10013">insert</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">inline <a href="Poco.Dynamic.Struct.html#9988" title="Poco::Dynamic::Struct::InsRetVal">InsRetVal</a> insert(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Dynamic.Struct.html#9986" title="Poco::Dynamic::Struct::ValueType">ValueType</a> &amp; aPair<br />);</p>
+<div class="description">
+<p>Inserts a &lt;name, <a href="Poco.Dynamic.Var.html" title="class Poco::Dynamic::Var">Var</a>&gt; pair into the <a href="Poco.Dynamic.Struct.html" title="class Poco::Dynamic::Struct">Struct</a>, returns a pair containing the iterator and a boolean which indicates success or not (is true, when insert succeeded, false, when already another element was present, in this case <a href="Poco.Dynamic.Struct.html#9984" title="Poco::Dynamic::Struct::Iterator">Iterator</a> points to that other element) </p>
+</div>
+<h3><a id="10021">members</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">inline <a href="Poco.Dynamic.Struct.html#9983" title="Poco::Dynamic::Struct::NameSet">NameSet</a> members() const;</p>
+<div class="description">
+<p>Returns a sorted collection containing all member names </p>
+</div>
+<h3><a id="9996">operator []</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">inline <a href="Poco.Dynamic.Var.html" title="class Poco::Dynamic::Var">Var</a> &amp; operator[] (<br />&nbsp;&nbsp;&nbsp;&nbsp;const K &amp; name<br />);</p>
+<div class="description">
+<p>Returns the <a href="Poco.Dynamic.Var.html" title="class Poco::Dynamic::Var">Var</a> with the given name, creates an entry if not found. </p>
+</div>
+<h3><a id="9998">operator []</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">const <a href="Poco.Dynamic.Var.html" title="class Poco::Dynamic::Var">Var</a> &amp; operator[] (<br />&nbsp;&nbsp;&nbsp;&nbsp;const K &amp; name<br />) const;</p>
+<div class="description">
+<p>Returns the <a href="Poco.Dynamic.Var.html" title="class Poco::Dynamic::Var">Var</a> with the given name, throws a <a href="Poco.NotFoundException.html" title="class Poco::NotFoundException">NotFoundException</a> if the data member is not found. </p>
+</div>
+<h3><a id="10020">size</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Dynamic.Struct.html#9987" title="Poco::Dynamic::Struct::SizeType">SizeType</a> size() const;</p>
+<div class="description">
+<p>Returns the number of members the <a href="Poco.Dynamic.Struct.html" title="class Poco::Dynamic::Struct">Struct</a> contains </p>
+</div>
+<h3><a id="10022">toString</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">std::string toString();</p>
+<div class="description">
+<p></p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

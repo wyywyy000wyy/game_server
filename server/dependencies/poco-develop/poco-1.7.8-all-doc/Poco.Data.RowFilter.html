@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::Data::RowFilter</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.Data.html" class="namespace">Poco::Data</a></h1>
+<h1 class="symbol">class RowFilter</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Data" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Data<br />
+<b>Package:</b> DataCore<br />
+<b>Header:</b> Poco/Data/RowFilter.h</p>
+<h2>Description</h2>
+<div class="description">
+<p><a href="Poco.Data.RowFilter.html" title="class Poco::Data::RowFilter">RowFilter</a> class provides row filtering functionality. A filter contains a set of criteria (field name, value and logical operation) for row filtering. Additionally, a row filter contains a map of pointers to other filters with related logical operations between filters. <a href="Poco.Data.RowFilter.html" title="class Poco::Data::RowFilter">RowFilter</a> is typically added to recordset in order to filter its content. Since the recordset own iteration is dependent upon filtering, whenever the filtering criteria is changed, the filter automatically notifies all associated recordsets by rewinding them to the first position. </p>
+</div>
+<h2>Inheritance</h2>
+<p><b>Direct Base Classes: </b><a href="Poco.RefCountedObject.html" title="class Poco::RefCountedObject">Poco::RefCountedObject</a></p>
+<p><b>All Base Classes: </b><a href="Poco.RefCountedObject.html" title="class Poco::RefCountedObject">Poco::RefCountedObject</a></p>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.Data.RowFilter.html#6779" title="Poco::Data::RowFilter::add()">add</a>, <a href="Poco.Data.RowFilter.html#6789" title="Poco::Data::RowFilter::addAnd()">addAnd</a>, <a href="Poco.Data.RowFilter.html#6774" title="Poco::Data::RowFilter::addFilter()">addFilter</a>, <a href="Poco.Data.RowFilter.html#6793" title="Poco::Data::RowFilter::addOr()">addOr</a>, <a href="Poco.Data.RowFilter.html#6804" title="Poco::Data::RowFilter::exists()">exists</a>, <a href="Poco.Data.RowFilter.html#6802" title="Poco::Data::RowFilter::isAllowed()">isAllowed</a>, <a href="Poco.Data.RowFilter.html#6801" title="Poco::Data::RowFilter::isEmpty()">isEmpty</a>, <a href="Poco.Data.RowFilter.html#6800" title="Poco::Data::RowFilter::isNot()">isNot</a>, <a href="Poco.Data.RowFilter.html#6797" title="Poco::Data::RowFilter::remove()">remove</a>, <a href="Poco.Data.RowFilter.html#6777" title="Poco::Data::RowFilter::removeFilter()">removeFilter</a>, <a href="Poco.Data.RowFilter.html#6799" title="Poco::Data::RowFilter::toggleNot()">toggleNot</a></p>
+<p><b>Inherited Functions: </b><a href="Poco.RefCountedObject.html#16511" title="Poco::RefCountedObject::duplicate()">duplicate</a>, <a href="Poco.RefCountedObject.html#16513" title="Poco::RefCountedObject::referenceCount()">referenceCount</a>, <a href="Poco.RefCountedObject.html#16512" title="Poco::RefCountedObject::release()">release</a></p>
+<h2>Types</h2>
+<h3><a id="6762">CompT</a></h3>
+<p class="decl">typedef bool (* <a href="Poco.Data.RowFilter.html#6762" title="Poco::Data::RowFilter::CompT">CompT</a>)(const <a href="Poco.Dynamic.Var.html" title="class Poco::Dynamic::Var">Poco::Dynamic::Var</a> &amp;, const <a href="Poco.Dynamic.Var.html" title="class Poco::Dynamic::Var">Poco::Dynamic::Var</a> &amp;);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="6765">ComparisonEntry</a></h3>
+<p class="decl">typedef <a href="Poco.Tuple.html" title="struct Poco::Tuple">Tuple</a> &lt; <a href="Poco.Dynamic.Var.html" title="class Poco::Dynamic::Var">Poco::Dynamic::Var</a>, <a href="Poco.Data.RowFilter.html#6750" title="enum  Poco::Data::RowFilter::Comparison">Comparison</a>, <a href="Poco.Data.RowFilter.html#6758" title="enum  Poco::Data::RowFilter::LogicOperator">LogicOperator</a> &gt; <a href="Poco.Data.RowFilter.html#6765" title="Poco::Data::RowFilter::ComparisonEntry">ComparisonEntry</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="6766">ComparisonMap</a></h3>
+<p class="decl">typedef std::multimap &lt; std::string, <a href="Poco.Data.RowFilter.html#6765" title="Poco::Data::RowFilter::ComparisonEntry">ComparisonEntry</a> &gt; <a href="Poco.Data.RowFilter.html#6766" title="Poco::Data::RowFilter::ComparisonMap">ComparisonMap</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="6764">Comparisons</a></h3>
+<p class="decl">typedef std::map &lt; std::string, <a href="Poco.Data.RowFilter.html#6750" title="enum  Poco::Data::RowFilter::Comparison">Comparison</a> &gt; <a href="Poco.Data.RowFilter.html#6764" title="Poco::Data::RowFilter::Comparisons">Comparisons</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="6767">FilterMap</a></h3>
+<p class="decl">typedef std::map &lt; <a href="Poco.AutoPtr.html" title="class Poco::AutoPtr">AutoPtr</a> &lt; <a href="Poco.Data.RowFilter.html" title="class Poco::Data::RowFilter">RowFilter</a> &gt;, <a href="Poco.Data.RowFilter.html#6758" title="enum  Poco::Data::RowFilter::LogicOperator">LogicOperator</a> &gt; <a href="Poco.Data.RowFilter.html#6767" title="Poco::Data::RowFilter::FilterMap">FilterMap</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="6763">Ptr</a></h3>
+<p class="decl">typedef <a href="Poco.AutoPtr.html" title="class Poco::AutoPtr">AutoPtr</a> &lt; <a href="Poco.Data.RowFilter.html" title="class Poco::Data::RowFilter">RowFilter</a> &gt; <a href="Poco.Data.RowFilter.html#6763" title="Poco::Data::RowFilter::Ptr">Ptr</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Enumerations</h2>
+<h3><a id="6750">Comparison</a></h3>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="6751">VALUE_LESS_THAN</a></p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="6752">VALUE_LESS_THAN_OR_EQUAL</a></p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="6753">VALUE_EQUAL</a></p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="6754">VALUE_GREATER_THAN</a></p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="6755">VALUE_GREATER_THAN_OR_EQUAL</a></p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="6756">VALUE_NOT_EQUAL</a></p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="6757">VALUE_IS_NULL</a></p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="6758">LogicOperator</a></h3>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="6759">OP_AND</a></p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="6760">OP_OR</a></p>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="6761">OP_NOT</a></p>
+<div class="description">
+<p></p>
+</div>
+<h2>Constructors</h2>
+<h3><a id="6768">RowFilter</a></h3>
+<p class="decl"><a href="Poco.Data.RowFilter.html" title="class Poco::Data::RowFilter">RowFilter</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Data.RecordSet.html" title="class Poco::Data::RecordSet">RecordSet</a> * pRecordSet<br />);</p>
+<div class="description">
+<p>Creates the top-level <a href="Poco.Data.RowFilter.html" title="class Poco::Data::RowFilter">RowFilter</a> and associates it with the recordset. </p>
+</div>
+<h3><a id="6770">RowFilter</a></h3>
+<p class="decl"><a href="Poco.Data.RowFilter.html" title="class Poco::Data::RowFilter">RowFilter</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Data.RowFilter.html#6763" title="Poco::Data::RowFilter::Ptr">Ptr</a> pParent,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Data.RowFilter.html#6758" title="enum  Poco::Data::RowFilter::LogicOperator">LogicOperator</a> op = OP_OR<br />);</p>
+<div class="description">
+<p>Creates child <a href="Poco.Data.RowFilter.html" title="class Poco::Data::RowFilter">RowFilter</a> and associates it with the parent filter. </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="6773">~RowFilter</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">~<a href="Poco.Data.RowFilter.html" title="class Poco::Data::RowFilter">RowFilter</a>();</p>
+<div class="description">
+<p>Destroys the <a href="Poco.Data.RowFilter.html" title="class Poco::Data::RowFilter">RowFilter</a>. </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="6779">add</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">template &lt; typename T &gt; void add(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; name,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Data.RowFilter.html#6750" title="enum  Poco::Data::RowFilter::Comparison">Comparison</a> comparison,<br />&nbsp;&nbsp;&nbsp;&nbsp;const T &amp; value,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Data.RowFilter.html#6758" title="enum  Poco::Data::RowFilter::LogicOperator">LogicOperator</a> op = OP_OR<br />);</p>
+<div class="description">
+<p>Adds value to the filter. </p>
+</div>
+<h3><a id="6784">add</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">template &lt; typename T &gt; void add(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; name,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; comp,<br />&nbsp;&nbsp;&nbsp;&nbsp;const T &amp; value,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Data.RowFilter.html#6758" title="enum  Poco::Data::RowFilter::LogicOperator">LogicOperator</a> op = OP_OR<br />);</p>
+<div class="description">
+<p>Adds value to the filter. </p>
+</div>
+<h3><a id="6789">addAnd</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">template &lt; typename T &gt; void addAnd(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; name,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; comp,<br />&nbsp;&nbsp;&nbsp;&nbsp;const T &amp; value<br />);</p>
+<div class="description">
+<p>Adds logically AND-ed value to the filter. </p>
+</div>
+<h3><a id="6774">addFilter</a></h3>
+<p class="decl">void addFilter(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Data.RowFilter.html#6763" title="Poco::Data::RowFilter::Ptr">Ptr</a> &amp; pFilter,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Data.RowFilter.html#6758" title="enum  Poco::Data::RowFilter::LogicOperator">LogicOperator</a> comparison<br />);</p>
+<div class="description">
+<p>Appends another filter to this one. </p>
+</div>
+<h3><a id="6793">addOr</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">template &lt; typename T &gt; void addOr(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; name,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; comp,<br />&nbsp;&nbsp;&nbsp;&nbsp;const T &amp; value<br />);</p>
+<div class="description">
+<p>Adds logically OR-ed value to the filter. </p>
+</div>
+<h3><a id="6804">exists</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool exists(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; name<br />) const;</p>
+<div class="description">
+<p>Returns true if name is known to this row filter. </p>
+</div>
+<h3><a id="6802">isAllowed</a></h3>
+<p class="decl">bool isAllowed(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t row<br />) const;</p>
+<div class="description">
+<p>Returns true if name and value are allowed. </p>
+</div>
+<h3><a id="6801">isEmpty</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool isEmpty() const;</p>
+<div class="description">
+<p>Returns true if there is not filtering criteria specified. </p>
+</div>
+<h3><a id="6800">isNot</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool isNot() const;</p>
+<div class="description">
+<p>Returns true if filter is NOT-ed, false otherwise. </p>
+</div>
+<h3><a id="6797">remove</a></h3>
+<p class="decl">int remove(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; name<br />);</p>
+<div class="description">
+<p>Removes named comparisons from the filter. All comparisons with specified name are removed. Returns the number of comparisons removed. </p>
+</div>
+<h3><a id="6777">removeFilter</a></h3>
+<p class="decl">void removeFilter(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Data.RowFilter.html#6763" title="Poco::Data::RowFilter::Ptr">Ptr</a> &amp; pFilter<br />);</p>
+<div class="description">
+<p>Removes filter from this filter. </p>
+</div>
+<h3><a id="6799">toggleNot</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void toggleNot();</p>
+<div class="description">
+<p>Togless the NOT operator for this filter; </p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

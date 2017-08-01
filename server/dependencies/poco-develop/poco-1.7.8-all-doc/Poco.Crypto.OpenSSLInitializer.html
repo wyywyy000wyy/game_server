@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::Crypto::OpenSSLInitializer</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.Crypto.html" class="namespace">Poco::Crypto</a></h1>
+<h1 class="symbol">class OpenSSLInitializer</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Crypto" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Crypto<br />
+<b>Package:</b> CryptoCore<br />
+<b>Header:</b> Poco/Crypto/OpenSSLInitializer.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>Initalizes the OpenSSL library. </p>
+<p>The class ensures the earliest initialization and the latest shutdown of the OpenSSL library. </p>
+</div>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.Crypto.OpenSSLInitializer.html#275" title="Poco::Crypto::OpenSSLInitializer::dynlock()">dynlock</a>, <a href="Poco.Crypto.OpenSSLInitializer.html#272" title="Poco::Crypto::OpenSSLInitializer::dynlockCreate()">dynlockCreate</a>, <a href="Poco.Crypto.OpenSSLInitializer.html#280" title="Poco::Crypto::OpenSSLInitializer::dynlockDestroy()">dynlockDestroy</a>, <a href="Poco.Crypto.OpenSSLInitializer.html#262" title="Poco::Crypto::OpenSSLInitializer::enableFIPSMode()">enableFIPSMode</a>, <a href="Poco.Crypto.OpenSSLInitializer.html#271" title="Poco::Crypto::OpenSSLInitializer::id()">id</a>, <a href="Poco.Crypto.OpenSSLInitializer.html#259" title="Poco::Crypto::OpenSSLInitializer::initialize()">initialize</a>, <a href="Poco.Crypto.OpenSSLInitializer.html#261" title="Poco::Crypto::OpenSSLInitializer::isFIPSEnabled()">isFIPSEnabled</a>, <a href="Poco.Crypto.OpenSSLInitializer.html#266" title="Poco::Crypto::OpenSSLInitializer::lock()">lock</a>, <a href="Poco.Crypto.OpenSSLInitializer.html#260" title="Poco::Crypto::OpenSSLInitializer::uninitialize()">uninitialize</a></p>
+<h2>Enumerations</h2>
+<h3><i>Anonymous</i> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="265">SEEDSIZE</a> = 256</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Constructors</h2>
+<h3><a id="257">OpenSSLInitializer</a></h3>
+<p class="decl"><a href="Poco.Crypto.OpenSSLInitializer.html" title="class Poco::Crypto::OpenSSLInitializer">OpenSSLInitializer</a>();</p>
+<div class="description">
+<p>Automatically initialize OpenSSL on startup. </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="258">~OpenSSLInitializer</a></h3>
+<p class="decl">~<a href="Poco.Crypto.OpenSSLInitializer.html" title="class Poco::Crypto::OpenSSLInitializer">OpenSSLInitializer</a>();</p>
+<div class="description">
+<p>Automatically shut down OpenSSL on exit. </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="262">enableFIPSMode</a> <img src="images/static.png" alt="static" title="static" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">static void enableFIPSMode(<br />&nbsp;&nbsp;&nbsp;&nbsp;bool enabled<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="259">initialize</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static void initialize();</p>
+<div class="description">
+<p>Initializes the OpenSSL machinery. </p>
+</div>
+<h3><a id="261">isFIPSEnabled</a> <img src="images/static.png" alt="static" title="static" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">static bool isFIPSEnabled();</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="260">uninitialize</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static void uninitialize();</p>
+<div class="description">
+<p>Shuts down the OpenSSL machinery. </p>
+</div>
+<h3><a id="275">dynlock</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static void dynlock(<br />&nbsp;&nbsp;&nbsp;&nbsp;int mode,<br />&nbsp;&nbsp;&nbsp;&nbsp;struct CRYPTO_dynlock_value * lock,<br />&nbsp;&nbsp;&nbsp;&nbsp;const char * file,<br />&nbsp;&nbsp;&nbsp;&nbsp;int line<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="272">dynlockCreate</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static struct CRYPTO_dynlock_value * dynlockCreate(<br />&nbsp;&nbsp;&nbsp;&nbsp;const char * file,<br />&nbsp;&nbsp;&nbsp;&nbsp;int line<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="280">dynlockDestroy</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static void dynlockDestroy(<br />&nbsp;&nbsp;&nbsp;&nbsp;struct CRYPTO_dynlock_value * lock,<br />&nbsp;&nbsp;&nbsp;&nbsp;const char * file,<br />&nbsp;&nbsp;&nbsp;&nbsp;int line<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="271">id</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static unsigned long id();</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="266">lock</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static void lock(<br />&nbsp;&nbsp;&nbsp;&nbsp;int mode,<br />&nbsp;&nbsp;&nbsp;&nbsp;int n,<br />&nbsp;&nbsp;&nbsp;&nbsp;const char * file,<br />&nbsp;&nbsp;&nbsp;&nbsp;int line<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

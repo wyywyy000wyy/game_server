@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Struct Poco::Net::Context::Params</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.Net.Context.html" class="namespace">Poco::Net::Context</a></h1>
+<h1 class="symbol">struct Params</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-NetSSL_OpenSSL" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> NetSSL_OpenSSL<br />
+<b>Package:</b> SSLCore<br />
+<b>Header:</b> Poco/Net/Context.h</p>
+<h2>Constructors</h2>
+<h3><a id="25450">Params</a></h3>
+<p class="decl"><a href="Poco.Net.Context.Params.html" title="class Poco::Net::Context::Params">Params</a>();</p>
+<div class="description">
+<p>Initializes the struct with default values. </p>
+</div>
+<h2>Variables</h2>
+<h3><a id="25453">caLocation</a></h3>
+<p class="decl">std::string caLocation;</p>
+<div class="description">
+<p><a href="Poco.Path.html" title="class Poco::Path">Path</a> to the file or directory containing the CA/root certificates.  Can be empty if the OpenSSL builtin CA certificates are used (see loadDefaultCAs). </p>
+</div>
+<h3><a id="25452">certificateFile</a></h3>
+<p class="decl">std::string certificateFile;</p>
+<div class="description">
+<p><a href="Poco.Path.html" title="class Poco::Path">Path</a> to the certificate file (in PEM format). If the private key and the certificate are stored in the same file, this can be empty if privateKeyFile is given. </p>
+</div>
+<h3><a id="25457">cipherList</a></h3>
+<p class="decl">std::string cipherList;</p>
+<div class="description">
+<p>Specifies the supported ciphers in OpenSSL notation. Defaults to &quot;ALL:!ADH:!LOW:!EXP:!MD5:@STRENGTH&quot;. </p>
+</div>
+<h3><a id="25458">dhParamsFile</a></h3>
+<p class="decl">std::string dhParamsFile;</p>
+<div class="description">
+<p>Specifies a file containing Diffie-Hellman parameters. If empty, the default parameters are used. </p>
+</div>
+<h3><a id="25459">ecdhCurve</a></h3>
+<p class="decl">std::string ecdhCurve;</p>
+<div class="description">
+<p>Specifies the name of the curve to use for ECDH, based on the curve names specified in <a href="https://www.ietf.org/rfc/rfc4492.txt" target="_blank">RFC 4492</a>. Defaults to &quot;prime256v1&quot;. </p>
+</div>
+<h3><a id="25456">loadDefaultCAs</a></h3>
+<p class="decl">bool loadDefaultCAs;</p>
+<div class="description">
+<p>Specifies whether the builtin CA certificates from OpenSSL are used. Defaults to false. </p>
+</div>
+<h3><a id="25451">privateKeyFile</a></h3>
+<p class="decl">std::string privateKeyFile;</p>
+<div class="description">
+<p><a href="Poco.Path.html" title="class Poco::Path">Path</a> to the private key file used for encryption. Can be empty if no private key file is used. </p>
+</div>
+<h3><a id="25455">verificationDepth</a></h3>
+<p class="decl">int verificationDepth;</p>
+<div class="description">
+<p>Sets the upper limit for verification chain sizes. Verification will fail if a certificate chain larger than this is encountered. Defaults to 9. </p>
+</div>
+<h3><a id="25454">verificationMode</a></h3>
+<p class="decl"><a href="Poco.Net.Context.html#25438" title="enum  Poco::Net::Context::VerificationMode">VerificationMode</a> verificationMode;</p>
+<div class="description">
+<p>Specifies whether and how peer certificates are validated. Defaults to <a href="Poco.Net.Context.html#25440" title="Poco::Net::Context::VERIFY_RELAXED">VERIFY_RELAXED</a>. </p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

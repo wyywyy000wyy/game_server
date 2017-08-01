@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::Dynamic::VarHolder</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.Dynamic.html" class="namespace">Poco::Dynamic</a></h1>
+<h1 class="symbol">class VarHolder</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Foundation" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Foundation<br />
+<b>Package:</b> Dynamic<br />
+<b>Header:</b> Poco/Dynamic/VarHolder.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>Interface for a data holder used by the <a href="Poco.Dynamic.Var.html" title="class Poco::Dynamic::Var">Var</a> class.  Provides methods to convert between data types. Only data types for which <a href="Poco.Dynamic.VarHolder.html" title="class Poco::Dynamic::VarHolder">VarHolder</a> specialization exists are supported. </p>
+<p>Provided are specializations for all C++ built-in types with addition of  std::string, <a href="Poco.html#18842" title="Poco::UTF16String">Poco::UTF16String</a>, <a href="Poco.DateTime.html" title="class Poco::DateTime">DateTime</a>, <a href="Poco.LocalDateTime.html" title="class Poco::LocalDateTime">LocalDateTime</a>, <a href="Poco.Timestamp.html" title="class Poco::Timestamp">Timestamp</a>, std::vector&lt;<a href="Poco.Dynamic.Var.html" title="class Poco::Dynamic::Var">Var</a>&gt; and <a href="Poco.html#10024" title="Poco::DynamicStruct">DynamicStruct</a>. </p>
+<p>Additional types can be supported by adding specializations. When implementing specializations, the only condition is that they reside in <a href="Poco.html" title="namespace Poco">Poco</a> namespace and implement the pure virtual functions <a href="Poco.Dynamic.VarHolder.html#10710" title="Poco::Dynamic::VarHolder::clone()">clone</a>() and <a href="Poco.Dynamic.VarHolder.html#10712" title="Poco::Dynamic::VarHolder::type()">type</a>(). </p>
+<p>Those conversions that are not implemented shall fail back to this base class implementation. All the <a href="Poco.Dynamic.VarHolder.html#10713" title="Poco::Dynamic::VarHolder::convert()">convert</a>() function overloads in this class throw <a href="Poco.BadCastException.html" title="class Poco::BadCastException">BadCastException</a>. </p>
+</div>
+<h2>Inheritance</h2>
+<p><b>Known Derived Classes: </b><a href="Poco.Dynamic.VarHolderImpl.html" title="class Poco::Dynamic::VarHolderImpl">VarHolderImpl</a></p>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.Dynamic.VarHolder.html#10710" title="Poco::Dynamic::VarHolder::clone()">clone</a>, <a href="Poco.Dynamic.VarHolder.html#10759" title="Poco::Dynamic::VarHolder::cloneHolder()">cloneHolder</a>, <a href="Poco.Dynamic.VarHolder.html#10713" title="Poco::Dynamic::VarHolder::convert()">convert</a>, <a href="Poco.Dynamic.VarHolder.html#10771" title="Poco::Dynamic::VarHolder::convertSignedFloatToUnsigned()">convertSignedFloatToUnsigned</a>, <a href="Poco.Dynamic.VarHolder.html#10768" title="Poco::Dynamic::VarHolder::convertSignedToUnsigned()">convertSignedToUnsigned</a>, <a href="Poco.Dynamic.VarHolder.html#10762" title="Poco::Dynamic::VarHolder::convertToSmaller()">convertToSmaller</a>, <a href="Poco.Dynamic.VarHolder.html#10765" title="Poco::Dynamic::VarHolder::convertToSmallerUnsigned()">convertToSmallerUnsigned</a>, <a href="Poco.Dynamic.VarHolder.html#10774" title="Poco::Dynamic::VarHolder::convertUnsignedToSigned()">convertUnsignedToSigned</a>, <a href="Poco.Dynamic.VarHolder.html#10747" title="Poco::Dynamic::VarHolder::isArray()">isArray</a>, <a href="Poco.Dynamic.VarHolder.html#10755" title="Poco::Dynamic::VarHolder::isBoolean()">isBoolean</a>, <a href="Poco.Dynamic.VarHolder.html#10750" title="Poco::Dynamic::VarHolder::isDeque()">isDeque</a>, <a href="Poco.Dynamic.VarHolder.html#10752" title="Poco::Dynamic::VarHolder::isInteger()">isInteger</a>, <a href="Poco.Dynamic.VarHolder.html#10749" title="Poco::Dynamic::VarHolder::isList()">isList</a>, <a href="Poco.Dynamic.VarHolder.html#10754" title="Poco::Dynamic::VarHolder::isNumeric()">isNumeric</a>, <a href="Poco.Dynamic.VarHolder.html#10753" title="Poco::Dynamic::VarHolder::isSigned()">isSigned</a>, <a href="Poco.Dynamic.VarHolder.html#10756" title="Poco::Dynamic::VarHolder::isString()">isString</a>, <a href="Poco.Dynamic.VarHolder.html#10751" title="Poco::Dynamic::VarHolder::isStruct()">isStruct</a>, <a href="Poco.Dynamic.VarHolder.html#10748" title="Poco::Dynamic::VarHolder::isVector()">isVector</a>, <a href="Poco.Dynamic.VarHolder.html#10757" title="Poco::Dynamic::VarHolder::size()">size</a>, <a href="Poco.Dynamic.VarHolder.html#10712" title="Poco::Dynamic::VarHolder::type()">type</a></p>
+<h2>Types</h2>
+<h3><a id="10708">ArrayValueType</a></h3>
+<p class="decl">typedef <a href="Poco.Dynamic.Var.html" title="class Poco::Dynamic::Var">Var</a> <a href="Poco.Dynamic.VarHolder.html#10708" title="Poco::Dynamic::VarHolder::ArrayValueType">ArrayValueType</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Constructors</h2>
+<h3><a id="10758">VarHolder</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Dynamic.VarHolder.html" title="class Poco::Dynamic::VarHolder">VarHolder</a>();</p>
+<div class="description">
+<p>Creates the <a href="Poco.Dynamic.VarHolder.html" title="class Poco::Dynamic::VarHolder">VarHolder</a>. </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="10709">~VarHolder</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual ~<a href="Poco.Dynamic.VarHolder.html" title="class Poco::Dynamic::VarHolder">VarHolder</a>();</p>
+<div class="description">
+<p>Destroys the <a href="Poco.Dynamic.VarHolder.html" title="class Poco::Dynamic::VarHolder">VarHolder</a>. </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="10710">clone</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual <a href="Poco.Dynamic.VarHolder.html" title="class Poco::Dynamic::VarHolder">VarHolder</a> * clone(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Placeholder.html" title="struct Poco::Placeholder">Placeholder</a> &lt; <a href="Poco.Dynamic.VarHolder.html" title="class Poco::Dynamic::VarHolder">VarHolder</a> &gt; * pHolder = 0<br />) const = 0;</p>
+<div class="description">
+<p>Implementation must implement this function to deep-copy the <a href="Poco.Dynamic.VarHolder.html" title="class Poco::Dynamic::VarHolder">VarHolder</a>. If small object optimization is enabled (i.e. if  POCO_NO_SOO is not defined), <a href="Poco.Dynamic.VarHolder.html" title="class Poco::Dynamic::VarHolder">VarHolder</a> will be instantiated in-place if it's size is smaller than POCO_SMALL_OBJECT_SIZE. </p>
+</div>
+<h3><a id="10713">convert</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">virtual void convert(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.html#18376" title="Poco::Int8">Int8</a> &amp; val<br />) const;</p>
+<div class="description">
+<p>Throws <a href="Poco.BadCastException.html" title="class Poco::BadCastException">BadCastException</a>. Must be overriden in a type specialization in order to suport the conversion. </p>
+</div>
+<h3><a id="10715">convert</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void convert(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.html#18378" title="Poco::Int16">Int16</a> &amp; val<br />) const;</p>
+<div class="description">
+<p>Throws <a href="Poco.BadCastException.html" title="class Poco::BadCastException">BadCastException</a>. Must be overriden in a type specialization in order to suport the conversion. </p>
+</div>
+<h3><a id="10717">convert</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void convert(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.html#18380" title="Poco::Int32">Int32</a> &amp; val<br />) const;</p>
+<div class="description">
+<p>Throws <a href="Poco.BadCastException.html" title="class Poco::BadCastException">BadCastException</a>. Must be overriden in a type specialization in order to suport the conversion. </p>
+</div>
+<h3><a id="10719">convert</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void convert(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.html#18384" title="Poco::Int64">Int64</a> &amp; val<br />) const;</p>
+<div class="description">
+<p>Throws <a href="Poco.BadCastException.html" title="class Poco::BadCastException">BadCastException</a>. Must be overriden in a type specialization in order to suport the conversion. </p>
+</div>
+<h3><a id="10721">convert</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void convert(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.html#18377" title="Poco::UInt8">UInt8</a> &amp; val<br />) const;</p>
+<div class="description">
+<p>Throws <a href="Poco.BadCastException.html" title="class Poco::BadCastException">BadCastException</a>. Must be overriden in a type specialization in order to suport the conversion. </p>
+</div>
+<h3><a id="10723">convert</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void convert(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.html#18379" title="Poco::UInt16">UInt16</a> &amp; val<br />) const;</p>
+<div class="description">
+<p>Throws <a href="Poco.BadCastException.html" title="class Poco::BadCastException">BadCastException</a>. Must be overriden in a type specialization in order to suport the conversion. </p>
+</div>
+<h3><a id="10725">convert</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void convert(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.html#18381" title="Poco::UInt32">UInt32</a> &amp; val<br />) const;</p>
+<div class="description">
+<p>Throws <a href="Poco.BadCastException.html" title="class Poco::BadCastException">BadCastException</a>. Must be overriden in a type specialization in order to suport the conversion. </p>
+</div>
+<h3><a id="10727">convert</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void convert(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.html#18385" title="Poco::UInt64">UInt64</a> &amp; val<br />) const;</p>
+<div class="description">
+<p>Throws <a href="Poco.BadCastException.html" title="class Poco::BadCastException">BadCastException</a>. Must be overriden in a type specialization in order to suport the conversion. </p>
+</div>
+<h3><a id="10729">convert</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void convert(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.DateTime.html" title="class Poco::DateTime">DateTime</a> &amp; val<br />) const;</p>
+<div class="description">
+<p>Throws <a href="Poco.BadCastException.html" title="class Poco::BadCastException">BadCastException</a>. Must be overriden in a type specialization in order to suport the conversion. </p>
+</div>
+<h3><a id="10731">convert</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void convert(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.LocalDateTime.html" title="class Poco::LocalDateTime">LocalDateTime</a> &amp; val<br />) const;</p>
+<div class="description">
+<p>Throws <a href="Poco.BadCastException.html" title="class Poco::BadCastException">BadCastException</a>. Must be overriden in a type specialization in order to suport the conversion. </p>
+</div>
+<h3><a id="10733">convert</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void convert(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Timestamp.html" title="class Poco::Timestamp">Timestamp</a> &amp; val<br />) const;</p>
+<div class="description">
+<p>Throws <a href="Poco.BadCastException.html" title="class Poco::BadCastException">BadCastException</a>. Must be overriden in a type specialization in order to suport the conversion. </p>
+</div>
+<h3><a id="10735">convert</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void convert(<br />&nbsp;&nbsp;&nbsp;&nbsp;bool &amp; val<br />) const;</p>
+<div class="description">
+<p>Throws <a href="Poco.BadCastException.html" title="class Poco::BadCastException">BadCastException</a>. Must be overriden in a type specialization in order to suport the conversion. </p>
+</div>
+<h3><a id="10737">convert</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void convert(<br />&nbsp;&nbsp;&nbsp;&nbsp;float &amp; val<br />) const;</p>
+<div class="description">
+<p>Throws <a href="Poco.BadCastException.html" title="class Poco::BadCastException">BadCastException</a>. Must be overriden in a type specialization in order to suport the conversion. </p>
+</div>
+<h3><a id="10739">convert</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void convert(<br />&nbsp;&nbsp;&nbsp;&nbsp;double &amp; val<br />) const;</p>
+<div class="description">
+<p>Throws <a href="Poco.BadCastException.html" title="class Poco::BadCastException">BadCastException</a>. Must be overriden in a type specialization in order to suport the conversion. </p>
+</div>
+<h3><a id="10741">convert</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void convert(<br />&nbsp;&nbsp;&nbsp;&nbsp;char &amp; val<br />) const;</p>
+<div class="description">
+<p>Throws <a href="Poco.BadCastException.html" title="class Poco::BadCastException">BadCastException</a>. Must be overriden in a type specialization in order to suport the conversion. </p>
+</div>
+<h3><a id="10743">convert</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void convert(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::string &amp; val<br />) const;</p>
+<div class="description">
+<p>Throws <a href="Poco.BadCastException.html" title="class Poco::BadCastException">BadCastException</a>. Must be overriden in a type specialization in order to suport the conversion. </p>
+</div>
+<h3><a id="10745">convert</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual void convert(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.html#18842" title="Poco::UTF16String">Poco::UTF16String</a> &amp; val<br />) const;</p>
+<div class="description">
+<p>Throws <a href="Poco.BadCastException.html" title="class Poco::BadCastException">BadCastException</a>. Must be overriden in a type specialization in order to suport the conversion. </p>
+</div>
+<h3><a id="10747">isArray</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">virtual bool isArray() const;</p>
+<div class="description">
+<p>Returns true. </p>
+</div>
+<h3><a id="10755">isBoolean</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">virtual bool isBoolean() const;</p>
+<div class="description">
+<p>Returns false. Must be properly overriden in a type specialization in order to suport the diagnostic. </p>
+</div>
+<h3><a id="10750">isDeque</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">virtual bool isDeque() const;</p>
+<div class="description">
+<p>Returns false. Must be properly overriden in a type specialization in order to suport the diagnostic. </p>
+</div>
+<h3><a id="10752">isInteger</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">virtual bool isInteger() const;</p>
+<div class="description">
+<p>Returns false. Must be properly overriden in a type specialization in order to suport the diagnostic. </p>
+</div>
+<h3><a id="10749">isList</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">virtual bool isList() const;</p>
+<div class="description">
+<p>Returns false. Must be properly overriden in a type specialization in order to suport the diagnostic. </p>
+</div>
+<h3><a id="10754">isNumeric</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">virtual bool isNumeric() const;</p>
+<div class="description">
+<p>Returns false. Must be properly overriden in a type specialization in order to suport the diagnostic. </p>
+</div>
+<h3><a id="10753">isSigned</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">virtual bool isSigned() const;</p>
+<div class="description">
+<p>Returns false. Must be properly overriden in a type specialization in order to suport the diagnostic. </p>
+</div>
+<h3><a id="10756">isString</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">virtual bool isString() const;</p>
+<div class="description">
+<p>Returns false. Must be properly overriden in a type specialization in order to suport the diagnostic. </p>
+</div>
+<h3><a id="10751">isStruct</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">virtual bool isStruct() const;</p>
+<div class="description">
+<p>Returns false. Must be properly overriden in a type specialization in order to suport the diagnostic. </p>
+</div>
+<h3><a id="10748">isVector</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">virtual bool isVector() const;</p>
+<div class="description">
+<p>Returns false. Must be properly overriden in a type specialization in order to suport the diagnostic. </p>
+</div>
+<h3><a id="10757">size</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">virtual std::size_t size() const;</p>
+<div class="description">
+<p>Returns 1 if and only if <a href="Poco.Dynamic.Var.html" title="class Poco::Dynamic::Var">Var</a> is not empty or this function overriden. </p>
+</div>
+<h3><a id="10712">type</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual const std::type_info &amp; type() const = 0;</p>
+<div class="description">
+<p>Implementation must return the type information (typeid) for the stored content. </p>
+</div>
+<h3><a id="10759">cloneHolder</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">template &lt; typename T &gt; <a href="Poco.Dynamic.VarHolder.html" title="class Poco::Dynamic::VarHolder">VarHolder</a> * cloneHolder(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Placeholder.html" title="struct Poco::Placeholder">Placeholder</a> &lt; <a href="Poco.Dynamic.VarHolder.html" title="class Poco::Dynamic::VarHolder">VarHolder</a> &gt; * pVarHolder,<br />&nbsp;&nbsp;&nbsp;&nbsp;const T &amp; val<br />) const;</p>
+<div class="description">
+<p>Instantiates value holder wrapper. If size of the wrapper is larger than POCO_SMALL_OBJECT_SIZE, holder is instantiated on the heap, otherwise it is instantiated in-place (in the  pre-allocated buffer inside the holder). </p>
+<p>Called from <a href="Poco.Dynamic.VarHolder.html#10710" title="Poco::Dynamic::VarHolder::clone()">clone</a>() member function of the implementation when smal object optimization is enabled. </p>
+</div>
+<h3><a id="10771">convertSignedFloatToUnsigned</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">template &lt; typename F, typename T &gt; void convertSignedFloatToUnsigned(<br />&nbsp;&nbsp;&nbsp;&nbsp;const F &amp; from,<br />&nbsp;&nbsp;&nbsp;&nbsp;T &amp; to<br />) const;</p>
+<div class="description">
+<p>This function is meant for converting floating point data types to unsigned integral data types. Negative values can not be converted and if one is  encountered, <a href="Poco.RangeException.html" title="class Poco::RangeException">RangeException</a> is thrown.  If uper limit is within the target data type limits, the conversion is performed. </p>
+</div>
+<h3><a id="10768">convertSignedToUnsigned</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">template &lt; typename F, typename T &gt; void convertSignedToUnsigned(<br />&nbsp;&nbsp;&nbsp;&nbsp;const F &amp; from,<br />&nbsp;&nbsp;&nbsp;&nbsp;T &amp; to<br />) const;</p>
+<div class="description">
+<p>This function is meant for converting signed integral data types to unsigned data types. Negative values can not be converted and if one is  encountered, <a href="Poco.RangeException.html" title="class Poco::RangeException">RangeException</a> is thrown.  If upper limit is within the target data type limits, the conversion is performed. </p>
+</div>
+<h3><a id="10762">convertToSmaller</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">template &lt; typename F, typename T &gt; void convertToSmaller(<br />&nbsp;&nbsp;&nbsp;&nbsp;const F &amp; from,<br />&nbsp;&nbsp;&nbsp;&nbsp;T &amp; to<br />) const;</p>
+<div class="description">
+<p>This function is meant to convert signed numeric values from larger to smaller type. It checks the upper and lower bound and if from value is within limits of type T (i.e. check calls do not throw),  it is converted. </p>
+</div>
+<h3><a id="10765">convertToSmallerUnsigned</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">template &lt; typename F, typename T &gt; void convertToSmallerUnsigned(<br />&nbsp;&nbsp;&nbsp;&nbsp;const F &amp; from,<br />&nbsp;&nbsp;&nbsp;&nbsp;T &amp; to<br />) const;</p>
+<div class="description">
+<p>This function is meant for converting unsigned integral data types, from larger to smaller type. Since lower limit is always 0 for unigned types,  only the upper limit is checked, thus saving some cycles compared to the signed  version of the function. If the value to be converted is smaller than the maximum value for the target type, the conversion is performed. </p>
+</div>
+<h3><a id="10774">convertUnsignedToSigned</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">template &lt; typename F, typename T &gt; void convertUnsignedToSigned(<br />&nbsp;&nbsp;&nbsp;&nbsp;const F &amp; from,<br />&nbsp;&nbsp;&nbsp;&nbsp;T &amp; to<br />) const;</p>
+<div class="description">
+<p>This function is meant for converting unsigned integral data types to unsigned data types. Negative values can not be converted and if one is  encountered, <a href="Poco.RangeException.html" title="class Poco::RangeException">RangeException</a> is thrown.  If upper limit is within the target data type limits, the converiosn is performed. </p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

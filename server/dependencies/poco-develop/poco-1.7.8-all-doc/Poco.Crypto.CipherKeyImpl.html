@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::Crypto::CipherKeyImpl</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.Crypto.html" class="namespace">Poco::Crypto</a></h1>
+<h1 class="symbol">class CipherKeyImpl</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Crypto" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Crypto<br />
+<b>Package:</b> Cipher<br />
+<b>Header:</b> Poco/Crypto/CipherKeyImpl.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>An implementation of the <a href="Poco.Crypto.CipherKey.html" title="class Poco::Crypto::CipherKey">CipherKey</a> class for OpenSSL's crypto library. </p>
+</div>
+<h2>Inheritance</h2>
+<p><b>Direct Base Classes: </b><a href="Poco.RefCountedObject.html" title="class Poco::RefCountedObject">Poco::RefCountedObject</a></p>
+<p><b>All Base Classes: </b><a href="Poco.RefCountedObject.html" title="class Poco::RefCountedObject">Poco::RefCountedObject</a></p>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.Crypto.CipherKeyImpl.html#111" title="Poco::Crypto::CipherKeyImpl::blockSize()">blockSize</a>, <a href="Poco.Crypto.CipherKeyImpl.html#120" title="Poco::Crypto::CipherKeyImpl::cipher()">cipher</a>, <a href="Poco.Crypto.CipherKeyImpl.html#117" title="Poco::Crypto::CipherKeyImpl::getIV()">getIV</a>, <a href="Poco.Crypto.CipherKeyImpl.html#114" title="Poco::Crypto::CipherKeyImpl::getKey()">getKey</a>, <a href="Poco.Crypto.CipherKeyImpl.html#112" title="Poco::Crypto::CipherKeyImpl::ivSize()">ivSize</a>, <a href="Poco.Crypto.CipherKeyImpl.html#110" title="Poco::Crypto::CipherKeyImpl::keySize()">keySize</a>, <a href="Poco.Crypto.CipherKeyImpl.html#113" title="Poco::Crypto::CipherKeyImpl::mode()">mode</a>, <a href="Poco.Crypto.CipherKeyImpl.html#109" title="Poco::Crypto::CipherKeyImpl::name()">name</a>, <a href="Poco.Crypto.CipherKeyImpl.html#118" title="Poco::Crypto::CipherKeyImpl::setIV()">setIV</a>, <a href="Poco.Crypto.CipherKeyImpl.html#115" title="Poco::Crypto::CipherKeyImpl::setKey()">setKey</a></p>
+<p><b>Inherited Functions: </b><a href="Poco.RefCountedObject.html#16511" title="Poco::RefCountedObject::duplicate()">duplicate</a>, <a href="Poco.RefCountedObject.html#16513" title="Poco::RefCountedObject::referenceCount()">referenceCount</a>, <a href="Poco.RefCountedObject.html#16512" title="Poco::RefCountedObject::release()">release</a></p>
+<h2>Types</h2>
+<h3><a id="89">ByteVec</a></h3>
+<p class="decl">typedef std::vector &lt; unsigned char &gt; <a href="Poco.Crypto.CipherKeyImpl.html#89" title="Poco::Crypto::CipherKeyImpl::ByteVec">ByteVec</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="90">Ptr</a></h3>
+<p class="decl">typedef <a href="Poco.AutoPtr.html" title="class Poco::AutoPtr">Poco::AutoPtr</a> &lt; <a href="Poco.Crypto.CipherKeyImpl.html" title="class Poco::Crypto::CipherKeyImpl">CipherKeyImpl</a> &gt; <a href="Poco.Crypto.CipherKeyImpl.html#90" title="Poco::Crypto::CipherKeyImpl::Ptr">Ptr</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Enumerations</h2>
+<h3><a id="91">Mode</a></h3>
+<div class="description">
+<p><a href="Poco.Crypto.Cipher.html" title="class Poco::Crypto::Cipher">Cipher</a> mode of operation. This mode determines how multiple blocks are connected; this is essential to improve security. </p>
+</div>
+<p class="decl"><a id="92">MODE_STREAM_CIPHER</a></p>
+<div class="description">
+<p>Stream cipher </p>
+</div>
+<p class="decl"><a id="93">MODE_ECB</a></p>
+<div class="description">
+<p>Electronic codebook (plain concatenation) </p>
+</div>
+<p class="decl"><a id="94">MODE_CBC</a></p>
+<div class="description">
+<p><a href="Poco.Crypto.Cipher.html" title="class Poco::Crypto::Cipher">Cipher</a> block chaining (default) </p>
+</div>
+<p class="decl"><a id="95">MODE_CFB</a></p>
+<div class="description">
+<p><a href="Poco.Crypto.Cipher.html" title="class Poco::Crypto::Cipher">Cipher</a> feedback </p>
+</div>
+<p class="decl"><a id="96">MODE_OFB</a></p>
+<div class="description">
+<p>Output feedback </p>
+</div>
+<h2>Constructors</h2>
+<h3><a id="106">CipherKeyImpl</a></h3>
+<p class="decl"><a href="Poco.Crypto.CipherKeyImpl.html" title="class Poco::Crypto::CipherKeyImpl">CipherKeyImpl</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; name<br />);</p>
+<div class="description">
+<p>Creates a new <a href="Poco.Crypto.CipherKeyImpl.html" title="class Poco::Crypto::CipherKeyImpl">CipherKeyImpl</a> object. Autoinitializes key and initialization vector. </p>
+</div>
+<h3><a id="102">CipherKeyImpl</a></h3>
+<p class="decl"><a href="Poco.Crypto.CipherKeyImpl.html" title="class Poco::Crypto::CipherKeyImpl">CipherKeyImpl</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; name,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Crypto.CipherKeyImpl.html#89" title="Poco::Crypto::CipherKeyImpl::ByteVec">ByteVec</a> &amp; key,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Crypto.CipherKeyImpl.html#89" title="Poco::Crypto::CipherKeyImpl::ByteVec">ByteVec</a> &amp; iv<br />);</p>
+<div class="description">
+<p>Creates a new <a href="Poco.Crypto.CipherKeyImpl.html" title="class Poco::Crypto::CipherKeyImpl">CipherKeyImpl</a> object, using the  given cipher name, key and initialization vector. </p>
+</div>
+<h3><a id="97">CipherKeyImpl</a></h3>
+<p class="decl"><a href="Poco.Crypto.CipherKeyImpl.html" title="class Poco::Crypto::CipherKeyImpl">CipherKeyImpl</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; name,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; passphrase,<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; salt,<br />&nbsp;&nbsp;&nbsp;&nbsp;int iterationCount<br />);</p>
+<div class="description">
+<p>Creates a new <a href="Poco.Crypto.CipherKeyImpl.html" title="class Poco::Crypto::CipherKeyImpl">CipherKeyImpl</a> object, using the given cipher name, passphrase, salt value and iteration count. </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="108">~CipherKeyImpl</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual ~<a href="Poco.Crypto.CipherKeyImpl.html" title="class Poco::Crypto::CipherKeyImpl">CipherKeyImpl</a>();</p>
+<div class="description">
+<p>Destroys the <a href="Poco.Crypto.CipherKeyImpl.html" title="class Poco::Crypto::CipherKeyImpl">CipherKeyImpl</a>. </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="111">blockSize</a></h3>
+<p class="decl">int blockSize() const;</p>
+<div class="description">
+<p>Returns the block size of the <a href="Poco.Crypto.Cipher.html" title="class Poco::Crypto::Cipher">Cipher</a>. </p>
+</div>
+<h3><a id="120">cipher</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">const <a href="#87" title="EVP_CIPHER">EVP_CIPHER</a> * cipher();</p>
+<div class="description">
+<p>Returns the cipher object </p>
+</div>
+<h3><a id="117">getIV</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">const <a href="Poco.Crypto.CipherKeyImpl.html#89" title="Poco::Crypto::CipherKeyImpl::ByteVec">ByteVec</a> &amp; getIV() const;</p>
+<div class="description">
+<p>Returns the initialization vector (IV) for the <a href="Poco.Crypto.Cipher.html" title="class Poco::Crypto::Cipher">Cipher</a>. </p>
+</div>
+<h3><a id="114">getKey</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">const <a href="Poco.Crypto.CipherKeyImpl.html#89" title="Poco::Crypto::CipherKeyImpl::ByteVec">ByteVec</a> &amp; getKey() const;</p>
+<div class="description">
+<p>Returns the key for the <a href="Poco.Crypto.Cipher.html" title="class Poco::Crypto::Cipher">Cipher</a>. </p>
+</div>
+<h3><a id="112">ivSize</a></h3>
+<p class="decl">int ivSize() const;</p>
+<div class="description">
+<p>Returns the IV size of the <a href="Poco.Crypto.Cipher.html" title="class Poco::Crypto::Cipher">Cipher</a>. </p>
+</div>
+<h3><a id="110">keySize</a></h3>
+<p class="decl">int keySize() const;</p>
+<div class="description">
+<p>Returns the key size of the <a href="Poco.Crypto.Cipher.html" title="class Poco::Crypto::Cipher">Cipher</a>. </p>
+</div>
+<h3><a id="113">mode</a></h3>
+<p class="decl"><a href="Poco.Crypto.CipherKeyImpl.html#91" title="enum  Poco::Crypto::CipherKeyImpl::Mode">Mode</a> mode() const;</p>
+<div class="description">
+<p>Returns the <a href="Poco.Crypto.Cipher.html" title="class Poco::Crypto::Cipher">Cipher</a>'s mode of operation. </p>
+</div>
+<h3><a id="109">name</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">const std::string &amp; name() const;</p>
+<div class="description">
+<p>Returns the name of the <a href="Poco.Crypto.Cipher.html" title="class Poco::Crypto::Cipher">Cipher</a>. </p>
+</div>
+<h3><a id="118">setIV</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void setIV(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Crypto.CipherKeyImpl.html#89" title="Poco::Crypto::CipherKeyImpl::ByteVec">ByteVec</a> &amp; iv<br />);</p>
+<div class="description">
+<p>Sets the initialization vector (IV) for the <a href="Poco.Crypto.Cipher.html" title="class Poco::Crypto::Cipher">Cipher</a>. </p>
+</div>
+<h3><a id="115">setKey</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void setKey(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Crypto.CipherKeyImpl.html#89" title="Poco::Crypto::CipherKeyImpl::ByteVec">ByteVec</a> &amp; key<br />);</p>
+<div class="description">
+<p>Sets the key for the <a href="Poco.Crypto.Cipher.html" title="class Poco::Crypto::Cipher">Cipher</a>. </p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

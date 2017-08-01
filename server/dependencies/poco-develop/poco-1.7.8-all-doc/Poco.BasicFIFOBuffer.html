@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::BasicFIFOBuffer</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.html" class="namespace">Poco</a></h1>
+<h1 class="template">template &lt; class T &gt;</h1>
+<h1 class="symbol">class BasicFIFOBuffer</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Foundation" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Foundation<br />
+<b>Package:</b> Core<br />
+<b>Header:</b> Poco/FIFOBuffer.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>A simple buffer class with support for re-entrant, FIFO-style read/write operations, as well as (optional) empty/non-empty/full (i.e. writable/readable) transition notifications. <a href="Poco.Buffer.html" title="class Poco::Buffer">Buffer</a> can be flagged with end-of-file and error flags, which renders it un-readable/writable. </p>
+<p>Critical portions of code are protected by a recursive mutex. However, to achieve thread-safety in cases where multiple member function calls are involved and have to be atomic, the mutex must be locked externally. </p>
+<p><a href="Poco.Buffer.html" title="class Poco::Buffer">Buffer</a> size, as well as amount of unread data and available space introspections are supported as well. </p>
+<p>This class is useful anywhere where a FIFO functionality is needed. </p>
+</div>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.BasicFIFOBuffer.html#12239" title="Poco::BasicFIFOBuffer::advance()">advance</a>, <a href="Poco.BasicFIFOBuffer.html#12233" title="Poco::BasicFIFOBuffer::available()">available</a>, <a href="Poco.BasicFIFOBuffer.html#12241" title="Poco::BasicFIFOBuffer::begin()">begin</a>, <a href="Poco.BasicFIFOBuffer.html#12247" title="Poco::BasicFIFOBuffer::buffer()">buffer</a>, <a href="Poco.BasicFIFOBuffer.html#12236" title="Poco::BasicFIFOBuffer::copy()">copy</a>, <a href="Poco.BasicFIFOBuffer.html#12234" title="Poco::BasicFIFOBuffer::drain()">drain</a>, <a href="Poco.BasicFIFOBuffer.html#12261" title="Poco::BasicFIFOBuffer::getNotify()">getNotify</a>, <a href="Poco.BasicFIFOBuffer.html#12253" title="Poco::BasicFIFOBuffer::hasEOF()">hasEOF</a>, <a href="Poco.BasicFIFOBuffer.html#12254" title="Poco::BasicFIFOBuffer::isEOF()">isEOF</a>, <a href="Poco.BasicFIFOBuffer.html#12255" title="Poco::BasicFIFOBuffer::isEmpty()">isEmpty</a>, <a href="Poco.BasicFIFOBuffer.html#12256" title="Poco::BasicFIFOBuffer::isFull()">isFull</a>, <a href="Poco.BasicFIFOBuffer.html#12257" title="Poco::BasicFIFOBuffer::isReadable()">isReadable</a>, <a href="Poco.BasicFIFOBuffer.html#12250" title="Poco::BasicFIFOBuffer::isValid()">isValid</a>, <a href="Poco.BasicFIFOBuffer.html#12258" title="Poco::BasicFIFOBuffer::isWritable()">isWritable</a>, <a href="Poco.BasicFIFOBuffer.html#12262" title="Poco::BasicFIFOBuffer::mutex()">mutex</a>, <a href="Poco.BasicFIFOBuffer.html#12242" title="Poco::BasicFIFOBuffer::next()">next</a>, <a href="Poco.BasicFIFOBuffer.html#12243" title="Poco::BasicFIFOBuffer::operator []()">operator&nbsp;[]</a>, <a href="Poco.BasicFIFOBuffer.html#12213" title="Poco::BasicFIFOBuffer::peek()">peek</a>, <a href="Poco.BasicFIFOBuffer.html#12219" title="Poco::BasicFIFOBuffer::read()">read</a>, <a href="Poco.BasicFIFOBuffer.html#12210" title="Poco::BasicFIFOBuffer::resize()">resize</a>, <a href="Poco.BasicFIFOBuffer.html#12251" title="Poco::BasicFIFOBuffer::setEOF()">setEOF</a>, <a href="Poco.BasicFIFOBuffer.html#12248" title="Poco::BasicFIFOBuffer::setError()">setError</a>, <a href="Poco.BasicFIFOBuffer.html#12259" title="Poco::BasicFIFOBuffer::setNotify()">setNotify</a>, <a href="Poco.BasicFIFOBuffer.html#12231" title="Poco::BasicFIFOBuffer::size()">size</a>, <a href="Poco.BasicFIFOBuffer.html#12232" title="Poco::BasicFIFOBuffer::used()">used</a>, <a href="Poco.BasicFIFOBuffer.html#12225" title="Poco::BasicFIFOBuffer::write()">write</a></p>
+<h2>Types</h2>
+<h3><a id="12195">Type</a></h3>
+<p class="decl">typedef T <a href="Poco.BasicFIFOBuffer.html#12195" title="Poco::BasicFIFOBuffer::Type">Type</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Constructors</h2>
+<h3><a id="12198">BasicFIFOBuffer</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.BasicFIFOBuffer.html" title="class Poco::BasicFIFOBuffer">BasicFIFOBuffer</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t size,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool notify = false<br />);</p>
+<div class="description">
+<p>Creates the <a href="Poco.html#12277" title="Poco::FIFOBuffer">FIFOBuffer</a>. </p>
+</div>
+<h3><a id="12201">BasicFIFOBuffer</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.BasicFIFOBuffer.html" title="class Poco::BasicFIFOBuffer">BasicFIFOBuffer</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;T * pBuffer,<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t size,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool notify = false<br />);</p>
+<div class="description">
+<p>Creates the <a href="Poco.html#12277" title="Poco::FIFOBuffer">FIFOBuffer</a>. </p>
+</div>
+<h3><a id="12205">BasicFIFOBuffer</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.BasicFIFOBuffer.html" title="class Poco::BasicFIFOBuffer">BasicFIFOBuffer</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const T * pBuffer,<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t size,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool notify = false<br />);</p>
+<div class="description">
+<p>Creates the <a href="Poco.html#12277" title="Poco::FIFOBuffer">FIFOBuffer</a>. </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="12209">~BasicFIFOBuffer</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">~<a href="Poco.BasicFIFOBuffer.html" title="class Poco::BasicFIFOBuffer">BasicFIFOBuffer</a>();</p>
+<div class="description">
+<p>Destroys the <a href="Poco.html#12277" title="Poco::FIFOBuffer">FIFOBuffer</a>. </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="12239">advance</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void advance(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t length<br />);</p>
+<div class="description">
+<p>Advances buffer by length elements. Should be called AFTER the data  was copied into the buffer. </p>
+</div>
+<h3><a id="12233">available</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">std::size_t available() const;</p>
+<div class="description">
+<p>Returns the size of the available portion of the buffer. </p>
+</div>
+<h3><a id="12241">begin</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">T * begin();</p>
+<div class="description">
+<p>Returns the pointer to the beginning of the buffer. </p>
+</div>
+<h3><a id="12247">buffer</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">const <a href="Poco.Buffer.html" title="class Poco::Buffer">Buffer</a> &lt; T &gt; &amp; buffer() const;</p>
+<div class="description">
+<p>Returns const reference to the underlying buffer. </p>
+</div>
+<h3><a id="12236">copy</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void copy(<br />&nbsp;&nbsp;&nbsp;&nbsp;const T * ptr,<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t length<br />);</p>
+<div class="description">
+<p>Copies the supplied data to the buffer and adjusts the used buffer size. </p>
+</div>
+<h3><a id="12234">drain</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void drain(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t length = 0<br />);</p>
+<div class="description">
+<p>Drains length number of elements from the buffer. If length is zero or greater than buffer current content length, buffer is emptied. </p>
+</div>
+<h3><a id="12261">getNotify</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool getNotify() const;</p>
+<div class="description">
+<p>Returns true if notifications are enabled, false otherwise. </p>
+</div>
+<h3><a id="12253">hasEOF</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool hasEOF() const;</p>
+<div class="description">
+<p>Returns true if EOF flag has been set. </p>
+</div>
+<h3><a id="12254">isEOF</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool isEOF() const;</p>
+<div class="description">
+<p>Returns true if EOF flag has been set and buffer is empty. </p>
+</div>
+<h3><a id="12255">isEmpty</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool isEmpty() const;</p>
+<div class="description">
+<p>Returns true is buffer is empty, false otherwise. </p>
+</div>
+<h3><a id="12256">isFull</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool isFull() const;</p>
+<div class="description">
+<p>Returns true is buffer is full, false otherwise. </p>
+</div>
+<h3><a id="12257">isReadable</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool isReadable() const;</p>
+<div class="description">
+<p>Returns true if buffer contains data and is not in error state. </p>
+</div>
+<h3><a id="12250">isValid</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool isValid() const;</p>
+<div class="description">
+<p>Returns true if error flag is not set on the buffer, otherwise returns false. </p>
+</div>
+<h3><a id="12258">isWritable</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">bool isWritable() const;</p>
+<div class="description">
+<p>Returns true if buffer is not full and is not in error state. </p>
+</div>
+<h3><a id="12262">mutex</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.Mutex.html" title="class Poco::Mutex">Mutex</a> &amp; mutex();</p>
+<div class="description">
+<p>Returns reference to mutex. </p>
+</div>
+<h3><a id="12242">next</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">T * next();</p>
+<div class="description">
+<p>Returns the pointer to the next available position in the buffer. </p>
+</div>
+<h3><a id="12243">operator []</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">T &amp; operator[] (<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t index<br />);</p>
+<div class="description">
+<p>Returns value at index position. Throws <a href="Poco.InvalidAccessException.html" title="class Poco::InvalidAccessException">InvalidAccessException</a> if index is larger than  the last valid (used) buffer position. </p>
+</div>
+<h3><a id="12245">operator []</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">const T &amp; operator[] (<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t index<br />) const;</p>
+<div class="description">
+<p>Returns value at index position. Throws <a href="Poco.InvalidAccessException.html" title="class Poco::InvalidAccessException">InvalidAccessException</a> if index is larger than  the last valid (used) buffer position. </p>
+</div>
+<h3><a id="12213">peek</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">std::size_t peek(<br />&nbsp;&nbsp;&nbsp;&nbsp;T * pBuffer,<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t length<br />) const;</p>
+<div class="description">
+<p>Peeks into the data currently in the FIFO without actually extracting it. If length is zero, the return is immediate. If length is greater than used length, it is substituted with the the current FIFO  used length. </p>
+<p>Returns the number of elements copied in the  supplied buffer. </p>
+</div>
+<h3><a id="12216">peek</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">std::size_t peek(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Buffer.html" title="class Poco::Buffer">Poco::Buffer</a> &lt; T &gt; &amp; buffer,<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t length = 0<br />) const;</p>
+<div class="description">
+<p>Peeks into the data currently in the FIFO without actually extracting it. Resizes the supplied buffer to the size of data written to it. If length is not supplied by the caller or is greater than length  of currently used data, the current FIFO used  data length is substituted for it. </p>
+<p>Returns the number of elements copied in the  supplied buffer. </p>
+</div>
+<h3><a id="12219">read</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">std::size_t read(<br />&nbsp;&nbsp;&nbsp;&nbsp;T * pBuffer,<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t length<br />);</p>
+<div class="description">
+<p>Copies the data currently in the FIFO into the supplied buffer, which must be preallocated to at least the length size before calling this function. </p>
+<p>Returns the size of the copied data. </p>
+</div>
+<h3><a id="12222">read</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">std::size_t read(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Buffer.html" title="class Poco::Buffer">Poco::Buffer</a> &lt; T &gt; &amp; buffer,<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t length = 0<br />);</p>
+<div class="description">
+<p>Copies the data currently in the FIFO into the supplied buffer. Resizes the supplied buffer to the size of data written to it. </p>
+<p>Returns the size of the copied data. </p>
+</div>
+<h3><a id="12210">resize</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void resize(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t newSize,<br />&nbsp;&nbsp;&nbsp;&nbsp;bool preserveContent = true<br />);</p>
+<div class="description">
+<p>Resizes the buffer. If preserveContent is true, the content of the old buffer is preserved. New size can be larger or smaller than the current size, but it must not be 0. Additionally, if the new length is smaller than currently used length and preserveContent is true, <a href="Poco.InvalidAccessException.html" title="class Poco::InvalidAccessException">InvalidAccessException</a> is thrown. </p>
+</div>
+<h3><a id="12251">setEOF</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void setEOF(<br />&nbsp;&nbsp;&nbsp;&nbsp;bool eof = true<br />);</p>
+<div class="description">
+<p>Sets end-of-file flag on the buffer. </p>
+<p>Setting EOF flag to true prevents writing to the buffer; reading from the buffer will still be allowed until all data present in the buffer at the  EOF set time is drained. After that, to re-enable  <a href="Poco.html#12277" title="Poco::FIFOBuffer">FIFOBuffer</a> for reading/writing, EOF must be set to false. </p>
+<p>Setting EOF flag to false clears EOF state if it was previously set. If EOF was not set, it has no effect. </p>
+</div>
+<h3><a id="12248">setError</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void setError(<br />&nbsp;&nbsp;&nbsp;&nbsp;bool error = true<br />);</p>
+<div class="description">
+<p>Sets the error flag on the buffer and empties it. If notifications are enabled, they will be triggered  if appropriate. </p>
+<p>Setting error flag to true prevents reading and writing to the buffer; to re-enable <a href="Poco.html#12277" title="Poco::FIFOBuffer">FIFOBuffer</a> for reading/writing, the error flag must be set to false. </p>
+</div>
+<h3><a id="12259">setNotify</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void setNotify(<br />&nbsp;&nbsp;&nbsp;&nbsp;bool notify = true<br />);</p>
+<div class="description">
+<p>Enables/disables notifications. </p>
+</div>
+<h3><a id="12231">size</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">std::size_t size() const;</p>
+<div class="description">
+<p>Returns the size of the buffer. </p>
+</div>
+<h3><a id="12232">used</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">std::size_t used() const;</p>
+<div class="description">
+<p>Returns the size of the used portion of the buffer. </p>
+</div>
+<h3><a id="12225">write</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">std::size_t write(<br />&nbsp;&nbsp;&nbsp;&nbsp;const T * pBuffer,<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t length<br />);</p>
+<div class="description">
+<p>Writes data from supplied buffer to the FIFO buffer. If there is no sufficient space for the whole buffer to be written, data up to available  length is written. The length of data to be written is determined from the length argument. Function does nothing and returns zero if length argument is equal to zero. </p>
+<p>Returns the length of data written. </p>
+</div>
+<h3><a id="12228">write</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">std::size_t write(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Buffer.html" title="class Poco::Buffer">Buffer</a> &lt; T &gt; &amp; buffer,<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t length = 0<br />);</p>
+<div class="description">
+<p>Writes data from supplied buffer to the FIFO buffer. If there is no sufficient space for the whole buffer to be written, data up to available  length is written. The length of data to be written is determined from the length argument or buffer size (when length argument is default zero or greater than buffer size). </p>
+<p>Returns the length of data written. </p>
+</div>
+<h2>Variables</h2>
+<h3><a id="12197">readable</a></h3>
+<p class="decl">mutable <a href="Poco.BasicEvent.html" title="class Poco::BasicEvent">Poco::BasicEvent</a> &lt; bool &gt; readable;</p>
+<div class="description">
+<p><a href="Poco.Event.html" title="class Poco::Event">Event</a> indicating &quot;readability&quot; of the buffer, triggered as follows: </p>
+<p>* when buffer transitions from non-empty to empty, </p>
+<pre>Readable event observers are notified, with false  
+value as the argument
+</pre>
+<p>* when <a href="Poco.html#12277" title="Poco::FIFOBuffer">FIFOBuffer</a> transitions from empty to non-empty, </p>
+<pre>Readable event observers are notified, with true value
+as the argument
+</pre>
+</div>
+<h3><a id="12196">writable</a></h3>
+<p class="decl">mutable <a href="Poco.BasicEvent.html" title="class Poco::BasicEvent">Poco::BasicEvent</a> &lt; bool &gt; writable;</p>
+<div class="description">
+<p><a href="Poco.Event.html" title="class Poco::Event">Event</a> indicating &quot;writability&quot; of the buffer, triggered as follows: </p>
+<p>* when buffer transitions from non-full to full,  </p>
+<pre>Writable event observers are notified, with 
+false value as the argument
+</pre>
+<p>* when buffer transitions from full to non-full, </p>
+<pre>Writable event observers are notified, with 
+true value as the argument
+</pre>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

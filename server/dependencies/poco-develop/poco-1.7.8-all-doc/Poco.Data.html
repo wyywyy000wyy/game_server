@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Namespace Poco::Data</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.html" class="namespace">Poco</a></h1>
+<h1 class="symbol">namespace Data</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<h2>Overview</h2>
+<p><b>Namespaces:</b> 
+<a href="Poco.Data.Keywords.html" title="namespace Poco::Data::Keywords">Keywords</a>, <a href="Poco.Data.MySQL.html" title="namespace Poco::Data::MySQL">MySQL</a>, <a href="Poco.Data.ODBC.html" title="namespace Poco::Data::ODBC">ODBC</a>, <a href="Poco.Data.SQLite.html" title="namespace Poco::Data::SQLite">SQLite</a></p>
+<p><b>Classes:</b> 
+<a href="Poco.Data.AbstractBinder.html" title="class Poco::Data::AbstractBinder">AbstractBinder</a>, <a href="Poco.Data.AbstractBinding.html" title="class Poco::Data::AbstractBinding">AbstractBinding</a>, <a href="Poco.Data.AbstractExtraction.html" title="class Poco::Data::AbstractExtraction">AbstractExtraction</a>, <a href="Poco.Data.AbstractExtractor.html" title="class Poco::Data::AbstractExtractor">AbstractExtractor</a>, <a href="Poco.Data.AbstractPreparation.html" title="class Poco::Data::AbstractPreparation">AbstractPreparation</a>, <a href="Poco.Data.AbstractPreparator.html" title="class Poco::Data::AbstractPreparator">AbstractPreparator</a>, <a href="Poco.Data.AbstractSessionImpl.html" title="class Poco::Data::AbstractSessionImpl">AbstractSessionImpl</a>, <a href="Poco.Data.AbstractTypeHandler.html" title="class Poco::Data::AbstractTypeHandler">AbstractTypeHandler</a>, <a href="Poco.Data.ArchiveByAgeStrategy.html" title="class Poco::Data::ArchiveByAgeStrategy">ArchiveByAgeStrategy</a>, <a href="Poco.Data.ArchiveStrategy.html" title="class Poco::Data::ArchiveStrategy">ArchiveStrategy</a>, <a href="Poco.Data.Binding.html" title="class Poco::Data::Binding">Binding</a>, <a href="Poco.Data.BindingException.html" title="class Poco::Data::BindingException">BindingException</a>, <a href="Poco.Data.Bulk.html" title="class Poco::Data::Bulk">Bulk</a>, <a href="Poco.Data.BulkBinding.html" title="class Poco::Data::BulkBinding">BulkBinding</a>, <a href="Poco.Data.BulkExtraction.html" title="class Poco::Data::BulkExtraction">BulkExtraction</a>, <a href="Poco.Data.Column.html" title="class Poco::Data::Column">Column</a>, <a href="Poco.Data.ConnectionFailedException.html" title="class Poco::Data::ConnectionFailedException">ConnectionFailedException</a>, <a href="Poco.Data.Connector.html" title="class Poco::Data::Connector">Connector</a>, <a href="Poco.Data.CopyBinding.html" title="class Poco::Data::CopyBinding">CopyBinding</a>, <a href="Poco.Data.DataException.html" title="class Poco::Data::DataException">DataException</a>, <a href="Poco.Data.Date.html" title="class Poco::Data::Date">Date</a>, <a href="Poco.Data.ExecutionException.html" title="class Poco::Data::ExecutionException">ExecutionException</a>, <a href="Poco.Data.ExtractException.html" title="class Poco::Data::ExtractException">ExtractException</a>, <a href="Poco.Data.Extraction.html" title="class Poco::Data::Extraction">Extraction</a>, <a href="Poco.Data.InternalBulkExtraction.html" title="class Poco::Data::InternalBulkExtraction">InternalBulkExtraction</a>, <a href="Poco.Data.InternalExtraction.html" title="class Poco::Data::InternalExtraction">InternalExtraction</a>, <a href="Poco.Data.LOB.html" title="class Poco::Data::LOB">LOB</a>, <a href="Poco.Data.LOBIOS.html" title="class Poco::Data::LOBIOS">LOBIOS</a>, <a href="Poco.Data.LOBInputStream.html" title="class Poco::Data::LOBInputStream">LOBInputStream</a>, <a href="Poco.Data.LOBOutputStream.html" title="class Poco::Data::LOBOutputStream">LOBOutputStream</a>, <a href="Poco.Data.LOBStreamBuf.html" title="class Poco::Data::LOBStreamBuf">LOBStreamBuf</a>, <a href="Poco.Data.LengthExceededException.html" title="class Poco::Data::LengthExceededException">LengthExceededException</a>, <a href="Poco.Data.Limit.html" title="class Poco::Data::Limit">Limit</a>, <a href="Poco.Data.LimitException.html" title="class Poco::Data::LimitException">LimitException</a>, <a href="Poco.Data.MetaColumn.html" title="class Poco::Data::MetaColumn">MetaColumn</a>, <a href="Poco.Data.NoDataException.html" title="class Poco::Data::NoDataException">NoDataException</a>, <a href="Poco.Data.NotConnectedException.html" title="class Poco::Data::NotConnectedException">NotConnectedException</a>, <a href="Poco.Data.NotSupportedException.html" title="class Poco::Data::NotSupportedException">NotSupportedException</a>, <a href="Poco.Data.PooledSessionHolder.html" title="class Poco::Data::PooledSessionHolder">PooledSessionHolder</a>, <a href="Poco.Data.PooledSessionImpl.html" title="class Poco::Data::PooledSessionImpl">PooledSessionImpl</a>, <a href="Poco.Data.Position.html" title="class Poco::Data::Position">Position</a>, <a href="Poco.Data.Preparation.html" title="class Poco::Data::Preparation">Preparation</a>, <a href="Poco.Data.Range.html" title="class Poco::Data::Range">Range</a>, <a href="Poco.Data.RecordSet.html" title="class Poco::Data::RecordSet">RecordSet</a>, <a href="Poco.Data.Row.html" title="class Poco::Data::Row">Row</a>, <a href="Poco.Data.RowDataMissingException.html" title="class Poco::Data::RowDataMissingException">RowDataMissingException</a>, <a href="Poco.Data.RowFilter.html" title="class Poco::Data::RowFilter">RowFilter</a>, <a href="Poco.Data.RowFormatter.html" title="class Poco::Data::RowFormatter">RowFormatter</a>, <a href="Poco.Data.RowIterator.html" title="class Poco::Data::RowIterator">RowIterator</a>, <a href="Poco.Data.SQLChannel.html" title="class Poco::Data::SQLChannel">SQLChannel</a>, <a href="Poco.Data.Session.html" title="class Poco::Data::Session">Session</a>, <a href="Poco.Data.SessionFactory.html" title="class Poco::Data::SessionFactory">SessionFactory</a>, <a href="Poco.Data.SessionImpl.html" title="class Poco::Data::SessionImpl">SessionImpl</a>, <a href="Poco.Data.SessionPool.html" title="class Poco::Data::SessionPool">SessionPool</a>, <a href="Poco.Data.SessionPoolContainer.html" title="class Poco::Data::SessionPoolContainer">SessionPoolContainer</a>, <a href="Poco.Data.SessionPoolExhaustedException.html" title="class Poco::Data::SessionPoolExhaustedException">SessionPoolExhaustedException</a>, <a href="Poco.Data.SessionPoolExistsException.html" title="class Poco::Data::SessionPoolExistsException">SessionPoolExistsException</a>, <a href="Poco.Data.SessionUnavailableException.html" title="class Poco::Data::SessionUnavailableException">SessionUnavailableException</a>, <a href="Poco.Data.SimpleRowFormatter.html" title="class Poco::Data::SimpleRowFormatter">SimpleRowFormatter</a>, <a href="Poco.Data.Statement.html" title="class Poco::Data::Statement">Statement</a>, <a href="Poco.Data.StatementCreator.html" title="class Poco::Data::StatementCreator">StatementCreator</a>, <a href="Poco.Data.StatementImpl.html" title="class Poco::Data::StatementImpl">StatementImpl</a>, <a href="Poco.Data.Time.html" title="class Poco::Data::Time">Time</a>, <a href="Poco.Data.Transaction.html" title="class Poco::Data::Transaction">Transaction</a>, <a href="Poco.Data.TypeHandler.html" title="class Poco::Data::TypeHandler">TypeHandler</a>, <a href="Poco.Data.UnknownDataBaseException.html" title="class Poco::Data::UnknownDataBaseException">UnknownDataBaseException</a>, <a href="Poco.Data.UnknownTypeException.html" title="class Poco::Data::UnknownTypeException">UnknownTypeException</a></p>
+<p><b>Types:</b> 
+<a href="Poco.Data.html#4821" title="Poco::Data::AbstractBindingDeq">AbstractBindingDeq</a>, <a href="Poco.Data.html#4822" title="Poco::Data::AbstractBindingLst">AbstractBindingLst</a>, <a href="Poco.Data.html#4820" title="Poco::Data::AbstractBindingVec">AbstractBindingVec</a>, <a href="Poco.Data.html#4878" title="Poco::Data::AbstractExtractionDeq">AbstractExtractionDeq</a>, <a href="Poco.Data.html#4879" title="Poco::Data::AbstractExtractionDeqVec">AbstractExtractionDeqVec</a>, <a href="Poco.Data.html#4880" title="Poco::Data::AbstractExtractionLst">AbstractExtractionLst</a>, <a href="Poco.Data.html#4881" title="Poco::Data::AbstractExtractionLstVec">AbstractExtractionLstVec</a>, <a href="Poco.Data.html#4876" title="Poco::Data::AbstractExtractionVec">AbstractExtractionVec</a>, <a href="Poco.Data.html#4877" title="Poco::Data::AbstractExtractionVecVec">AbstractExtractionVecVec</a>, <a href="Poco.Data.html#5552" title="Poco::Data::AutoTransaction">AutoTransaction</a>, <a href="Poco.Data.html#6200" title="Poco::Data::BLOB">BLOB</a>, <a href="Poco.Data.html#6308" title="Poco::Data::BLOB">BLOB</a>, <a href="Poco.Data.html#6348" title="Poco::Data::BLOBInputStream">BLOBInputStream</a>, <a href="Poco.Data.html#6346" title="Poco::Data::BLOBOutputStream">BLOBOutputStream</a>, <a href="Poco.Data.html#5635" title="Poco::Data::BulkFnType">BulkFnType</a>, <a href="Poco.Data.html#6201" title="Poco::Data::CLOB">CLOB</a>, <a href="Poco.Data.html#6309" title="Poco::Data::CLOB">CLOB</a>, <a href="Poco.Data.html#6349" title="Poco::Data::CLOBInputStream">CLOBInputStream</a>, <a href="Poco.Data.html#6347" title="Poco::Data::CLOBOutputStream">CLOBOutputStream</a>, <a href="Poco.Data.html#4443" title="Poco::Data::NullData">NullData</a></p>
+<p><b>Functions:</b> 
+<a href="Poco.Data.html#5798" title="Poco::Data::POCO_DATA_INVALID_ROW()">POCO_DATA_INVALID_ROW</a>, <a href="Poco.Data.html#6646" title="Poco::Data::operator <<()">operator&nbsp;&lt;&lt;</a>, <a href="Poco.Data.html#6649" title="Poco::Data::operator []()">operator&nbsp;[]</a>, <a href="Poco.Data.html#5788" title="Poco::Data::swap()">swap</a>, <a href="Poco.Data.html#7707" title="Poco::Data::tupleBind()">tupleBind</a>, <a href="Poco.Data.html#7716" title="Poco::Data::tupleExtract()">tupleExtract</a>, <a href="Poco.Data.html#7712" title="Poco::Data::tuplePrepare()">tuplePrepare</a></p>
+<h2>Namespaces</h2>
+<h3><a href="Poco.Data.Keywords.html" class="class">namespace Keywords</a></h3>
+<h3><a href="Poco.Data.MySQL.html" class="class">namespace MySQL</a></h3>
+<h3><a href="Poco.Data.ODBC.html" class="class">namespace ODBC</a></h3>
+<h3><a href="Poco.Data.SQLite.html" class="class">namespace SQLite</a></h3>
+<h2>Classes</h2>
+<h3><a href="Poco.Data.AbstractBinder.html" class="class">class AbstractBinder</a></h3>
+<p> Interface for <a href="Poco.Data.Binding.html" title="class Poco::Data::Binding">Binding</a> data types to placeholders.&nbsp;<a href="Poco.Data.AbstractBinder.html"><img src="images/arrow.png" alt="more..." /> </a></p>
+<h3><a href="Poco.Data.AbstractBinding.html" class="class">class AbstractBinding</a></h3>
+<p> <a href="Poco.Data.AbstractBinding.html" title="class Poco::Data::AbstractBinding">AbstractBinding</a> connects a value with a placeholder via an <a href="Poco.Data.AbstractBinder.html" title="class Poco::Data::AbstractBinder">AbstractBinder</a> interface.&nbsp;<a href="Poco.Data.AbstractBinding.html"><img src="images/arrow.png" alt="more..." /> </a></p>
+<h3><a href="Poco.Data.AbstractExtraction.html" class="class">class AbstractExtraction</a></h3>
+<p> <a href="Poco.Data.AbstractExtraction.html" title="class Poco::Data::AbstractExtraction">AbstractExtraction</a> is the interface class that connects output positions to concrete values
+ retrieved via an <a href="Poco.Data.AbstractExtractor.html" title="class Poco::Data::AbstractExtractor">AbstractExtractor</a>.&nbsp;<a href="Poco.Data.AbstractExtraction.html"><img src="images/arrow.png" alt="more..." /> </a></p>
+<h3><a href="Poco.Data.AbstractExtractor.html" class="class">class AbstractExtractor</a></h3>
+<p> Interface used to extract data from a single result row.&nbsp;<a href="Poco.Data.AbstractExtractor.html"><img src="images/arrow.png" alt="more..." /> </a></p>
+<h3><a href="Poco.Data.AbstractPreparation.html" class="class">class AbstractPreparation</a></h3>
+<p> Interface for calling the appropriate <a href="Poco.Data.AbstractPreparator.html" title="class Poco::Data::AbstractPreparator">AbstractPreparator</a> method&nbsp;<a href="Poco.Data.AbstractPreparation.html"><img src="images/arrow.png" alt="more..." /> </a></p>
+<h3><a href="Poco.Data.AbstractPreparator.html" class="class">class AbstractPreparator</a></h3>
+<p> Interface used for database preparation where we first have to register all data types
+ (and memory output locations) before extracting data, e.&nbsp;<a href="Poco.Data.AbstractPreparator.html"><img src="images/arrow.png" alt="more..." /> </a></p>
+<h3><a href="Poco.Data.AbstractSessionImpl.html" class="class">class AbstractSessionImpl</a></h3>
+<p> A partial implementation of <a href="Poco.Data.SessionImpl.html" title="class Poco::Data::SessionImpl">SessionImpl</a>, providing
+ features and properties management.&nbsp;<a href="Poco.Data.AbstractSessionImpl.html"><img src="images/arrow.png" alt="more..." /> </a></p>
+<h3><a href="Poco.Data.AbstractTypeHandler.html" class="class">class AbstractTypeHandler</a></h3>
+<p> Parent class for type handlers.&nbsp;<a href="Poco.Data.AbstractTypeHandler.html"><img src="images/arrow.png" alt="more..." /> </a></p>
+<h3><a href="Poco.Data.ArchiveByAgeStrategy.html" class="class">class ArchiveByAgeStrategy</a></h3>
+<p> Archives rows scheduled for archiving.&nbsp;<a href="Poco.Data.ArchiveByAgeStrategy.html"><img src="images/arrow.png" alt="more..." /> </a></p>
+<h3><a href="Poco.Data.ArchiveStrategy.html" class="class">class ArchiveStrategy</a></h3>
+<p> The <a href="Poco.Data.ArchiveStrategy.html" title="class Poco::Data::ArchiveStrategy">ArchiveStrategy</a> is used by <a href="Poco.Data.SQLChannel.html" title="class Poco::Data::SQLChannel">SQLChannel</a> to archive log rows.&nbsp;<a href="Poco.Data.ArchiveStrategy.html"><img src="images/arrow.png" alt="more..." /> </a></p>
+<h3><a href="Poco.Data.Binding.html" class="class">class Binding</a></h3>
+<p> <a href="Poco.Data.Binding.html" title="class Poco::Data::Binding">Binding</a> maps a value or multiple values (see <a href="Poco.Data.Binding.html" title="class Poco::Data::Binding">Binding</a> specializations for STL containers as
+ well as type handlers) to database column(s).&nbsp;<a href="Poco.Data.Binding.html"><img src="images/arrow.png" alt="more..." /> </a></p>
+<h3><a href="Poco.Data.BindingException.html" class="class">class BindingException</a></h3>
+<p>&nbsp;<a href="Poco.Data.BindingException.html"><img src="images/arrow.png" alt="more..." /> </a></p>
+<h3><a href="Poco.Data.Bulk.html" class="class">class Bulk</a></h3>
+<p>&nbsp;<a href="Poco.Data.Bulk.html"><img src="images/arrow.png" alt="more..." /> </a></p>
+<h3><a href="Poco.Data.BulkBinding.html" class="class">class BulkBinding</a></h3>
+<p> A <a href="Poco.Data.BulkBinding.html" title="class Poco::Data::BulkBinding">BulkBinding</a> maps a value to a column.&nbsp;<a href="Poco.Data.BulkBinding.html"><img src="images/arrow.png" alt="more..." /> </a></p>
+<h3><a href="Poco.Data.BulkExtraction.html" class="class">class BulkExtraction</a></h3>
+<p> Specialization for bulk extraction of values from a query result set.&nbsp;<a href="Poco.Data.BulkExtraction.html"><img src="images/arrow.png" alt="more..." /> </a></p>
+<h3><a href="Poco.Data.Column.html" class="class">class Column</a></h3>
+<p> <a href="Poco.Data.Column.html" title="class Poco::Data::Column">Column</a> class is column data container.&nbsp;<a href="Poco.Data.Column.html"><img src="images/arrow.png" alt="more..." /> </a></p>
+<h3><a href="Poco.Data.ConnectionFailedException.html" class="class">class ConnectionFailedException</a></h3>
+<p>&nbsp;<a href="Poco.Data.ConnectionFailedException.html"><img src="images/arrow.png" alt="more..." /> </a></p>
+<h3><a href="Poco.Data.Connector.html" class="class">class Connector</a></h3>
+<p> A <a href="Poco.Data.Connector.html" title="class Poco::Data::Connector">Connector</a> creates <a href="Poco.Data.SessionImpl.html" title="class Poco::Data::SessionImpl">SessionImpl</a> objects.&nbsp;<a href="Poco.Data.Connector.html"><img src="images/arrow.png" alt="more..." /> </a></p>
+<h3><a href="Poco.Data.CopyBinding.html" class="class">class CopyBinding</a></h3>
+<p> <a href="Poco.Data.Binding.html" title="class Poco::Data::Binding">Binding</a> maps a value or multiple values (see <a href="Poco.Data.Binding.html" title="class Poco::Data::Binding">Binding</a> specializations for STL containers as
+ well as type handlers) to database column(s).&nbsp;<a href="Poco.Data.CopyBinding.html"><img src="images/arrow.png" alt="more..." /> </a></p>
+<h3><a href="Poco.Data.DataException.html" class="class">class DataException</a></h3>
+<p>&nbsp;<a href="Poco.Data.DataException.html"><img src="images/arrow.png" alt="more..." /> </a></p>
+<h3><a href="Poco.Data.Date.html" class="class">class Date</a></h3>
+<p> <a href="Poco.Data.Date.html" title="class Poco::Data::Date">Date</a> class wraps a <a href="Poco.DateTime.html" title="class Poco::DateTime">DateTime</a> and exposes date related interface.&nbsp;<a href="Poco.Data.Date.html"><img src="images/arrow.png" alt="more..." /> </a></p>
+<h3><a href="Poco.Data.ExecutionException.html" class="class">class ExecutionException</a></h3>
+<p>&nbsp;<a href="Poco.Data.ExecutionException.html"><img src="images/arrow.png" alt="more..." /> </a></p>
+<h3><a href="Poco.Data.ExtractException.html" class="class">class ExtractException</a></h3>
+<p>&nbsp;<a href="Poco.Data.ExtractException.html"><img src="images/arrow.png" alt="more..." /> </a></p>
+<h3><a href="Poco.Data.Extraction.html" class="class">class Extraction</a></h3>
+<p> Concrete <a href="Poco.Data.html" title="namespace Poco::Data">Data</a> Type specific extraction of values from a query result set.&nbsp;<a href="Poco.Data.Extraction.html"><img src="images/arrow.png" alt="more..." /> </a></p>
+<h3><a href="Poco.Data.InternalBulkExtraction.html" class="class">class InternalBulkExtraction</a></h3>
+<p> Container <a href="Poco.Data.html" title="namespace Poco::Data">Data</a> Type specialization extension for extraction of values from a query result set.&nbsp;<a href="Poco.Data.InternalBulkExtraction.html"><img src="images/arrow.png" alt="more..." /> </a></p>
+<h3><a href="Poco.Data.InternalExtraction.html" class="class">class InternalExtraction</a></h3>
+<p> Vector <a href="Poco.Data.html" title="namespace Poco::Data">Data</a> Type specialization for extraction of values from a query result set.&nbsp;<a href="Poco.Data.InternalExtraction.html"><img src="images/arrow.png" alt="more..." /> </a></p>
+<h3><a href="Poco.Data.LOB.html" class="class">class LOB</a></h3>
+<p> Representation of a Large OBject.&nbsp;<a href="Poco.Data.LOB.html"><img src="images/arrow.png" alt="more..." /> </a></p>
+<h3><a href="Poco.Data.LOBIOS.html" class="class">class LOBIOS</a></h3>
+<p> The base class for <a href="Poco.Data.LOBInputStream.html" title="class Poco::Data::LOBInputStream">LOBInputStream</a> and
+ <a href="Poco.Data.LOBOutputStream.html" title="class Poco::Data::LOBOutputStream">LOBOutputStream</a>.&nbsp;<a href="Poco.Data.LOBIOS.html"><img src="images/arrow.png" alt="more..." /> </a></p>
+<h3><a href="Poco.Data.LOBInputStream.html" class="class">class LOBInputStream</a></h3>
+<p> An input stream for reading from a <a href="Poco.Data.LOB.html" title="class Poco::Data::LOB">LOB</a>.&nbsp;<a href="Poco.Data.LOBInputStream.html"><img src="images/arrow.png" alt="more..." /> </a></p>
+<h3><a href="Poco.Data.LOBOutputStream.html" class="class">class LOBOutputStream</a></h3>
+<p> An output stream for writing to a <a href="Poco.Data.LOB.html" title="class Poco::Data::LOB">LOB</a>.&nbsp;<a href="Poco.Data.LOBOutputStream.html"><img src="images/arrow.png" alt="more..." /> </a></p>
+<h3><a href="Poco.Data.LOBStreamBuf.html" class="class">class LOBStreamBuf</a></h3>
+<p> This is the streambuf class used for reading from and writing to a <a href="Poco.Data.LOB.html" title="class Poco::Data::LOB">LOB</a>.&nbsp;<a href="Poco.Data.LOBStreamBuf.html"><img src="images/arrow.png" alt="more..." /> </a></p>
+<h3><a href="Poco.Data.LengthExceededException.html" class="class">class LengthExceededException</a></h3>
+<p>&nbsp;<a href="Poco.Data.LengthExceededException.html"><img src="images/arrow.png" alt="more..." /> </a></p>
+<h3><a href="Poco.Data.Limit.html" class="class">class Limit</a></h3>
+<p> <a href="Poco.Data.Limit.html" title="class Poco::Data::Limit">Limit</a> stores information how many rows a query should return.&nbsp;<a href="Poco.Data.Limit.html"><img src="images/arrow.png" alt="more..." /> </a></p>
+<h3><a href="Poco.Data.LimitException.html" class="class">class LimitException</a></h3>
+<p>&nbsp;<a href="Poco.Data.LimitException.html"><img src="images/arrow.png" alt="more..." /> </a></p>
+<h3><a href="Poco.Data.MetaColumn.html" class="class">class MetaColumn</a></h3>
+<p> <a href="Poco.Data.MetaColumn.html" title="class Poco::Data::MetaColumn">MetaColumn</a> class contains column metadata information.&nbsp;<a href="Poco.Data.MetaColumn.html"><img src="images/arrow.png" alt="more..." /> </a></p>
+<h3><a href="Poco.Data.NoDataException.html" class="class">class NoDataException</a></h3>
+<p>&nbsp;<a href="Poco.Data.NoDataException.html"><img src="images/arrow.png" alt="more..." /> </a></p>
+<h3><a href="Poco.Data.NotConnectedException.html" class="class">class NotConnectedException</a></h3>
+<p>&nbsp;<a href="Poco.Data.NotConnectedException.html"><img src="images/arrow.png" alt="more..." /> </a></p>
+<h3><a href="Poco.Data.NotSupportedException.html" class="class">class NotSupportedException</a></h3>
+<p>&nbsp;<a href="Poco.Data.NotSupportedException.html"><img src="images/arrow.png" alt="more..." /> </a></p>
+<h3><a href="Poco.Data.PooledSessionHolder.html" class="class">class PooledSessionHolder</a></h3>
+<p> This class is used by <a href="Poco.Data.SessionPool.html" title="class Poco::Data::SessionPool">SessionPool</a> to manage <a href="Poco.Data.SessionImpl.html" title="class Poco::Data::SessionImpl">SessionImpl</a> objects.&nbsp;<a href="Poco.Data.PooledSessionHolder.html"><img src="images/arrow.png" alt="more..." /> </a></p>
+<h3><a href="Poco.Data.PooledSessionImpl.html" class="class">class PooledSessionImpl</a></h3>
+<p> <a href="Poco.Data.PooledSessionImpl.html" title="class Poco::Data::PooledSessionImpl">PooledSessionImpl</a> is a decorator created by
+ <a href="Poco.Data.SessionPool.html" title="class Poco::Data::SessionPool">SessionPool</a> that adds session pool
+ management to <a href="Poco.Data.SessionImpl.html" title="class Poco::Data::SessionImpl">SessionImpl</a> objects.&nbsp;<a href="Poco.Data.PooledSessionImpl.html"><img src="images/arrow.png" alt="more..." /> </a></p>
+<h3><a href="Poco.Data.Position.html" class="class">class Position</a></h3>
+<p> Utility class wrapping unsigned integer.&nbsp;<a href="Poco.Data.Position.html"><img src="images/arrow.png" alt="more..." /> </a></p>
+<h3><a href="Poco.Data.Preparation.html" class="class">class Preparation</a></h3>
+<p> Class for calling the appropriate <a href="Poco.Data.AbstractPreparator.html" title="class Poco::Data::AbstractPreparator">AbstractPreparator</a> method.&nbsp;<a href="Poco.Data.Preparation.html"><img src="images/arrow.png" alt="more..." /> </a></p>
+<h3><a href="Poco.Data.Range.html" class="class">class Range</a></h3>
+<p> <a href="Poco.Data.Range.html" title="class Poco::Data::Range">Range</a> stores information how many rows a query should return.&nbsp;<a href="Poco.Data.Range.html"><img src="images/arrow.png" alt="more..." /> </a></p>
+<h3><a href="Poco.Data.RecordSet.html" class="class">class RecordSet</a></h3>
+<p> <a href="Poco.Data.RecordSet.html" title="class Poco::Data::RecordSet">RecordSet</a> provides access to data returned from a query.&nbsp;<a href="Poco.Data.RecordSet.html"><img src="images/arrow.png" alt="more..." /> </a></p>
+<h3><a href="Poco.Data.Row.html" class="class">class Row</a></h3>
+<p> <a href="Poco.Data.Row.html" title="class Poco::Data::Row">Row</a> class provides a data type for <a href="Poco.Data.RecordSet.html" title="class Poco::Data::RecordSet">RecordSet</a> iteration purposes.&nbsp;<a href="Poco.Data.Row.html"><img src="images/arrow.png" alt="more..." /> </a></p>
+<h3><a href="Poco.Data.RowDataMissingException.html" class="class">class RowDataMissingException</a></h3>
+<p>&nbsp;<a href="Poco.Data.RowDataMissingException.html"><img src="images/arrow.png" alt="more..." /> </a></p>
+<h3><a href="Poco.Data.RowFilter.html" class="class">class RowFilter</a></h3>
+<p> <a href="Poco.Data.RowFilter.html" title="class Poco::Data::RowFilter">RowFilter</a> class provides row filtering functionality.&nbsp;<a href="Poco.Data.RowFilter.html"><img src="images/arrow.png" alt="more..." /> </a></p>
+<h3><a href="Poco.Data.RowFormatter.html" class="class">class RowFormatter</a></h3>
+<p> <a href="Poco.Data.Row.html" title="class Poco::Data::Row">Row</a> formatter is an abstract class providing definition for row formatting functionality.&nbsp;<a href="Poco.Data.RowFormatter.html"><img src="images/arrow.png" alt="more..." /> </a></p>
+<h3><a href="Poco.Data.RowIterator.html" class="class">class RowIterator</a></h3>
+<p> <a href="Poco.Data.RowIterator.html" title="class Poco::Data::RowIterator">RowIterator</a> class.&nbsp;<a href="Poco.Data.RowIterator.html"><img src="images/arrow.png" alt="more..." /> </a></p>
+<h3><a href="Poco.Data.SQLChannel.html" class="class">class SQLChannel</a></h3>
+<p> This <a href="Poco.Channel.html" title="class Poco::Channel">Channel</a> implements logging to a SQL database.&nbsp;<a href="Poco.Data.SQLChannel.html"><img src="images/arrow.png" alt="more..." /> </a></p>
+<h3><a href="Poco.Data.Session.html" class="class">class Session</a></h3>
+<p> A <a href="Poco.Data.Session.html" title="class Poco::Data::Session">Session</a> holds a connection to a Database and creates <a href="Poco.Data.Statement.html" title="class Poco::Data::Statement">Statement</a> objects.&nbsp;<a href="Poco.Data.Session.html"><img src="images/arrow.png" alt="more..." /> </a></p>
+<h3><a href="Poco.Data.SessionFactory.html" class="class">class SessionFactory</a></h3>
+<p> A <a href="Poco.Data.SessionFactory.html" title="class Poco::Data::SessionFactory">SessionFactory</a> is a singleton class that stores Connectors and allows to 
+ create Sessions of the required type:
+    
+     <a href="Poco.Data.Session.html" title="class Poco::Data::Session">Session</a> ses(<a href="Poco.Data.SessionFactory.html#7072" title="Poco::Data::SessionFactory::instance()">SessionFactory::instance</a>().&nbsp;<a href="Poco.Data.SessionFactory.html"><img src="images/arrow.png" alt="more..." /> </a></p>
+<h3><a href="Poco.Data.SessionImpl.html" class="class">class SessionImpl</a></h3>
+<p> Interface for <a href="Poco.Data.Session.html" title="class Poco::Data::Session">Session</a> functionality that subclasses must extend.&nbsp;<a href="Poco.Data.SessionImpl.html"><img src="images/arrow.png" alt="more..." /> </a></p>
+<h3><a href="Poco.Data.SessionPool.html" class="class">class SessionPool</a></h3>
+<p> This class implements session pooling for POCO <a href="Poco.Data.html" title="namespace Poco::Data">Data</a>.&nbsp;<a href="Poco.Data.SessionPool.html"><img src="images/arrow.png" alt="more..." /> </a></p>
+<h3><a href="Poco.Data.SessionPoolContainer.html" class="class">class SessionPoolContainer</a></h3>
+<p> This class implements container of session pools.&nbsp;<a href="Poco.Data.SessionPoolContainer.html"><img src="images/arrow.png" alt="more..." /> </a></p>
+<h3><a href="Poco.Data.SessionPoolExhaustedException.html" class="class">class SessionPoolExhaustedException</a></h3>
+<p>&nbsp;<a href="Poco.Data.SessionPoolExhaustedException.html"><img src="images/arrow.png" alt="more..." /> </a></p>
+<h3><a href="Poco.Data.SessionPoolExistsException.html" class="class">class SessionPoolExistsException</a></h3>
+<p>&nbsp;<a href="Poco.Data.SessionPoolExistsException.html"><img src="images/arrow.png" alt="more..." /> </a></p>
+<h3><a href="Poco.Data.SessionUnavailableException.html" class="class">class SessionUnavailableException</a></h3>
+<p>&nbsp;<a href="Poco.Data.SessionUnavailableException.html"><img src="images/arrow.png" alt="more..." /> </a></p>
+<h3><a href="Poco.Data.SimpleRowFormatter.html" class="class">class SimpleRowFormatter</a></h3>
+<p> A simple row formatting class.&nbsp;<a href="Poco.Data.SimpleRowFormatter.html"><img src="images/arrow.png" alt="more..." /> </a></p>
+<h3><a href="Poco.Data.Statement.html" class="class">class Statement</a></h3>
+<p> A <a href="Poco.Data.Statement.html" title="class Poco::Data::Statement">Statement</a> is used to execute SQL statements.&nbsp;<a href="Poco.Data.Statement.html"><img src="images/arrow.png" alt="more..." /> </a></p>
+<h3><a href="Poco.Data.StatementCreator.html" class="class">class StatementCreator</a></h3>
+<p> A <a href="Poco.Data.StatementCreator.html" title="class Poco::Data::StatementCreator">StatementCreator</a> creates Statements.&nbsp;<a href="Poco.Data.StatementCreator.html"><img src="images/arrow.png" alt="more..." /> </a></p>
+<h3><a href="Poco.Data.StatementImpl.html" class="class">class StatementImpl</a></h3>
+<p> <a href="Poco.Data.StatementImpl.html" title="class Poco::Data::StatementImpl">StatementImpl</a> interface that subclasses must implement to define database dependent query execution.&nbsp;<a href="Poco.Data.StatementImpl.html"><img src="images/arrow.png" alt="more..." /> </a></p>
+<h3><a href="Poco.Data.Time.html" class="class">class Time</a></h3>
+<p> <a href="Poco.Data.Time.html" title="class Poco::Data::Time">Time</a> class wraps a <a href="Poco.DateTime.html" title="class Poco::DateTime">DateTime</a> and exposes time related interface.&nbsp;<a href="Poco.Data.Time.html"><img src="images/arrow.png" alt="more..." /> </a></p>
+<h3><a href="Poco.Data.Transaction.html" class="class">class Transaction</a></h3>
+<p> <a href="Poco.Data.Transaction.html" title="class Poco::Data::Transaction">Transaction</a> helps with transactions in domain logic.&nbsp;<a href="Poco.Data.Transaction.html"><img src="images/arrow.png" alt="more..." /> </a></p>
+<h3><a href="Poco.Data.TypeHandler.html" class="class">class TypeHandler</a></h3>
+<p> Converts Rows to a Type and the other way around.&nbsp;<a href="Poco.Data.TypeHandler.html"><img src="images/arrow.png" alt="more..." /> </a></p>
+<h3><a href="Poco.Data.UnknownDataBaseException.html" class="class">class UnknownDataBaseException</a></h3>
+<p>&nbsp;<a href="Poco.Data.UnknownDataBaseException.html"><img src="images/arrow.png" alt="more..." /> </a></p>
+<h3><a href="Poco.Data.UnknownTypeException.html" class="class">class UnknownTypeException</a></h3>
+<p>&nbsp;<a href="Poco.Data.UnknownTypeException.html"><img src="images/arrow.png" alt="more..." /> </a></p>
+<h2>Types</h2>
+<h3><a id="4821">AbstractBindingDeq</a></h3>
+<p class="decl">typedef std::deque &lt; <a href="Poco.Data.AbstractBinding.html#4792" title="Poco::Data::AbstractBinding::Ptr">AbstractBinding::Ptr</a> &gt; <a href="Poco.Data.html#4821" title="Poco::Data::AbstractBindingDeq">AbstractBindingDeq</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="4822">AbstractBindingLst</a></h3>
+<p class="decl">typedef std::list &lt; <a href="Poco.Data.AbstractBinding.html#4792" title="Poco::Data::AbstractBinding::Ptr">AbstractBinding::Ptr</a> &gt; <a href="Poco.Data.html#4822" title="Poco::Data::AbstractBindingLst">AbstractBindingLst</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="4820">AbstractBindingVec</a></h3>
+<p class="decl">typedef std::vector &lt; <a href="Poco.Data.AbstractBinding.html#4792" title="Poco::Data::AbstractBinding::Ptr">AbstractBinding::Ptr</a> &gt; <a href="Poco.Data.html#4820" title="Poco::Data::AbstractBindingVec">AbstractBindingVec</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="4878">AbstractExtractionDeq</a></h3>
+<p class="decl">typedef std::deque &lt; <a href="Poco.Data.AbstractExtraction.html#4824" title="Poco::Data::AbstractExtraction::Ptr">AbstractExtraction::Ptr</a> &gt; <a href="Poco.Data.html#4878" title="Poco::Data::AbstractExtractionDeq">AbstractExtractionDeq</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="4879">AbstractExtractionDeqVec</a></h3>
+<p class="decl">typedef std::vector &lt; <a href="Poco.Data.html#4878" title="Poco::Data::AbstractExtractionDeq">AbstractExtractionDeq</a> &gt; <a href="Poco.Data.html#4879" title="Poco::Data::AbstractExtractionDeqVec">AbstractExtractionDeqVec</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="4880">AbstractExtractionLst</a></h3>
+<p class="decl">typedef std::list &lt; <a href="Poco.Data.AbstractExtraction.html#4824" title="Poco::Data::AbstractExtraction::Ptr">AbstractExtraction::Ptr</a> &gt; <a href="Poco.Data.html#4880" title="Poco::Data::AbstractExtractionLst">AbstractExtractionLst</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="4881">AbstractExtractionLstVec</a></h3>
+<p class="decl">typedef std::vector &lt; <a href="Poco.Data.html#4880" title="Poco::Data::AbstractExtractionLst">AbstractExtractionLst</a> &gt; <a href="Poco.Data.html#4881" title="Poco::Data::AbstractExtractionLstVec">AbstractExtractionLstVec</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="4876">AbstractExtractionVec</a></h3>
+<p class="decl">typedef std::vector &lt; <a href="Poco.Data.AbstractExtraction.html#4824" title="Poco::Data::AbstractExtraction::Ptr">AbstractExtraction::Ptr</a> &gt; <a href="Poco.Data.html#4876" title="Poco::Data::AbstractExtractionVec">AbstractExtractionVec</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="4877">AbstractExtractionVecVec</a></h3>
+<p class="decl">typedef std::vector &lt; <a href="Poco.Data.html#4876" title="Poco::Data::AbstractExtractionVec">AbstractExtractionVec</a> &gt; <a href="Poco.Data.html#4877" title="Poco::Data::AbstractExtractionVecVec">AbstractExtractionVecVec</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="5552">AutoTransaction</a></h3>
+<p class="decl">typedef <a href="Poco.Data.Transaction.html" title="class Poco::Data::Transaction">Transaction</a> <a href="Poco.Data.html#5552" title="Poco::Data::AutoTransaction">AutoTransaction</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="6200">BLOB</a></h3>
+<p class="decl">typedef <a href="Poco.Data.LOB.html" title="class Poco::Data::LOB">LOB</a> &lt; unsigned char &gt; <a href="Poco.Data.html#6200" title="Poco::Data::BLOB">BLOB</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="6308">BLOB</a></h3>
+<p class="decl">typedef <a href="Poco.Data.LOB.html" title="class Poco::Data::LOB">LOB</a> &lt; unsigned char &gt; <a href="Poco.Data.html#6200" title="Poco::Data::BLOB">BLOB</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="6348">BLOBInputStream</a></h3>
+<p class="decl">typedef <a href="Poco.Data.LOBInputStream.html" title="class Poco::Data::LOBInputStream">LOBInputStream</a> &lt; unsigned char &gt; <a href="Poco.Data.html#6348" title="Poco::Data::BLOBInputStream">BLOBInputStream</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="6346">BLOBOutputStream</a></h3>
+<p class="decl">typedef <a href="Poco.Data.LOBOutputStream.html" title="class Poco::Data::LOBOutputStream">LOBOutputStream</a> &lt; unsigned char &gt; <a href="Poco.Data.html#6346" title="Poco::Data::BLOBOutputStream">BLOBOutputStream</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="5635">BulkFnType</a></h3>
+<p class="decl">typedef void (* <a href="Poco.Data.html#5635" title="Poco::Data::BulkFnType">BulkFnType</a>)(<a href="Poco.Void.html" title="class Poco::Void">Void</a>);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="6201">CLOB</a></h3>
+<p class="decl">typedef <a href="Poco.Data.LOB.html" title="class Poco::Data::LOB">LOB</a> &lt; char &gt; <a href="Poco.Data.html#6201" title="Poco::Data::CLOB">CLOB</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="6309">CLOB</a></h3>
+<p class="decl">typedef <a href="Poco.Data.LOB.html" title="class Poco::Data::LOB">LOB</a> &lt; char &gt; <a href="Poco.Data.html#6201" title="Poco::Data::CLOB">CLOB</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="6349">CLOBInputStream</a></h3>
+<p class="decl">typedef <a href="Poco.Data.LOBInputStream.html" title="class Poco::Data::LOBInputStream">LOBInputStream</a> &lt; char &gt; <a href="Poco.Data.html#6349" title="Poco::Data::CLOBInputStream">CLOBInputStream</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="6347">CLOBOutputStream</a></h3>
+<p class="decl">typedef <a href="Poco.Data.LOBOutputStream.html" title="class Poco::Data::LOBOutputStream">LOBOutputStream</a> &lt; char &gt; <a href="Poco.Data.html#6347" title="Poco::Data::CLOBOutputStream">CLOBOutputStream</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="4443">NullData</a></h3>
+<p class="decl">typedef <a href="Poco.html#15248" title="enum  Poco::NullType">NullType</a> <a href="Poco.Data.html#4443" title="Poco::Data::NullData">NullData</a>;</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Functions</h2>
+<h3><a id="5798">POCO_DATA_INVALID_ROW</a> <img src="images/static.png" alt="static" title="static" class="icon" /> </h3>
+<p class="decl">static const std::size_t <a href="Poco.Data.html#5798" title="Poco::Data::POCO_DATA_INVALID_ROW()">POCO_DATA_INVALID_ROW</a> = std::numeric_limits &lt; std::size_t &gt;::max();</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="6646">operator &lt;&lt;</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">inline std::ostream &amp; operator &lt;&lt; (<br />&nbsp;&nbsp;&nbsp;&nbsp;std::ostream &amp; os,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Data.RecordSet.html" title="class Poco::Data::RecordSet">RecordSet</a> &amp; rs<br />);</p>
+<div class="description">
+<p>inlines </p>
+</div>
+<h3><a id="6742">operator &lt;&lt;</a></h3>
+<p class="decl">std::ostream &amp; operator &lt;&lt; (<br />&nbsp;&nbsp;&nbsp;&nbsp;std::ostream &amp; os,<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.Data.Row.html" title="class Poco::Data::Row">Row</a> &amp; row<br />);</p>
+<div class="description">
+<p>inlines </p>
+</div>
+<h3><a id="6649">operator []</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">inline <a href="Poco.Dynamic.Var.html" title="class Poco::Dynamic::Var">Poco::Dynamic::Var</a> RecordSet::operator[] (<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; name<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="6651">operator []</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">inline <a href="Poco.Dynamic.Var.html" title="class Poco::Dynamic::Var">Poco::Dynamic::Var</a> RecordSet::operator[] (<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t index<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="6745">operator []</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">inline <a href="Poco.Dynamic.Var.html" title="class Poco::Dynamic::Var">Poco::Dynamic::Var</a> &amp; Row::operator[] (<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t col<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="6747">operator []</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">inline <a href="Poco.Dynamic.Var.html" title="class Poco::Dynamic::Var">Poco::Dynamic::Var</a> &amp; Row::operator[] (<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; name<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="5788">swap</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">template &lt; typename C &gt; inline void swap(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Data.Column.html" title="class Poco::Data::Column">Column</a> &lt; C &gt; &amp; c1,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Data.Column.html" title="class Poco::Data::Column">Column</a> &lt; C &gt; &amp; c2<br />);</p>
+<div class="description">
+<p>The std::vector&lt;bool&gt; specialization for the <a href="Poco.Data.Column.html" title="class Poco::Data::Column">Column</a> class. </p>
+<p>This specialization is necessary due to the nature of std::vector&lt;bool&gt;. For details, see the standard library implementation of vector&lt;bool&gt;  or S. Meyers: &quot;Effective STL&quot; (Copyright Addison-Wesley 2001), Item 18: &quot;Avoid using vector&lt;bool&gt;.&quot; </p>
+<p>The workaround employed here is using deque&lt;bool&gt; as an internal &quot;companion&quot; container kept in sync with the vector&lt;bool&gt; column data. Creates the <a href="Poco.Data.Column.html" title="class Poco::Data::Column">Column</a>. Creates the <a href="Poco.Data.Column.html" title="class Poco::Data::Column">Column</a>. Destroys the <a href="Poco.Data.Column.html" title="class Poco::Data::Column">Column</a>. Assignment operator. Swaps the column with another one. Returns reference to contained data. Returns the field value in specified row. Returns the field value in specified row. Returns number of rows. Clears and shrinks the storage. Returns column name. Returns column maximum length. Returns column precision. Valid for floating point fields only (zero for other data types). Returns column position. Returns column type. Returns iterator pointing to the beginning of data storage vector. Returns iterator pointing to the end of data storage vector. <a href="Poco.Data.Column.html" title="class Poco::Data::Column">Column</a> specialization for std::list Creates the <a href="Poco.Data.Column.html" title="class Poco::Data::Column">Column</a>. Creates the <a href="Poco.Data.Column.html" title="class Poco::Data::Column">Column</a>. Destroys the <a href="Poco.Data.Column.html" title="class Poco::Data::Column">Column</a>. Assignment operator. Swaps the column with another one. Returns reference to contained data. Returns the field value in specified row. This is the std::list specialization and std::list is not the optimal solution for cases where random  access is needed. However, to allow for compatibility with other containers, this functionality is provided here. To alleviate the problem, an effort is made to start iteration from beginning or end, depending on the position requested. Returns the field value in specified row. Returns number of rows. Clears the storage. Returns column name. Returns column maximum length. Returns column precision. Valid for floating point fields only (zero for other data types). Returns column position. Returns column type. Returns iterator pointing to the beginning of data storage vector. Returns iterator pointing to the end of data storage vector. </p>
+</div>
+<h3><a id="6310">swap</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">template &lt; typename T &gt; inline void swap(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Data.LOB.html" title="class Poco::Data::LOB">LOB</a> &lt; T &gt; &amp; b1,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Data.LOB.html" title="class Poco::Data::LOB">LOB</a> &lt; T &gt; &amp; b2<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="7065">swap</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">inline void swap(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Data.Session.html" title="class Poco::Data::Session">Session</a> &amp; s1,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Data.Session.html" title="class Poco::Data::Session">Session</a> &amp; s2<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="7456">swap</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">inline void swap(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Data.Statement.html" title="class Poco::Data::Statement">Statement</a> &amp; s1,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Data.Statement.html" title="class Poco::Data::Statement">Statement</a> &amp; s2<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="7707">tupleBind</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">template &lt; typename TupleType, typename Type, int N &gt; inline void tupleBind(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t &amp; pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;TupleType tuple,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Data.AbstractBinder.html#4447" title="Poco::Data::AbstractBinder::Ptr">AbstractBinder::Ptr</a> pBinder,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Data.AbstractBinder.html#4448" title="enum  Poco::Data::AbstractBinder::Direction">AbstractBinder::Direction</a> dir<br />);</p>
+<div class="description">
+<p>Specialization of type handler for std::deque. Specialization of type handler for std::vector. Specialization of type handler for std::list. Specialization of type handler for <a href="Poco.Nullable.html" title="class Poco::Nullable">Nullable</a>. <a href="Poco.Tuple.html" title="struct Poco::Tuple">Poco::Tuple</a> <a href="Poco.Data.TypeHandler.html" title="class Poco::Data::TypeHandler">TypeHandler</a> specializations </p>
+</div>
+<h3><a id="7716">tupleExtract</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">template &lt; typename TupleType, typename DefValType, typename Type, int N &gt; inline void tupleExtract(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t &amp; pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;TupleType tuple,<br />&nbsp;&nbsp;&nbsp;&nbsp;DefValType defVal,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Data.AbstractExtractor.html#4883" title="Poco::Data::AbstractExtractor::Ptr">AbstractExtractor::Ptr</a> pExt<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="7712">tuplePrepare</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">template &lt; typename TupleType, typename Type, int N &gt; inline void tuplePrepare(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t &amp; pos,<br />&nbsp;&nbsp;&nbsp;&nbsp;TupleType tuple,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Data.AbstractPreparator.html#5157" title="Poco::Data::AbstractPreparator::Ptr">AbstractPreparator::Ptr</a> pPreparator<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

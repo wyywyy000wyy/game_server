@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::ObjectPool</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.html" class="namespace">Poco</a></h1>
+<h1 class="template">template &lt; class C, class P = C *, class F = PoolableObjectFactory &lt; C, P &gt; &gt;</h1>
+<h1 class="symbol">class ObjectPool</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Foundation" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Foundation<br />
+<b>Package:</b> Core<br />
+<b>Header:</b> Poco/ObjectPool.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>An <a href="Poco.ObjectPool.html" title="class Poco::ObjectPool">ObjectPool</a> manages a pool of objects of a certain class. </p>
+<p>The number of objects managed by the pool can be restricted. </p>
+<p>When an object is requested from the pool: </p>
+<ul>
+<li>If an object is available from the pool, an object from the pool is removed from the pool, activated (using the factory) and returned.  </li>
+<li>Otherwise, if the peak capacity of the pool has not yet been reached,  a new object is created and activated, using the object factory, and returned.  </li>
+<li>If the peak capacity has already been reached, null is returned. </li>
+</ul>
+<p>When an object is returned to the pool: </p>
+<ul>
+<li>If the object is valid (checked by calling validateObject() from the object factory), the object is deactivated. If the  number of objects in the pool is below the capacity, the object is added to the pool. Otherwise it is destroyed. </li>
+<li>If the object is not valid, it is destroyed immediately. </li>
+</ul>
+</div>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.ObjectPool.html#15732" title="Poco::ObjectPool::activateObject()">activateObject</a>, <a href="Poco.ObjectPool.html#15731" title="Poco::ObjectPool::available()">available</a>, <a href="Poco.ObjectPool.html#15725" title="Poco::ObjectPool::borrowObject()">borrowObject</a>, <a href="Poco.ObjectPool.html#15728" title="Poco::ObjectPool::capacity()">capacity</a>, <a href="Poco.ObjectPool.html#15729" title="Poco::ObjectPool::peakCapacity()">peakCapacity</a>, <a href="Poco.ObjectPool.html#15726" title="Poco::ObjectPool::returnObject()">returnObject</a>, <a href="Poco.ObjectPool.html#15730" title="Poco::ObjectPool::size()">size</a></p>
+<h2>Constructors</h2>
+<h3><a id="15717">ObjectPool</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.ObjectPool.html" title="class Poco::ObjectPool">ObjectPool</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t capacity,<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t peakCapacity<br />);</p>
+<div class="description">
+<p>Creates a new <a href="Poco.ObjectPool.html" title="class Poco::ObjectPool">ObjectPool</a> with the given capacity and peak capacity. </p>
+<p>The <a href="Poco.PoolableObjectFactory.html" title="class Poco::PoolableObjectFactory">PoolableObjectFactory</a> must have a public default constructor. </p>
+</div>
+<h3><a id="15720">ObjectPool</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.ObjectPool.html" title="class Poco::ObjectPool">ObjectPool</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const F &amp; factory,<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t capacity,<br />&nbsp;&nbsp;&nbsp;&nbsp;std::size_t peakCapacity<br />);</p>
+<div class="description">
+<p>Creates a new <a href="Poco.ObjectPool.html" title="class Poco::ObjectPool">ObjectPool</a> with the given <a href="Poco.PoolableObjectFactory.html" title="class Poco::PoolableObjectFactory">PoolableObjectFactory</a>, capacity and peak capacity. The <a href="Poco.PoolableObjectFactory.html" title="class Poco::PoolableObjectFactory">PoolableObjectFactory</a> must have a public copy constructor. </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="15724">~ObjectPool</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">~<a href="Poco.ObjectPool.html" title="class Poco::ObjectPool">ObjectPool</a>();</p>
+<div class="description">
+<p>Destroys the <a href="Poco.ObjectPool.html" title="class Poco::ObjectPool">ObjectPool</a>. </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="15731">available</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">std::size_t available() const;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="15725">borrowObject</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">P borrowObject();</p>
+<div class="description">
+<p>Obtains an object from the pool, or creates a new object if possible. </p>
+<p>Returns null if no object is available. </p>
+<p>If activating the object fails, the object is destroyed and the exception is passed on to the caller. </p>
+</div>
+<h3><a id="15728">capacity</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">std::size_t capacity() const;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="15729">peakCapacity</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">std::size_t peakCapacity() const;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="15726">returnObject</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void returnObject(<br />&nbsp;&nbsp;&nbsp;&nbsp;P pObject<br />);</p>
+<div class="description">
+<p>Returns an object to the pool. </p>
+</div>
+<h3><a id="15730">size</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">std::size_t size() const;</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="15732">activateObject</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">P activateObject(<br />&nbsp;&nbsp;&nbsp;&nbsp;P pObject<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

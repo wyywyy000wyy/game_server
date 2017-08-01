@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::TimerCallback</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.html" class="namespace">Poco</a></h1>
+<h1 class="template">template &lt; class C &gt;</h1>
+<h1 class="symbol">class TimerCallback</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-Foundation" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> Foundation<br />
+<b>Package:</b> Threading<br />
+<b>Header:</b> Poco/Timer.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>This template class implements an adapter that sits between a <a href="Poco.Timer.html" title="class Poco::Timer">Timer</a> and an object's method invoked by the timer. It is quite similar in concept to the <a href="Poco.RunnableAdapter.html" title="class Poco::RunnableAdapter">RunnableAdapter</a>, but provides  some <a href="Poco.Timer.html" title="class Poco::Timer">Timer</a> specific additional methods. See the <a href="Poco.Timer.html" title="class Poco::Timer">Timer</a> class for information on how to use this template class. </p>
+</div>
+<h2>Inheritance</h2>
+<p><b>Direct Base Classes: </b><a href="Poco.AbstractTimerCallback.html" title="class Poco::AbstractTimerCallback">AbstractTimerCallback</a></p>
+<p><b>All Base Classes: </b><a href="Poco.AbstractTimerCallback.html" title="class Poco::AbstractTimerCallback">AbstractTimerCallback</a></p>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.TimerCallback.html#18067" title="Poco::TimerCallback::clone()">clone</a>, <a href="Poco.TimerCallback.html#18065" title="Poco::TimerCallback::invoke()">invoke</a>, <a href="Poco.TimerCallback.html#18063" title="Poco::TimerCallback::operator =()">operator&nbsp;=</a></p>
+<p><b>Inherited Functions: </b><a href="Poco.AbstractTimerCallback.html#18054" title="Poco::AbstractTimerCallback::clone()">clone</a>, <a href="Poco.AbstractTimerCallback.html#18052" title="Poco::AbstractTimerCallback::invoke()">invoke</a>, <a href="Poco.AbstractTimerCallback.html#18050" title="Poco::AbstractTimerCallback::operator =()">operator&nbsp;=</a></p>
+<h2>Types</h2>
+<h3><a id="18056">void</a></h3>
+<p class="decl">typedef void (C::* Callback)(<a href="Poco.Timer.html" title="class Poco::Timer">Timer</a> &amp;);</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Constructors</h2>
+<h3><a id="18060">TimerCallback</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.TimerCallback.html" title="class Poco::TimerCallback">TimerCallback</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.TimerCallback.html" title="class Poco::TimerCallback">TimerCallback</a> &amp; callback<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h3><a id="18057">TimerCallback</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.TimerCallback.html" title="class Poco::TimerCallback">TimerCallback</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;C &amp; object,<br />&nbsp;&nbsp;&nbsp;&nbsp;Callback method<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="18062">~TimerCallback</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">~<a href="Poco.TimerCallback.html" title="class Poco::TimerCallback">TimerCallback</a>();</p>
+<div class="description">
+<p></p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="18067">clone</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.AbstractTimerCallback.html" title="class Poco::AbstractTimerCallback">AbstractTimerCallback</a> * clone() const;</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.AbstractTimerCallback.html#18054" title="Poco::AbstractTimerCallback::clone()">Poco::AbstractTimerCallback::clone()</a></p></div>
+<h3><a id="18065">invoke</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" />  <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void invoke(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.Timer.html" title="class Poco::Timer">Timer</a> &amp; timer<br />) const;</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.AbstractTimerCallback.html#18052" title="Poco::AbstractTimerCallback::invoke()">Poco::AbstractTimerCallback::invoke()</a></p></div>
+<h3><a id="18063">operator =</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.TimerCallback.html" title="class Poco::TimerCallback">TimerCallback</a> &amp; operator = (<br />&nbsp;&nbsp;&nbsp;&nbsp;const <a href="Poco.TimerCallback.html" title="class Poco::TimerCallback">TimerCallback</a> &amp; callback<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>

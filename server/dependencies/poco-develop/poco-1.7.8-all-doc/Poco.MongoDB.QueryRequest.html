@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Poco::MongoDB::QueryRequest</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="author" content="Applied Informatics Software Engineering GmbH and Contributors"/>
+<meta name="generator" content="PocoDoc"/>
+<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+<script type="text/javascript" src="js/iframeResizer.min.js"></script>
+<script type="text/javascript" src="js/CollapsibleLists.compressed.js"></script>
+</head>
+<body>
+<div class="header">
+<h1 class="namespace"><a href="Poco.MongoDB.html" class="namespace">Poco::MongoDB</a></h1>
+<h1 class="symbol">class QueryRequest</h1>
+</div>
+<div class="body">
+<div id="navigation">
+<iframe src="navigation.html?expand=library-MongoDB" onload="iFrameResize(this);" scrolling="no"></iframe>
+</div>
+<div id="content">
+<p>
+<b>Library:</b> MongoDB<br />
+<b>Package:</b> MongoDB<br />
+<b>Header:</b> Poco/MongoDB/QueryRequest.h</p>
+<h2>Description</h2>
+<div class="description">
+<p>A request to query documents in a <a href="Poco.MongoDB.html" title="namespace Poco::MongoDB">MongoDB</a> database using an OP_QUERY request. </p>
+</div>
+<h2>Inheritance</h2>
+<p><b>Direct Base Classes: </b><a href="Poco.MongoDB.RequestMessage.html" title="class Poco::MongoDB::RequestMessage">RequestMessage</a></p>
+<p><b>All Base Classes: </b><a href="Poco.MongoDB.Message.html" title="class Poco::MongoDB::Message">Message</a>, <a href="Poco.MongoDB.RequestMessage.html" title="class Poco::MongoDB::RequestMessage">RequestMessage</a></p>
+<h2>Member Summary</h2>
+<p><b>Member Functions: </b><a href="Poco.MongoDB.QueryRequest.html#20409" title="Poco::MongoDB::QueryRequest::buildRequest()">buildRequest</a>, <a href="Poco.MongoDB.QueryRequest.html#20400" title="Poco::MongoDB::QueryRequest::fullCollectionName()">fullCollectionName</a>, <a href="Poco.MongoDB.QueryRequest.html#20397" title="Poco::MongoDB::QueryRequest::getFlags()">getFlags</a>, <a href="Poco.MongoDB.QueryRequest.html#20404" title="Poco::MongoDB::QueryRequest::getNumberToReturn()">getNumberToReturn</a>, <a href="Poco.MongoDB.QueryRequest.html#20401" title="Poco::MongoDB::QueryRequest::getNumberToSkip()">getNumberToSkip</a>, <a href="Poco.MongoDB.QueryRequest.html#20408" title="Poco::MongoDB::QueryRequest::returnFieldSelector()">returnFieldSelector</a>, <a href="Poco.MongoDB.QueryRequest.html#20407" title="Poco::MongoDB::QueryRequest::selector()">selector</a>, <a href="Poco.MongoDB.QueryRequest.html#20398" title="Poco::MongoDB::QueryRequest::setFlags()">setFlags</a>, <a href="Poco.MongoDB.QueryRequest.html#20405" title="Poco::MongoDB::QueryRequest::setNumberToReturn()">setNumberToReturn</a>, <a href="Poco.MongoDB.QueryRequest.html#20402" title="Poco::MongoDB::QueryRequest::setNumberToSkip()">setNumberToSkip</a></p>
+<p><b>Inherited Functions: </b><a href="Poco.MongoDB.RequestMessage.html#20447" title="Poco::MongoDB::RequestMessage::buildRequest()">buildRequest</a>, <a href="Poco.MongoDB.Message.html#20328" title="Poco::MongoDB::Message::header()">header</a>, <a href="Poco.MongoDB.Message.html#20330" title="Poco::MongoDB::Message::messageLength()">messageLength</a>, <a href="Poco.MongoDB.RequestMessage.html#20445" title="Poco::MongoDB::RequestMessage::send()">send</a></p>
+<h2>Enumerations</h2>
+<h3><a id="20385">Flags</a></h3>
+<div class="description">
+<p></p>
+</div>
+<p class="decl"><a id="20386">QUERY_DEFAULT</a> = 0</p>
+<div class="description">
+<p>Do not set any flags. </p>
+</div>
+<p class="decl"><a id="20387">QUERY_TAILABLE_CURSOR</a> = 2</p>
+<div class="description">
+<p>Tailable means cursor is not closed when the last data is retrieved.  Rather, the cursor marks the final object’s position.  You can resume using the cursor later, from where it was located,  if more data were received. Like any &quot;latent cursor&quot;, the cursor may  become invalid at some point (CursorNotFound) – for example if the final  object it references were deleted. </p>
+</div>
+<p class="decl"><a id="20388">QUERY_SLAVE_OK</a> = 4</p>
+<div class="description">
+<p>Allow query of replica slave. Normally these return an error except  for namespace &quot;local&quot;. </p>
+</div>
+<p class="decl"><a id="20389">QUERY_NO_CURSOR_TIMEOUT</a> = 16</p>
+<div class="description">
+<p>The server normally times out idle cursors after an inactivity period  (10 minutes) to prevent excess memory use. Set this option to prevent that. </p>
+</div>
+<p class="decl"><a id="20390">QUERY_AWAIT_DATA</a> = 32</p>
+<div class="description">
+<p>Use with QUERY_TAILABLECURSOR. If we are at the end of the data, block for  a while rather than returning no data. After a timeout period, we do  return as normal. </p>
+</div>
+<p class="decl"><a id="20391">QUERY_EXHAUST</a> = 64</p>
+<div class="description">
+<p>Stream the data down full blast in multiple &quot;more&quot; packages, on the  assumption that the client will fully read all data queried.  Faster when you are pulling a lot of data and know you want to pull  it all down.  Note: the client is not allowed to not read all the data unless it  closes the connection. </p>
+</div>
+<p class="decl"><a id="20392">QUERY_PARTIAL</a> = 128</p>
+<div class="description">
+<p>Get partial results from a mongos if some shards are down  (instead of throwing an error). </p>
+</div>
+<h2>Constructors</h2>
+<h3><a id="20393">QueryRequest</a></h3>
+<p class="decl"><a href="Poco.MongoDB.QueryRequest.html" title="class Poco::MongoDB::QueryRequest">QueryRequest</a>(<br />&nbsp;&nbsp;&nbsp;&nbsp;const std::string &amp; collectionName,<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.MongoDB.QueryRequest.html#20385" title="enum  Poco::MongoDB::QueryRequest::Flags">Flags</a> flags = QUERY_DEFAULT<br />);</p>
+<div class="description">
+<p>Creates a <a href="Poco.MongoDB.QueryRequest.html" title="class Poco::MongoDB::QueryRequest">QueryRequest</a>. </p>
+<p>The full collection name is the concatenation of the database  name with the collection name, using a &quot;.&quot; for the concatenation. For example,  for the database &quot;foo&quot; and the collection &quot;bar&quot;, the full collection name is  &quot;foo.bar&quot;. </p>
+</div>
+<h2>Destructor</h2>
+<h3><a id="20396">~QueryRequest</a> <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">virtual ~<a href="Poco.MongoDB.QueryRequest.html" title="class Poco::MongoDB::QueryRequest">QueryRequest</a>();</p>
+<div class="description">
+<p>Destroys the <a href="Poco.MongoDB.QueryRequest.html" title="class Poco::MongoDB::QueryRequest">QueryRequest</a>. </p>
+</div>
+<h2>Member Functions</h2>
+<h3><a id="20400">fullCollectionName</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">std::string fullCollectionName() const;</p>
+<div class="description">
+<p>Returns the &lt;db&gt;.&lt;collection&gt; used for this query. </p>
+</div>
+<h3><a id="20397">getFlags</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.MongoDB.QueryRequest.html#20385" title="enum  Poco::MongoDB::QueryRequest::Flags">Flags</a> getFlags() const;</p>
+<div class="description">
+<p>Returns the flags. </p>
+</div>
+<h3><a id="20404">getNumberToReturn</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.html#18380" title="Poco::Int32">Int32</a> getNumberToReturn() const;</p>
+<div class="description">
+<p>Returns the number of documents to return. </p>
+</div>
+<h3><a id="20401">getNumberToSkip</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.html#18380" title="Poco::Int32">Int32</a> getNumberToSkip() const;</p>
+<div class="description">
+<p>Returns the number of documents to skip. </p>
+</div>
+<h3><a id="20408">returnFieldSelector</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.MongoDB.Document.html" title="class Poco::MongoDB::Document">Document</a> &amp; returnFieldSelector();</p>
+<div class="description">
+<p>Returns the field selector document. </p>
+</div>
+<h3><a id="20407">selector</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl"><a href="Poco.MongoDB.Document.html" title="class Poco::MongoDB::Document">Document</a> &amp; selector();</p>
+<div class="description">
+<p>Returns the selector document. </p>
+</div>
+<h3><a id="20398">setFlags</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void setFlags(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.MongoDB.QueryRequest.html#20385" title="enum  Poco::MongoDB::QueryRequest::Flags">Flags</a> flag<br />);</p>
+<div class="description">
+<p>Set the flags. </p>
+</div>
+<h3><a id="20405">setNumberToReturn</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void setNumberToReturn(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.html#18380" title="Poco::Int32">Int32</a> n<br />);</p>
+<div class="description">
+<p>Sets the number of documents to return (limit). </p>
+</div>
+<h3><a id="20402">setNumberToSkip</a> <img src="images/inline.png" alt="inline" title="inline" class="icon" /> </h3>
+<p class="decl">void setNumberToSkip(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.html#18380" title="Poco::Int32">Int32</a> n<br />);</p>
+<div class="description">
+<p>Sets the number of documents to skip. </p>
+</div>
+<h3><a id="20409">buildRequest</a> <img src="images/protected.png" alt="protected" title="protected" class="icon" />  <img src="images/virtual.png" alt="virtual" title="virtual" class="icon" /> </h3>
+<p class="decl">void buildRequest(<br />&nbsp;&nbsp;&nbsp;&nbsp;<a href="Poco.BinaryWriter.html" title="class Poco::BinaryWriter">BinaryWriter</a> &amp; writer<br />);</p>
+<div class="description">
+<p></p>
+</div>
+<div class="description"><p><b>See also:</b> <a href="Poco.MongoDB.RequestMessage.html#20447" title="Poco::MongoDB::RequestMessage::buildRequest()">Poco::MongoDB::RequestMessage::buildRequest()</a></p></div>
+<p class="footer">POCO C++ Libraries 1.7.8-all<br />
+Copyright &copy; 2017, <a href="http://pocoproject.org/" target="_blank">Applied Informatics Software Engineering GmbH and Contributors</a></p>
+
+</div>
+
+</div>
+</body>
+</html>
