@@ -73,7 +73,7 @@ int main()
 			net.SendPacket(OpCode::C2LS_LOGIN, msg);
 			net.ProcessInputPacket();
 
-			Sleep(500);
+			//Sleep(500);
 		}
 		
 	}
