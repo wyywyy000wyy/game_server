@@ -2,6 +2,7 @@
 #define __NET_SERVER__PACKET_H___
 #include <vector>
 #include <memory>
+#include <stdio.h>
 
 namespace google
 {
