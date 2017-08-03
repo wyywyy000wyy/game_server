@@ -4,7 +4,6 @@
 #include <boost/msm/front/state_machine_def.hpp>
 #include <boost/msm/front/functor_row.hpp>
 using namespace std;
-int a;
 
 namespace Learn111{
 	namespace msm = boost::msm;
