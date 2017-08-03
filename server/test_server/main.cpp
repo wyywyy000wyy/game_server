@@ -180,5 +180,5 @@ int main()
 {
 	//CMR::StateMachine	m_state;
 	Learn111::test();
-	return 0;
+	return 2;
 }
