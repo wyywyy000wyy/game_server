@@ -29,7 +29,7 @@ namespace game_net
 			header.opCode = opCode;
 			header.length = length;
 			body.resize(length);
-			memcpy(body.data(), data, length);
+			::memcpy(body.data(), data, length);
 		}
 
 		ServerPacket(uint16_t opCode = 0)
@@ -49,8 +49,8 @@ namespace game_net
 			{
 				return;
 			}
-			memcpy(data, &header, sizeof(PacketHeader));
-			memcpy(data + sizeof(PacketHeader), body.data(), body.size());
+			::memcpy(data, &header, sizeof(PacketHeader));
+			::memcpy(data + sizeof(PacketHeader), body.data(), body.size());
 		}
 
 		bool WriteTo(google::protobuf::Message& msg);
