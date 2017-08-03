@@ -3,14 +3,14 @@
 #include <string>
 #include <memory>
 
-template<typename T>
+//template<typename T>
 struct GetOperationBase
 {
-	typedef void (*func)(const T&);
+	typedef void (*func)(const std::string&);
 
 	GetOperationBase(func f):m_f(f){}
 
-	void call(const T& v)
+	void call(const std::string& v)
 	{
 		m_f(v);
 	}
@@ -23,22 +23,21 @@ namespace cpp_redis
 	class redis_client;
 }
 
-template<typename func, typename T>
-struct GetOperation : public GetOperationBase<T>
+template<typename func>
+struct GetOperation : public GetOperationBase
 {
 	GetOperation() :GetOperationBase(CallFunction)
 	{
 
 	}
 
-	template<typename T>
-	static void CallFunction(const T& v)
+	static void CallFunction(const std::string& v)
 	{
 		call(v);
 	}
 };
 
-typedef GetOperationBase <std::string> GetStringFunc;
+typedef GetOperationBase GetStringFunc;
 
 class NosqlClient : public std::enable_shared_from_this<NosqlClient>
 {
