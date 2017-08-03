@@ -6,6 +6,6 @@ using namespace std;
 std::string pyhsics_component::Debug()
 {
 	stringstream st;
-	st << "x=" << PosX() << " y=" << PosY << " z=" << PosZ;
+	st << "x=" << PosX() << " y=" << PosY() << " z=" << PosZ();
 	return st.str();
 }
