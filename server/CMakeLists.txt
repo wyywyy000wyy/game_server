@@ -70,7 +70,7 @@ ${SolutionDir}/dependencies/boost
 )
 
 #message("Build Type:"${CMAKE_BUILD_TYPE} ${CMAKE_CXX_FLAGS})
-
+message("UNIT=" ${UNIX})
 if(UNIX)
 	if( CMAKE_BUILD_TYPE STREQUAL "Debug" )
 		set(CMAKE_C_FLAGS  "${CMAKE_C_FLAGS} -fPIC")

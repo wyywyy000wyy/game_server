@@ -1,5 +1,6 @@
 #ifndef _ASYNC_OPERATION_H_
 #define _ASYNC_OPERATION_H_
+#include <utility>
 #include <stdint.h>
 class AsyncQueue;
 
@@ -54,7 +55,7 @@ public:
 	
 	unique_asyc_handler(Handler& h, IdentityType& id, AsyncQueue& queue) : async_operation(&unique_asyc_handler::do_call), handler_(h),id_(id),queue_(queue) {}
 
-	static void unique_asyc_handler<Handler>::do_call(async_operation* p)
+	static void do_call(async_operation* p)
 	{
 		unique_asyc_handler* h(static_cast<unique_asyc_handler*>(p));
 
