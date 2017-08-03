@@ -6,7 +6,7 @@ namespace game_core
 {
 	class component;
 
-	class entity : enable_shared_from_this<entity>
+	class entity : std::enable_shared_from_this<entity>
 	{
 	public:
 		 bool AddComponent(std::shared_ptr<component> c);

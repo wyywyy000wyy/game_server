@@ -4,12 +4,13 @@
 #include <iostream>
 using namespace std;
 using namespace asio;
+using namespace game_net;
 
 struct GameNet
 {
 public:
 	GameNet() :_c() {
-		_c = make_shared<tcp_client>(_ios);
+		_c = std::make_shared<tcp_client>(_ios);
 	}
 
 	void Connect(std::string host, short port)

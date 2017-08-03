@@ -9,11 +9,11 @@ project(${RelativePath})
 	
 add_executable(${PROJECT_NAME} ${AllFile})
 
-# add_dependencies(${PROJECT_NAME} libzmq enet)
-add_dependencies(${PROJECT_NAME} PocoNet PocoData game_async)
+add_dependencies(${PROJECT_NAME} libzmq)
+# add_dependencies(${PROJECT_NAME} PocoNet PocoData game_async)
 
-#target_link_libraries(${PROJECT_NAME} cpp_redis game_data game_net libprotobuf g3log game_core PocoNet)
-target_link_libraries(${PROJECT_NAME} PocoNet PocoData game_async)
+target_link_libraries(${PROJECT_NAME} cpp_redis game_data game_net libprotobuf g3log game_core)
+# target_link_libraries(${PROJECT_NAME} PocoNet PocoData game_async)
 
 # if(WIN32)
 # target_link_libraries(${PROJECT_NAME} Winmm)

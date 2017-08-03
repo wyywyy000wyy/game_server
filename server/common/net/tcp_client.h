@@ -9,15 +9,15 @@
 
 namespace game_net
 {
-	class TcpServer;
+	class tcp_server;
 
 	typedef std::function<void(int, PacketPtr)> ReceiveCallback;
 
-	class TcpClient : public std::enable_shared_from_this<TcpClient>
+	class tcp_client : public std::enable_shared_from_this<tcp_client>
 	{
-		friend class TcpServer;
+		friend class tcp_server;
 	public:
-		TcpClient(asio::io_service& ios, SessionId sessionId = 0);
+		tcp_client(asio::io_service& ios, SessionId sessionId = 0);
 
 		void Connect(std::string host, short port);
 		void SendPacket(PacketPtr pack);

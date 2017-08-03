@@ -1,5 +1,5 @@
 #pragma once
-
+#include <string>
 namespace game_core
 {
 	class entity;

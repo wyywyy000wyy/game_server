@@ -110,7 +110,7 @@ add_subdirectory(dependencies/protobuf/cmake)
 add_subdirectory(dependencies/g3log)
 add_subdirectory(dependencies/spdlog)
 add_subdirectory(dependencies/zeromq)
-add_subdirectory(dependencies/poco-develop)
+# add_subdirectory(dependencies/poco-develop)
 # add_subdirectory(zmqpp-develop)
 
 
