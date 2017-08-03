@@ -45,7 +45,7 @@ if(ENABLE_DATA_SQLITE)
 endif(ENABLE_DATA_SQLITE)
 
 if(ENABLE_DATA_MYSQL)
-    find_package(MySQL REQUIRED)
+    find_package(MySQL)
 	message("MSQL MYSQL_FOUND?" ${MYSQL_FOUND})
     if(MYSQL_FOUND)
         include_directories("${MYSQL_INCLUDE_DIR}")
