@@ -67,6 +67,7 @@ ${SolutionDir}/dependencies/protobuf/src
 ${SolutionDir}/dependencies/g3log
 ${SolutionDir}/dependencies/spdlog
 ${SolutionDir}/dependencies/boost
+${SolutionDir}/dependencies/
 )
 
 #message("Build Type:"${CMAKE_BUILD_TYPE} ${CMAKE_CXX_FLAGS})
@@ -104,6 +105,8 @@ message("Build All")
 add_subdirectory(test_server)
 add_subdirectory(test_client)
 add_subdirectory(world_server)
+add_subdirectory(login_server)
+add_subdirectory(logic_server)
 add_subdirectory(common)
 add_subdirectory(dependencies/cpp_redis)
 add_subdirectory(dependencies/protobuf/cmake)

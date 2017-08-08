@@ -20,6 +20,10 @@ namespace game_common
 	{
 	public:
 		void PushMsg(uint16_t opCode, const google::protobuf::Message& msg);
+		void ReceiveMsg(google::protobuf::Message& msg);
+
+		void SendMsg(std::shared_ptr<game_net::packet> msg);
+		std::shared_ptr<game_net::packet> ReceiveMsg();
 	private:
 		std::unique_ptr<zmq::socket_t> _sock;
 	};

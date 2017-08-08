@@ -65,5 +65,46 @@ namespace game_net
 	};
 
 	typedef std::shared_ptr<ServerPacket> PacketPtr;
+	struct packet_header
+	{
+		uint16_t length : 14;
+		uint16_t opCode;
+	};
+
+	struct packet
+	{
+		packet(uint16_t opcode);
+		packet(uint16_t opcode, uint8_t* data, uint16_t length);
+		packet(uint8_t* data, uint16_t length);
+
+		uint16_t Opcode() const
+		{
+			_header.opCode;
+		}
+
+		uint32_t Length() const
+		{
+			return _content.size();
+		}
+
+		const uint8_t* Data() const
+		{
+			return _content.data() + sizeof(packet_header);
+		}
+
+		uint32_t ContentLength() const
+		{
+			return _content.size() - sizeof(packet_header);
+		}
+
+		const uint8_t* Content() const
+		{
+			return _content.data() + sizeof(packet_header);
+		}
+
+	private:
+		packet_header _header;
+		std::vector<uint8_t> _content;
+	};
 }
 #endif
