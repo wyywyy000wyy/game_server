@@ -2,6 +2,6 @@
 #define __NET_DEF_H__
 #include <stdint.h>
 
-typedef uint32_t SessionId;
+typedef uint64_t SessionId;
 
 #endif

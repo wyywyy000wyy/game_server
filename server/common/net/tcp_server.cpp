@@ -2,18 +2,28 @@
 #include "tcp_client.h"
 #include <functional>
 #include <iostream>
+#include "net_object_mgr.h"
 using namespace asio;
 using namespace std;
 using namespace game_net;
 
-tcp_server::tcp_server(asio::io_service& ios):m_service(ios), m_socket(m_service), m_accepter(m_service), _sessionId(0)
+tcp_server::tcp_server(asio::io_service& ios):_service(NULL),m_service(ios), m_socket(m_service), m_accepter(m_service), _sessionId(0)
 {
 
 }
 
-tcp_server::~tcp_server()
+tcp_server::tcp_server() : _service(new io_service), m_service(*_service), m_socket(m_service), m_accepter(m_service), _sessionId(0)
 {
 
+}
+
+
+tcp_server::~tcp_server()
+{
+	if (_service)
+	{
+		delete _service;
+	}
 }
 
 bool tcp_server::Start(int port)
@@ -38,6 +48,11 @@ bool tcp_server::Start(int port)
 		cerr << ec.message();
 	}
 	_AsyncAccept();
+
+	if (_service)
+	{
+		_service->run();
+	}
 	return true;
 }
 
@@ -54,7 +69,7 @@ void tcp_server::_HandleAccept(TcpClientPtr p, std::error_code ec)
 
 void tcp_server::_AsyncAccept()
 {
-	TcpClientPtr p = std::make_shared<tcp_client>(m_service,_sessionId++);
+	TcpClientPtr p = std::make_shared<tcp_client>(m_service,_sessionId++, _net_obj_mgr);
 
 	m_accepter.async_accept(p->m_socket,
 		std::bind(&tcp_server::_HandleAccept, shared_from_this(), p , std::placeholders::_1)

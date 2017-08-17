@@ -14,3 +14,5 @@ void game_map::AddEntity(std::shared_ptr<game_core::entity> ep)
 {
 	_entities.push_back(ep);
 }
+
+

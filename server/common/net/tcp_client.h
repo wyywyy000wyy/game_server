@@ -4,6 +4,7 @@
 #include "NetDef.h"
 #include "Buffer.h"
 #include "Packet.h"
+#include "net_object.h"
 #include <memory>
 #include <functional>
 
@@ -17,7 +18,7 @@ namespace game_net
 	{
 		friend class tcp_server;
 	public:
-		tcp_client(asio::io_service& ios, SessionId sessionId = 0);
+		tcp_client(asio::io_service& ios, std::shared_ptr<net_object> _obj);
 
 		void Connect(std::string host, short port);
 		void SendPacket(PacketPtr pack);
@@ -28,8 +29,11 @@ namespace game_net
 		void Start();
 		void Stop();
 		void Push();
-		SessionId Id() const { return _sessionId; }
+		void* UserData() { return _user_data; };
+		void SetUserData(void* data) { _user_data = data; }
+		SessionId Id() const { return _net_object->_sessionId; }
 		bool HasSomethingToWrite();
+		std::shared_ptr<net_object> net_obj() { return _net_object; };
 	protected:
 		void _ReadHeader();
 		void _ReadBody();
@@ -46,7 +50,8 @@ namespace game_net
 		PacketPtr m_packet;
 		bool m_isRunning;
 		volatile bool m_isWritting;
-		const SessionId _sessionId;
+		std::shared_ptr<net_object> _net_object;
+		void* _user_data = NULL;
 	};
 
 }

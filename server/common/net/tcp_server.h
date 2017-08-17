@@ -6,6 +6,7 @@
 #include <functional>
 #include <unordered_map>
 #include "tcp_client.h"
+#include "net_object_mgr.h"
 #include "Packet.h"
 
 namespace game_net
@@ -24,6 +25,8 @@ namespace game_net
 	{
 	public:
 		tcp_server(asio::io_service& ios);
+		tcp_server();
+
 		~tcp_server();
 
 		bool Start(int port);
@@ -40,6 +43,8 @@ namespace game_net
 		asio::ip::tcp::acceptor m_accepter;
 		std::unordered_map<SessionId, TcpClientPtr> _sessionMap;
 		SessionId _sessionId;
+		asio::io_service* _service;
+		net_object_mgr* _net_obj_mgr;
 	};
 }
 

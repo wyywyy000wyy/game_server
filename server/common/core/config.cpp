@@ -8,7 +8,7 @@
 #include "rapidjson/document.h"
 
 using namespace std;
-
+using namespace game_common;
 
 struct configImpl
 {
@@ -29,7 +29,7 @@ config::~config()
 
 }
 
-bool config::Open(const std::string& filename)
+bool config::open(const std::string& filename)
 {
 	if (_FILE.is_open())
 	{
@@ -50,7 +50,7 @@ bool config::Open(const std::string& filename)
 	return true;
 }
 
-int config::GetInteger(const std::string& section, const std::string& name, int default_value = 0) const
+int config::get_integer(const std::string& section, const std::string& name, int default_value = 0) const
 {
 	auto& obj = _DOC[section.c_str()];
 	if (!obj.IsObject())
@@ -63,4 +63,20 @@ int config::GetInteger(const std::string& section, const std::string& name, int 
 		return default_value;
 	}
 	return v.GetInt();
+}
+
+string game_common::config::get_string(const std::string & section, const std::string & name, std::string defaultString) const
+{
+	auto& obj = _DOC[section.c_str()];
+	if (!obj.IsObject())
+	{
+		return defaultString;
+	}
+	auto& v = obj[name.c_str()];
+	if (!obj.IsString())
+	{
+		return defaultString;
+	}
+	return v.GetString();
+
 }

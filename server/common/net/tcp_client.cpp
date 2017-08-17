@@ -4,7 +4,7 @@
 #include <iostream>
 using namespace game_net;
 using namespace asio;
-tcp_client::tcp_client(io_service& ios, SessionId sessionId):m_socket(ios), m_isRunning(false),_sessionId(sessionId), m_isWritting(false)
+tcp_client::tcp_client(io_service& ios, std::shared_ptr<net_object> _obj):m_socket(ios), m_isRunning(false), _net_object(_obj), m_isWritting(false)
 {
 
 }
