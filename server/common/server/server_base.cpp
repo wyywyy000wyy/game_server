@@ -38,6 +38,11 @@ void game_common::server_base::__init()
 
 	_sock.RegisterConnectedCallback(std::bind(&game_common::server_base::__on_connect, this, std::placeholders::_1));
 	_sock.RegisterReceiveCallback(std::bind(&game_common::server_base::__on_receive, this, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3));
+	
+	_sock.RegisterDisconnectCallback([this](game_net::TcpClientPtr client, int opCpde)
+	{
+		on_disconnect(client->net_obj(), opCpde);
+	});
 	//_sock.Start(_init_param.listen_port);
 
 	//_thread_ptr = new std::thread(&game_net::tcp_server::Start, _sock, _init_param.listen_port);

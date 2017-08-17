@@ -62,6 +62,7 @@ void tcp_server::_HandleAccept(TcpClientPtr p, std::error_code ec)
 	{
 		_sessionMap[p->Id()] = p;
 		p->RegisterRecvCallback(std::bind(_receiveCallback, p, std::placeholders::_1, std::placeholders::_2));
+		p->RegisterDisconnectCallback(std::bind(_disconnectCallback, p, std::placeholders::_1));
 		m_connectedCallback(p);
 	}
 	_AsyncAccept();
@@ -81,6 +82,11 @@ void tcp_server::RegisterReceiveCallback(ServerReceiveCallback cb)
 {
 	//_receiveCallback = std::bind(cb, shared_from_this(), std::placeholders::_1, std::placeholders::_2);
 	_receiveCallback = cb;
+}
+
+void game_net::tcp_server::RegisterDisconnectCallback(ServerDisconnectCallback b)
+{
+	_disconnectCallback = b;
 }
 
 void tcp_server::RegisterConnectedCallback(ConnectedCallback b)

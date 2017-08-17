@@ -18,6 +18,7 @@ namespace game_net
 	typedef std::function<void(TcpClientPtr)> ConnectedCallback;
 
 	typedef std::function<void(TcpClientPtr, int, PacketPtr)> ServerReceiveCallback;
+	typedef std::function<void(TcpClientPtr, int)> ServerDisconnectCallback;
 
 	//typedef void(*ConnectedCallback)(TcpClientPtr);
 
@@ -32,12 +33,14 @@ namespace game_net
 		bool Start(int port);
 		void RegisterConnectedCallback(ConnectedCallback);
 		void RegisterReceiveCallback(ServerReceiveCallback);
+		void RegisterDisconnectCallback(ServerDisconnectCallback);
 	protected:
 		void _AsyncAccept();
 		void _HandleAccept(TcpClientPtr, std::error_code ec);
 	private:
 		ConnectedCallback m_connectedCallback;
 		ServerReceiveCallback _receiveCallback;
+		ServerDisconnectCallback _disconnectCallback;
 		asio::io_service& m_service;
 		asio::ip::tcp::socket m_socket;
 		asio::ip::tcp::acceptor m_accepter;

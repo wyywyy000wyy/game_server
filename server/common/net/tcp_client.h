@@ -13,6 +13,7 @@ namespace game_net
 	class tcp_server;
 
 	typedef std::function<void(int, PacketPtr)> ReceiveCallback;
+	typedef std::function<void(int)> DisconnectCallback;
 
 	class tcp_client : public std::enable_shared_from_this<tcp_client>
 	{
@@ -26,6 +27,7 @@ namespace game_net
 		void SendPacketNoBlock(uint16_t opCode, const google::protobuf::Message& msg); //for test client 
 		void SendPacketNoBlock(PacketPtr pack); //for test client 
 		void RegisterRecvCallback(ReceiveCallback c);
+		void RegisterDisconnectCallback(DisconnectCallback c);
 		void Start();
 		void Stop();
 		void Push();
@@ -44,6 +46,7 @@ namespace game_net
 		void _ReadData();
 	private:
 		ReceiveCallback m_recvCallback;
+		DisconnectCallback _disconnect_callback;
 		asio::ip::tcp::socket m_socket;
 		ServerBuffer m_rBuffer;
 		ServerBuffer m_wBuffer;

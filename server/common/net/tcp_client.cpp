@@ -84,6 +84,11 @@ void tcp_client::RegisterRecvCallback(ReceiveCallback c)
 	m_recvCallback = c;
 }
 
+void game_net::tcp_client::RegisterDisconnectCallback(DisconnectCallback c)
+{
+	_disconnect_callback = c;
+}
+
 void tcp_client::_HandleWrite(std::error_code ec, size_t byteRead)
 {
 	if (ec)

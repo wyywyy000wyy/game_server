@@ -35,6 +35,8 @@ namespace game_common
 
 		virtual void on_connect(std::shared_ptr<game_net::net_object>) {};
 
+		virtual void on_disconnect(std::shared_ptr<game_net::net_object>, int opCode) {};
+
 		virtual void on_receive(std::shared_ptr<game_net::net_object>, int opCode, game_net::PacketPtr) {};
 
 		const std::string&	name();
