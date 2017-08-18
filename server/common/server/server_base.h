@@ -37,7 +37,9 @@ namespace game_common
 
 		virtual void on_disconnect(std::shared_ptr<game_net::net_object>, int opCode) {};
 
-		virtual void on_receive(std::shared_ptr<game_net::net_object>, int opCode, game_net::PacketPtr) {};
+		virtual void on_receive(std::shared_ptr<game_net::net_object>, int opCode, game_net::PacketPtr);
+
+		void register_handle(int opCode, std::function<void(std::shared_ptr<game_net::net_object>, int, game_net::PacketPtr)>);
 
 		const std::string&	name();
 	private:
@@ -50,6 +52,7 @@ namespace game_common
 		config _config;
 		game_net::tcp_server _sock;
 		std::thread* _thread_ptr = nullptr;
+		std::map<int, std::function<void(std::shared_ptr<game_net::net_object>, int, game_net::PacketPtr)>> _handlers;
 		std::map<SessionId, std::shared_ptr<game_net::net_object>> _net_obj_map;
 	};
 }

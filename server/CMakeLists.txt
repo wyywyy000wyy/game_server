@@ -100,8 +100,11 @@ endif()
 endforeach()	
 endfunction(AllFilesLoad)
 
+set(OUT_PUT_PROTO_FILE ${SolutionDir}/common/proto)
+
 message("Build All")
 
+add_subdirectory(mid_data)
 add_subdirectory(test_server)
 add_subdirectory(test_client)
 add_subdirectory(game_server)

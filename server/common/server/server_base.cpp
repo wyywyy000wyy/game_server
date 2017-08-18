@@ -26,6 +26,20 @@ void game_common::server_base::stop()
 	_thread_ptr = nullptr;
 }
 
+void game_common::server_base::on_receive(std::shared_ptr<game_net::net_object> netObj, int opCode, game_net::PacketPtr packet)
+{
+	auto i = _handlers.find(opCode);
+	if (i != _handlers.end())
+	{
+		i->second(netObj,opCode,packet);
+	}
+}
+
+void game_common::server_base::register_handle(int opCode, std::function<void(std::shared_ptr<game_net::net_object>, int, game_net::PacketPtr)> handler)
+{
+	_handlers[opCode] = handler;
+}
+
 const std::string& game_common::server_base::name()
 {
 	return _server_name;
