@@ -1,88 +1,52 @@
-#include "net/tcp_client.h"
-#include "net/NetPackDefine.pb.h"
-#include "net/Packet.h"
+#include "common/event/game_event.h"
 #include <iostream>
 using namespace std;
-using namespace asio;
-using namespace game_net;
-
-struct GameNet
+struct A
 {
-public:
-	GameNet() :_c() {
-		_c = std::make_shared<tcp_client>(_ios);
-	}
-
-	void Connect(std::string host, short port)
+	void Print()
 	{
-		_c->Connect(host, port);
+		cout << "我是A" << endl;
 	}
-
-	void SendPacket(uint16_t opCode, const google::protobuf::Message& msg)
+};
+struct B
+{
+	void Print()
 	{
-		_c->SendPacketNoBlock(opCode, msg);
+		cout << "我是B" << endl;
 	}
-
-	void ProcessInputPacket()
+};
+struct C
+{
+	void Print()
 	{
-		_c->Start();
-		_ios.poll();
+		cout << "我是C" << endl;
 	}
-
-	void RegisterRecvCallback(ReceiveCallback c)
-	{
-		_c->RegisterRecvCallback(c);
-	}
-
-	asio::io_service _ios;
-	std::shared_ptr<tcp_client> _c;
 };
 
 int main()
 {
-	GameNet net;
+	GameEventManager mgr;
+	A a;
+	B b;
+	C c;
+	const int TEST_EVENT_TYPE = 1;
+	mgr.AddEvenHandler(TEST_EVENT_TYPE, [&a](GameEventPtr ptr) { a.Print(); }, 1);
+	mgr.AddEvenHandler(TEST_EVENT_TYPE, [&b](GameEventPtr ptr) { b.Print(); }, 2);
+	mgr.AddEvenHandler(TEST_EVENT_TYPE, [&c](GameEventPtr ptr) { c.Print(); }, 3);
 
-	net.Connect("127.0.0.1", 8899);
-
-	net.RegisterRecvCallback([](int op, PacketPtr p)
-	{
-		cout << "op " << op << endl;
-		switch (op)
-		{
-		case OpCode::LS2C_LOGIN_RSP:
-		{
-			LS2C_LoginRsp msg;
-			p->WriteTo(msg);
-			cout << msg.user_name() << ":" << msg.passwd() << endl;
-			break;
-		}
-		default:
-			break;
-		}
-	});
-
-	int i = 0;
-	try
-	{
-
-		while (true)
-		{
-			C2LS_Login msg;
-			msg.set_user_name("hehe");
-			msg.set_passwd("yuyu");
-			net.SendPacket(OpCode::C2LS_LOGIN, msg);
-			net.ProcessInputPacket();
-
-			//Sleep(500);
-		}
-		
-	}
-	catch (asio::error_code id)
-	{
-		cerr << id.message() << endl;
-	}
-	catch (...)
-	{
-
-	}
+	auto e = std::make_shared<GameEvent>();
+	e->type = TEST_EVENT_TYPE;
+	mgr.SendEvent(e);
+	cout << "TEST_EVENT_TYPE + 1" << endl;
+	e->type = TEST_EVENT_TYPE + 1;
+	mgr.SendEvent(e);
+	cout << "RemoveEventHandler(TEST_EVENT_TYPE, 2)" << endl;
+	mgr.RemoveEventHandler(TEST_EVENT_TYPE, 2);
+	e->type = TEST_EVENT_TYPE;
+	mgr.SendEvent(e);
+	cout << "RemoveEventHandler(TEST_EVENT_TYPE)" << endl;
+	mgr.RemoveEventHandler(TEST_EVENT_TYPE);
+	e->type = TEST_EVENT_TYPE;
+	mgr.SendEvent(e);
+	return 0;
 }

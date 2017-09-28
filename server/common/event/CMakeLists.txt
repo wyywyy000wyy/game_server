@@ -5,30 +5,14 @@ file(GLOB_RECURSE AllFile *.*)
 
 file(RELATIVE_PATH RelativePath ${CMAKE_CURRENT_SOURCE_DIR}/.. ${CMAKE_CURRENT_SOURCE_DIR})
 
-project(${RelativePath})
+project(game_event)
 	
-add_executable(${PROJECT_NAME} ${AllFile})
-
-# add_dependencies(${PROJECT_NAME} libzmq enet)
-target_link_libraries(${PROJECT_NAME} game_event)
-# target_link_libraries(${PROJECT_NAME} cpp_redis game_data game_net libprotobuf)
-
-# if(WIN32)
-# target_link_libraries(${PROJECT_NAME} Winmm)
-# endif()
-# target_link_libraries(${PROJECT_NAME} libzmq enet)
-
-include_directories(
-${SolutionDir}/common/
-# ${SolutionDir}/zeromq-4.2.1/include
-# ${SolutionDir}/zeromq-4.2.1/src
-# ${SolutionDir}/enet/include
-)
+add_library(${PROJECT_NAME} STATIC ${AllFile})
 
 AllFilesLoad(${CMAKE_CURRENT_SOURCE_DIR} ${PROJECT_NAME})
 
 set_target_properties( ${PROJECT_NAME} PROPERTIES
-	FOLDER "Test"
+	FOLDER "Common"
 	ARCHIVE_OUTPUT_DIRECTORY ${LearnOutPutDir}
 	RUNTIME_OUTPUT_DIRECTORY ${LearnOutPutDir}
 	LIBRARY_OUTPUT_DIRECTORY ${LearnOutPutDir} )
