@@ -363,7 +363,7 @@ std::size_t task_io_service::do_run_one(mutex::scoped_lock& lock,
         else
           lock.unlock();
 
-        // Ensure the count of outstanding work is decremented on block exit.
+        // Ensure the count of outstanding work is decremented on block e xit.
         work_cleanup on_exit = { this, &lock, &this_thread };
         (void)on_exit;
 
