@@ -277,11 +277,20 @@ protected:
 //
 //};
 
+//template <typename T, typename T2>
+//struct FunctionBinder : public
+//{
+//
+//}
+
 template <typename FUNC,typename T, typename ... TVetex>
 struct TEMPLETE_FOR : public TEMPLETE_FOR<FUNC, TVetex...>
 {
-	typedef TEMPLETE_FOR<FUNC, TVetex...> PFOR;
-	const static int value = typename PFOR::value + 1 ;
+	typedef TEMPLETE_FOR<FUNC, TVetex...> TNext;
+	typedef typename TNext::ReturnType NextReturnType;
+
+	struct ReturnType : public TableIf<HasIndexFunction<T>::value, TableIndex<T>, None<T>>::type;
+	const static int value = typename TNext::value + 1 ;
 };
 
 template <typename FUNC, typename T>
@@ -307,7 +316,7 @@ struct TableDeducerPlus : public TEMPLETE_FOR<TEM_FUNC, TVetex...>
 int main()
 {
 	
-	TableDeducerPlus<int,int,bool> t;
+	TableDeducerPlus<int> t;
 
 	cout << t.value << endl;
 
