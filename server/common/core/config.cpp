@@ -50,7 +50,7 @@ bool config::open(const std::string& filename)
 	return true;
 }
 
-int config::get_integer(const std::string& section, const std::string& name, int default_value = 0) const
+int config::get_integer(const std::string& section, const std::string& name, int default_value) const
 {
 	auto& obj = _DOC[section.c_str()];
 	if (!obj.IsObject())
