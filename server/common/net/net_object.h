@@ -10,6 +10,6 @@ namespace game_net
 		net_object(SessionId id, net_object_mgr* mgr): _sessionId(id), _mgr(mgr){}
 	//protected:
 		const SessionId _sessionId;
-		const net_object_mgr const * _mgr;
+		const net_object_mgr * const _mgr;
 	};
 };
