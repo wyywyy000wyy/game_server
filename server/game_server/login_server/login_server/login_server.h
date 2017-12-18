@@ -11,4 +11,6 @@ public:
 
 	void run();
 
+	~login_server() {}
+
 };
