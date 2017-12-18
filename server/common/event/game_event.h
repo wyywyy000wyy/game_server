@@ -2,6 +2,7 @@
 #include <map>
 #include <list>
 #include <memory>
+#include <string.h>
 
 typedef int GameEventType;
 
@@ -23,7 +24,7 @@ public:
 	{
 		func_((EventHandlerBase*)this, e, userData_);
 	}
-	virtual bool equal(const char const*) = 0;
+	virtual bool equal(const char *const) = 0;
 protected:
 
 	EventHandlerBase(func_type func, void* userData) :func_(func), userData_(userData){}
@@ -50,7 +51,7 @@ public:
 
 		handler(e, userData);
 	}
-	bool equal(const char const* type)
+	bool equal(const char *const type)
 	{
 		return strcmp(type, typeid(handler_).name()) == 0;
 	}
