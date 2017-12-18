@@ -7,6 +7,12 @@ using namespace game_common;
 
 game_common::server_base::server_base()
 {
+
+}
+
+game_common::server_base::~server_base()
+{
+
 }
 
 void game_common::server_base::start(const server_param& param)

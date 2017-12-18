@@ -21,7 +21,7 @@ namespace game_common
 	public:
 
 		server_base();
-		virtual ~server_base() {}
+		virtual ~server_base();
 
 		void start(const server_param& param);
 
