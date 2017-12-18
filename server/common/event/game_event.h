@@ -79,7 +79,7 @@ public:
 	template<typename Handler>
 	void RemoveEventHandler(GameEventType type, Handler&& handler, void* userData = NULL)
 	{
-		auto iter = m_listenEventHandlers.find(type);
+		/*auto iter = m_listenEventHandlers.find(type);
 		if (iter != m_listenEventHandlers.end() && iter->second)
 		{
 			auto list = iter->second;
@@ -88,7 +88,7 @@ public:
 			{
 				RemoveEventHandler(type);
 			}
-		}
+		}*/
 	}
 	template<typename Handler>
 	void AddEvenHandler(GameEventType type, Handler&& handler, void* userData = NULL)
