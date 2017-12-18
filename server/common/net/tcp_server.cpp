@@ -70,7 +70,7 @@ void tcp_server::_HandleAccept(TcpClientPtr p, std::error_code ec)
 
 void tcp_server::_AsyncAccept()
 {
-	TcpClientPtr p = std::make_shared<tcp_client>(m_service,_sessionId++, _net_obj_mgr);
+	TcpClientPtr p = std::make_shared<tcp_client>(m_service, _net_obj_mgr->generate_net_object());
 
 	m_accepter.async_accept(p->m_socket,
 		std::bind(&tcp_server::_HandleAccept, shared_from_this(), p , std::placeholders::_1)
