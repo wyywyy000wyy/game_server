@@ -1,4 +1,5 @@
 #include "net_object_mgr.h"
+#include "net_object.h"
 using namespace game_net;
 
 std::shared_ptr<net_object> game_net::net_object_mgr::generate_net_object()
