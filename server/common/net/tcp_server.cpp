@@ -9,7 +9,7 @@ using namespace game_net;
 
 tcp_server::tcp_server(asio::io_service& ios):_service(NULL),m_service(ios), m_socket(m_service), m_accepter(m_service), _sessionId(0)
 {
-
+	_net_obj_mgr = net_object_mgr::instance();
 }
 
 tcp_server::tcp_server() : _service(new io_service), m_service(*_service), m_socket(m_service), m_accepter(m_service), _sessionId(0)

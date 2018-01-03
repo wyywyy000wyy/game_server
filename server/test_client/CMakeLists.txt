@@ -10,8 +10,8 @@ project(${RelativePath})
 add_executable(${PROJECT_NAME} ${AllFile})
 
 # add_dependencies(${PROJECT_NAME} libzmq enet)
-target_link_libraries(${PROJECT_NAME} game_event)
-# target_link_libraries(${PROJECT_NAME} cpp_redis game_data game_net libprotobuf)
+#target_link_libraries(${PROJECT_NAME} game_event)
+target_link_libraries(${PROJECT_NAME} cpp_redis game_data game_net libprotobuf)
 
 # if(WIN32)
 # target_link_libraries(${PROJECT_NAME} Winmm)

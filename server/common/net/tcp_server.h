@@ -17,7 +17,7 @@ namespace game_net
 
 	typedef std::function<void(TcpClientPtr)> ConnectedCallback;
 
-	typedef std::function<void(TcpClientPtr, int, PacketPtr)> ServerReceiveCallback;
+	typedef std::function<void(TcpClientPtr, int opcode, PacketPtr)> ServerReceiveCallback;
 	typedef std::function<void(TcpClientPtr, int)> ServerDisconnectCallback;
 
 	//typedef void(*ConnectedCallback)(TcpClientPtr);
