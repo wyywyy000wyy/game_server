@@ -27,6 +27,11 @@ ${SolutionDir}/common/
 
 AllFilesLoad(${CMAKE_CURRENT_SOURCE_DIR} ${PROJECT_NAME})
 
+if(CMAKE_COMPILER_IS_GNUCXX)
+    add_compile_options(-g)
+    message(STATUS "optional:-std=c++11")   
+endif(CMAKE_COMPILER_IS_GNUCXX)
+
 set_target_properties( ${PROJECT_NAME} PROPERTIES
 	FOLDER "Test"
 	ARCHIVE_OUTPUT_DIRECTORY ${LearnOutPutDir}
