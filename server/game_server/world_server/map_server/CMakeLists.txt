@@ -11,7 +11,7 @@ add_executable(${PROJECT_NAME} ${AllFile})
 
 # add_dependencies(${PROJECT_NAME} libzmq enet)
 
-target_link_libraries(${PROJECT_NAME} cpp_redis game_data game_net libprotobuf)
+target_link_libraries(${PROJECT_NAME} cpp_redis game_data game_net game_server_framework libprotobuf)
 
 # if(WIN32)
 # target_link_libraries(${PROJECT_NAME} Winmm)

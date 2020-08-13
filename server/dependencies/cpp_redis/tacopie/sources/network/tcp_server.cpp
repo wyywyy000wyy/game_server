@@ -32,8 +32,8 @@ namespace tacopie {
 //! ctor & dtor
 //!
 
-tcp_server::tcp_server(void)
-: m_io_service(get_default_io_service())
+tcp_server::tcp_server(std::shared_ptr<io_service> ios)
+: m_io_service(ios)
 , m_on_new_connection_callback(nullptr) { __TACOPIE_LOG(debug, "create tcp_server"); }
 
 tcp_server::~tcp_server(void) {

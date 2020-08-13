@@ -41,7 +41,7 @@ namespace tacopie {
 class tcp_server {
 public:
   //! ctor & dtor
-  tcp_server(void);
+  tcp_server(std::shared_ptr<io_service> ios);
   ~tcp_server(void);
 
   //! copy ctor & assignment operator

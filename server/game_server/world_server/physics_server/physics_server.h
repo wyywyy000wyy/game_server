@@ -19,7 +19,7 @@ public:
 	pyhsics_server(const pyhsics_server&) = delete;
 	pyhsics_server& operator=(const pyhsics_server&) = delete;
 private:
-	std::unique_ptr<game_common::game_map> _map;
-	std::unique_ptr<game_common::game_msg_queue> _queue;
+	//std::unique_ptr<game_common::game_map> _map;
+	//std::unique_ptr<game_common::game_msg_queue> _queue;
 	std::unique_ptr<game_net::tcp_client> _net;
 };
