@@ -25,8 +25,8 @@ namespace game_net
 	class tcp_server : public std::enable_shared_from_this<tcp_server>
 	{
 	public:
-		tcp_server(asio::io_service& ios);
-		tcp_server();
+		tcp_server(asio::io_service* ios);
+		//tcp_server();
 
 		~tcp_server();
 
@@ -41,13 +41,13 @@ namespace game_net
 		ConnectedCallback m_connectedCallback;
 		ServerReceiveCallback _receiveCallback;
 		ServerDisconnectCallback _disconnectCallback;
-		asio::io_service& m_service;
 		asio::ip::tcp::socket m_socket;
 		asio::ip::tcp::acceptor m_accepter;
 		std::unordered_map<SessionId, TcpClientPtr> _sessionMap;
 		SessionId _sessionId;
 		asio::io_service* _service;
 		net_object_mgr* _net_obj_mgr;
+
 	};
 }
 

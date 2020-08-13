@@ -3,10 +3,11 @@
 #include <vector>
 #include <thread>
 #include <map>
-#include "common/net/tcp_server.h"
 #include "common/net/net_object.h"
+#include "common/net/tcp_server.h"
+#include "common/server/player.h"
 
-#include "common/core/config.h"
+//#include "common/core/config.h"
 namespace game_common
 {
 	struct server_param
@@ -41,6 +42,10 @@ namespace game_common
 
 		void register_handle(int opCode, std::function<void(std::shared_ptr<game_net::net_object>, int, game_net::PacketPtr)>);
 
+		void process_accept_queue();
+		void process_receive_queue();
+		void process_send_queue();
+
 		const std::string&	name();
 	private:
 		void __init();
@@ -49,8 +54,13 @@ namespace game_common
 	protected:
 		server_param _init_param;
 		std::string _server_name;
-		config _config;
+		//config _config;
+		asio::io_service ios;
 		game_net::tcp_server _sock;
+
+		game_net::thread_safe_queue<game_net::TcpClientPtr> _accept_queue;
+
+		std::map<SessionId, game_net::TcpClientPtr> _players_session_map;
 		std::thread* _thread_ptr = nullptr;
 		std::map<int, std::function<void(std::shared_ptr<game_net::net_object>, int, game_net::PacketPtr)>> _handlers;
 		std::map<SessionId, std::shared_ptr<game_net::net_object>> _net_obj_map;

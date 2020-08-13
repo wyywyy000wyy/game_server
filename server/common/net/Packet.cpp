@@ -14,7 +14,7 @@ bool ServerPacket::ReadFrom(const google::protobuf::Message& msg)
 	return msg.SerializeToArray(body.data(), body.size());
 }
 
-packet::packet(uint16_t opcode)
+packet::packet(uint32_t opcode)
 {
 	_header.opCode = opcode;
 	_header.length = 0;
@@ -25,7 +25,7 @@ packet::packet(uint16_t opcode)
 	memcpy(_content.data(), &_header, sizeof(_header));
 #endif
 }
-packet::packet(uint16_t opcode, uint8_t* data, uint16_t length)
+packet::packet(uint32_t opcode, uint8_t* data, uint32_t length)
 {
 	_header.opCode = opcode;
 	_header.length = length;
@@ -37,7 +37,7 @@ packet::packet(uint16_t opcode, uint8_t* data, uint16_t length)
 	memcpy(_content.data() + sizeof(_header), data, length);
 }
 
-packet::packet(uint8_t* data, uint16_t length)
+packet::packet(uint8_t* data, uint32_t length)
 {
 
 }

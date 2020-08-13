@@ -79,6 +79,8 @@ void tcp_client::Push()
 	m_wBuffer.swapInOut();
 }
 
+
+
 void tcp_client::RegisterRecvCallback(ReceiveCallback c)
 {
 	m_recvCallback = c;
@@ -113,7 +115,7 @@ void tcp_client::_ReadHeader()
 	auto p = shared_from_this();
 
 	m_packet = std::make_shared<ServerPacket>();
-	asio::async_read(m_socket, buffer(&m_packet->header, sizeof(m_packet->header)), std::bind(&tcp_client::_HandleReadHeader, this,std::placeholders::_1, std::placeholders::_2));
+	asio::async_read(m_socket, buffer(&m_packet->header, sizeof(m_packet->header)), std::bind(&tcp_client::_HandleReadHeader, p,std::placeholders::_1, std::placeholders::_2));
 }
 
 void tcp_client::_HandleReadHeader(std::error_code ec,size_t byteRead)
@@ -126,30 +128,35 @@ void tcp_client::_HandleReadHeader(std::error_code ec,size_t byteRead)
 		}
 		else
 		{
-			if (m_recvCallback)
-			{
-				auto p = m_packet;
-
-				m_recvCallback(p->header.opCode, p);
-				_ReadHeader();
-			}
+			_msg_queue.push(m_packet);
+			_ReadHeader();
 		}
 	}
-	else if(ec)
+	else //if(ec)
 	{
-		std::cerr << ec.message().c_str() << std::endl;
+		if (ec)
+			std::cerr << ec.message().c_str() << std::endl;
+		Stop();
 		////
 	}
 }
+
+void tcp_client::HandleMsg()
+{
+	while (!_msg_queue.empty())
+	{
+		auto msg = _msg_queue.pop();
+		m_recvCallback(msg->header.opCode, msg);
+	}
+}
+
 void tcp_client::_HandleReadBody(std::error_code ec, size_t byteRead)
 {
-	if (!ec && byteRead == m_packet->header.length)
+	if (!ec && byteRead == m_packet->header.length && !_msg_queue.full())
 	{
-		if (m_recvCallback)
-		{
-			m_recvCallback(m_packet->header.opCode, m_packet);
-			_ReadHeader();
-		}
+			//m_recvCallback(m_packet->header.opCode, m_packet);
+		_msg_queue.push(m_packet);
+		_ReadHeader();
 	}
 	else if (ec)
 	{

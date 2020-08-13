@@ -7,6 +7,7 @@
 #include "net_object.h"
 #include <memory>
 #include <functional>
+#include "msg_queue.h"
 
 namespace game_net
 {
@@ -31,11 +32,13 @@ namespace game_net
 		void Start();
 		void Stop();
 		void Push();
+		void HandleMsg();
 		void* UserData() { return _user_data; };
 		void SetUserData(void* data) { _user_data = data; }
 		SessionId Id() const { return _net_object->_sessionId; }
 		bool HasSomethingToWrite();
 		std::shared_ptr<net_object> net_obj() { return _net_object; };
+
 	protected:
 		void _ReadHeader();
 		void _ReadBody();
@@ -55,8 +58,10 @@ namespace game_net
 		volatile bool m_isWritting;
 		std::shared_ptr<net_object> _net_object;
 		void* _user_data = NULL;
+		msg_queue _msg_queue;
 	};
 
+	typedef std::shared_ptr<tcp_client> tcp_client_ptr;
 }
 
 

@@ -1,13 +1,14 @@
 #include "server_base.h"
+//#include "common/core/log.h"
 
 #define CONFIG_SECTION_COMMON_SERVER "server_info"
 #define CONFIG_SERVER_NAME "name"
 
 using namespace game_common;
 
-game_common::server_base::server_base()
+game_common::server_base::server_base():_sock(&ios)
 {
-
+	
 }
 
 game_common::server_base::~server_base()
@@ -51,9 +52,36 @@ const std::string& game_common::server_base::name()
 	return _server_name;
 }
 
+void game_common::server_base::process_accept_queue()
+{
+	while (!_accept_queue.empty())
+	{
+		auto client = _accept_queue.pop();
+		_players_session_map[client->Id()] = client;
+		on_connect(client->net_obj());
+	}
+}
+
+void game_common::server_base::process_receive_queue()
+{
+	for (auto i = _players_session_map.begin(); i != _players_session_map.end(); ++i)
+	{
+		i->second->HandleMsg();
+	}
+}
+
+void game_common::server_base::process_send_queue()
+{
+	for (auto i = _players_session_map.begin(); i != _players_session_map.end(); ++i)
+	{
+		i->second->Push();
+	}
+}
+
+
 void game_common::server_base::__init()
 {
-	_config.open(_init_param.config_name);
+	//_config.open(_init_param.config_name);
 	_server_name = _init_param.server_name;
 
 	_sock.RegisterConnectedCallback(std::bind(&game_common::server_base::__on_connect, this, std::placeholders::_1));
@@ -75,7 +103,16 @@ void game_common::server_base::__init()
 
 void game_common::server_base::__on_connect(game_net::TcpClientPtr client)
 {
-	on_connect(client->net_obj());
+	//if (_players_session_map.find(client->net_obj.Id()) != _players_session_map.end())
+	//{
+	//	//LOGERROR("dupplicated connect");
+	//	return;
+	//}
+	_accept_queue.push(client);
+
+	//_players_session_map[client->Id()] = client;
+
+	//on_connect(client->net_obj());
 }
 
 void game_common::server_base::__on_receive(game_net::TcpClientPtr client, int opCpde, game_net::PacketPtr packet)

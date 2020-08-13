@@ -1,4 +1,5 @@
 #pragma once
+#include "NetDef.h"
 
 namespace game_net
 {
