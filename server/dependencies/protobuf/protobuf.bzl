@@ -4,7 +4,24 @@ def _GetPath(ctx, path):
   else:
     return path
 
+def _IsNewExternal(ctx):
+  # Bazel 0.4.4 and older have genfiles paths that look like:
+  #   bazel-out/local-fastbuild/genfiles/external/repo/foo
+  # After the exec root rearrangement, they look like:
+  #   ../repo/bazel-out/local-fastbuild/genfiles/foo
+  return ctx.label.workspace_root.startswith("../")
+
 def _GenDir(ctx):
+  if _IsNewExternal(ctx):
+    # We are using the fact that Bazel 0.4.4+ provides repository-relative paths
+    # for ctx.genfiles_dir.
+    return ctx.genfiles_dir.path + (
+        "/" + ctx.attr.includes[0] if ctx.attr.includes and ctx.attr.includes[0] else "")
+  # This means that we're either in the old version OR the new version in the local repo.
+  # Either way, appending the source path to the genfiles dir works.
+  return ctx.var["GENDIR"] + "/" + _SourceDir(ctx)
+
+def _SourceDir(ctx):
   if not ctx.attr.includes:
     return ctx.label.workspace_root
   if not ctx.attr.includes[0]:
@@ -51,9 +68,10 @@ def _proto_gen_impl(ctx):
   srcs = ctx.files.srcs
   deps = []
   deps += ctx.files.srcs
+  source_dir = _SourceDir(ctx)
   gen_dir = _GenDir(ctx)
-  if gen_dir:
-    import_flags = ["-I" + gen_dir, "-I" + ctx.var["GENDIR"] + "/" + gen_dir]
+  if source_dir:
+    import_flags = ["-I" + source_dir, "-I" + gen_dir]
   else:
     import_flags = ["-I."]
 
@@ -63,9 +81,9 @@ def _proto_gen_impl(ctx):
 
   args = []
   if ctx.attr.gen_cc:
-    args += ["--cpp_out=" + ctx.var["GENDIR"] + "/" + gen_dir]
+    args += ["--cpp_out=" + gen_dir]
   if ctx.attr.gen_py:
-    args += ["--python_out=" + ctx.var["GENDIR"] + "/" + gen_dir]
+    args += ["--python_out=" + gen_dir]
 
   inputs = srcs + deps
   if ctx.executable.plugin:
@@ -76,7 +94,7 @@ def _proto_gen_impl(ctx):
     if not lang:
       fail("cannot infer the target language of plugin", "plugin_language")
 
-    outdir = ctx.var["GENDIR"] + "/" + gen_dir
+    outdir = gen_dir
     if ctx.attr.plugin_options:
       outdir = ",".join(ctx.attr.plugin_options) + ":" + outdir
     args += ["--plugin=protoc-gen-%s=%s" % (lang, plugin.path)]
@@ -90,6 +108,7 @@ def _proto_gen_impl(ctx):
         arguments=args + import_flags + [s.path for s in srcs],
         executable=ctx.executable.protoc,
         mnemonic="ProtoCompile",
+        use_default_shell_env=True,
     )
 
   return struct(
@@ -141,7 +160,7 @@ Args:
     compiler.
   plugin_language: the language of the generated sources
   plugin_options: a list of options to be passed to the plugin
-  gen_cc: generates C++ sources in addition to the ones from the plugin. 
+  gen_cc: generates C++ sources in addition to the ones from the plugin.
   gen_py: generates Python sources in addition to the ones from the plugin.
   outs: a list of labels of the expected outputs from the protocol compiler.
 """
@@ -226,9 +245,9 @@ def cc_proto_library(
   )
 
   if default_runtime and not default_runtime in cc_libs:
-    cc_libs += [default_runtime]
+    cc_libs = cc_libs + [default_runtime]
   if use_grpc_plugin:
-    cc_libs += ["//external:grpc_lib"]
+    cc_libs = cc_libs + ["//external:grpc_lib"]
 
   native.cc_library(
       name=name,
@@ -245,10 +264,11 @@ def internal_gen_well_known_protos_java(srcs):
     srcs: the well known protos
   """
   root = Label("%s//protobuf_java" % (REPOSITORY_NAME)).workspace_root
+  pkg = PACKAGE_NAME + "/" if PACKAGE_NAME else ""
   if root == "":
-    include = " -Isrc "
+    include = " -I%ssrc " % pkg
   else:
-    include = " -I%s/src " % root
+    include = " -I%s/%ssrc " % (root, pkg)
   native.genrule(
     name = "gen_well_known_protos_java",
     srcs = srcs,
@@ -351,7 +371,7 @@ def py_proto_library(
   )
 
   if default_runtime and not default_runtime in py_libs + deps:
-    py_libs += [default_runtime]
+    py_libs = py_libs + [default_runtime]
 
   native.py_library(
       name=name,

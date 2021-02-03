@@ -20,7 +20,9 @@ test_version() {
        git clean -f && \
        gem install bundler && bundle && \
        rake test &&
-       cd ../conformance && make test_ruby"
+       rake gc_test &&
+       cd ../conformance && make test_ruby &&
+       cd ../ruby/compatibility_tests/v3.0.0 && ./test.sh"
   fi
 }
 

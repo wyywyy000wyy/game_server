@@ -38,6 +38,7 @@
 goog.provide('jspb.utils');
 
 goog.require('goog.asserts');
+goog.require('goog.crypt');
 goog.require('goog.crypt.base64');
 goog.require('goog.string');
 goog.require('jspb.BinaryConstants');
@@ -430,7 +431,7 @@ jspb.utils.joinHash64 = function(bitsLow, bitsHigh) {
 
 /**
  * Individual digits for number->string conversion.
- * @const {!Array.<number>}
+ * @const {!Array.<string>}
  */
 jspb.utils.DIGITS = [
   '0', '1', '2', '3', '4', '5', '6', '7',
@@ -613,7 +614,7 @@ jspb.utils.decimalStringToHash64 = function(dec) {
     muladd(1, 1);
   }
 
-  return String.fromCharCode.apply(null, resultBytes);
+  return goog.crypt.byteArrayToString(resultBytes);
 };
 
 

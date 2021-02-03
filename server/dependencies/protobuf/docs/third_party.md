@@ -23,7 +23,7 @@ These are projects we know about implementing Protocol Buffers for other program
 * C#: https://silentorbit.com/protobuf/
 * C#/.NET/WCF/VB: http://code.google.com/p/protobuf-net/
 * Clojure: http://github.com/ninjudd/clojure-protobuf
-* Common Lisp: http://www.prism.gatech.edu/~ndantam3/docs/s-protobuf/
+* Common Lisp: http://github.com/ndantam/s-protobuf
 * Common Lisp: http://github.com/brown/protobuf
 * D: https://github.com/msoucy/dproto
 * D: http://256.makerslocal.org/wiki/index.php/ProtocolBuffer
@@ -32,15 +32,19 @@ These are projects we know about implementing Protocol Buffers for other program
 * Delphi: http://sourceforge.net/projects/protobuf-delphi/
 * Delphi: http://fundementals.sourceforge.net/dl.html
 * Elixir: https://github.com/jeremyong/exprotoc
+* Elixir: https://github.com/tony612/protobuf-elixir
+* Elm: https://github.com/tiziano88/elm-protobuf
 * Erlang: http://github.com/ngerakines/erlang_protobuffs/tree/master
 * Erlang: http://piqi.org/
 * Erlang: https://code.google.com/p/protoc-gen-erl/
 * Erlang: https://github.com/basho/erlang_protobuffs
 * Erlang: https://github.com/tomas-abrahamsson/gpb
 * Go: https://github.com/golang/protobuf (Google-official implementation)
-* Go: http://code.google.com/p/goprotobuf/
 * Go: https://github.com/akunspy/gopbuf
+* Go: https://github.com/gogo/protobuf
+* GopherJS: https://github.com/johanbrandhorst/protobuf
 * Haskell: http://hackage.haskell.org/package/hprotoc
+* Haskell: https://github.com/google/proto-lens (Google-unofficial implementation)
 * Haxe: https://github.com/Atry/protoc-gen-haxe
 * Java: https://github.com/google/protobuf (Google-official implementation)
 * Java/Android: https://github.com/square/wire
@@ -115,11 +119,18 @@ GRPC (http://www.grpc.io/) is Google's RPC implementation for Protocol Buffers. 
 * https://github.com/thesamet/rpcz (C++/Python, based on ZeroMQ)
 * https://github.com/w359405949/libmaid (C++, Python)
 * https://github.com/madwyn/libpbrpc (C++)
+* https://github.com/SeriousMa/grpc-protobuf-validation (Java)
+* https://github.com/tony612/grpc-elixir (Elixir)
+* https://github.com/johanbrandhorst/protobuf (GopherJS)
 
 ## Other Utilities
 
 There are miscellaneous other things you may find useful as a Protocol Buffers developer.
 
+* [Bazel Build](https://bazel.build)
+    * [rules_closure](https://github.com/bazelbuild/rules_closure) `js-closure`
+    * [rules_go](https://github.com/bazelbuild/rules_go) `go`
+    * [rules_protobuf](https://github.com/pubref/rules_protobuf) `java` `c++` `c#` `go` `js-closure` `js-node` `python` `ruby`
 * [NetBeans IDE plugin](http://code.google.com/p/protobuf-netbeans-plugin/)
 * [Wireshark/Ethereal packet sniffer plugin](http://code.google.com/p/protobuf-wireshark/)
 * [Alternate encodings (JSON, XML, HTML) for Java protobufs](http://code.google.com/p/protobuf-java-format/)
@@ -135,7 +146,7 @@ There are miscellaneous other things you may find useful as a Protocol Buffers d
     * http://igor-petruk.github.com/protobuf-maven-plugin/
     * http://code.google.com/p/maven-protoc-plugin/
     * https://github.com/os72/protoc-jar-maven-plugin
-* [Documentation generator plugin (Markdown/HTML/DocBook/...)](https://github.com/estan/protoc-gen-doc)
+* [Documentation generator plugin (Markdown/HTML/DocBook/...)](https://github.com/pseudomuto/protoc-gen-doc)
 * [DocBook generator for .proto files](http://code.google.com/p/protoc-gen-docbook/)
 * [Protobuf for nginx module](https://github.com/dbcode/protobuf-nginx/)
 * [RSpec matchers and Cucumber step defs for testing Protocol Buffers](https://github.com/connamara/protobuf_spec)
@@ -149,3 +160,5 @@ There are miscellaneous other things you may find useful as a Protocol Buffers d
 * [Notepad++ Syntax Highlighting for .proto files](https://github.com/chai2010/notepadplus-protobuf)
 * [Linter for .proto files](https://github.com/ckaznocha/protoc-gen-lint)
 * [Protocol Buffers Dynamic Schema - create protobuf schemas programmatically (Java)] (https://github.com/os72/protobuf-dynamic)
+* [Make protoc plugins in NodeJS](https://github.com/konsumer/node-protoc-plugin)
+* [ProfaneDB - A Protocol Buffers database](https://profanedb.gitlab.io)

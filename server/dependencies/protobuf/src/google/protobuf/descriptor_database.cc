@@ -39,8 +39,9 @@
 #include <google/protobuf/descriptor.pb.h>
 #include <google/protobuf/wire_format_lite_inl.h>
 #include <google/protobuf/stubs/strutil.h>
-#include <google/protobuf/stubs/stl_util.h>
+
 #include <google/protobuf/stubs/map_util.h>
+#include <google/protobuf/stubs/stl_util.h>
 
 namespace google {
 namespace protobuf {
@@ -199,7 +200,7 @@ template <typename Value>
 bool SimpleDescriptorDatabase::DescriptorIndex<Value>::FindAllExtensionNumbers(
     const string& containing_type,
     std::vector<int>* output) {
-  typename std::map<pair<string, int>, Value>::const_iterator it =
+  typename std::map<std::pair<string, int>, Value>::const_iterator it =
       by_extension_.lower_bound(std::make_pair(containing_type, 0));
   bool success = false;
 
@@ -213,7 +214,7 @@ bool SimpleDescriptorDatabase::DescriptorIndex<Value>::FindAllExtensionNumbers(
 }
 
 template <typename Value>
-typename map<string, Value>::iterator
+typename std::map<string, Value>::iterator
 SimpleDescriptorDatabase::DescriptorIndex<Value>::FindLastLessOrEqual(
     const string& name) {
   // Find the last key in the map which sorts less than or equal to the
@@ -230,7 +231,7 @@ bool SimpleDescriptorDatabase::DescriptorIndex<Value>::IsSubSymbol(
     const string& sub_symbol, const string& super_symbol) {
   return sub_symbol == super_symbol ||
          (HasPrefixString(super_symbol, sub_symbol) &&
-             super_symbol[sub_symbol.size()] == '.');
+          super_symbol[sub_symbol.size()] == '.');
 }
 
 template <typename Value>

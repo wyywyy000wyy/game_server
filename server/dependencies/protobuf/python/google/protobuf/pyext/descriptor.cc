@@ -32,6 +32,7 @@
 
 #include <Python.h>
 #include <frameobject.h>
+#include <google/protobuf/stubs/hash.h>
 #include <string>
 
 #include <google/protobuf/io/coded_stream.h>
@@ -708,6 +709,10 @@ static PyObject* GetJsonName(PyBaseDescriptor* self, void *closure) {
   return PyString_FromCppString(_GetDescriptor(self)->json_name());
 }
 
+static PyObject* GetFile(PyBaseDescriptor *self, void *closure) {
+  return PyFileDescriptor_FromDescriptor(_GetDescriptor(self)->file());
+}
+
 static PyObject* GetType(PyBaseDescriptor *self, void *closure) {
   return PyInt_FromLong(_GetDescriptor(self)->type());
 }
@@ -898,6 +903,7 @@ static PyGetSetDef Getters[] = {
   { "name", (getter)GetName, NULL, "Unqualified name"},
   { "camelcase_name", (getter)GetCamelcaseName, NULL, "Camelcase name"},
   { "json_name", (getter)GetJsonName, NULL, "Json name"},
+  { "file", (getter)GetFile, NULL, "File Descriptor"},
   { "type", (getter)GetType, NULL, "C++ Type"},
   { "cpp_type", (getter)GetCppType, NULL, "C++ Type"},
   { "label", (getter)GetLabel, NULL, "Label"},
@@ -1569,6 +1575,10 @@ static PyObject* GetFullName(PyBaseDescriptor* self, void *closure) {
   return PyString_FromCppString(_GetDescriptor(self)->full_name());
 }
 
+static PyObject* GetFile(PyBaseDescriptor *self, void *closure) {
+  return PyFileDescriptor_FromDescriptor(_GetDescriptor(self)->file());
+}
+
 static PyObject* GetIndex(PyBaseDescriptor *self, void *closure) {
   return PyInt_FromLong(_GetDescriptor(self)->index());
 }
@@ -1610,6 +1620,7 @@ static PyObject* CopyToProto(PyBaseDescriptor *self, PyObject *target) {
 static PyGetSetDef Getters[] = {
   { "name", (getter)GetName, NULL, "Name", NULL},
   { "full_name", (getter)GetFullName, NULL, "Full name", NULL},
+  { "file", (getter)GetFile, NULL, "File descriptor"},
   { "index", (getter)GetIndex, NULL, "Index", NULL},
 
   { "methods", (getter)GetMethods, NULL, "Methods", NULL},
@@ -1664,6 +1675,15 @@ PyObject* PyServiceDescriptor_FromDescriptor(
     const ServiceDescriptor* service_descriptor) {
   return descriptor::NewInternedDescriptor(
       &PyServiceDescriptor_Type, service_descriptor, NULL);
+}
+
+const ServiceDescriptor* PyServiceDescriptor_AsDescriptor(PyObject* obj) {
+  if (!PyObject_TypeCheck(obj, &PyServiceDescriptor_Type)) {
+    PyErr_SetString(PyExc_TypeError, "Not a ServiceDescriptor");
+    return NULL;
+  }
+  return reinterpret_cast<const ServiceDescriptor*>(
+      reinterpret_cast<PyBaseDescriptor*>(obj)->descriptor);
 }
 
 namespace method_descriptor {
@@ -1767,6 +1787,15 @@ PyObject* PyMethodDescriptor_FromDescriptor(
     const MethodDescriptor* method_descriptor) {
   return descriptor::NewInternedDescriptor(
       &PyMethodDescriptor_Type, method_descriptor, NULL);
+}
+
+const MethodDescriptor* PyMethodDescriptor_AsDescriptor(PyObject* obj) {
+  if (!PyObject_TypeCheck(obj, &PyMethodDescriptor_Type)) {
+    PyErr_SetString(PyExc_TypeError, "Not a MethodDescriptor");
+    return NULL;
+  }
+  return reinterpret_cast<const MethodDescriptor*>(
+      reinterpret_cast<PyBaseDescriptor*>(obj)->descriptor);
 }
 
 // Add a enum values to a type dictionary.

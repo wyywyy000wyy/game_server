@@ -355,8 +355,8 @@ jspb.BinaryEncoder.prototype.writeInt64 = function(value) {
  */
 jspb.BinaryEncoder.prototype.writeInt64String = function(value) {
   goog.asserts.assert(value == Math.floor(value));
-  goog.asserts.assert((value >= -jspb.BinaryConstants.TWO_TO_63) &&
-                      (value < jspb.BinaryConstants.TWO_TO_63));
+  goog.asserts.assert((+value >= -jspb.BinaryConstants.TWO_TO_63) &&
+                      (+value < jspb.BinaryConstants.TWO_TO_63));
   jspb.utils.splitHash64(jspb.utils.decimalStringToHash64(value));
   this.writeSplitFixed64(jspb.utils.split64Low, jspb.utils.split64High);
 };
@@ -390,11 +390,13 @@ jspb.BinaryEncoder.prototype.writeDouble = function(value) {
 
 
 /**
- * Writes a boolean value to the buffer as a varint.
- * @param {boolean} value The value to write.
+ * Writes a boolean value to the buffer as a varint. We allow numbers as input
+ * because the JSPB code generator uses 0/1 instead of true/false to save space
+ * in the string representation of the proto.
+ * @param {boolean|number} value The value to write.
  */
 jspb.BinaryEncoder.prototype.writeBool = function(value) {
-  goog.asserts.assert(goog.isBoolean(value));
+  goog.asserts.assert(goog.isBoolean(value) || goog.isNumber(value));
   this.buffer_.push(value ? 1 : 0);
 };
 

@@ -1,25 +1,7 @@
-enum ServerType
-{
-	test1 = 1;
-	test2 = 2;
-}
+syntax = "proto3";
 
-enum OpCode
+message Phone 
 {
-	C2LS_LOGIN = 1;
-	LS2C_LOGIN_RSP = 2;
+    string name        = 1;
+    int64  phonenumber = 2;
 }
-
-message C2LS_Login
-{
-	required string user_name = 1;
-	required string passwd = 2;
-	
-}
-
-message LS2C_LoginRsp
-{
-	required string user_name = 1;
-	required string passwd = 2;
-}
-

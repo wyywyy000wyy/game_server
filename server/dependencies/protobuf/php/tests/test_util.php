@@ -51,8 +51,6 @@ class TestUtil
 
     public static function setTestMessage(TestMessage $m)
     {
-        $sub = new TestMessage_Sub();
-
         $m->setOptionalInt32(-42);
         $m->setOptionalInt64(-43);
         $m->setOptionalUint32(42);
@@ -69,63 +67,147 @@ class TestUtil
         $m->setOptionalString('a');
         $m->setOptionalBytes('b');
         $m->setOptionalEnum(TestEnum::ONE);
+        $sub = new TestMessage_Sub();
         $m->setOptionalMessage($sub);
         $m->getOptionalMessage()->SetA(33);
 
-        $m->getRepeatedInt32()    []= -42;
-        $m->getRepeatedInt64()    []= -43;
-        $m->getRepeatedUint32()   []=  42;
-        $m->getRepeatedUint64()   []=  43;
-        $m->getRepeatedSint32()   []= -44;
-        $m->getRepeatedSint64()   []= -45;
-        $m->getRepeatedFixed32()  []=  46;
-        $m->getRepeatedFixed64()  []=  47;
-        $m->getRepeatedSfixed32() []= -46;
-        $m->getRepeatedSfixed64() []= -47;
-        $m->getRepeatedFloat()    []= 1.5;
-        $m->getRepeatedDouble()   []= 1.6;
-        $m->getRepeatedBool()     []= true;
-        $m->getRepeatedString()   []= 'a';
-        $m->getRepeatedBytes()    []= 'b';
-        $m->getRepeatedEnum()     []= TestEnum::ZERO;
-        $m->getRepeatedMessage()  []= new TestMessage_Sub();
+        self::appendHelper($m, 'RepeatedInt32',    -42);
+        self::appendHelper($m, 'RepeatedInt64',    -43);
+        self::appendHelper($m, 'RepeatedUint32',    42);
+        self::appendHelper($m, 'RepeatedUint64',    43);
+        self::appendHelper($m, 'RepeatedSint32',   -44);
+        self::appendHelper($m, 'RepeatedSint64',   -45);
+        self::appendHelper($m, 'RepeatedFixed32',   46);
+        self::appendHelper($m, 'RepeatedFixed64',   47);
+        self::appendHelper($m, 'RepeatedSfixed32', -46);
+        self::appendHelper($m, 'RepeatedSfixed64', -47);
+        self::appendHelper($m, 'RepeatedFloat',    1.5);
+        self::appendHelper($m, 'RepeatedDouble',   1.6);
+        self::appendHelper($m, 'RepeatedBool',     true);
+        self::appendHelper($m, 'RepeatedString',   'a');
+        self::appendHelper($m, 'RepeatedBytes',    'b');
+        self::appendHelper($m, 'RepeatedEnum',     TestEnum::ZERO);
+        self::appendHelper($m, 'RepeatedMessage',  new TestMessage_Sub());
         $m->getRepeatedMessage()[0]->setA(34);
 
-        $m->getRepeatedInt32()    []= -52;
-        $m->getRepeatedInt64()    []= -53;
-        $m->getRepeatedUint32()   []=  52;
-        $m->getRepeatedUint64()   []=  53;
-        $m->getRepeatedSint32()   []= -54;
-        $m->getRepeatedSint64()   []= -55;
-        $m->getRepeatedFixed32()  []=  56;
-        $m->getRepeatedFixed64()  []=  57;
-        $m->getRepeatedSfixed32() []= -56;
-        $m->getRepeatedSfixed64() []= -57;
-        $m->getRepeatedFloat()    []= 2.5;
-        $m->getRepeatedDouble()   []= 2.6;
-        $m->getRepeatedBool()     []= false;
-        $m->getRepeatedString()   []= 'c';
-        $m->getRepeatedBytes()    []= 'd';
-        $m->getRepeatedEnum()     []= TestEnum::ONE;
-        $m->getRepeatedMessage()  []= new TestMessage_Sub();
+        self::appendHelper($m, 'RepeatedInt32',    -52);
+        self::appendHelper($m, 'RepeatedInt64',    -53);
+        self::appendHelper($m, 'RepeatedUint32',    52);
+        self::appendHelper($m, 'RepeatedUint64',    53);
+        self::appendHelper($m, 'RepeatedSint32',   -54);
+        self::appendHelper($m, 'RepeatedSint64',   -55);
+        self::appendHelper($m, 'RepeatedFixed32',   56);
+        self::appendHelper($m, 'RepeatedFixed64',   57);
+        self::appendHelper($m, 'RepeatedSfixed32', -56);
+        self::appendHelper($m, 'RepeatedSfixed64', -57);
+        self::appendHelper($m, 'RepeatedFloat',    2.5);
+        self::appendHelper($m, 'RepeatedDouble',   2.6);
+        self::appendHelper($m, 'RepeatedBool',     false);
+        self::appendHelper($m, 'RepeatedString',   'c');
+        self::appendHelper($m, 'RepeatedBytes',    'd');
+        self::appendHelper($m, 'RepeatedEnum',     TestEnum::ONE);
+        self::appendHelper($m, 'RepeatedMessage',  new TestMessage_Sub());
         $m->getRepeatedMessage()[1]->SetA(35);
 
-        $m->getMapInt32Int32()[-62] = -62;
-        $m->getMapInt64Int64()[-63] = -63;
-        $m->getMapUint32Uint32()[62] = 62;
-        $m->getMapUint64Uint64()[63] = 63;
-        $m->getMapSint32Sint32()[-64] = -64;
-        $m->getMapSint64Sint64()[-65] = -65;
-        $m->getMapFixed32Fixed32()[66] = 66;
-        $m->getMapFixed64Fixed64()[67] = 67;
-        $m->getMapInt32Float()[1] = 3.5;
-        $m->getMapInt32Double()[1] = 3.6;
-        $m->getMapBoolBool()[true] = true;
-        $m->getMapStringString()['e'] = 'e';
-        $m->getMapInt32Bytes()[1] = 'f';
-        $m->getMapInt32Enum()[1] = TestEnum::ONE;
-        $m->getMapInt32Message()[1] = new TestMessage_Sub();
+        self::kvUpdateHelper($m, 'MapInt32Int32', -62, -62);
+        self::kvUpdateHelper($m, 'MapInt64Int64', -63, -63);
+        self::kvUpdateHelper($m, 'MapUint32Uint32', 62, 62);
+        self::kvUpdateHelper($m, 'MapUint64Uint64', 63, 63);
+        self::kvUpdateHelper($m, 'MapSint32Sint32', -64, -64);
+        self::kvUpdateHelper($m, 'MapSint64Sint64', -65, -65);
+        self::kvUpdateHelper($m, 'MapFixed32Fixed32', 66, 66);
+        self::kvUpdateHelper($m, 'MapFixed64Fixed64', 67, 67);
+        self::kvUpdateHelper($m, 'MapSfixed32Sfixed32', -68, -68);
+        self::kvUpdateHelper($m, 'MapSfixed64Sfixed64', -69, -69);
+        self::kvUpdateHelper($m, 'MapInt32Float', 1, 3.5);
+        self::kvUpdateHelper($m, 'MapInt32Double', 1, 3.6);
+        self::kvUpdateHelper($m, 'MapBoolBool', true, true);
+        self::kvUpdateHelper($m, 'MapStringString', 'e', 'e');
+        self::kvUpdateHelper($m, 'MapInt32Bytes', 1, 'f');
+        self::kvUpdateHelper($m, 'MapInt32Enum', 1, TestEnum::ONE);
+        self::kvUpdateHelper($m, 'MapInt32Message', 1, new TestMessage_Sub());
         $m->getMapInt32Message()[1]->SetA(36);
+    }
+
+    public static function setTestMessage2(TestMessage $m)
+    {
+        $sub = new TestMessage_Sub();
+
+        $m->setOptionalInt32(-142);
+        $m->setOptionalInt64(-143);
+        $m->setOptionalUint32(142);
+        $m->setOptionalUint64(143);
+        $m->setOptionalSint32(-144);
+        $m->setOptionalSint64(-145);
+        $m->setOptionalFixed32(146);
+        $m->setOptionalFixed64(147);
+        $m->setOptionalSfixed32(-146);
+        $m->setOptionalSfixed64(-147);
+        $m->setOptionalFloat(11.5);
+        $m->setOptionalDouble(11.6);
+        $m->setOptionalBool(true);
+        $m->setOptionalString('aa');
+        $m->setOptionalBytes('bb');
+        $m->setOptionalEnum(TestEnum::TWO);
+        $m->setOptionalMessage($sub);
+        $m->getOptionalMessage()->SetA(133);
+
+        self::appendHelper($m, 'RepeatedInt32',    -142);
+        self::appendHelper($m, 'RepeatedInt64',    -143);
+        self::appendHelper($m, 'RepeatedUint32',    142);
+        self::appendHelper($m, 'RepeatedUint64',    143);
+        self::appendHelper($m, 'RepeatedSint32',   -144);
+        self::appendHelper($m, 'RepeatedSint64',   -145);
+        self::appendHelper($m, 'RepeatedFixed32',   146);
+        self::appendHelper($m, 'RepeatedFixed64',   147);
+        self::appendHelper($m, 'RepeatedSfixed32', -146);
+        self::appendHelper($m, 'RepeatedSfixed64', -147);
+        self::appendHelper($m, 'RepeatedFloat',    11.5);
+        self::appendHelper($m, 'RepeatedDouble',   11.6);
+        self::appendHelper($m, 'RepeatedBool',     false);
+        self::appendHelper($m, 'RepeatedString',   'aa');
+        self::appendHelper($m, 'RepeatedBytes',    'bb');
+        self::appendHelper($m, 'RepeatedEnum',     TestEnum::TWO);
+        self::appendHelper($m, 'RepeatedMessage',  new TestMessage_Sub());
+        $m->getRepeatedMessage()[0]->setA(134);
+
+        self::kvUpdateHelper($m, 'MapInt32Int32', -62, -162);
+        self::kvUpdateHelper($m, 'MapInt64Int64', -63, -163);
+        self::kvUpdateHelper($m, 'MapUint32Uint32', 62, 162);
+        self::kvUpdateHelper($m, 'MapUint64Uint64', 63, 163);
+        self::kvUpdateHelper($m, 'MapSint32Sint32', -64, -164);
+        self::kvUpdateHelper($m, 'MapSint64Sint64', -65, -165);
+        self::kvUpdateHelper($m, 'MapFixed32Fixed32', 66, 166);
+        self::kvUpdateHelper($m, 'MapFixed64Fixed64', 67, 167);
+        self::kvUpdateHelper($m, 'MapSfixed32Sfixed32', -68, -168);
+        self::kvUpdateHelper($m, 'MapSfixed64Sfixed64', -69, -169);
+        self::kvUpdateHelper($m, 'MapInt32Float', 1, 13.5);
+        self::kvUpdateHelper($m, 'MapInt32Double', 1, 13.6);
+        self::kvUpdateHelper($m, 'MapBoolBool', true, false);
+        self::kvUpdateHelper($m, 'MapStringString', 'e', 'ee');
+        self::kvUpdateHelper($m, 'MapInt32Bytes', 1, 'ff');
+        self::kvUpdateHelper($m, 'MapInt32Enum', 1, TestEnum::TWO);
+        self::kvUpdateHelper($m, 'MapInt32Message', 1, new TestMessage_Sub());
+        $m->getMapInt32Message()[1]->SetA(136);
+
+        self::kvUpdateHelper($m, 'MapInt32Int32', -162, -162);
+        self::kvUpdateHelper($m, 'MapInt64Int64', -163, -163);
+        self::kvUpdateHelper($m, 'MapUint32Uint32', 162, 162);
+        self::kvUpdateHelper($m, 'MapUint64Uint64', 163, 163);
+        self::kvUpdateHelper($m, 'MapSint32Sint32', -164, -164);
+        self::kvUpdateHelper($m, 'MapSint64Sint64', -165, -165);
+        self::kvUpdateHelper($m, 'MapFixed32Fixed32', 166, 166);
+        self::kvUpdateHelper($m, 'MapFixed64Fixed64', 167, 167);
+        self::kvUpdateHelper($m, 'MapSfixed32Sfixed32', -168, -168);
+        self::kvUpdateHelper($m, 'MapSfixed64Sfixed64', -169, -169);
+        self::kvUpdateHelper($m, 'MapInt32Float', 2, 13.5);
+        self::kvUpdateHelper($m, 'MapInt32Double', 2, 13.6);
+        self::kvUpdateHelper($m, 'MapBoolBool', false, false);
+        self::kvUpdateHelper($m, 'MapStringString', 'ee', 'ee');
+        self::kvUpdateHelper($m, 'MapInt32Bytes', 2, 'ff');
+        self::kvUpdateHelper($m, 'MapInt32Enum', 2, TestEnum::TWO);
+        self::kvUpdateHelper($m, 'MapInt32Message', 2, new TestMessage_Sub());
+        $m->getMapInt32Message()[2]->SetA(136);
     }
 
     public static function assertTestMessage(TestMessage $m)
@@ -213,16 +295,19 @@ class TestUtil
             assert('63'  === $m->getMapUint64Uint64()['63']);
             assert('-65' === $m->getMapSint64Sint64()['-65']);
             assert('67'  === $m->getMapFixed64Fixed64()['67']);
+            assert('-69'  === $m->getMapSfixed64Sfixed64()['-69']);
         } else {
             assert(-63 === $m->getMapInt64Int64()[-63]);
             assert(63  === $m->getMapUint64Uint64()[63]);
             assert(-65 === $m->getMapSint64Sint64()[-65]);
             assert(67  === $m->getMapFixed64Fixed64()[67]);
+            assert(-69  === $m->getMapSfixed64Sfixed64()[-69]);
         }
         assert(-62 === $m->getMapInt32Int32()[-62]);
         assert(62  === $m->getMapUint32Uint32()[62]);
         assert(-64 === $m->getMapSint32Sint32()[-64]);
         assert(66  === $m->getMapFixed32Fixed32()[66]);
+        assert(-68  === $m->getMapSfixed32Sfixed32()[-68]);
         assert(3.5 === $m->getMapInt32Float()[1]);
         assert(3.6 === $m->getMapInt32Double()[1]);
         assert(true === $m->getMapBoolBool()[true]);
@@ -235,7 +320,7 @@ class TestUtil
     public static function getGoldenTestMessage()
     {
         return hex2bin(
-            "08D6FFFFFF0F" .
+            "08D6FFFFFFFFFFFFFFFF01" .
             "10D5FFFFFFFFFFFFFFFF01" .
             "182A" .
             "202B" .
@@ -253,8 +338,8 @@ class TestUtil
             "800101" .
             "8A01020821" .
 
-            "F801D6FFFFFF0F" .
-            "F801CCFFFFFF0F" .
+            "F801D6FFFFFFFFFFFFFFFF01" .
+            "F801CCFFFFFFFFFFFFFFFF01" .
             "8002D5FFFFFFFFFFFFFFFF01" .
             "8002CBFFFFFFFFFFFFFFFF01" .
             "88022A" .
@@ -288,7 +373,7 @@ class TestUtil
             "FA02020822" .
             "FA02020823" .
 
-            "BA040C08C2FFFFFF0F10C2FFFFFF0F" .
+            "BA041608C2FFFFFFFFFFFFFFFF0110C2FFFFFFFFFFFFFFFF01" .
             "C2041608C1FFFFFFFFFFFFFFFF0110C1FFFFFFFFFFFFFFFF01" .
             "CA0404083E103E" .
             "D20404083F103F" .
@@ -296,6 +381,8 @@ class TestUtil
             "E20406088101108101" .
             "EA040A0D420000001542000000" .
             "F20412094300000000000000114300000000000000" .
+            "FA040A0DBCFFFFFF15BCFFFFFF" .
+            "82051209BBFFFFFFFFFFFFFF11BBFFFFFFFFFFFFFF" .
             "8A050708011500006040" .
             "92050B080111CDCCCCCCCCCC0C40" .
             "9A050408011001" .
@@ -308,34 +395,34 @@ class TestUtil
 
     public static function setTestPackedMessage($m)
     {
-        $m->getRepeatedInt32()[] = -42;
-        $m->getRepeatedInt32()[] = -52;
-        $m->getRepeatedInt64()[] = -43;
-        $m->getRepeatedInt64()[] = -53;
-        $m->getRepeatedUint32()[] = 42;
-        $m->getRepeatedUint32()[] = 52;
-        $m->getRepeatedUint64()[] = 43;
-        $m->getRepeatedUint64()[] = 53;
-        $m->getRepeatedSint32()[] = -44;
-        $m->getRepeatedSint32()[] = -54;
-        $m->getRepeatedSint64()[] = -45;
-        $m->getRepeatedSint64()[] = -55;
-        $m->getRepeatedFixed32()[] = 46;
-        $m->getRepeatedFixed32()[] = 56;
-        $m->getRepeatedFixed64()[] = 47;
-        $m->getRepeatedFixed64()[] = 57;
-        $m->getRepeatedSfixed32()[] = -46;
-        $m->getRepeatedSfixed32()[] = -56;
-        $m->getRepeatedSfixed64()[] = -47;
-        $m->getRepeatedSfixed64()[] = -57;
-        $m->getRepeatedFloat()[] = 1.5;
-        $m->getRepeatedFloat()[] = 2.5;
-        $m->getRepeatedDouble()[] = 1.6;
-        $m->getRepeatedDouble()[] = 2.6;
-        $m->getRepeatedBool()[] = true;
-        $m->getRepeatedBool()[] = false;
-        $m->getRepeatedEnum()[] = TestEnum::ONE;
-        $m->getRepeatedEnum()[] = TestEnum::ZERO;
+        self::appendHelper($m, 'RepeatedInt32', -42);
+        self::appendHelper($m, 'RepeatedInt32', -52);
+        self::appendHelper($m, 'RepeatedInt64', -43);
+        self::appendHelper($m, 'RepeatedInt64', -53);
+        self::appendHelper($m, 'RepeatedUint32', 42);
+        self::appendHelper($m, 'RepeatedUint32', 52);
+        self::appendHelper($m, 'RepeatedUint64', 43);
+        self::appendHelper($m, 'RepeatedUint64', 53);
+        self::appendHelper($m, 'RepeatedSint32', -44);
+        self::appendHelper($m, 'RepeatedSint32', -54);
+        self::appendHelper($m, 'RepeatedSint64', -45);
+        self::appendHelper($m, 'RepeatedSint64', -55);
+        self::appendHelper($m, 'RepeatedFixed32', 46);
+        self::appendHelper($m, 'RepeatedFixed32', 56);
+        self::appendHelper($m, 'RepeatedFixed64', 47);
+        self::appendHelper($m, 'RepeatedFixed64', 57);
+        self::appendHelper($m, 'RepeatedSfixed32', -46);
+        self::appendHelper($m, 'RepeatedSfixed32', -56);
+        self::appendHelper($m, 'RepeatedSfixed64', -47);
+        self::appendHelper($m, 'RepeatedSfixed64', -57);
+        self::appendHelper($m, 'RepeatedFloat', 1.5);
+        self::appendHelper($m, 'RepeatedFloat', 2.5);
+        self::appendHelper($m, 'RepeatedDouble', 1.6);
+        self::appendHelper($m, 'RepeatedDouble', 2.6);
+        self::appendHelper($m, 'RepeatedBool', true);
+        self::appendHelper($m, 'RepeatedBool', false);
+        self::appendHelper($m, 'RepeatedEnum', TestEnum::ONE);
+        self::appendHelper($m, 'RepeatedEnum', TestEnum::ZERO);
     }
 
     public static function assertTestPackedMessage($m)
@@ -401,7 +488,7 @@ class TestUtil
     public static function getGoldenTestPackedMessage()
     {
         return hex2bin(
-            "D2050AD6FFFFFF0FCCFFFFFF0F" .
+            "D20514D6FFFFFFFFFFFFFFFF01CCFFFFFFFFFFFFFFFF01" .
             "DA0514D5FFFFFFFFFFFFFFFF01CBFFFFFFFFFFFFFFFF01" .
             "E205022A34" .
             "EA05022B35" .
@@ -421,7 +508,7 @@ class TestUtil
     public static function getGoldenTestUnpackedMessage()
     {
         return hex2bin(
-            "D005D6FFFFFF0FD005CCFFFFFF0F" .
+            "D005D6FFFFFFFFFFFFFFFF01D005CCFFFFFFFFFFFFFFFF01" .
             "D805D5FFFFFFFFFFFFFFFF01D805CBFFFFFFFFFFFFFFFF01" .
             "E0052AE00534" .
             "E8052BE80535" .
@@ -436,5 +523,25 @@ class TestUtil
             "B00601B00600" .
             "B80601B80600"
         );
+    }
+
+    private static function appendHelper($obj, $func_suffix, $value)
+    {
+        $getter_function = 'get'.$func_suffix;
+        $setter_function = 'set'.$func_suffix;
+
+        $arr = $obj->$getter_function();
+        $arr[] = $value;
+        $obj->$setter_function($arr);
+    }
+
+    private static function kvUpdateHelper($obj, $func_suffix, $key, $value)
+    {
+        $getter_function = 'get'.$func_suffix;
+        $setter_function = 'set'.$func_suffix;
+
+        $arr = $obj->$getter_function();
+        $arr[$key] = $value;
+        $obj->$setter_function($arr);
     }
 }

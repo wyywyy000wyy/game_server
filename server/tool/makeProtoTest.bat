@@ -1,4 +1,4 @@
-protoc -I=. --cpp_out=. NetPackDefine.proto
+protoc --cpp_out=. NetPackDefine.proto
 move NetPackDefine.pb.cc ..\common\net
 move NetPackDefine.pb.h ..\common\net
 pause

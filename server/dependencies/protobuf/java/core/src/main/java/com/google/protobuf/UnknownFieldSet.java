@@ -91,7 +91,7 @@ public final class UnknownFieldSet implements MessageLite {
    * Construct an {@code UnknownFieldSet} around the given map.  The map is
    * expected to be immutable.
    */
-  private UnknownFieldSet(final Map<Integer, Field> fields,
+  UnknownFieldSet(final Map<Integer, Field> fields,
       final Map<Integer, Field> fieldsDescending) {
     this.fields = fields;
   }

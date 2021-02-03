@@ -78,8 +78,10 @@ def generate_proto(source, require = True):
 
 def GenerateUnittestProtos():
   generate_proto("../src/google/protobuf/any_test.proto", False)
+  generate_proto("../src/google/protobuf/map_proto2_unittest.proto", False)
   generate_proto("../src/google/protobuf/map_unittest.proto", False)
   generate_proto("../src/google/protobuf/test_messages_proto3.proto", False)
+  generate_proto("../src/google/protobuf/test_messages_proto2.proto", False)
   generate_proto("../src/google/protobuf/unittest_arena.proto", False)
   generate_proto("../src/google/protobuf/unittest_no_arena.proto", False)
   generate_proto("../src/google/protobuf/unittest_no_arena_import.proto", False)
@@ -234,11 +236,10 @@ if __name__ == '__main__':
       url='https://developers.google.com/protocol-buffers/',
       maintainer='protobuf@googlegroups.com',
       maintainer_email='protobuf@googlegroups.com',
-      license='New BSD License',
+      license='3-Clause BSD License',
       classifiers=[
         "Programming Language :: Python",
         "Programming Language :: Python :: 2",
-        "Programming Language :: Python :: 2.6",
         "Programming Language :: Python :: 2.7",
         "Programming Language :: Python :: 3",
         "Programming Language :: Python :: 3.3",

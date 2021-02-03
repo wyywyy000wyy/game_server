@@ -1,5 +1,10 @@
 include(GNUInstallDirs)
 
+configure_file(${CMAKE_CURRENT_SOURCE_DIR}/protobuf.pc.cmake
+               ${CMAKE_CURRENT_BINARY_DIR}/protobuf.pc @ONLY)
+configure_file(${CMAKE_CURRENT_SOURCE_DIR}/protobuf-lite.pc.cmake
+               ${CMAKE_CURRENT_BINARY_DIR}/protobuf-lite.pc @ONLY)
+
 foreach(_library
   libprotobuf-lite
   libprotobuf
@@ -17,21 +22,17 @@ endforeach()
 install(TARGETS protoc EXPORT protobuf-targets
   RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR} COMPONENT protoc)
 
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/protobuf.pc ${CMAKE_CURRENT_BINARY_DIR}/protobuf-lite.pc DESTINATION "${CMAKE_INSTALL_LIBDIR}/pkgconfig")
+
 file(STRINGS extract_includes.bat.in _extract_strings
   REGEX "^copy")
 foreach(_extract_string ${_extract_strings})
-  string(REPLACE "copy \${PROTOBUF_SOURCE_WIN32_PATH}\\" ""
-    _extract_string ${_extract_string})
-  string(REPLACE "\\" "/" _extract_string ${_extract_string})
-  string(REGEX MATCH "^[^ ]+"
-    _extract_from ${_extract_string})
-  string(REGEX REPLACE "^${_extract_from} ([^$]+)" "\\1"
-    _extract_to ${_extract_string})
-  get_filename_component(_extract_from "${protobuf_SOURCE_DIR}/${_extract_from}" ABSOLUTE)
-  get_filename_component(_extract_name ${_extract_to} NAME)
-  get_filename_component(_extract_to ${_extract_to} PATH)
-  string(REPLACE "include/" "${CMAKE_INSTALL_INCLUDEDIR}/"
-    _extract_to "${_extract_to}")
+  string(REGEX REPLACE "^.* .+ include\\\\(.+)$" "\\1"
+    _header ${_extract_string})
+  string(REPLACE "\\" "/" _header ${_header})
+  get_filename_component(_extract_from "${protobuf_SOURCE_DIR}/../src/${_header}" ABSOLUTE)
+  get_filename_component(_extract_name ${_header} NAME)
+  get_filename_component(_extract_to "${CMAKE_INSTALL_INCLUDEDIR}/${_header}" PATH)
   if(EXISTS "${_extract_from}")
     install(FILES "${_extract_from}"
       DESTINATION "${_extract_to}"

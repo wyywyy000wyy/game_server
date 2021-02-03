@@ -64,13 +64,13 @@ else
 
   task 'gem:windows' do
     require 'rake_compiler_dock'
-    RakeCompilerDock.sh "bundle && IN_DOCKER=true rake cross native gem RUBY_CC_VERSION=2.3.0:2.2.2:2.1.5:2.0.0"
+    RakeCompilerDock.sh "bundle && IN_DOCKER=true rake cross native gem RUBY_CC_VERSION=2.4.0:2.3.0:2.2.2:2.1.5:2.0.0"
   end
 
   if RUBY_PLATFORM =~ /darwin/
     task 'gem:native' do
       system "rake genproto"
-      system "rake cross native gem RUBY_CC_VERSION=2.3.0:2.2.2:2.1.5:2.0.0"
+      system "rake cross native gem RUBY_CC_VERSION=2.4.0:2.3.0:2.2.2:2.1.5:2.0.0"
     end
   else
     task 'gem:native' => [:genproto, 'gem:windows']
@@ -99,7 +99,13 @@ Gem::PackageTask.new(spec) do |pkg|
 end
 
 Rake::TestTask.new(:test => :build) do |t|
-  t.test_files = FileList["tests/*.rb"]
+  t.test_files = FileList["tests/*.rb"].exclude("tests/gc_test.rb")
+end
+
+# gc_test needs to be split out to ensure the generated file hasn't been
+# imported by other tests.
+Rake::TestTask.new(:gc_test => :build) do |t|
+  t.test_files = FileList["tests/gc_test.rb"]
 end
 
 task :build => [:clean, :compile, :genproto]

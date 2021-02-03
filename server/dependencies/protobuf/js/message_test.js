@@ -33,6 +33,7 @@
 goog.setTestOnly();
 
 goog.require('goog.json');
+goog.require('goog.string');
 goog.require('goog.testing.asserts');
 goog.require('goog.userAgent');
 
@@ -40,6 +41,7 @@ goog.require('goog.userAgent');
 goog.require('jspb.Message');
 
 // CommonJS-LoadFromFile: test8_pb proto.jspb.exttest.nested
+goog.require('proto.jspb.exttest.nested.TestNestedExtensionsMessage');
 goog.require('proto.jspb.exttest.nested.TestOuterMessage');
 
 // CommonJS-LoadFromFile: test5_pb proto.jspb.exttest.beta
@@ -80,8 +82,6 @@ goog.require('proto.jspb.test.TestReservedNamesExtension');
 // CommonJS-LoadFromFile: test2_pb proto.jspb.test
 goog.require('proto.jspb.test.ExtensionMessage');
 goog.require('proto.jspb.test.TestExtensionsMessage');
-
-
 
 
 describe('Message test suite', function() {
@@ -270,12 +270,6 @@ describe('Message test suite', function() {
     assertFalse(response.hasBoolField());
     assertFalse(response.hasIntField());
     assertFalse(response.hasEnumField());
-  });
-
-  it('testMessageRegistration', /** @suppress {visibility} */ function() {
-    // goog.require(SomeResponse) will include its library, which will in
-    // turn add SomeResponse to the message registry.
-    assertEquals(jspb.Message.registry_['res'], proto.jspb.test.SomeResponse);
   });
 
   it('testClearFields', function() {
@@ -660,12 +654,7 @@ describe('Message test suite', function() {
 
   it('testInitialization_emptyArray', function() {
     var msg = new proto.jspb.test.HasExtensions([]);
-    if (jspb.Message.MINIMIZE_MEMORY_ALLOCATIONS) {
-      assertArrayEquals([], msg.toArray());
-    } else {
-      // Extension object is created past all regular fields.
-      assertArrayEquals([,,, {}], msg.toArray());
-    }
+    assertArrayEquals([], msg.toArray());
   });
 
   it('testInitialization_justExtensionObject', function() {
@@ -693,10 +682,11 @@ describe('Message test suite', function() {
      });
 
   it('testToObject_hasExtensionField', function() {
-    var data = new proto.jspb.test.HasExtensions(['str1', {100: ['ext1']}]);
+    var data = new proto.jspb.test.HasExtensions(['str1', {100: ['ext1'], 102: ''}]);
     var obj = data.toObject();
     assertEquals('str1', obj.str1);
     assertEquals('ext1', obj.extField.ext1);
+    assertEquals('', obj.str);
   });
 
   it('testGetExtension', function() {

@@ -3,7 +3,7 @@
 #include <vector>
 #include <memory>
 #include <algorithm>
-#include <string.h>
+#include <string>
 
 namespace google
 {
@@ -186,7 +186,7 @@ namespace game_net
 		{
 			if (body.size() < length + _write_idx)
 			{
-				body.reserve(std::max(body.size() * 2, (unsigned int)length + _write_idx));
+				body.reserve(std::max(body.size() * 2, (size_t)length + _write_idx));
 			}
 			body.resize(_write_idx + length);
 			memcpy(body.data() + _write_idx, data, length);

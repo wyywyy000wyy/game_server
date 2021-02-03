@@ -143,7 +143,13 @@ bool Message::ParsePartialFromIstream(std::istream* input) {
 
 void Message::SerializeWithCachedSizes(
     io::CodedOutputStream* output) const {
-  WireFormat::SerializeWithCachedSizes(*this, GetCachedSize(), output);
+  const internal::SerializationTable* table =
+      static_cast<const internal::SerializationTable*>(InternalGetTable());
+  if (table == 0) {
+    WireFormat::SerializeWithCachedSizes(*this, GetCachedSize(), output);
+  } else {
+    internal::TableSerialize(*this, table, output);
+  }
 }
 
 size_t Message::ByteSizeLong() const {
@@ -158,18 +164,18 @@ void Message::SetCachedSize(int /* size */) const {
                 "Must implement one or the other.";
 }
 
-int Message::SpaceUsed() const {
-  return GetReflection()->SpaceUsed(*this);
+size_t Message::SpaceUsedLong() const {
+  return GetReflection()->SpaceUsedLong(*this);
 }
 
 bool Message::SerializeToFileDescriptor(int file_descriptor) const {
   io::FileOutputStream output(file_descriptor);
-  return SerializeToZeroCopyStream(&output);
+  return SerializeToZeroCopyStream(&output) && output.Flush();
 }
 
 bool Message::SerializePartialToFileDescriptor(int file_descriptor) const {
   io::FileOutputStream output(file_descriptor);
-  return SerializePartialToZeroCopyStream(&output);
+  return SerializePartialToZeroCopyStream(&output) && output.Flush();
 }
 
 bool Message::SerializeToOstream(std::ostream* output) const {
@@ -190,6 +196,10 @@ bool Message::SerializePartialToOstream(std::ostream* output) const {
 // Reflection and associated Template Specializations
 
 Reflection::~Reflection() {}
+
+void Reflection::AddAllocatedMessage(Message* /* message */,
+                                     const FieldDescriptor* /*field */,
+                                     Message* /* new_entry */) const {}
 
 #define HANDLE_TYPE(TYPE, CPPTYPE, CTYPE)                             \
 template<>                                                            \
@@ -451,27 +461,27 @@ struct ShutdownRepeatedFieldRegister {
 
 namespace internal {
 template<>
-#if defined(_MSC_VER) && (_MSC_VER >= 1900)
-// Note: force noinline to workaround MSVC 2015 compiler bug, issue #240
-GOOGLE_ATTRIBUTE_NOINLINE
+#if defined(_MSC_VER) && (_MSC_VER >= 1800)
+// Note: force noinline to workaround MSVC compiler bug with /Zc:inline, issue #240
+GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE
 #endif
 Message* GenericTypeHandler<Message>::NewFromPrototype(
     const Message* prototype, google::protobuf::Arena* arena) {
   return prototype->New(arena);
 }
 template<>
-#if defined(_MSC_VER) && (_MSC_VER >= 1900)
-// Note: force noinline to workaround MSVC 2015 compiler bug, issue #240
-GOOGLE_ATTRIBUTE_NOINLINE
+#if defined(_MSC_VER) && (_MSC_VER >= 1800)
+// Note: force noinline to workaround MSVC compiler bug with /Zc:inline, issue #240
+GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE
 #endif
 google::protobuf::Arena* GenericTypeHandler<Message>::GetArena(
     Message* value) {
   return value->GetArena();
 }
 template<>
-#if defined(_MSC_VER) && (_MSC_VER >= 1900)
-// Note: force noinline to workaround MSVC 2015 compiler bug, issue #240
-GOOGLE_ATTRIBUTE_NOINLINE
+#if defined(_MSC_VER) && (_MSC_VER >= 1800)
+// Note: force noinline to workaround MSVC compiler bug with /Zc:inline, issue #240
+GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE
 #endif
 void* GenericTypeHandler<Message>::GetMaybeArenaPointer(
     Message* value) {

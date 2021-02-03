@@ -30,7 +30,6 @@
 
 package com.google.protobuf.util;
 
-import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.math.IntMath.checkedAdd;
 import static com.google.common.math.IntMath.checkedSubtract;
 import static com.google.common.math.LongMath.checkedAdd;
@@ -44,6 +43,7 @@ import java.text.SimpleDateFormat;
 import java.util.Comparator;
 import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.Locale;
 import java.util.TimeZone;
 
 /**
@@ -83,7 +83,7 @@ public final class Timestamps {
       };
 
   private static SimpleDateFormat createTimestampFormat() {
-    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
+    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.ENGLISH);
     GregorianCalendar calendar = new GregorianCalendar(TimeZone.getTimeZone("UTC"));
     // We use Proleptic Gregorian Calendar (i.e., Gregorian calendar extends
     // backwards to year one) for timestamp formating.
@@ -111,6 +111,17 @@ public final class Timestamps {
    */
   public static Comparator<Timestamp> comparator() {
     return COMPARATOR;
+  }
+
+  /**
+   * Compares two timestamps. The value returned is identical to what would be returned by:
+   * {@code Timestamps.comparator().compare(x, y)}.
+   *
+   * @return the value {@code 0} if {@code x == y}; a value less than {@code 0} if {@code x < y};
+   *     and a value greater than {@code 0} if {@code x > y}
+   */
+  public static int compare(Timestamp x, Timestamp y) {
+    return COMPARATOR.compare(x, y);
   }
 
   /**
@@ -148,13 +159,12 @@ public final class Timestamps {
   public static Timestamp checkValid(Timestamp timestamp) {
     long seconds = timestamp.getSeconds();
     int nanos = timestamp.getNanos();
-    checkArgument(
-        isValid(seconds, nanos),
-        "Timestamp is not valid. See proto definition for valid values. "
+    if (!isValid(seconds, nanos)) {
+        throw new IllegalArgumentException(String.format(
+            "Timestamp is not valid. See proto definition for valid values. "
             + "Seconds (%s) must be in range [-62,135,596,800, +253,402,300,799]. "
-            + "Nanos (%s) must be in range [0, +999,999,999].",
-        seconds,
-        nanos);
+            + "Nanos (%s) must be in range [0, +999,999,999].", seconds, nanos));
+    }
     return timestamp;
   }
 
@@ -296,7 +306,7 @@ public final class Timestamps {
    * Convert a Timestamp to the number of microseconds elapsed from the epoch.
    *
    * <p>The result will be rounded down to the nearest microsecond. E.g., if the timestamp
-   * represents "1969-12-31T23:59:59.999999999Z", it will be rounded to -1 millisecond.
+   * represents "1969-12-31T23:59:59.999999999Z", it will be rounded to -1 microsecond.
    */
   public static long toMicros(Timestamp timestamp) {
     checkValid(timestamp);
@@ -386,11 +396,11 @@ public final class Timestamps {
   static String formatNanos(int nanos) {
     // Determine whether to use 3, 6, or 9 digits for the nano part.
     if (nanos % NANOS_PER_MILLISECOND == 0) {
-      return String.format("%1$03d", nanos / NANOS_PER_MILLISECOND);
+      return String.format(Locale.ENGLISH, "%1$03d", nanos / NANOS_PER_MILLISECOND);
     } else if (nanos % NANOS_PER_MICROSECOND == 0) {
-      return String.format("%1$06d", nanos / NANOS_PER_MICROSECOND);
+      return String.format(Locale.ENGLISH, "%1$06d", nanos / NANOS_PER_MICROSECOND);
     } else {
-      return String.format("%1$09d", nanos);
+      return String.format(Locale.ENGLISH, "%1$09d", nanos);
     }
   }
 }

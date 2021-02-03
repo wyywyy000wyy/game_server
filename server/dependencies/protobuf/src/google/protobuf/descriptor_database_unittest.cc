@@ -44,7 +44,6 @@
 #include <google/protobuf/descriptor.h>
 #include <google/protobuf/descriptor.pb.h>
 #include <google/protobuf/text_format.h>
-#include <google/protobuf/stubs/strutil.h>
 
 #include <google/protobuf/stubs/logging.h>
 #include <google/protobuf/stubs/common.h>
@@ -248,6 +247,10 @@ TEST_P(DescriptorDatabaseTest, FindFileContainingSymbol) {
     FileDescriptorProto file;
     EXPECT_TRUE(database_->FindFileContainingSymbol("Foo.qux", &file));
     EXPECT_EQ("foo.proto", file.name());
+    // Non-existent field under a valid top level symbol can also be
+    // found.
+    EXPECT_TRUE(database_->FindFileContainingSymbol("Foo.none_field.none",
+                                                    &file));
   }
 
   {

@@ -3,6 +3,9 @@
 #include "common/net/PacketTool.hpp"
 #include "common/util/game_math.h"
 #include "common/net/msg_define.hpp"
+#include "common/net/NetPackDefine.pb.h"
+//#include "HelloProto.pb.h"
+
 
 using namespace std;
 using namespace game_common;
@@ -76,6 +79,17 @@ void map_server::on_connect(std::shared_ptr<game_net::net_object>)
 
 int main()
 {
+	//Phone tt;
+	//tt.set_name("tingting");
+	//tt.set_phonenumber(7526);
+
+	//std::string buf;
+
+	//tt.SerializeToString(&buf);
+
+	//Phone t2;
+	//t2.ParseFromString(buf);
+
 	map_server gs;
 	G_S = &gs;
 	game_common::server_param param;
