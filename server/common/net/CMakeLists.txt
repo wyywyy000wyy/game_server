@@ -7,6 +7,8 @@ file(RELATIVE_PATH RelativePath ${CMAKE_CURRENT_SOURCE_DIR}/.. ${CMAKE_CURRENT_S
 
 project(game_net)
 	
+#target_link_libraries(${PROJECT_NAME} libprotobuf)
+
 add_library(${PROJECT_NAME} STATIC ${AllFile})
 
 # add_dependencies(${PROJECT_NAME} libzmq enet)

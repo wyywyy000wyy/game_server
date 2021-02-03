@@ -1,5 +1,5 @@
 #include "Packet.h"
-#include "NetPackDefine.pb.h"
+#include "NetProtocol.pb.h"
 using namespace game_net;
 
 bool ServerPacket::WriteTo(google::protobuf::Message& msg)

@@ -1,10 +1,10 @@
 
 if(WIN32)
-file(GLOB out_files ${OUT_PUT_PROTO_FILE}/*.cc ${OUT_PUT_PROTO_FILE}/*.h)
-foreach(iFile ${out_files})
-message(${iFile})
-file(REMOVE ${iFile})
-endforeach()
+# file(GLOB out_files ${OUT_PUT_PROTO_FILE}/*.cc ${OUT_PUT_PROTO_FILE}/*.h)
+# foreach(iFile ${out_files})
+# message(${iFile})
+# file(REMOVE ${iFile})
+# endforeach()
 
 file(GLOB proto_files *.proto)
 set(proto_tool ${SolutionDir}/tool/protoc.exe)

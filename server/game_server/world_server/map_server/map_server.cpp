@@ -3,7 +3,7 @@
 #include "common/net/PacketTool.hpp"
 #include "common/util/game_math.h"
 #include "common/net/msg_define.hpp"
-#include "common/net/NetPackDefine.pb.h"
+#include "common/net/NetProtocol.pb.h"
 //#include "HelloProto.pb.h"
 
 
@@ -79,23 +79,29 @@ void map_server::on_connect(std::shared_ptr<game_net::net_object>)
 
 int main()
 {
-	//Phone tt;
-	//tt.set_name("tingting");
-	//tt.set_phonenumber(7526);
+	S2C_Login login;
+	login.set_id(1);
+	login.set_code(1);
 
-	//std::string buf;
+	string buf;
 
-	//tt.SerializeToString(&buf);
+	login.SerializeToString(&buf);
+	Msg msg;
+	msg.set_type(MsgType::S2CLogin);
+	msg.set_data(buf);
+
+	//::google::protobuf::Message* msg = new ;
+	//msg.ParseFromString
 
 	//Phone t2;
 	//t2.ParseFromString(buf);
 
-	map_server gs;
-	G_S = &gs;
-	game_common::server_param param;
-	param.server_name = "map_server";
-	param.config_name = "map_server";
-	param.listen_port =  52012;
-	G_S->start(param);
+	//map_server gs;
+	//G_S = &gs;
+	//game_common::server_param param;
+	//param.server_name = "map_server";
+	//param.config_name = "map_server";
+	//param.listen_port =  52012;
+	//G_S->start(param);
 	return 0;
 }

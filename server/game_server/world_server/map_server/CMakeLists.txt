@@ -20,6 +20,7 @@ target_link_libraries(${PROJECT_NAME} cpp_redis game_data game_net game_server_f
 
 include_directories(
 ${SolutionDir}/common/
+${SolutionDir}/common/
 # ${SolutionDir}/zeromq-4.2.1/include
 # ${SolutionDir}/zeromq-4.2.1/src
 # ${SolutionDir}/enet/include

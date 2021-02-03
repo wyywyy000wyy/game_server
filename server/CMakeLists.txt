@@ -100,7 +100,8 @@ endif()
 endforeach()	
 endfunction(AllFilesLoad)
 
-set(OUT_PUT_PROTO_FILE ${SolutionDir}/common/proto)
+set(OUT_PUT_PROTO_FILE ${SolutionDir}/common/net)
+set(OUT_PUT_PROTO_FILE ${SolutionDir}/game_server/world_server/map_server)
 
 message("Build All")
 

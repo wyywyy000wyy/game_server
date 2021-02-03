@@ -1,5 +1,16 @@
 syntax = "proto3";
 
+enum MessageCode
+{
+	MsgPhone = 0;
+}
+
+message BaseMsg
+{
+	MessageCode msgId = 1;
+	bytes data = 2;
+}
+
 message Phone 
 {
     string name        = 1;

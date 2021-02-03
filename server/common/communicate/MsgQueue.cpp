@@ -1,6 +1,6 @@
 #include "MsgQueue.h"
 #include "zmq.hpp"
-#include "common/net/NetPackDefine.pb.h"
+#include "common/net/NetProtocol.pb.h"
 #include "common/net/Packet.h"
 
 using namespace game_common;
