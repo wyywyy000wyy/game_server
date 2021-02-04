@@ -20,10 +20,13 @@ void ServerBuffer::Resize(int length)
 void ServerBuffer::WriteFrom(PacketPtr p)
 {
 	int length = p->PacketSize() + m_pos + 1;
+	//int length = p->Length() + m_pos + 1;
 	Resize(length);
 
 	p->WriteTo(WritePtr(), p->PacketSize());
-	m_pos += p->PacketSize();
+	//memcpy(WritePtr(), p->Data(), length);
+	//p->SerializeToArray(WritePtr(), length);
+	m_pos += length;
 }
 
 void ServerBuffer::Write(const uint8_t* buffer, int length, int offset)

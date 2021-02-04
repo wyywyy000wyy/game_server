@@ -17,19 +17,19 @@ void map_tile::join_tile(map_player_ptr pobj)
 	_play_obj_map[pobj->get_player_id()] = pobj;
 	pobj->set_cur_tile(this);
 
-	MSG_S2C_ObjectBorn msg;
-	msg.player_id_ = pobj->get_player_id();
-	msg.type = 1;
-	auto pk = msg.Serialize();
+	//MSG_S2C_ObjectBorn msg;
+	//msg.player_id_ = pobj->get_player_id();
+	//msg.type = 1;
+	//auto pk = msg.Serialize();
 
-	FOR_EACH_PLAYER_BEGIN()
-		if (player->get_player_id() != pobj->get_player_id())
-		{
-			pobj->send_pack(player->SerializeBorn());
-			player->send_pack(pk);
-		}
-		pobj->send_pack(player->SerializeMove());
-	FOR_EACH_PLAYER_END()
+	//FOR_EACH_PLAYER_BEGIN()
+	//	if (player->get_player_id() != pobj->get_player_id())
+	//	{
+	//		pobj->send_pack(player->SerializeBorn());
+	//		player->send_pack(pk);
+	//	}
+	//	pobj->send_pack(player->SerializeMove());
+	//FOR_EACH_PLAYER_END()
 }
 
 void map_tile::Update(float dt)

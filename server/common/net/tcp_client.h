@@ -24,8 +24,7 @@ namespace game_net
 
 		void Connect(std::string host, short port);
 		void SendPacket(PacketPtr pack);
-		void SendPacket(uint16_t opCode, const google::protobuf::Message& msg);
-		void SendPacketNoBlock(uint16_t opCode, const google::protobuf::Message& msg); //for test client 
+		//void SendPacket(uint16_t opCode, const google::protobuf::Message& msg);
 		void SendPacketNoBlock(PacketPtr pack); //for test client 
 		void RegisterRecvCallback(ReceiveCallback c);
 		void RegisterDisconnectCallback(DisconnectCallback c);

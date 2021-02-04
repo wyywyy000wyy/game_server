@@ -14,30 +14,32 @@ map_player::map_player(game_common::player_ptr p):_player(p)
 
 game_net::PacketPtr map_object::SerializeBorn()
 {
-	MSG_S2C_ObjectBorn born;
-	born.player_id_ = get_object_id();
-	born.type = 1;
-	return born.Serialize();
+	//MSG_S2C_ObjectBorn born;
+	//born.player_id_ = get_object_id();
+	//born.type = 1;
+	return std::make_shared<game_net::ServerPacket>();
 }
 
 game_net::PacketPtr map_object::SerializeMove()
 {
-	MSG_S2C_Move move;
-	move.player_id = get_object_id();
-	move.pos = pos;
-	move.speed = speed;
-	move.volocity = volocity;
-	return move.Serialize();
+	//MSG_S2C_Move move;
+	//move.player_id = get_object_id();
+	//move.pos = pos;
+	//move.speed = speed;
+	//move.volocity = volocity;
+	//return move.Serialize();
+	return std::make_shared<game_net::ServerPacket>();
+
 }
 
 void map_object::set_pos(game_net::PacketPtr pk)
 {
-	MSG_C2S_Move msg;
-	msg.Unserialize(pk);
+	//MSG_C2S_Move msg;
+	//msg.Unserialize(pk);
 
-	pos = msg.pos;
-	speed = msg.speed;
-	volocity = msg.volocity;
+	//pos = msg.pos;
+	//speed = msg.speed;
+	//volocity = msg.volocity;
 
-	
+	pk = std::make_shared<game_net::ServerPacket>();
 }

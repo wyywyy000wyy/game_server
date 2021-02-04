@@ -4,6 +4,8 @@
 #include <memory>
 #include <algorithm>
 #include <string>
+//#include "common/net/tcp_server.h"
+#include "common/net/NetProtocol.pb.h"
 
 namespace google
 {
@@ -205,14 +207,14 @@ namespace game_net
 			{
 				return;
 			}
-			header.length = _write_idx;
+			//header.length = _write_idx;
 
 			memcpy(data, &header, sizeof(PacketHeader));
-			memcpy(data + sizeof(PacketHeader), body.data(), _write_idx);
+			memcpy(data + sizeof(PacketHeader), body.data(), header.length);
 		}
 
-		bool WriteTo(google::protobuf::Message& msg);
-		bool ReadFrom(const google::protobuf::Message& msg);
+		//bool WriteTo(google::protobuf::Message& msg);
+		//bool ReadFrom(const google::protobuf::Message& msg);
 
 		~ServerPacket()
 		{
@@ -223,8 +225,13 @@ namespace game_net
 		uint32_t _write_idx = 0;
 		uint32_t _read_idx = 0;
 	};
+	
+	//struct ServerPacket
+	//{
+	//	int size;
+	//	Msg data;
+	//};
 
-	typedef std::shared_ptr<ServerPacket> PacketPtr;
 	struct packet_header
 	{
 		uint32_t length : 14;
@@ -266,6 +273,9 @@ namespace game_net
 		packet_header _header;
 		std::vector<uint8_t> _content;
 	};
+
+	typedef std::shared_ptr<ServerPacket> PacketPtr;
+
 
 }
 #endif

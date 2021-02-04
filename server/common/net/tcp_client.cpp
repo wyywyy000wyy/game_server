@@ -26,14 +26,11 @@ void tcp_client::SendPacketNoBlock(PacketPtr p)
 {
 	m_socket.write_some(buffer(&p->header, sizeof(p->header)));
 	m_socket.write_some(buffer(p->body.data(), p->header.length));
+
+	//m_socket.write_some(buffer(&p->Length, sizeof(p->header)));
+	//m_socket.write_some(buffer(p->body.data(), p->header.length));
 }
 
-void tcp_client::SendPacketNoBlock(uint16_t opCode, const google::protobuf::Message& msg)
-{
-	auto packet = std::make_shared<ServerPacket>(opCode);
-	packet->ReadFrom(msg);
-	SendPacketNoBlock(packet);
-}
 
 void tcp_client::Start()
 {
@@ -62,12 +59,12 @@ void tcp_client::SendPacket(PacketPtr pack)
 	m_wBuffer.WriteFrom(pack);
 }
 
-void tcp_client::SendPacket(uint16_t opCode, const google::protobuf::Message& msg)
-{
-	auto packet = std::make_shared<ServerPacket>(opCode);
-	packet->ReadFrom(msg);
-	SendPacket(packet);
-}
+//void tcp_client::SendPacket(uint16_t opCode, const google::protobuf::Message& msg)
+//{
+//	auto packet = std::make_shared<ServerPacket>(opCode);
+//	packet->ReadFrom(msg);
+//	SendPacket(packet);
+//}
 
 void tcp_client::Push()
 {

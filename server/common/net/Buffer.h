@@ -1,5 +1,4 @@
-#ifndef __NET_SERVER__BUFFER_H___
-#define __NET_SERVER__BUFFER_H___
+#pragma once
 #include <vector>
 #include "Packet.h"
 
@@ -46,4 +45,3 @@ namespace game_net
 		std::vector<uint8_t> m_buffer[2];
 	};
 }
-#endif

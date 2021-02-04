@@ -120,10 +120,10 @@ void game_map::join_map(game_common::player_ptr player)
 
 	map_tile* tile = get_tile(tile_id);
 
-	MSG_S2C_ObjectBorn msg;
-	msg.player_id_ = player->get_player_id();
-	msg.type = 1;
-	player->send_pack(msg.Serialize());
+	//MSG_S2C_ObjectBorn msg;
+	//msg.player_id_ = player->get_player_id();
+	//msg.type = 1;
+	//player->send_pack(msg.Serialize());
 
 	tile->join_tile(mp);
 

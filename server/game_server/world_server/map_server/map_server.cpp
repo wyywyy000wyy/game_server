@@ -16,42 +16,68 @@ map_server::map_server():_play_mng(new player_mng), _main_map(new game_map)
 
 void map_server::run()
 {
-	register_handle(C2S_LOGIN, [this](std::shared_ptr<game_net::net_object> no, int, game_net::PacketPtr pk)->void {
-		MSG_C2S_Login msg;
-		msg.Unserialize(pk);
+	register_handle(0, [this](std::shared_ptr<game_net::net_object> no, int, game_net::PacketPtr pk)->void {
+		C2S_Login msg;
+		msg.ParseFromArray(pk->body.data(), pk->body.size());
+
 
 		auto client = _players_session_map[no->_sessionId];
-		auto player = _play_mng->login(NULL);
-		player->set_conn(client);
 
-		_session_2_player_map[no->_sessionId] = player;
+		//auto player = _play_mng->login(NULL);
+		//player->set_conn(client);
 
-		MSG_S2C_Login msg2;
-		msg2.username = msg.username;
-		msg2.result = player->get_player_id();
-		client->SendPacket(msg2.Serialize());
+		//_session_2_player_map[no->_sessionId] = player;
 
-		_main_map->join_map(player);
+
+
+		S2C_Login bmsg;
+		bmsg.set_code(0);
+		bmsg.set_id(1);
+
+		game_net::PacketPtr bpk = std::make_shared<game_net::ServerPacket>();
+		bpk->header.opCode = 1;
+		bpk->header.length = bmsg.ByteSize();
+		bpk->body.resize(bmsg.ByteSize());
+		bmsg.SerializeToArray(bpk->body.data(), bmsg.ByteSize());
+		
+		client->SendPacket(bpk);
 	});
-	register_handle(C2S_MOVE, [this](std::shared_ptr<game_net::net_object> no, int, game_net::PacketPtr pk)->void {
-		//MSG_C2S_Move msg;
-		//msg.Unserialize(pk);
+	//register_handle(C2S_LOGIN, [this](std::shared_ptr<game_net::net_object> no, int, game_net::PacketPtr pk)->void {
+	//	MSG_C2S_Login msg;
+	//	msg.Unserialize(pk);
 
-		//auto client = _players_session_map[no->_sessionId];
+	//	auto client = _players_session_map[no->_sessionId];
+	//	auto player = _play_mng->login(NULL);
+	//	player->set_conn(client);
 
-		auto player = _session_2_player_map[no->_sessionId];
+	//	_session_2_player_map[no->_sessionId] = player;
 
-		_main_map->player_move(player, pk);
+	//	MSG_S2C_Login msg2;
+	//	msg2.username = msg.username;
+	//	msg2.result = player->get_player_id();
+	//	client->SendPacket(msg2.Serialize());
 
-		//auto mp = _main_map->
+	//	_main_map->join_map(player);
+	//});
+	//register_handle(C2S_MOVE, [this](std::shared_ptr<game_net::net_object> no, int, game_net::PacketPtr pk)->void {
+	//	//MSG_C2S_Move msg;
+	//	//msg.Unserialize(pk);
 
-		//MSG_S2C_Move msg2;
-		//msg2.player_id = 1;
-		//msg2.volocity = msg.volocity;
-		//msg2.speed = msg.speed;
-		//msg2.pos = msg.pos;
-		//player->send_pack(msg2.Serialize());
-	});
+	//	//auto client = _players_session_map[no->_sessionId];
+
+	//	auto player = _session_2_player_map[no->_sessionId];
+
+	//	_main_map->player_move(player, pk);
+
+	//	//auto mp = _main_map->
+
+	//	//MSG_S2C_Move msg2;
+	//	//msg2.player_id = 1;
+	//	//msg2.volocity = msg.volocity;
+	//	//msg2.speed = msg.speed;
+	//	//msg2.pos = msg.pos;
+	//	//player->send_pack(msg2.Serialize());
+	//});
 	
 
 	auto cur_time = std::chrono::high_resolution_clock::now();
@@ -79,16 +105,16 @@ void map_server::on_connect(std::shared_ptr<game_net::net_object>)
 
 int main()
 {
-	S2C_Login login;
-	login.set_id(1);
-	login.set_code(1);
+	//S2C_Login login;
+	//login.set_id(1);
+	//login.set_code(1);
 
-	string buf;
+	//string buf;
 
-	login.SerializeToString(&buf);
-	Msg msg;
-	msg.set_type(MsgType::S2CLogin);
-	msg.set_data(buf);
+	//login.SerializeToString(&buf);
+	//Msg msg;
+	//msg.set_type(MsgType::S2CLogin);
+	//msg.set_data(buf);
 
 	//::google::protobuf::Message* msg = new ;
 	//msg.ParseFromString
@@ -96,12 +122,12 @@ int main()
 	//Phone t2;
 	//t2.ParseFromString(buf);
 
-	//map_server gs;
-	//G_S = &gs;
-	//game_common::server_param param;
-	//param.server_name = "map_server";
-	//param.config_name = "map_server";
-	//param.listen_port =  52012;
-	//G_S->start(param);
+	map_server gs;
+	G_S = &gs;
+	game_common::server_param param;
+	param.server_name = "map_server";
+	param.config_name = "map_server";
+	param.listen_port =  52012;
+	G_S->start(param);
 	return 0;
 }

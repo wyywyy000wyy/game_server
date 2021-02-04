@@ -2,6 +2,7 @@
 #include <atomic>
 #include <queue>
 #include "Packet.h"
+#include "common/net/NetProtocol.pb.h"
 
 namespace game_net
 {
